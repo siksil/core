@@ -10,7 +10,7 @@ from aioshelly.block_device import Block
 from aioshelly.const import RPC_GENERATIONS
 from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DOMAIN as NUMBER_DOMAIN,
     NumberDeviceClass,
     NumberEntity,
@@ -19,11 +19,11 @@ from homeassistant.components.number import (
     NumberMode,
     RestoreNumber,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
 
 from .const import (
     CONF_SLEEP_PERIOD,

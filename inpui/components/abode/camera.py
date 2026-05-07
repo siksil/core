@@ -11,12 +11,12 @@ from jaraco.abode.helpers import timeline
 import requests
 from requests.models import Response
 
-from homeassistant.components.camera import Camera
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle
+from inpui.components.camera import Camera
+from inpui.config_entries import ConfigEntry
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle
 
 from . import AbodeSystem
 from .const import DOMAIN_DATA, LOGGER

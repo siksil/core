@@ -8,25 +8,25 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import frontend, onboarding, websocket_api
-from homeassistant.config import (
+from inpui.components import frontend, onboarding, websocket_api
+from inpui.config import (
     async_hass_config_yaml,
     async_process_component_and_handle_errors,
 )
-from homeassistant.const import CONF_FILENAME, CONF_MODE, CONF_RESOURCES
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.const import CONF_FILENAME, CONF_MODE, CONF_RESOURCES
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     collection,
     config_validation as cv,
     issue_registry as ir,
 )
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.translation import async_get_translations
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_integration
-from homeassistant.util import slugify
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.storage import Store
+from inpui.helpers.translation import async_get_translations
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_integration
+from inpui.util import slugify
 
 from . import dashboard, resources, websocket
 from .const import (  # noqa: F401

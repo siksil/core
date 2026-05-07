@@ -6,9 +6,9 @@ import aiohue.v2 as aiohue_v2
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import hue
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import hue
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_persistent_notifications
 

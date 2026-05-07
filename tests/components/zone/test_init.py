@@ -6,9 +6,9 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import setup
-from homeassistant.components import zone
-from homeassistant.components.zone import DOMAIN
-from homeassistant.const import (
+from inpui.components import zone
+from inpui.components.zone import DOMAIN
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -16,9 +16,9 @@ from homeassistant.const import (
     ATTR_PERSONS,
     SERVICE_RELOAD,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import Unauthorized
-from homeassistant.helpers import entity_registry as er
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import Unauthorized
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, MockUser
 from tests.typing import WebSocketGenerator

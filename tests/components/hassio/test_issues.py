@@ -29,9 +29,9 @@ from aiohasupervisor.models import (
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .test_init import MOCK_ENVIRON
 

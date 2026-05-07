@@ -2,7 +2,7 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -11,9 +11,9 @@ from homeassistant.components.cover import (
     CoverDeviceClass,
     CoverState,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import add_mock_config
 

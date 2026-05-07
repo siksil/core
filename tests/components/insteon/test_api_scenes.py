@@ -9,10 +9,10 @@ from pyinsteon.constants import ResponseStatus
 import pyinsteon.managers.scene_manager
 import pytest
 
-from homeassistant.components.insteon.api import async_load_api, scenes
-from homeassistant.components.insteon.const import ID, TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.components.insteon.api import async_load_api, scenes
+from inpui.components.insteon.const import ID, TYPE
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from .mock_devices import MockDevices
 

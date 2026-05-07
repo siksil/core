@@ -17,13 +17,13 @@ from aiohomeconnect.model.error import HomeConnectApiError
 from aiohomeconnect.model.event import ArrayOfEvents, EventType
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.home_connect.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.home_connect.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

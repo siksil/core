@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyprobeplus.parser import ParserBase, ProbePlusData
 import pytest
 
-from homeassistant.components.probe_plus.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
+from inpui.components.probe_plus.const import DOMAIN
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

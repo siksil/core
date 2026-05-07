@@ -14,8 +14,8 @@ from hatasmota.utils import (
 import pytest
 
 from homeassistant import core as ha
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.const import (
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     EVENT_STATE_CHANGED,
     STATE_OFF,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .test_common import (
     DEFAULT_CONFIG,

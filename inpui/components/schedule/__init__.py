@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     CONF_ICON,
     CONF_ID,
@@ -18,15 +18,15 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.collection import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.collection import (
     CollectionEntity,
     DictStorageCollection,
     DictStorageCollectionWebsocket,
@@ -35,12 +35,12 @@ from homeassistant.helpers.collection import (
     YamlCollection,
     sync_entity_lifecycle,
 )
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_NEXT_EVENT,

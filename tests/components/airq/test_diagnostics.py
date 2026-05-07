@@ -3,8 +3,8 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.airq.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.airq.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .common import TEST_DEVICE_INFO, TEST_USER_DATA
 

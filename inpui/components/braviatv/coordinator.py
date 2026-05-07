@@ -18,13 +18,13 @@ from pybravia import (
     BraviaTurnedOff,
 )
 
-from homeassistant.components.media_player import MediaType
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_CLIENT_ID, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.media_player import MediaType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_CLIENT_ID, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     CONF_NICKNAME,

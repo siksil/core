@@ -8,7 +8,7 @@ from typing import Any
 from requests import RequestException
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PLATFORM_SCHEMA as CLIMATE_PLATFORM_SCHEMA,
     SCAN_INTERVAL,
     ClimateEntity,
@@ -16,11 +16,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, CONF_SCAN_INTERVAL, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import (
+from inpui.const import ATTR_TEMPERATURE, CONF_SCAN_INTERVAL, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
     UpdateFailed,

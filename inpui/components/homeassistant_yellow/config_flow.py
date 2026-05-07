@@ -10,33 +10,33 @@ from typing import TYPE_CHECKING, Any, Protocol, final
 from universal_silabs_flasher.flasher import YellowFlasher
 import voluptuous as vol
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     SupervisorError,
     YellowOptions,
     get_supervisor_client,
 )
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     BaseFirmwareConfigFlow,
     BaseFirmwareOptionsFlow,
 )
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     OptionsFlowHandler as MultiprotocolOptionsFlowHandler,
     SerialPortSettings as MultiprotocolSerialPortSettings,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     probe_silabs_firmware_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_HARDWARE,
     ConfigEntry,
     ConfigEntryBaseFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import HomeAssistant, async_get_hass, callback
-from homeassistant.helpers import discovery_flow, selector
+from inpui.core import HomeAssistant, async_get_hass, callback
+from inpui.helpers import discovery_flow, selector
 
 from .const import (
     DOMAIN,

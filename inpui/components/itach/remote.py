@@ -9,13 +9,13 @@ from typing import Any
 import pyitachip2ir
 import voluptuous as vol
 
-from homeassistant.components import remote
-from homeassistant.components.remote import (
+from inpui.components import remote
+from inpui.components.remote import (
     ATTR_NUM_REPEATS,
     DEFAULT_NUM_REPEATS,
     PLATFORM_SCHEMA as REMOTE_PLATFORM_SCHEMA,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_MAC,
@@ -23,10 +23,10 @@ from homeassistant.const import (
     CONF_PORT,
     DEVICE_DEFAULT_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

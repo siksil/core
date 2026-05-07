@@ -6,7 +6,7 @@ from collections.abc import Generator, Iterable
 import logging
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components import (
+from inpui.components import (
     alarm_control_panel,
     alert,
     automation,
@@ -37,7 +37,7 @@ from homeassistant.components import (
     valve,
     water_heater,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_SUPPORTED_FEATURES,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -47,10 +47,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     __version__,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import network
-from homeassistant.helpers.entity import entity_sources
-from homeassistant.util.decorator import Registry
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import network
+from inpui.helpers.entity import entity_sources
+from inpui.util.decorator import Registry
 
 from .capabilities import (
     Alexa,

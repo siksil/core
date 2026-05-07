@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
-from homeassistant.components.media_player import BrowseError, BrowseMedia
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.frame import report_usage
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.loader import bind_hass
+from inpui.components.media_player import BrowseError, BrowseMedia
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.frame import report_usage
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.loader import bind_hass
 
 from .const import DOMAIN, MEDIA_SOURCE_DATA
 from .error import UnknownMediaSource, Unresolvable

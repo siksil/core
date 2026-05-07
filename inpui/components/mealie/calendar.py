@@ -7,9 +7,9 @@ from datetime import datetime
 from aiomealie import Mealplan, MealplanEntryType
 from awesomeversion import AwesomeVersion
 
-from homeassistant.components.calendar import CalendarEntity, CalendarEvent
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.calendar import CalendarEntity, CalendarEvent
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import MealieConfigEntry, MealieMealplanCoordinator
 from .entity import MealieEntity

@@ -6,13 +6,13 @@ from unittest.mock import AsyncMock, MagicMock
 from aiohttp import ClientResponse
 import pytest
 
-from homeassistant.components.html5.const import (
+from inpui.components.html5.const import (
     ATTR_VAPID_EMAIL,
     ATTR_VAPID_PRV_KEY,
     ATTR_VAPID_PUB_KEY,
     DOMAIN,
 )
-from homeassistant.const import CONF_NAME
+from inpui.const import CONF_NAME
 
 from tests.common import MockConfigEntry, patch
 

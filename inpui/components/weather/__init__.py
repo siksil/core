@@ -23,8 +23,8 @@ from typing import (
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     PRECISION_HALVES,
     PRECISION_TENTHS,
     PRECISION_WHOLE,
@@ -32,7 +32,7 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     HomeAssistant,
     ServiceCall,
@@ -40,19 +40,19 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import ABCCachedProperties, Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.helpers.update_coordinator import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import ABCCachedProperties, Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
     TimestampDataUpdateCoordinator,
 )
-from homeassistant.util.dt import utcnow
-from homeassistant.util.json import JsonValueType
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.util.dt import utcnow
+from inpui.util.json import JsonValueType
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (  # noqa: F401
     ATTR_WEATHER_APPARENT_TEMPERATURE,

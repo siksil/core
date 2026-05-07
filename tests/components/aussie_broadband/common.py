@@ -3,10 +3,10 @@
 from typing import Any
 from unittest.mock import patch
 
-from homeassistant.components.aussie_broadband.const import CONF_SERVICES, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.aussie_broadband.const import CONF_SERVICES, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import MockConfigEntry
 

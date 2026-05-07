@@ -9,12 +9,12 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.hue import config_flow, const
-from homeassistant.components.hue.errors import CannotConnect
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.components.hue import config_flow, const
+from inpui.components.hue.errors import CannotConnect
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

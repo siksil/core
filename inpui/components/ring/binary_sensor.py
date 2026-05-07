@@ -10,15 +10,15 @@ from typing import Any, Generic
 from ring_doorbell import RingCapability, RingEvent
 from ring_doorbell.const import KIND_DING, KIND_MOTION
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_at
+from inpui.const import Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_at
 
 from . import RingConfigEntry
 from .coordinator import RingListenCoordinator

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pytrydan import Trydan
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
 
 from .coordinator import V2CConfigEntry, V2CUpdateCoordinator
 

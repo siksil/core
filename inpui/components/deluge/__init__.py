@@ -7,15 +7,15 @@ from ssl import SSLError
 
 from deluge_client.client import DelugeRPCClient
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import CONF_WEB_PORT
 from .coordinator import DelugeConfigEntry, DelugeDataUpdateCoordinator

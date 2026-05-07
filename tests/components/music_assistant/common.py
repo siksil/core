@@ -21,9 +21,9 @@ from music_assistant_models.player import Player
 from music_assistant_models.player_queue import PlayerQueue
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

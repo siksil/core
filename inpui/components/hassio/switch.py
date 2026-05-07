@@ -7,12 +7,12 @@ from typing import Any
 
 from aiohasupervisor import SupervisorError
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ADDONS_COORDINATOR, ATTR_STARTED, ATTR_STATE, DATA_KEY_ADDONS
 from .entity import HassioAddonEntity

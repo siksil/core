@@ -6,9 +6,9 @@ import logging
 from airgradient import AirGradientConnectionError
 from propcache.api import cached_property
 
-from homeassistant.components.update import UpdateDeviceClass, UpdateEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateDeviceClass, UpdateEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AirGradientConfigEntry, AirGradientCoordinator
 from .entity import AirGradientEntity

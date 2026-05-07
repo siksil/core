@@ -7,15 +7,15 @@ from panasonic_viera import SOAPError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.panasonic_viera.const import (
+from inpui.components.panasonic_viera.const import (
     ATTR_DEVICE_INFO,
     DEFAULT_NAME,
     DOMAIN,
     ERROR_INVALID_PIN_CODE,
 )
-from homeassistant.const import CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     MOCK_BASIC_DATA,

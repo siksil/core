@@ -7,20 +7,20 @@ from unittest.mock import patch
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.components.duckdns.const import (
+from inpui.components.duckdns.const import (
     ATTR_CONFIG_ENTRY,
     ATTR_TXT,
     DOMAIN,
     SERVICE_SET_TXT,
 )
-from homeassistant.components.duckdns.coordinator import BACKOFF_INTERVALS
-from homeassistant.components.duckdns.helpers import UPDATE_URL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util.dt import utcnow
+from inpui.components.duckdns.coordinator import BACKOFF_INTERVALS
+from inpui.components.duckdns.helpers import UPDATE_URL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import issue_registry as ir
+from inpui.util.dt import utcnow
 
 from .conftest import TEST_SUBDOMAIN, TEST_TOKEN
 

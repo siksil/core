@@ -11,14 +11,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.hassio import DOMAIN, HASSIO_UPDATE_INTERVAL
-from homeassistant.components.hassio.const import REQUEST_REFRESH_DELAY
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.hassio import DOMAIN, HASSIO_UPDATE_INTERVAL
+from inpui.components.hassio.const import REQUEST_REFRESH_DELAY
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import MOCK_REPOSITORIES, MOCK_STORE_ADDONS
 

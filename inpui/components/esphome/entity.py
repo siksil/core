@@ -17,18 +17,18 @@ from aioesphomeapi import (
 )
 import voluptuous as vol
 
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_platform,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
 

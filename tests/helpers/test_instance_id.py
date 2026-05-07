@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import instance_id
+from inpui.core import HomeAssistant
+from inpui.helpers import instance_id
 
 
 async def test_get_id_empty(hass: HomeAssistant, hass_storage: dict[str, Any]) -> None:

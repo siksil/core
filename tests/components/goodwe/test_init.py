@@ -2,10 +2,10 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.goodwe import CONF_MODEL_FAMILY, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.goodwe import CONF_MODEL_FAMILY, DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_HOST, TEST_PORT
 

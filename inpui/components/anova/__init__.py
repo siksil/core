@@ -13,10 +13,10 @@ from anova_wifi import (
     WebsocketFailure,
 )
 
-from homeassistant.const import CONF_DEVICES, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_DEVICES, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
 
 from .coordinator import AnovaConfigEntry, AnovaCoordinator, AnovaData
 

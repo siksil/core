@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
-from homeassistant.const import CONF_OPTIONS
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
+from inpui.const import CONF_OPTIONS
+from inpui.core import HomeAssistant, State
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     ENTITY_STATE_CONDITION_SCHEMA_ANY_ALL,
     Condition,
     ConditionConfig,

@@ -6,11 +6,11 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.group import DOMAIN, async_setup_entry
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.components.group import DOMAIN, async_setup_entry
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 from tests.typing import WebSocketGenerator

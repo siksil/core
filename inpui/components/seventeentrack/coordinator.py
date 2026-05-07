@@ -7,10 +7,10 @@ from pyseventeentrack import Client as SeventeenTrackClient
 from pyseventeentrack.errors import SeventeenTrackError
 from pyseventeentrack.package import Package
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import slugify
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import slugify
 
 from .const import (
     CONF_SHOW_ARCHIVED,

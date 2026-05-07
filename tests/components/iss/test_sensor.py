@@ -2,10 +2,10 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.iss.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.iss.const import DEFAULT_NAME, DOMAIN
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

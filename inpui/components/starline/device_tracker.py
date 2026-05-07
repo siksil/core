@@ -2,11 +2,11 @@
 
 from typing import Any
 
-from homeassistant.components.device_tracker import TrackerEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.device_tracker import TrackerEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .account import StarlineAccount, StarlineDevice
 from .const import DOMAIN

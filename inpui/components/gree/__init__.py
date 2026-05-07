@@ -5,10 +5,10 @@ from __future__ import annotations
 from datetime import timedelta
 import logging
 
-from homeassistant.components.network import async_get_ipv4_broadcast_addresses
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.components.network import async_get_ipv4_broadcast_addresses
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.event import async_track_time_interval
 
 from .const import DISCOVERY_SCAN_INTERVAL
 from .coordinator import DiscoveryService, GreeConfigEntry, GreeRuntimeData

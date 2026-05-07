@@ -151,23 +151,23 @@ def test_bad_import(
     ("import_node", "module_name"),
     [
         (
-            "from homeassistant.components import climate",
+            "from inpui.components import climate",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate import ClimateEntityFeature",
+            "from inpui.components.climate import ClimateEntityFeature",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.pylint_test import const",
+            "from inpui.components.pylint_test import const",
             "tests.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.pylint_test.const import CONSTANT",
+            "from inpui.components.pylint_test.const import CONSTANT",
             "tests.components.pylint_test.climate",
         ),
         (
-            "import homeassistant.components.pylint_test.const as climate",
+            "import inpui.components.pylint_test.const as climate",
             "tests.components.pylint_test.climate",
         ),
     ],
@@ -197,35 +197,35 @@ def test_good_root_import(
     ("import_node", "module_name"),
     [
         (
-            "import homeassistant.components.climate.const as climate",
+            "import inpui.components.climate.const as climate",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate import const",
+            "from inpui.components.climate import const",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate.const import ClimateEntityFeature",
+            "from inpui.components.climate.const import ClimateEntityFeature",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate.entity import ClimateEntityFeature",
+            "from inpui.components.climate.entity import ClimateEntityFeature",
             "homeassistant.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate import const",
+            "from inpui.components.climate import const",
             "tests.components.pylint_test.climate",
         ),
         (
-            "from homeassistant.components.climate.const import CONSTANT",
+            "from inpui.components.climate.const import CONSTANT",
             "tests.components.pylint_test.climate",
         ),
         (
-            "import homeassistant.components.climate.const as climate",
+            "import inpui.components.climate.const as climate",
             "tests.components.pylint_test.climate",
         ),
         (
-            "import homeassistant.components.climate.entity as climate",
+            "import inpui.components.climate.entity as climate",
             "tests.components.pylint_test.climate",
         ),
     ],
@@ -266,7 +266,7 @@ def test_bad_root_import(
     ("import_node", "module_name", "expected_args"),
     [
         (
-            "from homeassistant.helpers.issue_registry import async_get",
+            "from inpui.helpers.issue_registry import async_get",
             "tests.components.pylint_test.climate",
             (
                 "async_get",
@@ -277,7 +277,7 @@ def test_bad_root_import(
             ),
         ),
         (
-            "from homeassistant.helpers.issue_registry import async_get as async_get_issue_registry",
+            "from inpui.helpers.issue_registry import async_get as async_get_issue_registry",
             "tests.components.pylint_test.climate",
             (
                 "async_get",
@@ -324,12 +324,12 @@ def test_bad_namespace_import(
     [
         (
             "homeassistant.components.pylint_test.sensor",
-            "from homeassistant.components.other import DOMAIN as OTHER_DOMAIN",
+            "from inpui.components.other import DOMAIN as OTHER_DOMAIN",
             -1,
         ),
         (
             "homeassistant.components.pylint_test.sensor",
-            "from homeassistant.components.other import DOMAIN",
+            "from inpui.components.other import DOMAIN",
             49,
         ),
     ],

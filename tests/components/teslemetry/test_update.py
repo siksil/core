@@ -8,12 +8,12 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from teslemetry_stream import Signal
 
-from homeassistant.components.teslemetry.coordinator import VEHICLE_INTERVAL
-from homeassistant.components.teslemetry.update import INSTALLING
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.teslemetry.coordinator import VEHICLE_INTERVAL
+from inpui.components.teslemetry.update import INSTALLING
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, reload_platform, setup_platform
 from .const import COMMAND_OK, VEHICLE_DATA, VEHICLE_DATA_ALT

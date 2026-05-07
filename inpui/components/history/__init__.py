@@ -9,16 +9,16 @@ from typing import cast
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import frontend
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.recorder import get_instance, history
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import CONF_EXCLUDE, CONF_INCLUDE
-from homeassistant.core import HomeAssistant, valid_entity_id
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.components import frontend
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.recorder import get_instance, history
+from inpui.components.recorder.util import session_scope
+from inpui.const import CONF_EXCLUDE, CONF_INCLUDE
+from inpui.core import HomeAssistant, valid_entity_id
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from . import websocket_api
 from .const import DOMAIN

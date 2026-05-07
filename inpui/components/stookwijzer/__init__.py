@@ -6,14 +6,14 @@ from typing import Any
 
 from stookwijzer import Stookwijzer
 
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, LOGGER
 from .coordinator import StookwijzerConfigEntry, StookwijzerCoordinator

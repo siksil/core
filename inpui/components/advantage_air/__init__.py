@@ -2,11 +2,11 @@
 
 from advantage_air import advantage_air
 
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import ADVANTAGE_AIR_RETRY, DOMAIN
 from .coordinator import AdvantageAirCoordinator, AdvantageAirDataConfigEntry

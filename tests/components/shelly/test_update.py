@@ -6,13 +6,13 @@ from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCal
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     DOMAIN,
     GEN1_RELEASE_URL,
     GEN2_BETA_RELEASE_URL,
     GEN2_RELEASE_URL,
 )
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
@@ -22,8 +22,8 @@ from homeassistant.components.update import (
     SERVICE_INSTALL,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
@@ -31,10 +31,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     init_integration,

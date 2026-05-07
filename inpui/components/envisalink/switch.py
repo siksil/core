@@ -7,11 +7,11 @@ from typing import Any
 
 from pyenvisalink import EnvisalinkAlarmPanel
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import (
     CONF_ZONENAME,

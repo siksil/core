@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     HumidifierAction,
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 SUPPORT_FLAGS = HumidifierEntityFeature(0)
 

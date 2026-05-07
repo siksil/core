@@ -11,16 +11,16 @@ from roombapy.discovery import RoombaDiscovery
 from roombapy.getpassword import RoombaPassword
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_DELAY, CONF_HOST, CONF_NAME, CONF_PASSWORD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_DELAY, CONF_HOST, CONF_NAME, CONF_PASSWORD
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import CannotConnect, async_connect_or_timeout, async_disconnect_or_timeout
 from .const import (

@@ -6,14 +6,14 @@ from bleak.backends.scanner import AdvertisementData, BLEDevice
 from bluetooth_adapters import DEFAULT_ADDRESS
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     MONOTONIC_TIME,
     BaseHaRemoteScanner,
     HaBluetoothConnector,
     HaScanner,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     FakeScannerMixin,

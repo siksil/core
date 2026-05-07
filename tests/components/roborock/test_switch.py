@@ -9,12 +9,12 @@ import roborock
 from roborock.roborock_message import RoborockZeoProtocol
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .conftest import FakeDevice
 

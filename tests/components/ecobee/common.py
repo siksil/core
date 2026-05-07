@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.ecobee.const import CONF_REFRESH_TOKEN, DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.components.ecobee.const import CONF_REFRESH_TOKEN, DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

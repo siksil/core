@@ -5,10 +5,10 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import test_sensor as test_tcp
 

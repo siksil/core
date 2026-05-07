@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock, patch
 from brother import BrotherSensors
 import pytest
 
-from homeassistant.components.brother.const import (
+from inpui.components.brother.const import (
     CONF_COMMUNITY,
     DOMAIN,
     SECTION_ADVANCED_SETTINGS,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TYPE
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TYPE
 
 from tests.common import MockConfigEntry
 

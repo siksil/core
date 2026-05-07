@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 from .models import LabsData
 

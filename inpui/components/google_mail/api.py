@@ -7,15 +7,15 @@ from google.auth.exceptions import RefreshError
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import Resource, build
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class AsyncConfigEntryAuth:

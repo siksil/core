@@ -11,10 +11,10 @@ from pyecobee import (
     ExpiredTokenError,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util import Throttle
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.util import Throttle
 
 from .const import _LOGGER, CONF_REFRESH_TOKEN, PLATFORMS
 

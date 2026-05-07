@@ -6,9 +6,9 @@ from collections.abc import Mapping
 import logging
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.limited_size_dict import LimitedSizeDict
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util.limited_size_dict import LimitedSizeDict
 
 from .const import DATA_TRACE, DATA_TRACE_STORE, DATA_TRACES_RESTORED
 from .models import ActionTrace, BaseTrace, RestoredTrace, TraceData

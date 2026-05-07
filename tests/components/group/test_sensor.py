@@ -10,21 +10,21 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.group import DOMAIN
-from homeassistant.components.group.sensor import (
+from inpui.components.group import DOMAIN
+from inpui.components.group.sensor import (
     ATTR_FIRST_AVAILABLE_ENTITY_ID,
     ATTR_LAST_ENTITY_ID,
     ATTR_MAX_ENTITY_ID,
     ATTR_MIN_ENTITY_ID,
     DEFAULT_NAME,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_ICON,
@@ -35,9 +35,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import get_fixture_path
 

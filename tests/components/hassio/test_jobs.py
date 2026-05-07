@@ -9,11 +9,11 @@ from uuid import uuid4
 from aiohasupervisor.models import Job, JobsInfo
 import pytest
 
-from homeassistant.components.hassio.const import ADDONS_COORDINATOR
-from homeassistant.components.hassio.coordinator import HassioDataUpdateCoordinator
-from homeassistant.components.hassio.jobs import JobSubscription
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.components.hassio.const import ADDONS_COORDINATOR
+from inpui.components.hassio.coordinator import HassioDataUpdateCoordinator
+from inpui.components.hassio.jobs import JobSubscription
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from .test_init import MOCK_ENVIRON
 

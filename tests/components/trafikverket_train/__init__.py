@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.components.trafikverket_train.const import (
+from inpui.components.trafikverket_train.const import (
     CONF_FILTER_PRODUCT,
     CONF_FROM,
     CONF_TIME,
     CONF_TO,
 )
-from homeassistant.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
+from inpui.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
 
 ENTRY_CONFIG = {
     CONF_API_KEY: "1234567890",

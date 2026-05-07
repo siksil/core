@@ -18,13 +18,13 @@ from aioshelly.const import (
 from aioshelly.rpc_device import WsServer
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     GEN1_RELEASE_URL,
     GEN2_BETA_RELEASE_URL,
     GEN2_RELEASE_URL,
     UPTIME_DEVIATION,
 )
-from homeassistant.components.shelly.utils import (
+from inpui.components.shelly.utils import (
     ShellyReceiver,
     get_block_device_sleep_period,
     get_block_input_triggers,
@@ -38,7 +38,7 @@ from homeassistant.components.shelly.utils import (
     is_block_momentary_input,
     mac_address_from_name,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 DEVICE_BLOCK_ID = 4
 

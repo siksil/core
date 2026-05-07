@@ -8,15 +8,15 @@ from enum import StrEnum
 
 from aiontfy import Account as NtfyAccount
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import EntityCategory, UnitOfInformation, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import EntityCategory, UnitOfInformation, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .coordinator import NtfyConfigEntry, NtfyDataUpdateCoordinator
 from .entity import NtfyCommonBaseEntity

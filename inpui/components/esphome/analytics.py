@@ -1,7 +1,7 @@
 """Analytics platform."""
 
-from homeassistant.components.analytics import AnalyticsInput, AnalyticsModifications
-from homeassistant.core import HomeAssistant
+from inpui.components.analytics import AnalyticsInput, AnalyticsModifications
+from inpui.core import HomeAssistant
 
 
 async def async_modify_analytics(

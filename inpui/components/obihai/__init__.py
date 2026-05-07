@@ -1,9 +1,9 @@
 """The Obihai integration."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import format_mac
 
 from .connectivity import ObihaiConnection
 from .const import DOMAIN, LOGGER, PLATFORMS

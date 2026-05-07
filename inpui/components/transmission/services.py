@@ -8,10 +8,10 @@ from typing import Any
 from transmission_rpc import Torrent
 import voluptuous as vol
 
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, selector, service
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, selector, service
 
 from .const import (
     ATTR_DELETE_DATA,

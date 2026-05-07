@@ -14,15 +14,15 @@ from pyinsteon.groups import (
     TEST_SENSOR,
 )
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import SIGNAL_ADD_ENTITIES
 from .entity import InsteonEntity

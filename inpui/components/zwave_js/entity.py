@@ -14,12 +14,12 @@ from zwave_js_server.model.value import (
     get_value_id_str,
 )
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.typing import UNDEFINED
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.typing import UNDEFINED
 
 from .const import (
     DOMAIN,

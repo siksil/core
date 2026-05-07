@@ -8,10 +8,10 @@ from typing import TYPE_CHECKING, Any
 from pyliebherrhomeapi import PresentationLightControl
 from pyliebherrhomeapi.const import CONTROL_PRESENTATION_LIGHT
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import LiebherrConfigEntry, LiebherrCoordinator

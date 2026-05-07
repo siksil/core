@@ -17,7 +17,7 @@ from pythonxbox.api.provider.smartglass.models import (
     InstalledPackagesList,
 )
 
-from homeassistant.components.media_player import BrowseMedia, MediaClass, MediaType
+from inpui.components.media_player import BrowseMedia, MediaClass, MediaType
 
 from .entity import to_https
 

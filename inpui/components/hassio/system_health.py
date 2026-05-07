@@ -5,8 +5,8 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 from .coordinator import (
     get_addons_list,

@@ -7,12 +7,12 @@ from requests import RequestException
 import requests_mock
 from requests_mock import ANY, Mocker
 
-from homeassistant.components.soundtouch.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.soundtouch.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .conftest import DEVICE_1_ID, DEVICE_1_IP, DEVICE_1_NAME
 

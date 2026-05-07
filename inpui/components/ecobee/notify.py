@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.notify import NotifyEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.notify import NotifyEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcobeeConfigEntry, EcobeeData
 from .entity import EcobeeBaseEntity

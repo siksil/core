@@ -7,11 +7,11 @@ from typing import cast
 
 from pysmartthings import Attribute, Capability, Command, SmartThings
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN

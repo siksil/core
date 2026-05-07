@@ -14,14 +14,14 @@ from propcache.api import cached_property
 import voluptuous as vol
 
 from homeassistant import util
-from homeassistant.components import zone
-from homeassistant.components.zone import ENTITY_ID_HOME
-from homeassistant.config import (
+from inpui.components import zone
+from inpui.components.zone import ENTITY_ID_HOME
+from inpui.config import (
     async_log_schema_error,
     config_per_platform,
     load_yaml_config_file,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_GPS_ACCURACY,
     ATTR_ICON,
@@ -32,32 +32,32 @@ from homeassistant.const import (
     CONF_MAC,
     CONF_NAME,
     DEVICE_DEFAULT_NAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     STATE_HOME,
     STATE_NOT_HOME,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     discovery,
     entity_registry as er,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_time_interval,
     async_track_utc_time_change,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, GPSType, StateType
-from homeassistant.setup import (
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, GPSType, StateType
+from inpui.setup import (
     SetupPhases,
     async_notify_setup_error,
     async_prepare_setup_platform,
     async_start_setup,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.yaml import dump
+from inpui.util import dt as dt_util
+from inpui.util.async_ import create_eager_task
+from inpui.util.yaml import dump
 
 from .const import (
     ATTR_ATTRIBUTES,
@@ -281,7 +281,7 @@ async def _async_setup_integration(
         """
         cancel_update_stale()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _on_hass_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _on_hass_stop)
 
 
 @attr.s
@@ -540,7 +540,7 @@ def async_setup_scanner_platform(
         """
         cancel_legacy_scan()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _on_hass_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _on_hass_stop)
 
 
 async def get_tracker(hass: HomeAssistant, config: ConfigType) -> DeviceTracker:

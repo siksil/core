@@ -8,7 +8,7 @@ import voluptuous as vol
 from voluptuous.error import Error as VoluptuousError
 import yaml
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_CODE,
     CONF_DEVICE,
     CONF_HOST,
@@ -17,12 +17,12 @@ from homeassistant.const import (
     CONF_REPEAT,
     CONF_SENSORS,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "kira"
 
@@ -142,6 +142,6 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
             receiver.stop()
         _LOGGER.debug("Terminated receivers")
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, _stop_kira)
+    hass.bus.listen_once(EVENT_INPUI_STOP, _stop_kira)
 
     return True

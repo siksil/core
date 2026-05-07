@@ -7,11 +7,11 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .const import (

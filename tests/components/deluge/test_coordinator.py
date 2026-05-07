@@ -1,7 +1,7 @@
 """Test Deluge coordinator.py methods."""
 
-from homeassistant.components.deluge.const import DelugeSensorType
-from homeassistant.components.deluge.coordinator import count_states
+from inpui.components.deluge.const import DelugeSensorType
+from inpui.components.deluge.coordinator import count_states
 
 from . import GET_TORRENT_STATES_RESPONSE
 

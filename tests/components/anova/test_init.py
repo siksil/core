@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from anova_wifi import AnovaApi
 
-from homeassistant.components.anova.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICES, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.anova.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICES, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import async_init_integration, create_entry
 

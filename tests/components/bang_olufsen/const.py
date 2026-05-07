@@ -23,7 +23,7 @@ from mozart_api.models import (
     VolumeState,
 )
 
-from homeassistant.components.bang_olufsen.const import (
+from inpui.components.bang_olufsen.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_ITEM_NUMBER,
     ATTR_SERIAL_NUMBER,
@@ -31,8 +31,8 @@ from homeassistant.components.bang_olufsen.const import (
     CONF_BEOLINK_JID,
     BeoSource,
 )
-from homeassistant.const import CONF_HOST, CONF_MODEL, CONF_NAME
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_MODEL, CONF_NAME
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 TEST_HOST = "192.168.0.1"
 TEST_HOST_INVALID = "192.168.0"

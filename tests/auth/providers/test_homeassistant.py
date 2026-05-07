@@ -8,14 +8,14 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.auth import auth_manager_from_config, auth_store
-from homeassistant.auth.providers import (
+from inpui.auth import auth_manager_from_config, auth_store
+from inpui.auth.providers import (
     auth_provider_from_config,
     homeassistant as hass_auth,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

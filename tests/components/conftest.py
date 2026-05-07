@@ -58,15 +58,15 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import components, loader
-from homeassistant.components import repairs
-from homeassistant.config_entries import (
+from inpui.components import repairs
+from inpui.config_entries import (
     DISCOVERY_SOURCES,
     ConfigEntriesFlowManager,
     FlowResult,
     OptionsFlowManager,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import (
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import (
     Context,
     EntityServiceResponse,
     HassJobType,
@@ -77,23 +77,23 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.data_entry_flow import (
+from inpui.data_entry_flow import (
     FlowContext,
     FlowHandler,
     FlowManager,
     FlowResultType,
     section,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.translation import async_get_translations
-from homeassistant.helpers.typing import VolSchemaType
-from homeassistant.util import yaml as yaml_util
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.translation import async_get_translations
+from inpui.helpers.typing import VolSchemaType
+from inpui.util import yaml as yaml_util
 
 from tests.common import QualityScaleStatus, get_quality_scale
 
 if TYPE_CHECKING:
-    from homeassistant.components.hassio import AddonManager
+    from inpui.components.hassio import AddonManager
 
     from .conversation import MockAgent
     from .device_tracker.common import MockScanner

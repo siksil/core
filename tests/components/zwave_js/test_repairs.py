@@ -8,11 +8,11 @@ from zwave_js_server.client import Client
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node, NodeDataType
 
-from homeassistant.components.zwave_js import DOMAIN
-from homeassistant.components.zwave_js.const import CONF_KEEP_OLD_DEVICES
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from inpui.components.zwave_js import DOMAIN
+from inpui.components.zwave_js.const import CONF_KEEP_OLD_DEVICES
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
 
 from tests.common import MockConfigEntry
 from tests.components.repairs import (

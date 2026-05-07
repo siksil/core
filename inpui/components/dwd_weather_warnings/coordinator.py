@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from dwdwfsapi import DwdWeatherWarningsAPI
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import location as location_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import location as location_util
 
 from .const import (
     CONF_REGION_DEVICE_TRACKER,

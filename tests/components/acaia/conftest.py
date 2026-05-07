@@ -7,9 +7,9 @@ from aioacaia.acaiascale import AcaiaDeviceState
 from aioacaia.const import UnitMass as AcaiaUnitOfMass
 import pytest
 
-from homeassistant.components.acaia.const import CONF_IS_NEW_STYLE_SCALE, DOMAIN
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
+from inpui.components.acaia.const import CONF_IS_NEW_STYLE_SCALE, DOMAIN
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

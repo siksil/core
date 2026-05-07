@@ -5,9 +5,9 @@ from unittest.mock import MagicMock, patch
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.huawei_lte.const import DOMAIN
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.huawei_lte.const import DOMAIN
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from . import magic_client
 

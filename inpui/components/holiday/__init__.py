@@ -6,10 +6,10 @@ from functools import partial
 
 from holidays import country_holidays
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COUNTRY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import SetupPhases, async_pause_setup
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COUNTRY, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import SetupPhases, async_pause_setup
 
 from .const import CONF_CATEGORIES, CONF_PROVINCE
 

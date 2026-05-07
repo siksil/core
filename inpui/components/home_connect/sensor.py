@@ -7,16 +7,16 @@ from typing import cast
 
 from aiohomeconnect.model import EventKey, StatusKey
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util, slugify
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util, slugify
 
 from .common import setup_home_connect_entry
 from .const import (

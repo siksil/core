@@ -3,8 +3,8 @@
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components.flo.const import DOMAIN
-from homeassistant.components.flo.switch import (
+from inpui.components.flo.const import DOMAIN
+from inpui.components.flo.switch import (
     ATTR_REVERT_TO_MODE,
     ATTR_SLEEP_MINUTES,
     SERVICE_RUN_HEALTH_TEST,
@@ -13,8 +13,8 @@ from homeassistant.components.flo.switch import (
     SERVICE_SET_SLEEP_MODE,
     SYSTEM_MODE_HOME,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

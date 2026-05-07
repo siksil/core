@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 from ohme import ChargerPower, ChargerStatus
 import pytest
 
-from homeassistant.components.ohme.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.ohme.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

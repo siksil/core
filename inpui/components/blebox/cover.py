@@ -7,7 +7,7 @@ from typing import Any
 import blebox_uniapi.cover
 from blebox_uniapi.cover import BleboxCoverState
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverDeviceClass,
@@ -15,8 +15,8 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BleBoxConfigEntry
 from .entity import BleBoxEntity

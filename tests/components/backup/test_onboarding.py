@@ -7,10 +7,10 @@ from unittest.mock import ANY, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import backup, onboarding
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components import backup, onboarding
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from tests.common import register_auth_provider
 from tests.typing import ClientSessionGenerator

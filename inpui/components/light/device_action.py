@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     async_get_entity_registry_entry_or_raise,
     async_validate_entity_schema,
     toggle_entity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -17,11 +17,11 @@ from homeassistant.const import (
     CONF_TYPE,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import get_supported_features
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType, VolDictType
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import get_supported_features
+from inpui.helpers.typing import ConfigType, TemplateVarsType, VolDictType
 
 from . import (
     ATTR_BRIGHTNESS_PCT,

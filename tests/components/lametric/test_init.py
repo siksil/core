@@ -9,9 +9,9 @@ from demetriek import (
 )
 import pytest
 
-from homeassistant.components.lametric.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.lametric.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

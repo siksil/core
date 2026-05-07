@@ -8,15 +8,15 @@ from operator import attrgetter
 
 from pyenphase import EnvoyC6CC, EnvoyCollar, EnvoyEncharge, EnvoyEnpower
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import EnphaseConfigEntry, EnphaseUpdateCoordinator

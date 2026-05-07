@@ -3,10 +3,10 @@
 from goodwe import Inverter, InverterError, connect
 from goodwe.const import GOODWE_UDP_PORT
 
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.device_registry import DeviceInfo
 
 from .config_flow import GoodweFlowHandler
 from .const import CONF_MODEL_FAMILY, DOMAIN, PLATFORMS

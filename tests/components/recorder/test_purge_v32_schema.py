@@ -12,19 +12,19 @@ from sqlalchemy import text, update
 from sqlalchemy.exc import DatabaseError, OperationalError
 from sqlalchemy.orm.session import Session
 
-from homeassistant.components.recorder import DOMAIN, Recorder, migration
-from homeassistant.components.recorder.const import SupportedDialect
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.recorder.purge import purge_old_data
-from homeassistant.components.recorder.services import (
+from inpui.components.recorder import DOMAIN, Recorder, migration
+from inpui.components.recorder.const import SupportedDialect
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.recorder.purge import purge_old_data
+from inpui.components.recorder.services import (
     SERVICE_PURGE,
     SERVICE_PURGE_ENTITIES,
 )
-from homeassistant.components.recorder.tasks import PurgeTask
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import EVENT_STATE_CHANGED
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.tasks import PurgeTask
+from inpui.components.recorder.util import session_scope
+from inpui.const import EVENT_STATE_CHANGED
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import (
     async_attach_db_engine,

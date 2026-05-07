@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from homevolt import Homevolt
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import HomevoltConfigEntry, HomevoltDataUpdateCoordinator
 

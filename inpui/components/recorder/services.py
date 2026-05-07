@@ -7,23 +7,23 @@ from typing import cast
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import generate_filter
-from homeassistant.helpers.recorder import DATA_INSTANCE
-from homeassistant.helpers.service import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import generate_filter
+from inpui.helpers.recorder import DATA_INSTANCE
+from inpui.helpers.service import (
     async_extract_entity_ids,
     async_register_admin_service,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonArrayType, JsonObjectType
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonArrayType, JsonObjectType
 
 from .const import ATTR_APPLY_FILTER, ATTR_KEEP_DAYS, ATTR_REPACK, DOMAIN
 from .statistics import statistics_during_period

@@ -5,13 +5,13 @@ from http import HTTPStatus
 from aiohttp.hdrs import METH_POST
 from aiohttp.web import Request, Response
 
-from homeassistant.components.event import EventDeviceClass, EventEntity
-from homeassistant.components.webhook import (
+from inpui.components.event import EventDeviceClass, EventEntity
+from inpui.components.webhook import (
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EkeyBionyxConfigEntry
 from .const import DOMAIN

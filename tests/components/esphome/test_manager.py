@@ -30,7 +30,7 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.esphome.const import (
+from inpui.components.esphome.const import (
     CONF_ALLOW_SERVICE_CALLS,
     CONF_BLUETOOTH_MAC_ADDRESS,
     CONF_DEVICE_NAME,
@@ -40,28 +40,28 @@ from homeassistant.components.esphome.const import (
     STABLE_BLE_URL_VERSION,
     STABLE_BLE_VERSION_STR,
 )
-from homeassistant.components.esphome.encryption_key_storage import (
+from inpui.components.esphome.encryption_key_storage import (
     ENCRYPTION_KEY_STORAGE_KEY,
 )
-from homeassistant.components.esphome.manager import DEVICE_CONFLICT_ISSUE_FORMAT
-from homeassistant.components.tag import DOMAIN as TAG_DOMAIN
-from homeassistant.const import (
+from inpui.components.esphome.manager import DEVICE_CONFLICT_ISSUE_FORMAT
+from inpui.components.tag import DOMAIN as TAG_DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.setup import async_setup_component
 
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType
 
@@ -1730,7 +1730,7 @@ async def test_disconnects_at_close_event(
 
     assert mock_client.disconnect.call_count == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
     assert mock_client.disconnect.call_count == 1
 

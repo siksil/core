@@ -7,10 +7,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.imeon_inverter.coordinator import INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.imeon_inverter.coordinator import INTERVAL
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

@@ -2,12 +2,12 @@
 
 from unittest.mock import ANY
 
-from homeassistant.components.mqtt.subscription import (
+from inpui.components.mqtt.subscription import (
     async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from tests.common import async_fire_mqtt_message
 from tests.typing import MqttMockHAClientGenerator

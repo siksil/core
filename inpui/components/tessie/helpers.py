@@ -4,7 +4,7 @@ from typing import Any
 
 from tesla_fleet_api.exceptions import TeslaFleetError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from . import _LOGGER
 from .const import DOMAIN

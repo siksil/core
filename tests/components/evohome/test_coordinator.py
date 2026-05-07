@@ -9,11 +9,11 @@ from evohomeasync2 import EvohomeClient
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.evohome import EvoData
-from homeassistant.components.evohome.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.components.evohome import EvoData
+from inpui.components.evohome.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from tests.common import async_fire_time_changed
 

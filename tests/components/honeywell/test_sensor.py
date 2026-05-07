@@ -4,7 +4,7 @@ from aiosomecomfort.device import Device
 from aiosomecomfort.location import Location
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

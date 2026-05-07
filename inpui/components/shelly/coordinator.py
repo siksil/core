@@ -21,24 +21,24 @@ from aioshelly.rpc_device import RpcDevice, RpcUpdateType
 from aioshelly.rpc_device.utils import bluetooth_mac_from_primary_mac
 from propcache.api import cached_property
 
-from homeassistant.components.bluetooth import async_remove_scanner
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.bluetooth import async_remove_scanner
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_HOST,
     CONF_MODEL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     issue_registry as ir,
 )
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .bluetooth import async_connect_scanner
 from .const import (
@@ -145,7 +145,7 @@ class ShellyCoordinatorBase[_DeviceT: BlockDevice | RpcDevice](
         entry.async_on_unload(self._debounced_reload.async_shutdown)
 
         entry.async_on_unload(
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._handle_ha_stop)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, self._handle_ha_stop)
         )
 
     @cached_property

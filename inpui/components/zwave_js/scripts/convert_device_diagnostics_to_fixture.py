@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 
 def get_arguments() -> argparse.Namespace:

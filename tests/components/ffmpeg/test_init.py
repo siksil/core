@@ -2,20 +2,20 @@
 
 from unittest.mock import AsyncMock, MagicMock, Mock, call, patch
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.ffmpeg import DOMAIN, get_ffmpeg_manager
-from homeassistant.components.ffmpeg.services import (
+from inpui.components import ffmpeg
+from inpui.components.ffmpeg import DOMAIN, get_ffmpeg_manager
+from inpui.components.ffmpeg.services import (
     SERVICE_RESTART,
     SERVICE_START,
     SERVICE_STOP,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 
@@ -109,11 +109,11 @@ async def test_setup_component_test_register(hass: HomeAssistant) -> None:
     ffmpeg_dev._async_start_ffmpeg = AsyncMock()
     await ffmpeg_dev.async_added_to_hass()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(ffmpeg_dev._async_start_ffmpeg.mock_calls) == 2
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert len(ffmpeg_dev._async_stop_ffmpeg.mock_calls) == 2
 
@@ -128,11 +128,11 @@ async def test_setup_component_test_register_no_startup(hass: HomeAssistant) -> 
     ffmpeg_dev._async_start_ffmpeg = AsyncMock()
     await ffmpeg_dev.async_added_to_hass()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(ffmpeg_dev._async_start_ffmpeg.mock_calls) == 1
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert len(ffmpeg_dev._async_stop_ffmpeg.mock_calls) == 2
 

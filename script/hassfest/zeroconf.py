@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from homeassistant.loader import (
+from inpui.loader import (
     async_process_zeroconf_match_dict,
     homekit_always_discover,
 )

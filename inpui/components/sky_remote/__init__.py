@@ -4,10 +4,10 @@ import logging
 
 from skyboxremote import RemoteControl, SkyBoxConnectionError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 PLATFORMS = [Platform.REMOTE]
 

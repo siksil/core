@@ -9,15 +9,15 @@ from typing import Any, Literal, cast
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import messages
-from homeassistant.core import HomeAssistant, callback, valid_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import json_bytes
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import (
+from inpui.components import websocket_api
+from inpui.components.websocket_api import messages
+from inpui.core import HomeAssistant, callback, valid_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import json_bytes
+from inpui.helpers.typing import UNDEFINED
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import (
     ApparentPowerConverter,
     AreaConverter,
     BloodGlucoseConcentrationConverter,

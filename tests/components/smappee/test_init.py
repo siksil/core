@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.smappee.const import DOMAIN
-from homeassistant.config_entries import SOURCE_ZEROCONF
-from homeassistant.core import HomeAssistant
+from inpui.components.smappee.const import DOMAIN
+from inpui.config_entries import SOURCE_ZEROCONF
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

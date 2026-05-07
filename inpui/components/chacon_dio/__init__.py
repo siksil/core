@@ -6,14 +6,14 @@ from typing import Any
 
 from dio_chacon_wifi_api import DIOChaconAPIClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_PASSWORD,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -64,7 +64,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ChaconDioConfigEntry) ->
 
     entry.async_on_unload(
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, _async_disconnect_websocket
+            EVENT_INPUI_STOP, _async_disconnect_websocket
         )
     )
 

@@ -16,8 +16,8 @@ from renault_api.kamereon.exceptions import (
 )
 from renault_api.kamereon.models import KamereonVehicleDataAttributes
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import RenaultConfigEntry

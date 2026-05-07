@@ -4,8 +4,8 @@ from google.maps.routing_v2 import Location, Waypoint
 from google.type import latlng_pb2
 import pytest
 
-from homeassistant.components.google_travel_time import helpers
-from homeassistant.core import HomeAssistant
+from inpui.components.google_travel_time import helpers
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize(

@@ -5,18 +5,18 @@ from unittest.mock import AsyncMock, Mock
 from aiohttp import ClientError, ClientResponseError
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.solaredge.const import (
+from inpui.components.recorder import Recorder
+from inpui.components.solaredge.const import (
     CONF_SECTION_API_AUTH,
     CONF_SECTION_WEB_AUTH,
     CONF_SITE_ID,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_IGNORE, SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_IGNORE, SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import API_KEY, PASSWORD, SITE_ID, USERNAME
 

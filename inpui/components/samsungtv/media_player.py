@@ -21,19 +21,19 @@ from async_upnp_client.profiles.dlna import DmrDevice
 from async_upnp_client.utils import async_get_local_ip
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.async_ import create_eager_task
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.async_ import create_eager_task
 
 from .bridge import SamsungTVWSBridge
 from .const import CONF_SSDP_RENDERING_CONTROL_LOCATION, DOMAIN, LOGGER

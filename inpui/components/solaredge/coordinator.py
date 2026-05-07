@@ -10,23 +10,23 @@ from typing import TYPE_CHECKING, Any
 from aiosolaredge import SolarEdge
 from solaredge_web import EnergyData, SolarEdgeWeb, TimeUnit
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, UnitOfEnergy
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util, snakecase
-from homeassistant.util.unit_conversion import EnergyConverter
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, UnitOfEnergy
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util, snakecase
+from inpui.util.unit_conversion import EnergyConverter
 
 from .const import (
     CONF_SITE_ID,

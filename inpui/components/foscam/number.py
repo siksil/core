@@ -8,9 +8,9 @@ from typing import Any
 
 from libpyfoscamcgi import FoscamCamera
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import FoscamConfigEntry, FoscamCoordinator
 from .entity import FoscamEntity

@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from homeassistant.util.percentage import (
+from inpui.util.percentage import (
     scale_ranged_value_to_int_range,
     scale_to_ranged_value,
 )

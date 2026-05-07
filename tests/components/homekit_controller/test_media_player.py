@@ -10,13 +10,13 @@ from aiohomekit.model.characteristics import (
 from aiohomekit.model.services import Service, ServicesTypes
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_test_component
 

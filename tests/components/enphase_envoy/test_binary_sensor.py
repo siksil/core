@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.enphase_envoy.const import Platform
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.enphase_envoy.const import Platform
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock
 from accuweather import ApiError, InvalidApiKeyError
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.accuweather.const import (
+from inpui.components.accuweather.const import (
     DOMAIN,
     UPDATE_INTERVAL_DAILY_FORECAST,
     UPDATE_INTERVAL_OBSERVATION,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

@@ -6,9 +6,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, scene
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
+from inpui.components import mqtt, scene
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
 
 from .common import (
     help_test_availability_when_connection_lost,

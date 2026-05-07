@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

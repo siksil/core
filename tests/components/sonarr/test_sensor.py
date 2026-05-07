@@ -7,15 +7,15 @@ from aiopyarr import ArrException
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
     UnitOfInformation,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

@@ -10,8 +10,8 @@ import pytest
 import requests.exceptions
 import requests_mock
 
-from homeassistant.components.plex import config_flow
-from homeassistant.components.plex.const import (
+from inpui.components.plex import config_flow
+from inpui.components.plex.const import (
     AUTOMATIC_SETUP_STRING,
     CONF_IGNORE_NEW_SHARED_USERS,
     CONF_IGNORE_PLEX_WEB_CLIENTS,
@@ -24,12 +24,12 @@ from homeassistant.components.plex.const import (
     PLEX_SERVER_CONFIG,
     SERVERS,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_INTEGRATION_DISCOVERY,
     SOURCE_USER,
     ConfigEntryState,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,
@@ -38,8 +38,8 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import DEFAULT_OPTIONS, MOCK_SERVERS, MOCK_TOKEN, PLEX_DIRECT_URL
 from .mock_classes import MockGDM

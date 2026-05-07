@@ -4,8 +4,8 @@ import logging
 
 from datadog import DogStatsd, initialize
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_PREFIX,
@@ -13,8 +13,8 @@ from homeassistant.const import (
     EVENT_STATE_CHANGED,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, state as state_helper
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, state as state_helper
 
 from . import config_flow as config_flow
 from .const import CONF_RATE, DOMAIN

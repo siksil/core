@@ -4,22 +4,22 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.components.homeassistant.triggers.state import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.components.homeassistant.triggers.state import (
     async_attach_trigger as async_attach_state_trigger,
     async_validate_trigger_config as async_validate_state_trigger_config,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 

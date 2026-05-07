@@ -11,24 +11,24 @@ from todoist_api_python.api_async import TodoistAPIAsync
 from todoist_api_python.models import Label, Project, Task
 import voluptuous as vol
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     PLATFORM_SCHEMA as CALENDAR_PLATFORM_SCHEMA,
     CalendarEntity,
     CalendarEvent,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ID, CONF_NAME, CONF_TOKEN, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ID, CONF_NAME, CONF_TOKEN, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import (
     ALL_DAY,
@@ -152,7 +152,7 @@ async def async_setup_platform(
     async def _shutdown_coordinator(_: Event) -> None:
         await coordinator.async_shutdown()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _shutdown_coordinator)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _shutdown_coordinator)
 
     # Setup devices:
     # Grab all projects.

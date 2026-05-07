@@ -4,7 +4,7 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     _LOGGER,
     ATTR_FAN_MODE,
     ATTR_HUMIDITY,
@@ -24,15 +24,15 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant
+from inpui.loader import bind_hass
 
 
 async def async_set_preset_mode(

@@ -12,27 +12,27 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.command_line import DOMAIN
-from homeassistant.components.command_line.cover import CommandCover
-from homeassistant.components.cover import (
+from inpui.components.command_line import DOMAIN
+from inpui.components.command_line.cover import CommandCover
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     SCAN_INTERVAL,
     CoverState,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
     SERVICE_STOP_COVER,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import mock_asyncio_subprocess_run
 

@@ -7,10 +7,10 @@ from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
 from homeassistant import setup
-from homeassistant.components import google_assistant as ga, switch
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import google_assistant as ga, switch
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .test_http import DUMMY_CONFIG
 

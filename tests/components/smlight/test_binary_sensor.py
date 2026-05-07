@@ -8,10 +8,10 @@ from pysmlight.sse import MessageEvent
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smlight.const import SCAN_INTERNET_INTERVAL
-from homeassistant.const import STATE_ON, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.smlight.const import SCAN_INTERNET_INTERVAL
+from inpui.const import STATE_ON, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import get_mock_event_function
 from .conftest import setup_integration

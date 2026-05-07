@@ -2,9 +2,9 @@
 
 import logging
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import FliprConfigEntry
 from .entity import FliprEntity

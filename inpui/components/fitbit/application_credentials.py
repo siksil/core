@@ -11,14 +11,14 @@ from typing import Any, cast
 
 import aiohttp
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     AuthImplementation,
     AuthorizationServer,
     ClientCredential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_CLIENT_ID, CONF_CLIENT_SECRET, OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 from .exceptions import FitbitApiException, FitbitAuthException

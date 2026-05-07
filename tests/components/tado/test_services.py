@@ -6,14 +6,14 @@ from unittest.mock import patch
 import pytest
 from requests.exceptions import RequestException
 
-from homeassistant.components.tado.const import (
+from inpui.components.tado.const import (
     CONF_CONFIG_ENTRY,
     CONF_READING,
     DOMAIN,
     SERVICE_ADD_METER_READING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry, async_load_fixture
 

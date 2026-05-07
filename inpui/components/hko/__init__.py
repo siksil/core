@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from hko import LOCATIONS
 
-from homeassistant.const import CONF_LOCATION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_LOCATION, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DEFAULT_DISTRICT, KEY_DISTRICT, KEY_LOCATION
 from .coordinator import HKOConfigEntry, HKOUpdateCoordinator

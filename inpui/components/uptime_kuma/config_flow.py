@@ -15,16 +15,16 @@ from pythonkuma import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from .const import DOMAIN
 

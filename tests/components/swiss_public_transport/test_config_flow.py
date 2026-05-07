@@ -8,8 +8,8 @@ from opendata_transport.exceptions import (
 )
 import pytest
 
-from homeassistant.components.swiss_public_transport import config_flow
-from homeassistant.components.swiss_public_transport.const import (
+from inpui.components.swiss_public_transport import config_flow
+from inpui.components.swiss_public_transport.const import (
     CONF_DESTINATION,
     CONF_START,
     CONF_TIME_FIXED,
@@ -19,9 +19,9 @@ from homeassistant.components.swiss_public_transport.const import (
     CONF_VIA,
     MAX_VIA,
 )
-from homeassistant.components.swiss_public_transport.helper import unique_id_from_config
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.swiss_public_transport.helper import unique_id_from_config
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -8,22 +8,22 @@ from bleak import BleakError
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.bluetooth_le_tracker import device_tracker
-from homeassistant.components.bluetooth_le_tracker.device_tracker import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.bluetooth_le_tracker import device_tracker
+from inpui.components.bluetooth_le_tracker.device_tracker import (
     CONF_TRACK_BATTERY,
     CONF_TRACK_BATTERY_INTERVAL,
 )
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     CONF_SCAN_INTERVAL,
     CONF_TRACK_NEW,
     DOMAIN as DEVICE_TRACKER_DOMAIN,
 )
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, slugify
+from inpui.const import CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, slugify
 
 from tests.common import async_fire_time_changed
 from tests.components.bluetooth import generate_advertisement_data, generate_ble_device

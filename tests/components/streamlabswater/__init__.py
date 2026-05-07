@@ -1,7 +1,7 @@
 """Tests for the StreamLabs integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import MockConfigEntry
 

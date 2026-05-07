@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.device_automation import InvalidDeviceAutomationConfig
-from homeassistant.const import CONF_DEVICE_ID
-from homeassistant.core import CALLBACK_TYPE
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.device_automation import InvalidDeviceAutomationConfig
+from inpui.const import CONF_DEVICE_ID
+from inpui.core import CALLBACK_TYPE
+from inpui.helpers import device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .v1.device_trigger import (
@@ -23,8 +23,8 @@ from .v2.device_trigger import (
 )
 
 if TYPE_CHECKING:
-    from homeassistant.core import HomeAssistant
-    from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
+    from inpui.core import HomeAssistant
+    from inpui.helpers.trigger import TriggerActionType, TriggerInfo
 
     from .bridge import HueConfigEntry
 

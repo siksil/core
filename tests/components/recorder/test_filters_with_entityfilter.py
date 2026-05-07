@@ -6,15 +6,15 @@ import pytest
 from sqlalchemy import select
 from sqlalchemy.engine.row import Row
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.db_schema import EventData, Events, StatesMeta
-from homeassistant.components.recorder.filters import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.db_schema import EventData, Events, StatesMeta
+from inpui.components.recorder.filters import (
     Filters,
     extract_include_exclude_filter_conf,
     sqlalchemy_filter_from_include_exclude_conf,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import (
+from inpui.components.recorder.util import session_scope
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DOMAINS,
     CONF_ENTITIES,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     CONF_INCLUDE,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entityfilter import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entityfilter import (
     CONF_ENTITY_GLOBS,
     convert_include_exclude_filter,
 )

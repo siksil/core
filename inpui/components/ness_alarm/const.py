@@ -2,8 +2,8 @@
 
 from datetime import timedelta
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import Platform
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import Platform
 
 DOMAIN = "ness_alarm"
 

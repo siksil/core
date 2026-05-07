@@ -3,8 +3,8 @@
 from enocean_async import EURID, Address, BaseAddress, ERP1Telegram, SenderAddress
 from enocean_async.esp3.packet import ESP3Packet, ESP3PacketType
 
-from homeassistant.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
+from inpui.helpers.entity import Entity
 
 from .const import LOGGER, SIGNAL_RECEIVE_MESSAGE, SIGNAL_SEND_MESSAGE
 

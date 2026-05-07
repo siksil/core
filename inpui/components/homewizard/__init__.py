@@ -7,13 +7,13 @@ from homewizard_energy import (
     has_v2_api,
 )
 
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import CONF_IP_ADDRESS, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import CONF_IP_ADDRESS, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import HomeWizardConfigEntry, HWEnergyDeviceUpdateCoordinator

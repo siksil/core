@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.kodi.const import DOMAIN
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.kodi.const import DOMAIN
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import init_integration
 

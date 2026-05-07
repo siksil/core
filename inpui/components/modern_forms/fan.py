@@ -7,15 +7,15 @@ from typing import Any
 from aiomodernforms.const import FAN_POWER_OFF, FAN_POWER_ON
 import voluptuous as vol
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from . import modernforms_exception_handler
 from .const import (

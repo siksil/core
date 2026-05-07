@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.switchbot_cloud import SwitchBotAPI
+from inpui.components.switchbot_cloud import SwitchBotAPI
 
 
 @pytest.fixture

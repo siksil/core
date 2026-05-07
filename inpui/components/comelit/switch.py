@@ -7,9 +7,9 @@ from typing import Any, cast
 from aiocomelit import ComelitSerialBridgeObject
 from aiocomelit.const import IRRIGATION, OTHER, STATE_OFF, STATE_ON
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ObjectClassType
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge

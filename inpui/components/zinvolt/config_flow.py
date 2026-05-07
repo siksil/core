@@ -10,9 +10,9 @@ import voluptuous as vol
 from zinvolt import ZinvoltClient
 from zinvolt.exceptions import ZinvoltAuthenticationError, ZinvoltError
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

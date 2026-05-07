@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
     ScannerEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import CONF_IMPORTED_BY, DOMAIN
 from .coordinator import PingConfigEntry, PingUpdateCoordinator

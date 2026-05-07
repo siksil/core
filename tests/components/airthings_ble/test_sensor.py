@@ -8,15 +8,15 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.airthings_ble.const import (
+from inpui.components.airthings_ble.const import (
     DEFAULT_SCAN_INTERVAL,
     DEVICE_MODEL,
     DEVICE_SPECIFIC_SCAN_INTERVAL,
     DOMAIN,
 )
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     CO2_V1,

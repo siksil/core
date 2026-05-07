@@ -1,6 +1,6 @@
 """Consts for IDrive e2 tests."""
 
-from homeassistant.components.idrive_e2.const import (
+from inpui.components.idrive_e2.const import (
     CONF_ACCESS_KEY_ID,
     CONF_BUCKET,
     CONF_ENDPOINT_URL,

@@ -6,18 +6,18 @@ from indevolt_api import TimeOutException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.indevolt.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.indevolt.const import (
     ENERGY_MODE_READ_KEY,
     ENERGY_MODE_WRITE_KEY,
     PORTABLE_MODE,
     REALTIME_ACTION_KEY,
     REALTIME_ACTION_MODE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

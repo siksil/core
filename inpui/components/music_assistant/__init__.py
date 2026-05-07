@@ -24,17 +24,17 @@ from music_assistant_models.errors import (
 )
 from music_assistant_models.player import Player
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_URL, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_URL, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
@@ -47,7 +47,7 @@ from .services import register_actions
 if TYPE_CHECKING:
     from music_assistant_models.event import MassEvent
 
-    from homeassistant.helpers.typing import ConfigType
+    from inpui.helpers.typing import ConfigType
 
 PLATFORMS = [Platform.BUTTON, Platform.MEDIA_PLAYER]
 
@@ -134,7 +134,7 @@ async def async_setup_entry(  # noqa: C901
         await mass.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, on_hass_stop)
     )
 
     # launch the music assistant client listen task in the background

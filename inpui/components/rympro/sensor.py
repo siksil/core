@@ -4,18 +4,18 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import RymProDataUpdateCoordinator

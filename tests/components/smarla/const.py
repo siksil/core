@@ -3,7 +3,7 @@
 import base64
 import json
 
-from homeassistant.const import CONF_ACCESS_TOKEN
+from inpui.const import CONF_ACCESS_TOKEN
 
 
 def _make_mock_user_input(token_json):

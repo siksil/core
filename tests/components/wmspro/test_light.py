@@ -5,18 +5,18 @@ from unittest.mock import AsyncMock, patch
 from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.wmspro.const import DOMAIN
-from homeassistant.components.wmspro.light import SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
+from inpui.components.wmspro.const import DOMAIN
+from inpui.components.wmspro.light import SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_config_entry
 

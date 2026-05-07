@@ -12,14 +12,14 @@ from pysmlight.const import Settings, SettingsProp
 from pysmlight.exceptions import SmlightAuthError, SmlightConnectionError
 from pysmlight.models import AmbilightPayload, FirmwareList
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, LOGGER, SCAN_FIRMWARE_INTERVAL, SCAN_INTERVAL
 

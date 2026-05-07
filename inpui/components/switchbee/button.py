@@ -3,11 +3,11 @@
 from switchbee.api.central_unit import SwitchBeeError
 from switchbee.device import ApiStateCommand, DeviceType
 
-from homeassistant.components.button import ButtonEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SwitchBeeCoordinator

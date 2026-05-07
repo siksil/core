@@ -9,19 +9,19 @@ from typing import Any, Final
 
 from aiohttp import ClientResponseError
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     FanEntity,
     FanEntityDescription,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from .const import DOMAIN, POWER_OFF, POWER_ON, VENTILATION_STEP, MieleAppliance
 from .coordinator import MieleConfigEntry, MieleDataUpdateCoordinator

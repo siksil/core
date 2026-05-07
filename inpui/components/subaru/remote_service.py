@@ -4,7 +4,7 @@ import logging
 
 from subarulink.exceptions import SubaruException
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import SERVICE_UNLOCK, VEHICLE_NAME, VEHICLE_VIN
 

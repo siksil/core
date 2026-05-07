@@ -8,10 +8,10 @@ import pytest
 import roborock
 from roborock.data import DnDTimer, RoborockBaseTimer, ValleyElectricityTimer
 
-from homeassistant.components.time import SERVICE_SET_VALUE
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.time import SERVICE_SET_VALUE
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import FakeDevice
 

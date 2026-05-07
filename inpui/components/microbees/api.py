@@ -1,8 +1,8 @@
 """API for microBees bound to Home Assistant OAuth."""
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class ConfigEntryAuth:

@@ -5,10 +5,10 @@ from unittest.mock import MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_HEATER_STATUS
 

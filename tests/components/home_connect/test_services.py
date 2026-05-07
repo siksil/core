@@ -17,19 +17,19 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components import home_connect
-from homeassistant.components.home_connect.const import (
+from inpui.components import home_connect
+from inpui.components.home_connect.const import (
     DOMAIN,
     PROGRAM_ENUM_OPTIONS,
     TRANSLATION_KEYS_PROGRAMS_MAP,
 )
-from homeassistant.components.home_connect.services import PROGRAM_OPTIONS
-from homeassistant.components.home_connect.utils import bsh_key_to_translation_key
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.components.home_connect.services import PROGRAM_OPTIONS
+from inpui.components.home_connect.utils import bsh_key_to_translation_key
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
+from inpui.util.yaml import load_yaml_dict
 
 from tests.common import MockConfigEntry
 

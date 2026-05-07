@@ -11,10 +11,10 @@ from typing import TYPE_CHECKING, Any
 from pysqueezebox import Player, Server
 from pysqueezebox.player import Alarm
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import SqueezeboxConfigEntry

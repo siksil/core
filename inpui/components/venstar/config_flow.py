@@ -5,16 +5,16 @@ from typing import Any
 from venstarcolortouch import VenstarColorTouch
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PIN,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import _LOGGER, DOMAIN, VENSTAR_TIMEOUT
 

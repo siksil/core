@@ -1,9 +1,9 @@
 """Device tracker platform for fressnapf_tracker."""
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import TrackerEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.device_tracker import SourceType
+from inpui.components.device_tracker.config_entry import TrackerEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FressnapfTrackerConfigEntry, FressnapfTrackerDataUpdateCoordinator
 from .entity import FressnapfTrackerBaseEntity

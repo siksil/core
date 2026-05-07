@@ -8,7 +8,7 @@ from aiohomekit.model.characteristics import CharacteristicsTypes
 from aiohomekit.model.services import Service, ServicesTypes
 from propcache.api import cached_property
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverDeviceClass,
@@ -16,10 +16,10 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import KNOWN_DEVICES
 from .connection import HKDevice

@@ -9,10 +9,10 @@ from sqlalchemy.engine import Result
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import scoped_session
 
-from homeassistant.components.recorder import CONF_DB_URL, get_instance
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.recorder import CONF_DB_URL, get_instance
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_NAME,
@@ -21,22 +21,22 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     MATCH_ALL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady, TemplateError
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady, TemplateError
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.template import Template
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
     ManualTriggerSensorEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_ADVANCED_OPTIONS, CONF_COLUMN_NAME, CONF_QUERY, DOMAIN
 from .util import (

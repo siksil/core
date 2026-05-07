@@ -12,16 +12,16 @@ from proxmoxer.core import ResourceException
 import requests
 from requests.exceptions import ConnectTimeout, SSLError
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, ProxmoxPermission
 from .coordinator import ProxmoxConfigEntry, ProxmoxCoordinator, ProxmoxNodeData

@@ -1,7 +1,7 @@
 """Tests for ESPHome websocket API."""
 
-from homeassistant.components.esphome.const import CONF_NOISE_PSK
-from homeassistant.components.esphome.websocket_api import ENTRY_ID, TYPE
+from inpui.components.esphome.const import CONF_NOISE_PSK
+from inpui.components.esphome.websocket_api import ENTRY_ID, TYPE
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

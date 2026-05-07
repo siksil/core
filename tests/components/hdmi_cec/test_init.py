@@ -8,7 +8,7 @@ from unittest.mock import ANY, MagicMock, PropertyMock, call, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.hdmi_cec import (
+from inpui.components.hdmi_cec import (
     DOMAIN,
     EVENT_HDMI_CEC_UNAVAILABLE,
     SERVICE_POWER_ON,
@@ -24,10 +24,10 @@ from homeassistant.components.hdmi_cec import (
     PhysicalAddress,
     parse_mapping,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import assert_key_press_release
 from .conftest import HDMINetworkCreator
@@ -119,11 +119,11 @@ async def test_setup_cec_adapter(
 
     mock_hdmi_network_instance = mock_hdmi_network.return_value
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     mock_hdmi_network_instance.start.assert_called_once_with()
     mock_hdmi_network_instance.set_new_device_callback.assert_called_once()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_hdmi_network_instance.stop.assert_called_once_with()
 
@@ -154,11 +154,11 @@ async def test_setup_tcp_adapter(
 
     mock_hdmi_network_instance = mock_hdmi_network.return_value
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     mock_hdmi_network_instance.start.assert_called_once_with()
     mock_hdmi_network_instance.set_new_device_callback.assert_called_once()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_hdmi_network_instance.stop.assert_called_once_with()
 

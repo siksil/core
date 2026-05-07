@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .helpers import get_zha_gateway
 

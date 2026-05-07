@@ -9,17 +9,17 @@ from ical.calendar_stream import IcsCalendarStream
 from ical.store import TodoStore
 from ical.todo import Todo, TodoStatus
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     TodoItem,
     TodoItemStatus,
     TodoListEntity,
     TodoListEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util import dt as dt_util
 
 from . import LocalTodoConfigEntry
 from .const import CONF_TODO_LIST_NAME

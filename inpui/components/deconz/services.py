@@ -5,13 +5,13 @@ from typing import TYPE_CHECKING
 from pydeconz.utils import normalize_bridge_id
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from .const import CONF_BRIDGE_ID, DOMAIN, LOGGER
 from .hub import DeconzHub

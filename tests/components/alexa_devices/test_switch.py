@@ -8,21 +8,21 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alexa_devices.coordinator import SCAN_INTERVAL
-from homeassistant.components.switch import (
+from inpui.components.alexa_devices.coordinator import SCAN_INTERVAL
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .conftest import TEST_DEVICE_1, TEST_DEVICE_1_SN

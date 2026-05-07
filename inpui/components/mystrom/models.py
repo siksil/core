@@ -7,7 +7,7 @@ from pymystrom.bulb import MyStromBulb
 from pymystrom.pir import MyStromPir
 from pymystrom.switch import MyStromSwitch
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type MyStromConfigEntry = ConfigEntry[MyStromData]
 

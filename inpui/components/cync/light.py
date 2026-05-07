@@ -5,7 +5,7 @@ from typing import Any
 from pycync import CyncLight
 from pycync.devices.capabilities import CyncCapability
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_RGB_COLOR,
@@ -13,10 +13,10 @@ from homeassistant.components.light import (
     LightEntity,
     filter_supported_color_modes,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import value_to_brightness
-from homeassistant.util.scaling import scale_ranged_value_to_int_range
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import value_to_brightness
+from inpui.util.scaling import scale_ranged_value_to_int_range
 
 from .coordinator import CyncConfigEntry, CyncCoordinator
 from .entity import CyncBaseEntity

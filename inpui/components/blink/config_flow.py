@@ -10,16 +10,16 @@ from blinkpy.auth import Auth, BlinkTwoFARequiredError, LoginError, TokenRefresh
 from blinkpy.blinkpy import Blink, BlinkSetupError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_PIN, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_PASSWORD, CONF_PIN, CONF_USERNAME
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, HARDWARE_ID
 

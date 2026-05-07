@@ -9,7 +9,7 @@ from typing import Any
 from pymta import LINE_TO_FEED, BusFeed, MTAFeedError, SubwayFeed
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlow,
@@ -17,10 +17,10 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

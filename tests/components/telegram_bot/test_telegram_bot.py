@@ -27,12 +27,12 @@ from telegram.error import (
     TimedOut,
 )
 
-from homeassistant.components.telegram_bot import (
+from inpui.components.telegram_bot import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     async_setup_entry,
 )
-from homeassistant.components.telegram_bot.const import (
+from inpui.components.telegram_bot.const import (
     ATTR_AUTHENTICATION,
     ATTR_CALLBACK_QUERY_ID,
     ATTR_CAPTION,
@@ -91,9 +91,9 @@ from homeassistant.components.telegram_bot.const import (
     SERVICE_SEND_VIDEO,
     SERVICE_SEND_VOICE,
 )
-from homeassistant.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
     ATTR_SERVICE,
@@ -103,15 +103,15 @@ from homeassistant.const import (
     HTTP_BEARER_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import Context, Event, HomeAssistant, ServiceResponse
-from homeassistant.exceptions import (
+from inpui.core import Context, Event, HomeAssistant, ServiceResponse
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers.issue_registry import IssueRegistry
-from homeassistant.util import json as json_util
-from homeassistant.util.file import write_utf8_file
+from inpui.helpers.issue_registry import IssueRegistry
+from inpui.util import json as json_util
+from inpui.util.file import write_utf8_file
 
 from tests.common import MockConfigEntry, async_capture_events, async_load_fixture
 from tests.typing import ClientSessionGenerator

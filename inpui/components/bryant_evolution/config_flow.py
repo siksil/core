@@ -8,8 +8,8 @@ from typing import Any
 from evolutionhttp import BryantEvolutionLocalClient
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_FILENAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_FILENAME
 
 from .const import CONF_SYSTEM_ZONE, DOMAIN
 

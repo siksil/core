@@ -5,20 +5,20 @@ from __future__ import annotations
 import enum
 import logging
 
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     probe_silabs_firmware_type,
 )
-from homeassistant.components.homeassistant_sky_connect import (
+from inpui.components.homeassistant_sky_connect import (
     hardware as skyconnect_hardware,
 )
-from homeassistant.components.homeassistant_yellow import (
+from inpui.components.homeassistant_yellow import (
     RADIO_DEVICE as YELLOW_RADIO_DEVICE,
     hardware as yellow_hardware,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
 
 from ..const import DOMAIN
 

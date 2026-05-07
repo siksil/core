@@ -1,8 +1,8 @@
 """Provides conditions for device trackers."""
 
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import Condition, make_entity_state_condition
+from inpui.const import STATE_HOME, STATE_NOT_HOME
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import Condition, make_entity_state_condition
 
 from .const import DOMAIN
 

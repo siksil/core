@@ -13,34 +13,34 @@ from hass_nabucasa.voice_data import TTS_VOICES
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
     STORAGE_KEY,
 )
-from homeassistant.components.cloud.const import DEFAULT_TTS_DEFAULT_VOICE, DOMAIN
-from homeassistant.components.cloud.tts import (
+from inpui.components.cloud.const import DEFAULT_TTS_DEFAULT_VOICE, DOMAIN
+from inpui.components.cloud.tts import (
     DEFAULT_VOICES,
     PLATFORM_SCHEMA,
     SUPPORT_LANGUAGES,
     Voice,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     ATTR_LANGUAGE,
     ATTR_MEDIA_PLAYER_ENTITY_ID,
     ATTR_MESSAGE,
     DOMAIN as TTS_DOMAIN,
     get_engine_instance,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.setup import async_setup_component
 
 from . import PIPELINE_DATA
 

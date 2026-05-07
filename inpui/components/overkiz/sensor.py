@@ -9,13 +9,13 @@ from typing import cast
 from pyoverkiz.enums import OverkizAttribute, OverkizState, UIWidget
 from pyoverkiz.types import StateType as OverkizStateType
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     LIGHT_LUX,
     PERCENTAGE,
@@ -29,10 +29,10 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import OverkizDataConfigEntry
 from .const import (

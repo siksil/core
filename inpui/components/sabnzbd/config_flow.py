@@ -8,18 +8,18 @@ from typing import Any
 import voluptuous as vol
 import yarl
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 from .const import DOMAIN
 from .helpers import get_client

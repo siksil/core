@@ -5,7 +5,7 @@ from unittest.mock import ANY, AsyncMock, MagicMock
 from pycync.exceptions import AuthFailedError, CyncError, TwoFactorRequiredError
 import pytest
 
-from homeassistant.components.cync.const import (
+from inpui.components.cync.const import (
     CONF_AUTHORIZE_STRING,
     CONF_EXPIRES_AT,
     CONF_REFRESH_TOKEN,
@@ -13,10 +13,10 @@ from homeassistant.components.cync.const import (
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import MOCKED_EMAIL, MOCKED_USER, SECOND_MOCKED_USER
 

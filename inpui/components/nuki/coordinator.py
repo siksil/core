@@ -12,11 +12,11 @@ from pynuki.bridge import InvalidCredentialsException
 from pynuki.device import NukiDevice
 from requests.exceptions import RequestException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, ERROR_STATES
 from .helpers import parse_id

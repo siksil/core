@@ -4,13 +4,13 @@ from typing import Any
 
 from aiowithings import AUTHORIZATION_URL, TOKEN_URL
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     AuthImplementation,
     AuthorizationServer,
     ClientCredential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import DOMAIN
 

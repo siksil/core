@@ -10,7 +10,7 @@ from androidtv.constants import APPS as ANDROIDTV_APPS, KEYS
 from androidtv.exceptions import LockNotAcquiredException
 import pytest
 
-from homeassistant.components.androidtv.const import (
+from inpui.components.androidtv.const import (
     CONF_APPS,
     CONF_EXCLUDE_UNNAMED_APPS,
     CONF_SCREENCAP_INTERVAL,
@@ -21,11 +21,11 @@ from homeassistant.components.androidtv.const import (
     DEFAULT_PORT,
     DOMAIN,
 )
-from homeassistant.components.androidtv.services import (
+from inpui.components.androidtv.services import (
     ATTR_DEVICE_PATH,
     ATTR_LOCAL_PATH,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_VOLUME_LEVEL,
     ATTR_MEDIA_VOLUME_MUTED,
@@ -42,12 +42,12 @@ from homeassistant.components.media_player import (
     SERVICE_VOLUME_SET,
     SERVICE_VOLUME_UP,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     CONF_DEVICE_CLASS,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_IDLE,
@@ -55,10 +55,10 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import slugify
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import slugify
+from inpui.util.dt import utcnow
 
 from . import patchers
 from .common import (
@@ -1073,7 +1073,7 @@ async def test_connection_closed_on_ha_stop(hass: HomeAssistant) -> None:
         await hass.async_block_till_done()
 
         with patch("androidtv.basetv.basetv_async.BaseTVAsync.adb_close") as adb_close:
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+            hass.bus.async_fire(EVENT_INPUI_STOP)
             await hass.async_block_till_done()
             assert adb_close.called
 

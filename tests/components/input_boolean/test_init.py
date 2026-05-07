@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.input_boolean import CONF_INITIAL, DOMAIN, is_on
-from homeassistant.const import (
+from inpui.components.input_boolean import CONF_INITIAL, DOMAIN, is_on
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -20,9 +20,9 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, mock_component, mock_restore_cache
 from tests.typing import WebSocketGenerator

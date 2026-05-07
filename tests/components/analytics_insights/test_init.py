@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.analytics_insights import CONF_TRACKED_APPS
-from homeassistant.components.analytics_insights.const import (
+from inpui.components.analytics_insights import CONF_TRACKED_APPS
+from inpui.components.analytics_insights.const import (
     CONF_TRACKED_INTEGRATIONS,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

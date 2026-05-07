@@ -15,16 +15,16 @@ from tesla_fleet_api.exceptions import (
 from tesla_fleet_api.tessie import Tessie
 from tessie_api import get_state_of_all_vehicles
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN, MODELS
 from .coordinator import (

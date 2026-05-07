@@ -16,26 +16,26 @@ from switchbot import (
 )
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_PASSWORD,
     CONF_SENSOR_TYPE,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     CONF_CURTAIN_SPEED,

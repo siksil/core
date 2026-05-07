@@ -29,18 +29,18 @@ from aiohasupervisor.models import (
 )
 import voluptuous as vol
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.auth.models import RefreshToken
-from homeassistant.components import frontend, panel_custom
-from homeassistant.components.homeassistant import async_set_stop_handler
-from homeassistant.components.http import (
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.auth.models import RefreshToken
+from inpui.components import frontend, panel_custom
+from inpui.components.homeassistant import async_set_stop_handler
+from inpui.components.http import (
     CONF_SERVER_HOST,
     CONF_SERVER_PORT,
     CONF_SSL_CERTIFICATE,
     StaticPathConfig,
 )
-from homeassistant.config_entries import SOURCE_SYSTEM, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_SYSTEM, ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_NAME,
     EVENT_CORE_CONFIG_UPDATE,
@@ -48,7 +48,7 @@ from homeassistant.const import (
     SERVER_PORT,
     Platform,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     HassJob,
     HomeAssistant,
@@ -56,20 +56,20 @@ from homeassistant.core import (
     async_get_hass_or_none,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery_flow,
     issue_registry as ir,
     selector,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.dt import now
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_call_later
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.typing import ConfigType
+from inpui.util.async_ import create_eager_task
+from inpui.util.dt import now
 
 # config_flow, diagnostics, system_health, and entity platforms are imported to
 # ensure other dependencies that wait for hassio are not waiting

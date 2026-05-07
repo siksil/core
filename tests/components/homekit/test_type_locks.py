@@ -4,20 +4,20 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import lock
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.event import EventDeviceClass
-from homeassistant.components.homekit.accessories import HomeBridge
-from homeassistant.components.homekit.const import (
+from inpui.components import lock
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.event import EventDeviceClass
+from inpui.components.homekit.accessories import HomeBridge
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     CHAR_PROGRAMMABLE_SWITCH_EVENT,
     CONF_LINKED_DOORBELL_SENSOR,
     SERV_DOORBELL,
     SERV_STATELESS_PROGRAMMABLE_SWITCH,
 )
-from homeassistant.components.homekit.type_locks import Lock
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.const import (
+from inpui.components.homekit.type_locks import Lock
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.const import (
     ATTR_CODE,
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
@@ -26,9 +26,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_mock_service
 

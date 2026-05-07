@@ -13,10 +13,10 @@ from renault_api.kamereon.exceptions import (
 )
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ASSUMED_STATE, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ASSUMED_STATE, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import _get_fixtures, patch_get_vehicle_data
 

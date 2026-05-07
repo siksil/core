@@ -5,9 +5,9 @@ from typing import Any
 
 from dio_chacon_wifi_api.const import DeviceTypeEnum
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ChaconDioConfigEntry
 from .entity import ChaconDioEntity

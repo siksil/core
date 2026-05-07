@@ -7,7 +7,7 @@ from aioshelly.const import MODEL_PLUG, MODEL_WALL_DISPLAY
 from aioshelly.exceptions import DeviceConnectionError, RpcCallError
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     BLE_SCANNER_FIRMWARE_UNSUPPORTED_ISSUE_ID,
     COIOT_UNCONFIGURED_ISSUE_ID,
     CONF_BLE_SCANNER_MODE,
@@ -19,10 +19,10 @@ from homeassistant.components.shelly.const import (
     BLEScannerMode,
     DeprecatedFirmwareInfo,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.network import NoURLAvailableError
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.network import NoURLAvailableError
+from inpui.setup import async_setup_component
 
 from . import MOCK_MAC, init_integration, mock_block_device_push_update_failure
 

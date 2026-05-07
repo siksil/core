@@ -9,12 +9,12 @@ from PyViCare.PyViCareUtils import (
 )
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.vicare.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.vicare.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import MOCK_MAC, MODULE
 

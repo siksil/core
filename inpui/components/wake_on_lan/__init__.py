@@ -6,11 +6,11 @@ import logging
 import voluptuous as vol
 import wakeonlan
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, PLATFORMS
 

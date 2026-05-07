@@ -3,11 +3,11 @@
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.weatherflow_cloud.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.weatherflow_cloud.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

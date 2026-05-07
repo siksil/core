@@ -6,18 +6,18 @@ from aiohttp.client_exceptions import ClientError
 from nettigo_air_monitor import ApiError, AuthFailedError
 import pytest
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     SERVICE_PRESS,
     ButtonDeviceClass,
 )
-from homeassistant.components.nam import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.nam import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import init_integration
 

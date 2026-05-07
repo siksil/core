@@ -5,10 +5,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import thread
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.thread import ThreadWithException
+from inpui.core import HomeAssistant
+from inpui.util import thread
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.thread import ThreadWithException
 
 
 async def test_thread_with_exception_invalid(hass: HomeAssistant) -> None:

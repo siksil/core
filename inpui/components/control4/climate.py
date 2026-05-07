@@ -9,7 +9,7 @@ from typing import Any
 from pyControl4.climate import C4Climate
 from pyControl4.error_handling import C4Exception
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
     ClimateEntity,
@@ -17,10 +17,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from . import Control4ConfigEntry, Control4RuntimeData, get_items_of_category
 from .const import CONTROL4_ENTITY_TYPE

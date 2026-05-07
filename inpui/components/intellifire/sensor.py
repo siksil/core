@@ -6,16 +6,16 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utcnow
+from inpui.const import EntityCategory, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utcnow
 
 from .const import API_MODE_CLOUD, API_MODE_LOCAL
 from .coordinator import IntellifireConfigEntry, IntellifireDataUpdateCoordinator

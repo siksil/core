@@ -17,7 +17,7 @@ from pypck.connection import (
 )
 from pypck.lcn_defs import LcnEvent
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITIES,
@@ -28,14 +28,14 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_ACKNOWLEDGE,

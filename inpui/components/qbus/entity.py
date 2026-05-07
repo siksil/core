@@ -11,9 +11,9 @@ from qbusmqttapi.discovery import QbusMqttDevice, QbusMqttOutput
 from qbusmqttapi.factory import QbusMqttMessageFactory, QbusMqttTopicFactory
 from qbusmqttapi.state import QbusMqttState
 
-from homeassistant.components.mqtt import ReceiveMessage, client as mqtt
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
-from homeassistant.helpers.entity import Entity
+from inpui.components.mqtt import ReceiveMessage, client as mqtt
+from inpui.helpers.device_registry import DeviceInfo, format_mac
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import QbusControllerCoordinator

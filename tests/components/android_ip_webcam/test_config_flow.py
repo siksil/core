@@ -5,9 +5,9 @@ from unittest.mock import Mock, patch
 import aiohttp
 
 from homeassistant import config_entries
-from homeassistant.components.android_ip_webcam.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.android_ip_webcam.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .test_init import MOCK_CONFIG_DATA
 

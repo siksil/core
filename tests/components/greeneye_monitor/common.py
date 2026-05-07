@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock
 
-from homeassistant.components.greeneye_monitor import (
+from inpui.components.greeneye_monitor import (
     CONF_CHANNELS,
     CONF_COUNTED_QUANTITY,
     CONF_COUNTED_QUANTITY_PER_PULSE,
@@ -19,15 +19,15 @@ from homeassistant.components.greeneye_monitor import (
     CONF_VOLTAGE_SENSORS,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PORT,
     CONF_SENSORS,
     CONF_TEMPERATURE_UNIT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 SINGLE_MONITOR_SERIAL_NUMBER = 110011
 

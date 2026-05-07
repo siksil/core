@@ -6,14 +6,14 @@ from ipaddress import ip_address
 from unittest.mock import MagicMock, patch
 
 from homeassistant import config_entries
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.components.sonos.const import DATA_SONOS_DISCOVERY_MANAGER, DOMAIN
-from homeassistant.const import CONF_HOSTS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.components.sonos.const import DATA_SONOS_DISCOVERY_MANAGER, DOMAIN
+from inpui.const import CONF_HOSTS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.setup import async_setup_component
 
 
 async def test_user_form(

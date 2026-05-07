@@ -13,9 +13,9 @@ from pyliebherrhomeapi import (
     ZonePosition,
 )
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER, REFRESH_DELAY
 from .coordinator import LiebherrCoordinator

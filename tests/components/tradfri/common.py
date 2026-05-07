@@ -9,8 +9,8 @@ from pytradfri.const import ATTR_ID
 from pytradfri.device import Device
 from pytradfri.gateway import Gateway
 
-from homeassistant.components import tradfri
-from homeassistant.core import HomeAssistant
+from inpui.components import tradfri
+from inpui.core import HomeAssistant
 
 from . import GATEWAY_ID
 

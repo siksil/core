@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 from pyuptimerobot import UptimeRobotAuthenticationException
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.uptimerobot.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.uptimerobot.const import (
     ATTRIBUTION,
     COORDINATOR_UPDATE_INTERVAL,
 )
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import (
     MOCK_UPTIMEROBOT_MONITOR,

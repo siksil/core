@@ -8,19 +8,19 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.sensor import CONF_STATE_CLASS, SensorStateClass
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import section
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import websocket_api
+from inpui.components.sensor import CONF_STATE_CLASS, SensorStateClass
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import section
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     DurationSelector,
     DurationSelectorConfig,
     EntitySelector,
@@ -33,7 +33,7 @@ from homeassistant.helpers.selector import (
     TemplateSelector,
     TextSelector,
 )
-from homeassistant.helpers.template import Template
+from inpui.helpers.template import Template
 
 from .const import (
     CONF_DURATION,

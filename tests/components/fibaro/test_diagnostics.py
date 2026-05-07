@@ -4,9 +4,9 @@ from unittest.mock import Mock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fibaro import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.fibaro import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import TEST_SERIALNUMBER, init_integration
 

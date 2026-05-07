@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, Any
 
 from aiostreammagic import StreamMagicClient
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import CambridgeAudioConfigEntry
 from .entity import CambridgeAudioEntity, command

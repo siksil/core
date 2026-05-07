@@ -2,23 +2,23 @@
 
 from __future__ import annotations
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     Forecast,
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfLength,
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, SupportsResponse, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, SupportsResponse, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_platform
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OpenweathermapConfigEntry
 from .const import (

@@ -2,9 +2,9 @@
 
 from requests import ConnectTimeout
 
-from homeassistant.components.canary.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.canary.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

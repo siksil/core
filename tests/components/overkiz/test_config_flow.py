@@ -17,11 +17,11 @@ from pyoverkiz.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.overkiz.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.overkiz.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

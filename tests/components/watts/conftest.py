@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from visionpluspython.models import Device, create_device_from_data
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.watts.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.watts.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

@@ -1,11 +1,11 @@
 """Test the Rainforest Eagle diagnostics."""
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.rainforest_eagle.const import (
+from inpui.components.diagnostics import REDACTED
+from inpui.components.rainforest_eagle.const import (
     CONF_CLOUD_ID,
     CONF_INSTALL_CODE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MOCK_200_RESPONSE_WITHOUT_PRICE
 

@@ -7,9 +7,9 @@ from collections.abc import Mapping
 from google_nest_sdm.device import Device
 from google_nest_sdm.device_traits import ConnectivityTrait, InfoTrait
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import CONNECTIVITY_TRAIT_OFFLINE, DOMAIN
 

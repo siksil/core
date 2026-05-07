@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.threshold.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.threshold.const import (
     ATTR_HYSTERESIS,
     ATTR_LOWER,
     ATTR_POSITION,
@@ -22,7 +22,7 @@ from homeassistant.components.threshold.const import (
     TYPE_RANGE,
     TYPE_UPPER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
@@ -35,9 +35,9 @@ from homeassistant.const import (
     Platform,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

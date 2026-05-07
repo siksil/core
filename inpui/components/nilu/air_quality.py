@@ -23,21 +23,21 @@ from niluclient import (
 )
 import voluptuous as vol
 
-from homeassistant.components.air_quality import (
+from inpui.components.air_quality import (
     PLATFORM_SCHEMA as AIR_QUALITY_PLATFORM_SCHEMA,
     AirQualityEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_NAME,
     CONF_SHOW_ON_MAP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import Throttle
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import Throttle
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -7,7 +7,7 @@ import zoneinfo
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_DUE_DATETIME,
@@ -21,15 +21,15 @@ from homeassistant.components.todo import (
     TodoListEntityFeature,
     TodoServices,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotSupported,
     ServiceValidationError,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import create_mock_platform
 

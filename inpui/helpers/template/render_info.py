@@ -7,10 +7,10 @@ from collections.abc import Callable
 from contextvars import ContextVar
 from typing import TYPE_CHECKING, cast
 
-from homeassistant.core import split_entity_id
+from inpui.core import split_entity_id
 
 if TYPE_CHECKING:
-    from homeassistant.exceptions import TemplateError
+    from inpui.exceptions import TemplateError
 
     from . import Template
 

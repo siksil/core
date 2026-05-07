@@ -2,8 +2,8 @@
 
 from homematicip.base.enums import ValveState
 
-from homeassistant.components.homematicip_cloud import DOMAIN
-from homeassistant.components.homematicip_cloud.entity import (
+from inpui.components.homematicip_cloud import DOMAIN
+from inpui.components.homematicip_cloud.entity import (
     ATTR_CONFIG_PENDING,
     ATTR_DEVICE_OVERHEATED,
     ATTR_DEVICE_OVERLOADED,
@@ -12,8 +12,8 @@ from homeassistant.components.homematicip_cloud.entity import (
     ATTR_RSSI_DEVICE,
     ATTR_RSSI_PEER,
 )
-from homeassistant.components.homematicip_cloud.hap import HomematicipHAP
-from homeassistant.components.homematicip_cloud.sensor import (
+from inpui.components.homematicip_cloud.hap import HomematicipHAP
+from inpui.components.homematicip_cloud.sensor import (
     ATTR_ACCELERATION_SENSOR_NEUTRAL_POSITION,
     ATTR_ACCELERATION_SENSOR_SECOND_TRIGGER_ANGLE,
     ATTR_ACCELERATION_SENSOR_TRIGGER_ANGLE,
@@ -26,8 +26,8 @@ from homeassistant.components.homematicip_cloud.sensor import (
     ATTR_WIND_DIRECTION,
     ATTR_WIND_DIRECTION_VARIATION,
 )
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorStateClass
-from homeassistant.const import (
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorStateClass
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     LIGHT_LUX,
     PERCENTAGE,
@@ -39,8 +39,8 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

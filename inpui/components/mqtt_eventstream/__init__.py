@@ -5,23 +5,23 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import valid_publish_topic, valid_subscribe_topic
-from homeassistant.const import (
+from inpui.components import mqtt
+from inpui.components.mqtt import valid_publish_topic, valid_subscribe_topic
+from inpui.const import (
     ATTR_SERVICE_DATA,
     EVENT_CALL_SERVICE,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
     MATCH_ALL,
 )
-from homeassistant.core import EventOrigin, HomeAssistant, State, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import EventOrigin, HomeAssistant, State, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -48,11 +48,11 @@ CONFIG_SCHEMA = vol.Schema(
 )
 
 BLOCKED_EVENTS = [
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
+    EVENT_INPUI_FINAL_WRITE,
 ]
 
 

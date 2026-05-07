@@ -5,9 +5,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityFeature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LoqedConfigEntry, LoqedDataCoordinator
 from .entity import LoqedEntity

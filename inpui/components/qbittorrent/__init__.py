@@ -5,8 +5,8 @@ from typing import Any
 
 from qbittorrentapi import APIConnectionError, Forbidden403Error, LoginFailed
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_PASSWORD,
     CONF_URL,
@@ -14,10 +14,10 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
-from homeassistant.exceptions import ConfigEntryNotReady, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse
+from inpui.exceptions import ConfigEntryNotReady, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     DOMAIN,

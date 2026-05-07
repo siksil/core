@@ -4,17 +4,17 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.icloud.account import IcloudAccount
-from homeassistant.components.icloud.const import (
+from inpui.components.icloud.account import IcloudAccount
+from inpui.components.icloud.const import (
     CONF_GPS_ACCURACY_THRESHOLD,
     CONF_MAX_INTERVAL,
     CONF_WITH_FAMILY,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.storage import Store
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.storage import Store
 
 from .const import DEVICE, MOCK_CONFIG, USER_INFO, USERNAME
 

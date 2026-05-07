@@ -8,14 +8,14 @@ from typing import Any
 
 from aioridwell.model import RidwellAccount
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, SENSOR_TYPE_NEXT_PICKUP
 from .coordinator import RidwellDataUpdateCoordinator

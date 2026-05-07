@@ -5,7 +5,7 @@ import json
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_common import get_device_discovery_payload, send_discovery_message
 

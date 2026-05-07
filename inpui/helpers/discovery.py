@@ -12,9 +12,9 @@ from collections.abc import Callable, Coroutine
 from typing import Any, TypedDict
 
 from homeassistant import core, setup
-from homeassistant.const import Platform
-from homeassistant.loader import bind_hass
-from homeassistant.util.signal_type import SignalTypeFormat
+from inpui.const import Platform
+from inpui.loader import bind_hass
+from inpui.util.signal_type import SignalTypeFormat
 
 from .dispatcher import async_dispatcher_connect, async_dispatcher_send_internal
 from .typing import ConfigType, DiscoveryInfoType

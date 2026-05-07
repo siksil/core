@@ -24,15 +24,15 @@ from pyisy.constants import (
 from pyisy.helpers import EventListener, NodeProperty
 from pyisy.nodes import Node, NodeChangedEvent
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     _LOGGER,

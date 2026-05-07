@@ -9,15 +9,15 @@ from syrupy.assertion import SnapshotAssertion
 from trmnl.exceptions import TRMNLError
 from trmnl.models import Device
 
-from homeassistant.components.time import (
+from inpui.components.time import (
     ATTR_TIME,
     DOMAIN as TIME_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

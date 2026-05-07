@@ -7,9 +7,9 @@ from typing import Any
 from dwdwfsapi import DwdWeatherWarningsAPI
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.selector import EntitySelector, EntitySelectorConfig
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.selector import EntitySelector, EntitySelectorConfig
 
 from .const import CONF_REGION_DEVICE_TRACKER, CONF_REGION_IDENTIFIER, DOMAIN
 from .exceptions import EntityNotFoundError

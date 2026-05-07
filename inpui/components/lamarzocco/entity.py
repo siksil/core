@@ -7,14 +7,14 @@ from typing import cast
 from pylamarzocco.const import FirmwareType, MachineState, WidgetType
 from pylamarzocco.models import MachineStatus
 
-from homeassistant.const import CONF_ADDRESS, CONF_MAC
-from homeassistant.helpers.device_registry import (
+from inpui.const import CONF_ADDRESS, CONF_MAC
+from inpui.helpers.device_registry import (
     CONNECTION_BLUETOOTH,
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
 )
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import (

@@ -9,7 +9,7 @@ from zwave_js_server.const.command_class.window_covering import (
     WindowCoveringPropertyKey,
 )
 
-from homeassistant.const import APPLICATION_NAME, __version__ as HA_VERSION
+from inpui.const import APPLICATION_NAME, __version__ as HA_VERSION
 
 LR_ADDON_VERSION = AwesomeVersion("0.5.0")
 ESPHOME_ADDON_VERSION = AwesomeVersion("0.24.0")

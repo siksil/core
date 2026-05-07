@@ -8,19 +8,19 @@ import time
 from webio_api import Zone as NASwebZone
 from webio_api.const import STATE_ZONE_ALARM, STATE_ZONE_ARMED, STATE_ZONE_DISARMED
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.helpers.entity_registry as er
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.helpers.entity_registry as er
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.helpers.update_coordinator import (
     BaseCoordinatorEntity,
     BaseDataUpdateCoordinatorProtocol,
 )

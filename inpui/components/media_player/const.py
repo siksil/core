@@ -2,7 +2,7 @@
 
 from enum import IntFlag, StrEnum
 
-from homeassistant.helpers.deprecation import EnumWithDeprecatedMembers
+from inpui.helpers.deprecation import EnumWithDeprecatedMembers
 
 # How long our auth signature on the content should be valid for
 CONTENT_AUTH_EXPIRY_TIME = 3600 * 24

@@ -9,8 +9,8 @@ import plexapi.playqueue
 import pytest
 import requests_mock
 
-from homeassistant.components.media_player import MediaType
-from homeassistant.components.plex.const import (
+from inpui.components.media_player import MediaType
+from inpui.components.plex.const import (
     CONF_SERVER,
     CONF_SERVER_IDENTIFIER,
     DOMAIN,
@@ -18,10 +18,10 @@ from homeassistant.components.plex.const import (
     PLEX_URI_SCHEME,
     SERVICE_REFRESH_LIBRARY,
 )
-from homeassistant.components.plex.services import process_plex_payload
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.plex.services import process_plex_payload
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DEFAULT_DATA, DEFAULT_OPTIONS, SECONDARY_DATA
 

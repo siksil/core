@@ -5,16 +5,16 @@ from ipaddress import ip_address
 
 from lektricowifi import DeviceConnectionError
 
-from homeassistant.components.lektrico.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import (
+from inpui.components.lektrico.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import (
     ATTR_HW_VERSION,
     ATTR_SERIAL_NUMBER,
     CONF_HOST,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     MOCKED_DEVICE_BOARD_REV,

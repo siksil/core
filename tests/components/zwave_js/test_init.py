@@ -22,19 +22,19 @@ from zwave_js_server.model.controller import ProvisioningEntry
 from zwave_js_server.model.node import Node, NodeDataType
 from zwave_js_server.model.version import VersionInfo
 
-from homeassistant.components.persistent_notification import async_dismiss
-from homeassistant.components.zwave_js import DOMAIN
-from homeassistant.components.zwave_js.helpers import get_device_id, get_device_id_ext
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.persistent_notification import async_dismiss
+from inpui.components.zwave_js import DOMAIN
+from inpui.components.zwave_js.helpers import get_device_id, get_device_id_ext
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .common import (
     AIR_TEMPERATURE_SENSOR,

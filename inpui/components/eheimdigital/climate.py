@@ -6,21 +6,21 @@ from eheimdigital.device import EheimDigitalDevice
 from eheimdigital.heater import EheimDigitalHeater
 from eheimdigital.types import HeaterMode, HeaterUnit
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_NONE,
     ClimateEntity,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     PRECISION_HALVES,
     PRECISION_TENTHS,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import HEATER_BIO_MODE, HEATER_PRESET_TO_HEATER_MODE, HEATER_SMART_MODE
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator

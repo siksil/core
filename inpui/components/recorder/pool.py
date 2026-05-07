@@ -17,8 +17,8 @@ from sqlalchemy.pool import (
     StaticPool,
 )
 
-from homeassistant.helpers.frame import ReportBehavior, report_usage
-from homeassistant.util.loop import raise_for_blocking_call
+from inpui.helpers.frame import ReportBehavior, report_usage
+from inpui.util.loop import raise_for_blocking_call
 
 _LOGGER = logging.getLogger(__name__)
 

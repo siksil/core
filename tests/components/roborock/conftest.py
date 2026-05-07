@@ -57,13 +57,13 @@ from roborock.devices.traits.v1.volume import SoundVolumeTrait
 from roborock.devices.traits.v1.wash_towel_mode import WashTowelModeTrait
 from roborock.roborock_message import RoborockDyadDataProtocol, RoborockZeoProtocol
 
-from homeassistant.components.roborock.const import (
+from inpui.components.roborock.const import (
     CONF_BASE_URL,
     CONF_USER_DATA,
     DOMAIN,
 )
-from homeassistant.const import CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
 
 from .mock_data import (
     BASE_URL,

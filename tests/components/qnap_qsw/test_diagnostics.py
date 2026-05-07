@@ -29,10 +29,10 @@ from aioqsw.const import (
     QSD_VERSION,
 )
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.qnap_qsw.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.components.qnap_qsw.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .util import (
     CONFIG,

@@ -6,17 +6,17 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ICON,
     CONF_MODE,
     CONF_TYPE,
     CONF_URL,
     EVENT_LOVELACE_UPDATED,  # noqa: F401
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util.hass_dict import HassKey
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import VolDictType
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from . import LovelaceData

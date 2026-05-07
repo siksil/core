@@ -15,16 +15,16 @@ from mastodon.Mastodon import (
 )
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, service
 
 from .const import (
     ATTR_ACCOUNT_NAME,

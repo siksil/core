@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock
 from pynintendoauth.exceptions import HttpException, InvalidSessionTokenException
 
 from homeassistant import config_entries
-from homeassistant.components.nintendo_parental_controls.const import (
+from inpui.components.nintendo_parental_controls.const import (
     CONF_SESSION_TOKEN,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import ACCOUNT_ID, API_TOKEN, LOGIN_URL
 

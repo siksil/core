@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ENTITY_ID,
     CONF_NAME,
     CONF_REPEAT,
@@ -17,10 +17,10 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_ALERT_MESSAGE,

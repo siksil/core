@@ -11,10 +11,10 @@ from xknx.exceptions.exception import InvalidSecureConfiguration
 from xknx.telegram import GroupAddress, IndividualAddress, Telegram
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir, selector
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir, selector
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 if TYPE_CHECKING:
     from .knx_module import KNXModule

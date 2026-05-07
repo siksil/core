@@ -21,8 +21,8 @@ from systembridgeconnector.models.open_url import OpenUrl
 from systembridgeconnector.version import Version
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_COMMAND,
     CONF_ENTITY_ID,
@@ -35,25 +35,25 @@ from homeassistant.const import (
     CONF_URL,
     Platform,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .config_flow import SystemBridgeConfigFlow
 from .const import DATA_WAIT_TIMEOUT, DOMAIN, MODULES

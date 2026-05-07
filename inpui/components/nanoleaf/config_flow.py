@@ -10,21 +10,21 @@ from typing import Any, Final, cast
 from aionanoleaf2 import InvalidToken, Nanoleaf, Unauthorized, Unavailable
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_USER,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.const import CONF_HOST, CONF_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.json import save_json
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )
-from homeassistant.util.json import JsonObjectType, JsonValueType, load_json_object
+from inpui.util.json import JsonObjectType, JsonValueType, load_json_object
 
 from .const import DOMAIN
 

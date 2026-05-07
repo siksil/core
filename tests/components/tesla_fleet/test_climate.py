@@ -7,7 +7,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.exceptions import InvalidCommand, VehicleOffline
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
     ATTR_TARGET_TEMP_HIGH,
@@ -21,16 +21,16 @@ from homeassistant.components.climate import (
     SERVICE_TURN_ON,
     HVACMode,
 )
-from homeassistant.components.tesla_fleet.coordinator import VEHICLE_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.components.tesla_fleet.coordinator import VEHICLE_INTERVAL
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotSupported,
     ServiceValidationError,
 )
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import assert_entities, setup_platform
 from .const import (

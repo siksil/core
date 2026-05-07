@@ -6,10 +6,10 @@ import pytest
 from pytradfri.const import ATTR_REACHABLE_STATE
 from pytradfri.device import Device
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.tradfri.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.tradfri.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .common import CommandStore, setup_integration
 

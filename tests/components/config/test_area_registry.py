@@ -7,17 +7,17 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.config import area_registry
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.config import area_registry
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar
+from inpui.util.dt import utcnow
 
 from tests.common import ANY
 from tests.typing import MockHAClientWebSocket, WebSocketGenerator

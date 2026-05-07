@@ -6,13 +6,13 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.folder_watcher.const import (
+from inpui.components.folder_watcher.const import (
     CONF_FOLDER,
     CONF_PATTERNS,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -1,6 +1,6 @@
 """Constants for testing AEH."""
 
-from homeassistant.components.azure_event_hub.const import (
+from inpui.components.azure_event_hub.const import (
     CONF_EVENT_HUB_CON_STRING,
     CONF_EVENT_HUB_INSTANCE_NAME,
     CONF_EVENT_HUB_NAMESPACE,

@@ -3,14 +3,14 @@
 from aiohttp import client_exceptions
 import pytest
 
-from homeassistant.components.cast.const import DOMAIN
-from homeassistant.components.cast.helpers import (
+from inpui.components.cast.const import DOMAIN
+from inpui.components.cast.helpers import (
     PlaylistError,
     PlaylistItem,
     PlaylistSupported,
     parse_playlist,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

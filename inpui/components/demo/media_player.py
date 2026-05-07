@@ -5,8 +5,8 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseMedia,
     MediaClass,
     MediaPlayerDeviceClass,
@@ -18,10 +18,10 @@ from homeassistant.components.media_player import (
     SearchMedia,
     SearchMediaQuery,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 
 async def async_setup_entry(
@@ -214,7 +214,7 @@ class DemoYoutubePlayer(AbstractDemoPlayer):
     def media_position_updated_at(self) -> datetime | None:
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
         if self.state == MediaPlayerState.PLAYING:
             return self._progress_updated_at

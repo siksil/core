@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from homevolt import DeviceMetadata, Sensor
 import pytest
 
-from homeassistant.components.homevolt.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.homevolt.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

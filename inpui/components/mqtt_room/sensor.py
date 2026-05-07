@@ -9,13 +9,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import CONF_STATE_TOPIC
-from homeassistant.components.sensor import (
+from inpui.components import mqtt
+from inpui.components.mqtt import CONF_STATE_TOPIC
+from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_ID,
     CONF_DEVICE_ID,
@@ -24,12 +24,12 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     STATE_NOT_HOME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util, slugify
-from homeassistant.util.json import json_loads
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util, slugify
+from inpui.util.json import json_loads
 
 _LOGGER = logging.getLogger(__name__)
 

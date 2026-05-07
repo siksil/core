@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from sensoterra.customerapi import CustomerApi
 
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import SensoterraConfigEntry, SensoterraCoordinator
 

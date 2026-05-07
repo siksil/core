@@ -6,8 +6,8 @@ import time
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.timeout import TimeoutManager
+from inpui.core import HomeAssistant
+from inpui.util.timeout import TimeoutManager
 
 
 async def test_simple_global_timeout() -> None:

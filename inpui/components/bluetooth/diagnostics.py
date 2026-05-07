@@ -7,8 +7,8 @@ from typing import Any
 
 from bluetooth_adapters import get_dbus_managed_objects
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .api import _get_manager
 

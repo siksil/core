@@ -8,11 +8,11 @@ from aiohttp.client_exceptions import ClientConnectorError
 from gios import Gios
 from gios.exceptions import GiosError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_STATION_ID, DOMAIN
 from .coordinator import GiosConfigEntry, GiosDataUpdateCoordinator

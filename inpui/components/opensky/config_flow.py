@@ -9,22 +9,22 @@ from python_opensky import OpenSky
 from python_opensky.exceptions import OpenSkyUnauthenticatedError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_RADIUS,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     CONF_ALTITUDE,

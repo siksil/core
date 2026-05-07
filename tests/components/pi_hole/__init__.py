@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 from hole.exceptions import HoleConnectionError, HoleError
 
-from homeassistant.components.pi_hole.const import (
+from inpui.components.pi_hole.const import (
     DEFAULT_LOCATION,
     DEFAULT_NAME,
     DEFAULT_SSL,
     DEFAULT_VERIFY_SSL,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_API_VERSION,
     CONF_HOST,

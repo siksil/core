@@ -6,10 +6,10 @@ from pyecoforest.exceptions import EcoforestAuthenticationRequired
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ecoforest.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ecoforest.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 pytestmark = pytest.mark.usefixtures("mock_setup_entry")
 

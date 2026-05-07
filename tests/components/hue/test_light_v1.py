@@ -4,19 +4,19 @@ from unittest.mock import Mock
 
 import aiohue
 
-from homeassistant.components import hue
-from homeassistant.components.hue.const import CONF_ALLOW_HUE_GROUPS
-from homeassistant.components.hue.v1 import light as hue_light
-from homeassistant.components.light import ColorMode
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components import hue
+from inpui.components.hue.const import CONF_ALLOW_HUE_GROUPS
+from inpui.components.hue.v1 import light as hue_light
+from inpui.components.light import ColorMode
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.util import color as color_util
+from inpui.util import color as color_util
 
 from .conftest import create_config_entry
 

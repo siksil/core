@@ -9,13 +9,13 @@ from http import HTTPStatus
 from aiohttp import ClientConnectionError, ClientResponseError
 from pymelcloud import get_devices
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .coordinator import MelCloudConfigEntry, MelCloudDeviceUpdateCoordinator
 

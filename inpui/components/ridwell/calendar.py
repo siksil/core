@@ -6,10 +6,10 @@ import datetime
 
 from aioridwell.model import PickupCategory, RidwellAccount, RidwellPickupEvent
 
-from homeassistant.components.calendar import CalendarEntity, CalendarEvent
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.calendar import CalendarEntity, CalendarEvent
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CALENDAR_TITLE_NONE,

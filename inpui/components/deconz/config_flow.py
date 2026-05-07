@@ -19,18 +19,18 @@ from pydeconz.utils import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_HASSIO,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_PORT
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_SERIAL, SsdpServiceInfo
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_PORT
+from inpui.core import callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_SERIAL, SsdpServiceInfo
 
 from .const import (
     CONF_ALLOW_CLIP_SENSOR,

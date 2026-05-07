@@ -8,12 +8,12 @@ import pytest
 from pytest_unordered import unordered
 import RFXtrx
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.rfxtrx import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .conftest import create_rfx_test_cfg
 

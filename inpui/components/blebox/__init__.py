@@ -6,16 +6,16 @@ from blebox_uniapi.box import Box
 from blebox_uniapi.error import Error
 from blebox_uniapi.session import ApiHost
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DEFAULT_SETUP_TIMEOUT
 from .helpers import get_maybe_authenticated_session

@@ -8,7 +8,7 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DEVICE_CLASS_UNITS,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
@@ -17,8 +17,8 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
@@ -29,7 +29,7 @@ from homeassistant.const import (
     Platform,
     UnitOfTime,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -38,19 +38,19 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_call_later,
     async_track_state_change_event,
     async_track_state_report_event,
 )
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CONF_MAX_SUB_INTERVAL,

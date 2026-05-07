@@ -11,8 +11,8 @@ from pyinsteon.managers.scene_manager import (
 )
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant
 
 from ..const import ID, TYPE
 

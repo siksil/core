@@ -1,6 +1,6 @@
 """Test Home Assistant ssl utility functions."""
 
-from homeassistant.util.ssl import (
+from inpui.util.ssl import (
     SSL_ALPN_HTTP11,
     SSL_ALPN_HTTP11_HTTP2,
     SSL_ALPN_NONE,

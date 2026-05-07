@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from aiobafi6 import Device
 
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo, format_mac
+from inpui.helpers.entity import Entity, EntityDescription
 
 
 class BAFEntity(Entity):

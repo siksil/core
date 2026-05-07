@@ -9,14 +9,14 @@ from unittest.mock import MagicMock, patch
 import pytest
 from twentemilieu import WasteType
 
-from homeassistant.components.twentemilieu.const import (
+from inpui.components.twentemilieu.const import (
     CONF_HOUSE_LETTER,
     CONF_HOUSE_NUMBER,
     CONF_POST_CODE,
     DOMAIN,
 )
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

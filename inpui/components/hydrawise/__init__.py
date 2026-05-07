@@ -2,9 +2,9 @@
 
 from pydrawise import auth, hybrid
 
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .const import APP_ID
 from .coordinator import (

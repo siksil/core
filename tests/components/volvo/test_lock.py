@@ -8,16 +8,16 @@ from syrupy.assertion import SnapshotAssertion
 from volvocarsapi.api import VolvoCarsApi
 from volvocarsapi.models import VolvoApiException, VolvoCarsCommandResult
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
     LockState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import configure_mock
 from .const import DEFAULT_VIN

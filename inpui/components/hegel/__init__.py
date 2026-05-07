@@ -7,10 +7,10 @@ import logging
 from hegel_ip_client import HegelClient
 from hegel_ip_client.exceptions import HegelConnectionError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DEFAULT_PORT
 
@@ -48,7 +48,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HegelConfigEntry) -> boo
         await client.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_close_client)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_close_client)
     )
 
     # Forward setup to supported platforms

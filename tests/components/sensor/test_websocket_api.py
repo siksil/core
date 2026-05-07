@@ -2,13 +2,13 @@
 
 from pytest_unordered import unordered
 
-from homeassistant.components.sensor.const import (
+from inpui.components.sensor.const import (
     DOMAIN,
     NON_NUMERIC_DEVICE_CLASSES,
     SensorDeviceClass,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

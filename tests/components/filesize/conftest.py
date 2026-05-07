@@ -8,8 +8,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.filesize.const import DOMAIN, PLATFORMS
-from homeassistant.const import CONF_FILE_PATH, Platform
+from inpui.components.filesize.const import DOMAIN, PLATFORMS
+from inpui.const import CONF_FILE_PATH, Platform
 
 from . import TEST_FILE_NAME
 

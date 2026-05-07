@@ -7,9 +7,9 @@ from typing import Any
 
 from yarl import URL
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .coordinator import PyLoadConfigEntry, PyLoadData
 

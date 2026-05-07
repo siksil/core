@@ -10,7 +10,7 @@ from typing import Any, cast
 from aiobotocore.client import AioBaseClient as S3Client
 from botocore.exceptions import BotoCoreError
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -18,7 +18,7 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from . import IDriveE2ConfigEntry
 from .const import CONF_BUCKET, DATA_BACKUP_AGENT_LISTENERS, DOMAIN

@@ -4,7 +4,7 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     _LOGGER,
     ATTR_AWAY_MODE,
     ATTR_OPERATION_MODE,
@@ -15,8 +15,8 @@ from homeassistant.components.water_heater import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, ENTITY_MATCH_ALL
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, ENTITY_MATCH_ALL
+from inpui.core import HomeAssistant
 
 
 async def async_set_away_mode(

@@ -5,12 +5,12 @@ from unittest.mock import MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.openevse.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_HOST, STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.openevse.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_HOST, STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, snapshot_platform
 

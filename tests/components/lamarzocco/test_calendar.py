@@ -7,16 +7,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     EVENT_END_DATETIME,
     EVENT_START_DATETIME,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import WAKE_UP_SLEEP_ENTRY_IDS, async_init_integration
 

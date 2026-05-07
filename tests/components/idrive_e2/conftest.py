@@ -8,13 +8,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.backup import AgentBackup
-from homeassistant.components.idrive_e2 import CONF_BUCKET
-from homeassistant.components.idrive_e2.backup import (
+from inpui.components.backup import AgentBackup
+from inpui.components.idrive_e2 import CONF_BUCKET
+from inpui.components.idrive_e2.backup import (
     MULTIPART_MIN_PART_SIZE_BYTES,
     suggested_filenames,
 )
-from homeassistant.components.idrive_e2.const import DOMAIN
+from inpui.components.idrive_e2.const import DOMAIN
 
 from .const import USER_INPUT
 

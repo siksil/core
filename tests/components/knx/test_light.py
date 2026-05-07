@@ -9,9 +9,9 @@ import pytest
 from xknx.core import XknxConnectionState
 from xknx.devices.light import Light as XknxLight
 
-from homeassistant.components.knx.const import CONF_STATE_ADDRESS, KNX_ADDRESS, Platform
-from homeassistant.components.knx.schema import LightSchema
-from homeassistant.components.light import (
+from inpui.components.knx.const import CONF_STATE_ADDRESS, KNX_ADDRESS, Platform
+from inpui.components.knx.schema import LightSchema
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_NAME,
     ATTR_COLOR_TEMP_KELVIN,
@@ -19,9 +19,9 @@ from homeassistant.components.light import (
     ATTR_RGBW_COLOR,
     ColorMode,
 )
-from homeassistant.const import CONF_NAME, STATE_OFF, STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_NAME, STATE_OFF, STATE_ON, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

@@ -12,12 +12,12 @@ from freezegun.api import FrozenDateTimeFactory, freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SCAN_INTERVAL,
     SensorDeviceClass,
 )
-from homeassistant.components.unifi.const import (
+from inpui.components.unifi.const import (
     CONF_ALLOW_BANDWIDTH_SENSORS,
     CONF_ALLOW_UPTIME_SENSORS,
     CONF_DETECTION_TIME,
@@ -26,18 +26,18 @@ from homeassistant.components.unifi.const import (
     DEFAULT_DETECTION_TIME,
     DEVICE_STATES,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.util import dt as dt_util
 
 from .conftest import (
     ConfigEntryFactoryType,

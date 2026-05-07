@@ -6,10 +6,10 @@ from dataclasses import dataclass
 
 from renson_endura_delta.renson import RensonVentilation
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DOMAIN
 from .coordinator import RensonCoordinator

@@ -13,7 +13,7 @@ import prometheus_client
 from prometheus_client.utils import floatToGoString
 import pytest
 
-from homeassistant.components import (
+from inpui.components import (
     alarm_control_panel,
     binary_sensor,
     climate,
@@ -34,8 +34,8 @@ from homeassistant.components import (
     update,
     water_heater,
 )
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.climate import (
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_FAN_MODES,
@@ -45,7 +45,7 @@ from homeassistant.components.climate import (
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
 )
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -54,12 +54,12 @@ from homeassistant.components.fan import (
     DIRECTION_FORWARD,
     DIRECTION_REVERSE,
 )
-from homeassistant.components.humidifier import ATTR_AVAILABLE_MODES
-from homeassistant.components.lock import LockState
-from homeassistant.components.sensor import SensorDeviceClass
+from inpui.components.humidifier import ATTR_AVAILABLE_MODES
+from inpui.components.lock import LockState
+from inpui.components.sensor import SensorDeviceClass
 
 # Alias water_heater constants to avoid name clashes with similarly named climate constants
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE as WATER_HEATER_ATTR_AWAY_MODE,
     ATTR_CURRENT_TEMPERATURE as WATER_HEATER_ATTR_CURRENT_TEMPERATURE,
     ATTR_MAX_TEMP as WATER_HEATER_ATTR_MAX_TEMP,
@@ -69,7 +69,7 @@ from homeassistant.components.water_heater import (
     ATTR_TARGET_TEMP_HIGH as WATER_HEATER_ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW as WATER_HEATER_ATTR_TARGET_TEMP_LOW,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
@@ -93,15 +93,15 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     floor_registry as fr,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

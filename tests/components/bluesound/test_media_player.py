@@ -8,9 +8,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.bluesound import DOMAIN
-from homeassistant.components.bluesound.const import ATTR_MASTER
-from homeassistant.components.media_player import (
+from inpui.components.bluesound import DOMAIN
+from inpui.components.bluesound.const import ATTR_MASTER
+from inpui.components.media_player import (
     ATTR_GROUP_MEMBERS,
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -28,9 +28,9 @@ from homeassistant.components.media_player import (
     SERVICE_VOLUME_UP,
     MediaPlayerState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import PlayerMocks
 

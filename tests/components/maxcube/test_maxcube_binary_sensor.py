@@ -5,17 +5,17 @@ from datetime import timedelta
 from maxcube.cube import MaxCube
 from maxcube.windowshutter import MaxWindowShutter
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     STATE_OFF,
     STATE_ON,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import utcnow
 
 from tests.common import async_fire_time_changed
 

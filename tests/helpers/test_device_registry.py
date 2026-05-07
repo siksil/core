@@ -14,16 +14,16 @@ import pytest
 from yarl import URL
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, HomeAssistant, ReleaseChannel
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import CoreState, HomeAssistant, ReleaseChannel
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util.dt import utcnow
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_capture_events, flush_store
 
@@ -3778,7 +3778,7 @@ async def test_cleanup_startup(hass: HomeAssistant) -> None:
     with patch(
         "homeassistant.helpers.device_registry.Debouncer.async_call"
     ) as mock_call:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_call.mock_calls) == 1

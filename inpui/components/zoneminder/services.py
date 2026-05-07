@@ -4,9 +4,9 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
+from inpui.const import ATTR_ID, ATTR_NAME
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 

@@ -8,15 +8,15 @@ from typing import Final, cast
 
 from kasa import Device, Feature
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DOMAIN as NUMBER_DOMAIN,
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry
 from .entity import (

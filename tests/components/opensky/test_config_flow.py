@@ -6,21 +6,21 @@ from unittest.mock import AsyncMock
 import pytest
 from python_opensky.exceptions import OpenSkyUnauthenticatedError
 
-from homeassistant.components.opensky.const import (
+from inpui.components.opensky.const import (
     CONF_ALTITUDE,
     CONF_CONTRIBUTING_USER,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_RADIUS,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 

@@ -5,7 +5,7 @@ from unittest.mock import patch
 from plexapi.exceptions import NotFound
 import requests_mock
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_plex_tv_clients(

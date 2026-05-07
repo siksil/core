@@ -18,14 +18,14 @@ from aiowithings import (
     WorkoutCategory,
 )
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     PERCENTAGE,
     Platform,
     UnitOfLength,
@@ -35,11 +35,11 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from . import WithingsConfigEntry
 from .const import (

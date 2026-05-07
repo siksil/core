@@ -6,13 +6,13 @@ from unittest.mock import AsyncMock
 from jvcprojector import JvcProjectorTimeoutError, command as cmd
 import pytest
 
-from homeassistant.components.jvc_projector.coordinator import (
+from inpui.components.jvc_projector.coordinator import (
     INTERVAL_FAST,
     INTERVAL_SLOW,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

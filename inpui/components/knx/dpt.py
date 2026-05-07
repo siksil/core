@@ -7,8 +7,8 @@ from typing import Literal, TypedDict
 from xknx.dpt import DPTBase, DPTComplex, DPTEnum, DPTNumeric
 from xknx.dpt.dpt_16 import DPTString
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import UnitOfReactiveEnergy
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import UnitOfReactiveEnergy
 
 HaDptClass = Literal["numeric", "enum", "complex", "string"]
 

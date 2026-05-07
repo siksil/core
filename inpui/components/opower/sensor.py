@@ -8,19 +8,19 @@ from datetime import date, datetime
 
 from opower import MeterType, UnitOfMeasure
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfEnergy, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import EntityCategory, UnitOfEnergy, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import OpowerConfigEntry, OpowerCoordinator, OpowerData

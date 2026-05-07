@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.update.const import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.update.const import (
     ATTR_DISPLAY_PRECISION,
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
@@ -14,10 +14,10 @@ from homeassistant.components.update.const import (
     ATTR_UPDATE_PERCENTAGE,
     DOMAIN,
 )
-from homeassistant.const import ATTR_ENTITY_PICTURE, CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_PICTURE, CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import MockUpdateEntity
 

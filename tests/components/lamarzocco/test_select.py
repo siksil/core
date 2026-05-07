@@ -13,15 +13,15 @@ from pylamarzocco.exceptions import RequestNotSuccessful
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 pytest.mark.usefixtures("init_integration")
 

@@ -4,7 +4,7 @@ from typing import Any
 
 from smarttub import SpaLight
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     EFFECT_COLORLOOP,
@@ -12,9 +12,9 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import ATTR_LIGHTS, DEFAULT_LIGHT_BRIGHTNESS, DEFAULT_LIGHT_EFFECT
 from .controller import SmartTubConfigEntry

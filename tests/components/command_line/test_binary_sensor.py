@@ -11,16 +11,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.command_line.binary_sensor import CommandBinarySensor
-from homeassistant.components.command_line.const import DOMAIN
-from homeassistant.components.homeassistant import (
+from inpui.components.command_line.binary_sensor import CommandBinarySensor
+from inpui.components.command_line.const import DOMAIN
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import mock_asyncio_subprocess_run
 

@@ -9,19 +9,19 @@ from mysensors.const_14 import SetReq
 from mysensors.sensor import Sensor
 import pytest
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_COMMAND,
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_LEARN_COMMAND,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_ir_transceiver(

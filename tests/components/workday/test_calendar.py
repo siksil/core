@@ -5,16 +5,16 @@ from datetime import datetime, timedelta
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     EVENT_END_DATETIME,
     EVENT_START_DATETIME,
     EVENT_SUMMARY,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import TEST_CONFIG_WITH_PROVINCE, init_integration
 

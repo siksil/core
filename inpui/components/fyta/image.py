@@ -10,15 +10,15 @@ from typing import Final
 
 from fyta_cli.fyta_models import Plant
 
-from homeassistant.components.image import (
+from inpui.components.image import (
     Image,
     ImageEntity,
     ImageEntityDescription,
     valid_image_content_type,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import FytaConfigEntry, FytaCoordinator
 from .entity import FytaPlantEntity

@@ -9,22 +9,22 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries, loader, setup
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_COMPONENT_LOADED, EVENT_HOMEASSISTANT_START
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_COMPONENT_LOADED, EVENT_INPUI_START
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, discovery, translation
-from homeassistant.helpers.dispatcher import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, discovery, translation
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.issue_registry import IssueRegistry
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.issue_registry import IssueRegistry
+from inpui.helpers.typing import ConfigType
 
 from .common import (
     MockConfigEntry,
@@ -704,7 +704,7 @@ async def test_all_work_done_before_start(hass: HomeAssistant) -> None:
         """Track start event."""
         call_order.append(2)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, track_start)
+    hass.bus.async_listen_once(EVENT_INPUI_START, track_start)
 
     hass.add_job(setup.async_setup_component(hass, "test_component1", {}))
     await hass.async_block_till_done()
@@ -818,7 +818,7 @@ async def test_async_when_setup_or_start_already_loaded(hass: HomeAssistant) -> 
     setup.async_when_setup_or_start(hass, "not_loaded", mock_callback)
     await hass.async_block_till_done()
     assert calls == ["test", "test"]
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert calls == ["test", "test", "not_loaded"]
 

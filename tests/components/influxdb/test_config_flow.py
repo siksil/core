@@ -10,7 +10,7 @@ from influxdb.exceptions import InfluxDBClientError, InfluxDBServerError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.influxdb import (
+from inpui.components.influxdb import (
     API_VERSION_2,
     CONF_API_VERSION,
     CONF_BUCKET,
@@ -21,7 +21,7 @@ from homeassistant.components.influxdb import (
     DOMAIN,
     ApiException,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PATH,
@@ -32,8 +32,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     BASE_V1_CONFIG,

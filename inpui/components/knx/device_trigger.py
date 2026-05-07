@@ -6,15 +6,15 @@ from typing import Any, Final
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import selector
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import selector
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import trigger
 from .const import DOMAIN, KNX_MODULE_KEY

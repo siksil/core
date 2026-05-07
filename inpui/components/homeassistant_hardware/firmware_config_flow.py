@@ -14,13 +14,13 @@ from universal_silabs_flasher.common import Version
 from universal_silabs_flasher.firmware import NabuCasaMetadata
 from universal_silabs_flasher.flasher import DeviceSpecificFlasher
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigEntryBaseFlow,
     ConfigFlow,
@@ -28,11 +28,11 @@ from homeassistant.config_entries import (
     FlowType,
     OptionsFlow,
 )
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.hassio import is_hassio
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.hassio import is_hassio
 
 from .const import DOMAIN, OTBR_DOMAIN, Z2M_EMBER_DOCS_URL, ZHA_DOMAIN
 from .util import (

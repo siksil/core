@@ -8,18 +8,18 @@ from urllib.parse import urlparse
 import av
 import pytest
 
-from homeassistant.components.stream import Stream, create_stream
-from homeassistant.components.stream.const import (
+from inpui.components.stream import Stream, create_stream
+from inpui.components.stream.const import (
     EXT_X_START_LL_HLS,
     EXT_X_START_NON_LL_HLS,
     HLS_PROVIDER,
     MAX_SEGMENTS,
     NUM_PLAYLIST_SEGMENTS,
 )
-from homeassistant.components.stream.core import Orientation, Part
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.stream.core import Orientation, Part
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     FAKE_TIME,

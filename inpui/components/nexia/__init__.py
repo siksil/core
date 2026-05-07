@@ -7,11 +7,11 @@ from nexia.const import BRAND_NEXIA
 from nexia.home import NexiaHome
 from nexia.thermostat import NexiaThermostat
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_BRAND, DOMAIN, PLATFORMS
 from .coordinator import NexiaDataUpdateCoordinator

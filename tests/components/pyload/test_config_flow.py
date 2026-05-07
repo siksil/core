@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock
 from pyloadapi.exceptions import CannotConnect, InvalidAuth, ParserError
 import pytest
 
-from homeassistant.components.pyload.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_HASSIO, SOURCE_IGNORE, SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.pyload.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_HASSIO, SOURCE_IGNORE, SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     ADDON_DISCOVERY_INFO,

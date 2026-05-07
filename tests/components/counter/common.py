@@ -4,15 +4,15 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.counter import (
+from inpui.components.counter import (
     DOMAIN,
     SERVICE_DECREMENT,
     SERVICE_INCREMENT,
     SERVICE_RESET,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import bind_hass
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, callback
+from inpui.loader import bind_hass
 
 
 @callback

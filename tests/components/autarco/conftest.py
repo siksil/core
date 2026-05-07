@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from autarco import AccountSite, Battery, Inverter, Solar
 import pytest
 
-from homeassistant.components.autarco.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.components.autarco.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
 
 from tests.common import MockConfigEntry
 

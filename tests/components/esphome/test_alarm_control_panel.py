@@ -10,7 +10,7 @@ from aioesphomeapi import (
     APIClient,
 )
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     ATTR_CODE,
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     SERVICE_ALARM_ARM_AWAY,
@@ -22,9 +22,9 @@ from homeassistant.components.alarm_control_panel import (
     SERVICE_ALARM_TRIGGER,
     AlarmControlPanelState,
 )
-from homeassistant.components.esphome.alarm_control_panel import EspHomeACPFeatures
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.esphome.alarm_control_panel import EspHomeACPFeatures
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .conftest import MockGenericDeviceEntryType
 

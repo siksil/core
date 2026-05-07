@@ -2,10 +2,10 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.israel_rail import CONF_DESTINATION, CONF_START, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.israel_rail import CONF_DESTINATION, CONF_START, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import VALID_CONFIG
 

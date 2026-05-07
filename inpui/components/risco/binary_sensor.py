@@ -10,16 +10,16 @@ from pyrisco.cloud.zone import Zone as CloudZone
 from pyrisco.common import System
 from pyrisco.local.zone import Zone as LocalZone
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LocalData, is_local
 from .const import DATA_COORDINATOR, DOMAIN, SYSTEM_UPDATE_SIGNAL

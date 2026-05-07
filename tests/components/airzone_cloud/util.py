@@ -114,9 +114,9 @@ from aioairzone_cloud.const import (
 from aioairzone_cloud.device import Device
 from aioairzone_cloud.webserver import WebServer
 
-from homeassistant.components.airzone_cloud.const import DOMAIN
-from homeassistant.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.airzone_cloud.const import DOMAIN
+from inpui.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

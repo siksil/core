@@ -5,11 +5,11 @@ from __future__ import annotations
 import voluptuous as vol
 
 from homeassistant import auth, config_entries, core
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, dispatcher, instance_id
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.service import async_register_admin_service
+from inpui.const import ATTR_ENTITY_ID
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, dispatcher, instance_id
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.service import async_register_admin_service
 
 from .const import DOMAIN, SIGNAL_HASS_CAST_SHOW_VIEW, HomeAssistantControllerData
 

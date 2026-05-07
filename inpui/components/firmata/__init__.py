@@ -5,8 +5,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_BINARY_SENSORS,
     CONF_LIGHTS,
     CONF_MAXIMUM,
@@ -15,11 +15,11 @@ from homeassistant.const import (
     CONF_PIN,
     CONF_SENSORS,
     CONF_SWITCHES,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .board import FirmataBoard
 from .const import (
@@ -183,7 +183,7 @@ async def async_setup_entry(
         await board.async_reset()
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, handle_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, handle_shutdown)
     )
 
     device_registry = dr.async_get(hass)

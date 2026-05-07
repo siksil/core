@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import ast
 
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN
 
 from . import ast_parse_module
 from .model import Config, Integration

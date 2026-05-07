@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from teslemetry_stream.stream import recursive_match
 
-from homeassistant.components.teslemetry.const import TOKEN_URL
+from inpui.components.teslemetry.const import TOKEN_URL
 
 from .const import (
     COMMAND_OK,

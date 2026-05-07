@@ -8,7 +8,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_GROUP_MEMBERS,
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
@@ -32,7 +32,7 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.components.squeezebox.const import (
+from inpui.components.squeezebox.const import (
     ATTR_ANNOUNCE_TIMEOUT,
     ATTR_ANNOUNCE_VOLUME,
     DISCOVERY_INTERVAL,
@@ -40,12 +40,12 @@ from homeassistant.components.squeezebox.const import (
     PLAYER_UPDATE_INTERVAL,
     SENSOR_UPDATE_INTERVAL,
 )
-from homeassistant.components.squeezebox.services import (
+from inpui.components.squeezebox.services import (
     ATTR_PARAMETERS,
     SERVICE_CALL_METHOD,
     SERVICE_CALL_QUERY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     SERVICE_MEDIA_NEXT_TRACK,
@@ -67,10 +67,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.util.dt import utcnow
 
 from .conftest import FAKE_VALID_ITEM_ID, TEST_MAC, VOLUME_STEP
 

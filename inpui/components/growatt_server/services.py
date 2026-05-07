@@ -5,10 +5,10 @@ from __future__ import annotations
 from datetime import datetime, time
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from .const import (
     BATT_MODE_BATTERY_FIRST,

@@ -7,9 +7,9 @@ from aiohasupervisor import SupervisorError
 from aiohasupervisor.models import IngressPanel
 from aiohttp import web
 
-from homeassistant.components import frontend
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.core import HomeAssistant
+from inpui.components import frontend
+from inpui.components.http import HomeAssistantView
+from inpui.core import HomeAssistant
 
 from .handler import get_supervisor_client
 

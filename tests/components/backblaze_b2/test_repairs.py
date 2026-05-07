@@ -10,13 +10,13 @@ from b2sdk.v2.exception import (
 )
 import pytest
 
-from homeassistant.components.backblaze_b2.repairs import (
+from inpui.components.backblaze_b2.repairs import (
     async_check_for_repair_issues,
     async_create_fix_flow,
 )
-from homeassistant.components.repairs import ConfirmRepairFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import ConfirmRepairFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

@@ -6,9 +6,9 @@ from typing import Any, cast
 
 from aiocomelit.const import LIGHT, STATE_OFF, STATE_ON
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ObjectClassType
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge

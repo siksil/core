@@ -11,10 +11,10 @@ from miio import (
     DeviceException,
 )
 
-from homeassistant.components.air_quality import AirQualityEntity
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_MODEL, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.air_quality import AirQualityEntity
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_MODEL, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_FLOW_TYPE,

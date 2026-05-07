@@ -5,14 +5,14 @@ import time
 
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     async_address_present,
 )
-from homeassistant.components.oralb.const import DOMAIN
-from homeassistant.const import ATTR_ASSUMED_STATE, ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.oralb.const import DOMAIN
+from inpui.const import ATTR_ASSUMED_STATE, ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     ORALB_IO_SERIES_4_SERVICE_INFO,

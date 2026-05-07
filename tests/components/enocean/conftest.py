@@ -4,8 +4,8 @@ from typing import Final
 
 import pytest
 
-from homeassistant.components.enocean.const import DOMAIN
-from homeassistant.const import CONF_DEVICE
+from inpui.components.enocean.const import DOMAIN
+from inpui.const import CONF_DEVICE
 
 from tests.common import MockConfigEntry
 

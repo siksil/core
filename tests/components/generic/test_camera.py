@@ -12,12 +12,12 @@ import httpx
 import pytest
 import respx
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DEFAULT_CONTENT_TYPE,
     async_get_mjpeg_stream,
     async_get_stream_source,
 )
-from homeassistant.components.generic.const import (
+from inpui.components.generic.const import (
     CONF_CONTENT_TYPE,
     CONF_FRAMERATE,
     CONF_LIMIT_REFETCH_TO_URL_CHANGE,
@@ -25,17 +25,17 @@ from homeassistant.components.generic.const import (
     CONF_STREAM_SOURCE,
     DOMAIN,
 )
-from homeassistant.components.stream import CONF_RTSP_TRANSPORT
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import (
+from inpui.components.stream import CONF_RTSP_TRANSPORT
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

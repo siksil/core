@@ -11,23 +11,23 @@ from flux_led.aio import AIOWifiLedBulb
 from flux_led.const import ATTR_ID, WhiteChannelType
 from flux_led.scanner import FluxLEDDiscovery
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_time_change,
     async_track_time_interval,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_WHITE_CHANNEL_TYPE,

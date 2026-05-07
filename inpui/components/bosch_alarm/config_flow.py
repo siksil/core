@@ -11,7 +11,7 @@ from typing import Any, Self
 from bosch_alarm_mode2 import Panel
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_DHCP,
     SOURCE_RECONFIGURE,
     SOURCE_USER,
@@ -19,7 +19,7 @@ from homeassistant.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CODE,
     CONF_HOST,
     CONF_MAC,
@@ -27,9 +27,9 @@ from homeassistant.const import (
     CONF_PASSWORD,
     CONF_PORT,
 )
-import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+import inpui.helpers.config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_INSTALLER_CODE, CONF_USER_CODE, DOMAIN
 

@@ -1,7 +1,7 @@
 """Tests for the Velbus component."""
 
-from homeassistant.components.velbus import VelbusConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.velbus import VelbusConfigEntry
+from inpui.core import HomeAssistant
 
 
 async def init_integration(

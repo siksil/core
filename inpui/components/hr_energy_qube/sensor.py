@@ -8,28 +8,28 @@ from typing import TYPE_CHECKING
 
 from python_qube_heatpump.models import QubeState
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     REVOLUTIONS_PER_MINUTE,
     UnitOfEnergy,
     UnitOfPower,
     UnitOfTemperature,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.helpers.typing import StateType
+from inpui.helpers.typing import StateType
 
 from .entity import QubeEntity
 
 PARALLEL_UPDATES = 0
 
 if TYPE_CHECKING:
-    from homeassistant.core import HomeAssistant
-    from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+    from inpui.core import HomeAssistant
+    from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
     from . import QubeConfigEntry
     from .coordinator import QubeCoordinator

@@ -5,12 +5,12 @@ import datetime as dt
 
 from hdate import Zmanim
 
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.helpers import event
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.helpers import event
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import JewishCalendarConfigEntry, JewishCalendarUpdateCoordinator

@@ -31,18 +31,18 @@ from zwave_js_server.util.node import (
     async_set_config_parameter,
 )
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.const import ATTR_AREA_ID, ATTR_DEVICE_ID, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.const import ATTR_AREA_ID, ATTR_DEVICE_ID, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.group import expand_entity_ids
-from homeassistant.helpers.service import async_register_platform_entity_service
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.group import expand_entity_ids
+from inpui.helpers.service import async_register_platform_entity_service
 
 from . import const
 from .config_validation import BITMASK_SCHEMA, VALUE_SCHEMA

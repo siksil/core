@@ -10,9 +10,9 @@ from aiobafi6 import Device, Service
 from aiobafi6.discovery import PORT
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, RUN_TIMEOUT
 from .models import BAFDiscovery

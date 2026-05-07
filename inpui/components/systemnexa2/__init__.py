@@ -1,7 +1,7 @@
 """The System Nexa 2 integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, MANUFACTURER, PLATFORMS
 from .coordinator import SystemNexa2ConfigEntry, SystemNexa2DataUpdateCoordinator

@@ -11,17 +11,17 @@ from sentry_sdk.integrations.aiohttp import AioHttpIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
 from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
+    EVENT_INPUI_STARTED,
     __version__ as current_version,
 )
-from homeassistant.core import HomeAssistant, get_release_channel
-from homeassistant.helpers import entity_platform, instance_id
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.system_info import async_get_system_info
-from homeassistant.loader import Integration, async_get_custom_components
-from homeassistant.setup import SetupPhases, async_pause_setup
+from inpui.core import HomeAssistant, get_release_channel
+from inpui.helpers import entity_platform, instance_id
+from inpui.helpers.event import async_call_later
+from inpui.helpers.system_info import async_get_system_info
+from inpui.loader import Integration, async_get_custom_components
+from inpui.setup import SetupPhases, async_pause_setup
 
 from .const import (
     CONF_DSN,
@@ -113,7 +113,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         # Update system info every hour
         async_call_later(hass, 3600, update_system_info)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, update_system_info)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, update_system_info)
 
     return True
 

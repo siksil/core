@@ -5,17 +5,17 @@ import pytest
 from pythonxbox.api.provider.people.models import PeopleResponse
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import (
     URI_SCHEME,
     Unresolvable,
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.components.xbox.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.xbox.const import DOMAIN
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import AsyncMock, MockConfigEntry, async_load_json_object_fixture
 from tests.typing import MagicMock

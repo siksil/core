@@ -6,8 +6,8 @@ import logging
 
 from pyhaversion import HaVersion
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     BOARD_MAP,

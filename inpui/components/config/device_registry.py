@@ -7,12 +7,12 @@ from typing import Any, cast
 import voluptuous as vol
 
 from homeassistant import loader
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import require_admin
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceEntry, DeviceEntryDisabler
+from inpui.components import websocket_api
+from inpui.components.websocket_api import require_admin
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceEntry, DeviceEntryDisabler
 
 
 @callback

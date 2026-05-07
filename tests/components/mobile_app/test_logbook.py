@@ -1,13 +1,13 @@
 """The tests for mobile_app logbook."""
 
-from homeassistant.components.mobile_app.logbook import (
+from inpui.components.mobile_app.logbook import (
     DOMAIN,
     IOS_EVENT_ZONE_ENTERED,
     IOS_EVENT_ZONE_EXITED,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.components.logbook.common import MockRow, mock_humanify
 

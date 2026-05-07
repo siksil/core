@@ -20,14 +20,14 @@ from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 from voluptuous import Invalid, MultipleInvalid
 
-from homeassistant.components.bang_olufsen.const import (
+from inpui.components.bang_olufsen.const import (
     BEO_REPEAT_FROM_HA,
     BEO_STATES,
     DOMAIN,
     BeoMediaType,
     BeoSource,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_GROUP_MEMBERS,
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
@@ -71,11 +71,11 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.setup import async_setup_component
 
 from .conftest import mock_websocket_connection
 from .const import (

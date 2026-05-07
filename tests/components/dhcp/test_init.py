@@ -16,8 +16,8 @@ from scapy.layers.dhcp import DHCP
 from scapy.layers.l2 import Ether
 
 from homeassistant import config_entries
-from homeassistant.components import dhcp
-from homeassistant.components.device_tracker import (
+from inpui.components import dhcp
+from inpui.components.device_tracker import (
     ATTR_HOST_NAME,
     ATTR_IP,
     ATTR_MAC,
@@ -25,21 +25,21 @@ from homeassistant.components.device_tracker import (
     CONNECTED_DEVICE_REGISTERED,
     SourceType,
 )
-from homeassistant.components.dhcp.const import DOMAIN
-from homeassistant.components.dhcp.models import DHCPData
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components.dhcp.const import DOMAIN
+from inpui.components.dhcp.models import DHCPData
+from inpui.const import (
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     STATE_HOME,
     STATE_NOT_HOME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,
@@ -609,10 +609,10 @@ async def test_setup_and_stop(hass: HomeAssistant) -> None:
         patch("scapy.arch.common.compile_filter"),
         patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     resolve_iface_call.assert_called_once()
@@ -641,10 +641,10 @@ async def test_setup_fails_as_root(
         ),
         patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     wait_event.set()
     assert "Cannot watch for dhcp packets" in caplog.text
@@ -672,9 +672,9 @@ async def test_setup_fails_non_root(
         ),
         patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert "Cannot watch for dhcp packets without root or CAP_NET_RAW" in caplog.text
@@ -703,9 +703,9 @@ async def test_setup_fails_with_broken_libpcap(
         ) as resolve_iface_call,
         patch("homeassistant.components.dhcp.DiscoverHosts.async_discover"),
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert compile_filter.called

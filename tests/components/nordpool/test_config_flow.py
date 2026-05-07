@@ -15,10 +15,10 @@ from pynordpool import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.nordpool.const import CONF_AREAS, DOMAIN
-from homeassistant.const import CONF_CURRENCY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nordpool.const import CONF_AREAS, DOMAIN
+from inpui.const import CONF_CURRENCY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import ENTRY_CONFIG
 

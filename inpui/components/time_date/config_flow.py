@@ -8,17 +8,17 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import PlatformData
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import websocket_api
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import PlatformData
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,

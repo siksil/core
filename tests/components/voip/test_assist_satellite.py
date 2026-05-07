@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.voip.devices import VoIPDevice
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent as intent_helper
+from inpui.components.voip.devices import VoIPDevice
+from inpui.core import HomeAssistant
+from inpui.helpers import intent as intent_helper
 
 
 @pytest.mark.parametrize(

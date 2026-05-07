@@ -4,12 +4,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.config_entries import DISCOVERY_SOURCES
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import IntegrationNotFound, async_get_integration
-from homeassistant.setup import async_get_loaded_integrations
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.config_entries import DISCOVERY_SOURCES
+from inpui.core import HomeAssistant, callback
+from inpui.loader import IntegrationNotFound, async_get_integration
+from inpui.setup import async_get_loaded_integrations
 
 from .const import LOGSEVERITY
 from .helpers import (

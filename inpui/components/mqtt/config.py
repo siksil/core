@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_OPTIMISTIC, CONF_VALUE_TEMPLATE
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_OPTIMISTIC, CONF_VALUE_TEMPLATE
+from inpui.helpers import config_validation as cv
 
 from .const import (
     CONF_COMMAND_TOPIC,

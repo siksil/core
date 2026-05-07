@@ -1,6 +1,6 @@
 """The Eight Sleep integration config flow."""
 
-from homeassistant.config_entries import ConfigFlow
+from inpui.config_entries import ConfigFlow
 
 from . import DOMAIN
 

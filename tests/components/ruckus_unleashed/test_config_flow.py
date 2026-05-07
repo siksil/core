@@ -12,15 +12,15 @@ from aioruckus.const import (
 from aioruckus.exceptions import AuthenticationError
 
 from homeassistant import config_entries
-from homeassistant.components.ruckus_unleashed.const import (
+from inpui.components.ruckus_unleashed.const import (
     API_SYS_SYSINFO,
     API_SYS_SYSINFO_SERIAL,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util import utcnow
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.util import utcnow
 
 from . import (
     CONFIG,

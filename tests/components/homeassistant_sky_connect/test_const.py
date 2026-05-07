@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.homeassistant_sky_connect.const import HardwareVariant
+from inpui.components.homeassistant_sky_connect.const import HardwareVariant
 
 
 @pytest.mark.parametrize(

@@ -7,20 +7,20 @@ from typing import TYPE_CHECKING
 from music_assistant_models.enums import MediaType, QueueOption
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ENQUEUE,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
 )
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, service
 
 from .const import (
     ATTR_ALBUM,

@@ -10,13 +10,13 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt.models import MessageCallbackType
-from homeassistant.components.mqtt.util import EnsureJobAfterCooldown
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components import mqtt
+from inpui.components.mqtt.models import MessageCallbackType
+from inpui.components.mqtt.util import EnsureJobAfterCooldown
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CoreState, HomeAssistant
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.typing import MqttMockHAClient, MqttMockPahoClient
@@ -38,7 +38,7 @@ async def test_canceling_debouncer_on_shutdown(
         async_fire_time_changed(hass, utcnow() + timedelta(seconds=0.1))
         # Stop HA so the scheduled debouncer task will be canceled
         mqtt_client_mock.subscribe.reset_mock()
-        hass.bus.fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.fire(EVENT_INPUI_STOP)
         await mqtt.async_subscribe(hass, "test/state2", record_calls)
         async_fire_time_changed(hass, utcnow() + timedelta(seconds=0.1))
         await mqtt.async_subscribe(hass, "test/state3", record_calls)

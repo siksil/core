@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .bridge import SamsungTVBridge
 from .const import DOMAIN

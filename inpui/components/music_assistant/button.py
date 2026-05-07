@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MusicAssistantConfigEntry
 from .entity import MusicAssistantEntity

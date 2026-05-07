@@ -6,10 +6,10 @@ import secrets
 from rachiopy import Rachio
 from requests.exceptions import ConnectTimeout
 
-from homeassistant.components import cloud
-from homeassistant.const import CONF_API_KEY, CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.components import cloud
+from inpui.const import CONF_API_KEY, CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import CONF_CLOUDHOOK_URL, CONF_MANUAL_RUN_MINS
 from .device import RachioConfigEntry, RachioPerson

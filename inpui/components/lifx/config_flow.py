@@ -9,13 +9,13 @@ from aiolifx.aiolifx import Light
 from aiolifx.connection import LIFXConnection
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_HOST
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_HOST
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType
 
 from .const import (
     _LOGGER,

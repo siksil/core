@@ -11,11 +11,11 @@ from fritzconnection.core.exceptions import (
 )
 import pytest
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.components.fritz.const import (
+from inpui.components.fritz.const import (
     CONF_FEATURE_DEVICE_TRACKING,
     CONF_OLD_DISCOVERY,
     DOMAIN,
@@ -25,17 +25,17 @@ from homeassistant.components.fritz.const import (
     ERROR_UPNP_NOT_CONFIGURED,
     FRITZ_AUTH_EXCEPTIONS,
 )
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

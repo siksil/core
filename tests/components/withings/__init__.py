@@ -9,9 +9,9 @@ from aiohttp.test_utils import TestClient
 from aiowithings import Activity, Device, Goals, MeasurementGroup, SleepSummary, Workout
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.webhook import async_generate_url
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
+from inpui.components.webhook import async_generate_url
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
 
 from tests.common import (
     MockConfigEntry,

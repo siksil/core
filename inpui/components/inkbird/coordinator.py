@@ -8,20 +8,20 @@ from typing import Any
 
 from inkbird_ble import INKBIRDBluetoothDeviceData, SensorUpdate
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfo,
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
     async_last_service_info,
 )
-from homeassistant.components.bluetooth.active_update_processor import (
+from inpui.components.bluetooth.active_update_processor import (
     ActiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.event import async_track_time_interval
 
 from .const import CONF_DEVICE_DATA, CONF_DEVICE_TYPE, DOMAIN
 

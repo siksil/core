@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 from apple_weatherkit import DataSetType
 
-from homeassistant.components.weatherkit.const import (
+from inpui.components.weatherkit.const import (
     CONF_KEY_ID,
     CONF_KEY_PEM,
     CONF_SERVICE_ID,
     CONF_TEAM_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

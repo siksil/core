@@ -7,23 +7,23 @@ from enum import StrEnum, auto
 
 from sensoterra.probe import Probe, Sensor
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     EntityCategory,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONFIGURATION_URL, DOMAIN, SENSOR_EXPIRATION_DAYS
 from .coordinator import SensoterraConfigEntry, SensoterraCoordinator

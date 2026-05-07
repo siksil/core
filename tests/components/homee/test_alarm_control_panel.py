@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_HOME,
@@ -14,11 +14,11 @@ from homeassistant.components.alarm_control_panel import (
     SERVICE_ALARM_ARM_VACATION,
     SERVICE_ALARM_DISARM,
 )
-from homeassistant.components.homee.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.homee.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import build_mock_node, setup_integration
 

@@ -16,7 +16,7 @@ from thinqconnect import (
     ThinQMQTTClient,
 )
 
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from .const import DEVICE_PUSH_MESSAGE, DEVICE_STATUS_MESSAGE
 from .coordinator import DeviceDataUpdateCoordinator

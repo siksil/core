@@ -6,11 +6,11 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, TypedDict
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 from . import views
 from .const import (

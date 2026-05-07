@@ -7,15 +7,15 @@ from freezegun.api import FrozenDateTimeFactory
 from pykrakenapi.pykrakenapi import KrakenAPIError
 import pytest
 
-from homeassistant.components.kraken.const import (
+from inpui.components.kraken.const import (
     CONF_TRACKED_ASSET_PAIRS,
     DEFAULT_SCAN_INTERVAL,
     DEFAULT_TRACKED_ASSET_PAIR,
     DOMAIN,
 )
-from homeassistant.const import CONF_SCAN_INTERVAL, EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_SCAN_INTERVAL, EVENT_INPUI_START
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import (
     MISSING_PAIR_TICKER_INFORMATION_RESPONSE,
@@ -64,7 +64,7 @@ async def test_sensor(
 
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         xbt_usd_sensor = hass.states.get("sensor.xbt_usd_ask")
@@ -175,7 +175,7 @@ async def test_sensors_available_after_restart(
 
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         sensor = hass.states.get("sensor.xbt_usd_ask")
@@ -210,7 +210,7 @@ async def test_sensors_added_after_config_update(
 
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         assert hass.states.get("sensor.xbt_usd_ask")
@@ -257,7 +257,7 @@ async def test_missing_pair_marks_sensor_unavailable(
 
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         sensor = hass.states.get("sensor.xbt_usd_ask")

@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.icon import icon_for_battery_level
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import PERCENTAGE
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.icon import icon_for_battery_level
 
 from .account import IcloudAccount, IcloudConfigEntry, IcloudDevice
 from .const import DOMAIN

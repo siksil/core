@@ -11,14 +11,14 @@ from typing import Any, Concatenate
 from regenmaschine.errors import RainMachineError
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ID, EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ID, EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
 
 from . import RainMachineConfigEntry, RainMachineData, async_update_programs_and_zones
 from .const import (

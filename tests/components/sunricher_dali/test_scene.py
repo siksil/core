@@ -4,10 +4,10 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import trigger_availability_callback
 

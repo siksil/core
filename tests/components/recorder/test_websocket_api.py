@@ -14,15 +14,15 @@ from freezegun import freeze_time
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.db_schema import Statistics, StatisticsShortTerm
-from homeassistant.components.recorder.models import (
+from inpui.components import recorder
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.db_schema import Statistics, StatisticsShortTerm
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     DEG_TO_RAD,
     RAD_TO_DEG,
     async_add_external_statistics,
@@ -32,15 +32,15 @@ from homeassistant.components.recorder.statistics import (
     get_short_term_statistics_run_cache,
     list_statistic_ids,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.components.recorder.websocket_api import UNIT_SCHEMA
-from homeassistant.components.sensor import UNIT_CONVERTERS
-from homeassistant.const import DEGREE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import recorder as recorder_helper
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.components.recorder.util import session_scope
+from inpui.components.recorder.websocket_api import UNIT_SCHEMA
+from inpui.components.sensor import UNIT_CONVERTERS
+from inpui.const import DEGREE
+from inpui.core import HomeAssistant
+from inpui.helpers import recorder as recorder_helper
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .common import (
     async_recorder_block_till_done,

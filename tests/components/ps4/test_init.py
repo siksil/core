@@ -3,13 +3,13 @@
 from unittest.mock import MagicMock, patch
 
 from homeassistant import config_entries
-from homeassistant.components import ps4
-from homeassistant.components.media_player import (
+from inpui.components import ps4
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_TITLE,
     MediaType,
 )
-from homeassistant.components.ps4.const import (
+from inpui.components.ps4.const import (
     ATTR_MEDIA_IMAGE_URL,
     COMMANDS,
     CONFIG_ENTRY_VERSION as VERSION,
@@ -17,7 +17,7 @@ from homeassistant.components.ps4.const import (
     DOMAIN,
     PS4_DATA,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     ATTR_LOCKED,
@@ -26,12 +26,12 @@ from homeassistant.const import (
     CONF_REGION,
     CONF_TOKEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import location as location_util
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import location as location_util
 
 from tests.common import MockConfigEntry
 

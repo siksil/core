@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.telegram_bot.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.telegram_bot.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.components.diagnostics import get_diagnostics_for_config_entry
 from tests.typing import ClientSessionGenerator

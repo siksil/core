@@ -3,18 +3,18 @@
 from amberelectric.models.channel import ChannelType
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import service
-from homeassistant.helpers.selector import ConfigEntrySelector
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import service
+from inpui.helpers.selector import ConfigEntrySelector
+from inpui.util.json import JsonValueType
 
 from .const import (
     ATTR_CHANNEL_TYPE,

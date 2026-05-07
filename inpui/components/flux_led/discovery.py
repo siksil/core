@@ -23,13 +23,13 @@ from flux_led.const import (
 from flux_led.models_db import get_model_description
 from flux_led.scanner import FluxLEDDiscovery
 
-from homeassistant.components import network
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_MODEL, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, discovery_flow
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.network import is_ip_address
+from inpui.components import network
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntryState
+from inpui.const import CONF_HOST, CONF_MODEL, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, discovery_flow
+from inpui.util.async_ import create_eager_task
+from inpui.util.network import is_ip_address
 
 from .const import (
     CONF_MINOR_VERSION,

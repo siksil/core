@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.moon.const import DOMAIN
+from inpui.components.moon.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

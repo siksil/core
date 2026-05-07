@@ -4,12 +4,12 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.tag import async_scan_tag
-from homeassistant.components.tag.const import DEVICE_ID, DOMAIN, TAG_ID
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.tag import async_scan_tag
+from inpui.components.tag.const import DEVICE_ID, DOMAIN, TAG_ID
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

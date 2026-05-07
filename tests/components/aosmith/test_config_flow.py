@@ -8,15 +8,15 @@ from py_aosmith import AOSmithInvalidCredentialsException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.aosmith.const import (
+from inpui.components.aosmith.const import (
     DOMAIN,
     ENERGY_USAGE_INTERVAL,
     REGULAR_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import FIXTURE_USER_INPUT
 

@@ -7,14 +7,14 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.openuv import CONF_FROM_WINDOW, CONF_TO_WINDOW, DOMAIN
-from homeassistant.const import (
+from inpui.components.openuv import CONF_FROM_WINDOW, CONF_TO_WINDOW, DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_ELEVATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

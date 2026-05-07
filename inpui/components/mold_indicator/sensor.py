@@ -10,14 +10,14 @@ from typing import TYPE_CHECKING, Any
 import voluptuous as vol
 
 from homeassistant import util
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
     CONF_UNIQUE_ID,
@@ -26,7 +26,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -34,16 +34,16 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import (
     CONF_CALIBRATION_FACTOR,

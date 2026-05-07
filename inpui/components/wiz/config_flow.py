@@ -10,12 +10,12 @@ from pywizlight.discovery import DiscoveredBulb
 from pywizlight.exceptions import WizLightConnectionError, WizLightTimeOutError
 import voluptuous as vol
 
-from homeassistant.components import onboarding
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.util.network import is_ip_address
+from inpui.components import onboarding
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.util.network import is_ip_address
 
 from .const import DEFAULT_NAME, DISCOVER_SCAN_TIMEOUT, DOMAIN, WIZ_CONNECT_EXCEPTIONS
 from .discovery import async_discover_devices

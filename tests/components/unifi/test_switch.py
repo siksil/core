@@ -9,12 +9,12 @@ from aiounifi.models.message import MessageKey
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.unifi.const import (
+from inpui.components.unifi.const import (
     CONF_BLOCK_CLIENT,
     CONF_DPI_RESTRICTIONS,
     CONF_SITE_ID,
@@ -22,8 +22,8 @@ from homeassistant.components.unifi.const import (
     CONF_TRACK_DEVICES,
     DOMAIN,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     STATE_OFF,
@@ -31,10 +31,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.util import dt as dt_util
 
 from .conftest import (
     CONTROLLER_HOST,

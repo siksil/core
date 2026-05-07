@@ -4,14 +4,14 @@ import logging
 
 from HueBLE import ConnectionError, HueBleError, HueBleLight
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     async_ble_device_from_address,
     async_scanner_count,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 _LOGGER = logging.getLogger(__name__)
 

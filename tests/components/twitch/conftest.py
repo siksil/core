@@ -7,14 +7,14 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from twitchAPI.object.api import FollowedChannel, Stream, TwitchUser, UserSubscription
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.twitch.const import DOMAIN, OAUTH2_TOKEN, OAUTH_SCOPES
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.twitch.const import DOMAIN, OAUTH2_TOKEN, OAUTH_SCOPES
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import TwitchIterObject, get_generator
 

@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.webostv import DOMAIN
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.webostv import DOMAIN
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_webostv
 from .const import ENTITY_ID, FAKE_UUID

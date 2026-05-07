@@ -8,17 +8,17 @@ from typing import Any
 from holidays import PUBLIC, HolidayBase, country_holidays, list_supported_countries
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE, CONF_NAME
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.selector import (
     CountrySelector,
     CountrySelectorConfig,
     LanguageSelector,
@@ -32,7 +32,7 @@ from homeassistant.helpers.selector import (
     SelectSelectorMode,
     TextSelector,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import (
     ALLOWED_DAYS,

@@ -9,9 +9,9 @@ from dremel3dpy import Dremel3DPrinter
 from requests.exceptions import ConnectTimeout, HTTPError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN, LOGGER
 

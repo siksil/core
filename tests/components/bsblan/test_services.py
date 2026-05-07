@@ -9,11 +9,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.bsblan.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.components.bsblan.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

@@ -6,7 +6,7 @@ from freezegun.api import FrozenDateTimeFactory
 from pyhaversion.exceptions import HaVersionException
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import MOCK_VERSION, mock_get_version_update, setup_version_integration
 

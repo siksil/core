@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import requests_mock
 
-from homeassistant.components.plex.const import DOMAIN, PLEX_SERVER_CONFIG, SERVERS
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.plex.const import DOMAIN, PLEX_SERVER_CONFIG, SERVERS
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_DATA, DEFAULT_OPTIONS, PLEX_DIRECT_URL
 from .helpers import websocket_connected

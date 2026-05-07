@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, Mock, patch
 from hass_nabucasa import Cloud, payments_api
 import pytest
 
-from homeassistant.components.cloud.subscription import (
+from inpui.components.cloud.subscription import (
     async_migrate_paypal_agreement,
     async_subscription_info,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

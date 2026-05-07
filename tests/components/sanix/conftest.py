@@ -18,8 +18,8 @@ from sanix import (
 )
 from sanix.models import Measurement
 
-from homeassistant.components.sanix.const import CONF_SERIAL_NUMBER, DOMAIN
-from homeassistant.const import CONF_TOKEN
+from inpui.components.sanix.const import CONF_SERIAL_NUMBER, DOMAIN
+from inpui.const import CONF_TOKEN
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

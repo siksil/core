@@ -6,11 +6,11 @@ import socket
 
 import motionmount
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.device_registry import format_mac
 
 from .const import DOMAIN, EMPTY_MAC
 

@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from homematicip.exceptions.connection_exceptions import HmipConnectionError
 
-from homeassistant.components.homematicip_cloud.const import (
+from inpui.components.homematicip_cloud.const import (
     CONF_ACCESSPOINT,
     CONF_AUTHTOKEN,
     DOMAIN,
@@ -12,11 +12,11 @@ from homeassistant.components.homematicip_cloud.const import (
     HMIPC_HAPID,
     HMIPC_NAME,
 )
-from homeassistant.components.homematicip_cloud.hap import HomematicipHAP
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.homematicip_cloud.hap import HomematicipHAP
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.number import NumberDeviceClass
-from homeassistant.components.number.significant_change import (
+from inpui.components.number import NumberDeviceClass
+from inpui.components.number.significant_change import (
     async_check_significant_change,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,

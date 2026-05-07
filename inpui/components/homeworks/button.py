@@ -6,11 +6,11 @@ import asyncio
 
 from pyhomeworks.pyhomeworks import Homeworks
 
-from homeassistant.components.button import ButtonEntity
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeworksConfigEntry
 from .const import (

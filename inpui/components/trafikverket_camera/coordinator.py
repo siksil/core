@@ -18,11 +18,11 @@ from pytrafikverket import (
     UnknownError,
 )
 
-from homeassistant.const import CONF_API_KEY, CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import CONF_API_KEY, CONF_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 

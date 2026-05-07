@@ -8,15 +8,15 @@ from aiohttp import web
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.json import load_json_object
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.json import save_json
+from inpui.helpers.typing import ConfigType
+from inpui.util.json import load_json_object
 
 from .const import (
     ATTR_BATTERY,

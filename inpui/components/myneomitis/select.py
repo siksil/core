@@ -11,10 +11,10 @@ from typing import Any
 
 from pyaxencoapi import PyAxencoAPI
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MyNeomitisConfigEntry
 from .const import DOMAIN

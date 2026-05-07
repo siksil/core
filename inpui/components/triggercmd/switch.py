@@ -7,10 +7,10 @@ from typing import Any
 
 from triggercmd import client, ha
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TriggercmdConfigEntry
 from .const import DOMAIN

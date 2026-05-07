@@ -13,7 +13,7 @@ from lru import LRU
 import objgraph
 import pytest
 
-from homeassistant.components.profiler import (
+from inpui.components.profiler import (
     _LRU_CACHE_WRAPPER_OBJECT,
     _SQLALCHEMY_LRU_OBJECT,
     CONF_ENABLED,
@@ -32,11 +32,11 @@ from homeassistant.components.profiler import (
     SERVICE_STOP_LOG_OBJECT_SOURCES,
     SERVICE_STOP_LOG_OBJECTS,
 )
-from homeassistant.components.profiler.const import DOMAIN
-from homeassistant.const import CONF_SCAN_INTERVAL, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util
+from inpui.components.profiler.const import DOMAIN
+from inpui.const import CONF_SCAN_INTERVAL, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

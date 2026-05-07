@@ -1,13 +1,13 @@
 """Tests for HomematicIP Cloud weather."""
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_WEATHER_HUMIDITY,
     ATTR_WEATHER_TEMPERATURE,
     ATTR_WEATHER_WIND_BEARING,
     ATTR_WEATHER_WIND_SPEED,
 )
-from homeassistant.const import ATTR_ATTRIBUTION
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ATTRIBUTION
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

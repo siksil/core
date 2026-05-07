@@ -11,9 +11,9 @@ from aiohttp import web
 import httpx
 from yarl import URL
 
-from homeassistant.components.camera import Camera
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.camera import Camera
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_PASSWORD,
     CONF_USERNAME,
@@ -21,14 +21,14 @@ from homeassistant.const import (
     HTTP_BASIC_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import (
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import (
     async_aiohttp_proxy_web,
     async_get_clientsession,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.httpx_client import get_async_client
 
 from .const import CONF_MJPEG_URL, CONF_STILL_IMAGE_URL, DOMAIN, LOGGER
 

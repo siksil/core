@@ -6,17 +6,17 @@ from ha_silabs_firmware_client import FirmwareManifest, FirmwareMetadata
 import pytest
 from yarl import URL
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import USB_DATA_ZBT2
 

@@ -4,8 +4,8 @@ import logging
 
 from aiowebdav2.client import Client, ClientOptions
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -20,7 +20,7 @@ from typing import TYPE_CHECKING, Any, Final, Literal, NotRequired, TypedDict, f
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ATTRIBUTION,
     ATTR_DEVICE_CLASS,
@@ -37,7 +37,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     Event,
@@ -48,11 +48,11 @@ from homeassistant.core import (
     get_hassjob_callable_job_type,
     get_release_channel,
 )
-from homeassistant.core_config import DATA_CUSTOMIZE
-from homeassistant.exceptions import HomeAssistantError, NoEntitySpecifiedError
-from homeassistant.loader import async_suggest_report_issue, bind_hass
-from homeassistant.util import ensure_unique_string, slugify
-from homeassistant.util.frozen_dataclass_compat import FrozenOrThawed
+from inpui.core_config import DATA_CUSTOMIZE
+from inpui.exceptions import HomeAssistantError, NoEntitySpecifiedError
+from inpui.loader import async_suggest_report_issue, bind_hass
+from inpui.util import ensure_unique_string, slugify
+from inpui.util.frozen_dataclass_compat import FrozenOrThawed
 
 from . import device_registry as dr, entity_registry as er
 from .device_registry import DeviceInfo, EventDeviceRegistryUpdatedData

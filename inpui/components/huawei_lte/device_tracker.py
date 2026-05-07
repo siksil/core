@@ -5,17 +5,17 @@ from __future__ import annotations
 import logging
 from typing import Any, cast
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     ScannerEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import snakecase
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import snakecase
 
 from . import Router
 from .const import (

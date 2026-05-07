@@ -7,22 +7,22 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     ENTITY_ID_FORMAT,
     SelectEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_STATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_STATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import TriggerUpdateCoordinator, validators as template_validators
 from .const import DOMAIN

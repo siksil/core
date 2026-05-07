@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -10,7 +10,7 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_SUPPORTED_FEATURES,
     SERVICE_CLOSE_COVER,
     SERVICE_CLOSE_COVER_TILT,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     SERVICE_SET_COVER_POSITION,
     SERVICE_SET_COVER_TILT_POSITION,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

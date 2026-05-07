@@ -2,8 +2,8 @@
 
 from unittest.mock import call
 
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.rfxtrx import DOMAIN
+from inpui.core import HomeAssistant
 
 from .conftest import create_rfx_test_cfg
 

@@ -5,9 +5,9 @@ from __future__ import annotations
 from epson_projector.const import CMODE_LIST_SET
 import voluptuous as vol
 
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import ATTR_CMODE, DOMAIN
 

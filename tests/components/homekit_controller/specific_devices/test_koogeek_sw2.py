@@ -5,9 +5,9 @@ This Koogeek device has a custom power sensor that extra handling.
 It should have 2 entities - the actual switch and a sensor for power usage.
 """
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import UnitOfPower
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorStateClass
+from inpui.const import UnitOfPower
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

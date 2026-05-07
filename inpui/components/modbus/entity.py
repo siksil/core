@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import struct
 from typing import Any, cast
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_COMMAND_OFF,
     CONF_COMMAND_ON,
@@ -24,11 +24,11 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity, ToggleEntity
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity, ToggleEntity
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     _LOGGER,

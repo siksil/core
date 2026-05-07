@@ -7,9 +7,9 @@ from aioautomower.model import HeadlightModes, MowerAttributes
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.husqvarna_automower.coordinator import SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.husqvarna_automower.coordinator import SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import setup_integration
 from .const import TEST_MOWER_ID

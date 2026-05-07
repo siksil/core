@@ -8,7 +8,7 @@ from typing import Any
 
 from pyfibaro.fibaro_device import DeviceModel
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ENTITY_ID_FORMAT,
     PRESET_AWAY,
     PRESET_BOOST,
@@ -17,9 +17,9 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FibaroConfigEntry
 from .entity import FibaroEntity

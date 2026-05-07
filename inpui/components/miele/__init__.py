@@ -5,17 +5,17 @@ from __future__ import annotations
 from aiohttp import ClientError, ClientResponseError
 from pymiele import MieleAPI
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .api import AsyncConfigEntryAuth
 from .const import DOMAIN

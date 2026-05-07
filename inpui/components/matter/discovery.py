@@ -7,8 +7,8 @@ from collections.abc import Generator
 from chip.clusters.ClusterObjects import ClusterAttributeDescriptor, NullValue
 from matter_server.client.models.node import MatterEndpoint
 
-from homeassistant.const import Platform
-from homeassistant.core import callback
+from inpui.const import Platform
+from inpui.core import callback
 
 from .binary_sensor import DISCOVERY_SCHEMAS as BINARY_SENSOR_SCHEMAS
 from .button import DISCOVERY_SCHEMAS as BUTTON_SCHEMAS

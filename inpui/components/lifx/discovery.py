@@ -8,10 +8,10 @@ from collections.abc import Collection, Iterable
 from aiolifx.aiolifx import LifxDiscovery, Light, ScanManager
 
 from homeassistant import config_entries
-from homeassistant.components import network
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import discovery_flow
+from inpui.components import network
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import discovery_flow
 
 from .const import CONF_SERIAL, DOMAIN
 

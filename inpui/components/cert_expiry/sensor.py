@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import CertExpiryConfigEntry, CertExpiryDataUpdateCoordinator

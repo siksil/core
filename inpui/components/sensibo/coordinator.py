@@ -9,13 +9,13 @@ from pysensibo import SensiboClient
 from pysensibo.exceptions import AuthenticationError, SensiboError
 from pysensibo.model import SensiboData
 
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN, LOGGER, TIMEOUT
 

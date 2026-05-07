@@ -6,12 +6,12 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.yeelight.config_flow import (
+from inpui.components.yeelight.config_flow import (
     MODEL_UNKNOWN,
     CannotConnect,
     YeelightConfigFlow,
 )
-from homeassistant.components.yeelight.const import (
+from inpui.components.yeelight.const import (
     CONF_DETECTED_MODEL,
     CONF_MODE_MUSIC,
     CONF_NIGHTLIGHT_SWITCH,
@@ -26,12 +26,12 @@ from homeassistant.components.yeelight.const import (
     DOMAIN,
     NIGHTLIGHT_SWITCH_TYPE_LIGHT,
 )
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

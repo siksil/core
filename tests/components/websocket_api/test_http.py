@@ -9,16 +9,16 @@ from unittest.mock import patch
 from aiohttp import ServerDisconnectedError, WSMsgType, web
 import pytest
 
-from homeassistant.components.websocket_api import (
+from inpui.components.websocket_api import (
     async_register_command,
     const,
     http,
     websocket_command,
 )
-from homeassistant.components.websocket_api.connection import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.websocket_api.connection import ActiveConnection
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import async_call_logger_set_level, async_fire_time_changed
 from tests.typing import (

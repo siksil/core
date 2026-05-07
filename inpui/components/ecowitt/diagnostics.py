@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from . import EcowittConfigEntry
 from .const import DOMAIN

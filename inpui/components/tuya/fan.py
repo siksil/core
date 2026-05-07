@@ -11,15 +11,15 @@ from tuya_device_handlers.definition.fan import (
 from tuya_device_handlers.helpers.homeassistant import TuyaFanDirection
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     DIRECTION_FORWARD,
     DIRECTION_REVERSE,
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TuyaConfigEntry
 from .const import TUYA_DISCOVERY_NEW, DeviceCategory

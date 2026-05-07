@@ -15,15 +15,15 @@ from python_otbr_api import PENDING_DATASET_DELAY_TIMER, tlv_parser
 from python_otbr_api.pskc import compute_pskc
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     MultiprotocolAddonManager,
     get_multiprotocol_addon_manager,
     is_multiprotocol_url,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
 
 from .const import DOMAIN
 

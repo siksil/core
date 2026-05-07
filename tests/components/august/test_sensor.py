@@ -3,14 +3,14 @@
 from typing import Any
 
 from homeassistant import core as ha
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .mocks import (
     _create_august_with_devices,

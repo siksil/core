@@ -7,9 +7,9 @@ from google.auth.exceptions import RefreshError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_mail import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.google_mail import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import BUILD, SENSOR, TOKEN, ComponentSetup
 

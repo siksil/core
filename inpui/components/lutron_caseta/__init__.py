@@ -13,16 +13,16 @@ from pylutron_caseta.smartbridge import Smartbridge
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import ATTR_DEVICE_ID, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import ATTR_DEVICE_ID, CONF_HOST, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ACTION_MULTITAP,

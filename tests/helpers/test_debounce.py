@@ -8,9 +8,9 @@ import weakref
 
 import pytest
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import debounce
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import debounce
+from inpui.util.dt import utcnow
 
 from tests.common import async_fire_time_changed
 

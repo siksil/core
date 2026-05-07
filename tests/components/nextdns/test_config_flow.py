@@ -6,11 +6,11 @@ from nextdns import ApiError, InvalidApiKeyError, ProfileInfo
 import pytest
 from tenacity import RetryError
 
-from homeassistant.components.nextdns.const import CONF_PROFILE_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_PROFILE_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nextdns.const import CONF_PROFILE_ID, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_PROFILE_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import init_integration
 

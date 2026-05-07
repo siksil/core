@@ -12,7 +12,7 @@ from matter_server.common.const import SCHEMA_VERSION
 from matter_server.common.models import ServerInfoMessage
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     setup_integration_with_node_fixture,

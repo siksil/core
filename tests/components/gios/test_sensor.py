@@ -9,10 +9,10 @@ from gios.model import GiosSensors
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.gios.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.gios.const import DOMAIN, SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

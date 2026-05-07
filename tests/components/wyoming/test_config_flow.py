@@ -8,11 +8,11 @@ from syrupy.assertion import SnapshotAssertion
 from wyoming.info import Info
 
 from homeassistant import config_entries
-from homeassistant.components.wyoming.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.wyoming.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import EMPTY_INFO, SATELLITE_INFO, STT_INFO, TTS_INFO
 

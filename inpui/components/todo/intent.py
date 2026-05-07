@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 from . import TodoItem, TodoItemStatus, TodoListEntity
 from .const import DATA_COMPONENT, DOMAIN

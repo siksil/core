@@ -9,10 +9,10 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components import google_pubsub
-from homeassistant.components.google_pubsub import DateTimeJSONEncoder as victim
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import google_pubsub
+from inpui.components.google_pubsub import DateTimeJSONEncoder as victim
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 GOOGLE_PUBSUB_PATH = "homeassistant.components.google_pubsub"
 

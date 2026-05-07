@@ -3,12 +3,12 @@
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.components.event import EventEntity, EventEntityDescription
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity, EventEntityDescription
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DOMAIN, EVENT_KEY
 from .coordinator import OverseerrConfigEntry, OverseerrCoordinator

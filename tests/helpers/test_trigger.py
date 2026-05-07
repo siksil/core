@@ -10,12 +10,12 @@ import pytest
 from pytest_unordered import unordered
 import voluptuous as vol
 
-from homeassistant.components import automation
-from homeassistant.components.sun import DOMAIN as SUN_DOMAIN
-from homeassistant.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
-from homeassistant.components.tag import DOMAIN as TAG_DOMAIN
-from homeassistant.components.text import DOMAIN as TEXT_DOMAIN
-from homeassistant.const import (
+from inpui.components import automation
+from inpui.components.sun import DOMAIN as SUN_DOMAIN
+from inpui.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
+from inpui.components.tag import DOMAIN as TAG_DOMAIN
+from inpui.components.text import DOMAIN as TEXT_DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
@@ -26,7 +26,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     HomeAssistant,
@@ -34,13 +34,13 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, trigger
-from homeassistant.helpers.automation import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, trigger
+from inpui.helpers.automation import (
     DomainSpec,
     move_top_level_schema_fields_to_options,
 )
-from homeassistant.helpers.trigger import (
+from inpui.helpers.trigger import (
     DATA_PLUGGABLE_ACTIONS,
     TRIGGERS,
     EntityNumericalStateChangedTriggerWithUnitBase,
@@ -59,11 +59,11 @@ from homeassistant.helpers.trigger import (
     make_entity_target_state_trigger,
     make_entity_transition_trigger,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import Integration, async_get_integration
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.yaml.loader import parse_yaml
+from inpui.helpers.typing import ConfigType
+from inpui.loader import Integration, async_get_integration
+from inpui.setup import async_setup_component
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.yaml.loader import parse_yaml
 
 from tests.common import MockModule, MockPlatform, mock_integration, mock_platform
 from tests.typing import WebSocketGenerator

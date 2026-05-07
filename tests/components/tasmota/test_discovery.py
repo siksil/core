@@ -6,15 +6,15 @@ from unittest.mock import ANY, patch
 
 import pytest
 
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.components.tasmota.discovery import ALREADY_DISCOVERED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.components.tasmota.discovery import ALREADY_DISCOVERED
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .conftest import setup_tasmota_helper
 from .test_common import DEFAULT_CONFIG, DEFAULT_CONFIG_9_0_0_3, remove_device

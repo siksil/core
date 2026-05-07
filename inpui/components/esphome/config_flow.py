@@ -21,8 +21,8 @@ from aioesphomeapi import (
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import (
+from inpui.components import zeroconf
+from inpui.config_entries import (
     SOURCE_ESPHOME,
     SOURCE_IGNORE,
     SOURCE_REAUTH,
@@ -34,18 +34,18 @@ from homeassistant.config_entries import (
     FlowType,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow, FlowResultType
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.json import json_loads_object
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow, FlowResultType
+from inpui.helpers import discovery_flow
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.importlib import async_import_module
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.json import json_loads_object
 
 from .const import (
     CONF_ALLOW_SERVICE_CALLS,

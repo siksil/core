@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from gps3.agps3threaded import AGPS3mechanism
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 

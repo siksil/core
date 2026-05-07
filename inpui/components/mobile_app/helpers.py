@@ -11,11 +11,11 @@ from aiohttp.web import Response, json_response
 from nacl.encoding import Base64Encoder, HexEncoder, RawEncoder
 from nacl.secret import SecretBox
 
-from homeassistant.const import ATTR_DEVICE_ID, CONTENT_TYPE_JSON
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.json import json_bytes
-from homeassistant.util.json import JsonValueType, json_loads
+from inpui.const import ATTR_DEVICE_ID, CONTENT_TYPE_JSON
+from inpui.core import Context, HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.json import json_bytes
+from inpui.util.json import JsonValueType, json_loads
 
 from .const import (
     ATTR_APP_DATA,

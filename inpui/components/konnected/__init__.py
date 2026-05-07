@@ -11,10 +11,10 @@ from aiohttp.web import Request, Response
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.binary_sensor import DEVICE_CLASSES_SCHEMA
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.binary_sensor import DEVICE_CLASSES_SCHEMA
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ACCESS_TOKEN,
     CONF_BINARY_SENSORS,
@@ -34,9 +34,9 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.typing import ConfigType
 
 from .config_flow import (  # Loading the config flow file will register the flow
     CONF_DEFAULT_OPTIONS,

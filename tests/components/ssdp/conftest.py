@@ -8,7 +8,7 @@ from async_upnp_client.server import UpnpServer
 from async_upnp_client.ssdp_listener import SsdpListener
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(autouse=True)

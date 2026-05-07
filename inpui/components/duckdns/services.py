@@ -5,12 +5,12 @@ from __future__ import annotations
 from aiohttp import ClientError
 import voluptuous as vol
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import ConfigEntrySelector
+from inpui.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import ConfigEntrySelector
 
 from .const import ATTR_CONFIG_ENTRY, ATTR_TXT, DOMAIN, SERVICE_SET_TXT
 from .coordinator import DuckDnsConfigEntry

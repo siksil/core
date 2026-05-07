@@ -8,9 +8,9 @@ from typing import Any
 import evohomeasync2 as evo
 from evohomeasync2.schemas.typedefs import DayOfWeekDhwT
 
-from homeassistant.core import callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import EvoDataUpdateCoordinator

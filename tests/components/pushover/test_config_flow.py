@@ -6,10 +6,10 @@ from pushover_complete import BadAPIRequestError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.pushover.const import CONF_USER_KEY, DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.pushover.const import CONF_USER_KEY, DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_CONFIG
 

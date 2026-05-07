@@ -8,7 +8,7 @@ from functools import partial
 import logging
 from typing import Any, Final
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_CLOSE_COVER,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     SERVICE_SET_COVER_POSITION,
     SERVICE_SET_COVER_TILT_POSITION,
 )
-from homeassistant.core import Context, HomeAssistant, ServiceResponse, State
-from homeassistant.util.enum import try_parse_enum
+from inpui.core import Context, HomeAssistant, ServiceResponse, State
+from inpui.util.enum import try_parse_enum
 
 from . import (
     ATTR_CURRENT_POSITION,

@@ -4,15 +4,15 @@ from datetime import timedelta
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.tomorrowio.config_flow import (
+from inpui.components.tomorrowio.config_flow import (
     _get_config_schema,
     _get_unique_id,
 )
-from homeassistant.components.tomorrowio.const import CONF_TIMESTEP, DOMAIN
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.tomorrowio.const import CONF_TIMESTEP, DOMAIN
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import HomeAssistant
 
 from .const import MIN_CONFIG
 

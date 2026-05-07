@@ -17,18 +17,18 @@ from habiticalib import (
     TooManyRequestsError,
 )
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.todo import (
+from inpui.components import persistent_notification
+from inpui.components.todo import (
     TodoItem,
     TodoItemStatus,
     TodoListEntity,
     TodoListEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import ASSETS_URL, DOMAIN
 from .coordinator import HabiticaConfigEntry, HabiticaDataUpdateCoordinator

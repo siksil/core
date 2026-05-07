@@ -12,7 +12,7 @@ from zha.application.platforms.light.const import (
     LightEntityFeature as ZhaLightEntityFeature,
 )
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -24,12 +24,12 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON, Platform
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import color as color_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON, Platform
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import color as color_util
 
 from .entity import ZHAEntity
 from .helpers import (

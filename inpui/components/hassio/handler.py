@@ -13,8 +13,8 @@ from aiohasupervisor.models import SupervisorOptions
 import aiohttp
 from yarl import URL
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.singleton import singleton
+from inpui.core import HomeAssistant
+from inpui.helpers.singleton import singleton
 
 from .const import ATTR_MESSAGE, ATTR_RESULT, DATA_COMPONENT, X_HASS_SOURCE
 

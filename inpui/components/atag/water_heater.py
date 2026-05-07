@@ -2,15 +2,15 @@
 
 from typing import Any
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_PERFORMANCE,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, STATE_OFF, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, STATE_OFF, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AtagConfigEntry
 from .entity import AtagEntity

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any, Final
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 API_ENDPOINT: Final = "http://api.gios.gov.pl/"
 

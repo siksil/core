@@ -8,8 +8,8 @@ from typing import Any
 from arcam.fmj import ConnectionFailed
 from arcam.fmj.client import Client
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_SCAN_INTERVAL
 from .coordinator import ArcamFmjConfigEntry, ArcamFmjCoordinator, ArcamFmjRuntimeData

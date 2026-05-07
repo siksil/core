@@ -1,6 +1,6 @@
 """The tests for the lawn mower platform."""
 
-from homeassistant.components.lawn_mower import (
+from inpui.components.lawn_mower import (
     DOMAIN,
     SERVICE_DOCK,
     SERVICE_START_MOWING,
@@ -8,9 +8,9 @@ from homeassistant.components.lawn_mower import (
     LawnMowerEntityFeature,
     intent as lawn_mower_intent,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.const import ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 from tests.common import async_mock_service
 

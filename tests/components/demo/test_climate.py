@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -34,16 +34,16 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import METRIC_SYSTEM
 
 ENTITY_CLIMATE = "climate.hvac"
 ENTITY_ECOBEE = "climate.ecobee"

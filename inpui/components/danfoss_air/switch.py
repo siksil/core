@@ -7,10 +7,10 @@ from typing import Any
 
 from pydanfossair.commands import ReadCommand, UpdateCommand
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN
 

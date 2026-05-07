@@ -14,18 +14,18 @@ from pylamarzocco.models import Thing
 from pylamarzocco.util import InstallationKey, generate_installation_key
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfo,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_MAC,
     CONF_NAME,
@@ -33,9 +33,9 @@ from homeassistant.const import (
     CONF_TOKEN,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
@@ -44,7 +44,7 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import create_client_session
 from .const import CONF_INSTALLATION_KEY, CONF_OFFLINE_MODE, CONF_USE_BLUETOOTH, DOMAIN

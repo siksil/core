@@ -5,9 +5,9 @@ from unittest.mock import patch
 from omnilogic import LoginException, OmniLogicException
 
 from homeassistant import config_entries
-from homeassistant.components.omnilogic.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.omnilogic.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

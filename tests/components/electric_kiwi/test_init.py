@@ -8,11 +8,11 @@ from aiohttp.client_exceptions import ClientResponseError
 from electrickiwi_api.exceptions import ApiException, AuthException
 import pytest
 
-from homeassistant.components.electric_kiwi.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.electric_kiwi.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

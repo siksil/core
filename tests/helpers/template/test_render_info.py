@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import template
-from homeassistant.helpers.template.render_info import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers import template
+from inpui.helpers.template.render_info import (
     ALL_STATES_RATE_LIMIT,
     DOMAIN_STATES_RATE_LIMIT,
     RenderInfo,

@@ -9,11 +9,11 @@ from bleak_retry_connector import (
 )
 from ld2410_ble import LD2410BLE
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
-from homeassistant.const import CONF_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
+from inpui.const import CONF_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import LD2410BLECoordinator
 from .models import LD2410BLEConfigEntry, LD2410BLEData
@@ -77,7 +77,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: LD2410BLEConfigEntry) ->
         await ld2410_ble.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
     return True
 

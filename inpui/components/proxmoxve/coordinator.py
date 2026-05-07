@@ -13,21 +13,21 @@ from proxmoxer.core import ResourceException
 import requests
 from requests.exceptions import ConnectTimeout, SSLError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .common import sanitize_config_entry
 from .const import (

@@ -21,18 +21,18 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components import cloud
-from homeassistant.components.cloud import CloudNotAvailable
-from homeassistant.components.webhook import async_generate_url
-from homeassistant.components.withings.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components import cloud
+from inpui.components.cloud import CloudNotAvailable
+from inpui.components.webhook import async_generate_url
+from inpui.components.withings.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from . import call_webhook, prepare_webhook_setup, setup_integration
 from .conftest import USER_ID, WEBHOOK_ID

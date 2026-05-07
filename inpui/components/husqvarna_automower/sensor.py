@@ -16,16 +16,16 @@ from aioautomower.model import (
     WorkArea,
 )
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfLength, UnitOfTime
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfLength, UnitOfTime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import AutomowerConfigEntry
 from .const import ERROR_KEYS, ERROR_STATES

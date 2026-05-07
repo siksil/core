@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock
 import pytest
 from python_open_router import OpenRouterError
 
-from homeassistant.components.open_router.const import CONF_PROMPT, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.open_router.const import CONF_PROMPT, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import get_subentry_id, setup_integration
 

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.device_tracker import TrackerEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.components.device_tracker import TrackerEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import TessieConfigEntry
 from .entity import TessieEntity

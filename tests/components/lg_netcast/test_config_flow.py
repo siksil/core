@@ -4,16 +4,16 @@ from datetime import timedelta
 from unittest.mock import DEFAULT, patch
 
 from homeassistant import data_entry_flow
-from homeassistant.components.lg_netcast.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.lg_netcast.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_HOST,
     CONF_ID,
     CONF_MODEL,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     FAKE_PIN,

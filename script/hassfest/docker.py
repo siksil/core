@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from homeassistant import core
-from homeassistant.util import executor, thread
+from inpui.util import executor, thread
 
 from .model import Config, Integration
 from .requirements import PACKAGE_REGEX, PIP_VERSION_RANGE_SEPARATOR

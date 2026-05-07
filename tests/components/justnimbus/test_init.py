@@ -1,8 +1,8 @@
 """Tests for JustNimbus initialization."""
 
-from homeassistant.components.justnimbus.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.justnimbus.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import FIXTURE_OLD_USER_INPUT, FIXTURE_UNIQUE_ID
 

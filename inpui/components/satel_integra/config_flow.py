@@ -8,8 +8,8 @@ from typing import Any
 from satel_integra import AsyncSatel
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.config_entries import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
@@ -17,9 +17,9 @@ from homeassistant.config_entries import (
     OptionsFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import callback
+from inpui.helpers import config_validation as cv, selector
 
 from .const import (
     CONF_ARM_HOME_MODE,

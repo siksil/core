@@ -21,17 +21,17 @@ from systembridgeconnector.models.modules import (
 )
 from systembridgeconnector.websocket_client import WebSocketClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, GET_DATA_WAIT_TIMEOUT, MODULES
 from .data import SystemBridgeData
@@ -209,7 +209,7 @@ class SystemBridgeDataUpdateCoordinator(DataUpdateCoordinator[SystemBridgeData])
 
             # Clean disconnect WebSocket on Home Assistant shutdown
             self.unsub = self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP,
+                EVENT_INPUI_STOP,
                 lambda _: self.close_websocket(),
             )
 

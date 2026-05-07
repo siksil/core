@@ -9,15 +9,15 @@ import messagebird
 from messagebird.client import ErrorException
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_TARGET,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import CONF_API_KEY, CONF_SENDER
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_API_KEY, CONF_SENDER
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

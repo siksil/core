@@ -8,7 +8,7 @@ from homelink.model.button import Button
 import homelink.model.device
 import pytest
 
-from homeassistant.components.gentex_homelink.const import DOMAIN, OAUTH2_TOKEN_URL
+from inpui.components.gentex_homelink.const import DOMAIN, OAUTH2_TOKEN_URL
 
 from . import TEST_ACCESS_JWT, TEST_UNIQUE_ID
 

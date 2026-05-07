@@ -9,7 +9,7 @@ from freezegun import freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_DUE_DATETIME,
@@ -19,9 +19,9 @@ from homeassistant.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import TEST_ENTITY
 

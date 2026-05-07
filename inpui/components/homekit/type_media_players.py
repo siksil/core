@@ -6,7 +6,7 @@ from typing import Any
 from pyhap.characteristic import Characteristic
 from pyhap.const import CATEGORY_SWITCH
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -15,7 +15,7 @@ from homeassistant.components.media_player import (
     SERVICE_SELECT_SOURCE,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_MEDIA_PAUSE,
@@ -34,7 +34,7 @@ from homeassistant.const import (
     STATE_STANDBY,
     STATE_UNKNOWN,
 )
-from homeassistant.core import State, callback
+from inpui.core import State, callback
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

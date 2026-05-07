@@ -4,17 +4,17 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
     CONF_UNIT_SYSTEM,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (
     DEFAULT_RADIUS,

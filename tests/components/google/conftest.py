@@ -15,15 +15,15 @@ from oauth2client.client import OAuth2Credentials
 import pytest
 import yaml
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.google import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.google import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

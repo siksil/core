@@ -11,7 +11,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from ttls.client import TwinklyError
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ATTR_RGB_COLOR,
@@ -19,8 +19,8 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     LightEntityFeature,
 )
-from homeassistant.components.twinkly import DOMAIN
-from homeassistant.const import (
+from inpui.components.twinkly import DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
@@ -29,8 +29,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import setup_integration
 from .const import TEST_MAC

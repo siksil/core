@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from py_aosmith import AOSmithAPIClient
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, device_registry as dr
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import (

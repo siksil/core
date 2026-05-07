@@ -10,7 +10,7 @@ from pyoverkiz.exceptions import BaseOverkizException
 from pyoverkiz.models import Command, Device, StateDefinition
 from pyoverkiz.types import StateType as OverkizStateType
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .coordinator import OverkizDataUpdateCoordinator
 

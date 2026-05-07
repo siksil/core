@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN = "kitchen_sink"
 CONF_INFRARED_ENTITY_ID = "infrared_entity_id"

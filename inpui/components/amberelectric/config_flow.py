@@ -7,9 +7,9 @@ from amberelectric.models.site import Site
 from amberelectric.models.site_status import SiteStatus
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

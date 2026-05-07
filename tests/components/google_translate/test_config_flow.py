@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_translate.const import CONF_TLD, DOMAIN
-from homeassistant.components.tts import CONF_LANG
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.google_translate.const import CONF_TLD, DOMAIN
+from inpui.components.tts import CONF_LANG
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

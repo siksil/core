@@ -7,11 +7,11 @@ from unittest.mock import MagicMock, create_autospec, patch
 import pytest
 import pywemo
 
-from homeassistant.components.wemo import CONF_DISCOVERY, CONF_STATIC
-from homeassistant.components.wemo.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.wemo import CONF_DISCOVERY, CONF_STATIC
+from inpui.components.wemo.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 MOCK_HOST = "127.0.0.1"
 MOCK_PORT = 50000

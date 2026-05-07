@@ -7,16 +7,16 @@ from typing import Any
 from lektricowifi import Device, DeviceConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     ATTR_HW_VERSION,
     ATTR_SERIAL_NUMBER,
     CONF_HOST,
     CONF_TYPE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import callback
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN
 

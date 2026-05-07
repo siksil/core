@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from numbers import Number
 
-from homeassistant.const import PRECISION_HALVES, PRECISION_TENTHS
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.const import PRECISION_HALVES, PRECISION_TENTHS
+from inpui.core import HomeAssistant
+from inpui.util.unit_conversion import TemperatureConverter
 
 
 def display_temp(

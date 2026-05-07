@@ -6,8 +6,8 @@ from xknx import XKNX
 from xknx.devices import Device as XknxDevice, RawValue
 
 from homeassistant import config_entries
-from homeassistant.components.select import SelectEntity
-from homeassistant.const import (
+from inpui.components.select import SelectEntity
+from inpui.const import (
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     CONF_PAYLOAD,
@@ -15,10 +15,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_PAYLOAD_LENGTH,

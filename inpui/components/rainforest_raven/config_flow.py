@@ -12,15 +12,15 @@ import serial.tools.list_ports
 from serial.tools.list_ports_common import ListPortInfo
 import voluptuous as vol
 
-from homeassistant.components import usb
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_MAC, CONF_NAME
-from homeassistant.helpers.selector import (
+from inpui.components import usb
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_MAC, CONF_NAME
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import DEFAULT_NAME, DOMAIN
 

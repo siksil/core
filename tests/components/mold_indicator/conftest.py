@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.mold_indicator.const import (
+from inpui.components.mold_indicator.const import (
     CONF_CALIBRATION_FACTOR,
     CONF_INDOOR_HUMIDITY,
     CONF_INDOOR_TEMP,
@@ -16,14 +16,14 @@ from homeassistant.components.mold_indicator.const import (
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

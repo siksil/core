@@ -4,8 +4,8 @@ from copy import deepcopy
 
 import pytest
 
-from homeassistant.components import alert, notify
-from homeassistant.components.alert.const import (
+from inpui.components import alert, notify
+from inpui.components.alert.const import (
     CONF_ALERT_MESSAGE,
     CONF_DATA,
     CONF_DONE_MESSAGE,
@@ -14,7 +14,7 @@ from homeassistant.components.alert.const import (
     CONF_TITLE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITY_ID,
     CONF_NAME,
@@ -27,9 +27,9 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform, async_mock_service
 

@@ -6,14 +6,14 @@ from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 from uhooapi.errors import UhooError
 
-from homeassistant.components.uhoo.const import UPDATE_INTERVAL
-from homeassistant.const import (
+from inpui.components.uhoo.const import UPDATE_INTERVAL
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

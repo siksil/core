@@ -16,18 +16,18 @@ from whirlpool.oven import (
 )
 from whirlpool.washer import MachineState as WasherMachineState, Washer
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.dt import utcnow
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.dt import utcnow
 
 from . import WhirlpoolConfigEntry
 from .entity import WhirlpoolEntity, WhirlpoolOvenEntity

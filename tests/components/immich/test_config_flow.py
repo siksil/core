@@ -6,9 +6,9 @@ from aiohttp import ClientError
 from aioimmich.exceptions import ImmichUnauthorizedError
 import pytest
 
-from homeassistant.components.immich.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.immich.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
@@ -16,8 +16,8 @@ from homeassistant.const import (
     CONF_URL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import MOCK_CONFIG_ENTRY_DATA, MOCK_USER_DATA
 

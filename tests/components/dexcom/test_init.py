@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from pydexcom.errors import AccountError, SessionError
 
-from homeassistant.components.dexcom.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.dexcom.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import CONFIG, init_integration
 

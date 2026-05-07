@@ -1,13 +1,13 @@
 """Provides conditions for motion."""
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import Condition, make_entity_state_condition
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import Condition, make_entity_state_condition
 
 _MOTION_DOMAIN_SPECS = {
     BINARY_SENSOR_DOMAIN: DomainSpec(device_class=BinarySensorDeviceClass.MOTION)

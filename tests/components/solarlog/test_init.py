@@ -13,13 +13,13 @@ from solarlog_cli.solarlog_exceptions import (
 )
 from solarlog_cli.solarlog_models import EnergyData
 
-from homeassistant.components.solarlog.const import CONF_HAS_PWD, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_TIMEOUT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.solarlog.const import CONF_HAS_PWD, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_TIMEOUT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import setup_platform
 from .const import HOST

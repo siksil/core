@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.spotify import DOMAIN
-from homeassistant.components.spotify.browse_media import async_browse_media
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import BrowseError
+from inpui.components.spotify import DOMAIN
+from inpui.components.spotify.browse_media import async_browse_media
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .conftest import SCOPES

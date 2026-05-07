@@ -12,8 +12,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import Event, HomeAssistant, State
-from homeassistant.helpers.json import (
+from inpui.core import Event, HomeAssistant, State
+from inpui.helpers.json import (
     ExtendedJSONEncoder,
     JSONEncoder as DefaultHASSJSONEncoder,
     find_paths_unserializable_data,
@@ -24,9 +24,9 @@ from homeassistant.helpers.json import (
     json_fragment,
     save_json,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.color import RGBColor
-from homeassistant.util.json import SerializationError, load_json
+from inpui.util import dt as dt_util
+from inpui.util.color import RGBColor
+from inpui.util.json import SerializationError, load_json
 
 from tests.common import json_round_trip
 

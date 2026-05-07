@@ -7,15 +7,15 @@ from datetime import datetime
 import logging
 from typing import Any
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from . import SqueezeboxConfigEntry
 from .const import (

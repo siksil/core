@@ -8,10 +8,10 @@ from uuid import uuid4
 
 import pytest
 
-from homeassistant.components.alexa import config, smart_home
-from homeassistant.components.alexa.const import CONF_ENDPOINT, CONF_FILTER, CONF_LOCALE
-from homeassistant.core import Context, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import entityfilter
+from inpui.components.alexa import config, smart_home
+from inpui.components.alexa.const import CONF_ENDPOINT, CONF_FILTER, CONF_LOCALE
+from inpui.core import Context, HomeAssistant, ServiceCall, callback
+from inpui.helpers import entityfilter
 
 from tests.common import async_mock_service
 

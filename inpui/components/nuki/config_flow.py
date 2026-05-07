@@ -9,10 +9,10 @@ from pynuki.bridge import InvalidCredentialsException
 from requests.exceptions import RequestException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_ENCRYPT_TOKEN, DEFAULT_PORT, DEFAULT_TIMEOUT, DOMAIN
 from .helpers import CannotConnect, InvalidAuth, parse_id

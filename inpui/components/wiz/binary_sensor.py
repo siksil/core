@@ -6,15 +6,15 @@ from collections.abc import Callable
 
 from pywizlight.bulb import PIR_SOURCE
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, SIGNAL_WIZ_PIR
 from .coordinator import WizConfigEntry, WizData

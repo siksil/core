@@ -2,10 +2,10 @@
 
 import logging
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .client import SatelClient
 from .const import (
@@ -62,7 +62,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SatelConfigEntry) -> boo
 
     entry.async_on_unload(entry.add_update_listener(update_listener))
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_close_connection)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_close_connection)
     )
 
     device_registry = dr.async_get(hass)

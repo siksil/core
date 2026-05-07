@@ -5,7 +5,7 @@ import logging
 import pyombi
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_NAME,
     CONF_API_KEY,
     CONF_HOST,
@@ -15,10 +15,10 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_SEASON,

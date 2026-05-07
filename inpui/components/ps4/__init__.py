@@ -10,22 +10,22 @@ from typing import TYPE_CHECKING
 from pyps4_2ndscreen.ddp import DDPProtocol, async_create_ddp_endpoint
 from pyps4_2ndscreen.media_art import COUNTRIES
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.media_player import (
+from inpui.components import persistent_notification
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_TITLE,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_LOCKED, CONF_REGION, CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import location as location_util
-from homeassistant.util.json import JsonObjectType, load_json_object
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_LOCKED, CONF_REGION, CONF_TOKEN, Platform
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.json import save_json
+from inpui.helpers.typing import ConfigType
+from inpui.util import location as location_util
+from inpui.util.json import JsonObjectType, load_json_object
 
 from .config_flow import PlayStation4FlowHandler  # noqa: F401
 from .const import ATTR_MEDIA_IMAGE_URL, COUNTRYCODE_NAMES, DOMAIN, GAMES_FILE, PS4_DATA

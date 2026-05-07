@@ -1,6 +1,6 @@
 """SFR Box constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DEFAULT_HOST = "192.168.0.1"
 DEFAULT_USERNAME = "admin"

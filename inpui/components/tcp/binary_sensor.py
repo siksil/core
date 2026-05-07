@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from typing import Final
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .common import TCP_PLATFORM_SCHEMA
 from .const import CONF_VALUE_ON

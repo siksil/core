@@ -9,10 +9,10 @@ from typing import Any
 from bosch_alarm_mode2 import Panel
 from bosch_alarm_mode2.panel import Door
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BoschAlarmConfigEntry
 from .const import DOMAIN

@@ -12,17 +12,17 @@ from aiomealie import (
 from awesomeversion import AwesomeVersion
 import voluptuous as vol
 
-from homeassistant.components.todo import DOMAIN as TODO_DOMAIN
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_DATE
-from homeassistant.core import (
+from inpui.components.todo import DOMAIN as TODO_DOMAIN
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_DATE
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, service
 
 from .const import (
     ATTR_END_DATE,

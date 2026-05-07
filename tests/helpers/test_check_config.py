@@ -6,18 +6,18 @@ from unittest.mock import Mock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.config import YAML_CONFIG_FILE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.check_config import (
+from inpui.config import YAML_CONFIG_FILE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.check_config import (
     CheckConfigError,
     HomeAssistantConfig,
     async_check_ha_config_file,
 )
-from homeassistant.helpers.condition import CONDITIONS
-from homeassistant.helpers.trigger import TRIGGERS
-from homeassistant.requirements import RequirementsNotFound
+from inpui.helpers.condition import CONDITIONS
+from inpui.helpers.trigger import TRIGGERS
+from inpui.requirements import RequirementsNotFound
 
 from tests.common import (
     MockModule,

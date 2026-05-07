@@ -8,11 +8,11 @@ from flux_led import DeviceType
 from flux_led.aio import AIOWifiLedBulb
 from flux_led.const import MODE_MUSIC
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.switch import SwitchEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     CONF_REMOTE_ACCESS_ENABLED,

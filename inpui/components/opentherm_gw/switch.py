@@ -4,11 +4,11 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ID, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ID, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OpenThermGatewayHub
 from .const import DATA_GATEWAYS, DATA_OPENTHERM_GW, GATEWAY_DEVICE_DESCRIPTION

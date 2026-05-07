@@ -7,14 +7,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 SUPPORT_LANGUAGES = ["en", "de"]
 

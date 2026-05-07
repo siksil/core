@@ -10,14 +10,14 @@ from typing import Self, cast
 from google_photos_library_api.exceptions import GooglePhotosApiError
 from google_photos_library_api.model import Album, MediaItem
 
-from homeassistant.components.media_player import BrowseError, MediaClass, MediaType
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass, MediaType
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, READ_SCOPE
 from .coordinator import GooglePhotosConfigEntry

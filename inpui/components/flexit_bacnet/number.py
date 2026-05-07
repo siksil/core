@@ -7,16 +7,16 @@ from dataclasses import dataclass
 from flexit_bacnet import FlexitBACnet
 from flexit_bacnet.bacnet import DecodingError
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import PERCENTAGE, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import FlexitConfigEntry, FlexitCoordinator

@@ -12,7 +12,7 @@ from aiohttp.hdrs import (
 from multidict import CIMultiDict
 import pytest
 
-from homeassistant.components.hassio.const import X_AUTH_TOKEN
+from inpui.components.hassio.const import X_AUTH_TOKEN
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

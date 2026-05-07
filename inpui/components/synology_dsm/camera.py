@@ -12,15 +12,15 @@ from synology_dsm.exceptions import (
     SynologyDSMRequestException,
 )
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     Camera,
     CameraEntityDescription,
     CameraEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SynoApi
 from .const import (

@@ -2,7 +2,7 @@
 
 import json
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import async_fire_mqtt_message
 

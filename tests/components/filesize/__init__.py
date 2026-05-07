@@ -1,6 +1,6 @@
 """Tests for the filesize component."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 TEST_FILE_NAME = "mock_file_test_filesize.txt"
 TEST_FILE_NAME2 = "mock_file_test_filesize2.txt"

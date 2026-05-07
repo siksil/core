@@ -4,7 +4,7 @@ from typing import Final
 
 from aioairzone.common import TemperatureUnit
 
-from homeassistant.const import UnitOfTemperature
+from inpui.const import UnitOfTemperature
 
 DOMAIN: Final = "airzone"
 MANUFACTURER: Final = "Airzone"

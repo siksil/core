@@ -9,14 +9,14 @@ from typing import Any
 
 from aioguardian import Client
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityDescription,
     ValveEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import GuardianConfigEntry, GuardianData
 from .const import API_VALVE_STATUS

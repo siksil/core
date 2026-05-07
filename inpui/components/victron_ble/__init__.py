@@ -9,17 +9,17 @@ from sensor_state_data import SensorUpdate
 from victron_ble_ha_parser import VictronBluetoothDeviceData
 from victron_ble_ha_parser.parser import detect_device_type
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
     async_rediscover_address,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from .const import REAUTH_AFTER_FAILURES, VICTRON_IDENTIFIER
 

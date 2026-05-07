@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import setup_integration
 

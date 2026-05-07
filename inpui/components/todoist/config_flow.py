@@ -8,8 +8,8 @@ from requests.exceptions import HTTPError
 from todoist_api_python.api_async import TodoistAPIAsync
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_TOKEN
 
 from .const import DOMAIN
 

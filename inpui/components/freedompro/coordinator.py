@@ -8,11 +8,11 @@ from typing import Any
 
 from pyfreedompro import get_list, get_states
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 

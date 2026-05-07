@@ -16,13 +16,13 @@ from systembridgeconnector.models.modules import GetData, Module
 from systembridgeconnector.websocket_client import WebSocketClient
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DATA_WAIT_TIMEOUT, DOMAIN
 

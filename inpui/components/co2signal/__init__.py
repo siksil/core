@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from aioelectricitymaps import ElectricityMaps
 
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import CO2SignalConfigEntry, CO2SignalCoordinator
 

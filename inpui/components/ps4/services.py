@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_COMMAND, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
+from inpui.const import ATTR_COMMAND, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
 
 from .const import COMMANDS, DOMAIN, PS4_DATA
 

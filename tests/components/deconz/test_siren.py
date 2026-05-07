@@ -4,15 +4,15 @@ from collections.abc import Callable
 
 import pytest
 
-from homeassistant.components.siren import ATTR_DURATION, DOMAIN as SIREN_DOMAIN
-from homeassistant.const import (
+from inpui.components.siren import ATTR_DURATION, DOMAIN as SIREN_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import WebsocketDataType
 

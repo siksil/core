@@ -6,9 +6,9 @@ from unittest.mock import patch
 from moehlenhoff_alpha2 import Alpha2Base
 import xmltodict
 
-from homeassistant.components.moehlenhoff_alpha2.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.moehlenhoff_alpha2.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 

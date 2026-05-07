@@ -7,21 +7,21 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DEVICE_CLASSES_SCHEMA,
     DOMAIN as BUTTON_DOMAIN,
     ENTITY_ID_FORMAT,
     ButtonEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_PRESS, DOMAIN
 from .helpers import async_setup_template_entry, async_setup_template_platform

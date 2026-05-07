@@ -6,9 +6,9 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.subaru.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.subaru.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .api_responses import TEST_VIN_2_EV
 from .conftest import (

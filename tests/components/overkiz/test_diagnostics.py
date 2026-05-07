@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.overkiz.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.overkiz.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 from tests.components.diagnostics import (

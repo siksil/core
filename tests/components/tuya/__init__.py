@@ -15,11 +15,11 @@ from tuya_sharing import (
     Manager,
 )
 
-from homeassistant.components.tuya import DOMAIN, DeviceListener
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util import dt as dt_util
+from inpui.components.tuya import DOMAIN, DeviceListener
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers.json import json_dumps
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 

@@ -4,15 +4,15 @@ from typing import Any
 from unittest.mock import AsyncMock
 
 from homeassistant import config_entries
-from homeassistant.components.nmbs.config_flow import CONF_EXCLUDE_VIAS
-from homeassistant.components.nmbs.const import (
+from inpui.components.nmbs.config_flow import CONF_EXCLUDE_VIAS
+from inpui.components.nmbs.const import (
     CONF_STATION_FROM,
     CONF_STATION_TO,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

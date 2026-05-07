@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 from skyboxremote import SkyBoxConnectionError
 
-from homeassistant.components.sky_remote.const import DEFAULT_PORT, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.sky_remote.const import DEFAULT_PORT, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_mock_entry
 

@@ -5,17 +5,17 @@ from unittest.mock import AsyncMock
 import pytest
 from requests import ConnectionError as RequestsConnectionError, HTTPError, Timeout
 
-from homeassistant.components.nederlandse_spoorwegen.const import (
+from inpui.components.nederlandse_spoorwegen.const import (
     CONF_FROM,
     CONF_TIME,
     CONF_TO,
     CONF_VIA,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_RECONFIGURE, SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_RECONFIGURE, SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import API_KEY
 

@@ -7,9 +7,9 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.rest import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.rest import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

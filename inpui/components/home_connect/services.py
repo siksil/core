@@ -16,10 +16,10 @@ from aiohomeconnect.model import (
 from aiohomeconnect.model.error import HomeConnectError, NoProgramActiveError
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import (
     AFFECTS_TO_ACTIVE_PROGRAM,

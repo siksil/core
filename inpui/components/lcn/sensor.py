@@ -7,12 +7,12 @@ from itertools import chain
 
 import pypck
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     CONF_DOMAIN,
     CONF_ENTITIES,
@@ -25,9 +25,9 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DOMAIN_DATA,

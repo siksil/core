@@ -7,8 +7,8 @@ from asusrouter.modules.data import AsusData
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import device_tracker, sensor
-from homeassistant.components.asuswrt.const import (
+from inpui.components import device_tracker, sensor
+from inpui.components.asuswrt.const import (
     CONF_INTERFACE,
     DOMAIN,
     SENSORS_BYTES,
@@ -20,17 +20,17 @@ from homeassistant.components.asuswrt.const import (
     SENSORS_TEMPERATURES_LEGACY,
     SENSORS_UPTIME,
 )
-from homeassistant.components.device_tracker import CONF_CONSIDER_HOME
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.device_tracker import CONF_CONSIDER_HOME
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_PROTOCOL,
     STATE_HOME,
     STATE_NOT_HOME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import slugify
 
 from .common import (
     CONFIG_DATA_HTTP,

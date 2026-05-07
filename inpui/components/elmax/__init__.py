@@ -6,9 +6,9 @@ from elmax_api.exceptions import ElmaxBadLoginError
 from elmax_api.http import Elmax, ElmaxLocal, GenericElmax
 from elmax_api.model.panel import PanelEntry
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .common import DirectPanel, build_direct_ssl_context, get_direct_api_url
 from .const import (
@@ -100,7 +100,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ElmaxConfigEntry) -> boo
         await coordinator.async_shutdown()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_on_hass_stop)
     )
 
     # Issue a first refresh, so that we trigger a re-auth flow if necessary

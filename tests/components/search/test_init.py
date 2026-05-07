@@ -2,17 +2,17 @@
 
 from pytest_unordered import unordered
 
-from homeassistant.components.search import ItemType, Searcher
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.search import ItemType, Searcher
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     floor_registry as fr,
     label_registry as lr,
 )
-from homeassistant.helpers.entity import EntityInfo
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity import EntityInfo
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

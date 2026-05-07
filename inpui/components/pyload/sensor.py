@@ -6,16 +6,16 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from enum import StrEnum
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfDataRate, UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import UnitOfDataRate, UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import UNIT_DOWNLOADS
 from .coordinator import PyLoadConfigEntry, PyLoadData

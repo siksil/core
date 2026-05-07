@@ -11,14 +11,14 @@ from pywemo.exceptions import ActionException, PyWeMoException
 from pywemo.subscribe import EVENT_TYPE_LONG_PRESS
 
 from homeassistant import runner
-from homeassistant.components.wemo import CONF_DISCOVERY, CONF_STATIC
-from homeassistant.components.wemo.const import DOMAIN, WEMO_SUBSCRIPTION_EVENT
-from homeassistant.components.wemo.coordinator import Options, async_get_coordinator
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.update_coordinator import UpdateFailed
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.wemo import CONF_DISCOVERY, CONF_STATIC
+from inpui.components.wemo.const import DOMAIN, WEMO_SUBSCRIPTION_EVENT
+from inpui.components.wemo.coordinator import Options, async_get_coordinator
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.update_coordinator import UpdateFailed
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .conftest import MOCK_FIRMWARE_VERSION, MOCK_HOST, MOCK_SERIAL_NUMBER
 

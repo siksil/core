@@ -14,25 +14,25 @@ from pymediaroom import (
 )
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     PLATFORM_SCHEMA as MEDIA_PLAYER_PLATFORM_SCHEMA,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_OPTIMISTIC,
     CONF_TIMEOUT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -106,7 +106,7 @@ async def async_setup_platform(
                 _LOGGER.debug("Stopping internal pymediaroom discovery")
                 hass.data[DISCOVERY_MEDIAROOM].close()
 
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_discovery)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_discovery)
 
             _LOGGER.debug("Auto discovery installed")
 

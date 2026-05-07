@@ -7,14 +7,14 @@ import pytest
 from voluptuous.error import MultipleInvalid
 
 from homeassistant import config as hass_config
-from homeassistant.components import input_number, input_select, media_player, switch
-from homeassistant.components.media_player import (
+from inpui.components import input_number, input_select, media_player, switch
+from inpui.components.media_player import (
     BrowseMedia,
     MediaClass,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.universal import media_player as universal
-from homeassistant.const import (
+from inpui.components.universal import media_player as universal
+from inpui.const import (
     SERVICE_RELOAD,
     STATE_OFF,
     STATE_ON,
@@ -22,11 +22,11 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity import EntityPlatformState
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity import EntityPlatformState
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform, async_mock_service, get_fixture_path
 

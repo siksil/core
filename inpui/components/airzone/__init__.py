@@ -15,9 +15,9 @@ from aioairzone.const import (
 )
 from aioairzone.localapi import AirzoneLocalApi, ConnectionOptions
 
-from homeassistant.const import CONF_HOST, CONF_ID, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import CONF_HOST, CONF_ID, CONF_PORT, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     aiohttp_client,
     device_registry as dr,
     entity_registry as er,

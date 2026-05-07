@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from knocki import TokenResponse, Trigger
 import pytest
 
-from homeassistant.components.knocki.const import DOMAIN
-from homeassistant.const import CONF_TOKEN
+from inpui.components.knocki.const import DOMAIN
+from inpui.const import CONF_TOKEN
 
 from tests.common import MockConfigEntry, load_json_array_fixture
 

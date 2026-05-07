@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from homeassistant.components.energy import data, is_configured
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.models import StatisticMeanType
-from homeassistant.components.recorder.statistics import async_add_external_statistics
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.energy import data, is_configured
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.models import StatisticMeanType
+from inpui.components.recorder.statistics import async_add_external_statistics
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, flush_store, mock_platform
 from tests.components.recorder.common import (

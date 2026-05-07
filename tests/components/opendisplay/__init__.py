@@ -13,7 +13,7 @@ from opendisplay import (
     SystemConfig,
 )
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
 
 from tests.components.bluetooth import generate_ble_device
 

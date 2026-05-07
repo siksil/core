@@ -10,18 +10,18 @@ from typing import Any, Self
 
 import metno
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ELEVATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     EVENT_CORE_CONFIG_UPDATE,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import CONF_TRACK_HOME, DOMAIN
 

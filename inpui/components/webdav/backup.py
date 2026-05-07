@@ -12,7 +12,7 @@ from aiohttp import ClientTimeout
 from aiowebdav2.exceptions import UnauthorizedError, WebDavError
 from propcache.api import cached_property
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -20,9 +20,9 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.json import json_dumps
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
 
 from . import WebDavConfigEntry
 from .const import CONF_BACKUP_PATH, DATA_BACKUP_AGENT_LISTENERS, DOMAIN

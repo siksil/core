@@ -7,16 +7,16 @@ from dataclasses import dataclass
 
 from anova_wifi import AnovaMode, AnovaState, APCUpdateSensor
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .coordinator import AnovaConfigEntry, AnovaCoordinator
 from .entity import AnovaDescriptionEntity

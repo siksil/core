@@ -8,11 +8,11 @@ from typing import Any
 from hole.exceptions import HoleError
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import SERVICE_DISABLE, SERVICE_DISABLE_ATTR_DURATION
 from .coordinator import PiHoleConfigEntry

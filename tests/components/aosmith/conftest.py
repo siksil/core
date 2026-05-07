@@ -15,10 +15,10 @@ from py_aosmith.models import (
 )
 import pytest
 
-from homeassistant.components.aosmith.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.aosmith.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 

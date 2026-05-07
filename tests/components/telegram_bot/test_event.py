@@ -3,13 +3,13 @@
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.telegram_bot.const import (
+from inpui.components.telegram_bot.const import (
     ATTR_CHAT_ID,
     ATTR_MESSAGE,
     DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

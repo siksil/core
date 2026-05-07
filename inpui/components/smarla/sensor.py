@@ -7,16 +7,16 @@ from typing import Any, Generic, TypeVar
 from pysmarlaapi.federwiege.services.classes import Property
 from pysmarlaapi.federwiege.services.types import SpringStatus
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
     StateType,
 )
-from homeassistant.const import UnitOfLength, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfLength, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FederwiegeConfigEntry
 from .entity import SmarlaBaseEntity, SmarlaEntityDescription

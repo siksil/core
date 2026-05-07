@@ -4,9 +4,9 @@ from unittest.mock import MagicMock
 
 from gotailwind import TailwindAuthenticationError, TailwindConnectionError
 
-from homeassistant.components.tailwind.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.tailwind.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

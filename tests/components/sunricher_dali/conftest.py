@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from PySrDaliGateway.helper import gen_device_unique_id, gen_group_unique_id
 import pytest
 
-from homeassistant.components.sunricher_dali.const import CONF_SERIAL_NUMBER, DOMAIN
-from homeassistant.const import (
+from inpui.components.sunricher_dali.const import CONF_SERIAL_NUMBER, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

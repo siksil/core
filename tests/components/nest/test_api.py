@@ -14,9 +14,9 @@ from unittest.mock import AsyncMock, Mock, patch
 from google.oauth2.credentials import Credentials
 import pytest
 
-from homeassistant.components.nest.const import API_URL, OAUTH2_TOKEN, SDM_SCOPES
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.nest.const import API_URL, OAUTH2_TOKEN, SDM_SCOPES
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import CLIENT_ID, CLIENT_SECRET, PROJECT_ID, PlatformSetup
 from .conftest import FAKE_REFRESH_TOKEN, FAKE_TOKEN

@@ -7,10 +7,10 @@ from typing import Any
 
 from kaleidescape import const as kaleidescape_const
 
-from homeassistant.components.remote import RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import KaleidescapeConfigEntry
 from .entity import KaleidescapeEntity

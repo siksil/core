@@ -8,10 +8,10 @@ import logging
 
 from ismartgate import AbstractGateApi, GogoGate2InfoResponse, ISmartGateInfoResponse
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 type GogoGateConfigEntry = ConfigEntry[DeviceDataUpdateCoordinator]
 

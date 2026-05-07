@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.components.rfxtrx.const import ATTR_EVENT
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
+from inpui.components.rfxtrx import DOMAIN
+from inpui.components.rfxtrx.const import ATTR_EVENT
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
 
 from .conftest import create_rfx_test_cfg
 

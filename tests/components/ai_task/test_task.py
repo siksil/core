@@ -7,20 +7,20 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import media_source
-from homeassistant.components.ai_task import (
+from inpui.components import media_source
+from inpui.components.ai_task import (
     AITaskEntityFeature,
     async_generate_data,
     async_generate_image,
 )
-from homeassistant.components.ai_task.const import DATA_MEDIA_SOURCE
-from homeassistant.components.camera import Image
-from homeassistant.components.conversation import async_get_chat_log
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, llm
-from homeassistant.util import dt as dt_util
+from inpui.components.ai_task.const import DATA_MEDIA_SOURCE
+from inpui.components.camera import Image
+from inpui.components.conversation import async_get_chat_log
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, llm
+from inpui.util import dt as dt_util
 
 from .conftest import TEST_ENTITY_ID, MockAITaskEntity
 

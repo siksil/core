@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IGNORE,
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
@@ -18,7 +18,7 @@ from homeassistant.config_entries import (
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_MODEL,
@@ -28,18 +28,18 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_PRESENTATION_URL,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util.network import is_link_local
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.typing import VolDictType
+from inpui.util.network import is_link_local
 
 from . import AxisConfigEntry
 from .const import (

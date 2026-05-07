@@ -7,14 +7,14 @@ from aiontfy import BroadcastAction, CopyAction, HttpAction, ViewAction
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.selector import MediaSelector
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.selector import MediaSelector
 
 from .const import DOMAIN
 

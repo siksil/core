@@ -15,18 +15,18 @@ from gotailwind import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_TOKEN
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_TOKEN
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, LOGGER
 

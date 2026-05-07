@@ -5,8 +5,8 @@ from freezegun import freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.auth.models import Credentials
-from homeassistant.core import HomeAssistant
+from inpui.auth.models import Credentials
+from inpui.core import HomeAssistant
 
 from .conftest import TEST_ENTITY, Client
 

@@ -5,11 +5,11 @@ from dataclasses import dataclass
 
 from volvocarsapi.models import VolvoCarsApiBaseModel
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.sensor import SensorDeviceClass
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import VolvoBaseCoordinator, VolvoConfigEntry

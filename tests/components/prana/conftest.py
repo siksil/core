@@ -8,8 +8,8 @@ from prana_local_api_client.models.prana_device_info import PranaDeviceInfo
 from prana_local_api_client.models.prana_state import PranaState
 import pytest
 
-from homeassistant.components.prana.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.prana.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

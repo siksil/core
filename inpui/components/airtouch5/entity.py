@@ -3,8 +3,8 @@
 from airtouch5py.airtouch5_client import Airtouch5ConnectionStateChange
 from airtouch5py.airtouch5_simple_client import Airtouch5SimpleClient
 
-from homeassistant.core import callback
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.entity import Entity
 
 
 class Airtouch5Entity(Entity):
@@ -32,7 +32,7 @@ class Airtouch5Entity(Entity):
         )
 
     async def async_will_remove_from_hass(self) -> None:
-        """Remove data updated listener when entity is removed from homeassistant."""
+        """Remove data updated listener when entity is removed from inpui."""
         self._client.connection_state_callbacks.remove(
             self._receive_connection_callback
         )

@@ -7,11 +7,11 @@ from urllib.parse import quote
 
 import voluptuous as vol
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_RTSP_PORT, CONF_STREAM, LOGGER, SERVICE_PTZ, SERVICE_PTZ_PRESET
 from .coordinator import FoscamConfigEntry, FoscamCoordinator

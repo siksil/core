@@ -30,23 +30,23 @@ from aioqsw.const import (
     QSD_UPTIME_TIMESTAMP,
 )
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     EntityCategory,
     UnitOfDataRate,
     UnitOfInformation,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, StateType
+from inpui.util import dt as dt_util
 
 from .const import ATTR_MAX, DOMAIN, QSW_COORD_DATA, RPM
 from .coordinator import QswDataCoordinator

@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 from aioasuswrt.asuswrt import Device as LegacyDevice
 from asusrouter.modules.client import ConnectionState
 
-from homeassistant.components.asuswrt.const import (
+from inpui.components.asuswrt.const import (
     CONF_SSH_KEY,
     MODE_ROUTER,
     PROTOCOL_HTTP,
@@ -13,7 +13,7 @@ from homeassistant.components.asuswrt.const import (
     PROTOCOL_SSH,
     PROTOCOL_TELNET,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MODE,
     CONF_PASSWORD,

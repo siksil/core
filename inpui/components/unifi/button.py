@@ -24,14 +24,14 @@ from aiounifi.models.device import (
 from aiounifi.models.port import Port
 from aiounifi.models.wlan import Wlan, WlanChangePasswordRequest
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import UnifiConfigEntry
 from .entity import (

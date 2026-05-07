@@ -9,12 +9,12 @@ import aiohttp
 from pynws import SimpleNWS
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from . import base_unique_id
 from .const import CONF_STATION, DOMAIN

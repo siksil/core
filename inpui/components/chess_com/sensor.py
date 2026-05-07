@@ -6,14 +6,14 @@ from typing import TYPE_CHECKING, Any
 
 from chess_com_api import PlayerStats
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ChessConfigEntry
 from .coordinator import ChessCoordinator, ChessData

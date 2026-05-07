@@ -3,8 +3,8 @@
 import pytest
 from pywaze.route_calculator import WRCError
 
-from homeassistant.components.waze_travel_time.config_flow import WazeConfigFlow
-from homeassistant.components.waze_travel_time.const import (
+from inpui.components.waze_travel_time.config_flow import WazeConfigFlow
+from inpui.components.waze_travel_time.const import (
     CONF_AVOID_FERRIES,
     CONF_AVOID_SUBSCRIPTION_ROADS,
     CONF_AVOID_TOLL_ROADS,
@@ -19,8 +19,8 @@ from homeassistant.components.waze_travel_time.const import (
     IMPERIAL_UNITS,
     METRIC_UNITS,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .const import MOCK_CONFIG
 

@@ -8,15 +8,15 @@ from typing import TYPE_CHECKING, Any
 
 from powerfox import Device, GasReport, HeatMeter, PowerMeter, WaterMeter
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import CURRENCY_EURO, UnitOfEnergy, UnitOfPower, UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import CURRENCY_EURO, UnitOfEnergy, UnitOfPower, UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import (
     PowerfoxBaseCoordinator,

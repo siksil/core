@@ -10,7 +10,7 @@ from chip.clusters.Objects import Cluster, ClusterAttributeDescriptor
 from matter_server.client.models.device_types import DeviceType
 from matter_server.client.models.node import MatterEndpoint
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 from .entity import MatterEntityDescription
 

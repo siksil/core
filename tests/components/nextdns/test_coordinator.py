@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock
 from freezegun.api import FrozenDateTimeFactory
 from nextdns import InvalidApiKeyError
 
-from homeassistant.components.nextdns.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nextdns.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

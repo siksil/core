@@ -9,13 +9,13 @@ from aiohttp import client_exceptions
 from smarttub import APIError, LoginFailed, SmartTub, Spa
 from smarttub.api import Account
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     ATTR_ERRORS,

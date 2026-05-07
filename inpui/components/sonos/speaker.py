@@ -20,18 +20,18 @@ from soco.plugins.sharelink import ShareLinkPlugin
 from soco.snapshot import Snapshot
 from sonos_websocket import SonosWebsocket
 
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import (
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
     dispatcher_send,
 )
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util import dt as dt_util
+from inpui.helpers.event import async_track_time_interval
+from inpui.util import dt as dt_util
 
 from .alarms import SonosAlarms
 from .const import (

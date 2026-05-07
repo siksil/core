@@ -1,6 +1,6 @@
 """Errors for the cert_expiry integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class CertExpiryException(HomeAssistantError):

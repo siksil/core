@@ -7,16 +7,16 @@ from typing import Any
 
 from lektricowifi import Device, DeviceConnectionError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_HW_VERSION,
     ATTR_SERIAL_NUMBER,
     CONF_HOST,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import LOGGER
 

@@ -4,34 +4,34 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.button import SERVICE_PRESS
-from homeassistant.components.cover import (
+from inpui.components import conversation
+from inpui.components.button import SERVICE_PRESS
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
     SERVICE_STOP_COVER,
     CoverState,
 )
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.lock import SERVICE_LOCK, SERVICE_UNLOCK
-from homeassistant.components.valve import (
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.lock import SERVICE_LOCK, SERVICE_UNLOCK
+from inpui.components.valve import (
     DOMAIN as VALVE_DOMAIN,
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
     SERVICE_STOP_VALVE,
     ValveState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, entity_registry as er, intent
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, entity_registry as er, intent
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, async_mock_service
 from tests.typing import ClientSessionGenerator

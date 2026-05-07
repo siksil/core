@@ -4,10 +4,10 @@ from typing import Final
 
 from pylgnetcast import LgNetCastClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 

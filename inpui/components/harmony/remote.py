@@ -9,7 +9,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_DELAY_SECS,
     ATTR_DEVICE,
@@ -19,12 +19,12 @@ from homeassistant.components.remote import (
     RemoteEntity,
     RemoteEntityFeature,
 )
-from homeassistant.core import HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     ACTIVITY_POWER_OFF,

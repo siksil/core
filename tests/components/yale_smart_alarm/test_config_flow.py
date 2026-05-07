@@ -8,9 +8,9 @@ import pytest
 from yalesmartalarmclient.exceptions import AuthenticationError, UnknownError
 
 from homeassistant import config_entries
-from homeassistant.components.yale_smart_alarm.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.yale_smart_alarm.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

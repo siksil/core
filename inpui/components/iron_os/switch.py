@@ -9,10 +9,10 @@ from typing import Any
 
 from pynecil import CharSetting, SettingsDataResponse, TempUnit
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import IronOSConfigEntry
 from .const import MIN_BOOST_TEMP, MIN_BOOST_TEMP_F

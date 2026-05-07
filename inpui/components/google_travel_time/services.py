@@ -6,22 +6,22 @@ from google.api_core.client_options import ClientOptions
 from google.api_core.exceptions import GoogleAPIError, PermissionDenied
 from google.maps.routing_v2 import RoutesAsyncClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONFIG_ENTRY_ID,
     CONF_API_KEY,
     CONF_LANGUAGE,
     CONF_MODE,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service import async_get_config_entry
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service import async_get_config_entry
 
 from .const import (
     CONF_ARRIVAL_TIME,

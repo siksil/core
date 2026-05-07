@@ -7,12 +7,12 @@ from aiomusiccast import MusicCastConnectionException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.yamaha_musiccast.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.yamaha_musiccast.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,

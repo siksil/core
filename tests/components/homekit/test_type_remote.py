@@ -4,29 +4,29 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.homekit.accessories import HomeDriver
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.accessories import HomeDriver
+from inpui.components.homekit.const import (
     ATTR_KEY_NAME,
     ATTR_VALUE,
     EVENT_HOMEKIT_TV_REMOTE_KEY_PRESSED,
     KEY_ARROW_RIGHT,
 )
-from homeassistant.components.homekit.type_remotes import ActivityRemote
-from homeassistant.components.remote import (
+from inpui.components.homekit.type_remotes import ActivityRemote
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_ACTIVITY_LIST,
     ATTR_CURRENT_ACTIVITY,
     DOMAIN as REMOTE_DOMAIN,
     RemoteEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     STATE_STANDBY,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_mock_service
 

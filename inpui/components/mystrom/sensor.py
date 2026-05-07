@@ -10,23 +10,23 @@ from typing import Any
 from pymystrom.pir import MyStromPir
 from pymystrom.switch import MyStromSwitch
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     LIGHT_LUX,
     EntityCategory,
     UnitOfEnergy,
     UnitOfPower,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utcnow
 
 from .const import DOMAIN, MANUFACTURER
 from .models import MyStromConfigEntry

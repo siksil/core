@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import lifx
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.lifx.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import lifx
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.lifx.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import (
     DEFAULT_ENTRY_TITLE,

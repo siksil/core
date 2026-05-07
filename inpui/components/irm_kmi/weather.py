@@ -2,20 +2,20 @@
 
 from irm_kmi_api import CurrentWeatherData
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     Forecast,
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_UNIQUE_ID,
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import IrmKmiConfigEntry, IrmKmiCoordinator
 from .entity import IrmKmiBaseEntity

@@ -12,12 +12,12 @@ from incomfortclient import (
     InvalidHeaterList,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 type InComfortConfigEntry = ConfigEntry[InComfortDataCoordinator]
 

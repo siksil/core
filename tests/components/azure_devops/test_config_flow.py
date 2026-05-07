@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 import aiohttp
 
 from homeassistant import config_entries
-from homeassistant.components.azure_devops.const import CONF_ORG, CONF_PROJECT, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.azure_devops.const import CONF_ORG, CONF_PROJECT, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import FIXTURE_REAUTH_INPUT, FIXTURE_USER_INPUT
 

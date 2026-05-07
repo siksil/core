@@ -7,12 +7,12 @@ import pytest
 from togrill_bluetooth.client import Client
 from togrill_bluetooth.packets import Packet, PacketA0Notify, PacketNotify
 
-from homeassistant.components.togrill.const import (
+from inpui.components.togrill.const import (
     CONF_HAS_AMBIENT,
     CONF_PROBE_COUNT,
     DOMAIN,
 )
-from homeassistant.const import CONF_ADDRESS, CONF_MODEL
+from inpui.const import CONF_ADDRESS, CONF_MODEL
 
 from . import TOGRILL_SERVICE_INFO
 

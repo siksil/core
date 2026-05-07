@@ -11,12 +11,12 @@ from openai.types.chat.chat_completion import Choice
 import pytest
 from python_open_router import ModelsDataWrapper
 
-from homeassistant.components.open_router.const import CONF_PROMPT, DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.setup import async_setup_component
+from inpui.components.open_router.const import CONF_PROMPT, DOMAIN
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_load_fixture
 

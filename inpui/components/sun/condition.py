@@ -7,11 +7,11 @@ from typing import Any, Unpack, cast
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_OPTIONS, SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import move_top_level_schema_fields_to_options
-from homeassistant.helpers.condition import (
+from inpui.const import CONF_OPTIONS, SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import move_top_level_schema_fields_to_options
+from inpui.helpers.condition import (
     Condition,
     ConditionChecker,
     ConditionCheckParams,
@@ -19,9 +19,9 @@ from homeassistant.helpers.condition import (
     condition_trace_set_result,
     condition_trace_update_result,
 )
-from homeassistant.helpers.sun import get_astral_event_date
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.sun import get_astral_event_date
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 _OPTIONS_SCHEMA_DICT: dict[vol.Marker, Any] = {
     vol.Optional("before"): cv.sun_event,

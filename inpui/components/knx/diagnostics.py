@@ -7,9 +7,9 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import config as conf_util
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from . import CONFIG_SCHEMA
 from .const import (

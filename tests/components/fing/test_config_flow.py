@@ -3,11 +3,11 @@
 import httpx
 import pytest
 
-from homeassistant.components.fing.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.fing.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import AsyncMock
 from tests.conftest import MockConfigEntry

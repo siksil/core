@@ -10,21 +10,21 @@ from aiohomeconnect.model import EventKey
 import aiohttp
 import jwt
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     issue_registry as ir,
 )
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.helpers.typing import ConfigType
 
 from .api import AsyncConfigEntryAuth
 from .const import DOMAIN, OLD_NEW_UNIQUE_ID_SUFFIX_MAP

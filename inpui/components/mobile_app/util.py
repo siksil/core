@@ -5,9 +5,9 @@ from __future__ import annotations
 import asyncio
 from typing import TYPE_CHECKING
 
-from homeassistant.components import cloud
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import cloud
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
 
 from .const import (
     ATTR_APP_DATA,

@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock, MagicMock, PropertyMock, patch
 from aioharmony.const import ClientCallbackType
 import pytest
 
-from homeassistant.components.harmony.const import ACTIVITY_POWER_OFF, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME
+from inpui.components.harmony.const import ACTIVITY_POWER_OFF, DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME
 
 from .const import (
     HUB_NAME,

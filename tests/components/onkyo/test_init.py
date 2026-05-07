@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock
 from aioonkyo import Status
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import mock_discovery, setup_integration
 

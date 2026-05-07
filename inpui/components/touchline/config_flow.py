@@ -8,11 +8,11 @@ from typing import Any
 from pytouchline_extended import PyTouchline
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 

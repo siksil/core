@@ -5,11 +5,11 @@ import logging
 import pyversasense as pyv
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     KEY_CONSUMER,

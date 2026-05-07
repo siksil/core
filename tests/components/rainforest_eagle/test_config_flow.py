@@ -3,7 +3,7 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.rainforest_eagle.const import (
+from inpui.components.rainforest_eagle.const import (
     CONF_CLOUD_ID,
     CONF_HARDWARE_ADDRESS,
     CONF_INSTALL_CODE,
@@ -11,10 +11,10 @@ from homeassistant.components.rainforest_eagle.const import (
     TYPE_EAGLE_100,
     TYPE_EAGLE_200,
 )
-from homeassistant.components.rainforest_eagle.data import CannotConnect, InvalidAuth
-from homeassistant.const import CONF_HOST, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.rainforest_eagle.data import CannotConnect, InvalidAuth
+from inpui.const import CONF_HOST, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form_multiple_meters_first_connected(hass: HomeAssistant) -> None:

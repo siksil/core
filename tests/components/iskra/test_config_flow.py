@@ -11,9 +11,9 @@ from pyiskra.exceptions import (
 )
 import pytest
 
-from homeassistant.components.iskra import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.iskra import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_ADDRESS,
     CONF_HOST,
     CONF_PASSWORD,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     HOST,

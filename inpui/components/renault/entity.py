@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import cast
 
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import RenaultDataUpdateCoordinator, T
 from .renault_vehicle import RenaultVehicleProxy

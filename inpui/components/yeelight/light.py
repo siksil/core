@@ -14,7 +14,7 @@ from yeelight.aio import AsyncBulb
 from yeelight.enums import BulbType, LightType, PowerMode, SceneClass
 from yeelight.main import BulbException
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -28,16 +28,16 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_MODE, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util import color as color_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID, ATTR_MODE, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import VolDictType
+from inpui.util import color as color_util
 
 from . import YEELIGHT_FLOW_TRANSITION_SCHEMA
 from .const import (

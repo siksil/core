@@ -13,12 +13,12 @@ from uiprotect.data import (
     StateType,
 )
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.issue_registry import IssueSeverity
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.issue_registry import IssueSeverity
 
 from .const import (
     ATTR_BITRATE,

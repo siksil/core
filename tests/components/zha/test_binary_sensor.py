@@ -8,15 +8,15 @@ from zigpy.device import Device
 from zigpy.profiles import zha
 from zigpy.zcl.clusters import general
 
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import find_entity_id, send_attributes_report
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

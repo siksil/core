@@ -12,10 +12,10 @@ from nexia.sensor import NexiaSensor
 from nexia.thermostat import NexiaThermostat
 from nexia.zone import NexiaThermostatZone
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import NexiaDataUpdateCoordinator
 from .entity import NexiaThermostatEntity, NexiaThermostatZoneEntity
@@ -57,7 +57,7 @@ async def async_setup_entry(
     if room_iq_zones:
         listener = ft.partial(_stop_harmonizers, harmonizers=room_iq_zones.values())
         config_entry.async_on_unload(
-            hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, listener)
+            hass.bus.async_listen(EVENT_INPUI_STOP, listener)
         )
 
 

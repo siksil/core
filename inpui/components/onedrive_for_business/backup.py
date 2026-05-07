@@ -17,7 +17,7 @@ from onedrive_personal_sdk.exceptions import (
 )
 from onedrive_personal_sdk.models.upload import FileInfo
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -25,10 +25,10 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import json_loads_object
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.json import json_dumps
+from inpui.util.json import json_loads_object
 
 from . import OneDriveConfigEntry
 from .const import CONF_FOLDER_ID, DATA_BACKUP_AGENT_LISTENERS, DOMAIN

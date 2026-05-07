@@ -7,17 +7,17 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.components.squeezebox.const import (
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.components.squeezebox.const import (
     CONF_BROWSE_LIMIT,
     CONF_SERVER_LIST,
     CONF_VOLUME_STEP,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from .conftest import SERVER_UUIDS
 

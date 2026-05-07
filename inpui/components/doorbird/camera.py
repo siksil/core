@@ -7,10 +7,10 @@ import logging
 
 import aiohttp
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .entity import DoorBirdEntity
 from .models import DoorBirdConfigEntry, DoorBirdData

@@ -7,13 +7,13 @@ from bsblan import BSBLANAuthError, BSBLANConnectionError, BSBLANError
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.bsblan.const import CONF_PASSKEY, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.bsblan.const import CONF_PASSKEY, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

@@ -9,9 +9,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from aiotedee.models import TedeeBridge, TedeeLock
 import pytest
 
-from homeassistant.components.tedee.const import CONF_LOCAL_ACCESS_TOKEN, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.tedee.const import CONF_LOCAL_ACCESS_TOKEN, DOMAIN
+from inpui.const import CONF_HOST, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

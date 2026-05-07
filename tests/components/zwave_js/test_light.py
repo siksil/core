@@ -5,7 +5,7 @@ from copy import deepcopy
 import pytest
 from zwave_js_server.event import Event
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -19,7 +19,7 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     LightEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
@@ -29,8 +29,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     AEON_SMART_SWITCH_LIGHT_ENTITY,

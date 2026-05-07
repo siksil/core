@@ -19,19 +19,19 @@ from uiprotect.data import (
 )
 from uiprotect.data.nvr import EventMetadata
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.unifiprotect.binary_sensor import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.unifiprotect.binary_sensor import (
     CAMERA_SENSORS,
     EVENT_SENSORS,
     LIGHT_SENSORS,
     MOUNTABLE_SENSE_SENSORS,
     SENSE_SENSORS,
 )
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     ATTR_EVENT_SCORE,
     DEFAULT_ATTRIBUTION,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_DEVICE_CLASS,
     EVENT_STATE_CHANGED,
@@ -40,8 +40,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import Event as HAEvent, EventStateChangedData, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import Event as HAEvent, EventStateChangedData, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .utils import (
     MockUFPFixture,

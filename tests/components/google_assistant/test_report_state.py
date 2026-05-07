@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.google_assistant import error, report_state
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.google_assistant import error, report_state
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import BASIC_CONFIG, MockConfig
 

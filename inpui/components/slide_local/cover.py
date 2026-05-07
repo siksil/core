@@ -5,10 +5,10 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
-from homeassistant.const import STATE_CLOSED, STATE_CLOSING, STATE_OPENING
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
+from inpui.const import STATE_CLOSED, STATE_CLOSING, STATE_OPENING
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_INVERT_POSITION, DEFAULT_OFFSET
 from .coordinator import SlideConfigEntry, SlideCoordinator

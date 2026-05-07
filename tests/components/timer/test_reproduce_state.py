@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.timer import (
+from inpui.components.timer import (
     ATTR_DURATION,
     SERVICE_CANCEL,
     SERVICE_PAUSE,
@@ -11,8 +11,8 @@ from homeassistant.components.timer import (
     STATUS_IDLE,
     STATUS_PAUSED,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

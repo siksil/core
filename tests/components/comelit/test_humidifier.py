@@ -9,8 +9,8 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.comelit.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.components.humidifier import (
+from inpui.components.comelit.const import DOMAIN, SCAN_INTERVAL
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     ATTR_MODE,
     DOMAIN as HUMIDIFIER_DOMAIN,
@@ -21,10 +21,10 @@ from homeassistant.components.humidifier import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

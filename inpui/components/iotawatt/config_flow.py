@@ -8,11 +8,11 @@ from typing import Any
 from iotawattpy.iotawatt import Iotawatt
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import httpx_client
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import httpx_client
 
 from .const import CONNECTION_ERRORS, DOMAIN
 

@@ -5,15 +5,15 @@ from datetime import timedelta
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.knx.const import CONF_KNX_EXPOSE, DOMAIN, KNX_ADDRESS
-from homeassistant.components.knx.schema import ExposeSchema
-from homeassistant.const import (
+from inpui.components.knx.const import CONF_KNX_EXPOSE, DOMAIN, KNX_ADDRESS
+from inpui.components.knx.schema import ExposeSchema
+from inpui.const import (
     CONF_ATTRIBUTE,
     CONF_ENTITY_ID,
     CONF_TYPE,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

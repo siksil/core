@@ -5,7 +5,7 @@ from collections.abc import Generator
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_IS_CLOSED,
     DOMAIN,
@@ -15,16 +15,16 @@ from homeassistant.components.valve import (
     ValveEntityFeature,
     ValveState,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_SET_VALVE_POSITION,
     SERVICE_TOGGLE,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import (
     MockConfigEntry,

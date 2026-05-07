@@ -9,16 +9,16 @@ import shlex
 
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.json import JsonObjectType
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.typing import ConfigType
+from inpui.util.json import JsonObjectType
 
 DOMAIN = "shell_command"
 

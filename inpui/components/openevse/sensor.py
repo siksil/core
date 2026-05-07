@@ -10,15 +10,15 @@ import logging
 from openevsehttp.__main__ import OpenEVSE
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_SERIAL_NUMBER,
     CONF_HOST,
@@ -35,16 +35,16 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, INTEGRATION_TITLE
 from .coordinator import OpenEVSEConfigEntry, OpenEVSEDataUpdateCoordinator

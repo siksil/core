@@ -2,19 +2,19 @@
 
 from __future__ import annotations
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntityDescription,
     RestoreNumber,
 )
-from homeassistant.const import (
+from inpui.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     EntityCategory,
     UnitOfElectricCurrent,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PeblarConfigEntry, PeblarDataUpdateCoordinator
 from .entity import PeblarEntity

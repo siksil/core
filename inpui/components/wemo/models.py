@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 import pywemo
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 

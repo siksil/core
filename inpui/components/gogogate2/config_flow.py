@@ -11,16 +11,16 @@ from ismartgate.common import AbstractInfoResponse, ApiError
 from ismartgate.const import GogoGate2ApiErrorCode, ISmartGateApiErrorCode
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_DEVICE,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

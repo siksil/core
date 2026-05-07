@@ -11,30 +11,30 @@ from typing import Any, cast
 import voluptuous as vol
 
 from homeassistant import config as conf_util
-from homeassistant.components import websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DISCOVERY, CONF_PLATFORM, SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import (
+from inpui.components import websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DISCOVERY, CONF_PLATFORM, SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import (
     ConfigValidationError,
     ServiceValidationError,
     Unauthorized,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     event as ev,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_integration, async_get_loaded_integration
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util.async_ import create_eager_task
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_integration, async_get_loaded_integration
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util.async_ import create_eager_task
 
 # Loading the config flow file will register the flow
 from . import debug_info, discovery

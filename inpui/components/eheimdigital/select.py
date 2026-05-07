@@ -15,10 +15,10 @@ from eheimdigital.types import (
     UnitOfMeasurement as EheimDigitalUnitOfMeasurement,
 )
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory, UnitOfFrequency, UnitOfVolumeFlowRate
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory, UnitOfFrequency, UnitOfVolumeFlowRate
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator
 from .entity import EheimDigitalEntity, exception_handler

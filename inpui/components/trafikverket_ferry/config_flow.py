@@ -10,10 +10,10 @@ from pytrafikverket import TrafikverketFerry
 from pytrafikverket.exceptions import InvalidAuthentication, NoFerryFound
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_FROM, CONF_TIME, CONF_TO, DOMAIN
 from .util import create_unique_id

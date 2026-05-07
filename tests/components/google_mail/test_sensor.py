@@ -8,11 +8,11 @@ from httplib2 import Response
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_mail.const import DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.google_mail.const import DOMAIN
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import SENSOR, TOKEN, ComponentSetup
 

@@ -9,17 +9,17 @@ from typing import Any
 
 from pynetgear import Netgear
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_CONSIDER_HOME,

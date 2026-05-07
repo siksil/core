@@ -12,7 +12,7 @@ from typing import Any
 from b2sdk.v2 import FileVersion
 from b2sdk.v2.exception import B2Error
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -20,8 +20,8 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.async_iterator import AsyncIteratorReader
+from inpui.core import HomeAssistant, callback
+from inpui.util.async_iterator import AsyncIteratorReader
 
 from . import BackblazeConfigEntry
 from .const import (

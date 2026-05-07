@@ -9,24 +9,24 @@ from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.zwave_js import DOMAIN, device_trigger
-from homeassistant.components.zwave_js.helpers import (
+from inpui.components.zwave_js import DOMAIN, device_trigger
+from inpui.components.zwave_js.helpers import (
     async_get_node_status_sensor_entity_id,
     get_device_id,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_device_automations
 

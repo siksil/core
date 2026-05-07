@@ -8,13 +8,13 @@ from typing import Any
 from pywizlight import PilotParser, wizlight
 from pywizlight.bulb import PIR_SOURCE
 
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     DISCOVER_SCAN_TIMEOUT,
@@ -93,7 +93,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: WizConfigEntry) -> bool:
         await bulb.async_close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_shutdown_on_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_shutdown_on_stop)
     )
 
     @callback

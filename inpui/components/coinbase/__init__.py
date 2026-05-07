@@ -8,11 +8,11 @@ import logging
 from coinbase.rest import RESTClient
 from coinbase.rest.rest_base import HTTPError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.util import Throttle
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.util import Throttle
 
 from .const import (
     ACCOUNT_IS_VAULT,

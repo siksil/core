@@ -8,13 +8,13 @@ from unittest.mock import MagicMock, patch
 import pytest
 from tesla_wall_connector.wall_connector import Lifetime, Version, Vitals
 
-from homeassistant.components.tesla_wall_connector.const import (
+from inpui.components.tesla_wall_connector.const import (
     DEFAULT_SCAN_INTERVAL,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_HOST, CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

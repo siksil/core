@@ -6,10 +6,10 @@ from http import HTTPStatus
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components import alexa
-from homeassistant.components.alexa import const
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.components import alexa
+from inpui.components.alexa import const
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

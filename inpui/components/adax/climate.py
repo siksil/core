@@ -7,21 +7,21 @@ from typing import Any, cast
 from adax import Adax
 from adax_local import Adax as AdaxLocal
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_UNIQUE_ID,
     PRECISION_WHOLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import AdaxConfigEntry
 from .const import CONNECTION_TYPE, DOMAIN, LOCAL

@@ -8,10 +8,10 @@ from typing import Any, Generic
 
 from pylitterbot import FeederRobot, LitterRobot3, LitterRobot4, LitterRobot5, Robot
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LitterRobotConfigEntry
 from .entity import LitterRobotEntity, _WhiskerEntityT, whisker_command

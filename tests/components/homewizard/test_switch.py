@@ -7,18 +7,18 @@ from homewizard_energy.errors import DisabledError, RequestError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import switch
-from homeassistant.components.homewizard.const import UPDATE_INTERVAL
-from homeassistant.const import (
+from inpui.components import switch
+from inpui.components.homewizard.const import UPDATE_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

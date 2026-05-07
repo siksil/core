@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import UnitOfEnergy, UnitOfPower
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import UnitOfEnergy, UnitOfPower
 
 from .sensor_entity_description import GrowattSensorEntityDescription
 

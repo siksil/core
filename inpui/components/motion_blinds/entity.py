@@ -5,11 +5,11 @@ from __future__ import annotations
 from motionblinds import DEVICE_TYPES_GATEWAY, DEVICE_TYPES_WIFI, MotionGateway
 from motionblinds.motion_blinds import MotionBlind
 
-from homeassistant.core import CALLBACK_TYPE
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import CALLBACK_TYPE
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     ATTR_AVAILABLE,

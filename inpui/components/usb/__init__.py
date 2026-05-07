@@ -14,22 +14,22 @@ from aiousbwatcher import AIOUSBWatcher, InotifyNotAvailableError
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import (
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     HomeAssistant,
     callback as hass_callback,
 )
-from homeassistant.helpers import config_validation as cv, discovery_flow
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.service_info.usb import UsbServiceInfo as _UsbServiceInfo
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import USBMatcher, async_get_usb
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers import config_validation as cv, discovery_flow
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.service_info.usb import UsbServiceInfo as _UsbServiceInfo
+from inpui.helpers.typing import ConfigType
+from inpui.loader import USBMatcher, async_get_usb
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .models import USBDevice
@@ -203,8 +203,8 @@ class USBDiscovery:
             )
             self._async_start_monitor_polling()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, self.async_start)
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.async_stop)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STARTED, self.async_start)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self.async_stop)
 
     async def async_start(self, event: Event) -> None:
         """Start USB Discovery and run a manual scan."""
@@ -231,7 +231,7 @@ class USBDiscovery:
         def _stop_polling(event: Event) -> None:
             stop_callback()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _stop_polling)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, _stop_polling)
 
     async def _async_start_aiousbwatcher(self) -> None:
         """Start monitoring hardware with aiousbwatcher.
@@ -251,7 +251,7 @@ class USBDiscovery:
         def _async_stop_watcher(event: Event) -> None:
             cancel()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop_watcher)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop_watcher)
 
         self.observer_active = True
 

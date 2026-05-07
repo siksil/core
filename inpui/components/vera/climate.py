@@ -6,7 +6,7 @@ from typing import Any
 
 import pyvera as veraApi
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ENTITY_ID_FORMAT,
     FAN_AUTO,
     FAN_ON,
@@ -14,10 +14,10 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import ControllerData, get_controller_data
 from .entity import VeraEntity

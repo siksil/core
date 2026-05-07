@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONNECTION_ERRORS, DOMAIN, UID_SEPARATOR
 from .coordinator import OpenRGBConfigEntry, OpenRGBCoordinator

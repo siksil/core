@@ -2,14 +2,14 @@
 
 from dataclasses import dataclass
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RainMachineConfigEntry
 from .const import DATA_PROVISION_SETTINGS, DATA_RESTRICTIONS_CURRENT

@@ -15,10 +15,10 @@ from pyanglianwater.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_ACCOUNT_NUMBER, DOMAIN
 

@@ -1,10 +1,10 @@
 """Support for the Locative platform."""
 
-from homeassistant.components.device_tracker import TrackerEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.device_tracker import TrackerEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DOMAIN, TRACKER_UPDATE
 

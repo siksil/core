@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 from laundrify_aio import LaundrifyAPI, LaundrifyDevice
 import pytest
 
-from homeassistant.components.laundrify.const import DOMAIN, MANUFACTURER
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.laundrify.const import DOMAIN, MANUFACTURER
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import VALID_ACCESS_TOKEN, VALID_ACCOUNT_ID
 

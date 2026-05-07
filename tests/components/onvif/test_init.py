@@ -2,8 +2,8 @@
 
 from unittest.mock import MagicMock, patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MAC, setup_mock_device
 

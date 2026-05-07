@@ -8,12 +8,12 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.scrape.const import DEFAULT_SCAN_INTERVAL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.scrape.const import DEFAULT_SCAN_INTERVAL, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import MockRestData, return_integration_config
 

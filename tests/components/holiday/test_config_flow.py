@@ -8,15 +8,15 @@ from holidays import UNOFFICIAL
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.holiday.const import (
+from inpui.components.holiday.const import (
     CONF_CATEGORIES,
     CONF_PROVINCE,
     DOMAIN,
 )
-from homeassistant.const import CONF_COUNTRY, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_COUNTRY, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

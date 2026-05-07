@@ -21,14 +21,14 @@ import jwt
 from jwt import api_jws
 from yarl import URL
 
-from homeassistant.auth import jwt_wrapper
-from homeassistant.auth.const import GROUP_ID_READ_ONLY
-from homeassistant.components import websocket_api
-from homeassistant.const import HASSIO_USER_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.http import current_request
-from homeassistant.helpers.json import json_bytes
-from homeassistant.helpers.storage import Store
+from inpui.auth import jwt_wrapper
+from inpui.auth.const import GROUP_ID_READ_ONLY
+from inpui.components import websocket_api
+from inpui.const import HASSIO_USER_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.http import current_request
+from inpui.helpers.json import json_bytes
+from inpui.helpers.storage import Store
 
 from .auth_util import async_user_not_allowed_do_auth
 from .const import (

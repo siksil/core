@@ -18,18 +18,18 @@ from aiohomeconnect.model import (
 from aiohomeconnect.model.error import HomeConnectApiError, HomeConnectError
 import pytest
 
-from homeassistant.components.home_connect.const import (
+from inpui.components.home_connect.const import (
     BSH_AMBIENT_LIGHT_COLOR_CUSTOM_COLOR,
     DOMAIN,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_HS_COLOR,
     ATTR_RGB_COLOR,
     DOMAIN as LIGHT_DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -38,9 +38,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

@@ -6,8 +6,8 @@ from unittest.mock import patch
 from apple_weatherkit.client import WeatherKitApiClientError
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import init_integration, mock_weather_response
 

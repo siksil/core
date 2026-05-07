@@ -6,17 +6,17 @@ from typing import Any, cast
 from python_overseerr import OverseerrClient, OverseerrConnectionError
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import service
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import service
+from inpui.util.json import JsonValueType
 
 from .const import ATTR_REQUESTED_BY, ATTR_SORT_ORDER, ATTR_STATUS, DOMAIN, LOGGER
 from .coordinator import OverseerrConfigEntry

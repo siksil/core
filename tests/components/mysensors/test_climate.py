@@ -7,7 +7,7 @@ from unittest.mock import MagicMock, call
 
 from mysensors.sensor import Sensor
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
@@ -20,8 +20,8 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.const import ATTR_BATTERY_LEVEL, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_BATTERY_LEVEL, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 
 async def test_hvac_node_auto(

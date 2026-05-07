@@ -15,7 +15,7 @@ from aioshelly.const import (
 )
 import pytest
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_MODE,
@@ -34,16 +34,16 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     get_entity,

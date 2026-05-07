@@ -20,10 +20,10 @@ from aiohttp.streams import StreamReader
 from multidict import CIMultiDict
 from yarl import URL
 
-from homeassistant.const import EVENT_HOMEASSISTANT_CLOSE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import json_loads
+from inpui.const import EVENT_INPUI_CLOSE
+from inpui.core import HomeAssistant
+from inpui.helpers.json import json_dumps
+from inpui.util.json import json_loads
 
 RETYPE = type(re.compile(""))
 
@@ -346,7 +346,7 @@ def mock_aiohttp_client() -> Iterator[AiohttpClientMocker]:
             """Close session."""
             await session.close()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, close_session)
+        hass.bus.async_listen_once(EVENT_INPUI_CLOSE, close_session)
 
         return session
 

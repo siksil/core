@@ -16,11 +16,11 @@ import plexapi.server
 from requests import Session
 import requests.exceptions
 
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN, MediaType
-from homeassistant.const import CONF_CLIENT_ID, CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import callback
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.media_player import DOMAIN as MP_DOMAIN, MediaType
+from inpui.const import CONF_CLIENT_ID, CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import callback
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     CONF_IGNORE_NEW_SHARED_USERS,

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import intent
+from inpui.core import HomeAssistant, State
+from inpui.helpers import intent
 
 from . import DOMAIN, INTENT_GET_WEATHER
 

@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from tailscale import Device, Tailscale, TailscaleAuthenticationError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_TAILNET, DOMAIN, LOGGER, SCAN_INTERVAL
 

@@ -7,8 +7,8 @@ from unittest.mock import call
 from hatasmota.const import CONF_MAC
 from hatasmota.utils import config_get_state_online, get_topic_tele_will
 
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.core import HomeAssistant
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.core import HomeAssistant
 
 from .test_common import DEFAULT_CONFIG
 

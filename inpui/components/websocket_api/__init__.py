@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Final, cast
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.loader import bind_hass
 
 from . import commands, connection, const, decorators, http, messages  # noqa: F401
 from .connection import ActiveConnection, current_connection  # noqa: F401

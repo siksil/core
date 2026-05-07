@@ -7,17 +7,17 @@ import os
 
 from file_read_backwards import FileReadBackwards
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.sensor import SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_FILE_PATH,
     CONF_NAME,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.template import Template
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.template import Template
 
 from .const import DEFAULT_NAME, FILE_ICON
 

@@ -11,15 +11,15 @@ from typing import Any
 from aioazuredevops.helper import WorkItemState, WorkItemTypeAndState
 from aioazuredevops.models.build import Build
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from .coordinator import AzureDevOpsConfigEntry, AzureDevOpsDataUpdateCoordinator
 from .entity import AzureDevOpsEntity

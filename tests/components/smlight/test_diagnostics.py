@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smlight.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.smlight.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .conftest import setup_integration
 

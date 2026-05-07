@@ -9,14 +9,14 @@ from typing import Any, Protocol
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import http, sensor
-from homeassistant.components.button import (
+from inpui.components import http, sensor
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     SERVICE_PRESS as SERVICE_PRESS_BUTTON,
     ButtonDeviceClass,
 )
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.components.cover import (
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -25,16 +25,16 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER,
     CoverDeviceClass,
 )
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.input_button import DOMAIN as INPUT_BUTTON_DOMAIN
-from homeassistant.components.lock import (
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.input_button import DOMAIN as INPUT_BUTTON_DOMAIN
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
 )
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.components.valve import (
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.components.switch import SwitchDeviceClass
+from inpui.components.valve import (
     DOMAIN as VALVE_DOMAIN,
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
@@ -42,21 +42,21 @@ from homeassistant.components.valve import (
     SERVICE_STOP_VALVE,
     ValveDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.helpers import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     integration_platform,
     intent,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, TIMER_DATA
 from .timers import (

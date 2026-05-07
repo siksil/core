@@ -8,9 +8,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from technove import TechnoVEError
 
-from homeassistant.const import STATE_OFF, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_OFF, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_with_selected_platforms
 

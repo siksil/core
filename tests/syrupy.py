@@ -24,10 +24,10 @@ from syrupy.utils import is_xdist_controller, is_xdist_worker
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import State
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import State
+from inpui.data_entry_flow import FlowResult
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,

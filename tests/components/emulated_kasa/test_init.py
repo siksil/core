@@ -5,21 +5,21 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components import emulated_kasa
-from homeassistant.components.emulated_kasa.const import (
+from inpui.components import emulated_kasa
+from inpui.components.emulated_kasa.const import (
     CONF_POWER,
     CONF_POWER_ENTITY,
     DOMAIN,
 )
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     DOMAIN as FAN_DOMAIN,
     SERVICE_SET_PERCENTAGE,
 )
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITIES,
     CONF_NAME,
@@ -27,8 +27,8 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_SWITCH = "switch.ac"
 ENTITY_SWITCH_NAME = "A/C"

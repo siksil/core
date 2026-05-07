@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import jinja2
 
-from homeassistant.helpers.template.context import (
+from inpui.helpers.template.context import (
     TemplateContextManager,
     render_with_context,
     template_context_manager,

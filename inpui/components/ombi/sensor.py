@@ -7,10 +7,10 @@ import logging
 
 from pyombi import OmbiError
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN
 

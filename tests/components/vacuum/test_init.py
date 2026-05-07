@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     DOMAIN,
     SERVICE_CLEAN_AREA,
     SERVICE_CLEAN_SPOT,
@@ -23,9 +23,9 @@ from homeassistant.components.vacuum import (
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er, issue_registry as ir
 
 from . import (
     MockVacuum,

@@ -8,9 +8,9 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.components import input_boolean, switch
-from homeassistant.components.generic_hygrostat import DOMAIN
-from homeassistant.components.humidifier import (
+from inpui.components import input_boolean, switch
+from inpui.components.generic_hygrostat import DOMAIN
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     DOMAIN as HUMIDIFIER_DOMAIN,
     MODE_AWAY,
@@ -18,7 +18,7 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     SERVICE_SET_MODE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     SERVICE_TURN_OFF,
@@ -27,7 +27,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
     HomeAssistant,
@@ -35,10 +35,10 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.typing import StateType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.typing import StateType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

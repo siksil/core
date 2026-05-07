@@ -7,15 +7,15 @@ from typing import Any
 from pywilight.const import ITEM_LIGHT, LIGHT_COLOR, LIGHT_DIMMER, LIGHT_ON_OFF
 from pywilight.wilight_device import PyWiLightDevice
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_HS_COLOR,
     ColorMode,
     LightEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .entity import WiLightDevice

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.device_tracker import ScannerEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.device_tracker import ScannerEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DEVICE_ICONS
 from .coordinator import NetgearConfigEntry, NetgearTrackerCoordinator

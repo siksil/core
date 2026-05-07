@@ -13,8 +13,8 @@ import pypck
 from pypck.connection import PchkConnectionManager
 from pypck.device import DeviceConnection
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ADDRESS,
     CONF_BINARY_SENSORS,
     CONF_COVERS,
@@ -26,10 +26,10 @@ from homeassistant.const import (
     CONF_SENSORS,
     CONF_SWITCHES,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_CLIMATES,

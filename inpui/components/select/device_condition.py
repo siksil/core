@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     async_get_entity_registry_entry_or_raise,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CONDITION,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -15,16 +15,16 @@ from homeassistant.const import (
     CONF_FOR,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
-from homeassistant.helpers.entity import get_capability
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
+from inpui.helpers.entity import get_capability
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .const import ATTR_OPTIONS, CONF_OPTION, DOMAIN
 

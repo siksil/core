@@ -11,10 +11,10 @@ from pywizlight import SCENES, BulbType, PilotParser, wizlight
 from pywizlight.bulblibrary import BulbClass, Features, KelvinRange
 from pywizlight.discovery import DiscoveredBulb
 
-from homeassistant.components.wiz.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.wiz.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

@@ -5,20 +5,20 @@ from enum import StrEnum, unique
 import voluptuous as vol
 from xknx.dpt import DPTNumeric
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.number import (
+from inpui.components.climate import HVACMode
+from inpui.components.number import (
     DEVICE_CLASS_UNITS as NUMBER_DEVICE_CLASS_UNITS,
     NumberDeviceClass,
     NumberMode,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS as CONF_SENSOR_STATE_CLASS,
     DEVICE_CLASS_UNITS as SENSOR_DEVICE_CLASS_UNITS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.text import TextMode
-from homeassistant.const import (
+from inpui.components.text import TextMode
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_ENTITY_ID,
@@ -28,9 +28,9 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     Platform,
 )
-from homeassistant.helpers import config_validation as cv, selector
-from homeassistant.helpers.entity import ENTITY_CATEGORIES_SCHEMA
-from homeassistant.helpers.typing import VolDictType, VolSchemaType
+from inpui.helpers import config_validation as cv, selector
+from inpui.helpers.entity import ENTITY_CATEGORIES_SCHEMA
+from inpui.helpers.typing import VolDictType, VolSchemaType
 
 from ..const import (
     CONF_CONTEXT_TIMEOUT,

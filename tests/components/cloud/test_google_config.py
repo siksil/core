@@ -6,31 +6,31 @@ from unittest.mock import AsyncMock, Mock, PropertyMock, patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.cloud import GACTIONS_SCHEMA
-from homeassistant.components.cloud.const import (
+from inpui.components.cloud import GACTIONS_SCHEMA
+from inpui.components.cloud.const import (
     DATA_CLOUD,
     PREF_DISABLE_2FA,
     PREF_GOOGLE_DEFAULT_EXPOSE,
     PREF_GOOGLE_ENTITY_CONFIGS,
     PREF_SHOULD_EXPOSE,
 )
-from homeassistant.components.cloud.google_config import CloudGoogleConfig
-from homeassistant.components.cloud.prefs import CloudPreferences
-from homeassistant.components.google_assistant import helpers as ga_helpers
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.cloud.google_config import CloudGoogleConfig
+from inpui.components.cloud.prefs import CloudPreferences
+from inpui.components.google_assistant import helpers as ga_helpers
+from inpui.components.homeassistant.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
     async_get_entity_settings,
 )
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
+from inpui.const import (
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
     EntityCategory,
 )
-from homeassistant.core import CoreState, HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import CoreState, HomeAssistant, State
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 
@@ -158,7 +158,7 @@ async def test_google_update_expose_trigger_sync(
             Mock(username="abcdefghjkl"),
         )
         await config.async_initialize()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         await config.async_connect_agent_user("mock-user-id")
 
@@ -370,7 +370,7 @@ async def test_sync_google_on_home_assistant_start(
         await hass.async_block_till_done()
         assert len(mock_sync.mock_calls) == 0
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         assert len(mock_sync.mock_calls) == 1
 
@@ -614,9 +614,9 @@ async def test_google_config_migrate_expose_entity_prefs(
         hass, GACTIONS_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.unknown") == {
@@ -679,9 +679,9 @@ async def test_google_config_migrate_expose_entity_prefs_v2_no_exposed(
         hass, GACTIONS_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.state_only") == {
@@ -726,9 +726,9 @@ async def test_google_config_migrate_expose_entity_prefs_v2_exposed(
         hass, GACTIONS_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.state_only") == {
@@ -766,9 +766,9 @@ async def test_google_config_migrate_expose_entity_prefs_default_none(
         hass, GACTIONS_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, entity_default.entity_id) == {
@@ -848,9 +848,9 @@ async def test_google_config_migrate_expose_entity_prefs_default(
         hass, GACTIONS_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, binary_sensor_supported.entity_id) == {

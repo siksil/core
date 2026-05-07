@@ -4,8 +4,8 @@ import logging
 
 from emulated_roku import EmulatedRokuCommandHandler, EmulatedRokuServer
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import (
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import (
     CALLBACK_TYPE,
     CoreState,
     Event,
@@ -162,7 +162,7 @@ class EmulatedRoku:
                 await emulated_roku_stop(None)
             else:
                 self._unsub_stop_listener = self.hass.bus.async_listen_once(
-                    EVENT_HOMEASSISTANT_STOP, emulated_roku_stop
+                    EVENT_INPUI_STOP, emulated_roku_stop
                 )
 
         # start immediately if already running
@@ -170,7 +170,7 @@ class EmulatedRoku:
             await emulated_roku_start(None)
         else:
             self._unsub_start_listener = self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_START, emulated_roku_start
+                EVENT_INPUI_START, emulated_roku_start
             )
 
         return True

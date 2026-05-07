@@ -9,21 +9,21 @@ from urllib.parse import urlparse
 
 import getmac
 
-from homeassistant.components import ssdp
-from homeassistant.const import (
+from inpui.components import ssdp
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_METHOD,
     CONF_MODEL,
     CONF_PORT,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.debounce import Debouncer
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.debounce import Debouncer
 
 from .bridge import SamsungTVBridge, mac_from_device_info, model_requires_encryption
 from .const import (
@@ -146,7 +146,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SamsungTVConfigEntry) ->
         await bridge.async_close_remote()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_bridge)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_bridge)
     )
     entry.async_on_unload(stop_bridge)
 

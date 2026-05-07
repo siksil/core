@@ -9,13 +9,13 @@ from pypck import lcn_defs
 from pypck.device import DeviceConnection, Serials
 import pytest
 
-from homeassistant.components.lcn import PchkConnectionManager
-from homeassistant.components.lcn.config_flow import LcnFlowHandler
-from homeassistant.components.lcn.const import DOMAIN
-from homeassistant.components.lcn.helpers import AddressType, generate_unique_id
-from homeassistant.const import CONF_ADDRESS, CONF_DEVICES, CONF_ENTITIES, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.lcn import PchkConnectionManager
+from inpui.components.lcn.config_flow import LcnFlowHandler
+from inpui.components.lcn.const import DOMAIN
+from inpui.components.lcn.helpers import AddressType, generate_unique_id
+from inpui.const import CONF_ADDRESS, CONF_DEVICES, CONF_ENTITIES, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, load_fixture
 

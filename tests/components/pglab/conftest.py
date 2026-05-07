@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.pglab.const import DISCOVERY_TOPIC, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.pglab.const import DISCOVERY_TOPIC, DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, mock_device_registry, mock_registry
 

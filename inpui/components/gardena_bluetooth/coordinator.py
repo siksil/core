@@ -12,11 +12,11 @@ from gardena_bluetooth.exceptions import (
 )
 from gardena_bluetooth.parse import Characteristic, CharacteristicType
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 SCAN_INTERVAL = timedelta(seconds=60)
 LOGGER = logging.getLogger(__name__)

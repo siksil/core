@@ -7,11 +7,11 @@ from automower_ble.protocol import ResponseResult
 from bleak import BleakError
 from bleak_retry_connector import close_stale_connections_by_address, get_device
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import DOMAIN, LOGGER
 from .coordinator import HusqvarnaCoordinator

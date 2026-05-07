@@ -7,27 +7,27 @@ import logging
 from pyemby import EmbyServer
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     PLATFORM_SCHEMA as MEDIA_PLAYER_PLATFORM_SCHEMA,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,
     DEVICE_DEFAULT_NAME,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -126,8 +126,8 @@ async def async_setup_platform(
     emby.add_new_devices_callback(device_update_callback)
     emby.add_stale_devices_callback(device_removal_callback)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, start_emby)
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_emby)
+    hass.bus.async_listen_once(EVENT_INPUI_START, start_emby)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_emby)
 
 
 class EmbyDevice(MediaPlayerEntity):
@@ -239,7 +239,7 @@ class EmbyDevice(MediaPlayerEntity):
     def media_position_updated_at(self):
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
         return self.media_status_received
 

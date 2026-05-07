@@ -4,9 +4,9 @@ import logging
 
 from hlk_sw16.protocol import SW16Client
 
-from homeassistant.core import callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 

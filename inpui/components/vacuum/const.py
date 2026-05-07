@@ -5,8 +5,8 @@ from __future__ import annotations
 from enum import IntFlag, StrEnum
 from typing import TYPE_CHECKING
 
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.entity_component import EntityComponent
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from . import StateVacuumEntity

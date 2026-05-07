@@ -6,10 +6,10 @@ from pysmarlaapi.connection.exceptions import (
     ConnectionException,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import HOST, PLATFORMS
 

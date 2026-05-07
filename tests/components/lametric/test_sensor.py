@@ -2,17 +2,17 @@
 
 import pytest
 
-from homeassistant.components.lametric.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorStateClass
-from homeassistant.const import (
+from inpui.components.lametric.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorStateClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 pytestmark = pytest.mark.usefixtures(
     "entity_registry_enabled_by_default", "init_integration"

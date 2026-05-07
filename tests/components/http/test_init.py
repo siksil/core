@@ -12,17 +12,17 @@ from unittest.mock import ANY, Mock, patch
 
 import pytest
 
-from homeassistant.auth.providers.homeassistant import HassAuthProvider
-from homeassistant.components import cloud, http
-from homeassistant.components.cloud import CloudNotAvailable
-from homeassistant.const import HASSIO_USER_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.http import KEY_HASS
-from homeassistant.helpers.network import NoURLAvailableError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.ssl import server_context_intermediate, server_context_modern
+from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.components import cloud, http
+from inpui.components.cloud import CloudNotAvailable
+from inpui.const import HASSIO_USER_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.http import KEY_HASS
+from inpui.helpers.network import NoURLAvailableError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.ssl import server_context_intermediate, server_context_modern
 
 from tests.common import async_call_logger_set_level, async_fire_time_changed
 from tests.typing import ClientSessionGenerator

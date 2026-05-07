@@ -10,22 +10,22 @@ import plexapi
 import requests
 import requests_mock
 
-from homeassistant.components.plex import const
-from homeassistant.components.plex.models import (
+from inpui.components.plex import const
+from inpui.components.plex.models import (
     LIVE_TV_SECTION,
     TRANSIENT_SECTION,
     UNKNOWN_SECTION,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_TOKEN,
     CONF_URL,
     CONF_VERIFY_SSL,
     STATE_IDLE,
     STATE_PLAYING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import DEFAULT_DATA, DEFAULT_OPTIONS, PLEX_DIRECT_URL
 from .helpers import trigger_plex_update, wait_for_debouncer

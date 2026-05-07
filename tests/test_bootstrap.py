@@ -14,18 +14,18 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import bootstrap, config as config_util, core, loader, runner
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     BASE_PLATFORMS,
     CONF_DEBUG,
     SIGNAL_BOOTSTRAP_INTEGRATIONS,
 )
-from homeassistant.core import CoreState, HomeAssistant, async_get_hass, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.translation import async_translations_loaded
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import Integration
+from inpui.core import CoreState, HomeAssistant, async_get_hass, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.translation import async_translations_loaded
+from inpui.helpers.typing import ConfigType
+from inpui.loader import Integration
 
 from .common import (
     MockConfigEntry,
@@ -1571,7 +1571,7 @@ async def test_bootstrap_does_not_preimport_stage_1_integrations() -> None:
     process = await asyncio.create_subprocess_exec(
         sys.executable,
         "-c",
-        "import homeassistant.bootstrap; import sys; print(sys.modules)",
+        "import inpui.bootstrap; import sys; print(sys.modules)",
         stdout=asyncio.subprocess.PIPE,
     )
     stdout, _ = await process.communicate()

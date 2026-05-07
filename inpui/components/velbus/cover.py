@@ -6,13 +6,13 @@ from typing import Any
 
 from velbusaio.channels import Blind as VelbusBlind
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VelbusConfigEntry
 from .entity import VelbusEntity, api_call

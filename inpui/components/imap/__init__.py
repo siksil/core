@@ -10,23 +10,23 @@ from typing import Any
 from aioimaplib import IMAP4_SSL, AioImapException, Response
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     ServiceValidationError,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_ENABLE_PUSH, DOMAIN
 from .coordinator import (
@@ -340,7 +340,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ImapConfigEntry) -> bool
     entry.runtime_data = coordinator
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, coordinator.shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, coordinator.shutdown)
     )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

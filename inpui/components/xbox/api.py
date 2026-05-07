@@ -6,14 +6,14 @@ from pythonxbox.authentication.manager import AuthenticationManager
 from pythonxbox.authentication.models import OAuth2TokenResponse
 from pythonxbox.common.exceptions import AuthenticationException
 
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.util.dt import utc_from_timestamp
 
 from .const import DOMAIN
 

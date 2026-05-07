@@ -12,10 +12,10 @@ from volvocarsapi.models import (
     VolvoCarsValueField,
 )
 
-from homeassistant.components.volvo.const import DOMAIN
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.volvo.const import DOMAIN
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

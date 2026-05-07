@@ -11,13 +11,13 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.components.husqvarna_automower.coordinator import SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.components.husqvarna_automower.coordinator import SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import setup_integration
 from .const import TEST_MOWER_ID

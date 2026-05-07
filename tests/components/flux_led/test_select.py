@@ -10,14 +10,14 @@ from flux_led.const import (
 from flux_led.protocol import PowerRestoreState, RemoteConfig
 import pytest
 
-from homeassistant.components import flux_led
-from homeassistant.components.flux_led.const import CONF_WHITE_CHANNEL_TYPE, DOMAIN
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import flux_led
+from inpui.components.flux_led.const import CONF_WHITE_CHANNEL_TYPE, DOMAIN
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import (
     DEFAULT_ENTRY_TITLE,

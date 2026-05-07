@@ -9,16 +9,16 @@ from monzopy import InvalidMonzoAPIResponseError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.monzo.const import DOMAIN
-from homeassistant.components.monzo.sensor import (
+from inpui.components.monzo.const import DOMAIN
+from inpui.components.monzo.sensor import (
     ACCOUNT_SENSORS,
     POT_SENSORS,
     MonzoSensorEntityDescription,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .conftest import TEST_ACCOUNTS, TEST_POTS

@@ -8,12 +8,12 @@ from typing import Any
 
 from miio import Device as MiioDevice
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DOMAIN as PLATFORM_DOMAIN,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_MODEL,
     DEGREE,
@@ -21,10 +21,10 @@ from homeassistant.const import (
     EntityCategory,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import (
     CONF_FLOW_TYPE,

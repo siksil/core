@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 from nettigo_air_monitor import ApiError, AuthFailedError
 
-from homeassistant.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
-from homeassistant.components.nam.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
+from inpui.components.nam.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

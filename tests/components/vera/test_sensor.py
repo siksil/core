@@ -8,10 +8,10 @@ from unittest.mock import MagicMock
 
 import pyvera as pv
 
-from homeassistant.components.sensor import async_rounded_state
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, LIGHT_LUX, PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import async_rounded_state
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, LIGHT_LUX, PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import ComponentFactory, new_simple_controller_config
 

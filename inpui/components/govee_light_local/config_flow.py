@@ -8,8 +8,8 @@ import logging
 
 from govee_local_api import GoveeController
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from . import async_get_source_ips
 from .const import (

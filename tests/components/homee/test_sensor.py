@@ -6,20 +6,20 @@ from unittest.mock import MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.homee.const import (
+from inpui.components.homee.const import (
     OPEN_CLOSE_MAP,
     OPEN_CLOSE_MAP_REVERSED,
     WINDOW_MAP,
     WINDOW_MAP_REVERSED,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import async_update_attribute_value, build_mock_node, setup_integration
 

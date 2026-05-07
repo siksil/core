@@ -6,8 +6,8 @@ from queue import Empty, Full, Queue
 import temescal
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
 
 from .const import DEFAULT_PORT, DOMAIN
 

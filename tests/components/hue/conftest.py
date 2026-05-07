@@ -12,14 +12,14 @@ import aiohue.v2 as aiohue_v2
 from aiohue.v2.controllers.events import EventType
 import pytest
 
-from homeassistant.components import hue
-from homeassistant.components.hue.v1 import sensor_base as hue_sensor_base
-from homeassistant.components.hue.v2.device import async_setup_devices
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonArrayType
+from inpui.components import hue
+from inpui.components.hue.v1 import sensor_base as hue_sensor_base
+from inpui.components.hue.v2.device import async_setup_devices
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonArrayType
 
 from .const import FAKE_BRIDGE, FAKE_BRIDGE_DEVICE
 

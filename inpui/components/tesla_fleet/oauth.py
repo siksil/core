@@ -2,12 +2,12 @@
 
 from typing import Any
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     AuthImplementation,
     AuthorizationServer,
     ClientCredential,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import AUTHORIZE_URL, SCOPES, TOKEN_URL
 

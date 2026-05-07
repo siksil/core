@@ -12,17 +12,17 @@ from renault_api.kamereon.models import KamereonVehiclesLink
 from renault_api.renault_account import RenaultAccount
 from renault_api.renault_client import RenaultClient
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_IDENTIFIERS,
     ATTR_MANUFACTURER,
     ATTR_MODEL,
     ATTR_MODEL_ID,
     ATTR_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 if TYPE_CHECKING:
     from . import RenaultConfigEntry

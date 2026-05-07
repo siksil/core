@@ -20,9 +20,9 @@ from PyViCare.PyViCareUtils import (
 )
 import requests
 
-from homeassistant.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import DEFAULT_CACHE_DURATION, VICARE_TOKEN_FILENAME
 

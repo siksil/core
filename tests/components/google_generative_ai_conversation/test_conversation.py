@@ -8,21 +8,21 @@ from google.genai.types import GenerateContentResponse
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import conversation
-from homeassistant.components.conversation import (
+from inpui.components import conversation
+from inpui.components.conversation import (
     AssistantContent,
     ToolResultContent,
     UserContent,
 )
-from homeassistant.components.google_generative_ai_conversation.entity import (
+from inpui.components.google_generative_ai_conversation.entity import (
     ERROR_GETTING_RESPONSE,
     _escape_decode,
     _format_schema,
 )
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.helpers.llm import ToolInput
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import intent
+from inpui.helpers.llm import ToolInput
 
 from . import API_ERROR_500, CLIENT_ERROR_BAD_REQUEST
 

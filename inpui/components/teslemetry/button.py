@@ -9,9 +9,9 @@ from typing import Any
 from tesla_fleet_api.const import Scope
 from tesla_fleet_api.teslemetry import Vehicle
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TeslemetryConfigEntry
 from .entity import TeslemetryVehicleStreamEntity

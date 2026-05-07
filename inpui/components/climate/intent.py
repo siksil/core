@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, intent
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, intent
 
 from . import (
     ATTR_TEMPERATURE,

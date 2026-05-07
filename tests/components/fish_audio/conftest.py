@@ -6,15 +6,15 @@ from unittest.mock import AsyncMock, patch
 from fishaudio.resources import AsyncAccountClient, AsyncTTSClient, AsyncVoicesClient
 import pytest
 
-from homeassistant.components.fish_audio.const import (
+from inpui.components.fish_audio.const import (
     CONF_BACKEND,
     CONF_LATENCY,
     CONF_VOICE_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigSubentryDataWithId
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigSubentryDataWithId
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from .const import MOCK_CREDITS, MOCK_VOICES
 

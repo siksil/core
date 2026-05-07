@@ -5,10 +5,10 @@ from unittest.mock import patch
 from icmplib import Host
 import pytest
 
-from homeassistant.components.device_tracker import CONF_CONSIDER_HOME
-from homeassistant.components.ping import CONF_PING_COUNT, DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.device_tracker import CONF_CONSIDER_HOME
+from inpui.components.ping import CONF_PING_COUNT, DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

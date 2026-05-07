@@ -23,13 +23,13 @@ from async_upnp_client.ssdp_listener import SsdpDevice, SsdpDeviceTracker, SsdpL
 from async_upnp_client.utils import CaseInsensitiveDict
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, MATCH_ALL
-from homeassistant.core import HassJob, HomeAssistant, callback as core_callback
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import EVENT_INPUI_STOP, MATCH_ALL
+from inpui.core import HassJob, HomeAssistant, callback as core_callback
+from inpui.helpers import discovery_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.service_info.ssdp import (
     ATTR_NT as _ATTR_NT,
     ATTR_ST as _ATTR_ST,
     ATTR_UPNP_DEVICE_TYPE as _ATTR_UPNP_DEVICE_TYPE,
@@ -38,7 +38,7 @@ from homeassistant.helpers.service_info.ssdp import (
     ATTR_UPNP_UDN as _ATTR_UPNP_UDN,
     SsdpServiceInfo as _SsdpServiceInfo,
 )
-from homeassistant.util.async_ import create_eager_task
+from inpui.util.async_ import create_eager_task
 
 from .common import async_build_source_set
 from .const import DOMAIN
@@ -240,7 +240,7 @@ class Scanner:
 
         await self._async_start_ssdp_listeners()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.async_stop)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self.async_stop)
         self._cancel_scan = async_track_time_interval(
             self.hass, self.async_scan, SCAN_INTERVAL, name="SSDP scanner"
         )

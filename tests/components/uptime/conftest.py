@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.uptime.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.uptime.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

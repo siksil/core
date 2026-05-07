@@ -7,22 +7,22 @@ from requests import Session
 from requests.exceptions import RequestException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.selector import ConfigEntrySelector
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.selector import ConfigEntrySelector
 
 from .const import BASE_TOKEN_FILENAME, DOMAIN, PLATFORMS
 from .coordinator import (

@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize("platforms", [("light",)])

@@ -7,13 +7,13 @@ from typing import Any
 from unittest.mock import patch
 
 from homeassistant import setup
-from homeassistant.components import lifx
-from homeassistant.components.lifx import DOMAIN, discovery
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import lifx
+from inpui.components.lifx import DOMAIN, discovery
+from inpui.const import CONF_HOST, EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     IP_ADDRESS,
@@ -70,7 +70,7 @@ async def test_migration_device_online_end_to_end(
         assert light_entity_reg.config_entry_id == migrated_entry.entry_id
         assert er.async_entries_for_config_entry(entity_registry, config_entry) == []
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=20))
         await hass.async_block_till_done()
@@ -145,7 +145,7 @@ async def test_discovery_is_more_frequent_during_migration(
         await hass.async_block_till_done()
         assert start_calls == 0
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert start_calls == 1
 
@@ -195,7 +195,7 @@ async def test_migration_device_online_end_to_end_after_downgrade(
     with _patch_discovery(), _patch_config_flow_try_connect(), _patch_device():
         await setup.async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=20))
         await hass.async_block_till_done()
@@ -267,7 +267,7 @@ async def test_migration_device_online_end_to_end_ignores_other_devices(
     with _patch_discovery(), _patch_config_flow_try_connect(), _patch_device():
         await setup.async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         async_fire_time_changed(hass, dt_util.utcnow() + timedelta(minutes=20))
         await hass.async_block_till_done()

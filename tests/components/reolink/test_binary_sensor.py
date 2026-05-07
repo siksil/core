@@ -5,10 +5,10 @@ from unittest.mock import MagicMock, patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
 
 from .conftest import TEST_CAM_NAME, TEST_DUO_MODEL, TEST_HOST_MODEL
 

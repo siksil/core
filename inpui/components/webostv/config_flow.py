@@ -9,16 +9,16 @@ from urllib.parse import urlparse
 from aiowebostv import WebOsClient, WebOsTvPairError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_CLIENT_SECRET, CONF_HOST
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_CLIENT_SECRET, CONF_HOST
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

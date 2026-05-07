@@ -1,6 +1,6 @@
 """Provides useful helpers for handling devices."""
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from . import device_registry as dr, entity_registry as er
 

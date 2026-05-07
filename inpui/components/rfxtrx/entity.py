@@ -7,10 +7,10 @@ from typing import cast
 
 import RFXtrx as rfxtrxmod
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.restore_state import RestoreEntity
 
 from . import DeviceTuple
 from .const import ATTR_EVENT, COMMAND_GROUP_LIST, DATA_RFXOBJECT, DOMAIN, SIGNAL_EVENT

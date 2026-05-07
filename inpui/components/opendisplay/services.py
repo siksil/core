@@ -22,18 +22,18 @@ from opendisplay import (
 from PIL import Image as PILImage, ImageOps
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import async_ble_device_from_address
-from homeassistant.components.http.auth import async_sign_path
-from homeassistant.components.media_source import async_resolve_media
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.selector import MediaSelector, MediaSelectorConfig
+from inpui.components.bluetooth import async_ble_device_from_address
+from inpui.components.http.auth import async_sign_path
+from inpui.components.media_source import async_resolve_media
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH
+from inpui.helpers.network import get_url
+from inpui.helpers.selector import MediaSelector, MediaSelectorConfig
 
 if TYPE_CHECKING:
     from . import OpenDisplayConfigEntry

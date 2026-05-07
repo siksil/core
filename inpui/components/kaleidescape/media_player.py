@@ -7,14 +7,14 @@ import logging
 
 from kaleidescape import const as kaleidescape_const
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utcnow
 
 from . import KaleidescapeConfigEntry
 from .entity import KaleidescapeEntity

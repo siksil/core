@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 import pytest
 from requests import RequestException
 
-from homeassistant.const import STATE_HOME
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_HOME
+from inpui.core import HomeAssistant
 
 from . import setup_platform
 

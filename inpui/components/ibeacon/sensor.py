@@ -7,16 +7,16 @@ from dataclasses import dataclass
 
 from ibeacon_ble import iBeaconAdvertisement
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import SIGNAL_STRENGTH_DECIBELS_MILLIWATT, UnitOfLength
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import SIGNAL_STRENGTH_DECIBELS_MILLIWATT, UnitOfLength
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import IBeaconConfigEntry
 from .const import SIGNAL_IBEACON_DEVICE_NEW

@@ -4,16 +4,16 @@ import json
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from homeassistant.components.nut.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.nut.const import DOMAIN
+from inpui.const import (
     CONF_ALIAS,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_load_fixture
 

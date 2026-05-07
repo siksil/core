@@ -1,13 +1,13 @@
 """Provides triggers for gates."""
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverDeviceClass,
     make_cover_closed_trigger,
     make_cover_opened_trigger,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import Trigger
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import Trigger
 
 DEVICE_CLASSES_GATE: dict[str, str] = {
     COVER_DOMAIN: CoverDeviceClass.GATE,

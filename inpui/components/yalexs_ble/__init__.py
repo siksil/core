@@ -13,11 +13,11 @@ from yalexs_ble import (
     local_name_is_unique,
 )
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import CALLBACK_TYPE, CoreState, Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import CALLBACK_TYPE, CoreState, Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .config_cache import async_get_validated_config
 from .const import (
@@ -148,7 +148,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: YALEXSBLEConfigEntry) ->
     entry.async_on_unload(push_lock.register_callback(_async_state_changed))
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_shutdown)
     )
     return True
 

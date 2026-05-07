@@ -14,18 +14,18 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
-from homeassistant.components.recorder import get_instance, history
-from homeassistant.components.sensor import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
+from inpui.components.recorder import get_instance, history
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_ICON,
@@ -36,24 +36,24 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.decorator import Registry
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.util import dt as dt_util
+from inpui.util.decorator import Registry
 
 from .const import (
     CONF_FILTER_LOWER_BOUND,

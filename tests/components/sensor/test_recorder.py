@@ -13,49 +13,49 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import loader
-from homeassistant.components.recorder import (
+from inpui.components.recorder import (
     CONF_COMMIT_INTERVAL,
     DOMAIN as RECORDER_DOMAIN,
     Recorder,
     history,
 )
-from homeassistant.components.recorder.db_schema import (
+from inpui.components.recorder.db_schema import (
     StateAttributes,
     States,
     StatesMeta,
     StatisticsMeta,
 )
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
     process_timestamp,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     DEG_TO_RAD,
     RAD_TO_DEG,
     async_import_statistics,
     get_metadata,
     list_statistic_ids,
 )
-from homeassistant.components.recorder.util import get_instance, session_scope
-from homeassistant.components.sensor import (
+from inpui.components.recorder.util import get_instance, session_scope
+from inpui.components.sensor import (
     ATTR_OPTIONS,
     DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.sensor.recorder import (
+from inpui.components.sensor.recorder import (
     MEAN_TYPE_CHANGED_ISSUE,
     STATE_CLASS_REMOVED_ISSUE,
     UNITS_CHANGED_ISSUE,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, DEGREE, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.const import ATTR_FRIENDLY_NAME, DEGREE, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant, State
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .common import MockSensor
 

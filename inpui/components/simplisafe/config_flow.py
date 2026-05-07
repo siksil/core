@@ -14,15 +14,15 @@ from simplipy.util.auth import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_CODE, CONF_TOKEN, CONF_URL, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
+from inpui.const import CONF_CODE, CONF_TOKEN, CONF_URL, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers import aiohttp_client, config_validation as cv
 
 from .const import DOMAIN, LOGGER
 

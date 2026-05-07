@@ -8,12 +8,12 @@ from xknx.telegram import Telegram, TelegramDirection
 from xknx.telegram.address import DeviceGroupAddress, parse_device_group_address
 from xknx.telegram.apci import GroupValueRead, GroupValueResponse, GroupValueWrite
 
-from homeassistant.const import CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType, VolDictType
+from inpui.const import CONF_PLATFORM, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType, VolDictType
 
 from .const import DOMAIN
 from .schema import ga_validator

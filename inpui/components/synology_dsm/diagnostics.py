@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.camera import diagnostics as camera_diagnostics
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.camera import diagnostics as camera_diagnostics
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import CONF_DEVICE_TOKEN
 from .coordinator import SynologyDSMConfigEntry

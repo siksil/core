@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 from ..const import CONF_RESPOND_TO_READ
 from . import const as store_const

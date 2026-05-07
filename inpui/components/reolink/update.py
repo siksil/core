@@ -8,17 +8,17 @@ from typing import Any
 from reolink_aio.exceptions import ReolinkError
 from reolink_aio.software_version import NewSoftwareVersion, SoftwareVersion
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import (

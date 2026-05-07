@@ -8,16 +8,16 @@ from tuya_device_handlers.definition.number import (
 )
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEVICE_CLASS_UNITS as NUMBER_DEVICE_CLASS_UNITS,
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TuyaConfigEntry
 from .const import (

@@ -4,12 +4,12 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import alarm_control_panel
-from homeassistant.components.alarm_control_panel import (
+from inpui.components import alarm_control_panel
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     CodeFormat,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_CUSTOM_BYPASS,
@@ -19,10 +19,10 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     SERVICE_ALARM_TRIGGER,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .conftest import MockAlarmControlPanel
 

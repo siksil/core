@@ -4,8 +4,8 @@ from copy import deepcopy
 
 import pytest
 
-from homeassistant.components.comelit.const import BRIDGE, DOMAIN, VEDO
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
+from inpui.components.comelit.const import BRIDGE, DOMAIN, VEDO
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
 
 from .const import (
     BRIDGE_DEVICE_QUERY,

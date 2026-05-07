@@ -11,11 +11,11 @@ from pynuki.device import NukiDevice
 from requests.exceptions import RequestException
 import voluptuous as vol
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import NukiEntryData
 from .const import ATTR_ENABLE, ATTR_UNLATCH, DOMAIN, ERROR_STATES

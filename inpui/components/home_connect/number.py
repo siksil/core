@@ -6,16 +6,16 @@ from typing import cast
 from aiohomeconnect.model import GetSetting, OptionKey, SettingKey
 from aiohomeconnect.model.error import HomeConnectError
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import PERCENTAGE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import setup_home_connect_entry, should_add_option_entity
 from .const import DOMAIN, UNIT_MAP

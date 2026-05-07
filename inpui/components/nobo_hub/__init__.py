@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pynobo import nobo
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import CONF_AUTO_DISCOVERED, CONF_SERIAL, DOMAIN
 
@@ -36,7 +36,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await hub.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_close)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_close)
     )
     hass.data[DOMAIN][entry.entry_id] = hub
 

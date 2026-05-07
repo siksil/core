@@ -1,9 +1,9 @@
 """Tests for the Modern Forms sensor platform."""
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.modern_forms.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.modern_forms.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

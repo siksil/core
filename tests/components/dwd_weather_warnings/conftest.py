@@ -5,14 +5,14 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.dwd_weather_warnings.const import (
+from inpui.components.dwd_weather_warnings.const import (
     ADVANCE_WARNING_SENSOR,
     CONF_REGION_DEVICE_TRACKER,
     CONF_REGION_IDENTIFIER,
     CURRENT_WARNING_SENSOR,
     DOMAIN,
 )
-from homeassistant.const import CONF_MONITORED_CONDITIONS, CONF_NAME
+from inpui.const import CONF_MONITORED_CONDITIONS, CONF_NAME
 
 from tests.common import MockConfigEntry
 

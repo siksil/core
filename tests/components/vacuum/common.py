@@ -6,7 +6,7 @@ components. Instead call the service directly.
 
 from typing import Any
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     ATTR_PARAMS,
     DOMAIN,
@@ -21,7 +21,7 @@ from homeassistant.components.vacuum import (
     SERVICE_START_PAUSE,
     SERVICE_STOP,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
@@ -29,7 +29,7 @@ from homeassistant.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def async_turn_on(hass: HomeAssistant, entity_id: str = ENTITY_MATCH_ALL) -> None:

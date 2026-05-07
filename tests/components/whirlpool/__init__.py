@@ -4,10 +4,10 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.whirlpool.const import CONF_BRAND, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.whirlpool.const import CONF_BRAND, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from tests.common import MockConfigEntry
 

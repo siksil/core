@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.transmission.const import (
+from inpui.components.transmission.const import (
     STATE_DOWNLOADING,
     STATE_SEEDING,
     STATE_UP_DOWN,
 )
-from homeassistant.components.transmission.sensor import _compute_ratio, get_state
-from homeassistant.const import STATE_IDLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.transmission.sensor import _compute_ratio, get_state
+from inpui.const import STATE_IDLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

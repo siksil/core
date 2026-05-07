@@ -7,8 +7,8 @@ from bleak.backends.device import BLEDevice
 import pykulersky
 import pytest
 
-from homeassistant.components.kulersky.const import DOMAIN
-from homeassistant.components.light import (
+from inpui.components.kulersky.const import DOMAIN
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_HS_COLOR,
@@ -19,7 +19,7 @@ from homeassistant.components.light import (
     SCAN_INTERVAL,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -28,9 +28,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

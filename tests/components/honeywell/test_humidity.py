@@ -4,14 +4,14 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     DOMAIN as HUMIDIFIER_DOMAIN,
     SERVICE_SET_HUMIDITY,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

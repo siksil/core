@@ -13,9 +13,9 @@ from nibe.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.nibe_heatpump import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nibe_heatpump import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 MOCK_FLOW_NIBEGW_USERDATA = {
     "model": "F1155",

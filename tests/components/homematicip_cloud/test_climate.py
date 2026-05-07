@@ -7,7 +7,7 @@ from homematicip.base.enums import AbsenceType
 from homematicip.functionalHomes import IndoorClimateHome
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_HVAC_ACTION,
     ATTR_PRESET_MODE,
@@ -18,17 +18,17 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.homematicip_cloud import DOMAIN
-from homeassistant.components.homematicip_cloud.climate import (
+from inpui.components.homematicip_cloud import DOMAIN
+from inpui.components.homematicip_cloud.climate import (
     ATTR_PRESET_END_TIME,
     PERMANENT_END_TIME,
 )
-from homeassistant.components.homematicip_cloud.entity import (
+from inpui.components.homematicip_cloud.entity import (
     ATTR_GROUP_MEMBER_UNREACHABLE,
 )
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .helper import (
     HAPID,

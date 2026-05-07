@@ -36,19 +36,19 @@ from telegram.error import TelegramError
 from telegram.ext import CallbackContext, filters
 from telegram.request import HTTPXRequest
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_COMMAND,
     CONF_API_KEY,
     HTTP_BASIC_AUTHENTICATION,
     HTTP_BEARER_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.util.json import JsonValueType
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.httpx_client import get_async_client
+from inpui.util.json import JsonValueType
 
 from .const import (
     ATTR_ARGS,

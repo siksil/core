@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from melnor_bluetooth.device import Device
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import BluetoothCallbackMatcher
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import BluetoothCallbackMatcher
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import MelnorConfigEntry, MelnorDataUpdateCoordinator
 

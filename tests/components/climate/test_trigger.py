@@ -6,22 +6,22 @@ from typing import Any
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.climate.const import (
+from inpui.components.climate.const import (
     ATTR_HUMIDITY,
     ATTR_HVAC_ACTION,
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.climate.trigger import CONF_HVAC_MODE
-from homeassistant.const import (
+from inpui.components.climate.trigger import CONF_HVAC_MODE
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_ENTITY_ID,
     CONF_OPTIONS,
     CONF_TARGET,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import async_validate_trigger_config
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import async_validate_trigger_config
 
 from tests.components.common import (
     TriggerStateDescription,

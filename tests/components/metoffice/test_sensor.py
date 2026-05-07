@@ -7,10 +7,10 @@ import re
 import pytest
 import requests_mock
 
-from homeassistant.components.metoffice.const import ATTRIBUTION, DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.metoffice.const import ATTRIBUTION, DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import (
     DEVICE_KEY_KINGSLYNN,

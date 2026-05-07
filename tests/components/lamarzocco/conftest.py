@@ -15,9 +15,9 @@ from pylamarzocco.models import (
 from pylamarzocco.util import InstallationKey
 import pytest
 
-from homeassistant.components.lamarzocco.const import CONF_INSTALLATION_KEY, DOMAIN
-from homeassistant.const import CONF_ADDRESS, CONF_MAC, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.lamarzocco.const import CONF_INSTALLATION_KEY, DOMAIN
+from inpui.const import CONF_ADDRESS, CONF_MAC, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from . import MOCK_INSTALLATION_KEY, SERIAL_DICT, USER_INPUT, async_init_integration
 

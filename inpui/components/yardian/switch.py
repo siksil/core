@@ -6,13 +6,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.switch import SwitchEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DEFAULT_WATERING_DURATION, DOMAIN
 from .coordinator import YardianUpdateCoordinator

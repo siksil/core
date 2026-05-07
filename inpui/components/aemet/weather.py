@@ -13,19 +13,19 @@ from aemet_opendata.const import (
     AOD_WIND_SPEED_MAX,
 )
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     Forecast,
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONDITIONS_MAP
 from .coordinator import AemetConfigEntry, WeatherUpdateCoordinator

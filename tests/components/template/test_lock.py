@@ -6,9 +6,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import setup
-from homeassistant.components import lock, template
-from homeassistant.components.lock import LockEntityFeature, LockState
-from homeassistant.const import (
+from inpui.components import lock, template
+from inpui.components.lock import LockEntityFeature, LockState
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     STATE_OFF,
@@ -17,9 +17,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import ConfigurationStyle, async_get_flow_preview_state
 

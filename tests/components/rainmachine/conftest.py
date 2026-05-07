@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.rainmachine import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.rainmachine import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture
 

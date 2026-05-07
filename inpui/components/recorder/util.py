@@ -27,15 +27,15 @@ from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.lambdas import StatementLambdaElement
 import voluptuous as vol
 
-from homeassistant.const import WEEKDAYS
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.recorder import (  # noqa: F401
+from inpui.const import WEEKDAYS
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.recorder import (  # noqa: F401
     DATA_INSTANCE,
     get_instance,
     session_scope,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import DEFAULT_MAX_BIND_VARS, DOMAIN, SQLITE_URL_PREFIX, SupportedDialect
 from .db_schema import (

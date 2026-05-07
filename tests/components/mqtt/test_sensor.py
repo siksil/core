@@ -13,9 +13,9 @@ from freezegun import freeze_time
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import mqtt, sensor
-from homeassistant.components.mqtt.sensor import MQTT_SENSOR_ATTRIBUTES_BLOCKED
-from homeassistant.const import (
+from inpui.components import mqtt, sensor
+from inpui.components.mqtt.sensor import MQTT_SENSOR_ATTRIBUTES_BLOCKED
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     EVENT_STATE_CHANGED,
     STATE_UNAVAILABLE,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     UnitOfReactivePower,
     UnitOfTemperature,
 )
-from homeassistant.core import Event, HomeAssistant, State, callback
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant, State, callback
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .common import (
     help_custom_config,

@@ -7,10 +7,10 @@ from typing import Any
 from letpot.deviceclient import LetPotDeviceClient
 from letpot.models import DeviceFeature, LetPotDeviceStatus
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LetPotConfigEntry, LetPotDeviceCoordinator
 from .entity import LetPotEntity, LetPotEntityDescription, exception_handler

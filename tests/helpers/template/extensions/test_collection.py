@@ -6,8 +6,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
 
 from tests.helpers.template.helpers import render
 

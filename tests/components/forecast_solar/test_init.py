@@ -5,17 +5,17 @@ from unittest.mock import MagicMock, patch
 from forecast_solar import ForecastSolarConnectionError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.forecast_solar.const import (
+from inpui.components.forecast_solar.const import (
     CONF_AZIMUTH,
     CONF_DAMPING,
     CONF_DECLINATION,
     CONF_INVERTER_SIZE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import SnoozFixture, create_mock_snooz, create_mock_snooz_config_entry
 

@@ -7,9 +7,9 @@ from unittest import mock
 from unittest.mock import MagicMock, patch
 
 from homeassistant import setup
-from homeassistant.components import automation
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.util import dt as dt_util
+from inpui.components import automation
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.util import dt as dt_util
 
 from . import async_init_integration
 

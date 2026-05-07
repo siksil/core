@@ -6,9 +6,9 @@ from pyenphase.exceptions import EnvoyError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.enphase_envoy.const import Platform
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.enphase_envoy.const import Platform
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
@@ -16,9 +16,9 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

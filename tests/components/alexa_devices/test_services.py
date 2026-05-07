@@ -5,17 +5,17 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alexa_devices.const import DOMAIN
-from homeassistant.components.alexa_devices.services import (
+from inpui.components.alexa_devices.const import DOMAIN
+from inpui.components.alexa_devices.services import (
     ATTR_INFO_SKILL,
     ATTR_SOUND,
     ATTR_TEXT_COMMAND,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .const import TEST_DEVICE_1_ID, TEST_DEVICE_1_SN

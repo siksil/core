@@ -10,11 +10,11 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components import onboarding
-from homeassistant.components.onboarding import const, views
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar
-from homeassistant.setup import async_set_domains_to_be_loaded, async_setup_component
+from inpui.components import onboarding
+from inpui.components.onboarding import const, views
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar
+from inpui.setup import async_set_domains_to_be_loaded, async_setup_component
 
 from . import mock_storage
 

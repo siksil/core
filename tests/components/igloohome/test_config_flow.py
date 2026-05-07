@@ -8,10 +8,10 @@ from igloohome_api import AuthException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.igloohome.const import DOMAIN
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.igloohome.const import DOMAIN
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 

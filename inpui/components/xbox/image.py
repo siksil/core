@@ -10,10 +10,10 @@ from typing import TYPE_CHECKING
 from pythonxbox.api.provider.people.models import Person
 from pythonxbox.api.provider.titlehub.models import Title
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .coordinator import XboxConfigEntry, XboxPresenceCoordinator
 from .entity import XboxBaseEntity, XboxBaseEntityDescription, profile_pic

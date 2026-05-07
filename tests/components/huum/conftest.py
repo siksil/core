@@ -7,9 +7,9 @@ from huum.const import SaunaStatus
 from huum.schemas import HuumStatusResponse, SaunaConfig
 import pytest
 
-from homeassistant.components.huum.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.huum.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

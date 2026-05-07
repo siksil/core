@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tile.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.tile.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

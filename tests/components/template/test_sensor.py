@@ -7,27 +7,27 @@ from unittest.mock import ANY, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.bootstrap import async_from_config_dict
-from homeassistant.components import sensor, template
-from homeassistant.const import (
+from inpui.bootstrap import async_from_config_dict
+from inpui.components import sensor, template
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
     EVENT_COMPONENT_LOADED,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import ATTR_COMPONENT, async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, CoreState, HomeAssistant, State, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import ATTR_COMPONENT, async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import (
     ConfigurationStyle,
@@ -797,7 +797,7 @@ async def test_this_variable_early_hass_not_running(
     }
 
     # Signal hass started
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     await hass.async_block_till_done()
 

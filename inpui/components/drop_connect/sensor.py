@@ -6,13 +6,13 @@ from collections.abc import Callable
 from dataclasses import dataclass
 import logging
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
     EntityCategory,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_DEVICE_TYPE,

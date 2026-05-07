@@ -8,9 +8,9 @@ from typing import Any
 import voluptuous as vol
 import zeversolar
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 

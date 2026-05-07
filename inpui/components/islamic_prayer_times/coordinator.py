@@ -8,12 +8,12 @@ from typing import Any, cast
 
 from prayer_times_calculator_offline import PrayerTimesCalculator
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.event import async_track_point_in_time
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.event import async_track_point_in_time
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_CALC_METHOD,

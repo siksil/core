@@ -10,7 +10,7 @@ from syrupy.filters import props
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.growatt_server.const import (
+from inpui.components.growatt_server.const import (
     ABORT_NO_PLANTS,
     AUTH_API_TOKEN,
     AUTH_PASSWORD,
@@ -26,15 +26,15 @@ from homeassistant.components.growatt_server.const import (
     V1_API_ERROR_NO_PRIVILEGE,
     V1_API_ERROR_RATE_LIMITED,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_URL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

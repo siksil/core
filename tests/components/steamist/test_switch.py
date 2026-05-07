@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     MOCK_ASYNC_GET_STATUS_ACTIVE,

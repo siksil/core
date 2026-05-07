@@ -4,10 +4,10 @@ from unittest import mock
 
 import pytest
 
-from homeassistant.components import switch as switch_component
-from homeassistant.components.mfi import switch as mfi
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import switch as switch_component
+from inpui.components.mfi import switch as mfi
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 PLATFORM = mfi
 COMPONENT = switch_component

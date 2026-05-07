@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
 
 from .const import _LOGGER
 from .models import IsyConfigEntry

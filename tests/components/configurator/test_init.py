@@ -4,10 +4,10 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components import configurator
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components import configurator
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

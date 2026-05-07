@@ -17,20 +17,20 @@ from sqlalchemy.exc import OperationalError, SQLAlchemyError
 from sqlalchemy.sql.elements import TextClause
 from sqlalchemy.sql.lambdas import StatementLambdaElement
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import Recorder, util
-from homeassistant.components.recorder.const import (
+from inpui.components import recorder
+from inpui.components.recorder import Recorder, util
+from inpui.components.recorder.const import (
     DOMAIN,
     SQLITE_URL_PREFIX,
     SupportedDialect,
 )
-from homeassistant.components.recorder.db_schema import RecorderRuns
-from homeassistant.components.recorder.history import _get_single_entity_start_time_stmt
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder.db_schema import RecorderRuns
+from inpui.components.recorder.history import _get_single_entity_start_time_stmt
+from inpui.components.recorder.models import (
     UnsupportedDialect,
     process_timestamp,
 )
-from homeassistant.components.recorder.util import (
+from inpui.components.recorder.util import (
     MIN_VERSION_SQLITE,
     RETRYABLE_MYSQL_ERRORS,
     database_job_retry_wrapper,
@@ -41,10 +41,10 @@ from homeassistant.components.recorder.util import (
     retryable_database_job_method,
     session_scope,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
 
 from .common import (
     async_wait_recording_done,
@@ -158,7 +158,7 @@ async def test_last_run_was_recently_clean(
             last_run_was_recently_clean_mock.assert_not_called()
 
         # Restart HA, last_run_was_recently_clean should return True
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         await hass.async_stop()
 
@@ -172,7 +172,7 @@ async def test_last_run_was_recently_clean(
             assert return_values[-1] is True
 
         # Restart HA with a long downtime, last_run_was_recently_clean should return False
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         await hass.async_stop()
 
@@ -193,7 +193,7 @@ async def test_last_run_was_recently_clean(
             last_run_was_recently_clean_mock.assert_called_once()
             assert return_values[-1] is False
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         await hass.async_stop()
 

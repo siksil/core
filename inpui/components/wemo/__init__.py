@@ -11,13 +11,13 @@ import pywemo
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DISCOVERY, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import CALLBACK_TYPE, Event, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.async_ import gather_with_limited_concurrency
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DISCOVERY, EVENT_INPUI_STOP, Platform
+from inpui.core import CALLBACK_TYPE, Event, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
+from inpui.util.async_ import gather_with_limited_concurrency
 
 from .const import DOMAIN
 from .coordinator import DeviceCoordinator, async_register_device
@@ -96,7 +96,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         discovery_responder.stop()
         registry.stop()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _on_hass_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _on_hass_stop)
 
     yaml_config = config.get(DOMAIN, {})
     hass.data[DOMAIN] = WemoData(

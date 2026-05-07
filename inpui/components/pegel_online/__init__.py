@@ -7,10 +7,10 @@ import logging
 from aiopegelonline import PegelOnline
 from aiopegelonline.const import CONNECT_ERRORS
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_STATION, DOMAIN
 from .coordinator import PegelOnlineConfigEntry, PegelOnlineDataUpdateCoordinator

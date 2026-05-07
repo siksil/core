@@ -10,7 +10,7 @@ from typing import Any, cast
 from kasa import Device, Module
 from kasa.smart.modules.temperaturecontrol import ThermostatState
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     DOMAIN as CLIMATE_DOMAIN,
     ClimateEntity,
@@ -19,9 +19,9 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import PRECISION_TENTHS, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PRECISION_TENTHS, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry, legacy_device_id
 from .const import UNIT_MAPPING

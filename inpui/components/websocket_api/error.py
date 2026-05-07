@@ -1,6 +1,6 @@
 """WebSocket API related errors."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class Disconnect(HomeAssistantError):

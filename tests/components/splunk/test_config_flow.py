@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.splunk.const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import (
+from inpui.components.splunk.const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PORT,
@@ -14,8 +14,8 @@ from homeassistant.const import (
     CONF_TOKEN,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

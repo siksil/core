@@ -11,14 +11,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.websocket_api import ActiveConnection, messages
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.json import json_bytes
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import create_eager_task
+from inpui.components import websocket_api
+from inpui.components.recorder import get_instance
+from inpui.components.websocket_api import ActiveConnection, messages
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.json import json_bytes
+from inpui.util import dt as dt_util
+from inpui.util.async_ import create_eager_task
 
 from .const import DOMAIN
 from .helpers import (

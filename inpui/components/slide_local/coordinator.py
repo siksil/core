@@ -14,8 +14,8 @@ from goslideapi.goslideapi import (
     GoSlideLocal as SlideLocalApi,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_VERSION,
     CONF_HOST,
     CONF_MAC,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_OPENING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_INVERT_POSITION, DEFAULT_OFFSET, DOMAIN
 

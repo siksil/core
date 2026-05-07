@@ -4,14 +4,14 @@ from unittest.mock import MagicMock, patch
 
 from synology_dsm.exceptions import SynologyDSMLoginInvalidException
 
-from homeassistant.components.synology_dsm.const import (
+from inpui.components.synology_dsm.const import (
     CONF_BACKUP_PATH,
     CONF_BACKUP_SHARE,
     DEFAULT_VERIFY_SSL,
     DOMAIN,
     SERVICES,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .consts import HOST, MACS, PASSWORD, PORT, USE_SSL, USERNAME
 

@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DOMAIN as CAMERA_DOMAIN,
     SERVICE_DISABLE_MOTION,
     SERVICE_ENABLE_MOTION,
@@ -14,11 +14,11 @@ from homeassistant.components.camera import (
     CameraState,
     async_get_image,
 )
-from homeassistant.components.demo import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.demo import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 ENTITY_CAMERA = "camera.demo_camera"
 

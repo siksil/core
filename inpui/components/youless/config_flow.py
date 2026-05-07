@@ -9,8 +9,8 @@ from urllib.error import HTTPError, URLError
 import voluptuous as vol
 from youless_api import YoulessAPI
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_HOST
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_HOST
 
 from .const import DOMAIN
 

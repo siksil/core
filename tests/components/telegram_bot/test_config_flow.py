@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 from telegram import User
 from telegram.error import BadRequest, InvalidToken, NetworkError
 
-from homeassistant.components.telegram_bot.bot import TelegramNotificationService
-from homeassistant.components.telegram_bot.config_flow import DESCRIPTION_PLACEHOLDERS
-from homeassistant.components.telegram_bot.const import (
+from inpui.components.telegram_bot.bot import TelegramNotificationService
+from inpui.components.telegram_bot.config_flow import DESCRIPTION_PLACEHOLDERS
+from inpui.components.telegram_bot.const import (
     ATTR_PARSER,
     CONF_API_ENDPOINT,
     CONF_CHAT_ID,
@@ -23,11 +23,11 @@ from homeassistant.components.telegram_bot.const import (
     SECTION_ADVANCED_SETTINGS,
     SUBENTRY_TYPE_ALLOWED_CHAT_IDS,
 )
-from homeassistant.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
-from homeassistant.config_entries import SOURCE_USER, ConfigSubentry
-from homeassistant.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
+from inpui.config_entries import SOURCE_USER, ConfigSubentry
+from inpui.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, pytest
 from tests.typing import ClientSessionGenerator

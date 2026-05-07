@@ -10,22 +10,22 @@ from laundrify_aio import LaundrifyDevice
 from laundrify_aio.exceptions import LaundrifyDeviceException
 import pytest
 
-from homeassistant.components.laundrify.const import (
+from inpui.components.laundrify.const import (
     DEFAULT_POLL_INTERVAL,
     DOMAIN,
     MODELS,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNKNOWN,
     Platform,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import slugify
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

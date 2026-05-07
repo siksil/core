@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.number import NumberEntity
-from homeassistant.const import PERCENTAGE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity
+from inpui.const import PERCENTAGE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import HomeWizardConfigEntry, HWEnergyDeviceUpdateCoordinator
 from .entity import HomeWizardEntity

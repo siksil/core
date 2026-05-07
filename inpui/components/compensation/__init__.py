@@ -6,13 +6,13 @@ from operator import itemgetter
 import numpy as np
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA as SENSOR_DEVICE_CLASSES_SCHEMA,
     DOMAIN as SENSOR_DOMAIN,
     STATE_CLASSES_SCHEMA as SENSOR_STATE_CLASSES_SCHEMA,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ATTRIBUTE,
     CONF_DEVICE_CLASS,
     CONF_MAXIMUM,
@@ -22,10 +22,10 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_UNIT_OF_MEASUREMENT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_COMPENSATION,

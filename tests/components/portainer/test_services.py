@@ -11,16 +11,16 @@ from pyportainer import (
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.portainer.const import DOMAIN
-from homeassistant.components.portainer.services import (
+from inpui.components.portainer.const import DOMAIN
+from inpui.components.portainer.services import (
     ATTR_DANGLING,
     ATTR_DATE_UNTIL,
     SERVICE_PRUNE_IMAGES,
 )
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.device_registry import DeviceRegistry
 
 from . import setup_integration
 from .conftest import TEST_ENTRY

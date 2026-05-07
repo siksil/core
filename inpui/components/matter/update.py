@@ -10,20 +10,20 @@ from chip.clusters import Objects as clusters
 from matter_server.common.errors import UpdateCheckError, UpdateError
 from matter_server.common.models import MatterSoftwareVersion, UpdateSource
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_LATEST_VERSION,
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON, Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import ExtraStoredData
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON, Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import ExtraStoredData
 
 from .entity import MatterEntity, MatterEntityDescription
 from .helpers import get_matter

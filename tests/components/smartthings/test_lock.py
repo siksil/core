@@ -7,17 +7,17 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.components.smartthings.const import MAIN
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.components.smartthings.const import MAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

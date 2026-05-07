@@ -6,14 +6,14 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import alarm_control_panel as alarm
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_CODE, CONF_NAME, CONF_VALUE_TEMPLATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import alarm_control_panel as alarm
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_CODE, CONF_NAME, CONF_VALUE_TEMPLATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from . import subscription
 from .config import DEFAULT_RETAIN, MQTT_BASE_SCHEMA

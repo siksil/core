@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.mobile_app.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.mobile_app.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockUser
 from tests.test_util.aiohttp import AiohttpClientMocker

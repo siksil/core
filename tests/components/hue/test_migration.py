@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components import hue
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.json import JsonArrayType
+from inpui.components import hue
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.json import JsonArrayType
 
 from tests.common import MockConfigEntry
 

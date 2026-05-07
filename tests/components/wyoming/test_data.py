@@ -7,8 +7,8 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from wyoming.info import Info
 
-from homeassistant.components.wyoming.data import WyomingService, load_wyoming_info
-from homeassistant.core import HomeAssistant
+from inpui.components.wyoming.data import WyomingService, load_wyoming_info
+from inpui.core import HomeAssistant
 
 from . import SATELLITE_INFO, STT_INFO, TTS_INFO, WAKE_WORD_INFO, MockAsyncTcpClient
 

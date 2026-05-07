@@ -9,11 +9,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.husqvarna_automower.const import EXECUTION_TIME_DELAY
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.husqvarna_automower.const import EXECUTION_TIME_DELAY
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .const import TEST_MOWER_ID

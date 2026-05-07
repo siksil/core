@@ -10,12 +10,12 @@ from unittest.mock import Mock, patch
 from aiowebdav2.exceptions import UnauthorizedError, WebDavError
 import pytest
 
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
-from homeassistant.components.webdav.backup import async_register_backup_agents_listener
-from homeassistant.components.webdav.const import DATA_BACKUP_AGENT_LISTENERS, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import json_dumps
-from homeassistant.setup import async_setup_component
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
+from inpui.components.webdav.backup import async_register_backup_agents_listener
+from inpui.components.webdav.const import DATA_BACKUP_AGENT_LISTENERS, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.json import json_dumps
+from inpui.setup import async_setup_component
 
 from .const import BACKUP_METADATA
 

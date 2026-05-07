@@ -8,8 +8,8 @@ import pytest
 from screenlogicpy import ScreenLogicGateway
 from screenlogicpy.device_const.system import COLOR_MODE
 
-from homeassistant.components.screenlogic import DOMAIN
-from homeassistant.components.screenlogic.const import (
+from inpui.components.screenlogic import DOMAIN
+from inpui.components.screenlogic.const import (
     ATTR_COLOR_MODE,
     ATTR_CONFIG_ENTRY,
     ATTR_RUNTIME,
@@ -17,10 +17,10 @@ from homeassistant.components.screenlogic.const import (
     SERVICE_START_SUPER_CHLORINATION,
     SERVICE_STOP_SUPER_CHLORINATION,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from . import (
     DATA_FULL_CHEM,

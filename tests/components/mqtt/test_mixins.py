@@ -5,22 +5,22 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components import mqtt, sensor
-from homeassistant.components.mqtt.sensor import DEFAULT_NAME as DEFAULT_SENSOR_NAME
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import (
+from inpui.components import mqtt, sensor
+from inpui.components.mqtt.sensor import DEFAULT_NAME as DEFAULT_SENSOR_NAME
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
     json,
 )
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 from .common import (
     MOCK_NOTIFY_SUBENTRY_DATA,
@@ -335,7 +335,7 @@ async def test_default_entity_and_device_name(
     )
     entry.add_to_hass(hass)
     assert await hass.config_entries.async_setup(entry.entry_id)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     device = device_registry.async_get_device({("mqtt", "helloworld")})

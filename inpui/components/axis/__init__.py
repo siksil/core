@@ -2,10 +2,10 @@
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import PLATFORMS
 from .errors import AuthenticationRequired, CannotConnect
@@ -35,7 +35,7 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: AxisConfigEntry) 
     )
     config_entry.async_on_unload(hub.teardown)
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, hub.shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, hub.shutdown)
     )
 
     return True

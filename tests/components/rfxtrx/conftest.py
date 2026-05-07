@@ -10,10 +10,10 @@ from freezegun import freeze_time
 import pytest
 from RFXtrx import Connect, RFXtrxTransport
 
-from homeassistant.components import rfxtrx
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components import rfxtrx
+from inpui.components.rfxtrx import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.components.light.conftest import mock_light_profiles  # noqa: F401

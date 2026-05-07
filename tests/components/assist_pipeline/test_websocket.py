@@ -9,23 +9,23 @@ from unittest.mock import ANY, Mock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import conversation
-from homeassistant.components.assist_pipeline.const import (
+from inpui.components import conversation
+from inpui.components.assist_pipeline.const import (
     DOMAIN,
     SAMPLE_CHANNELS,
     SAMPLE_RATE,
     SAMPLE_WIDTH,
 )
-from homeassistant.components.assist_pipeline.pipeline import (
+from inpui.components.assist_pipeline.pipeline import (
     DeviceAudioQueue,
     Pipeline,
     PipelineData,
     async_get_pipelines,
     async_update_pipeline,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, device_registry as dr
 
 from .conftest import (
     BYTES_ONE_SECOND,

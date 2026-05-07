@@ -10,19 +10,19 @@ import pytest
 from pywebpush import WebPushException
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.html5 import notify as html5
-from homeassistant.components.notify import (
+from inpui.components.html5 import notify as html5
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, snapshot_platform
 from tests.typing import ClientSessionGenerator

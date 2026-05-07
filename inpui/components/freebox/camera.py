@@ -5,17 +5,17 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.ffmpeg import CONF_EXTRA_ARGUMENTS, CONF_INPUT
-from homeassistant.components.ffmpeg.camera import (  # pylint: disable=hass-component-root-import
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.ffmpeg import CONF_EXTRA_ARGUMENTS, CONF_INPUT
+from inpui.components.ffmpeg.camera import (  # pylint: disable=hass-component-root-import
     DEFAULT_ARGUMENTS,
     FFmpegCamera,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_DETECTION, FreeboxHomeCategory
 from .entity import FreeboxHomeEntity

@@ -4,16 +4,16 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import paths
 
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import (
     DOMAIN as MEDIA_SOURCE_DOMAIN,
     URI_SCHEME,
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.components.system_bridge.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.system_bridge.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

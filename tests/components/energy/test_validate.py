@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.energy import validate
-from homeassistant.components.energy.data import EnergyManager
-from homeassistant.const import UnitOfEnergy
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSON_DUMP
+from inpui.components.energy import validate
+from inpui.components.energy.data import EnergyManager
+from inpui.const import UnitOfEnergy
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSON_DUMP
 
 ENERGY_UNITS_STRING = ", ".join(tuple(UnitOfEnergy))
 

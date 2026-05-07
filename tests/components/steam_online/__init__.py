@@ -7,13 +7,13 @@ import urllib.parse
 
 import steam
 
-from homeassistant.components.steam_online.const import (
+from inpui.components.steam_online.const import (
     CONF_ACCOUNT,
     CONF_ACCOUNTS,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

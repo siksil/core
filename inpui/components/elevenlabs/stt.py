@@ -11,8 +11,8 @@ from elevenlabs import AsyncElevenLabs
 from elevenlabs.core import ApiError
 from elevenlabs.types import Model
 
-from homeassistant.components import stt
-from homeassistant.components.stt import (
+from inpui.components import stt
+from inpui.components.stt import (
     AudioBitRates,
     AudioChannels,
     AudioCodecs,
@@ -22,9 +22,9 @@ from homeassistant.components.stt import (
     SpeechResultState,
     SpeechToTextEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElevenLabsConfigEntry
 from .const import (

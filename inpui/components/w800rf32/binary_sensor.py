@@ -8,18 +8,18 @@ import logging
 import voluptuous as vol
 import W800rf32 as w800
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_DEVICES, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, event as evt
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_DEVICE_CLASS, CONF_DEVICES, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, event as evt
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import W800RF32_DEVICE
 

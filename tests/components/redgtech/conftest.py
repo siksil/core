@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.redgtech.const import DOMAIN
+from inpui.components.redgtech.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

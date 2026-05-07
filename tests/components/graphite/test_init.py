@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import graphite
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import graphite
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(name="mock_gf")

@@ -6,18 +6,18 @@ from unittest.mock import patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import light, switch
-from homeassistant.const import (
+from inpui.components import light, switch
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PLATFORM,
     SERVICE_TURN_ON,
     STATE_ON,
     SUN_EVENT_SUNRISE,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     assert_setup_component,

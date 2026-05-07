@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.device_tracker import ATTR_GPS, ATTR_IP, ATTR_MAC
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.components.person import ATTR_USER_ID
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.const import (
+from inpui.components.device_tracker import ATTR_GPS, ATTR_IP, ATTR_MAC
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.components.person import ATTR_USER_ID
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     STATE_HOME,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import ProximityConfigEntry
 

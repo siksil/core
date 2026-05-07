@@ -6,11 +6,11 @@ from typing import Any
 
 import pyvera as veraApi
 
-from homeassistant.components.scene import Scene
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import slugify
+from inpui.components.scene import Scene
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import slugify
 
 from .common import ControllerData, get_controller_data
 from .const import VERA_ID_FORMAT

@@ -8,11 +8,11 @@ import aiohttp
 from loqedAPI import loqed
 
 from homeassistant import config_entries
-from homeassistant.components.loqed.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_NAME, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.loqed.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_NAME, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

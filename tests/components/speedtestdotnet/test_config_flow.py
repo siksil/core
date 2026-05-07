@@ -3,13 +3,13 @@
 from unittest.mock import MagicMock
 
 from homeassistant import config_entries
-from homeassistant.components.speedtestdotnet.const import (
+from inpui.components.speedtestdotnet.const import (
     CONF_SERVER_ID,
     CONF_SERVER_NAME,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

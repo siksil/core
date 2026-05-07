@@ -5,10 +5,10 @@ from unittest.mock import patch
 from pysnmp.proto.rfc1902 import Integer32
 import pytest
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 config = {
     SWITCH_DOMAIN: {

@@ -11,13 +11,13 @@ import zigpy.config
 from zigpy.config import CONF_DEVICE_PATH
 import zigpy.types
 
-from homeassistant.components.zha import radio_manager
-from homeassistant.components.zha.const import DOMAIN
-from homeassistant.components.zha.radio_manager import ProbeResult, ZhaRadioManager
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.components.zha import radio_manager
+from inpui.components.zha.const import DOMAIN
+from inpui.components.zha.radio_manager import ProbeResult, ZhaRadioManager
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from tests.common import MockConfigEntry
 

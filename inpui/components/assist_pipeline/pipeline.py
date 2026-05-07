@@ -19,7 +19,7 @@ import wave
 import hass_nabucasa
 import voluptuous as vol
 
-from homeassistant.components import (
+from inpui.components import (
     conversation,
     media_player,
     stt,
@@ -27,16 +27,16 @@ from homeassistant.components import (
     wake_word,
     websocket_api,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, MATCH_ALL
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.const import ATTR_SUPPORTED_FEATURES, MATCH_ALL
+from inpui.core import Context, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     chat_session,
     device_registry as dr,
     entity_registry as er,
     intent,
 )
-from homeassistant.helpers.collection import (
+from inpui.helpers.collection import (
     CHANGE_UPDATED,
     CollectionError,
     ItemNotFound,
@@ -44,16 +44,16 @@ from homeassistant.helpers.collection import (
     StorageCollection,
     StorageCollectionWebsocket,
 )
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType, VolDictType
-from homeassistant.util import (
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import UNDEFINED, UndefinedType, VolDictType
+from inpui.util import (
     dt as dt_util,
     language as language_util,
     ulid as ulid_util,
 )
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.limited_size_dict import LimitedSizeDict
+from inpui.util.hass_dict import HassKey
+from inpui.util.limited_size_dict import LimitedSizeDict
 
 from .audio_enhancer import AudioEnhancer, EnhancedAudioChunk, MicroVadSpeexEnhancer
 from .const import (

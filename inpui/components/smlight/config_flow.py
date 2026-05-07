@@ -10,12 +10,12 @@ from pysmlight.const import Devices
 from pysmlight.exceptions import SmlightAuthError, SmlightConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN
 

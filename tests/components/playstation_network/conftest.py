@@ -14,8 +14,8 @@ from psnawp_api.models.trophies import (
 )
 import pytest
 
-from homeassistant.components.playstation_network.const import CONF_NPSSO, DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
+from inpui.components.playstation_network.const import CONF_NPSSO, DOMAIN
+from inpui.config_entries import ConfigSubentryData
 
 from tests.common import MockConfigEntry
 

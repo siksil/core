@@ -1,12 +1,12 @@
 """The Backup integration."""
 
-from homeassistant.config_entries import SOURCE_SYSTEM
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, discovery_flow
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import SOURCE_SYSTEM
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, discovery_flow
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.typing import ConfigType
 
 # Pre-import backup to avoid it being imported
 # later when the import executor is busy and delaying
@@ -99,7 +99,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         reader_writer = CoreBackupReaderWriter(hass)
     else:
         # pylint: disable-next=hass-component-root-import
-        from homeassistant.components.hassio.backup import (  # noqa: PLC0415
+        from inpui.components.hassio.backup import (  # noqa: PLC0415
             SupervisorBackupReaderWriter,
         )
 

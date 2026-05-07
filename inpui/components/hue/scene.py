@@ -11,10 +11,10 @@ from aiohue.v2.models.scene import Scene as HueScene, ScenePut as HueScenePut
 from aiohue.v2.models.smart_scene import SmartScene as HueSmartScene, SmartSceneState
 import voluptuous as vol
 
-from homeassistant.components.scene import ATTR_TRANSITION, Scene as SceneEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.components.scene import ATTR_TRANSITION, Scene as SceneEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

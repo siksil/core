@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import service
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import service
 
 from .const import DOMAIN
 

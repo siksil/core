@@ -5,13 +5,13 @@ from __future__ import annotations
 import base64
 from typing import Any, cast
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     AuthImplementation,
     AuthorizationServer,
     ClientCredential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import SCOPE_VALUES
 

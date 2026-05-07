@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 
 from rova.rova import Rova
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.dt import get_time_zone
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.dt import get_time_zone
 
 from .const import DOMAIN, LOGGER
 

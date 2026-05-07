@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from .const import PLATFORMS
 from .entry_manager import CrownstoneConfigEntry, CrownstoneEntryManager
@@ -23,7 +23,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: CrownstoneConfigEntry) -
     # HA specific listeners
     entry.async_on_unload(entry.add_update_listener(async_update_listener))
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, manager.on_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, manager.on_shutdown)
     )
 
     return True

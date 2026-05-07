@@ -4,18 +4,18 @@ import pytest
 from pytest_unordered import unordered
 import voluptuous_serialize
 
-from homeassistant.components import automation
-from homeassistant.components.climate import DOMAIN, HVACMode, const, device_action
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components import automation
+from inpui.components.climate import DOMAIN, HVACMode, const, device_action
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.entity_registry import RegistryEntryHider
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity_registry import RegistryEntryHider
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

@@ -6,10 +6,10 @@ from typing import Any
 
 from weheat.abstractions.user import async_get_user_id_from_token
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
 
 from .const import API_URL, DOMAIN, ENTRY_TITLE, OAUTH2_SCOPES
 

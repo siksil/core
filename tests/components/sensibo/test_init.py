@@ -10,12 +10,12 @@ from freezegun.api import FrozenDateTimeFactory
 from pysensibo.model import SensiboData
 import pytest
 
-from homeassistant.components.sensibo.const import DOMAIN
-from homeassistant.components.sensibo.util import NoUsernameError
-from homeassistant.config_entries import SOURCE_USER, ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.sensibo.const import DOMAIN
+from inpui.components.sensibo.util import NoUsernameError
+from inpui.config_entries import SOURCE_USER, ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import ENTRY_CONFIG
 

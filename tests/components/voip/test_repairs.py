@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.voip import repairs
-from homeassistant.core import HomeAssistant
+from inpui.components.voip import repairs
+from inpui.core import HomeAssistant
 
 
 async def test_create_fix_flow_raises_on_unknown_issue_id(hass: HomeAssistant) -> None:

@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 from goalzero import exceptions
 
-from homeassistant.components.goalzero.const import DEFAULT_NAME, DOMAIN, MANUFACTURER
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.components.goalzero.const import DEFAULT_NAME, DOMAIN, MANUFACTURER
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from . import CONF_DATA, async_init_integration, create_entry
 

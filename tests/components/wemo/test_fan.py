@@ -4,20 +4,20 @@ import pytest
 from pywemo.exceptions import ActionException
 from pywemo.ouimeaux_device.humidifier import DesiredHumidity, FanMode
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     DOMAIN as FAN_DOMAIN,
     SERVICE_SET_PERCENTAGE,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.wemo import fan
-from homeassistant.components.wemo.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.wemo import fan
+from inpui.components.wemo.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import entity_test_helpers
 from .conftest import async_create_wemo_entity

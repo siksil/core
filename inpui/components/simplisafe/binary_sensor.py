@@ -7,14 +7,14 @@ from simplipy.device.sensor.v3 import SensorV3
 from simplipy.system.v3 import SystemV3
 from simplipy.websocket import EVENT_SECRET_ALERT_TRIGGERED, WebsocketEvent
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SimpliSafe
 from .const import DOMAIN, LOGGER

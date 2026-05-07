@@ -8,13 +8,13 @@ import zoneinfo
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_NAME, CONF_TIME_ZONE
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.const import CONF_NAME, CONF_TIME_ZONE
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

@@ -5,13 +5,13 @@ from __future__ import annotations
 import logging
 from typing import Final
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     EntityCategory,
     UnitOfApparentPower,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import KEY_STATUS, KEY_STATUS_DISPLAY, STATE_TYPES
 from .coordinator import NutConfigEntry

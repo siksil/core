@@ -16,17 +16,17 @@ from wled import (
     WLEDError,
 )
 
-from homeassistant.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
-from homeassistant.components.wled.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
+from inpui.components.wled.const import DOMAIN, SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_SELECT_OPTION,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

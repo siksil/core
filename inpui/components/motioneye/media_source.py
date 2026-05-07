@@ -8,8 +8,8 @@ from typing import cast
 
 from motioneye_client.const import KEY_MEDIA_LIST, KEY_MIME_TYPE, KEY_PATH
 
-from homeassistant.components.media_player import MediaClass, MediaType
-from homeassistant.components.media_source import (
+from inpui.components.media_player import MediaClass, MediaType
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceError,
@@ -17,9 +17,9 @@ from homeassistant.components.media_source import (
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from . import get_media_url, split_motioneye_device_identifier
 from .const import DOMAIN

@@ -5,15 +5,15 @@ import logging
 
 from irm_kmi_api import IrmKmiApiClientHa, IrmKmiApiError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_LOCATION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_LOCATION
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import (
     TimestampDataUpdateCoordinator,
     UpdateFailed,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.dt import utcnow
+from inpui.util import dt as dt_util
+from inpui.util.dt import utcnow
 
 from .data import ProcessedCoordinatorData
 from .utils import preferred_language

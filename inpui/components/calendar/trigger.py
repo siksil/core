@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Any, cast
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITY_ID,
     CONF_EVENT,
@@ -19,19 +19,19 @@ from homeassistant.const import (
     CONF_OPTIONS,
     CONF_TARGET,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import move_top_level_schema_fields_to_options
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import (
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import move_top_level_schema_fields_to_options
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import (
     async_track_point_in_time,
     async_track_time_interval,
 )
-from homeassistant.helpers.target import TargetEntityChangeTracker, TargetSelection
-from homeassistant.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.target import TargetEntityChangeTracker, TargetSelection
+from inpui.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from . import CalendarEntity, CalendarEvent
 from .const import DATA_COMPONENT, DOMAIN

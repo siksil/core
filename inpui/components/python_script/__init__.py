@@ -25,19 +25,19 @@ from RestrictedPython.Guards import (
 )
 import voluptuous as vol
 
-from homeassistant.const import CONF_DESCRIPTION, CONF_NAME, SERVICE_RELOAD
-from homeassistant.core import (
+from inpui.const import CONF_DESCRIPTION, CONF_NAME, SERVICE_RELOAD
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.service import async_set_service_schema
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util, raise_if_invalid_filename
-from homeassistant.util.yaml.loader import load_yaml_dict
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.service import async_set_service_schema
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util, raise_if_invalid_filename
+from inpui.util.yaml.loader import load_yaml_dict
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -12,7 +12,7 @@ from typing import Any, Self
 from cronsim import CronSim
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_LAST_RESET,
     DEVICE_CLASS_UNITS,
     RestoreSensor,
@@ -20,11 +20,11 @@ from homeassistant.components.sensor import (
     SensorExtraStoredData,
     SensorStateClass,
 )
-from homeassistant.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
     _suggest_report_issue,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
@@ -33,29 +33,29 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import entity_platform, entity_registry as er
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import entity_platform, entity_registry as er
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_point_in_time,
     async_track_state_change_event,
 )
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.template import is_number
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util, slugify
-from homeassistant.util.enum import try_parse_enum
+from inpui.helpers.start import async_at_started
+from inpui.helpers.template import is_number
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util, slugify
+from inpui.util.enum import try_parse_enum
 
 from .const import (
     ATTR_NEXT_RESET,

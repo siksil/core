@@ -17,11 +17,11 @@ from aiohasupervisor.models import (
     UnsupportedReason,
 )
 
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HassJob, HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.issue_registry import (
+from inpui.const import ATTR_NAME
+from inpui.core import HassJob, HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.event import async_call_later
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,

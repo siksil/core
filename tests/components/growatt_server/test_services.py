@@ -7,10 +7,10 @@ import growattServer
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.growatt_server.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.components.growatt_server.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

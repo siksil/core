@@ -18,7 +18,7 @@ from aioesphomeapi import (
     EntityInfo,
 )
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
@@ -48,15 +48,15 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     PRECISION_HALVES,
     PRECISION_TENTHS,
     PRECISION_WHOLE,
     UnitOfTemperature,
 )
-from homeassistant.core import callback
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import callback
+from inpui.exceptions import ServiceValidationError
 
 from .const import DOMAIN
 from .entity import (

@@ -6,14 +6,14 @@ from datetime import datetime, timedelta
 from enum import StrEnum
 import logging
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     HomeAssistant,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     EntityCategory,
     UnitOfPressure,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from .coordinator import (
     WatergateAgregatedRequests,

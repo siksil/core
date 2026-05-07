@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     ATTR_MODE,
     DOMAIN as HUMIDIFIER_DOMAIN,
@@ -16,21 +16,21 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     SERVICE_SET_MODE,
 )
-from homeassistant.components.vesync.const import (
+from inpui.components.vesync.const import (
     VS_HUMIDIFIER_MODE_AUTO,
     VS_HUMIDIFIER_MODE_MANUAL,
     VS_HUMIDIFIER_MODE_SLEEP,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .common import (
     ALL_DEVICE_NAMES,

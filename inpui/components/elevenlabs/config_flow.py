@@ -9,11 +9,11 @@ from elevenlabs import AsyncElevenLabs
 from elevenlabs.core import ApiError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

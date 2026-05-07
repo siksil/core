@@ -4,12 +4,12 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import automation
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

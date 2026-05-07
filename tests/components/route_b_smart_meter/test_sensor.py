@@ -6,10 +6,10 @@ from freezegun.api import FrozenDateTimeFactory
 from momonga import MomongaError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.route_b_smart_meter.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.route_b_smart_meter.const import DEFAULT_SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

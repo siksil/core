@@ -8,15 +8,15 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components import template
-from homeassistant.components.blueprint import (
+from inpui.components import template
+from inpui.components.blueprint import (
     BLUEPRINT_SCHEMA,
     Blueprint,
     BlueprintInUse,
     DomainBlueprints,
 )
-from homeassistant.components.template import DOMAIN, SERVICE_RELOAD
-from homeassistant.components.template.config import (
+from inpui.components.template import DOMAIN, SERVICE_RELOAD
+from inpui.components.template.config import (
     ALARM_CONTROL_PANEL_DOMAIN,
     BINARY_SENSOR_DOMAIN,
     COVER_DOMAIN,
@@ -31,11 +31,11 @@ from homeassistant.components.template.config import (
     VACUUM_DOMAIN,
     WEATHER_DOMAIN,
 )
-from homeassistant.const import STATE_ON
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, yaml as yaml_util
+from inpui.const import STATE_ON
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, yaml as yaml_util
 
 from tests.common import async_mock_service
 

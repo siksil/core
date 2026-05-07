@@ -8,13 +8,13 @@ from typing import Any
 
 from bluecurrent_api.client import Client
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BlueCurrentConfigEntry, Connector
 from .entity import ChargepointEntity

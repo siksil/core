@@ -6,8 +6,8 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.sia.config_flow import ACCOUNT_SCHEMA, HUB_SCHEMA
-from homeassistant.components.sia.const import (
+from inpui.components.sia.config_flow import ACCOUNT_SCHEMA, HUB_SCHEMA
+from inpui.components.sia.const import (
     CONF_ACCOUNT,
     CONF_ACCOUNTS,
     CONF_ADDITIONAL_ACCOUNTS,
@@ -17,11 +17,11 @@ from homeassistant.components.sia.const import (
     CONF_ZONES,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_PORT, CONF_PROTOCOL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_PORT, CONF_PROTOCOL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

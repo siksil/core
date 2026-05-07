@@ -4,20 +4,20 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components import script
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.script import (
+from inpui.components import script
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.script import (
     ATTR_CUR,
     ATTR_LAST_ACTION,
     ATTR_LAST_TRIGGERED,
     ATTR_MAX,
     ATTR_MODE,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import Context, HomeAssistant, ServiceCall, callback
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import Context, HomeAssistant, ServiceCall, callback
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_mock_service
 from tests.components.recorder.common import async_wait_recording_done

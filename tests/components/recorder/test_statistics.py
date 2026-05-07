@@ -11,15 +11,15 @@ from sqlalchemy import select
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.components import recorder
-from homeassistant.components.recorder import Recorder, history, statistics
-from homeassistant.components.recorder.db_schema import StatisticsShortTerm
-from homeassistant.components.recorder.models import (
+from inpui.components import recorder
+from inpui.components.recorder import Recorder, history, statistics
+from inpui.components.recorder.db_schema import StatisticsShortTerm
+from inpui.components.recorder.models import (
     StatisticMeanType,
     datetime_to_timestamp_or_none,
     process_timestamp,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     _PRIMARY_UNIT_CONVERTERS,
     _SECONDARY_UNIT_CONVERTERS,
     STATISTIC_UNIT_TO_UNIT_CONVERTER,
@@ -42,17 +42,17 @@ from homeassistant.components.recorder.statistics import (
     update_statistics_issues,
     validate_statistics,
 )
-from homeassistant.components.recorder.table_managers.statistics_meta import (
+from inpui.components.recorder.table_managers.statistics_meta import (
     _generate_get_metadata_stmt,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.components.sensor import UNIT_CONVERTERS
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.components.recorder.util import session_scope
+from inpui.components.sensor import UNIT_CONVERTERS
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .common import (
     assert_dict_of_states_equal_without_context_and_last_changed,

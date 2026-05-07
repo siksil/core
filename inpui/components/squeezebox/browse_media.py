@@ -9,15 +9,15 @@ from typing import TYPE_CHECKING, Any, cast
 
 from pysqueezebox import Player
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import is_internal_request
+from inpui.core import HomeAssistant
+from inpui.helpers.network import is_internal_request
 
 from .const import DOMAIN, UNPLAYABLE_TYPES
 

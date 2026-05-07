@@ -7,11 +7,11 @@ import logging
 from bleak.exc import BleakError
 from idasen_ha.errors import AuthFailedError
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
-from homeassistant.const import CONF_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
+from inpui.const import CONF_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import IdasenDeskConfigEntry, IdasenDeskCoordinator
 
@@ -58,7 +58,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: IdasenDeskConfigEntry) -
         await coordinator.async_disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
     return True
 

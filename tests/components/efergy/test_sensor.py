@@ -4,22 +4,22 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
     UnitOfEnergy,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import MULTI_SENSOR_TOKEN, mock_responses, setup_platform
 

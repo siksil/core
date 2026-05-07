@@ -5,8 +5,8 @@ from __future__ import annotations
 from collections.abc import Callable, Coroutine
 from typing import Any
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import (
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STARTED
+from inpui.core import (
     CALLBACK_TYPE,
     CoreState,
     Event,
@@ -14,7 +14,7 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.util.event_type import EventType
+from inpui.util.event_type import EventType
 
 from .typing import NoEventData
 
@@ -62,14 +62,14 @@ def async_at_start(
     """Execute a job at_start_cb when Home Assistant is starting.
 
     The job is executed immediately if Home Assistant is already starting or started.
-    Will wait for EVENT_HOMEASSISTANT_START if it isn't.
+    Will wait for EVENT_INPUI_START if it isn't.
     """
 
     def _is_running(hass: HomeAssistant) -> bool:
         return hass.is_running
 
     return _async_at_core_state(
-        hass, at_start_cb, EVENT_HOMEASSISTANT_START, _is_running
+        hass, at_start_cb, EVENT_INPUI_START, _is_running
     )
 
 
@@ -81,12 +81,12 @@ def async_at_started(
     """Execute a job at_start_cb when Home Assistant has started.
 
     The job is executed immediately if Home Assistant is already started.
-    Will wait for EVENT_HOMEASSISTANT_STARTED if it isn't.
+    Will wait for EVENT_INPUI_STARTED if it isn't.
     """
 
     def _is_started(hass: HomeAssistant) -> bool:
         return hass.state is CoreState.running
 
     return _async_at_core_state(
-        hass, at_start_cb, EVENT_HOMEASSISTANT_STARTED, _is_started
+        hass, at_start_cb, EVENT_INPUI_STARTED, _is_started
     )

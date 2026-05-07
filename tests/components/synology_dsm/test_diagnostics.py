@@ -8,8 +8,8 @@ from synology_dsm.api.dsm.network import NetworkInterface
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.synology_dsm.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.synology_dsm.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -17,7 +17,7 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import mock_dsm_information
 from .consts import HOST, MACS, PASSWORD, PORT, SERIAL, USE_SSL, USERNAME

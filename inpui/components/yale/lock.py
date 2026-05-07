@@ -10,12 +10,12 @@ from yalexs.activity import ActivityType
 from yalexs.lock import Lock, LockOperation, LockStatus
 from yalexs.util import get_latest_activity, update_lock_detail_from_activity
 
-from homeassistant.components.lock import ATTR_CHANGED_BY, LockEntity, LockEntityFeature
-from homeassistant.const import ATTR_BATTERY_LEVEL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.util import dt as dt_util
+from inpui.components.lock import ATTR_CHANGED_BY, LockEntity, LockEntityFeature
+from inpui.const import ATTR_BATTERY_LEVEL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.util import dt as dt_util
 
 from . import YaleConfigEntry, YaleData
 from .entity import YaleEntity

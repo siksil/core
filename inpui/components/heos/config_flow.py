@@ -14,17 +14,17 @@ from pyheos import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers import selector
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers import selector
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, ENTRY_TITLE
 from .coordinator import HeosConfigEntry

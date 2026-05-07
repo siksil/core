@@ -46,7 +46,7 @@ from syrupy.session import SnapshotSession
 from . import patch_json  # isort:skip
 
 from homeassistant import block_async_io
-from homeassistant.exceptions import ServiceNotFound
+from inpui.exceptions import ServiceNotFound
 
 # Setup patching of recorder functions before any other Home Assistant imports
 from . import patch_recorder  # isort:skip
@@ -55,29 +55,29 @@ from . import patch_recorder  # isort:skip
 from . import patch_time  # isort:skip
 
 from homeassistant import components, core as ha, loader, runner
-from homeassistant.auth.const import GROUP_ID_ADMIN, GROUP_ID_READ_ONLY
-from homeassistant.auth.models import Credentials
-from homeassistant.auth.providers import homeassistant
-from homeassistant.components.device_tracker.legacy import Device
+from inpui.auth.const import GROUP_ID_ADMIN, GROUP_ID_READ_ONLY
+from inpui.auth.models import Credentials
+from inpui.auth.providers import homeassistant
+from inpui.components.device_tracker.legacy import Device
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.websocket_api.auth import (
+from inpui.components.websocket_api.auth import (
     TYPE_AUTH,
     TYPE_AUTH_OK,
     TYPE_AUTH_REQUIRED,
 )
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.websocket_api.http import URL
-from homeassistant.config import YAML_CONFIG_FILE
-from homeassistant.config_entries import (
+from inpui.components.websocket_api.http import URL
+from inpui.config import YAML_CONFIG_FILE
+from inpui.config_entries import (
     ConfigEntries,
     ConfigEntry,
     ConfigEntryState,
     ConfigSubentryData,
 )
-from homeassistant.const import BASE_PLATFORMS, HASSIO_USER_NAME
-from homeassistant.core import (
+from inpui.const import BASE_PLATFORMS, HASSIO_USER_NAME
+from inpui.core import (
     Context,
     CoreState,
     HassJob,
@@ -85,7 +85,7 @@ from homeassistant.core import (
     ServiceCall,
     ServiceResponse,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     category_registry as cr,
     config_entry_oauth2_flow,
@@ -98,14 +98,14 @@ from homeassistant.helpers import (
     recorder as recorder_helper,
     translation as translation_helper,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.translation import _TranslationsCacheData
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, location as location_util
-from homeassistant.util.async_ import create_eager_task, get_scheduled_timer_handles
-from homeassistant.util.json import json_loads
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.translation import _TranslationsCacheData
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, location as location_util
+from inpui.util.async_ import create_eager_task, get_scheduled_timer_handles
+from inpui.util.json import json_loads
 
 from .ignore_uncaught_exceptions import IGNORE_UNCAUGHT_EXCEPTIONS
 from .syrupy import HomeAssistantSnapshotExtension, override_syrupy_finish
@@ -123,7 +123,7 @@ from .typing import (
 if TYPE_CHECKING:
     # Local import to avoid processing recorder and SQLite modules when running a
     # testcase which does not use the recorder.
-    from homeassistant.components import recorder
+    from inpui.components import recorder
 
 
 pytest.register_assert_rewrite("tests.common")
@@ -1103,7 +1103,7 @@ async def _mqtt_mock_entry(
     """Fixture to mock a delayed setup of the MQTT config entry."""
     # Local import to avoid processing MQTT modules when running a testcase
     # which does not use MQTT.
-    from homeassistant.components import mqtt  # noqa: PLC0415
+    from inpui.components import mqtt  # noqa: PLC0415
 
     if mqtt_config_entry_data is None:
         mqtt_config_entry_data = {mqtt.CONF_BROKER: "mock-broker"}
@@ -1645,7 +1645,7 @@ async def _async_init_recorder_component(
     wait_setup: bool,
 ) -> None:
     """Initialize the recorder asynchronously."""
-    from homeassistant.components import recorder  # noqa: PLC0415
+    from inpui.components import recorder  # noqa: PLC0415
 
     config = dict(add_config) if add_config else {}
     if recorder.CONF_DB_URL not in config:
@@ -1696,8 +1696,8 @@ async def async_test_recorder(
     enable_migrate_event_ids: bool,
 ) -> AsyncGenerator[RecorderInstanceContextManager]:
     """Yield context manager to setup recorder instance."""
-    from homeassistant.components import recorder  # noqa: PLC0415
-    from homeassistant.components.recorder import migration  # noqa: PLC0415
+    from inpui.components import recorder  # noqa: PLC0415
+    from inpui.components.recorder import migration  # noqa: PLC0415
 
     from .components.recorder.common import (  # noqa: PLC0415
         async_recorder_block_till_done,
@@ -1962,7 +1962,7 @@ def mock_bleak_scanner_start() -> Generator[MagicMock]:
 
     # We need to drop the stop method from the object since we patched
     # out start and this fixture will expire before the stop method is called
-    # when EVENT_HOMEASSISTANT_STOP is fired.
+    # when EVENT_INPUI_STOP is fired.
     # pylint: disable-next=c-extension-no-member
     bluetooth_scanner.OriginalBleakScanner.stop = AsyncMock()  # type: ignore[assignment]
 

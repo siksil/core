@@ -50,9 +50,9 @@ from zwave_js_server.model.value import (
     Value as ZwaveValue,
 )
 
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.const import EntityCategory, Platform
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceEntry
 
 from .binary_sensor import DISCOVERY_SCHEMAS as BINARY_SENSOR_SCHEMAS
 from .const import COVER_POSITION_PROPERTY_KEYS, COVER_TILT_PROPERTY_KEYS, LOGGER

@@ -15,15 +15,15 @@ from songpal import (
 )
 from songpal.notification import SettingChange
 
-from homeassistant.components import media_player, songpal
-from homeassistant.components.media_player import MediaPlayerEntityFeature
-from homeassistant.components.songpal.const import ERROR_REQUEST_RETRY
-from homeassistant.components.songpal.services import SET_SOUND_SETTING
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import media_player, songpal
+from inpui.components.media_player import MediaPlayerEntityFeature
+from inpui.components.songpal.const import ERROR_REQUEST_RETRY
+from inpui.components.songpal.services import SET_SOUND_SETTING
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     CONF_DATA,

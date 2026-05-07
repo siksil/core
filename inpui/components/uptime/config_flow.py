@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DOMAIN
 

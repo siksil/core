@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from hyperion import const
 
-from homeassistant.components.hyperion.const import (
+from inpui.components.hyperion.const import (
     CONF_AUTH_ID,
     CONF_CREATE_TOKEN,
     CONF_EFFECT_HIDE_LIST,
@@ -18,18 +18,18 @@ from homeassistant.components.hyperion.const import (
     CONF_PRIORITY,
     DOMAIN,
 )
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import (
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     CONF_PORT,
     CONF_TOKEN,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from . import (
     TEST_AUTH_REQUIRED_RESP,

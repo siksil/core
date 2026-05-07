@@ -34,19 +34,19 @@ import orjson
 from propcache.api import under_cached_property
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     ATTR_PERSONS,
     ATTR_UNIT_OF_MEASUREMENT,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfLength,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     HomeAssistant,
     ServiceResponse,
@@ -55,20 +55,20 @@ from homeassistant.core import (
     valid_domain,
     valid_entity_id,
 )
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import entity_registry as er, location as loc_helper
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.translation import (
+from inpui.exceptions import TemplateError
+from inpui.helpers import entity_registry as er, location as loc_helper
+from inpui.helpers.singleton import singleton
+from inpui.helpers.translation import (
     async_translate_state,
     async_translate_state_attr,
 )
-from homeassistant.helpers.typing import TemplateVarsType
-from homeassistant.util import convert, location as location_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads
-from homeassistant.util.read_only_dict import ReadOnlyDict
-from homeassistant.util.thread import ThreadWithException
+from inpui.helpers.typing import TemplateVarsType
+from inpui.util import convert, location as location_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads
+from inpui.util.read_only_dict import ReadOnlyDict
+from inpui.util.thread import ThreadWithException
 
 from .context import (
     TemplateContextManager as TemplateContextManager,
@@ -182,13 +182,13 @@ def async_setup(hass: HomeAssistant) -> bool:
             if new_size > current_size:
                 lru.set_size(new_size)
 
-    from homeassistant.helpers.event import async_track_time_interval  # noqa: PLC0415
+    from inpui.helpers.event import async_track_time_interval  # noqa: PLC0415
 
     cancel = async_track_time_interval(
         hass, _async_adjust_lru_sizes, timedelta(minutes=10)
     )
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, _async_adjust_lru_sizes)
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, callback(lambda _: cancel()))
+    hass.bus.async_listen_once(EVENT_INPUI_START, _async_adjust_lru_sizes)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, callback(lambda _: cancel()))
     return True
 
 
@@ -346,7 +346,7 @@ class Template:
         Note: A valid hass instance should always be passed in. The hass parameter
         will be non optional in Home Assistant Core 2025.10.
         """
-        from homeassistant.helpers.frame import (  # noqa: PLC0415
+        from inpui.helpers.frame import (  # noqa: PLC0415
             ReportBehavior,
             report_usage,
         )
@@ -1005,7 +1005,7 @@ class TemplateStateBase(State):
     def format_state(self, rounded: bool, with_unit: bool) -> str:
         """Return a formatted version of the state."""
         # Import here, not at top-level, to avoid circular import
-        from homeassistant.components.sensor import (  # noqa: PLC0415
+        from inpui.components.sensor import (  # noqa: PLC0415
             DOMAIN as SENSOR_DOMAIN,
             async_rounded_state,
         )
@@ -1141,7 +1141,7 @@ def forgiving_boolean[_T](
     """Try to convert value to a boolean."""
     try:
         # Import here, not at top-level to avoid circular import
-        from homeassistant.helpers import config_validation as cv  # noqa: PLC0415
+        from inpui.helpers import config_validation as cv  # noqa: PLC0415
 
         return cv.boolean(value)
     except vol.Invalid:
@@ -1166,7 +1166,7 @@ def result_as_boolean(template_result: Any | None) -> bool:
 def expand(hass: HomeAssistant, *args: Any) -> Iterable[State]:
     """Expand out any groups and zones into entity states."""
     # circular import.
-    from homeassistant.helpers import entity as entity_helper  # noqa: PLC0415
+    from inpui.helpers import entity as entity_helper  # noqa: PLC0415
 
     search = list(args)
     found = {}
@@ -1230,7 +1230,7 @@ def integration_entities(hass: HomeAssistant, entry_name: str) -> Iterable[str]:
         return entities
 
     # fallback to just returning all entities for a domain
-    from homeassistant.helpers.entity import entity_sources  # noqa: PLC0415
+    from inpui.helpers.entity import entity_sources  # noqa: PLC0415
 
     return [
         entity_id

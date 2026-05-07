@@ -5,9 +5,9 @@ from datetime import timedelta
 from fing_agent_api.models import DeviceResponse
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.fing.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.fing.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

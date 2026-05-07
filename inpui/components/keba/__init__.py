@@ -6,10 +6,10 @@ import logging
 from keba_kecontact.connection import KebaKeContact
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

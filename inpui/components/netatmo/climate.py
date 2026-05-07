@@ -9,7 +9,7 @@ from pyatmo.modules import NATherm1
 from pyatmo.modules.device_types import DeviceType
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_PRESET_MODE,
     DEFAULT_MIN_TEMP,
     PRESET_AWAY,
@@ -20,18 +20,18 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_TEMPERATURE,
     PRECISION_HALVES,
     STATE_OFF,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_END_DATETIME,

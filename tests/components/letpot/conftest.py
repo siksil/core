@@ -11,14 +11,14 @@ from letpot.models import (
 )
 import pytest
 
-from homeassistant.components.letpot.const import (
+from inpui.components.letpot.const import (
     CONF_ACCESS_TOKEN_EXPIRES,
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_EXPIRES,
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL
 
 from . import AUTHENTICATION, MAX_STATUS, SE_STATUS
 

@@ -1,6 +1,6 @@
 """The history_stats component constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "history_stats"
 PLATFORMS = [Platform.SENSOR]

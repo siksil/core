@@ -14,14 +14,14 @@ from onedrive_personal_sdk.exceptions import (
 from onedrive_personal_sdk.models.items import File
 import pytest
 
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
-from homeassistant.components.onedrive.backup import (
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
+from inpui.components.onedrive.backup import (
     async_register_backup_agents_listener,
 )
-from homeassistant.components.onedrive.const import DATA_BACKUP_AGENT_LISTENERS, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.onedrive.const import DATA_BACKUP_AGENT_LISTENERS, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .const import BACKUP_METADATA

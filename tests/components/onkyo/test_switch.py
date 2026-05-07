@@ -8,13 +8,13 @@ from aioonkyo import Code, Instruction, Kind, Zone, command, query, status
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.onkyo.coordinator import Channel
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.onkyo.coordinator import Channel
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 

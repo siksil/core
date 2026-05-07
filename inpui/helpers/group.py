@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Any
 
 from propcache.api import cached_property
 
-from homeassistant.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, ENTITY_MATCH_NONE
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, ENTITY_MATCH_NONE
+from inpui.core import Event, HomeAssistant, callback
 
 from . import entity_registry as er
 from .singleton import singleton

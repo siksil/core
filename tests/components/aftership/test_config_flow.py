@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock, patch
 
 from pyaftership import AfterShipException
 
-from homeassistant.components.aftership.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.aftership.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_full_user_flow(hass: HomeAssistant, mock_setup_entry) -> None:

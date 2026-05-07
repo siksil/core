@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from typing import Protocol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.integration_platform import (
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from . import http, local_source
 from .const import (

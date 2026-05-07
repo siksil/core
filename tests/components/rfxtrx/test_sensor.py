@@ -2,15 +2,15 @@
 
 import pytest
 
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.components.rfxtrx.const import ATTR_EVENT
-from homeassistant.const import (
+from inpui.components.rfxtrx import DOMAIN
+from inpui.components.rfxtrx.const import ATTR_EVENT
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
+from inpui.core import HomeAssistant, State
 
 from .conftest import create_rfx_test_cfg
 

@@ -10,13 +10,13 @@ import functools
 import logging
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from sqlalchemy.orm.session import Session
 
-    from homeassistant.components.recorder import Recorder
+    from inpui.components.recorder import Recorder
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class RecorderData:
 @callback
 def async_migration_in_progress(hass: HomeAssistant) -> bool:
     """Check to see if a recorder migration is in progress."""
-    from homeassistant.components import recorder  # noqa: PLC0415
+    from inpui.components import recorder  # noqa: PLC0415
 
     return recorder.util.async_migration_in_progress(hass)
 
@@ -43,7 +43,7 @@ def async_migration_in_progress(hass: HomeAssistant) -> bool:
 @callback
 def async_migration_is_live(hass: HomeAssistant) -> bool:
     """Check to see if a recorder migration is live."""
-    from homeassistant.components import recorder  # noqa: PLC0415
+    from inpui.components import recorder  # noqa: PLC0415
 
     return recorder.util.async_migration_is_live(hass)
 
@@ -56,7 +56,7 @@ def async_initialize_recorder(hass: HomeAssistant) -> None:
     registers the basic recorder websocket API which is used by frontend to determine
     if the recorder is migrating the database.
     """
-    from homeassistant.components.recorder.basic_websocket_api import (  # noqa: PLC0415
+    from inpui.components.recorder.basic_websocket_api import (  # noqa: PLC0415
         async_setup,
     )
 

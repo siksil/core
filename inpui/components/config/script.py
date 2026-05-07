@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.script import DOMAIN as SCRIPT_DOMAIN
-from homeassistant.components.script.config import (  # pylint: disable=hass-component-root-import
+from inpui.components.script import DOMAIN as SCRIPT_DOMAIN
+from inpui.components.script.config import (  # pylint: disable=hass-component-root-import
     async_validate_config_item,
 )
-from homeassistant.config import SCRIPT_CONFIG_PATH
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
+from inpui.config import SCRIPT_CONFIG_PATH
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
 
 from .const import ACTION_DELETE
 from .view import EditKeyBasedConfigView

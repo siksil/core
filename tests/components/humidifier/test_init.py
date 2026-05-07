@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     DOMAIN,
     MODE_ECO,
@@ -13,8 +13,8 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry, MockEntity, setup_test_component_platform
 

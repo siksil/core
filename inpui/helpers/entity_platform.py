@@ -10,12 +10,12 @@ from logging import Logger, getLogger
 from typing import TYPE_CHECKING, Any, Protocol, overload
 
 from homeassistant import config_entries
-from homeassistant.const import (
+from inpui.const import (
     ATTR_RESTORED,
     DEVICE_DEFAULT_NAME,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
@@ -26,17 +26,17 @@ from homeassistant.core import (
     split_entity_id,
     valid_entity_id,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     HomeAssistantError,
     PlatformNotReady,
 )
-from homeassistant.generated import languages
-from homeassistant.setup import SetupPhases, async_start_setup
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.hass_dict import HassKey
+from inpui.generated import languages
+from inpui.setup import SetupPhases, async_start_setup
+from inpui.util.async_ import create_eager_task
+from inpui.util.hass_dict import HassKey
 
 from . import device_registry as dr, entity_registry as er, service, translation
 from .deprecation import deprecated_function
@@ -492,7 +492,7 @@ class EntityPlatform:
                 )
             else:
                 self._async_cancel_retry_setup = hass.bus.async_listen_once(
-                    EVENT_HOMEASSISTANT_STARTED, setup_again
+                    EVENT_INPUI_STARTED, setup_again
                 )
             return False
         except TimeoutError:

@@ -4,8 +4,8 @@ from typing import Any
 
 from pydiscovergy.const import API_BASE
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 
 @callback

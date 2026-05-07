@@ -15,9 +15,9 @@ from pysaunum import (
 )
 import voluptuous as vol
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

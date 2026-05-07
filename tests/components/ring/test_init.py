@@ -6,22 +6,22 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from ring_doorbell import AuthenticationError, Ring, RingError, RingTimeout
 
-from homeassistant.components import ring
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.ring import DOMAIN
-from homeassistant.components.ring.const import (
+from inpui.components import ring
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.ring import DOMAIN
+from inpui.components.ring.const import (
     CONF_CONFIG_ENTRY_MINOR_VERSION,
     CONF_LISTEN_CREDENTIALS,
     SCAN_INTERVAL,
 )
-from homeassistant.components.ring.coordinator import RingConfigEntry, RingEventListener
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import CONF_DEVICE_ID, CONF_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.ring.coordinator import RingConfigEntry, RingEventListener
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import CONF_DEVICE_ID, CONF_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_HARDWARE_ID
 from .device_mocks import FRONT_DOOR_DEVICE_ID

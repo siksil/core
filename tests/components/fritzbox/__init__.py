@@ -5,8 +5,8 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import Mock
 
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import (
     CONF_FAKE_AIN,

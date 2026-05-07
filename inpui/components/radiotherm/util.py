@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from radiotherm.thermostat import CommonThermostat
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 
 async def async_set_time(hass: HomeAssistant, device: CommonThermostat) -> None:

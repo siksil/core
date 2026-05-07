@@ -15,15 +15,15 @@ from aiohttp import web
 from dateutil.rrule import rrulestr
 import voluptuous as vol
 
-from homeassistant.components import frontend, http, websocket_api
-from homeassistant.components.websocket_api import (
+from inpui.components import frontend, http, websocket_api
+from inpui.components.websocket_api import (
     ERR_NOT_FOUND,
     ERR_NOT_SUPPORTED,
     ActiveConnection,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import (
     CALLBACK_TYPE,
     HomeAssistant,
     ServiceCall,
@@ -31,15 +31,15 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_point_in_time
-from homeassistant.helpers.template import DATE_STR_FORMAT
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_point_in_time
+from inpui.helpers.template import DATE_STR_FORMAT
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonValueType
 
 from .const import (
     CONF_EVENT,

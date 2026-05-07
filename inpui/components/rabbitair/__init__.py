@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from rabbitair import Client, UdpClient
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 from .coordinator import RabbitAirDataUpdateCoordinator

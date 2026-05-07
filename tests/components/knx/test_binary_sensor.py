@@ -6,7 +6,7 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_CONTEXT_TIMEOUT,
     CONF_IGNORE_INTERNAL_STATE,
     CONF_INVERT,
@@ -14,8 +14,8 @@ from homeassistant.components.knx.const import (
     CONF_STATE_ADDRESS,
     CONF_SYNC_STATE,
 )
-from homeassistant.components.knx.schema import BinarySensorSchema
-from homeassistant.const import (
+from inpui.components.knx.schema import BinarySensorSchema
+from inpui.const import (
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     STATE_OFF,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

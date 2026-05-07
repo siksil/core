@@ -5,8 +5,8 @@ from unittest.mock import patch
 from aiousbwatcher import InotifyNotAvailableError
 import pytest
 
-from homeassistant.components.usb import async_request_scan as usb_async_request_scan
-from homeassistant.core import HomeAssistant
+from inpui.components.usb import async_request_scan as usb_async_request_scan
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(name="force_usb_polling_watcher")

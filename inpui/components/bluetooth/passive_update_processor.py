@@ -11,22 +11,22 @@ from typing import TYPE_CHECKING, Any, Self, TypedDict, cast
 from habluetooth import BluetoothScanningMode
 
 from homeassistant import config_entries
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     ATTR_NAME,
     CONF_ENTITY_CATEGORY,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EntityCategory,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_platform import async_get_current_platform
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.util.enum import try_parse_enum
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_platform import async_get_current_platform
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import UNDEFINED
+from inpui.util.enum import try_parse_enum
 
 from .const import DOMAIN
 from .update_coordinator import BasePassiveBluetoothCoordinator
@@ -34,7 +34,7 @@ from .update_coordinator import BasePassiveBluetoothCoordinator
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-    from homeassistant.helpers.entity_platform import AddEntitiesCallback
+    from inpui.helpers.entity_platform import AddEntitiesCallback
 
     from .models import BluetoothChange, BluetoothServiceInfoBleak
 
@@ -274,7 +274,7 @@ async def async_setup(hass: HomeAssistant) -> None:
         await _async_save_processor_data(None)
 
     hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP,
+        EVENT_INPUI_STOP,
         _async_save_processor_data_at_stop,
     )
 

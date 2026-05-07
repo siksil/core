@@ -9,11 +9,11 @@ import logging
 from python_picnic_api2 import PicnicAPI
 from python_picnic_api2.session import PicnicAuthError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import ADDRESS, CART_DATA, LAST_ORDER_DATA, NEXT_DELIVERY_DATA, SLOT_DATA
 

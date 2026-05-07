@@ -17,7 +17,7 @@ from motioneye_client.const import (
 )
 import pytest
 
-from homeassistant.components.motioneye.const import (
+from inpui.components.motioneye.const import (
     ATTR_EVENT_TYPE,
     CONF_WEBHOOK_SET_OVERWRITE,
     DEFAULT_SCAN_INTERVAL,
@@ -25,13 +25,13 @@ from homeassistant.components.motioneye.const import (
     EVENT_FILE_STORED,
     EVENT_MOTION_DETECTED,
 )
-from homeassistant.components.webhook import URL_WEBHOOK_PATH
-from homeassistant.const import ATTR_DEVICE_ID, CONF_URL, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.network import NoURLAvailableError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.webhook import URL_WEBHOOK_PATH
+from inpui.const import ATTR_DEVICE_ID, CONF_URL, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.network import NoURLAvailableError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     TEST_CAMERA,

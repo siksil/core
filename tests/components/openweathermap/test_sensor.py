@@ -5,15 +5,15 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.openweathermap.const import (
+from inpui.components.openweathermap.const import (
     OWM_MODE_AIRPOLLUTION,
     OWM_MODE_FREE_CURRENT,
     OWM_MODE_FREE_FORECAST,
     OWM_MODE_V30,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_platform
 

@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.qbus.const import CONF_SERIAL_NUMBER, DOMAIN
-from homeassistant.components.qbus.entity import QbusEntity
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonObjectType
+from inpui.components.qbus.const import CONF_SERIAL_NUMBER, DOMAIN
+from inpui.components.qbus.entity import QbusEntity
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonObjectType
 
 from .const import FIXTURE_PAYLOAD_CONFIG, TOPIC_CONFIG
 

@@ -4,15 +4,15 @@ import asyncio
 
 import pytest
 
-from homeassistant.components.london_underground.const import (
+from inpui.components.london_underground.const import (
     CONF_LINE,
     DEFAULT_LINES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
 
 
 async def test_validate_input_success(

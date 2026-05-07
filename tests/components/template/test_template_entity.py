@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.template import template_entity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import template
+from inpui.components.template import template_entity
+from inpui.core import HomeAssistant
+from inpui.helpers import template
 
 
 async def test_template_entity_requires_hass_set(hass: HomeAssistant) -> None:

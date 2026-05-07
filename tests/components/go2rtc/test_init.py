@@ -22,7 +22,7 @@ from go2rtc_client.ws import (
 import pytest
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DATA_CAMERA_PREFS,
     CameraPreferences,
     DynamicStreamSettings,
@@ -34,23 +34,23 @@ from homeassistant.components.camera import (
     WebRTCSendMessage,
     async_get_image,
 )
-from homeassistant.components.default_config import DOMAIN as DEFAULT_CONFIG_DOMAIN
-from homeassistant.components.go2rtc import HomeAssistant, WebRTCProvider
-from homeassistant.components.go2rtc.const import (
+from inpui.components.default_config import DOMAIN as DEFAULT_CONFIG_DOMAIN
+from inpui.components.go2rtc import HomeAssistant, WebRTCProvider
+from inpui.components.go2rtc.const import (
     CONF_DEBUG_UI,
     DEBUG_UI_URL_MESSAGE,
     DOMAIN,
     RECOMMENDED_VERSION,
 )
-from homeassistant.components.go2rtc.util import get_go2rtc_unix_socket_path
-from homeassistant.components.stream import Orientation
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import EVENT_HOMEASSISTANT_STOP
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.components.go2rtc.util import get_go2rtc_unix_socket_path
+from inpui.components.stream import Orientation
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import EVENT_INPUI_STOP
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from . import MockCamera
 
@@ -1068,7 +1068,7 @@ async def test_unix_socket_connection(hass: HomeAssistant, server_dir: Path) -> 
         assert auth.login == "mock_username_token"
         assert auth.password == "mock_password_token"
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
         mock_session.close.assert_called_once()

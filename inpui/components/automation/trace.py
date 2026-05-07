@@ -6,13 +6,13 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from typing import Any
 
-from homeassistant.components.trace import (
+from inpui.components.trace import (
     CONF_STORED_TRACES,
     ActionTrace,
     async_store_trace,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Context, HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 

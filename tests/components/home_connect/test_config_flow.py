@@ -9,12 +9,12 @@ from aiohomeconnect.model import HomeAppliance
 import pytest
 
 from homeassistant import config_entries, setup
-from homeassistant.components.home_connect.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState, ConfigFlowContext
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow, device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.home_connect.const import DOMAIN
+from inpui.config_entries import ConfigEntryState, ConfigFlowContext
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow, device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .conftest import FAKE_ACCESS_TOKEN, FAKE_REFRESH_TOKEN
 

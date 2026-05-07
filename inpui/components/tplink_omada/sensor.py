@@ -8,16 +8,16 @@ from dataclasses import dataclass
 from tplink_omada_client.definitions import DeviceStatus, DeviceStatusCategory
 from tplink_omada_client.devices import OmadaListDevice
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import PERCENTAGE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import OmadaConfigEntry
 from .const import OmadaDeviceStatus

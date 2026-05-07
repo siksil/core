@@ -4,10 +4,10 @@ import logging
 
 import pytest
 
-from homeassistant.components.event import DOMAIN, EventEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.event import DOMAIN, EventEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import TEST_DOMAIN
 

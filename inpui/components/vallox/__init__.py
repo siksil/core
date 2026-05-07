@@ -9,10 +9,10 @@ from typing import NamedTuple
 from vallox_websocket_api import Profile, Vallox, ValloxApiException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME, Platform
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
 
 from .const import (
     DEFAULT_FAN_SPEED_AWAY,

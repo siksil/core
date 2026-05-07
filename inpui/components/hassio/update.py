@@ -9,16 +9,16 @@ from aiohasupervisor import SupervisorError
 from aiohasupervisor.models import Job
 from awesomeversion import AwesomeVersion, AwesomeVersionStrategy
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ICON, ATTR_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ICON, ATTR_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ADDONS_COORDINATOR,

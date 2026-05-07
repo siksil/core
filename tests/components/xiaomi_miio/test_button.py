@@ -4,13 +4,13 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.xiaomi_miio.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.xiaomi_miio.const import (
     CONF_FLOW_TYPE,
     DOMAIN,
     MODELS_VACUUM,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE,
     CONF_HOST,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     CONF_TOKEN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import TEST_MAC
 

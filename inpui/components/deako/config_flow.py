@@ -2,9 +2,9 @@
 
 from pydeako import DeakoDiscoverer, DevicesNotFoundException
 
-from homeassistant.components import zeroconf
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.components import zeroconf
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from .const import DOMAIN, NAME
 

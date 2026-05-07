@@ -6,22 +6,22 @@ from unittest.mock import AsyncMock, patch
 import uuid
 
 from homeassistant import config_entries
-from homeassistant.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
     DEFAULT_TIMEOUT,
 )
-from homeassistant.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
     DEFAULT_METHOD,
 )
-from homeassistant.components.scrape import DOMAIN
-from homeassistant.components.scrape.const import (
+from inpui.components.scrape import DOMAIN
+from inpui.components.scrape.const import (
     CONF_ENCODING,
     CONF_INDEX,
     CONF_SELECT,
     DEFAULT_ENCODING,
     DEFAULT_VERIFY_SSL,
 )
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_METHOD,
     CONF_NAME,
@@ -35,9 +35,9 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
 
 from . import MockRestData
 

@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any, Final
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import TrackerEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.device_tracker import SourceType
+from inpui.components.device_tracker.config_entry import TrackerEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import NRGkickConfigEntry, NRGkickDataUpdateCoordinator
 from .entity import NRGkickEntity, get_nested_dict_value

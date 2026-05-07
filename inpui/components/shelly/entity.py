@@ -10,15 +10,15 @@ from typing import Any, Concatenate, cast
 from aioshelly.block_device import Block
 from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCallError
 
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_SLEEP_PERIOD, DOMAIN, LOGGER, ROLE_GENERIC
 from .coordinator import ShellyBlockCoordinator, ShellyConfigEntry, ShellyRpcCoordinator

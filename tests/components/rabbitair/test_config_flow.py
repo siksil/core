@@ -10,12 +10,12 @@ import pytest
 from rabbitair import Mode, Model, Speed
 
 from homeassistant import config_entries
-from homeassistant.components.rabbitair.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.rabbitair.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 TEST_HOST = "1.1.1.1"
 TEST_NAME = "abcdef1234_123456789012345678"

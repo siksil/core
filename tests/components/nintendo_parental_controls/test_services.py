@@ -4,17 +4,17 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.nintendo_parental_controls.const import (
+from inpui.components.nintendo_parental_controls.const import (
     ATTR_BONUS_TIME,
     DOMAIN,
 )
-from homeassistant.components.nintendo_parental_controls.services import (
+from inpui.components.nintendo_parental_controls.services import (
     NintendoParentalServices,
 )
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

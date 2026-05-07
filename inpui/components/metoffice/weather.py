@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any, cast
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_IS_DAYTIME,
     ATTR_FORECAST_NATIVE_APPARENT_TEMP,
@@ -23,15 +23,15 @@ from homeassistant.components.weather import (
     Forecast as WeatherForecast,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfLength,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import get_device_info
 from .const import (

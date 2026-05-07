@@ -6,11 +6,11 @@ from typing import TYPE_CHECKING
 
 from goalzero import Yeti, exceptions
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
 
 from .coordinator import GoalZeroConfigEntry, GoalZeroDataUpdateCoordinator
 

@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.counter import (
+from inpui.components.counter import (
     ATTR_EDITABLE,
     ATTR_INITIAL,
     ATTR_MAXIMUM,
@@ -24,10 +24,10 @@ from homeassistant.components.counter import (
     SERVICE_SET_VALUE,
     VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, ATTR_ICON, ATTR_NAME
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, ATTR_ICON, ATTR_NAME
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import async_decrement, async_increment, async_reset
 

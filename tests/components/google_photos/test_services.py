@@ -15,16 +15,16 @@ from google_photos_library_api.model import (
 )
 import pytest
 
-from homeassistant.components.google_photos.const import DOMAIN, READ_SCOPE
-from homeassistant.components.google_photos.services import (
+from inpui.components.google_photos.const import DOMAIN, READ_SCOPE
+from inpui.components.google_photos.services import (
     CONF_ALBUM,
     CONF_CONFIG_ENTRY_ID,
     UPLOAD_SERVICE,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_FILENAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_FILENAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry
 

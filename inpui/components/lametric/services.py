@@ -17,11 +17,11 @@ from demetriek import (
 )
 import voluptuous as vol
 
-from homeassistant.const import CONF_DEVICE_ID, CONF_ICON
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.enum import try_parse_enum
+from inpui.const import CONF_DEVICE_ID, CONF_ICON
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.util.enum import try_parse_enum
 
 from .const import (
     CONF_CYCLES,

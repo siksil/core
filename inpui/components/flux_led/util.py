@@ -5,8 +5,8 @@ from __future__ import annotations
 from flux_led.aio import AIOWifiLedBulb
 from flux_led.const import COLOR_MODE_DIM as FLUX_COLOR_MODE_DIM, MultiColorEffects
 
-from homeassistant.components.light import ColorMode
-from homeassistant.util.color import color_hsv_to_RGB, color_RGB_to_hsv
+from inpui.components.light import ColorMode
+from inpui.util.color import color_hsv_to_RGB, color_RGB_to_hsv
 
 from .const import FLUX_COLOR_MODE_TO_HASS, MIN_RGB_BRIGHTNESS
 

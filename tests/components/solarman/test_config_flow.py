@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.solarman.const import CONF_SN, DOMAIN, MODEL_NAME_MAP
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.solarman.const import CONF_SN, DOMAIN, MODEL_NAME_MAP
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

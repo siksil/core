@@ -4,20 +4,20 @@ from __future__ import annotations
 
 from weatherflow4py.models.rest.unified import WeatherFlowDataREST
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     Forecast,
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import WeatherFlowCloudUpdateCoordinatorREST, WeatherFlowCoordinators
 from .const import DOMAIN, STATE_MAP

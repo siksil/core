@@ -5,9 +5,9 @@ from typing import Any
 
 from twitchAPI.object.base import TwitchObject
 
-from homeassistant.components.twitch.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.components.twitch.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from tests.common import MockConfigEntry, async_load_json_array_fixture
 

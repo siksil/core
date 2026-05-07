@@ -12,10 +12,10 @@ from iaqualink.exception import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.util.ssl import SSL_ALPN_HTTP11_HTTP2
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers.httpx_client import get_async_client
+from inpui.util.ssl import SSL_ALPN_HTTP11_HTTP2
 
 from .const import DOMAIN
 

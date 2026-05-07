@@ -20,16 +20,16 @@ from homewizard_energy.errors import (
 from homewizard_energy.models import Device
 import voluptuous as vol
 
-from homeassistant.components import onboarding
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import instance_id
-from homeassistant.helpers.selector import TextSelector
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import onboarding
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import instance_id
+from inpui.helpers.selector import TextSelector
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import CONF_PRODUCT_NAME, CONF_PRODUCT_TYPE, CONF_SERIAL, DOMAIN, LOGGER
 

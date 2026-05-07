@@ -5,15 +5,15 @@ from unittest.mock import MagicMock
 import pytest
 from requests.exceptions import ConnectTimeout, HTTPError
 
-from homeassistant.components.rova.const import (
+from inpui.components.rova.const import (
     CONF_HOUSE_NUMBER,
     CONF_HOUSE_NUMBER_SUFFIX,
     CONF_ZIP_CODE,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

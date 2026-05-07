@@ -16,13 +16,13 @@ from tessie_api import (
     vent_windows,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TessieConfigEntry
 from .const import TessieCoverStates

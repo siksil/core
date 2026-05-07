@@ -11,12 +11,12 @@ import ollama
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, llm
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.json import json_dumps
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, llm
+from inpui.helpers.entity import Entity
+from inpui.helpers.json import json_dumps
 
 from . import OllamaConfigEntry
 from .const import (

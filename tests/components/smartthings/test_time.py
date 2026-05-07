@@ -6,11 +6,11 @@ from pysmartthings import Attribute, Capability, Command
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smartthings import MAIN
-from homeassistant.components.time import DOMAIN as TIME_DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TIME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.smartthings import MAIN
+from inpui.components.time import DOMAIN as TIME_DOMAIN, SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID, ATTR_TIME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration, snapshot_smartthings_entities, trigger_update
 

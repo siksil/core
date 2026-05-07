@@ -5,10 +5,10 @@ from unittest.mock import patch
 from aiosyncthing.exceptions import UnauthorizedError
 
 from homeassistant import config_entries
-from homeassistant.components.syncthing.const import DOMAIN
-from homeassistant.const import CONF_NAME, CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.syncthing.const import DOMAIN
+from inpui.const import CONF_NAME, CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

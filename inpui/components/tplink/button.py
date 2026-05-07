@@ -7,15 +7,15 @@ from typing import Final
 
 from kasa import Feature
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.components.siren import DOMAIN as SIREN_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.siren import DOMAIN as SIREN_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry
 from .deprecate import DeprecatedInfo

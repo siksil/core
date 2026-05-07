@@ -1,9 +1,9 @@
 """The tests for the litejet component."""
 
-from homeassistant.components import litejet
-from homeassistant.components.litejet.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import litejet
+from inpui.components.litejet.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import async_init_integration
 

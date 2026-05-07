@@ -5,15 +5,15 @@ from __future__ import annotations
 import logging
 from typing import Any, cast
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import OpenGarageDataUpdateCoordinator

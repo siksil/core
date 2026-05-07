@@ -3,13 +3,13 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.eq3btsmart.const import DOMAIN
-from homeassistant.const import CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.util import slugify
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.eq3btsmart.const import DOMAIN
+from inpui.const import CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.util import slugify
 
 from .const import MAC
 

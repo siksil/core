@@ -5,15 +5,15 @@ from dataclasses import dataclass
 
 from airgradient import AirGradientClient, ConfigurationControl
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AirGradientConfigEntry
 from .const import DOMAIN

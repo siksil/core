@@ -10,12 +10,12 @@ import pytest
 import serial.tools.list_ports
 from velbusaio.exceptions import VelbusConnectionFailed
 
-from homeassistant.components.velbus.const import CONF_TLS, CONF_VLP_FILE, DOMAIN
-from homeassistant.config_entries import SOURCE_USB, SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.components.velbus.const import CONF_TLS, CONF_VLP_FILE, DOMAIN
+from inpui.config_entries import SOURCE_USB, SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from . import init_integration
 from .const import PORT_SERIAL

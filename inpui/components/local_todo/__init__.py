@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.util import slugify
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.util import slugify
 
 from .const import CONF_STORAGE_KEY, CONF_TODO_LIST_NAME
 from .store import LocalTodoListStore

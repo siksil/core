@@ -10,10 +10,10 @@ from google_weather_api import (
 )
 import pytest
 
-from homeassistant.components.google_weather.const import DOMAIN
-from homeassistant.config_entries import ConfigSubentryDataWithId
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.google_weather.const import DOMAIN
+from inpui.config_entries import ConfigSubentryDataWithId
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

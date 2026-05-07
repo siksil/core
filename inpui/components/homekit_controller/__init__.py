@@ -18,13 +18,13 @@ from aiohomekit.exceptions import (
     EncryptionError,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_IDENTIFIERS, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.async_ import create_eager_task
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_IDENTIFIERS, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
+from inpui.util.async_ import create_eager_task
 
 from .config_flow import normalize_hkid
 from .connection import HKDevice
@@ -86,7 +86,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             )
         )
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop_homekit_controller)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop_homekit_controller)
 
     return True
 

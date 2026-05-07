@@ -4,10 +4,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.template import validators as cv
-from homeassistant.components.template.template_entity import TemplateEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.template import Template
+from inpui.components.template import validators as cv
+from inpui.components.template.template_entity import TemplateEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.template import Template
 
 from .conftest import Brewery
 

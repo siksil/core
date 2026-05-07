@@ -3,7 +3,7 @@
 import pytest
 from vallox_websocket_api import Profile
 
-from homeassistant.components.vallox import (
+from inpui.components.vallox import (
     ATTR_DURATION,
     ATTR_PROFILE,
     ATTR_PROFILE_FAN_SPEED,
@@ -13,8 +13,8 @@ from homeassistant.components.vallox import (
     SERVICE_SET_PROFILE_FAN_SPEED_BOOST,
     SERVICE_SET_PROFILE_FAN_SPEED_HOME,
 )
-from homeassistant.components.vallox.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.vallox.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .conftest import patch_set_fan_speed, patch_set_profile
 

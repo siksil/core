@@ -8,15 +8,15 @@ from unittest.mock import MagicMock, patch
 from egauge_async.json.models import RegisterInfo, RegisterType
 import pytest
 
-from homeassistant.components.egauge.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.egauge.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

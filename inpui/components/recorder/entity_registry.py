@@ -3,10 +3,10 @@
 import logging
 from typing import TYPE_CHECKING
 
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.event import async_has_entity_registry_updated_listeners
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.event import async_has_entity_registry_updated_listeners
 
 from .core import Recorder
 from .statistics import async_update_statistics_metadata

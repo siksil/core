@@ -13,13 +13,13 @@ from aiohomekit.testing import FakePairing
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homekit_controller.const import DOMAIN, ENTITY_MAP
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.homekit_controller.const import DOMAIN, ENTITY_MAP
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP, STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .common import (
     Helper,
@@ -54,7 +54,7 @@ async def test_unload_on_stop(
     with patch(
         "homeassistant.components.homekit_controller.HKDevice.async_unload"
     ) as async_unlock_mock:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert async_unlock_mock.called

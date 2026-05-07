@@ -6,8 +6,8 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from contextvars import ContextVar
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 from .const import CONF_TENANT_ID, DOMAIN, OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 

@@ -8,14 +8,14 @@ from typing import Any
 
 from aiosomecomfort.device import Device
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HoneywellConfigEntry
 from .const import DOMAIN

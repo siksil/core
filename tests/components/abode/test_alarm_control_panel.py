@@ -2,12 +2,12 @@
 
 from unittest.mock import PropertyMock, patch
 
-from homeassistant.components.abode import ATTR_DEVICE_ID
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.abode import ATTR_DEVICE_ID
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -15,8 +15,8 @@ from homeassistant.const import (
     SERVICE_ALARM_ARM_HOME,
     SERVICE_ALARM_DISARM,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

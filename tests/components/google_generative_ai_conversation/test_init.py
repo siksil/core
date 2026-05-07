@@ -8,7 +8,7 @@ import pytest
 from requests.exceptions import Timeout
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components.google_generative_ai_conversation.const import (
     DEFAULT_AI_TASK_NAME,
     DEFAULT_CONVERSATION_NAME,
     DEFAULT_STT_NAME,
@@ -20,17 +20,17 @@ from homeassistant.components.google_generative_ai_conversation.const import (
     RECOMMENDED_STT_OPTIONS,
     RECOMMENDED_TTS_OPTIONS,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntryDisabler,
     ConfigEntryState,
     ConfigSubentryData,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_registry import RegistryEntryDisabler
 
 from . import API_ERROR_500, CLIENT_ERROR_API_KEY_INVALID
 

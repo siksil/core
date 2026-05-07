@@ -7,10 +7,10 @@ from unittest.mock import patch
 from deebot_client.device import Device
 import pytest
 
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.services import SERVICE_RAW_GET_POSITIONS
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.services import SERVICE_RAW_GET_POSITIONS
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 pytestmark = [pytest.mark.usefixtures("init_integration")]
 

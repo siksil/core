@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import EntityDescription
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.sensor import EntityDescription
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import PaperlessCoordinator

@@ -12,10 +12,10 @@ from aiohomekit.model.characteristics import (
 )
 from aiohomekit.model.services import Service, ServicesTypes
 
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.typing import ConfigType
 
 from .connection import HKDevice, valid_serial_number
 from .utils import folded_name

@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.config import YAML_CONFIG_FILE
-from homeassistant.scripts import check_config
+from inpui.config import YAML_CONFIG_FILE
+from inpui.scripts import check_config
 
 from tests.common import get_test_config_dir
 

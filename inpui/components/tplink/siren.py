@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Any, cast
 
 from kasa import Device, Module
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
@@ -19,9 +19,9 @@ from homeassistant.components.siren import (
     SirenEntityFeature,
     SirenTurnOnServiceParameters,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry, legacy_device_id
 from .const import DOMAIN

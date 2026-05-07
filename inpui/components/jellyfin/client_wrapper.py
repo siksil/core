@@ -13,8 +13,8 @@ from jellyfin_apiclient_python.connection_manager import (
 )
 
 from homeassistant import exceptions
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import CLIENT_VERSION, ITEM_KEY_IMAGE_TAGS, USER_AGENT, USER_APP_NAME
 

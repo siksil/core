@@ -11,9 +11,9 @@ from python_overseerr import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components.webhook import async_generate_id
-from homeassistant.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.components.webhook import async_generate_id
+from inpui.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
@@ -21,7 +21,7 @@ from homeassistant.const import (
     CONF_URL,
     CONF_WEBHOOK_ID,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from asyncarve import ArveCustomer, ArveDevices, ArveSensPro, ArveSensProData
 import pytest
 
-from homeassistant.components.arve.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.arve.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import USER_INPUT
 

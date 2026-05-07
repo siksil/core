@@ -24,9 +24,9 @@ from aiocomelit.exceptions import CannotAuthenticate, CannotConnect, CannotRetri
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.comelit.const import SCAN_INTERVAL
-from homeassistant.const import STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.comelit.const import SCAN_INTERVAL
+from inpui.const import STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .const import LIGHT0, ZONE0

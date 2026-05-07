@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from homematicip.base.enums import EventType
 
-from homeassistant.components.homematicip_cloud.hap import HomematicipHAP
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.homematicip_cloud.hap import HomematicipHAP
+from inpui.const import STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

@@ -5,20 +5,20 @@ from unittest.mock import Mock, PropertyMock
 from dynalite_devices_lib.light import DynaliteChannelLightDevice
 import pytest
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, State
+from inpui.core import HomeAssistant, State
 
 from .common import (
     ATTR_METHOD,

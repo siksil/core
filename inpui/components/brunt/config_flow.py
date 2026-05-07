@@ -11,8 +11,8 @@ from aiohttp.client_exceptions import ServerDisconnectedError
 from brunt import BruntClientAsync
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
 
 from .const import DOMAIN
 

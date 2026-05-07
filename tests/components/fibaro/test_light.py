@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import init_integration
 

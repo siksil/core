@@ -7,10 +7,10 @@ from unittest.mock import MagicMock
 from matter_server.common.models import EventType
 import pytest
 
-from homeassistant.components.matter.adapter import get_clean_name
-from homeassistant.components.matter.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.matter.adapter import get_clean_name
+from inpui.components.matter.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .common import create_node_from_fixture
 

@@ -6,10 +6,10 @@ from dataclasses import dataclass
 import logging
 from typing import TYPE_CHECKING, Any, cast
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory, UnitOfVolume, UnitOfVolumeFlowRate
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory, UnitOfVolume, UnitOfVolumeFlowRate
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import PooldoseConfigEntry
 from .const import UNIT_MAPPING

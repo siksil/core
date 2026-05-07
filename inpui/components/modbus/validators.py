@@ -9,8 +9,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.const import (
+from inpui.components.climate import HVACMode
+from inpui.const import (
     CONF_ADDRESS,
     CONF_COUNT,
     CONF_HOST,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     CONF_TIMEOUT,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.core import HomeAssistant
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import (
     CONF_CURRENT_TEMP_OFFSET,

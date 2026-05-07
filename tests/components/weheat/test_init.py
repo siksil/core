@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from weheat.abstractions.discovery import HeatPumpDiscovery
 
-from homeassistant.components.weheat import UnauthorizedException
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.weheat import UnauthorizedException
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

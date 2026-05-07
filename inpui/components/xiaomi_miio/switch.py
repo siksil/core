@@ -19,12 +19,12 @@ from miio.gateway.devices.switch import Switch
 from miio.powerstrip import PowerMode
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     ATTR_TEMPERATURE,
@@ -34,10 +34,10 @@ from homeassistant.const import (
     CONF_TOKEN,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import (
     CONF_FLOW_TYPE,

@@ -5,11 +5,11 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components import http, image_processing as ip
-from homeassistant.const import ATTR_ENTITY_PICTURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components import http, image_processing as ip
+from inpui.const import ATTR_ENTITY_PICTURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from . import common
 

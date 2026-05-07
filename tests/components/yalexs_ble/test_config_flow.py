@@ -8,16 +8,16 @@ import pytest
 from yalexs_ble import AuthError, DoorStatus, LockInfo, LockState, LockStatus
 
 from homeassistant import config_entries
-from homeassistant.components.yalexs_ble.const import (
+from inpui.components.yalexs_ble.const import (
     CONF_ALWAYS_CONNECTED,
     CONF_KEY,
     CONF_LOCAL_NAME,
     CONF_SLOT,
     DOMAIN,
 )
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     LOCK_DISCOVERY_INFO_UUID_ADDRESS,

@@ -4,9 +4,9 @@ import logging
 
 import pizone
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     DATA_DISCOVERY_SERVICE,

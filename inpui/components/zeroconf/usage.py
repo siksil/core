@@ -4,7 +4,7 @@ from typing import Any
 
 import zeroconf
 
-from homeassistant.helpers.frame import ReportBehavior, report_usage
+from inpui.helpers.frame import ReportBehavior, report_usage
 
 from .models import HaZeroconf
 

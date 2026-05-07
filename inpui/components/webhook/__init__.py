@@ -14,15 +14,15 @@ from aiohttp.hdrs import METH_GET, METH_HEAD, METH_POST, METH_PUT
 from aiohttp.web import Request, Response
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.network import get_url, is_cloud_connection
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util import network as network_util
-from homeassistant.util.aiohttp import MockRequest, MockStreamReader, serialize_response
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.network import get_url, is_cloud_connection
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util import network as network_util
+from inpui.util.aiohttp import MockRequest, MockStreamReader, serialize_response
 
 _LOGGER = logging.getLogger(__name__)
 

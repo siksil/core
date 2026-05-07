@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.knx.const import ClimateConf
-from homeassistant.components.knx.schema import ClimateSchema
-from homeassistant.const import CONF_NAME, STATE_IDLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.climate import HVACMode
+from inpui.components.knx.const import ClimateConf
+from inpui.components.knx.schema import ClimateSchema
+from inpui.const import CONF_NAME, STATE_IDLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

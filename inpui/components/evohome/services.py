@@ -13,12 +13,12 @@ from evohomeasync2.schemas.const import (
 )
 import voluptuous as vol
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.const import ATTR_MODE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service import verify_domain_control
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.const import ATTR_MODE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service import verify_domain_control
 
 from .const import ATTR_DURATION, ATTR_PERIOD, ATTR_SETPOINT, DOMAIN, EvoService
 from .coordinator import EvoDataUpdateCoordinator

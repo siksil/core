@@ -12,7 +12,7 @@ from flexit_bacnet import (
 )
 from flexit_bacnet.bacnet import DecodingError
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_AWAY,
     PRESET_HOME,
     ClimateEntity,
@@ -20,10 +20,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_HALVES, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, PRECISION_HALVES, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     DOMAIN,

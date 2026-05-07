@@ -6,11 +6,11 @@ from datetime import date, datetime, timedelta
 
 from holidays import HolidayBase
 
-from homeassistant.components.calendar import CalendarEntity, CalendarEvent
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.calendar import CalendarEntity, CalendarEvent
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import WorkdayConfigEntry
 from .const import CONF_EXCLUDES, CONF_OFFSET, CONF_WORKDAYS

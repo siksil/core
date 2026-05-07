@@ -9,10 +9,10 @@ from freezegun.api import FrozenDateTimeFactory
 from pydrawise.schema import Controller
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.hydrawise.const import MAIN_SCAN_INTERVAL
-from homeassistant.const import STATE_OFF, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.hydrawise.const import MAIN_SCAN_INTERVAL
+from inpui.const import STATE_OFF, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

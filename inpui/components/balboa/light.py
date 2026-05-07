@@ -7,9 +7,9 @@ from typing import Any, cast
 from pybalboa import SpaControl
 from pybalboa.enums import OffOnState, UnknownState
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BalboaConfigEntry
 from .entity import BalboaEntity

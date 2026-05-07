@@ -11,7 +11,7 @@ from google.api_core.retry import AsyncRetry
 from google.cloud import texttospeech
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
@@ -19,11 +19,11 @@ from homeassistant.components.tts import (
     TtsAudioType,
     Voice,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CONF_ENCODING,

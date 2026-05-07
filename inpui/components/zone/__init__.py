@@ -11,7 +11,7 @@ from typing import Any, Self, cast
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
@@ -29,7 +29,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
@@ -37,7 +37,7 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     collection,
     config_validation as cv,
     entity_component,
@@ -45,10 +45,10 @@ from homeassistant.helpers import (
     service,
     storage,
 )
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.location import distance
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
+from inpui.util.location import distance
 
 from .const import ATTR_PASSIVE, ATTR_RADIUS, CONF_PASSIVE, DOMAIN, HOME_ZONE
 

@@ -8,7 +8,7 @@ from typing import Any
 from pyaehw4a1.aehw4a1 import AehW4a1
 import pyaehw4a1.exceptions
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_HIGH,
     FAN_LOW,
@@ -25,10 +25,10 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import CONF_IP_ADDRESS, DOMAIN
 

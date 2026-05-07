@@ -1,9 +1,9 @@
 """Test for a Home Assistant bridge that changes cover features at runtime."""
 
-from homeassistant.components.cover import CoverEntityFeature
-from homeassistant.const import ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.cover import CoverEntityFeature
+from inpui.const import ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from ..common import (
     device_config_changed,

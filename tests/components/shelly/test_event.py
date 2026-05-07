@@ -9,15 +9,15 @@ import pytest
 from pytest_unordered import unordered
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     ATTR_EVENT_TYPE,
     ATTR_EVENT_TYPES,
     DOMAIN as EVENT_DOMAIN,
     EventDeviceClass,
 )
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.const import ATTR_DEVICE_CLASS, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     init_integration,

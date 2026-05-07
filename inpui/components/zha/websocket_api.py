@@ -60,14 +60,14 @@ from zigpy.typing import (
 from zigpy.zcl.clusters.security import IasAce
 import zigpy.zdo.types as zdo_types
 
-from homeassistant.components import websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_COMMAND, ATTR_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import VolDictType, VolSchemaType
+from inpui.components import websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_COMMAND, ATTR_ID, ATTR_NAME
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import VolDictType, VolSchemaType
 
 from .api import (
     async_change_channel,
@@ -98,7 +98,7 @@ from .helpers import (
 )
 
 if TYPE_CHECKING:
-    from homeassistant.components.websocket_api import ActiveConnection
+    from inpui.components.websocket_api import ActiveConnection
 
 _LOGGER = logging.getLogger(__name__)
 

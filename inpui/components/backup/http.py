@@ -12,12 +12,12 @@ from aiohttp.hdrs import CONTENT_DISPOSITION, CONTENT_TYPE
 from aiohttp.web import FileResponse, Request, Response, StreamResponse
 from multidict import istr
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import frame
-from homeassistant.util import slugify
-from homeassistant.util.async_iterator import AsyncIteratorReader, AsyncIteratorWriter
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import frame
+from inpui.util import slugify
+from inpui.util.async_iterator import AsyncIteratorReader, AsyncIteratorWriter
 
 from . import util
 from .agent import BackupAgent

@@ -7,7 +7,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.labs import (
+from inpui.components.labs import (
     EVENT_LABS_UPDATED,
     EventLabsUpdatedData,
     async_is_preview_feature_enabled,
@@ -15,11 +15,11 @@ from homeassistant.components.labs import (
     async_subscribe_preview_feature,
     async_update_preview_feature,
 )
-from homeassistant.components.labs.const import DOMAIN, LABS_DATA
-from homeassistant.components.labs.models import LabPreviewFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import Integration
-from homeassistant.setup import async_setup_component
+from inpui.components.labs.const import DOMAIN, LABS_DATA
+from inpui.components.labs.models import LabPreviewFeature
+from inpui.core import HomeAssistant
+from inpui.loader import Integration
+from inpui.setup import async_setup_component
 
 from . import assert_stored_labs_data
 

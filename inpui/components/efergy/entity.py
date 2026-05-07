@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pyefergy import Efergy
 
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DEFAULT_NAME, DOMAIN
 

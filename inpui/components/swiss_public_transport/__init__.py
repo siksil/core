@@ -8,16 +8,16 @@ from opendata_transport.exceptions import (
     OpendataTransportError,
 )
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DESTINATION,

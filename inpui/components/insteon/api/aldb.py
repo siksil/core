@@ -6,9 +6,9 @@ from pyinsteon import devices
 from pyinsteon.constants import ALDBStatus
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from ..const import DEVICE_ADDRESS, ID, INSTEON_DEVICE_NOT_FOUND, TYPE
 from ..utils import async_device_name

@@ -11,15 +11,15 @@ from pymelcloud.atw_device import (
 )
 from pymelcloud.device import PROPERTY_POWER
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     DEFAULT_MAX_TEMP,
     DEFAULT_MIN_TEMP,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_STATUS
 from .coordinator import MelCloudConfigEntry, MelCloudDeviceUpdateCoordinator

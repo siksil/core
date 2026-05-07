@@ -5,9 +5,9 @@ import uuid
 
 from nexia.home import NexiaHome
 
-from homeassistant.components.nexia.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.nexia.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import mock_aiohttp_client

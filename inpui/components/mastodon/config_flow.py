@@ -16,14 +16,14 @@ from mastodon.Mastodon import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 from .const import CONF_BASE_URL, DOMAIN, LOGGER
 from .utils import construct_mastodon_username, create_mastodon_client

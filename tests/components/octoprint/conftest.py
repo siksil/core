@@ -15,10 +15,10 @@ from pyoctoprintapi import (
 )
 import pytest
 
-from homeassistant.components.octoprint import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.octoprint import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from . import DEFAULT_JOB, DEFAULT_PRINTER
 

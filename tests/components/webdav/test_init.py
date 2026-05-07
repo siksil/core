@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 from aiowebdav2.exceptions import AccessDeniedError, UnauthorizedError
 import pytest
 
-from homeassistant.components.webdav.const import CONF_BACKUP_PATH, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.webdav.const import CONF_BACKUP_PATH, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

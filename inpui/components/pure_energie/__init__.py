@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import PureEnergieConfigEntry, PureEnergieDataUpdateCoordinator
 

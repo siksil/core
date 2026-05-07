@@ -6,18 +6,18 @@ from unittest import mock
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.blackbird.const import DOMAIN, SERVICE_SETALLZONES
-from homeassistant.components.blackbird.media_player import (
+from inpui.components.blackbird.const import DOMAIN, SERVICE_SETALLZONES
+from inpui.components.blackbird.media_player import (
     DATA_BLACKBIRD,
     PLATFORM_SCHEMA,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform
 

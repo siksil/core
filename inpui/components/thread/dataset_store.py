@@ -13,12 +13,12 @@ from propcache.api import cached_property
 from python_otbr_api import tlv_parser
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.redact import REDACTED
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.util import dt as dt_util, ulid as ulid_util
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.redact import REDACTED
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.util import dt as dt_util, ulid as ulid_util
 
 from . import discovery
 

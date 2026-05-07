@@ -7,18 +7,18 @@ from qbusmqttapi.const import KEY_PROPERTIES_REGIME, KEY_PROPERTIES_SET_TEMPERAT
 from qbusmqttapi.discovery import QbusMqttOutput
 from qbusmqttapi.state import QbusMqttThermoState, StateType
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.mqtt import client as mqtt
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.mqtt import client as mqtt
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import QbusConfigEntry

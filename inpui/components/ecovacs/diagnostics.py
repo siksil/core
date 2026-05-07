@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import EcovacsConfigEntry
 from .const import CONF_OVERRIDE_MQTT_URL, CONF_OVERRIDE_REST_URL

@@ -5,10 +5,10 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import ATTR_BONUS_TIME, DOMAIN
 from .coordinator import NintendoParentalControlsConfigEntry

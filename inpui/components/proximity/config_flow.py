@@ -6,25 +6,25 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.components.person import DOMAIN as PERSON_DOMAIN
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.components.person import DOMAIN as PERSON_DOMAIN
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_ZONE, UnitOfLength
-from homeassistant.core import State, callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_ZONE, UnitOfLength
+from inpui.core import State, callback
+from inpui.helpers.selector import (
     EntitySelector,
     EntitySelectorConfig,
     NumberSelector,
     NumberSelectorConfig,
 )
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util import slugify
+from inpui.helpers.typing import VolDictType
+from inpui.util import slugify
 
 from .const import (
     CONF_IGNORED_ZONES,

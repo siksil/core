@@ -17,20 +17,20 @@ from togrill_bluetooth.packets import (
     PacketA8Write,
 )
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     BluetoothCallbackMatcher,
     BluetoothChange,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
     async_register_callback,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, CONF_MODEL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, CONF_MODEL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_HAS_AMBIENT, CONF_PROBE_COUNT, DOMAIN
 

@@ -8,19 +8,19 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from requests_mock import Mocker
 
-from homeassistant.components.mjpeg.const import (
+from inpui.components.mjpeg.const import (
     CONF_MJPEG_URL,
     CONF_STILL_IMAGE_URL,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
     HTTP_BASIC_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

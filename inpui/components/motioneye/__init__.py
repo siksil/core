@@ -35,27 +35,27 @@ from motioneye_client.const import (
     KEY_WEB_HOOK_STORAGE_URL,
 )
 
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.media_source import URI_SCHEME
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.webhook import (
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.media_source import URI_SCHEME
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.webhook import (
     async_generate_id,
     async_generate_path,
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_NAME, CONF_URL, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_DEVICE_ID, ATTR_NAME, CONF_URL, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.network import NoURLAvailableError, get_url
 
 from .const import (
     ATTR_EVENT_TYPE,

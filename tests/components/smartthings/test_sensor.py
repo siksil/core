@@ -7,15 +7,15 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import automation, script
-from homeassistant.components.automation import automations_with_entity
-from homeassistant.components.script import scripts_with_entity
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.smartthings.const import DOMAIN, MAIN
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components import automation, script
+from inpui.components.automation import automations_with_entity
+from inpui.components.script import scripts_with_entity
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.smartthings.const import DOMAIN, MAIN
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import (
     setup_integration,

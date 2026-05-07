@@ -2,12 +2,12 @@
 
 import pytest
 
-from homeassistant.components.knx.dpt import (
+from inpui.components.knx.dpt import (
     _sensor_device_classes,
     _sensor_state_class_overrides,
     _sensor_unit_overrides,
 )
-from homeassistant.components.knx.schema import (
+from inpui.components.knx.schema import (
     _number_limit_sub_validator,
     _sensor_attribute_sub_validator,
 )

@@ -6,8 +6,8 @@ from aioswitcher.api.messages import SwitcherBaseResponse
 from aioswitcher.device import DeviceState
 import pytest
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import (
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import slugify
 
 from . import init_integration
 from .consts import (

@@ -3,15 +3,15 @@
 from collections.abc import Callable
 from typing import Any
 
-from homeassistant.components.logbook import (
+from inpui.components.logbook import (
     LOGBOOK_ENTRY_CONTEXT_ID,
     LOGBOOK_ENTRY_ENTITY_ID,
     LOGBOOK_ENTRY_MESSAGE,
     LOGBOOK_ENTRY_NAME,
     LazyEventPartialState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant, callback
+from inpui.const import ATTR_ENTITY_ID, ATTR_NAME
+from inpui.core import HomeAssistant, callback
 
 from . import DOMAIN, EVENT_SCRIPT_STARTED
 

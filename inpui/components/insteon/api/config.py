@@ -12,12 +12,12 @@ from pyinsteon.managers.link_manager import get_broken_links
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant.components import websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, CONF_DEVICE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, CONF_DEVICE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from ..const import (
     CONF_HOUSECODE,

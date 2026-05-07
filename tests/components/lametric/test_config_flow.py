@@ -13,14 +13,14 @@ from demetriek import (
 )
 import pytest
 
-from homeassistant.components.lametric.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_DEVICE, CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.lametric.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_DEVICE, CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,

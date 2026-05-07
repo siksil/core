@@ -7,11 +7,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import core as ha
-from homeassistant.components.demo import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.demo import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import mock_restore_cache_with_extra_data
 

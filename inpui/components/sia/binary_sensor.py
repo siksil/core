@@ -8,15 +8,15 @@ import logging
 
 from pysiaalarm import SIAEvent
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, EntityCategory
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, EntityCategory
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_ACCOUNT,

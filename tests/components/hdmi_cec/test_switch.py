@@ -4,9 +4,9 @@ from pycec.const import POWER_OFF, POWER_ON, STATUS_PLAY, STATUS_STILL, STATUS_S
 from pycec.network import PhysicalAddress
 import pytest
 
-from homeassistant.components.hdmi_cec import EVENT_HDMI_CEC_UNAVAILABLE
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.hdmi_cec import EVENT_HDMI_CEC_UNAVAILABLE
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -14,7 +14,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MockHDMIDevice
 from .conftest import CecEntityCreator, HDMINetworkCreator

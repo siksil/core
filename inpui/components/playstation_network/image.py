@@ -7,11 +7,11 @@ from dataclasses import dataclass
 from enum import StrEnum
 from typing import TYPE_CHECKING
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .coordinator import (
     PlayStationNetworkBaseCoordinator,

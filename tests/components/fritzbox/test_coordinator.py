@@ -9,13 +9,13 @@ from pyfritzhome import LoginError
 import pytest
 from requests.exceptions import ConnectionError, HTTPError
 
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICES
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.dt import utcnow
 
 from . import (
     FritzDeviceCoverMock,

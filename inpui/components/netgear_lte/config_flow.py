@@ -9,10 +9,10 @@ from eternalegypt import Error, Modem
 from eternalegypt.eternalegypt import Information
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import DEFAULT_HOST, DOMAIN, MANUFACTURER
 

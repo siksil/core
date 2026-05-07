@@ -18,17 +18,17 @@ from xknx.io.self_description import request_description
 from xknx.io.util import validate_ip as xknx_validate_ip
 from xknx.secure.keyring import Keyring, XMLInterface
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import callback
-from homeassistant.helpers import selector
-from homeassistant.helpers.typing import UNDEFINED, VolDictType
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import callback
+from inpui.helpers import selector
+from inpui.helpers.typing import UNDEFINED, VolDictType
 
 from .const import (
     CONF_KNX_AUTOMATIC,

@@ -6,9 +6,9 @@ import logging
 
 from huum.const import SaunaStatus
 
-from homeassistant.components.number import NumberEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONFIG_STEAMER, CONFIG_STEAMER_AND_LIGHT
 from .coordinator import HuumConfigEntry, HuumDataUpdateCoordinator

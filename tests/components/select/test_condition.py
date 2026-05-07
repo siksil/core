@@ -6,10 +6,10 @@ from typing import Any
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.select.condition import CONF_OPTION
-from homeassistant.const import CONF_ENTITY_ID, CONF_OPTIONS, CONF_TARGET
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import async_validate_condition_config
+from inpui.components.select.condition import CONF_OPTION
+from inpui.const import CONF_ENTITY_ID, CONF_OPTIONS, CONF_TARGET
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import async_validate_condition_config
 
 from tests.components.common import (
     ConditionStateDescription,

@@ -9,11 +9,11 @@ from pyatmo import DeviceType, Home, Module, Room
 from pyatmo.modules.base_class import NetatmoBase, Place
 from pyatmo.modules.device_types import DEVICE_DESCRIPTION_MAP
 
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import (
     CONF_URL_ENERGY,

@@ -12,8 +12,8 @@ from weatherflow4py.models.rest.stations import StationsResponseREST
 from weatherflow4py.models.rest.unified import WeatherFlowDataREST
 from weatherflow4py.ws import WeatherFlowWebsocketAPI
 
-from homeassistant.components.weatherflow_cloud.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN
+from inpui.components.weatherflow_cloud.const import DOMAIN
+from inpui.const import CONF_API_TOKEN
 
 from tests.common import MockConfigEntry, load_fixture
 

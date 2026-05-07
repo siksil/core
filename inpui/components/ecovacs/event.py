@@ -4,10 +4,10 @@ from deebot_client.capabilities import CapabilityEvent
 from deebot_client.device import Device
 from deebot_client.events import CleanJobStatus, ReportStatsEvent
 
-from homeassistant.components.event import EventEntity, EventEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity, EventEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcovacsConfigEntry
 from .entity import EcovacsEntity

@@ -6,8 +6,8 @@ from gardena_bluetooth.const import Valve
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from . import setup_entry
 

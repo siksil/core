@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.vacuum import DOMAIN as VACUUM_DOMAIN
-from homeassistant.core import HomeAssistant, SupportsResponse, callback
-from homeassistant.helpers import service
+from inpui.components.vacuum import DOMAIN as VACUUM_DOMAIN
+from inpui.core import HomeAssistant, SupportsResponse, callback
+from inpui.helpers import service
 
 from .const import DOMAIN
 

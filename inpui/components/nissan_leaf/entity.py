@@ -5,9 +5,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.core import callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from . import LeafDataStore
 from .const import SIGNAL_UPDATE_LEAF

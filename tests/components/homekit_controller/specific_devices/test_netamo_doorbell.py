@@ -3,7 +3,7 @@
 https://github.com/home-assistant/core/issues/44596
 """
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

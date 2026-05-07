@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.enigma2.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.enigma2.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import TEST_REQUIRED
 

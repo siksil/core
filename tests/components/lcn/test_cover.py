@@ -14,15 +14,15 @@ from pypck.lcn_defs import MotorPositioningMode, MotorReverseTime, MotorStateMod
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     CoverState,
 )
-from homeassistant.components.lcn.cover import SCAN_INTERVAL
-from homeassistant.components.lcn.helpers import get_device_connection
-from homeassistant.const import (
+from inpui.components.lcn.cover import SCAN_INTERVAL
+from inpui.components.lcn.helpers import get_device_connection
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
@@ -31,8 +31,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockConfigEntry, MockDeviceConnection, init_integration
 

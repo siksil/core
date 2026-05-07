@@ -7,11 +7,11 @@ from typing import Any
 
 import attr
 
-from homeassistant.components.diagnostics import async_redact_data, entity_entry_as_dict
-from homeassistant.const import ATTR_CONFIGURATION_URL, CONF_HOST
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import async_redact_data, entity_entry_as_dict
+from inpui.const import ATTR_CONFIGURATION_URL, CONF_HOST
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import REDACT_HUB_ADDRESS, REDACT_MAC_ADDRESS, REDACT_SERIAL_NUMBER
 from .model import PowerviewConfigEntry

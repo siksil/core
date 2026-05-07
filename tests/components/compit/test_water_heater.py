@@ -7,10 +7,10 @@ from compit_inext_api.consts import CompitParameter
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.water_heater import ATTR_TEMPERATURE
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.water_heater import ATTR_TEMPERATURE
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration, snapshot_compit_entities
 

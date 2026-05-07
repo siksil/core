@@ -9,17 +9,17 @@ from typing import TYPE_CHECKING, Any, cast
 from aioshelly.block_device import Block
 from aioshelly.const import RPC_GENERATIONS
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.components.switch import (
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import STATE_ON, EntityCategory
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     MODEL_FRANKEVER_IRRIGATION_CONTROLLER,

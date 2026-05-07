@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.transmission.const import (
+from inpui.components.transmission.const import (
     ATTR_DELETE_DATA,
     ATTR_DOWNLOAD_PATH,
     ATTR_LABELS,
@@ -19,10 +19,10 @@ from homeassistant.components.transmission.const import (
     SERVICE_START_TORRENT,
     SERVICE_STOP_TORRENT,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry
 

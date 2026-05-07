@@ -5,12 +5,12 @@ from datetime import UTC, datetime
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import device_tracker, mqtt
-from homeassistant.components.mqtt.const import DOMAIN
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import device_tracker, mqtt
+from inpui.components.mqtt.const import DOMAIN
+from inpui.const import STATE_HOME, STATE_NOT_HOME, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import (
     help_custom_config,

@@ -6,17 +6,17 @@ from unittest.mock import AsyncMock
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.nest import DOMAIN
-from homeassistant.components.nest.events import NEST_EVENT
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.nest import DOMAIN
+from inpui.components.nest.events import NEST_EVENT
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .common import DEVICE_ID, CreateDevice, PlatformSetup, create_nest_event
 

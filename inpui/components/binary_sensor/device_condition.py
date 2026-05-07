@@ -4,22 +4,22 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import CONF_IS_OFF, CONF_IS_ON
-from homeassistant.const import (
+from inpui.components.device_automation import CONF_IS_OFF, CONF_IS_ON
+from inpui.const import (
     CONF_CONDITION,
     CONF_ENTITY_ID,
     CONF_FOR,
     CONF_STATE,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.entity import get_device_class
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.entity import get_device_class
+from inpui.helpers.typing import ConfigType
 
 from . import DOMAIN, BinarySensorDeviceClass
 

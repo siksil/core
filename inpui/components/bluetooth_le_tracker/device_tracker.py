@@ -9,25 +9,25 @@ from uuid import UUID
 from bleak import BleakClient, BleakError
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import BluetoothCallbackMatcher
-from homeassistant.components.device_tracker import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import BluetoothCallbackMatcher
+from inpui.components.device_tracker import (
     CONF_TRACK_NEW,
     PLATFORM_SCHEMA as DEVICE_TRACKER_PLATFORM_SCHEMA,
     SCAN_INTERVAL,
     SourceType,
 )
-from homeassistant.components.device_tracker.legacy import (
+from inpui.components.device_tracker.legacy import (
     YAML_DEVICES,
     AsyncSeeCallback,
     async_load_config,
 )
-from homeassistant.const import CONF_SCAN_INTERVAL, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_SCAN_INTERVAL, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -229,7 +229,7 @@ async def async_setup_scanner(  # noqa: C901
         for cancel in cancels:
             cancel()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_handle_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_handle_stop)
 
     _async_refresh_ble(dt_util.now())
 

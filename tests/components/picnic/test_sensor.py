@@ -9,11 +9,11 @@ import pytest
 import requests
 
 from homeassistant import config_entries
-from homeassistant.components.picnic import const
-from homeassistant.components.picnic.const import DOMAIN
-from homeassistant.components.picnic.sensor import SENSOR_TYPES
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.picnic import const
+from inpui.components.picnic.const import DOMAIN
+from inpui.components.picnic.sensor import SENSOR_TYPES
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_COUNTRY_CODE,
     CURRENCY_EURO,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

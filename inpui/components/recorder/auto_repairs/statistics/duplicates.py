@@ -12,10 +12,10 @@ from sqlalchemy.engine.row import Row
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.expression import literal_column
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.util import dt as dt_util
 
 from ...const import DEFAULT_MAX_BIND_VARS
 from ...db_schema import Statistics, StatisticsBase, StatisticsMeta, StatisticsShortTerm

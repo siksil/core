@@ -7,9 +7,9 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import weather
-from homeassistant.components.demo.weather import WEATHER_UPDATE_INTERVAL
-from homeassistant.components.weather import (
+from inpui.components import weather
+from inpui.components.demo.weather import WEATHER_UPDATE_INTERVAL
+from inpui.components.weather import (
     ATTR_WEATHER_HUMIDITY,
     ATTR_WEATHER_OZONE,
     ATTR_WEATHER_PRESSURE,
@@ -17,10 +17,10 @@ from homeassistant.components.weather import (
     ATTR_WEATHER_WIND_BEARING,
     ATTR_WEATHER_WIND_SPEED,
 )
-from homeassistant.const import ATTR_ATTRIBUTION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.const import ATTR_ATTRIBUTION, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from tests.typing import WebSocketGenerator
 

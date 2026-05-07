@@ -9,15 +9,15 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     HomeAssistant,
     async_get_hass,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, intent, singleton
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, intent, singleton
 
 from .const import DATA_COMPONENT, HOME_ASSISTANT_AGENT, IntentSource
 from .entity import ConversationEntity

@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.ai_task.media_source import async_get_media_source
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import media_source
+from inpui.components.ai_task.media_source import async_get_media_source
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 async def test_local_media_source(hass: HomeAssistant, init_components: None) -> None:

@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.airq import AirQCoordinator
-from homeassistant.components.airq.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.components.airq import AirQCoordinator
+from inpui.components.airq.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
 
 from .common import TEST_DEVICE_DATA, TEST_DEVICE_INFO
 

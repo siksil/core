@@ -12,8 +12,8 @@ from elkm1_lib.elk import Elk
 from elkm1_lib.util import parse_url
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_ENABLED,
     CONF_EXCLUDE,
     CONF_HOST,
@@ -26,12 +26,12 @@ from homeassistant.const import (
     Platform,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.network import is_ip_address
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
+from inpui.util.network import is_ip_address
 
 from .const import (
     ATTR_KEY,

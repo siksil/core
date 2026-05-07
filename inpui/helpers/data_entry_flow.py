@@ -10,8 +10,8 @@ import voluptuous as vol
 import voluptuous_serialize
 
 from homeassistant import data_entry_flow
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.http.data_validator import RequestDataValidator
+from inpui.components.http import HomeAssistantView
+from inpui.components.http.data_validator import RequestDataValidator
 
 from . import config_validation as cv
 

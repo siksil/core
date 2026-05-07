@@ -7,16 +7,16 @@ from typing import Any
 from pyplaato.plaato import PlaatoDeviceType
 import voluptuous as vol
 
-from homeassistant.components import cloud, webhook
-from homeassistant.config_entries import (
+from inpui.components import cloud, webhook
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_SCAN_INTERVAL, CONF_TOKEN, CONF_WEBHOOK_ID
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_SCAN_INTERVAL, CONF_TOKEN, CONF_WEBHOOK_ID
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
 
 from .const import (
     CONF_CLOUDHOOK,

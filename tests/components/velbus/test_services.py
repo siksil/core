@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.velbus.const import (
+from inpui.components.velbus.const import (
     CONF_CONFIG_ENTRY,
     CONF_MEMO_TEXT,
     DOMAIN,
@@ -14,9 +14,9 @@ from homeassistant.components.velbus.const import (
     SERVICE_SET_MEMO_TEXT,
     SERVICE_SYNC,
 )
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import init_integration
 

@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 from telegram.error import TimedOut
 
-from homeassistant.components.telegram_bot.const import DOMAIN
-from homeassistant.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.telegram_bot.const import DOMAIN
+from inpui.components.telegram_bot.webhooks import TELEGRAM_WEBHOOK_URL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

@@ -26,31 +26,31 @@ from aiowithings.exceptions import (
 from aiowithings.util import to_enum
 from yarl import URL
 
-from homeassistant.components import cloud
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.webhook import (
+from inpui.components import cloud
+from inpui.components.http import HomeAssistantView
+from inpui.components.webhook import (
     async_generate_id as webhook_generate_id,
     async_generate_url as webhook_generate_url,
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_TOKEN,
     CONF_WEBHOOK_ID,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.event import async_call_later
+from inpui.helpers.event import async_call_later
 
 from .const import DEFAULT_TITLE, DOMAIN, LOGGER
 from .coordinator import (
@@ -390,7 +390,7 @@ class WithingsWebhookManager:
                 )
                 self.entry.async_on_unload(
                     self.hass.bus.async_listen_once(
-                        EVENT_HOMEASSISTANT_STOP, self.unregister_webhook
+                        EVENT_INPUI_STOP, self.unregister_webhook
                     )
                 )
                 self._webhooks_registered = True

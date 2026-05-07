@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components.google_travel_time.const import (
+from inpui.components.google_travel_time.const import (
     ARRIVAL_TIME,
     CONF_TIME,
     CONF_TIME_TYPE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_OPTIONS, MOCK_CONFIG
 

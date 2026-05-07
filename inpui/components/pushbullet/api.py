@@ -6,8 +6,8 @@ from typing import Any
 
 from pushbullet import Listener, PushBullet
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import DATA_UPDATED
 

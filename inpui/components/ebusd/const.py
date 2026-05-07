@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     PERCENTAGE,
     UnitOfEnergy,
     UnitOfPressure,
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from . import EbusdData

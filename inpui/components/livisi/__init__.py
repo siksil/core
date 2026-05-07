@@ -8,10 +8,10 @@ from aiohttp import ClientConnectorError
 from livisi.aiolivisi import AioLivisi
 
 from homeassistant import core
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client, device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client, device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import LivisiConfigEntry, LivisiDataUpdateCoordinator

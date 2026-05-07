@@ -11,14 +11,14 @@ from systembridgeconnector.models.modules.cpu import PerCPU
 from systembridgeconnector.models.modules.displays import Display
 from systembridgeconnector.models.modules.gpus import GPU
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_PORT,
     PERCENTAGE,
     REVOLUTIONS_PER_MINUTE,
@@ -28,10 +28,10 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, StateType
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import SystemBridgeDataUpdateCoordinator

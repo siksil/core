@@ -10,7 +10,7 @@ from pylitterbot.exceptions import InvalidCommandException
 from pylitterbot.robot.litterrobot4 import HopperStatus
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import ACCOUNT_USER_ID, CONFIG, DOMAIN
 

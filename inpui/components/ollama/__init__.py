@@ -9,21 +9,21 @@ from types import MappingProxyType
 import httpx
 import ollama
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_API_KEY, CONF_URL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_API_KEY, CONF_URL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.ssl import get_default_context
+from inpui.helpers.typing import ConfigType
+from inpui.util.ssl import get_default_context
 
 from .const import (
     CONF_KEEP_ALIVE,

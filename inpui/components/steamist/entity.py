@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from aiosteamist import SteamistStatus
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import SteamistDataUpdateCoordinator
 

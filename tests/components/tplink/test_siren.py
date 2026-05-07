@@ -6,7 +6,7 @@ from kasa import Device, Module
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
@@ -14,10 +14,10 @@ from homeassistant.components.siren import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import _mocked_device, setup_platform_for_device, snapshot_platform
 

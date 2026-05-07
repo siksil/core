@@ -8,10 +8,10 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.auth.models import User
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.helpers.storage import Store
+from inpui.auth.models import User
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
+from inpui.helpers.storage import Store
 
 from . import (
     MULTI_FACTOR_AUTH_MODULE_SCHEMA,

@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.zone import condition as zone_condition
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConditionError
-from homeassistant.helpers import condition, config_validation as cv
+from inpui.components.zone import condition as zone_condition
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConditionError
+from inpui.helpers import condition, config_validation as cv
 
 
 async def test_zone_raises(hass: HomeAssistant) -> None:

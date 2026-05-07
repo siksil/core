@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import aiohttp
 
 from homeassistant import config_entries
-from homeassistant.components.harmony.config_flow import CannotConnect
-from homeassistant.components.harmony.const import DOMAIN, PREVIOUS_ACTIVE_ACTIVITY
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.components.harmony.config_flow import CannotConnect
+from inpui.components.harmony.const import DOMAIN, PREVIOUS_ACTIVE_ACTIVITY
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from tests.common import MockConfigEntry
 

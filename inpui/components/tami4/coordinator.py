@@ -7,9 +7,9 @@ import logging
 from Tami4EdgeAPI import Tami4EdgeAPI, exceptions
 from Tami4EdgeAPI.water_quality import WaterQuality
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 _LOGGER = logging.getLogger(__name__)
 

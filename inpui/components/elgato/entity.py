@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.const import ATTR_CONNECTIONS, CONF_MAC
-from homeassistant.helpers.device_registry import (
+from inpui.const import ATTR_CONNECTIONS, CONF_MAC
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import ElgatoDataUpdateCoordinator

@@ -2,8 +2,8 @@
 
 from igloohome_api import Api as IgloohomeApi, GetDeviceInfoResponse
 
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity import Entity
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

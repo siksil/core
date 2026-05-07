@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from .coordinator import LiebherrConfigEntry
 

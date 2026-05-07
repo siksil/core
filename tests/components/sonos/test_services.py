@@ -8,16 +8,16 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MP_DOMAIN,
     SERVICE_JOIN,
     SERVICE_UNJOIN,
 )
-from homeassistant.components.sonos.const import LONG_SERVICE_TIMEOUT
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sonos.const import LONG_SERVICE_TIMEOUT
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockSoCo, create_zgs_sonos_event, group_speakers, ungroup_speakers
 

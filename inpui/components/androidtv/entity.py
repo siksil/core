@@ -9,7 +9,7 @@ from typing import Any, Concatenate
 
 from androidtv.exceptions import LockNotAcquiredException
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     ATTR_MANUFACTURER,
@@ -18,9 +18,9 @@ from homeassistant.const import (
     CONF_HOST,
     CONF_NAME,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from . import (
     ADB_PYTHON_EXCEPTIONS,

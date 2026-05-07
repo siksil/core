@@ -6,10 +6,10 @@ import logging
 
 from pyaprilaire.const import Attribute
 
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.device_registry import format_mac
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.device_registry import format_mac
 
 from .coordinator import AprilaireConfigEntry, AprilaireCoordinator
 
@@ -48,7 +48,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: AprilaireConfigEntry) ->
                 coordinator.stop_listen()
 
             entry.async_on_unload(
-                hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_close)
+                hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_close)
             )
         else:
             _LOGGER.error("Failed to wait for ready")

@@ -6,7 +6,7 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.util.resource import (
+from inpui.util.resource import (
     DEFAULT_SOFT_FILE_LIMIT,
     set_open_file_descriptor_limit,
 )

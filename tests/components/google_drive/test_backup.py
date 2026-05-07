@@ -11,15 +11,15 @@ from google_drive_api.exceptions import GoogleDriveApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN as BACKUP_DOMAIN,
     AddonInfo,
     AgentBackup,
 )
-from homeassistant.components.google_drive import DOMAIN
-from homeassistant.components.google_drive.backup import GoogleDriveBackupAgent
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.google_drive import DOMAIN
+from inpui.components.google_drive.backup import GoogleDriveBackupAgent
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import CONFIG_ENTRY_TITLE, TEST_AGENT_ID
 

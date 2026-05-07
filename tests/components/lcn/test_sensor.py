@@ -9,11 +9,11 @@ from pypck.lcn_defs import LedStatus, LogicOpStatus, Var, VarValue
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lcn.helpers import get_device_connection
-from homeassistant.components.lcn.sensor import SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.lcn.helpers import get_device_connection
+from inpui.components.lcn.sensor import SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockConfigEntry, MockDeviceConnection, init_integration
 

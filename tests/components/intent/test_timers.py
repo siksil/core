@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.intent.timers import (
+from inpui.components import conversation
+from inpui.components.intent.timers import (
     TIMER_DATA,
     MultipleTimersMatchedError,
     NoTimerCommandError,
@@ -19,15 +19,15 @@ from homeassistant.components.intent.timers import (
     async_device_supports_timers,
     async_register_timer_handler,
 )
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import ATTR_DEVICE_ID, ATTR_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     floor_registry as fr,
     intent,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

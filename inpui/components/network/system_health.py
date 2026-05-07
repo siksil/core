@@ -2,8 +2,8 @@
 
 from typing import Any
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 from . import Adapter, async_get_adapters, async_get_announce_addresses
 from .models import IPv4ConfiguredAddress, IPv6ConfiguredAddress

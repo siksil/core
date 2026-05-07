@@ -8,11 +8,11 @@ from pyprosegur.auth import Auth
 from pyprosegur.exceptions import ProsegurException
 from pyprosegur.installation import Camera as InstallationCamera, Installation
 
-from homeassistant.components.camera import Camera
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.components.camera import Camera
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

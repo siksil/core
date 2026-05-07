@@ -2,12 +2,12 @@
 
 from unittest.mock import Mock
 
-from homeassistant.components import hue
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonArrayType
+from inpui.components import hue
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_bridge, setup_platform
 from .const import FAKE_DEVICE, FAKE_SENSOR, FAKE_ZIGBEE_CONNECTIVITY

@@ -9,16 +9,16 @@ from google.genai import types
 from google.genai.errors import APIError, ClientError
 from propcache.api import cached_property
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     ATTR_VOICE,
     TextToSpeechEntity,
     TtsAudioType,
     Voice,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_CHAT_MODEL, LOGGER, RECOMMENDED_TTS_MODEL
 from .entity import GoogleGenerativeAILLMBaseEntity

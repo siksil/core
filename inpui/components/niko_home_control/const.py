@@ -3,7 +3,7 @@
 from enum import IntEnum
 import logging
 
-from homeassistant.components.climate import HVACMode
+from inpui.components.climate import HVACMode
 
 DOMAIN = "niko_home_control"
 _LOGGER = logging.getLogger(__name__)

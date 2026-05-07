@@ -18,11 +18,11 @@ from opower import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.typing import VolDictType
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.typing import VolDictType
 
 from .const import CONF_LOGIN_DATA, CONF_TOTP_SECRET, CONF_UTILITY, DOMAIN
 

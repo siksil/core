@@ -6,10 +6,10 @@ import asyncio
 
 from autarco import Autarco, AutarcoConnectionError
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import AutarcoConfigEntry, AutarcoDataUpdateCoordinator
 

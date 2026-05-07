@@ -3,9 +3,9 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ntfy.const import DOMAIN
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.ntfy.const import DOMAIN
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

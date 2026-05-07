@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from abc import abstractmethod
 
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity, EntityDescription
 
 from . import SleepAsAndroidConfigEntry
 from .const import DOMAIN

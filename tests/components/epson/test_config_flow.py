@@ -5,10 +5,10 @@ from unittest.mock import patch
 from epson_projector.const import PWR_OFF_STATE
 
 from homeassistant import config_entries
-from homeassistant.components.epson.const import CONF_CONNECTION_TYPE, DOMAIN, HTTP
-from homeassistant.const import CONF_HOST, CONF_NAME, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.epson.const import CONF_CONNECTION_TYPE, DOMAIN, HTTP
+from inpui.const import CONF_HOST, CONF_NAME, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form(hass: HomeAssistant) -> None:

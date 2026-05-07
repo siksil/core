@@ -6,11 +6,11 @@ from aiohttp import ClientConnectionError, ClientError, ClientResponseError, Req
 import pytest
 from yarl import URL
 
-from homeassistant.components.myneomitis.const import CONF_USER_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.myneomitis.const import CONF_USER_ID, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

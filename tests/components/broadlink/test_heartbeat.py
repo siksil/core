@@ -4,9 +4,9 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components.broadlink.heartbeat import BroadlinkHeartbeat
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.broadlink.heartbeat import BroadlinkHeartbeat
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import get_device
 

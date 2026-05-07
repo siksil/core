@@ -15,9 +15,9 @@ from pyvlx import (
     Window,
 )
 
-from homeassistant.components.velux import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.velux import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

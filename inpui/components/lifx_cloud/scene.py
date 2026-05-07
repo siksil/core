@@ -11,13 +11,13 @@ import aiohttp
 from aiohttp.hdrs import AUTHORIZATION
 import voluptuous as vol
 
-from homeassistant.components.scene import Scene
-from homeassistant.const import CONF_PLATFORM, CONF_TIMEOUT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.scene import Scene
+from inpui.const import CONF_PLATFORM, CONF_TIMEOUT, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

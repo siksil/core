@@ -2,10 +2,10 @@
 
 from yalesmartalarmclient import YaleLock
 
-from homeassistant.const import CONF_USERNAME
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_USERNAME
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER, MODEL
 from .coordinator import YaleDataUpdateCoordinator

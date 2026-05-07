@@ -13,17 +13,17 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     EVENT_END_DATETIME,
     EVENT_START_DATETIME,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.components.husqvarna_automower.const import DOMAIN
-from homeassistant.components.husqvarna_automower.coordinator import SCAN_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.husqvarna_automower.const import DOMAIN
+from inpui.components.husqvarna_automower.coordinator import SCAN_INTERVAL
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

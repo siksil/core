@@ -9,22 +9,22 @@ from collections.abc import Callable
 from datetime import timedelta
 from typing import Any
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.const import STATE_IDLE, STATE_OFF, STATE_ON
-from homeassistant.core import Event, EventStateChangedData, HassJob, HomeAssistant
-from homeassistant.exceptions import ServiceNotFound, ServiceValidationError
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import (
+from inpui.const import STATE_IDLE, STATE_OFF, STATE_ON
+from inpui.core import Event, EventStateChangedData, HassJob, HomeAssistant
+from inpui.exceptions import ServiceNotFound, ServiceValidationError
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import (
     async_track_point_in_time,
     async_track_state_change_event,
 )
-from homeassistant.helpers.template import Template
-from homeassistant.util.dt import now
+from inpui.helpers.template import Template
+from inpui.util.dt import now
 
 from .const import DOMAIN, LOGGER
 

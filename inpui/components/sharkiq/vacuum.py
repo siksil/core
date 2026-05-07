@@ -7,17 +7,17 @@ from typing import Any
 
 from sharkiq import OperatingModes, PowerModes, Properties, SharkIqVacuum
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ATTR_ROOMS, DOMAIN, LOGGER, SHARK
 from .coordinator import SharkIqUpdateCoordinator

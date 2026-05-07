@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import http_404_error, http_429_error, setup_integration
 from .const import MOCK_SWITCH_ENTITY_ID

@@ -7,16 +7,16 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.tuya.const import (
+from inpui.components.tuya.const import (
     CONF_ENDPOINT,
     CONF_TERMINAL_ID,
     CONF_TOKEN_INFO,
     CONF_USER_CODE,
     DOMAIN,
 )
-from homeassistant.components.tuya.diagnostics import _REDACTED_DPCODES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.tuya.diagnostics import _REDACTED_DPCODES
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import DEVICE_MOCKS, create_device, create_manager, initialize_entry
 

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from adguardhome import AdGuardHomeError
 
-from homeassistant.config_entries import SOURCE_HASSIO
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.config_entries import SOURCE_HASSIO
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from . import AdGuardConfigEntry, AdGuardData
 from .const import DOMAIN, LOGGER

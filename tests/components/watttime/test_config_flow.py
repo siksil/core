@@ -6,24 +6,24 @@ from aiowatttime.errors import CoordinatesNotFoundError, InvalidCredentialsError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.watttime.config_flow import (
+from inpui.components.watttime.config_flow import (
     CONF_LOCATION_TYPE,
     LOCATION_TYPE_HOME,
 )
-from homeassistant.components.watttime.const import (
+from inpui.components.watttime.const import (
     CONF_BALANCING_AUTHORITY,
     CONF_BALANCING_AUTHORITY_ABBREV,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_SHOW_ON_MAP,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

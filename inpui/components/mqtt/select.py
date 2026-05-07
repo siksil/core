@@ -7,16 +7,16 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import select
-from homeassistant.components.select import SelectEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_OPTIMISTIC, CONF_VALUE_TEMPLATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.components import select
+from inpui.components.select import SelectEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_OPTIMISTIC, CONF_VALUE_TEMPLATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from . import subscription
 from .config import MQTT_RW_SCHEMA

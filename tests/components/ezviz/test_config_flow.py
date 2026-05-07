@@ -10,7 +10,7 @@ from pyezvizapi.exceptions import (
 )
 import pytest
 
-from homeassistant.components.ezviz.const import (
+from inpui.components.ezviz.const import (
     ATTR_SERIAL,
     ATTR_TYPE_CAMERA,
     ATTR_TYPE_CLOUD,
@@ -21,8 +21,8 @@ from homeassistant.components.ezviz.const import (
     DEFAULT_TIMEOUT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY, SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY, SOURCE_USER
+from inpui.const import (
     CONF_CUSTOMIZE,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
@@ -31,8 +31,8 @@ from homeassistant.const import (
     CONF_URL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 

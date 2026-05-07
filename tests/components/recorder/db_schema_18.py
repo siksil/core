@@ -26,7 +26,7 @@ from sqlalchemy.dialects import mysql
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.orm.session import Session
 
-from homeassistant.const import (
+from inpui.const import (
     MAX_LENGTH_EVENT_CONTEXT_ID,
     MAX_LENGTH_EVENT_EVENT_TYPE,
     MAX_LENGTH_EVENT_ORIGIN,
@@ -34,9 +34,9 @@ from homeassistant.const import (
     MAX_LENGTH_STATE_ENTITY_ID,
     MAX_LENGTH_STATE_STATE,
 )
-from homeassistant.core import Context, Event, EventOrigin, State, split_entity_id
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, Event, EventOrigin, State, split_entity_id
+from inpui.helpers.json import JSONEncoder
+from inpui.util import dt as dt_util
 
 # SQLAlchemy Schema
 Base = declarative_base()

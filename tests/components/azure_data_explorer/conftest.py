@@ -8,16 +8,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.azure_data_explorer.const import (
+from inpui.components.azure_data_explorer.const import (
     CONF_FILTER,
     CONF_SEND_INTERVAL,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .const import (
     AZURE_DATA_EXPLORER_PATH,

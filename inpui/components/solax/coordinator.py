@@ -2,7 +2,7 @@
 
 from solax import InverterResponse
 
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 
 class SolaxDataUpdateCoordinator(DataUpdateCoordinator[InverterResponse]):

@@ -8,17 +8,17 @@ import logging
 
 from pykoplenti import SettingsData
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import PlenticoreConfigEntry, SettingDataUpdateCoordinator
 from .helper import PlenticoreDataFormatter

@@ -1,14 +1,14 @@
 """Test KNX weather."""
 
-from homeassistant.components.knx.schema import WeatherSchema
-from homeassistant.components.weather import (
+from inpui.components.knx.schema import WeatherSchema
+from inpui.components.weather import (
     ATTR_CONDITION_EXCEPTIONAL,
     ATTR_CONDITION_RAINY,
     ATTR_CONDITION_SUNNY,
     ATTR_CONDITION_WINDY,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

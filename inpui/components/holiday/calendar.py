@@ -6,14 +6,14 @@ from datetime import datetime, timedelta
 
 from holidays import PUBLIC, HolidayBase, country_holidays
 
-from homeassistant.components.calendar import CalendarEntity, CalendarEvent
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COUNTRY
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util import dt as dt_util
+from inpui.components.calendar import CalendarEntity, CalendarEvent
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COUNTRY
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util import dt as dt_util
 
 from .const import CONF_CATEGORIES, CONF_PROVINCE, DOMAIN
 

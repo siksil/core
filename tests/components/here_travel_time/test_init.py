@@ -4,11 +4,11 @@ from datetime import datetime
 
 import pytest
 
-from homeassistant.components.here_travel_time.config_flow import (
+from inpui.components.here_travel_time.config_flow import (
     DEFAULT_OPTIONS,
     HERETravelTimeConfigFlow,
 )
-from homeassistant.components.here_travel_time.const import (
+from inpui.components.here_travel_time.const import (
     CONF_ARRIVAL_TIME,
     CONF_DEPARTURE_TIME,
     CONF_ROUTE_MODE,
@@ -16,9 +16,9 @@ from homeassistant.components.here_travel_time.const import (
     DOMAIN,
     ROUTE_MODE_FASTEST,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from .const import DEFAULT_CONFIG
 

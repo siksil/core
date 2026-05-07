@@ -6,8 +6,8 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import core
-from homeassistant.components import light
-from homeassistant.const import (
+from inpui.components import light
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PLATFORM,
     ENTITY_MATCH_ALL,
@@ -17,10 +17,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.setup import async_setup_component
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.setup import async_setup_component
+from inpui.util import color as color_util
 
 from .common import MockLight
 

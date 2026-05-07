@@ -10,10 +10,10 @@ import serial
 import serial.tools.list_ports
 
 from homeassistant import config_entries
-from homeassistant.components.dsmr import config_flow
-from homeassistant.components.dsmr.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.dsmr import config_flow
+from inpui.components.dsmr.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

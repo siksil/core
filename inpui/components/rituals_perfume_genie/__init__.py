@@ -6,12 +6,12 @@ import logging
 from aiohttp import ClientError, ClientResponseError
 from pyrituals import Account, AuthenticationException, Diffuser
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import ACCOUNT_HASH, DOMAIN, UPDATE_INTERVAL
 from .coordinator import RitualsDataUpdateCoordinator

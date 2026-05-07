@@ -6,10 +6,10 @@ from typing import Any
 
 from attr import asdict
 
-from homeassistant.components.diagnostics import entity_entry_as_dict
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.diagnostics import entity_entry_as_dict
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import ADDONS_COORDINATOR
 from .coordinator import HassioDataUpdateCoordinator

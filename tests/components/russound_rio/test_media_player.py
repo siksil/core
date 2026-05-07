@@ -7,7 +7,7 @@ from aiorussound.exceptions import CommandError
 from aiorussound.models import PlayStatus
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -18,7 +18,7 @@ from homeassistant.components.media_player import (
     SERVICE_PLAY_MEDIA,
     SERVICE_SELECT_SOURCE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_MEDIA_SEEK,
     SERVICE_TURN_OFF,
@@ -34,8 +34,8 @@ from homeassistant.const import (
     STATE_PAUSED,
     STATE_PLAYING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import mock_state_update, setup_integration
 from .const import ENTITY_ID_ZONE_1

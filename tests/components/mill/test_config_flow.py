@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.mill.const import CLOUD, CONNECTION_TYPE, DOMAIN, LOCAL
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.mill.const import CLOUD, CONNECTION_TYPE, DOMAIN, LOCAL
+from inpui.components.recorder import Recorder
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

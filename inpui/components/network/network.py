@@ -5,11 +5,11 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.util.async_ import create_eager_task
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     ATTR_CONFIGURED_ADAPTERS,

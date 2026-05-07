@@ -15,7 +15,7 @@ from aioesphomeapi import (
     LightState,
 )
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -31,7 +31,7 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import callback
+from inpui.core import callback
 
 from .entity import (
     EsphomeEntity,

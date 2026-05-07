@@ -3,7 +3,7 @@
 import lakeside
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_ADDRESS,
     CONF_DEVICES,
@@ -13,9 +13,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "eufy"
 

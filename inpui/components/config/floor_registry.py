@@ -4,11 +4,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import floor_registry as fr
-from homeassistant.helpers.floor_registry import FloorEntry
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import floor_registry as fr
+from inpui.helpers.floor_registry import FloorEntry
 
 
 @callback

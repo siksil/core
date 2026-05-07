@@ -7,11 +7,11 @@ from pyspcwebgw.area import Area
 from pyspcwebgw.zone import Zone
 import voluptuous as vol
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, config_validation as cv, discovery
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, config_validation as cv, discovery
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -6,8 +6,8 @@ from unittest.mock import MagicMock, patch
 from fing_agent_api.models import AgentInfoResponse, DeviceResponse
 import pytest
 
-from homeassistant.components.fing.const import DOMAIN, UPNP_AVAILABLE
-from homeassistant.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
+from inpui.components.fing.const import DOMAIN, UPNP_AVAILABLE
+from inpui.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
 
 from tests.common import Generator, load_fixture, load_json_object_fixture
 from tests.conftest import MockConfigEntry

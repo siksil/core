@@ -8,13 +8,13 @@ from awesomeversion import AwesomeVersion
 from go2rtc_client.rest import _SchemesClient, _StreamClient, _WebRTCClient
 import pytest
 
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.go2rtc.const import DOMAIN, RECOMMENDED_VERSION
-from homeassistant.components.go2rtc.server import Server
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.go2rtc.const import DOMAIN, RECOMMENDED_VERSION
+from inpui.components.go2rtc.server import Server
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MockCamera
 

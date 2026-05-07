@@ -4,9 +4,9 @@ from datetime import date
 
 from vallox_websocket_api import MetricData
 
-from homeassistant.components.date import DOMAIN as DATE_DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_DATE, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.date import DOMAIN as DATE_DOMAIN, SERVICE_SET_VALUE
+from inpui.const import ATTR_DATE, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .conftest import patch_set_filter_change_date
 

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.balboa.const import CONF_SYNC_TIME, DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant, State
+from inpui.components.balboa.const import CONF_SYNC_TIME, DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant, State
 
 from tests.common import MockConfigEntry
 

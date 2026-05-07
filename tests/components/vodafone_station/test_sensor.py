@@ -7,10 +7,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.vodafone_station.const import LINE_TYPES, SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.vodafone_station.const import LINE_TYPES, SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .const import TEST_SERIAL_NUMBER

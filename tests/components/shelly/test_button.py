@@ -8,19 +8,19 @@ from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCal
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.shelly.const import DOMAIN, MODEL_FRANKEVER_WATER_VALVE
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.shelly.const import DOMAIN, MODEL_FRANKEVER_WATER_VALVE
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     MOCK_MAC,

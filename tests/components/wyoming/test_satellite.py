@@ -25,13 +25,13 @@ from wyoming.tts import Synthesize
 from wyoming.vad import VoiceStarted, VoiceStopped
 from wyoming.wake import Detect, Detection
 
-from homeassistant.components import assist_pipeline, assist_satellite, intent, wyoming
-from homeassistant.components.wyoming.assist_satellite import WyomingAssistSatellite
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er, intent as intent_helper
-from homeassistant.setup import async_setup_component
+from inpui.components import assist_pipeline, assist_satellite, intent, wyoming
+from inpui.components.wyoming.assist_satellite import WyomingAssistSatellite
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er, intent as intent_helper
+from inpui.setup import async_setup_component
 
 from . import SATELLITE_INFO, WAKE_WORD_INFO, MockAsyncTcpClient
 

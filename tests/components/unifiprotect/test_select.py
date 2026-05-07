@@ -20,18 +20,18 @@ from uiprotect.data import (
 )
 from uiprotect.data.nvr import DoorbellMessage
 
-from homeassistant.components.select import ATTR_OPTIONS
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.components.unifiprotect.select import (
+from inpui.components.select import ATTR_OPTIONS
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.components.unifiprotect.select import (
     CAMERA_SELECTS,
     LIGHT_MODE_OFF,
     LIGHT_SELECTS,
     PTZ_PATROL_STOP,
     VIEWER_SELECTS,
 )
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, ATTR_OPTION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, ATTR_OPTION, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

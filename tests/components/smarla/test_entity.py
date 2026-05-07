@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import setup_integration, update_property_listeners
 

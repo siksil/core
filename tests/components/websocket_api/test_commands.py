@@ -13,42 +13,42 @@ from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
 from homeassistant import loader
-from homeassistant.components.device_automation import toggle_entity
-from homeassistant.components.group import DOMAIN as GROUP_DOMAIN
-from homeassistant.components.light import LightEntityFeature
-from homeassistant.components.logger import DOMAIN as LOGGER_DOMAIN
-from homeassistant.components.websocket_api import const
-from homeassistant.components.websocket_api.auth import (
+from inpui.components.device_automation import toggle_entity
+from inpui.components.group import DOMAIN as GROUP_DOMAIN
+from inpui.components.light import LightEntityFeature
+from inpui.components.logger import DOMAIN as LOGGER_DOMAIN
+from inpui.components.websocket_api import const
+from inpui.components.websocket_api.auth import (
     TYPE_AUTH,
     TYPE_AUTH_OK,
     TYPE_AUTH_REQUIRED,
 )
-from homeassistant.components.websocket_api.automation import (
+from inpui.components.websocket_api.automation import (
     AUTOMATION_COMPONENT_LOOKUP_CACHE,
     _get_automation_component_lookup_table,
 )
-from homeassistant.components.websocket_api.commands import (
+from inpui.components.websocket_api.commands import (
     ALL_CONDITION_DESCRIPTIONS_JSON_CACHE,
     ALL_SERVICE_DESCRIPTIONS_JSON_CACHE,
     ALL_TRIGGER_DESCRIPTIONS_JSON_CACHE,
 )
-from homeassistant.components.websocket_api.const import FEATURE_COALESCE_MESSAGES, URL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_EXTERNAL_URL, SIGNAL_BOOTSTRAP_INTEGRATIONS
-from homeassistant.core import Context, HomeAssistant, State, SupportsResponse, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import (
+from inpui.components.websocket_api.const import FEATURE_COALESCE_MESSAGES, URL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_EXTERNAL_URL, SIGNAL_BOOTSTRAP_INTEGRATIONS
+from inpui.core import Context, HomeAssistant, State, SupportsResponse, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     label_registry as lr,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.loader import Integration, async_get_integration
-from homeassistant.setup import async_set_domains_to_be_loaded, async_setup_component
-from homeassistant.util.json import json_loads
-from homeassistant.util.yaml.loader import JSON_TYPE, parse_yaml
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_state_change_event
+from inpui.loader import Integration, async_get_integration
+from inpui.setup import async_set_domains_to_be_loaded, async_setup_component
+from inpui.util.json import json_loads
+from inpui.util.yaml.loader import JSON_TYPE, parse_yaml
 
 from tests.common import (
     MockConfigEntry,

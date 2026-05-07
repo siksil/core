@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.airos.coordinator import AirOS8Data
-from homeassistant.core import HomeAssistant
+from inpui.components.airos.coordinator import AirOS8Data
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

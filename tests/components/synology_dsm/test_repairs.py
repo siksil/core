@@ -7,13 +7,13 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 import pytest
 from synology_dsm.api.file_station.models import SynoFileSharedFolder
 
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.components.synology_dsm.const import (
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.components.synology_dsm.const import (
     CONF_BACKUP_PATH,
     CONF_BACKUP_SHARE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -21,9 +21,9 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .common import mock_dsm_information
 from .consts import HOST, MACS, PASSWORD, PORT, USE_SSL, USERNAME

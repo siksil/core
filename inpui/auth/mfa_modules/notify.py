@@ -12,12 +12,12 @@ from typing import Any, cast
 import attr
 import voluptuous as vol
 
-from homeassistant.const import CONF_EXCLUDE, CONF_INCLUDE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.exceptions import ServiceNotFound
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.storage import Store
+from inpui.const import CONF_EXCLUDE, CONF_INCLUDE
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResult
+from inpui.exceptions import ServiceNotFound
+from inpui.helpers import config_validation as cv
+from inpui.helpers.storage import Store
 
 from . import (
     MULTI_FACTOR_AUTH_MODULE_SCHEMA,

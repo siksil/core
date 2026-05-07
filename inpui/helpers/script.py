@@ -19,10 +19,10 @@ from propcache.api import cached_property
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.components import scene
-from homeassistant.components.device_automation import action as device_action
-from homeassistant.components.logger import LOGSEVERITY
-from homeassistant.const import (
+from inpui.components import scene
+from inpui.components.device_automation import action as device_action
+from inpui.components.logger import LOGSEVERITY
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -66,10 +66,10 @@ from homeassistant.const import (
     CONF_WAIT_FOR_TRIGGER,
     CONF_WAIT_TEMPLATE,
     CONF_WHILE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     Event,
     HassJob,
@@ -79,11 +79,11 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.util import slugify
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.dt import utcnow
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.signal_type import SignalType, SignalTypeFormat
+from inpui.util import slugify
+from inpui.util.async_ import create_eager_task
+from inpui.util.dt import utcnow
+from inpui.util.hass_dict import HassKey
+from inpui.util.signal_type import SignalType, SignalTypeFormat
 
 from . import (
     condition,
@@ -1461,7 +1461,7 @@ class Script:
         if not (all_scripts := hass.data.get(DATA_SCRIPTS)):
             all_scripts = hass.data[DATA_SCRIPTS] = []
             hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP, partial(_async_stop_scripts_at_shutdown, hass)
+                EVENT_INPUI_STOP, partial(_async_stop_scripts_at_shutdown, hass)
             )
         self.top_level = top_level
         if top_level:

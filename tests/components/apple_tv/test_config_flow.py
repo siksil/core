@@ -9,16 +9,16 @@ from pyatv.const import PairingRequirement, Protocol
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.apple_tv import CONF_ADDRESS, config_flow
-from homeassistant.components.apple_tv.const import (
+from inpui.components.apple_tv import CONF_ADDRESS, config_flow
+from inpui.components.apple_tv.const import (
     CONF_IDENTIFIERS,
     CONF_START_OFF,
     DOMAIN,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .common import airplay_service, create_conf, mrp_service, raop_service
 

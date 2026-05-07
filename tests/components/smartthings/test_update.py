@@ -7,21 +7,21 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smartthings.const import MAIN
-from homeassistant.components.update import (
+from inpui.components.smartthings.const import MAIN
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

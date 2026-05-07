@@ -4,8 +4,8 @@ from collections.abc import Generator
 
 import pytest
 
-from homeassistant.components.watergate.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS
+from inpui.components.watergate.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS
 
 from .const import (
     DEFAULT_DEVICE_STATE,

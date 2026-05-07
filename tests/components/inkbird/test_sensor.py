@@ -16,17 +16,17 @@ from inkbird_ble import (
 from inkbird_ble.parser import Model
 from sensor_state_data import SensorDeviceClass
 
-from homeassistant.components.inkbird.const import (
+from inpui.components.inkbird.const import (
     CONF_DEVICE_DATA,
     CONF_DEVICE_TYPE,
     DOMAIN,
 )
-from homeassistant.components.inkbird.coordinator import FALLBACK_POLL_INTERVAL
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.inkbird.coordinator import FALLBACK_POLL_INTERVAL
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     IAM_T1_SERVICE_INFO,

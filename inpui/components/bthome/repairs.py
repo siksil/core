@@ -5,9 +5,9 @@ from __future__ import annotations
 from typing import Any
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from . import get_encryption_issue_id
 from .const import CONF_BINDKEY, DOMAIN

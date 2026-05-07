@@ -37,20 +37,20 @@ from habluetooth import (
 )
 from home_assistant_bluetooth import BluetoothServiceInfo, BluetoothServiceInfoBleak
 
-from homeassistant.components import usb
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HassJob, HomeAssistant, callback as hass_callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.components import usb
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HassJob, HomeAssistant, callback as hass_callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery_flow,
 )
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.issue_registry import async_delete_issue
-from homeassistant.loader import async_get_bluetooth
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.event import async_call_later
+from inpui.helpers.issue_registry import async_delete_issue
+from inpui.loader import async_get_bluetooth
 
 from . import passive_update_processor, websocket_api
 from .api import (
@@ -97,7 +97,7 @@ from .storage import BluetoothStorage
 from .util import adapter_title
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.typing import ConfigType
+    from inpui.helpers.typing import ConfigType
 
 __all__ = [
     "FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS",
@@ -170,7 +170,7 @@ async def _async_start_adapter_discovery(
         """Shutdown debouncer."""
         discovery_debouncer.async_shutdown()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_shutdown_debouncer)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_shutdown_debouncer)
 
     async def _async_call_debouncer(now: datetime.datetime) -> None:
         """Call the debouncer at a later time."""
@@ -201,7 +201,7 @@ async def _async_start_adapter_discovery(
 
     cancel = usb.async_register_scan_request_callback(hass, _async_trigger_discovery)
     hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP,
+        EVENT_INPUI_STOP,
         hass_callback(lambda event: cancel()),
     )
 

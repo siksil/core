@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 from openrgb.utils import ControllerParsingError, OpenRGBDisconnected, SDKVersionError
 import pytest
 
-from homeassistant.components.openrgb import async_remove_config_entry_device
-from homeassistant.components.openrgb.const import DOMAIN, SCAN_INTERVAL, UID_SEPARATOR
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.openrgb import async_remove_config_entry_device
+from inpui.components.openrgb.const import DOMAIN, SCAN_INTERVAL, UID_SEPARATOR
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

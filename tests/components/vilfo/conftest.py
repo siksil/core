@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.vilfo import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST
+from inpui.components.vilfo import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST
 
 from tests.common import MockConfigEntry
 

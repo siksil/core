@@ -1,10 +1,10 @@
 """Support for LaMetric time."""
 
-from homeassistant.components import notify as hass_notify
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import notify as hass_notify
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import LaMetricConfigEntry, LaMetricDataUpdateCoordinator

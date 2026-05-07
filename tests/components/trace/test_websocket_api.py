@@ -9,12 +9,12 @@ from unittest.mock import patch
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.trace.const import DEFAULT_STORED_TRACES
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Context, CoreState, HomeAssistant, callback
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.setup import async_setup_component
-from homeassistant.util.uuid import random_uuid_hex
+from inpui.components.trace.const import DEFAULT_STORED_TRACES
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Context, CoreState, HomeAssistant, callback
+from inpui.helpers.typing import UNDEFINED
+from inpui.setup import async_setup_component
+from inpui.util.uuid import random_uuid_hex
 
 from tests.common import async_load_fixture
 from tests.typing import WebSocketGenerator
@@ -425,7 +425,7 @@ async def test_get_trace(
 
     # Fake stop
     assert "trace.saved_traces" not in hass_storage
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     # Check that saved data is same as the serialized traces
@@ -500,7 +500,7 @@ async def test_restore_traces(
     # Fake stop
     hass_storage.pop("trace.saved_traces")
     assert "trace.saved_traces" not in hass_storage
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     # Check that saved data is same as the serialized traces

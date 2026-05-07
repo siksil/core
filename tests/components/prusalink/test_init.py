@@ -7,13 +7,13 @@ from httpx import ConnectError
 from pyprusalink.types import InvalidAuth, PrusaLinkError
 import pytest
 
-from homeassistant.components.prusalink import DOMAIN
-from homeassistant.components.prusalink.config_flow import ConfigFlow
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util.dt import utcnow
+from inpui.components.prusalink import DOMAIN
+from inpui.components.prusalink.config_flow import ConfigFlow
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

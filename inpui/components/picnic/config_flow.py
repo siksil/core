@@ -11,15 +11,15 @@ from python_picnic_api2.session import PicnicAuthError
 import requests
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_COUNTRY_CODE,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import COUNTRY_CODES, DOMAIN
 

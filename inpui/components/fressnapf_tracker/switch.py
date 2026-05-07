@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Any
 
 from fressnapftracker import FressnapfTrackerError
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FressnapfTrackerConfigEntry
 from .entity import FressnapfTrackerEntity

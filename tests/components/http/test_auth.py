@@ -13,12 +13,12 @@ import jwt
 import pytest
 import yarl
 
-from homeassistant.auth.const import GROUP_ID_ADMIN, GROUP_ID_READ_ONLY
-from homeassistant.auth.models import User
-from homeassistant.auth.providers import trusted_networks
-from homeassistant.auth.providers.homeassistant import HassAuthProvider
-from homeassistant.components import websocket_api
-from homeassistant.components.http.auth import (
+from inpui.auth.const import GROUP_ID_ADMIN, GROUP_ID_READ_ONLY
+from inpui.auth.models import User
+from inpui.auth.providers import trusted_networks
+from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.components import websocket_api
+from inpui.components.http.auth import (
     CONTENT_USER_NAME,
     DATA_SIGN_SECRET,
     SIGN_QUERY_PARAM,
@@ -27,15 +27,15 @@ from homeassistant.components.http.auth import (
     async_sign_path,
     async_user_not_allowed_do_auth,
 )
-from homeassistant.components.http.forwarded import async_setup_forwarded
-from homeassistant.components.http.request_context import (
+from inpui.components.http.forwarded import async_setup_forwarded
+from inpui.components.http.request_context import (
     current_request,
     setup_request_context,
 )
-from homeassistant.const import HASSIO_USER_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.http import KEY_AUTHENTICATED, KEY_HASS
-from homeassistant.setup import async_setup_component
+from inpui.const import HASSIO_USER_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.http import KEY_AUTHENTICATED, KEY_HASS
+from inpui.setup import async_setup_component
 
 from . import HTTP_HEADER_HA_AUTH
 

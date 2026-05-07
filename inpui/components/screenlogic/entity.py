@@ -15,12 +15,12 @@ from screenlogicpy.const.common import (
 from screenlogicpy.const.data import ATTR
 from screenlogicpy.const.msg import CODE
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ScreenLogicDataPath
 from .coordinator import ScreenlogicDataUpdateCoordinator

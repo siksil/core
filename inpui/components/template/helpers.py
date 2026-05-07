@@ -10,9 +10,9 @@ from typing import Any
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components import blueprint
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import blueprint
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITY_PICTURE_TEMPLATE,
     CONF_FRIENDLY_NAME,
@@ -25,22 +25,22 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     SERVICE_RELOAD,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, PlatformNotReady
-from homeassistant.helpers import issue_registry as ir, template
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, PlatformNotReady
+from inpui.helpers import issue_registry as ir, template
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
     async_get_platforms,
 )
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.script import async_validate_actions_config
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import yaml as yaml_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.script import async_validate_actions_config
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.singleton import singleton
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import yaml as yaml_util
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     CONF_ADVANCED_OPTIONS,

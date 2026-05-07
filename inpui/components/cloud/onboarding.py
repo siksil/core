@@ -9,18 +9,18 @@ from typing import TYPE_CHECKING, Any, Concatenate
 from aiohttp import web
 from aiohttp.web_exceptions import HTTPUnauthorized
 
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.onboarding import (
+from inpui.components.http import KEY_HASS
+from inpui.components.onboarding import (
     BaseOnboardingView,
     NoAuthBaseOnboardingView,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import http_api as cloud_http
 from .const import DATA_CLOUD
 
 if TYPE_CHECKING:
-    from homeassistant.components.onboarding import OnboardingStoreData
+    from inpui.components.onboarding import OnboardingStoreData
 
 
 async def async_setup_views(hass: HomeAssistant, data: OnboardingStoreData) -> None:

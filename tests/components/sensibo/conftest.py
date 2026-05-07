@@ -10,9 +10,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pysensibo import SensiboClient, SensiboData
 import pytest
 
-from homeassistant.components.sensibo.const import DOMAIN, PLATFORMS
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.sensibo.const import DOMAIN, PLATFORMS
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG
 

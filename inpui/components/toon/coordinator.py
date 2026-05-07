@@ -8,17 +8,17 @@ import secrets
 from aiohttp import web
 from toonapi import Status, Toon, ToonError
 
-from homeassistant.components import cloud, webhook
-from homeassistant.components.webhook import (
+from inpui.components import cloud, webhook
+from inpui.components.webhook import (
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_CLOUDHOOK_URL, DEFAULT_SCAN_INTERVAL, DOMAIN
 
@@ -102,7 +102,7 @@ class ToonDataUpdateCoordinator(DataUpdateCoordinator[Status]):
             _LOGGER.error("Error during webhook registration - %s", err)
 
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, self.unregister_webhook
+            EVENT_INPUI_STOP, self.unregister_webhook
         )
 
     async def handle_webhook(

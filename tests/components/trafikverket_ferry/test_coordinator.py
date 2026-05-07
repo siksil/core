@@ -10,12 +10,12 @@ import pytest
 from pytrafikverket.exceptions import InvalidAuthentication, NoFerryFound
 from pytrafikverket.models import FerryStopModel
 
-from homeassistant.components.trafikverket_ferry.const import DOMAIN
-from homeassistant.components.trafikverket_ferry.coordinator import next_departuredate
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import STATE_UNAVAILABLE, WEEKDAYS
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.trafikverket_ferry.const import DOMAIN
+from inpui.components.trafikverket_ferry.coordinator import next_departuredate
+from inpui.config_entries import SOURCE_USER
+from inpui.const import STATE_UNAVAILABLE, WEEKDAYS
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import ENTRY_CONFIG
 

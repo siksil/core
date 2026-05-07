@@ -7,10 +7,10 @@ from typing import Any, cast
 from aiocomelit import ComelitSerialBridgeObject
 from aiocomelit.const import COVER, STATE_COVER, STATE_OFF, STATE_ON
 
-from homeassistant.components.cover import CoverDeviceClass, CoverEntity, CoverState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.cover import CoverDeviceClass, CoverEntity, CoverState
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import ObjectClassType
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge

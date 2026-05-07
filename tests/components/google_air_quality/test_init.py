@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock
 
 from google_air_quality_api.exceptions import GoogleAirQualityApiError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

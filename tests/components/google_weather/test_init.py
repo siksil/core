@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 from google_weather_api import GoogleWeatherApiError
 import pytest
 
-from homeassistant.components.google_weather.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.google_weather.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

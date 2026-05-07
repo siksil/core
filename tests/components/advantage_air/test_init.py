@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock
 
 from advantage_air import ApiError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import add_mock_config, patch_get
 

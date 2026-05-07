@@ -1,6 +1,6 @@
 """Fixtures for testing Sensirion BLE."""
 
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 NOT_SENSIRION_SERVICE_INFO = BluetoothServiceInfo(
     name="Not it",

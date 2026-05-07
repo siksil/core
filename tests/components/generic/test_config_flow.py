@@ -15,9 +15,9 @@ import httpx
 import pytest
 import respx
 
-from homeassistant.components.camera import async_get_image
-from homeassistant.components.generic.config_flow import slug
-from homeassistant.components.generic.const import (
+from inpui.components.camera import async_get_image
+from inpui.components.generic.config_flow import slug
+from inpui.components.generic.const import (
     CONF_CONFIRMED_OK,
     CONF_CONTENT_TYPE,
     CONF_FRAMERATE,
@@ -27,22 +27,22 @@ from homeassistant.components.generic.const import (
     DOMAIN,
     SECTION_ADVANCED,
 )
-from homeassistant.components.stream import (
+from inpui.components.stream import (
     CONF_RTSP_TRANSPORT,
     CONF_USE_WALLCLOCK_AS_TIMESTAMPS,
 )
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
     HTTP_BASIC_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

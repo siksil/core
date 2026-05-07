@@ -16,10 +16,10 @@ from soco.core import (
 from soco.data_structures import DidlAudioBroadcast, DidlPlaylistContainer
 from soco.music_library import MusicLibrary
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_validation import time_period_str
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.config_validation import time_period_str
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.util import dt as dt_util
 
 from .const import (
     SONOS_MEDIA_UPDATED,

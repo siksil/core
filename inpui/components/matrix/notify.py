@@ -6,16 +6,16 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     ATTR_TARGET,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import RoomID
 from .const import DOMAIN, SERVICE_SEND_MESSAGE

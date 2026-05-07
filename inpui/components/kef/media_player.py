@@ -13,19 +13,19 @@ from aiokef.aiokef import DSP_OPTION_MAPPING
 from getmac import get_mac_address
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     PLATFORM_SCHEMA as MEDIA_PLAYER_PLATFORM_SCHEMA,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

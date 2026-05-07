@@ -3,15 +3,15 @@
 import pytest
 from xknx.exceptions.exception import InvalidSecureConfiguration
 
-from homeassistant.components.knx import repairs
-from homeassistant.components.knx.const import (
+from inpui.components.knx import repairs
+from inpui.components.knx.const import (
     CONF_KNX_KNXKEY_PASSWORD,
     DOMAIN,
     REPAIR_ISSUE_DATA_SECURE_GROUP_KEY,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
 
 from .conftest import KNXTestKit
 from .test_config_flow import FIXTURE_UPLOAD_UUID, patch_file_upload

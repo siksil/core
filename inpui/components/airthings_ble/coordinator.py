@@ -9,12 +9,12 @@ from airthings_ble import AirthingsBluetoothDeviceData, AirthingsDevice
 from bleak.backends.device import BLEDevice
 from bleak_retry_connector import close_stale_connections_by_address
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import (
     DEFAULT_SCAN_INTERVAL,

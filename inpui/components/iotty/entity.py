@@ -4,8 +4,8 @@ import logging
 
 from iottycloud.lightswitch import Device
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .api import IottyProxy
 from .const import DOMAIN

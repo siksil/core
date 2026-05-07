@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.teslemetry.const import DOMAIN
-from homeassistant.components.teslemetry.services import (
+from inpui.components.teslemetry.const import DOMAIN
+from inpui.components.teslemetry.services import (
     ATTR_DAYS_OF_WEEK,
     ATTR_DEPARTURE_TIME,
     ATTR_ENABLE,
@@ -37,10 +37,10 @@ from homeassistant.components.teslemetry.services import (
     SERVICE_TIME_OF_USE,
     SERVICE_VALET_MODE,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_DEVICE_ID, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import setup_platform
 from .const import COMMAND_ERROR, COMMAND_OK

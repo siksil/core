@@ -9,12 +9,12 @@ from airpatrol.api import AirPatrolAPI
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.airpatrol.climate import (
+from inpui.components.airpatrol.climate import (
     HA_TO_AP_FAN_MODES,
     HA_TO_AP_HVAC_MODES,
     HA_TO_AP_SWING_MODES,
 )
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_SWING_MODE,
@@ -29,15 +29,15 @@ from homeassistant.components.climate import (
     SWING_ON,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

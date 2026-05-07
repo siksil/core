@@ -5,9 +5,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.hikvision import PLATFORMS
-from homeassistant.components.hikvision.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.hikvision import PLATFORMS
+from inpui.components.hikvision.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,

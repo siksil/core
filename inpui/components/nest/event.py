@@ -7,13 +7,13 @@ from google_nest_sdm.device import Device
 from google_nest_sdm.event import EventMessage, EventType
 from google_nest_sdm.traits import TraitType
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .device_info import NestDeviceInfo
 from .events import (

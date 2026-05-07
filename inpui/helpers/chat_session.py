@@ -9,8 +9,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 import logging
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import (
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     HassJob,
@@ -18,9 +18,9 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.ulid import ulid_now, ulid_to_bytes
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
+from inpui.util.ulid import ulid_now, ulid_to_bytes
 
 from .event import async_call_later
 
@@ -69,7 +69,7 @@ class SessionCleanup:
     def __init__(self, hass: HomeAssistant) -> None:
         """Initialize the session cleanup."""
         self.hass = hass
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, self._on_hass_stop)
         self.cleanup_job = HassJob(
             self._cleanup, "chat_session_cleanup", job_type=HassJobType.Callback
         )

@@ -10,17 +10,17 @@ from pylitterbot import LitterRobot4
 from pylitterbot.exceptions import LitterRobotException, LitterRobotLoginException
 import pytest
 
-from homeassistant.components.litterrobot.coordinator import UPDATE_INTERVAL
-from homeassistant.components.vacuum import (
+from inpui.components.litterrobot.coordinator import UPDATE_INTERVAL
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_START,
     VacuumActivity,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import ACCOUNT_USER_ID, CONFIG, DOMAIN, VACUUM_ENTITY_ID
 from .conftest import ROBOT_4_DATA, setup_integration

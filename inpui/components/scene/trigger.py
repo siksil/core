@@ -1,9 +1,9 @@
 """Provides triggers for scenes."""
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     ENTITY_STATE_TRIGGER_SCHEMA,
     EntityTriggerBase,
     Trigger,

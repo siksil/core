@@ -10,18 +10,18 @@ from zigpy.zcl import Cluster
 from zigpy.zcl.clusters import security
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
 
 from .common import find_entity_id
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

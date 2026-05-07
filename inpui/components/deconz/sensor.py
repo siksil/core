@@ -27,14 +27,14 @@ from pydeconz.models.sensor.switch import Switch
 from pydeconz.models.sensor.temperature import Temperature
 from pydeconz.models.sensor.time import Time
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     ATTR_VOLTAGE,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
@@ -49,10 +49,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from . import DeconzConfigEntry
 from .const import ATTR_DARK, ATTR_ON

@@ -3,9 +3,9 @@
 from pykmtronic.auth import Auth
 from pykmtronic.hub import KMTronicHubAPI
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .coordinator import KMTronicConfigEntry, KMtronicCoordinator
 

@@ -7,8 +7,8 @@ from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 from yalexs.pubnub_async import AugustPubNub
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
@@ -16,9 +16,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from .mocks import (
     _create_august_with_devices,

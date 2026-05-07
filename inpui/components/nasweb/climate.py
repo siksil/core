@@ -8,19 +8,19 @@ from typing import Any
 from webio_api import Thermostat as NASwebThermostat
 from webio_api.const import KEY_THERMOSTAT
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
     UnitOfTemperature,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.helpers.update_coordinator import (
     BaseCoordinatorEntity,
     BaseDataUpdateCoordinatorProtocol,
 )

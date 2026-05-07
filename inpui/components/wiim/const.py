@@ -3,9 +3,9 @@
 import logging
 from typing import TYPE_CHECKING, Final
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from wiim import WiimDevice

@@ -7,11 +7,11 @@ import logging
 from zoneminder.monitor import Monitor
 from zoneminder.zm import ZoneMinder
 
-from homeassistant.components.mjpeg import MjpegCamera, filter_urllib3_logging
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.mjpeg import MjpegCamera, filter_urllib3_logging
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN
 

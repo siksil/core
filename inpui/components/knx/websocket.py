@@ -13,14 +13,14 @@ import voluptuous as vol
 from xknx.telegram import Telegram
 from xknxproject.exceptions import XknxProjectException
 
-from homeassistant.components import panel_custom, websocket_api
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.const import CONF_ENTITY_ID, CONF_PLATFORM, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.util.ulid import ulid_now
+from inpui.components import panel_custom, websocket_api
+from inpui.components.http import StaticPathConfig
+from inpui.const import CONF_ENTITY_ID, CONF_PLATFORM, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.typing import UNDEFINED
+from inpui.util.ulid import ulid_now
 
 from .const import DOMAIN, KNX_MODULE_KEY, SUPPORTED_PLATFORMS_UI
 from .dpt import get_supported_dpts

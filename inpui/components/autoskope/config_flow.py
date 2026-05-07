@@ -8,11 +8,11 @@ from autoskope_client.api import AutoskopeApi
 from autoskope_client.models import CannotConnect, InvalidAuth
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.data_entry_flow import section
-import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.data_entry_flow import section
+import inpui.helpers.config_validation as cv
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,

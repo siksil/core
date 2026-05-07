@@ -7,10 +7,10 @@ from multidict import CIMultiDict, CIMultiDictProxy
 import pytest
 from yarl import URL
 
-from homeassistant.components import cloud
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers.network import (
+from inpui.components import cloud
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers.network import (
     NoURLAvailableError,
     _get_cloud_url,
     _get_external_url,

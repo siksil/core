@@ -4,14 +4,14 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.forecast_solar.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.forecast_solar.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

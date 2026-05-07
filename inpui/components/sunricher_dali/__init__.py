@@ -9,7 +9,7 @@ import logging
 from PySrDaliGateway import DaliGateway, Device
 from PySrDaliGateway.exceptions import DaliGatewayError
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -17,10 +17,10 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN, MANUFACTURER
 from .types import DaliCenterConfigEntry, DaliCenterData

@@ -8,9 +8,9 @@ from fjaraskupan import (
 )
 import pytest
 
-from homeassistant.components.fjaraskupan.const import DOMAIN
-from homeassistant.components.fjaraskupan.coordinator import exception_converter
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.fjaraskupan.const import DOMAIN
+from inpui.components.fjaraskupan.coordinator import exception_converter
+from inpui.exceptions import HomeAssistantError
 
 
 @pytest.mark.parametrize(

@@ -7,18 +7,18 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigValidationError, HomeAssistantError
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.reload import (
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigValidationError, HomeAssistantError
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.reload import (
     async_get_platform_without_config_entry,
     async_integration_yaml_config,
     async_reload_integration_platforms,
     async_setup_reload_service,
 )
-from homeassistant.loader import async_get_integration
+from inpui.loader import async_get_integration
 
 from tests.common import (
     MockModule,

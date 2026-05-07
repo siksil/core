@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.airnow.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.components.airnow.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from tests.common import MockConfigEntry, load_json_array_fixture
 

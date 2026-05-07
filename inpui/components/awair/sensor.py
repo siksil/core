@@ -8,14 +8,14 @@ from typing import Any, cast
 from python_awair.air_data import AirData
 from python_awair.devices import AwairBaseDevice, AwairLocalDevice
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_SW_VERSION,
     CONCENTRATION_GRAMS_PER_CUBIC_METER,
@@ -27,11 +27,11 @@ from homeassistant.const import (
     UnitOfSoundPressure,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     API_ABS_HUMID,

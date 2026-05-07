@@ -11,12 +11,12 @@ from functools import lru_cache
 import logging
 from typing import Any
 
-from homeassistant.const import EVENT_LOGGING_CHANGED
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import IntegrationNotFound, async_get_integration
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import EVENT_LOGGING_CHANGED
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
+from inpui.loader import IntegrationNotFound, async_get_integration
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     DOMAIN,

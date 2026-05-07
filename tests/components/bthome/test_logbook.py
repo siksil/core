@@ -1,12 +1,12 @@
 """The tests for bthome logbook."""
 
-from homeassistant.components.bthome.const import (
+from inpui.components.bthome.const import (
     BTHOME_BLE_EVENT,
     DOMAIN,
     BTHomeBleEvent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.logbook.common import MockRow, mock_humanify

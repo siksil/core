@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, Mock, create_autospec, patch
 import pytest
 import ring_doorbell
 
-from homeassistant.components.ring import DOMAIN
-from homeassistant.components.ring.const import CONF_CONFIG_ENTRY_MINOR_VERSION
-from homeassistant.const import CONF_DEVICE_ID, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.ring import DOMAIN
+from inpui.components.ring.const import CONF_CONFIG_ENTRY_MINOR_VERSION
+from inpui.const import CONF_DEVICE_ID, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .device_mocks import get_devices_data, get_mock_devices
 

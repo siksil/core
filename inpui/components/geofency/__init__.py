@@ -5,9 +5,9 @@ from http import HTTPStatus
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     ATTR_NAME,
@@ -15,12 +15,12 @@ from homeassistant.const import (
     STATE_NOT_HOME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow, config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import slugify
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow, config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
+from inpui.util import slugify
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 

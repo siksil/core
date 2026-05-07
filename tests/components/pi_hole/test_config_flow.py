@@ -1,11 +1,11 @@
 """Test pi_hole config flow."""
 
-from homeassistant.components import pi_hole
-from homeassistant.components.pi_hole.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components import pi_hole
+from inpui.components.pi_hole.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     CONFIG_DATA_DEFAULTS,

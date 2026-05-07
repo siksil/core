@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock
 import requests
 from requests_mock import Mocker
 
-from homeassistant.components.mjpeg.const import (
+from inpui.components.mjpeg.const import (
     CONF_MJPEG_URL,
     CONF_STILL_IMAGE_URL,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_NAME,
     CONF_PASSWORD,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     HTTP_BASIC_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

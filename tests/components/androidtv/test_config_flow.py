@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.androidtv.config_flow import (
+from inpui.components.androidtv.config_flow import (
     APPS_NEW_ID,
     CONF_APP_DELETE,
     CONF_APP_ID,
@@ -15,7 +15,7 @@ from homeassistant.components.androidtv.config_flow import (
     CONF_RULE_VALUES,
     RULES_NEW_ID,
 )
-from homeassistant.components.androidtv.const import (
+from inpui.components.androidtv.const import (
     CONF_ADB_SERVER_IP,
     CONF_ADB_SERVER_PORT,
     CONF_ADBKEY,
@@ -33,10 +33,10 @@ from homeassistant.components.androidtv.const import (
     PROP_ETHMAC,
     PROP_WIFIMAC,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_DEVICE_CLASS, CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .patchers import PATCH_ACCESS, PATCH_ISFILE, PATCH_SETUP_ENTRY
 

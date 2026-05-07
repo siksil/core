@@ -19,7 +19,7 @@ from aiohomekit.model.services import Service, ServicesTypes
 from aiohomekit.utils import clamp_enum_to_char
 from propcache.api import cached_property
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
@@ -38,11 +38,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_TEMPERATURE, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

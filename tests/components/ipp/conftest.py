@@ -7,15 +7,15 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyipp import Printer
 import pytest
 
-from homeassistant.components.ipp.const import CONF_BASE_PATH, DOMAIN
-from homeassistant.const import (
+from inpui.components.ipp.const import CONF_BASE_PATH, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,
     CONF_UUID,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 

@@ -16,16 +16,16 @@ from pythonxbox.api.provider.smartglass.models import (
     VolumeDirection,
 )
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .browse_media import build_item_response
 from .const import DOMAIN

@@ -8,9 +8,9 @@ from typing import Any
 from pyhap.const import CATEGORY_SENSOR
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.core import CALLBACK_TYPE, Context, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.trigger import async_initialize_triggers
+from inpui.core import CALLBACK_TYPE, Context, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.trigger import async_initialize_triggers
 
 from .accessories import TYPES, HomeAccessory
 from .aidmanager import get_system_unique_id

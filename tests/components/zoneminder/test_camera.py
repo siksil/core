@@ -7,10 +7,10 @@ from unittest.mock import MagicMock, PropertyMock, patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.camera import CameraState
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.camera import CameraState
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import create_mock_monitor, create_mock_zm_client
 

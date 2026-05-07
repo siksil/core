@@ -1,6 +1,6 @@
 """The scene tests for the nexia platform."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

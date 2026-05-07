@@ -2,8 +2,8 @@
 
 import asyncio
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:

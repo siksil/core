@@ -4,13 +4,13 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.duckdns import DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.duckdns import DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .conftest import NEW_TOKEN, TEST_SUBDOMAIN, TEST_TOKEN
 

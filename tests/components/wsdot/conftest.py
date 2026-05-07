@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from wsdot import TravelTime, WsdotTravelError
 
-from homeassistant.components.wsdot.const import DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_API_KEY, CONF_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.wsdot.const import DOMAIN
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_API_KEY, CONF_ID, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

@@ -6,9 +6,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import recorder as recorder_helper
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import recorder as recorder_helper
 
 from . import get_default_url
 from .util import get_instance

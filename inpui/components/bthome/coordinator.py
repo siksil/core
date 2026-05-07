@@ -5,15 +5,15 @@ from logging import Logger
 
 from bthome_ble import BTHomeBluetoothDeviceData, SensorUpdate
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothProcessorCoordinator,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CONF_SLEEPY_DEVICE
 from .types import BTHomeConfigEntry

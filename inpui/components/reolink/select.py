@@ -23,10 +23,10 @@ from reolink_aio.api import (
     TrackMethodEnum,
 )
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory, UnitOfDataRate, UnitOfFrequency
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory, UnitOfDataRate, UnitOfFrequency
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import (
     ReolinkChannelCoordinatorEntity,

@@ -4,22 +4,22 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.icon import icon_for_battery_level
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.icon import icon_for_battery_level
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import devices
 from .const import (

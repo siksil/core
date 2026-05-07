@@ -8,9 +8,9 @@ import uuid
 from brottsplatskartan import AREAS
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
-from homeassistant.helpers import selector
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
+from inpui.helpers import selector
 
 from .const import CONF_APP_ID, CONF_AREA, DEFAULT_NAME, DOMAIN
 

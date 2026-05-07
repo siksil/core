@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.recorder import Recorder
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 async def test_notification_services(

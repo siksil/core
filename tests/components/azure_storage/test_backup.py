@@ -10,16 +10,16 @@ from azure.core.exceptions import AzureError, HttpResponseError, ServiceRequestE
 from azure.storage.blob import BlobProperties
 import pytest
 
-from homeassistant.components.azure_storage.backup import (
+from inpui.components.azure_storage.backup import (
     async_register_backup_agents_listener,
 )
-from homeassistant.components.azure_storage.const import (
+from inpui.components.azure_storage.const import (
     DATA_BACKUP_AGENT_LISTENERS,
     DOMAIN,
 )
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .const import BACKUP_METADATA, TEST_BACKUP

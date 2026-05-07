@@ -8,17 +8,17 @@ from pypglab.mqtt import (
     Subscribe_CallBack as PyPGLabSubscribeCallBack,
 )
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import (
+from inpui.components import mqtt
+from inpui.components.mqtt import (
     ReceiveMessage,
     async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN, LOGGER
 from .discovery import PGLabDiscovery

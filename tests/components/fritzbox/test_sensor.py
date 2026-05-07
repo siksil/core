@@ -7,14 +7,14 @@ import pytest
 from requests.exceptions import HTTPError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import PRESET_COMFORT, PRESET_ECO
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICES, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.climate import PRESET_COMFORT, PRESET_ECO
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICES, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import (
     FritzDeviceBinarySensorMock,

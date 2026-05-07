@@ -1,7 +1,7 @@
 """The Backup integration."""
 
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers.hassio import is_hassio
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers.hassio import is_hassio
 
 from .const import DATA_MANAGER, DOMAIN
 

@@ -9,18 +9,18 @@ from typing import Any
 from mysensors import BaseAsyncGateway, Sensor
 from mysensors.sensor import ChildSensor
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     CONF_DEVICE,
     STATE_OFF,
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .const import (
     CHILD_CALLBACK,

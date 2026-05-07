@@ -10,13 +10,13 @@ import aiohttp
 from loqedAPI import cloud_loqed, loqed
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN, CONF_NAME, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import webhook
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN, CONF_NAME, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN
 

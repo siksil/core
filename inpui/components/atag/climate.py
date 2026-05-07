@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_AWAY,
     PRESET_BOOST,
     ClimateEntity,
@@ -12,10 +12,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.enum import try_parse_enum
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.enum import try_parse_enum
 
 from .coordinator import AtagConfigEntry, AtagDataUpdateCoordinator
 from .entity import AtagEntity

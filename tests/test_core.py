@@ -21,15 +21,15 @@ from pytest_unordered import unordered
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     EVENT_CALL_SERVICE,
     EVENT_CORE_CONFIG_UPDATE,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     EVENT_SERVICE_REGISTERED,
     EVENT_SERVICE_REMOVED,
     EVENT_STATE_CHANGED,
@@ -37,7 +37,7 @@ from homeassistant.const import (
     MATCH_ALL,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     CoreState,
     HassJob,
     HomeAssistant,
@@ -49,7 +49,7 @@ from homeassistant.core import (
     callback,
     get_release_channel,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     HomeAssistantError,
     InvalidEntityFormatError,
     InvalidStateError,
@@ -57,10 +57,10 @@ from homeassistant.exceptions import (
     ServiceNotFound,
     ServiceValidationError,
 )
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.helpers.json import json_dumps
+from inpui.util import dt as dt_util
+from inpui.util.async_ import create_eager_task
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from .common import async_capture_events, async_mock_service
 
@@ -631,9 +631,9 @@ async def test_async_add_executor_job(hass: HomeAssistant) -> None:
 
 async def test_stage_shutdown(hass: HomeAssistant) -> None:
     """Simulate a shutdown, test calling stuff."""
-    test_stop = async_capture_events(hass, EVENT_HOMEASSISTANT_STOP)
-    test_final_write = async_capture_events(hass, EVENT_HOMEASSISTANT_FINAL_WRITE)
-    test_close = async_capture_events(hass, EVENT_HOMEASSISTANT_CLOSE)
+    test_stop = async_capture_events(hass, EVENT_INPUI_STOP)
+    test_final_write = async_capture_events(hass, EVENT_INPUI_FINAL_WRITE)
+    test_close = async_capture_events(hass, EVENT_INPUI_CLOSE)
     test_all = async_capture_events(hass, MATCH_ALL)
 
     await hass.async_stop()
@@ -674,9 +674,9 @@ async def test_stage_shutdown_generic_error(
 
 async def test_stage_shutdown_with_exit_code(hass: HomeAssistant) -> None:
     """Simulate a shutdown, test calling stuff with exit code checks."""
-    test_stop = async_capture_events(hass, EVENT_HOMEASSISTANT_STOP)
-    test_final_write = async_capture_events(hass, EVENT_HOMEASSISTANT_FINAL_WRITE)
-    test_close = async_capture_events(hass, EVENT_HOMEASSISTANT_CLOSE)
+    test_stop = async_capture_events(hass, EVENT_INPUI_STOP)
+    test_final_write = async_capture_events(hass, EVENT_INPUI_FINAL_WRITE)
+    test_close = async_capture_events(hass, EVENT_INPUI_CLOSE)
     test_all = async_capture_events(hass, MATCH_ALL)
 
     event_call_counters = [0, 0, 0]
@@ -694,9 +694,9 @@ async def test_stage_shutdown_with_exit_code(hass: HomeAssistant) -> None:
         if hass.exit_code == expected_exit_code:
             event_call_counters[2] += 1
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_on_stop)
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_FINAL_WRITE, async_on_final_write)
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, async_on_close)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, async_on_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_FINAL_WRITE, async_on_final_write)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, async_on_close)
 
     await hass.async_stop(expected_exit_code)
 
@@ -2176,9 +2176,9 @@ async def test_start_events(hass: HomeAssistant) -> None:
 
     assert all_events == [
         EVENT_CORE_CONFIG_UPDATE,
-        EVENT_HOMEASSISTANT_START,
+        EVENT_INPUI_START,
         EVENT_CORE_CONFIG_UPDATE,
-        EVENT_HOMEASSISTANT_STARTED,
+        EVENT_INPUI_STARTED,
     ]
     assert core_states == [ha.CoreState.starting, ha.CoreState.running]
 
@@ -2705,8 +2705,8 @@ async def test_state_firing_event_matches_context_id_ulid_time(
     hass: HomeAssistant,
 ) -> None:
     """Test timed_fired and the ulid have the same time."""
-    events = async_capture_events(hass, EVENT_HOMEASSISTANT_STARTED)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    events = async_capture_events(hass, EVENT_INPUI_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     event = events[0]
@@ -3236,7 +3236,7 @@ async def test_async_listen_with_run_immediately_deprecated(
         pass
 
     func = getattr(hass.bus, method)
-    func(EVENT_HOMEASSISTANT_START, _test, run_immediately=run_immediately)
+    func(EVENT_INPUI_START, _test, run_immediately=run_immediately)
     assert (
         f"Detected code that calls `{method}` with run_immediately. "
         "This will stop working in Home Assistant 2025.5"

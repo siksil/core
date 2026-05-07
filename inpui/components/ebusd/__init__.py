@@ -6,17 +6,17 @@ from typing import Any
 import ebusdpy
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MONITORED_CONDITIONS,
     CONF_NAME,
     CONF_PORT,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, EBUSD_DATA, SENSOR_TYPES
 

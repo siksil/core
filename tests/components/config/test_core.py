@@ -5,13 +5,13 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components import config
-from homeassistant.components.config import core
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, location as location_util
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components import config
+from inpui.components.config import core
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, location as location_util
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import MockUser
 from tests.typing import (

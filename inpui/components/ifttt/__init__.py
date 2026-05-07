@@ -11,12 +11,12 @@ import pyfttt
 import requests
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_entry_flow, config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_entry_flow, config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 

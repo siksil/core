@@ -8,10 +8,10 @@ from aioruckus import AjaxSession, SystemStat
 from aioruckus.exceptions import AuthenticationError, SchemaError
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import (
     API_MESH_NAME,

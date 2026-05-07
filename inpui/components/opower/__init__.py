@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from opower import select_utility
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from .const import CONF_UTILITY, DOMAIN
 from .coordinator import OpowerConfigEntry, OpowerCoordinator

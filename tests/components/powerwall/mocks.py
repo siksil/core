@@ -16,8 +16,8 @@ from tesla_powerwall import (
     SiteMasterResponse,
 )
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonValueType
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonValueType
 
 from tests.common import load_fixture
 

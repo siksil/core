@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components import pi_hole
-from homeassistant.components.pi_hole.const import CONF_STATISTICS_ONLY
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components import pi_hole
+from inpui.components.pi_hole.const import CONF_STATISTICS_ONLY
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import CONFIG_DATA_DEFAULTS, ZERO_DATA_V6, _create_mocked_hole, _patch_init_hole
 

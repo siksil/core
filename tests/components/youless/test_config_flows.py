@@ -3,10 +3,10 @@
 from unittest.mock import MagicMock, patch
 from urllib.error import URLError
 
-from homeassistant.components.youless import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.youless import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 def _get_mock_youless_api(initialize=None):

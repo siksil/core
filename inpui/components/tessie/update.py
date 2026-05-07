@@ -6,9 +6,9 @@ from typing import Any
 
 from tessie_api import schedule_software_update
 
-from homeassistant.components.update import UpdateEntity, UpdateEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateEntity, UpdateEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TessieConfigEntry
 from .const import TessieUpdateStatus

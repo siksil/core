@@ -18,13 +18,13 @@ from freebox_api.api.home import Home
 from freebox_api.api.wifi import Wifi
 from freebox_api.exceptions import HttpRequestError, NotOpenError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.storage import Store
-from homeassistant.util import slugify
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.storage import Store
+from inpui.util import slugify
 
 from .const import (
     API_VERSION,

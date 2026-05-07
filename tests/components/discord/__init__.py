@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import nextcord
 
-from homeassistant.components.discord.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.discord.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

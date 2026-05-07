@@ -7,12 +7,12 @@ from typing import Any
 
 import RFXtrx as rfxtrxmod
 
-from homeassistant.components.siren import ATTR_TONE, SirenEntity, SirenEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.components.siren import ATTR_TONE, SirenEntity, SirenEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from . import DEFAULT_OFF_DELAY, DeviceTuple, async_setup_platform_entry
 from .const import CONF_OFF_DELAY

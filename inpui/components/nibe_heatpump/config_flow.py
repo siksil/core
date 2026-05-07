@@ -18,10 +18,10 @@ from nibe.heatpump import HeatPump, Model
 import voluptuous as vol
 import yarl
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import selector
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.helpers import selector
 
 from .const import (
     CONF_CONNECTION_TYPE,

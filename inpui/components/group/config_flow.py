@@ -8,12 +8,12 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.const import CONF_ENTITIES, CONF_TYPE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import websocket_api
+from inpui.const import CONF_ENTITIES, CONF_TYPE
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,

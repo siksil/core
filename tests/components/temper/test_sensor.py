@@ -3,9 +3,9 @@
 from datetime import timedelta
 from unittest.mock import Mock, patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

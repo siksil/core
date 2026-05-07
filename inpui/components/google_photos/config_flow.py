@@ -7,9 +7,9 @@ from typing import Any
 from google_photos_library_api.api import GooglePhotosLibraryApi
 from google_photos_library_api.exceptions import GooglePhotosApiError
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from . import api
 from .const import DOMAIN, OAUTH2_SCOPES

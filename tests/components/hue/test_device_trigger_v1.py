@@ -4,13 +4,13 @@ from unittest.mock import Mock
 
 from pytest_unordered import unordered
 
-from homeassistant.components import automation, hue
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.hue.v1 import device_trigger
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import automation, hue
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.hue.v1 import device_trigger
+from inpui.const import Platform
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import setup_platform
 from .test_sensor_v1 import HUE_DIMMER_REMOTE_1, HUE_TAP_REMOTE_1

@@ -1,7 +1,7 @@
 """Define tests for the The Things Network sensor."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import init_integration
 from .conftest import (

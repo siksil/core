@@ -8,7 +8,7 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -36,8 +36,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.smartthings.const import MAIN
-from homeassistant.const import (
+from inpui.components.smartthings.const import MAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     SERVICE_TURN_OFF,
@@ -46,8 +46,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     set_attribute_value,

@@ -6,10 +6,10 @@ from pyecotrend_ista import KeycloakError, LoginError, ParserError, ServerError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ista_ecotrend.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.ista_ecotrend.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

@@ -6,10 +6,10 @@ from aioruuvigateway.excs import CannotConnect, InvalidAuth
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ruuvi_gateway.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.ruuvi_gateway.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .consts import (
     BASE_DATA,

@@ -7,23 +7,23 @@ from typing import TYPE_CHECKING
 
 from google_air_quality_api.model import AirQualityCurrentConditionsData, Index
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import (
+from inpui.config_entries import ConfigSubentry
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import GoogleAirQualityConfigEntry
 from .const import DOMAIN

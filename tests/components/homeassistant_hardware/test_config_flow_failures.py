@@ -5,19 +5,19 @@ from unittest.mock import AsyncMock, patch
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.components.hassio import AddonError
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.hassio import AddonError
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
     OwningIntegration,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .test_config_flow import (
     TEST_DEVICE,

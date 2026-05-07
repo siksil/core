@@ -14,20 +14,20 @@ from sharkiq import AylaApi, SharkIqAuthError, SharkIqNotAuthedError, SharkIqVac
 from voluptuous.error import MultipleInvalid
 
 from homeassistant import exceptions
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.sharkiq.const import ATTR_ROOMS, DOMAIN
-from homeassistant.components.sharkiq.services import SERVICE_CLEAN_ROOM
-from homeassistant.components.sharkiq.vacuum import (
+from inpui.components.sharkiq.const import ATTR_ROOMS, DOMAIN
+from inpui.components.sharkiq.services import SERVICE_CLEAN_ROOM
+from inpui.components.sharkiq.vacuum import (
     ATTR_ERROR_CODE,
     ATTR_ERROR_MSG,
     ATTR_LOW_LIGHT,
     ATTR_RECHARGE_RESUME,
     FAN_SPEEDS_MAP,
 )
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_BATTERY_LEVEL,
     ATTR_FAN_SPEED,
     ATTR_FAN_SPEED_LIST,
@@ -40,14 +40,14 @@ from homeassistant.components.vacuum import (
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .const import (
     CONFIG,

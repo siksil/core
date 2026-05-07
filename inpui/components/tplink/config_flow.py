@@ -18,8 +18,8 @@ from kasa import (
 )
 import voluptuous as vol
 
-from homeassistant.components import ffmpeg, stream
-from homeassistant.config_entries import (
+from inpui.components import ffmpeg, stream
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigEntry,
@@ -27,7 +27,7 @@ from homeassistant.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ALIAS,
     CONF_DEVICE,
     CONF_HOST,
@@ -38,10 +38,10 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType
 
 from . import (
     async_discover_devices,

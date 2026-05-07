@@ -6,16 +6,16 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     EntityCategory,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util, slugify
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util, slugify
 
 from . import NordPoolConfigEntry
 from .const import LOGGER

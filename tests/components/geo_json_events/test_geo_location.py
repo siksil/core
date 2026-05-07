@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from homeassistant.components.geo_json_events.const import (
+from inpui.components.geo_json_events.const import (
     ATTR_EXTERNAL_ID,
     DEFAULT_UPDATE_INTERVAL,
 )
-from homeassistant.components.geo_location import (
+from inpui.components.geo_location import (
     ATTR_SOURCE,
     DOMAIN as GEO_LOCATION_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     CONF_URL,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import _generate_mock_feed_entry
 from .conftest import URL

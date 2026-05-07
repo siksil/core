@@ -15,34 +15,34 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from sqlalchemy.schema import Index
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import (
+from inpui.components import recorder
+from inpui.components.recorder import (
     Recorder,
     core,
     db_schema,
     migration,
     statistics,
 )
-from homeassistant.components.recorder.db_schema import (
+from inpui.components.recorder.db_schema import (
     Events,
     EventTypes,
     MigrationChanges,
     States,
     StatesMeta,
 )
-from homeassistant.components.recorder.models import process_timestamp
-from homeassistant.components.recorder.queries import (
+from inpui.components.recorder.models import process_timestamp
+from inpui.components.recorder.queries import (
     get_migration_changes,
     select_event_type_ids,
 )
-from homeassistant.components.recorder.util import (
+from inpui.components.recorder.util import (
     execute_stmt_lambda_element,
     get_index_by_name,
     session_scope,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
-from homeassistant.util.ulid import bytes_to_ulid, ulid_at_time, ulid_to_bytes
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
+from inpui.util.ulid import bytes_to_ulid, ulid_at_time, ulid_to_bytes
 
 from .common import (
     async_attach_db_engine,

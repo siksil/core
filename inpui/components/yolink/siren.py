@@ -10,14 +10,14 @@ from yolink.client_request import ClientRequest
 from yolink.const import ATTR_DEVICE_SIREN
 from yolink.device import YoLinkDevice
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     SirenEntity,
     SirenEntityDescription,
     SirenEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import YoLinkCoordinator

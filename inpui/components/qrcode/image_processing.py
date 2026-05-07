@@ -7,11 +7,11 @@ import io
 from PIL import Image
 from pyzbar import pyzbar
 
-from homeassistant.components.image_processing import ImageProcessingEntity
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.image_processing import ImageProcessingEntity
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 
 def setup_platform(

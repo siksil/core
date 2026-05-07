@@ -6,13 +6,13 @@ from unittest.mock import patch
 
 from uiprotect.data import Camera
 
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.script import DOMAIN as SCRIPT_DOMAIN
-from homeassistant.components.unifiprotect.const import DOMAIN
-from homeassistant.const import SERVICE_RELOAD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.script import DOMAIN as SCRIPT_DOMAIN
+from inpui.components.unifiprotect.const import DOMAIN
+from inpui.const import SERVICE_RELOAD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .utils import MockUFPFixture, init_entry
 

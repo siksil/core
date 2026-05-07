@@ -7,12 +7,12 @@ from aiohttp import ClientConnectionError, ClientResponseError
 from aiohttp.client import RequestInfo
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tessie import PLATFORMS
-from homeassistant.components.tessie.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.tessie import PLATFORMS
+from inpui.components.tessie.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

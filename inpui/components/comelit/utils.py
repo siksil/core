@@ -8,11 +8,11 @@ from aiocomelit.api import ComelitSerialBridgeObject
 from aiocomelit.exceptions import CannotAuthenticate, CannotConnect, CannotRetrieveData
 from aiohttp import ClientSession, CookieJar
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     aiohttp_client,
     device_registry as dr,
     entity_registry as er,

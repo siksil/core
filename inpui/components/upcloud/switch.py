@@ -2,11 +2,11 @@
 
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import UpCloudConfigEntry
 from .entity import UpCloudServerEntity

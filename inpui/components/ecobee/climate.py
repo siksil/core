@@ -7,7 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
     FAN_AUTO,
@@ -21,7 +21,7 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     PRECISION_HALVES,
@@ -30,16 +30,16 @@ from homeassistant.const import (
     STATE_ON,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_platform,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_conversion import TemperatureConverter
 
 from . import EcobeeConfigEntry, EcobeeData
 from .const import (

@@ -8,15 +8,15 @@ from typing import Any
 from miio import Device as MiioDevice
 from miio.integrations.vacuum.roborock.vacuum import Consumable
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import CONF_MODEL, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.const import CONF_MODEL, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import MODEL_AIRFRESH_A1, MODEL_AIRFRESH_T2017, MODELS_VACUUM
 from .entity import XiaomiCoordinatedMiioEntity

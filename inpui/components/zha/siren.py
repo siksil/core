@@ -15,18 +15,18 @@ from zha.application.const import (
 )
 from zha.application.platforms.siren import SirenEntityFeature as ZHASirenEntityFeature
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     SirenEntity,
     SirenEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import ZHAEntity
 from .helpers import (

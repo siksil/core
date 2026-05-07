@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from lektricowifi import Device
 
-from homeassistant.const import CONF_TYPE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_TYPE, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import LektricoConfigEntry, LektricoDeviceDataUpdateCoordinator
 

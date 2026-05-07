@@ -28,15 +28,15 @@ from dsmr_parser.obis_references import (
 from dsmr_parser.objects import CosemObject, MBusObject, Telegram
 import pytest
 
-from homeassistant.components.dsmr.sensor import SENSORS, SENSORS_MBUS_DEVICE_TYPE
-from homeassistant.components.sensor import (
+from inpui.components.dsmr.sensor import SENSORS, SENSORS_MBUS_DEVICE_TYPE
+from inpui.components.sensor import (
     ATTR_OPTIONS,
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -45,8 +45,8 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, patch
 

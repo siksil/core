@@ -4,14 +4,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fronius.const import DOMAIN
-from homeassistant.components.fronius.coordinator import (
+from inpui.components.fronius.const import DOMAIN
+from inpui.components.fronius.coordinator import (
     FroniusInverterUpdateCoordinator,
     FroniusPowerFlowUpdateCoordinator,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import mock_responses, setup_fronius_integration
 

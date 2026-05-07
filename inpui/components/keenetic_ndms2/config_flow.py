@@ -8,27 +8,27 @@ from urllib.parse import urlparse
 from ndms2_client import Client, ConnectionException, InterfaceInfo, TelnetConnection
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SCAN_INTERVAL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_CONSIDER_HOME,

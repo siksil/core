@@ -8,10 +8,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import tibber
 
-from homeassistant.components.tibber.const import DOMAIN
-from homeassistant.components.tibber.services import PRICE_SERVICE_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.tibber.const import DOMAIN
+from inpui.components.tibber.services import PRICE_SERVICE_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 START_TIME = dt.datetime.fromtimestamp(1615766400).replace(tzinfo=dt.UTC)
 

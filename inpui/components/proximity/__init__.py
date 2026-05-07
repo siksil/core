@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.event import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.event import (
     async_track_entity_registry_updated_event,
     async_track_state_change_event,
 )

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import NiceGOConfigEntry, NiceGOUpdateCoordinator
 
@@ -23,7 +23,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: NiceGOConfigEntry) -> bo
 
     coordinator = NiceGOUpdateCoordinator(hass, entry)
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, coordinator.async_ha_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, coordinator.async_ha_stop)
     )
 
     await coordinator.async_config_entry_first_refresh()

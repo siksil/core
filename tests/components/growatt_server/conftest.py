@@ -4,7 +4,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.growatt_server.const import (
+from inpui.components.growatt_server.const import (
     AUTH_API_TOKEN,
     AUTH_PASSWORD,
     CONF_AUTH_TYPE,
@@ -13,8 +13,8 @@ from homeassistant.components.growatt_server.const import (
     DEFAULT_URL,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_TOKEN, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_TOKEN, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

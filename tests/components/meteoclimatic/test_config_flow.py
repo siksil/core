@@ -5,10 +5,10 @@ from unittest.mock import patch
 from meteoclimatic.exceptions import MeteoclimaticError, StationNotFound
 import pytest
 
-from homeassistant.components.meteoclimatic.const import CONF_STATION_CODE, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.meteoclimatic.const import CONF_STATION_CODE, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 TEST_STATION_CODE = "ESCAT4300000043206B"
 TEST_STATION_NAME = "Reus (Tarragona)"

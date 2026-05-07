@@ -13,8 +13,8 @@ from broadlink.exceptions import (
     NetworkTimeoutError,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_NAME,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     CONF_TYPE,
     Platform,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import DEFAULT_PORT, DOMAIN, DOMAINS_AND_TYPES
 from .updater import BroadlinkUpdateManager, get_update_manager

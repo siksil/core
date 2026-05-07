@@ -6,9 +6,9 @@ import asyncio
 
 from pyialarm import IAlarm
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import IAlarmConfigEntry, IAlarmDataUpdateCoordinator
 

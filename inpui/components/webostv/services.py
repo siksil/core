@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.const import ATTR_COMMAND
-from homeassistant.core import HomeAssistant, SupportsResponse, callback
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.typing import VolDictType
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.const import ATTR_COMMAND
+from inpui.core import HomeAssistant, SupportsResponse, callback
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.typing import VolDictType
 
 from .const import ATTR_PAYLOAD, ATTR_SOUND_OUTPUT, DOMAIN
 

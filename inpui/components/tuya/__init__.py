@@ -12,11 +12,11 @@ from tuya_sharing import (
     SharingTokenListener,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import (
     CONF_ENDPOINT,

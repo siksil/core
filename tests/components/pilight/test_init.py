@@ -8,10 +8,10 @@ from unittest.mock import patch
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components import pilight
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import pilight
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     assert_setup_component,

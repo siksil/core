@@ -13,19 +13,19 @@ from pynuki.bridge import InvalidCredentialsException
 from requests.exceptions import RequestException
 
 from homeassistant import exceptions
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import CONF_ENCRYPT_TOKEN, DEFAULT_TIMEOUT, DOMAIN
 from .coordinator import NukiCoordinator
@@ -221,7 +221,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             _LOGGER.error("Error communicating with bridge: %s", err)
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _stop_nuki)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _stop_nuki)
     )
 
     coordinator = NukiCoordinator(hass, entry, bridge, locks, openers)

@@ -9,8 +9,8 @@ from kasa import Module
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import stream
-from homeassistant.components.camera import (
+from inpui.components import stream
+from inpui.components.camera import (
     DOMAIN as CAMERA_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -20,11 +20,11 @@ from homeassistant.components.camera import (
     async_get_mjpeg_stream,
     get_camera_from_entity_id,
 )
-from homeassistant.components.tplink.camera import TPLinkCameraEntity
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.tplink.camera import TPLinkCameraEntity
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import Platform
+from inpui.core import HomeAssistant, HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import _mocked_device, setup_platform_for_device, snapshot_platform
 from .const import DEVICE_ID, IP_ADDRESS3, MAC_ADDRESS3, SMALLEST_VALID_JPEG_BYTES

@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.kraken.const import CONF_TRACKED_ASSET_PAIRS, DOMAIN
-from homeassistant.const import CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.kraken.const import CONF_TRACKED_ASSET_PAIRS, DOMAIN
+from inpui.const import CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     MISSING_PAIR_TRADEABLE_ASSET_PAIR_RESPONSE,

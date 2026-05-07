@@ -4,7 +4,7 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     ATTR_ATTRIBUTES,
     ATTR_BATTERY,
     ATTR_DEV_ID,
@@ -18,10 +18,10 @@ from homeassistant.components.device_tracker import (
     ScannerEntity,
     SourceType,
 )
-from homeassistant.const import ATTR_GPS_ACCURACY
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.typing import ConfigType, GPSType
-from homeassistant.loader import bind_hass
+from inpui.const import ATTR_GPS_ACCURACY
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.typing import ConfigType, GPSType
+from inpui.loader import bind_hass
 
 from tests.common import MockPlatform, mock_platform
 

@@ -8,16 +8,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 import tibber
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.tibber.const import AUTH_IMPLEMENTATION, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.recorder import Recorder
+from inpui.components.tibber.const import AUTH_IMPLEMENTATION, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import RecorderInstanceContextManager

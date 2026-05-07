@@ -6,17 +6,17 @@ from freezegun.api import FrozenDateTimeFactory
 from infrared_protocols import NECCommand
 import pytest
 
-from homeassistant.components.infrared import (
+from inpui.components.infrared import (
     DATA_COMPONENT,
     DOMAIN,
     async_get_emitters,
     async_send_command,
 )
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import MockInfraredEntity
 

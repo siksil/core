@@ -17,16 +17,16 @@ from pyopenweathermap import (
     WeatherReport,
 )
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_CONDITION_SUNNY,
     Forecast,
 )
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import sun
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import sun
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 if TYPE_CHECKING:
     from . import OpenweathermapConfigEntry

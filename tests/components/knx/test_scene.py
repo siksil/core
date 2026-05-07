@@ -1,15 +1,15 @@
 """Test KNX scene."""
 
-from homeassistant.components.knx.const import KNX_ADDRESS
-from homeassistant.components.knx.schema import SceneSchema
-from homeassistant.const import (
+from inpui.components.knx.const import KNX_ADDRESS
+from inpui.components.knx.schema import SceneSchema
+from inpui.const import (
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

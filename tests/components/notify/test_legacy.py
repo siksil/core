@@ -11,13 +11,13 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config as hass_config
-from homeassistant.components import notify
-from homeassistant.const import SERVICE_RELOAD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
+from inpui.components import notify
+from inpui.const import SERVICE_RELOAD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
 
 from tests.common import MockPlatform, mock_platform
 

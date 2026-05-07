@@ -6,11 +6,11 @@ from typing import Any
 
 from skyboxremote import VALID_KEYS, RemoteControl
 
-from homeassistant.components.remote import RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SkyRemoteConfigEntry
 from .const import DOMAIN

@@ -7,9 +7,9 @@ import uuid
 
 import pytest
 
-from homeassistant.components.lovelace import dashboard, resources
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.lovelace import dashboard, resources
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

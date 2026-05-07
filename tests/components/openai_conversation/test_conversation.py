@@ -15,9 +15,9 @@ from openai.types.responses.response import IncompleteDetails
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import conversation
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.openai_conversation.const import (
+from inpui.components import conversation
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.openai_conversation.const import (
     CONF_CODE_INTERPRETER,
     CONF_SERVICE_TIER,
     CONF_WEB_SEARCH,
@@ -29,11 +29,11 @@ from homeassistant.components.openai_conversation.const import (
     CONF_WEB_SEARCH_TIMEZONE,
     CONF_WEB_SEARCH_USER_LOCATION,
 )
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.helpers.llm import ToolInput
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import intent
+from inpui.helpers.llm import ToolInput
+from inpui.setup import async_setup_component
 
 from . import (
     create_code_interpreter_item,

@@ -17,8 +17,8 @@ from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import group
-from homeassistant.const import (
+from inpui.components import group
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_ON,
     STATE_UNAVAILABLE,
@@ -31,24 +31,24 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers import (
     device_registry as dr,
     entity,
     entity_registry as er,
     template,
     translation,
 )
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.template.render_info import (
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.helpers.json import json_dumps
+from inpui.helpers.template.render_info import (
     ALL_STATES_RATE_LIMIT,
     DOMAIN_STATES_RATE_LIMIT,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import UnitSystem
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import UnitSystem
 
 from .helpers import assert_result_info, render, render_to_info
 

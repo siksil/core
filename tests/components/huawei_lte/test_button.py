@@ -4,15 +4,15 @@ from unittest.mock import MagicMock, patch
 
 from huawei_lte_api.enums.device import ControlModeEnum
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.huawei_lte.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.huawei_lte.const import (
     BUTTON_KEY_CLEAR_TRAFFIC_STATISTICS,
     BUTTON_KEY_RESTART,
     DOMAIN,
     SERVICE_SUSPEND_INTEGRATION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, CONF_URL
+from inpui.core import HomeAssistant
 
 from . import magic_client
 

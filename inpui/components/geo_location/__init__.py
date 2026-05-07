@@ -8,14 +8,14 @@ from typing import Any, final
 
 from propcache.api import cached_property
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 

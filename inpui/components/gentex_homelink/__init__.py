@@ -5,10 +5,10 @@ from __future__ import annotations
 from aiohttp import ClientResponseError
 from homelink.mqtt_provider import MQTTProvider
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from . import oauth2
 from .const import DOMAIN
@@ -51,7 +51,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HomeLinkConfigEntry) -> 
 
     entry.async_on_unload(
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, coordinator.async_on_unload
+            EVENT_INPUI_STOP, coordinator.async_on_unload
         )
     )
 

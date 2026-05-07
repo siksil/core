@@ -11,12 +11,12 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import conversation, ollama
-from homeassistant.components.conversation import trace
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, CONF_LLM_HASS_API, MATCH_ALL
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components import conversation, ollama
+from inpui.components.conversation import trace
+from inpui.const import ATTR_SUPPORTED_FEATURES, CONF_LLM_HASS_API, MATCH_ALL
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     intent,

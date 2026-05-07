@@ -2,7 +2,7 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_unload_entry(

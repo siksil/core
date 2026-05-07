@@ -7,8 +7,8 @@ from typing import Any
 
 from roborock.devices.cache import Cache, CacheData
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 

@@ -9,8 +9,8 @@ from typing import Any
 from hass_splunk import hass_splunk
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PORT,
@@ -18,7 +18,7 @@ from homeassistant.const import (
     CONF_TOKEN,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN
 

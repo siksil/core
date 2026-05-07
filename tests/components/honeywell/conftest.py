@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, create_autospec, patch
 import aiosomecomfort
 import pytest
 
-from homeassistant.components.honeywell.const import (
+from inpui.components.honeywell.const import (
     CONF_COOL_AWAY_TEMPERATURE,
     CONF_HEAT_AWAY_TEMPERATURE,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry
 

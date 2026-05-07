@@ -6,14 +6,14 @@ from typing import Any
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.humidifier.condition import CONF_MODE
-from homeassistant.components.humidifier.const import (
+from inpui.components.humidifier.condition import CONF_MODE
+from inpui.components.humidifier.const import (
     ATTR_ACTION,
     ATTR_HUMIDITY,
     HumidifierAction,
     HumidifierEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_MODE,
     ATTR_SUPPORTED_FEATURES,
     CONF_ENTITY_ID,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import async_validate_condition_config
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import async_validate_condition_config
 
 from tests.components.common import (
     ConditionStateDescription,

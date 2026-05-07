@@ -10,14 +10,14 @@ import pytest
 import requests
 from requests_mock.mocker import Mocker
 
-from homeassistant.components.flume.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.flume.const import DOMAIN
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -9,12 +9,12 @@ from aiohttp import ClientSession
 from switchbee.api import CentralUnitPolling, CentralUnitWsRPC, is_wsrpc_api
 from switchbee.api.central_unit import SwitchBeeError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 from .coordinator import SwitchBeeCoordinator

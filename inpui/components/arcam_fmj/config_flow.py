@@ -9,10 +9,10 @@ from arcam.fmj.client import Client, ConnectionFailed
 from arcam.fmj.utils import get_uniqueid_from_host, get_uniqueid_from_udn
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
 
 from .const import DEFAULT_NAME, DEFAULT_PORT, DOMAIN
 

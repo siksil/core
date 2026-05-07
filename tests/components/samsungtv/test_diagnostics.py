@@ -7,8 +7,8 @@ from samsungtvws.exceptions import HttpApiError
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.samsungtv.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.samsungtv.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import setup_samsungtv_entry
 from .const import ENTRYDATA_ENCRYPTED_WEBSOCKET, ENTRYDATA_WEBSOCKET

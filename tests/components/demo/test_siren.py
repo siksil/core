@@ -4,13 +4,13 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_AVAILABLE_TONES,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     DOMAIN as SIREN_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_SIREN = "siren.siren"
 ENTITY_SIREN_WITH_ALL_FEATURES = "siren.siren_with_all_features"

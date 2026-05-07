@@ -5,15 +5,15 @@ from unittest.mock import Mock
 from google_photos_library_api.exceptions import GooglePhotosApiError
 import pytest
 
-from homeassistant.components.google_photos.const import DOMAIN, UPLOAD_SCOPE
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import (
+from inpui.components.google_photos.const import DOMAIN, UPLOAD_SCOPE
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import (
     URI_SCHEME,
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import CONFIG_ENTRY_ID
 

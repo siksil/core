@@ -9,14 +9,14 @@ from pysmlight import Sensors
 from pysmlight.const import Events as SmEvents
 from pysmlight.sse import MessageEvent
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import SCAN_INTERNET_INTERVAL
 from .coordinator import SmConfigEntry, SmDataUpdateCoordinator

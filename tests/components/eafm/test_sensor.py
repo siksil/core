@@ -8,11 +8,11 @@ from unittest.mock import AsyncMock
 import aiohttp
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

@@ -6,21 +6,21 @@ import logging
 import numato_gpio as gpio
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_BINARY_SENSORS,
     CONF_ID,
     CONF_NAME,
     CONF_SENSORS,
     CONF_SWITCHES,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     PERCENTAGE,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -160,9 +160,9 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     def prepare_gpio(event: Event) -> None:
         """Stuff to do when home assistant starts."""
         _LOGGER.debug("Setup cleanup at stop for Numato GPIO")
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, cleanup_gpio)
+        hass.bus.listen_once(EVENT_INPUI_STOP, cleanup_gpio)
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, prepare_gpio)
+    hass.bus.listen_once(EVENT_INPUI_START, prepare_gpio)
 
     load_platform(hass, Platform.BINARY_SENSOR, DOMAIN, {}, config)
     load_platform(hass, Platform.SENSOR, DOMAIN, {}, config)

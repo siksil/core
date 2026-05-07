@@ -18,11 +18,11 @@ from tplink_omada_client.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import (
     async_create_clientsession,
     async_get_clientsession,
 )

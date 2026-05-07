@@ -1,14 +1,14 @@
 """Intent tests for the fan platform."""
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     DOMAIN,
     SERVICE_TURN_ON,
     intent as fan_intent,
 )
-from homeassistant.const import STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.const import STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 from tests.common import async_mock_service
 

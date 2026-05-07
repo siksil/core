@@ -7,9 +7,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 

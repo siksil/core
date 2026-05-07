@@ -8,9 +8,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from tailscale.models import Devices
 
-from homeassistant.components.tailscale.const import CONF_TAILNET, DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.components.tailscale.const import CONF_TAILNET, DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

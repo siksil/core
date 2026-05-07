@@ -7,8 +7,8 @@ import aiounifi
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.unifi.config_flow import _async_discover_unifi
-from homeassistant.components.unifi.const import (
+from inpui.components.unifi.config_flow import _async_discover_unifi
+from inpui.components.unifi.const import (
     CONF_ALLOW_BANDWIDTH_SENSORS,
     CONF_ALLOW_UPTIME_SENSORS,
     CONF_BLOCK_CLIENT,
@@ -23,16 +23,16 @@ from homeassistant.components.unifi.const import (
     CONF_TRACK_WIRED_CLIENTS,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .conftest import ConfigEntryFactoryType
 

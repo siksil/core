@@ -1,6 +1,6 @@
 """Constants for the Meater Temperature Probe integration."""
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN = "meater"
 

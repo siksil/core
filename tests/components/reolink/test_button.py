@@ -5,13 +5,13 @@ from unittest.mock import MagicMock, patch
 import pytest
 from reolink_aio.exceptions import ReolinkError
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.reolink.const import DOMAIN
-from homeassistant.components.reolink.services import ATTR_SPEED, SERVICE_PTZ_MOVE
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.reolink.const import DOMAIN
+from inpui.components.reolink.services import ATTR_SPEED, SERVICE_PTZ_MOVE
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import TEST_CAM_NAME, TEST_NVR_NAME
 

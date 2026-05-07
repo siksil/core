@@ -2,7 +2,7 @@
 
 from aiohomeconnect.model import EventKey, OptionKey, ProgramKey, SettingKey, StatusKey
 
-from homeassistant.const import UnitOfTemperature, UnitOfTime, UnitOfVolume
+from inpui.const import UnitOfTemperature, UnitOfTime, UnitOfVolume
 
 from .utils import bsh_key_to_translation_key
 

@@ -10,16 +10,16 @@ from typing import TYPE_CHECKING, Any, cast
 from kasa import Feature
 from kasa.smart.modules.clean import ErrorCode as VacuumError
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfTime
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry
 from .const import UNIT_MAPPING

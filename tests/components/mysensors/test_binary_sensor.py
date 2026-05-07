@@ -6,9 +6,9 @@ from collections.abc import Callable
 
 from mysensors.sensor import Sensor
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import ATTR_BATTERY_LEVEL, ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import ATTR_BATTERY_LEVEL, ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
 
 
 async def test_door_sensor(

@@ -2,13 +2,13 @@
 
 from datetime import timedelta
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.components.broadlink.updater import BroadlinkSP4UpdateManager
-from homeassistant.const import ATTR_FRIENDLY_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import dt as dt_util
+from inpui.components.broadlink.const import DOMAIN
+from inpui.components.broadlink.updater import BroadlinkSP4UpdateManager
+from inpui.const import ATTR_FRIENDLY_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import dt as dt_util
 
 from . import get_device
 

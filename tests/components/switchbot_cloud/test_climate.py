@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from switchbot_api import Device, Remote, SmartRadiatorThermostatCommands, SwitchBotAPI
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_TEMPERATURE,
@@ -17,9 +17,9 @@ from homeassistant.components.climate import (
     SERVICE_TURN_ON,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, State
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, State
 
 from . import configure_integration
 

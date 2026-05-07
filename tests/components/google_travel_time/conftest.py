@@ -9,8 +9,8 @@ from google.protobuf import duration_pb2
 from google.type import localized_text_pb2
 import pytest
 
-from homeassistant.components.google_travel_time.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.google_travel_time.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

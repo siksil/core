@@ -6,16 +6,16 @@ from typing import Any
 
 import attr
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import (
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     CONF_PASSWORD,
     CONF_UNIQUE_ID,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import AsusWrtConfigEntry
 

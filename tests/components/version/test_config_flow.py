@@ -5,7 +5,7 @@ from unittest.mock import patch
 from pyhaversion.consts import HaVersionChannel, HaVersionSource
 
 from homeassistant import config_entries
-from homeassistant.components.version.const import (
+from inpui.components.version.const import (
     CONF_BETA,
     CONF_BOARD,
     CONF_CHANNEL,
@@ -18,11 +18,11 @@ from homeassistant.components.version.const import (
     VERSION_SOURCE_PYPI,
     VERSION_SOURCE_VERSIONS,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.util import dt as dt_util
 
 from .common import MOCK_VERSION, MOCK_VERSION_DATA, setup_version_integration
 

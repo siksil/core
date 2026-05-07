@@ -8,21 +8,21 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.components.labs import EVENT_LABS_UPDATED
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.statistics import (
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.components.labs import EVENT_LABS_UPDATED
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.statistics import (
     StatisticMeanType,
     async_add_external_statistics,
     get_last_statistics,
     list_statistic_ids,
 )
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.components.recorder.common import async_wait_recording_done
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

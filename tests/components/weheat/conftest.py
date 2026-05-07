@@ -8,14 +8,14 @@ import pytest
 from weheat.abstractions.discovery import HeatPumpDiscovery
 from weheat.abstractions.heat_pump import HeatPump
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.weheat.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.weheat.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import (
     CLIENT_ID,

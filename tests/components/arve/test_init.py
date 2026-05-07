@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.arve.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
+from inpui.components.arve.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

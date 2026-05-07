@@ -15,16 +15,16 @@ from pyisy.constants import (
 from pyisy.helpers import NodeProperty
 from pyisy.nodes import Group, Node
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import STATE_ON, Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import STATE_ON, Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     _LOGGER,

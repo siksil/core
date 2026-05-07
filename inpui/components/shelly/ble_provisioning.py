@@ -6,9 +6,9 @@ import asyncio
 from dataclasses import dataclass, field
 import logging
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 

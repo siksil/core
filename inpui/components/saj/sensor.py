@@ -10,32 +10,32 @@ from typing import Any
 import pysaj
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TYPE,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     UnitOfEnergy,
     UnitOfMass,
     UnitOfPower,
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.start import async_at_start
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.start import async_at_start
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -144,7 +144,7 @@ async def async_setup_platform(
         """Properly cancel the scheduled update."""
         remove_interval_update()
 
-    hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, stop_update_interval)
+    hass.bus.async_listen(EVENT_INPUI_STOP, stop_update_interval)
     async_at_start(hass, start_update_interval)
 
 

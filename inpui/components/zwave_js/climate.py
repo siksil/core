@@ -19,7 +19,7 @@ from zwave_js_server.const.command_class.thermostat import (
 from zwave_js_server.model.driver import Driver
 from zwave_js_server.model.value import Value as ZwaveValue
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
@@ -30,11 +30,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import DOMAIN
 from .discovery import ZwaveDiscoveryInfo

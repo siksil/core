@@ -7,9 +7,9 @@ from typing import Any, Literal
 from aiohttp import hdrs, web
 import pytest
 
-from homeassistant.components.hassio.handler import HassIO, HassioAPIError
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.hassio.handler import HassIO, HassioAPIError
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 
 @pytest.mark.parametrize(

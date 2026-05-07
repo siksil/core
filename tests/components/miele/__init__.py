@@ -4,7 +4,7 @@ from collections.abc import Awaitable, Callable
 from typing import Any
 from unittest.mock import AsyncMock
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -10,8 +10,8 @@ from pysmlight.sse import MessageEvent
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smlight.const import DOMAIN, SCAN_FIRMWARE_INTERVAL
-from homeassistant.components.update import (
+from inpui.components.smlight.const import DOMAIN, SCAN_FIRMWARE_INTERVAL
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
@@ -19,10 +19,10 @@ from homeassistant.components.update import (
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import get_mock_event_function
 from .conftest import setup_integration

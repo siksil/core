@@ -7,8 +7,8 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from wyoming.asr import Transcript
 
-from homeassistant.components import stt
-from homeassistant.core import HomeAssistant
+from inpui.components import stt
+from inpui.core import HomeAssistant
 
 from . import MockAsyncTcpClient
 

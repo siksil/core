@@ -19,21 +19,21 @@ from fritzconnection.lib.fritzstatus import FritzStatus
 from fritzconnection.lib.fritzwlan import FritzGuestWLAN
 import xmltodict
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
     DOMAIN as DEVICE_TRACKER_DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import slugify
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import slugify
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     CONF_OLD_DISCOVERY,

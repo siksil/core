@@ -2,8 +2,8 @@
 
 from pyaehw4a1.aehw4a1 import AehW4a1
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from .const import DOMAIN
 

@@ -11,27 +11,27 @@ from typing import Any, NamedTuple, cast
 import RFXtrx as rfxtrxmod
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_DEVICE,
     CONF_DEVICE_ID,
     CONF_DEVICES,
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.device_registry import EventDeviceRegistryUpdatedData
-from homeassistant.helpers.dispatcher import (
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.device_registry import EventDeviceRegistryUpdatedData
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddEntitiesCallback
 
 from .const import (
     ATTR_EVENT,
@@ -281,7 +281,7 @@ async def async_setup_internal(hass: HomeAssistant, entry: ConfigEntry) -> None:
         rfx_object.close_connection()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _shutdown_rfxtrx)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _shutdown_rfxtrx)
     )
 
     def send(call: ServiceCall) -> None:

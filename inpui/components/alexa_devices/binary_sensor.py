@@ -9,16 +9,16 @@ from typing import Final
 from aioamazondevices.const.metadata import SENSOR_STATE_OFF
 from aioamazondevices.structures import AmazonDevice
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.helpers.entity_registry as er
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.helpers.entity_registry as er
 
 from .const import _LOGGER, DOMAIN
 from .coordinator import AmazonConfigEntry

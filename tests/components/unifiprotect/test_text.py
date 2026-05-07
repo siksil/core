@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock
 
 from uiprotect.data import Camera, DoorbellMessageType, LCDMessage
 
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.components.unifiprotect.text import CAMERA
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.components.unifiprotect.text import CAMERA
+from inpui.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

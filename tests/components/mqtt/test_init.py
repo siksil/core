@@ -14,32 +14,32 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import debug_info
-from homeassistant.components.mqtt.models import (
+from inpui.components import mqtt
+from inpui.components.mqtt import debug_info
+from inpui.components.mqtt.models import (
     MessageCallbackType,
     MqttCommandTemplateException,
     MqttValueTemplateException,
     ReceiveMessage,
 )
-from homeassistant.components.mqtt.schemas import MQTT_ENTITY_DEVICE_INFO_SCHEMA
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.mqtt.schemas import MQTT_ENTITY_DEVICE_INFO_SCHEMA
+from inpui.components.sensor import SensorDeviceClass
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     SERVICE_RELOAD,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er, template
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er, template
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.dt import utcnow
 
 from tests.common import (
     MockConfigEntry,
@@ -700,7 +700,7 @@ async def test_receiving_message_with_non_utf8_topic_gets_logged(
 
     from paho.mqtt.client import MQTTMessage  # noqa: PLC0415
 
-    from homeassistant.components.mqtt.models import MqttData  # noqa: PLC0415
+    from inpui.components.mqtt.models import MqttData  # noqa: PLC0415
 
     msg = MQTTMessage(topic=b"tasmota/discovery/18FE34E0B760\xcc\x02")
     msg.payload = b"Payload"

@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import climate
-from homeassistant.components.climate import (
+from inpui.components import climate
+from inpui.components.climate import (
     ATTR_FAN_MODES,
     ATTR_HVAC_MODES,
     ATTR_MAX_HUMIDITY,
@@ -20,12 +20,12 @@ from homeassistant.components.climate import (
     ATTR_TARGET_HUMIDITY_STEP,
     ATTR_TARGET_TEMP_STEP,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.const import ATTR_FRIENDLY_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.const import ATTR_FRIENDLY_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

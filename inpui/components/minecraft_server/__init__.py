@@ -10,9 +10,9 @@ import dns.rdata
 import dns.rdataclass
 import dns.rdatatype
 
-from homeassistant.const import CONF_ADDRESS, CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import CONF_ADDRESS, CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .api import MinecraftServer, MinecraftServerAddressError, MinecraftServerType
 from .const import DOMAIN, KEY_LATENCY, KEY_MOTD

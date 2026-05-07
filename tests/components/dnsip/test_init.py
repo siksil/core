@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from unittest.mock import patch
 
-from homeassistant.components.dnsip.const import (
+from inpui.components.dnsip.const import (
     CONF_HOSTNAME,
     CONF_IPV4,
     CONF_IPV6,
@@ -14,9 +14,9 @@ from homeassistant.components.dnsip.const import (
     DEFAULT_PORT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
 
 from . import RetrieveDNS
 

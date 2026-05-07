@@ -7,9 +7,9 @@ from aiovodafone.api import VodafoneStationDevice
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.vodafone_station.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.vodafone_station.const import DOMAIN, SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .const import DEVICE_1_HOST, DEVICE_1_MAC, DEVICE_2_HOST, DEVICE_2_MAC

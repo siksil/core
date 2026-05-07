@@ -10,10 +10,10 @@ from fressnapftracker import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fressnapf_tracker.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from inpui.components.fressnapf_tracker.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
 
 from .conftest import MOCK_SERIAL_NUMBER
 

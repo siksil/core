@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.const import ATTR_TIME
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.entity_platform import DATA_DOMAIN_PLATFORM_ENTITIES
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.const import ATTR_TIME
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.entity_platform import DATA_DOMAIN_PLATFORM_ENTITIES
 
 from .const import ATTR_QUEUE_POSITION, DOMAIN
 from .media_player import SonosMediaPlayerEntity

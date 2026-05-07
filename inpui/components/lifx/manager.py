@@ -12,7 +12,7 @@ from aiolifx_themes.painter import ThemePainter
 from aiolifx_themes.themes import Theme, ThemeLibrary
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_NAME,
@@ -25,10 +25,10 @@ from homeassistant.components.light import (
     VALID_BRIGHTNESS,
     VALID_BRIGHTNESS_PCT,
 )
-from homeassistant.const import ATTR_MODE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.target import (
+from inpui.const import ATTR_MODE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.target import (
     TargetSelection,
     async_extract_referenced_entity_ids,
 )

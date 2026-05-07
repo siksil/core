@@ -10,16 +10,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.homeassistant_alerts.const import (
+from inpui.components.homeassistant_alerts.const import (
     COMPONENT_LOADED_COOLDOWN,
     DOMAIN,
     UPDATE_INTERVAL,
 )
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import ATTR_COMPONENT, async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import HomeAssistant
+from inpui.setup import ATTR_COMPONENT, async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

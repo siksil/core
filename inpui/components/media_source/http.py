@@ -6,15 +6,15 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import frontend, websocket_api
-from homeassistant.components.media_player import (
+from inpui.components import frontend, websocket_api
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     CONTENT_AUTH_EXPIRY_TIME,
     BrowseError,
     async_process_play_media_url,
 )
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant
 
 from .error import Unresolvable
 from .helper import async_browse_media, async_resolve_media

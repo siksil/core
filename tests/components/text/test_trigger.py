@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
-from homeassistant.components.text.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
+from inpui.components.text.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     BasicTriggerStateDescription,

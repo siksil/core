@@ -7,7 +7,7 @@ from google_nest_sdm.device import Device
 from google_nest_sdm.device_manager import DeviceManager
 from google_nest_sdm.google_nest_subscriber import GoogleNestSubscriber
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type DevicesAddedListener = Callable[[list[Device]], None]
 

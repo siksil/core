@@ -2,9 +2,9 @@
 
 import asyncio
 
-from homeassistant.components.ipma.system_health import IPMA_API_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.ipma.system_health import IPMA_API_URL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info
 from tests.test_util.aiohttp import AiohttpClientMocker

@@ -6,11 +6,11 @@ from unittest.mock import patch
 from aiohttp import ClientConnectionError, ClientResponseError
 
 from homeassistant import config_entries
-from homeassistant.components.nightscout.const import DOMAIN
-from homeassistant.components.nightscout.utils import hash_from_url
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nightscout.const import DOMAIN
+from inpui.components.nightscout.utils import hash_from_url
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import GLUCOSE_READINGS, SERVER_STATUS, SERVER_STATUS_STATUS_ONLY
 

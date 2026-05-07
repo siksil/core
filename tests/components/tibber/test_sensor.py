@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.tibber.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.tibber.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import dt as dt_util
 
 from .conftest import create_tibber_device
 

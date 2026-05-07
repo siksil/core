@@ -7,13 +7,13 @@ from collections.abc import Iterable
 import logging
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
 )
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.core import Context, HomeAssistant, State
 
 from . import DOMAIN, LockState
 

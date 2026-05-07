@@ -10,15 +10,15 @@ from thinqconnect import DeviceType
 from thinqconnect.devices.const import Property as ThinQProperty
 from thinqconnect.integration import ActiveMode
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     HumidifierAction,
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityDescription,
     HumidifierEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ThinqConfigEntry
 from .coordinator import DeviceDataUpdateCoordinator

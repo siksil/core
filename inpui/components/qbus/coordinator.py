@@ -9,20 +9,20 @@ from typing import cast
 from qbusmqttapi.discovery import QbusDiscovery, QbusMqttDevice
 from qbusmqttapi.factory import QbusMqttMessageFactory, QbusMqttTopicFactory
 
-from homeassistant.components.mqtt import (
+from inpui.components.mqtt import (
     ReceiveMessage,
     async_wait_for_mqtt_client,
     client as mqtt,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.hass_dict import HassKey
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN, MANUFACTURER
 
@@ -61,7 +61,7 @@ class QbusControllerCoordinator(DataUpdateCoordinator[QbusMqttDevice | None]):
 
         # Clean up when HA stops
         self.config_entry.async_on_unload(
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.shutdown)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, self.shutdown)
         )
 
     async def _async_update_data(self) -> QbusMqttDevice | None:
@@ -214,7 +214,7 @@ class QbusConfigCoordinator:
         self._cleanup_callbacks: list[CALLBACK_TYPE] = []
 
         self._cleanup_callbacks.append(
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.shutdown)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, self.shutdown)
         )
 
     @classmethod

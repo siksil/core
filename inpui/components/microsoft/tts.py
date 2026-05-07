@@ -7,15 +7,15 @@ from pycsspeechtts import pycsspeechtts
 from requests.exceptions import HTTPError
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.const import CONF_API_KEY, CONF_REGION, CONF_TYPE, PERCENTAGE
-from homeassistant.generated.microsoft_tts import SUPPORTED_LANGUAGES
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_API_KEY, CONF_REGION, CONF_TYPE, PERCENTAGE
+from inpui.generated.microsoft_tts import SUPPORTED_LANGUAGES
+from inpui.helpers import config_validation as cv
 
 CONF_GENDER = "gender"
 CONF_OUTPUT = "output"

@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 from opower.exceptions import ApiException, CannotConnect, InvalidAuth
 import pytest
 
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.components.recorder import Recorder
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.opower.const import DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

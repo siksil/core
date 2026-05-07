@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service
 

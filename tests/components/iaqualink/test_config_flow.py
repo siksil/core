@@ -7,10 +7,10 @@ from iaqualink.exception import (
     AqualinkServiceUnauthorizedException,
 )
 
-from homeassistant.components.iaqualink import DOMAIN, config_flow
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.iaqualink import DOMAIN, config_flow
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_already_configured(

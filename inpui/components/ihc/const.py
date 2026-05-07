@@ -1,6 +1,6 @@
 """IHC component constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 ATTR_IHC_ID = "ihc_id"
 ATTR_VALUE = "value"

@@ -6,8 +6,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.group import DOMAIN, SERVICE_RELOAD, light as group
-from homeassistant.components.light import (
+from inpui.components.group import DOMAIN, SERVICE_RELOAD, light as group
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_NAME,
@@ -29,7 +29,7 @@ from homeassistant.components.light import (
     SERVICE_TURN_ON,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -39,9 +39,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import (
     async_capture_events,

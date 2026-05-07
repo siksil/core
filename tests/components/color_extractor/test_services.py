@@ -9,23 +9,23 @@ import aiohttp
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components.color_extractor.services import (
+from inpui.components.color_extractor.services import (
     ATTR_PATH,
     ATTR_URL,
     DOMAIN,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_RGB_COLOR,
     DOMAIN as LIGHT_DOMAIN,
     SERVICE_TURN_OFF as LIGHT_SERVICE_TURN_OFF,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import color as color_util
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import color as color_util
 
 from tests.common import async_load_fixture, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

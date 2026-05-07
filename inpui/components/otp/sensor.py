@@ -6,13 +6,13 @@ import time
 
 import pyotp
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_TOKEN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.components.sensor import SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_TOKEN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import DOMAIN
 

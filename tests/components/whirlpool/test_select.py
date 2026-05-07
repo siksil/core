@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import init_integration, snapshot_whirlpool_entities, trigger_attr_callback
 

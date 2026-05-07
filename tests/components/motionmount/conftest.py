@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.motionmount.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT
+from inpui.components.motionmount.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT
 
 from . import HOST, MAC, PORT, ZEROCONF_MAC, ZEROCONF_NAME
 

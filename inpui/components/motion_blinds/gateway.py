@@ -6,7 +6,7 @@ import socket
 
 from motionblinds import DEVICE_TYPES_WIFI, AsyncMotionMulticast, MotionGateway
 
-from homeassistant.components import network
+from inpui.components import network
 
 from .const import DEFAULT_INTERFACE
 

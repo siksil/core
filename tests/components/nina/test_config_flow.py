@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock
 
 from pynina import ApiError
 
-from homeassistant.components.nina.const import (
+from inpui.components.nina.const import (
     CONF_AREA_FILTER,
     CONF_FILTERS,
     CONF_HEADLINE_FILTER,
@@ -22,10 +22,10 @@ from homeassistant.components.nina.const import (
     CONST_REGION_V_TO_Z,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from . import setup_platform
 from .const import DUMMY_USER_INPUT

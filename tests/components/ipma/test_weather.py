@@ -8,8 +8,8 @@ from pyipma.observation import Observation
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ipma.const import MIN_TIME_BETWEEN_UPDATES
-from homeassistant.components.weather import (
+from inpui.components.ipma.const import MIN_TIME_BETWEEN_UPDATES
+from inpui.components.weather import (
     ATTR_WEATHER_HUMIDITY,
     ATTR_WEATHER_PRESSURE,
     ATTR_WEATHER_TEMPERATURE,
@@ -18,8 +18,8 @@ from homeassistant.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from . import MockLocation
 

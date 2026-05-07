@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.bluetooth import DOMAIN as BLUETOOTH_DOMAIN
-from homeassistant.components.bthome.const import CONF_SUBTYPE, DOMAIN
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.const import (
+from inpui.components import automation
+from inpui.components.bluetooth import DOMAIN as BLUETOOTH_DOMAIN
+from inpui.components.bthome.const import CONF_SUBTYPE, DOMAIN
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_PLATFORM,
@@ -14,9 +14,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import make_bthome_v2_adv
 

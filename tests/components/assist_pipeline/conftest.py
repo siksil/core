@@ -9,24 +9,24 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components import conversation, stt, tts, wake_word
-from homeassistant.components.assist_pipeline import DOMAIN, select as assist_select
-from homeassistant.components.assist_pipeline.const import (
+from inpui.components import conversation, stt, tts, wake_word
+from inpui.components.assist_pipeline import DOMAIN, select as assist_select
+from inpui.components.assist_pipeline.const import (
     BYTES_PER_CHUNK,
     SAMPLE_CHANNELS,
     SAMPLE_RATE,
     SAMPLE_WIDTH,
 )
-from homeassistant.components.assist_pipeline.pipeline import (
+from inpui.components.assist_pipeline.pipeline import (
     PipelineData,
     PipelineStorageCollection,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import chat_session, device_registry as dr
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import chat_session, device_registry as dr
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

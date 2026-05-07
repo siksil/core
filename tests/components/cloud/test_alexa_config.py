@@ -10,29 +10,29 @@ from hass_nabucasa.alexa_api import (
 )
 import pytest
 
-from homeassistant.components.alexa import errors
-from homeassistant.components.cloud import ALEXA_SCHEMA, alexa_config
-from homeassistant.components.cloud.const import (
+from inpui.components.alexa import errors
+from inpui.components.cloud import ALEXA_SCHEMA, alexa_config
+from inpui.components.cloud.const import (
     DATA_CLOUD,
     PREF_ALEXA_DEFAULT_EXPOSE,
     PREF_ALEXA_ENTITY_CONFIGS,
     PREF_SHOULD_EXPOSE,
 )
-from homeassistant.components.cloud.prefs import CloudPreferences
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.cloud.prefs import CloudPreferences
+from inpui.components.homeassistant.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
     async_get_entity_settings,
 )
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
+from inpui.const import (
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
     EntityCategory,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker
@@ -395,7 +395,7 @@ async def test_alexa_update_expose_trigger_sync(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, cloud_stub
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     with patch_sync_helper() as (to_update, to_remove):
@@ -651,9 +651,9 @@ async def test_alexa_config_migrate_expose_entity_prefs(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, cloud_stub
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.unknown") == {
@@ -713,9 +713,9 @@ async def test_alexa_config_migrate_expose_entity_prefs_v2_no_exposed(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.state_only") == {
@@ -760,9 +760,9 @@ async def test_alexa_config_migrate_expose_entity_prefs_v2_exposed(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, Mock(is_logged_in=False)
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, "light.state_only") == {
@@ -801,9 +801,9 @@ async def test_alexa_config_migrate_expose_entity_prefs_default_none(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, cloud_stub
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, entity_default.entity_id) == {
@@ -884,9 +884,9 @@ async def test_alexa_config_migrate_expose_entity_prefs_default(
         hass, ALEXA_SCHEMA({}), "mock-user-id", cloud_prefs, cloud_stub
     )
     await conf.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert async_get_entity_settings(hass, binary_sensor_supported.entity_id) == {

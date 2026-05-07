@@ -4,21 +4,21 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_DISPLAY_NAME,
     ATTR_VALUE,
     DOMAIN,
     EVENT_HOMEKIT_CHANGED,
 )
-from homeassistant.config_entries import SOURCE_ZEROCONF, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_ZEROCONF, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SERVICE,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .util import PATH_HOMEKIT
 
@@ -121,7 +121,7 @@ async def test_bridge_with_triggers(
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert entry.state is ConfigEntryState.LOADED

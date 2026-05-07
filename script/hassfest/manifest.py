@@ -17,8 +17,8 @@ from awesomeversion import (
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.const import Platform
-from homeassistant.helpers import config_validation as cv
+from inpui.const import Platform
+from inpui.helpers import config_validation as cv
 from script.util import sort_manifest as util_sort_manifest
 
 from .model import Config, Integration, ScaledQualityScaleTiers

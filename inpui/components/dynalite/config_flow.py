@@ -6,9 +6,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers import config_validation as cv
 
 from .bridge import DynaliteBridge
 from .const import DEFAULT_PORT, DOMAIN, LOGGER

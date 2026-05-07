@@ -5,12 +5,12 @@ from datetime import datetime, timedelta, tzinfo
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.sun import get_astral_event_date, get_astral_event_next
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.sun import get_astral_event_date, get_astral_event_next
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

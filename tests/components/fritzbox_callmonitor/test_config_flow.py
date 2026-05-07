@@ -12,24 +12,24 @@ from fritzconnection.core.exceptions import (
 import pytest
 from requests.exceptions import ConnectionError as RequestsConnectionError
 
-from homeassistant.components.fritzbox_callmonitor.config_flow import ConnectResult
-from homeassistant.components.fritzbox_callmonitor.const import (
+from inpui.components.fritzbox_callmonitor.config_flow import ConnectResult
+from inpui.components.fritzbox_callmonitor.const import (
     CONF_PHONEBOOK,
     CONF_PREFIXES,
     DOMAIN,
     FRITZ_ATTR_NAME,
     SERIAL_NUMBER,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, patch
 

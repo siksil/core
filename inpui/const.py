@@ -1,4 +1,4 @@
-"""Constants used by Home Assistant components."""
+"""Constants used by Inpui components."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from .core import EventStateChangedData, EventStateReportedData
     from .helpers.typing import NoEventData
 
-APPLICATION_NAME: Final = "HomeAssistant"
+APPLICATION_NAME: Final = "Inpui"
 MAJOR_VERSION: Final = 2026
 MINOR_VERSION: Final = 4
 PATCH_VERSION: Final = "4"
@@ -261,12 +261,12 @@ CONF_ZONE: Final = "zone"
 EVENT_CALL_SERVICE: Final = "call_service"
 EVENT_COMPONENT_LOADED: Final = "component_loaded"
 EVENT_CORE_CONFIG_UPDATE: Final = "core_config_updated"
-EVENT_HOMEASSISTANT_CLOSE: EventType[NoEventData] = EventType("homeassistant_close")
-EVENT_HOMEASSISTANT_START: EventType[NoEventData] = EventType("homeassistant_start")
-EVENT_HOMEASSISTANT_STARTED: EventType[NoEventData] = EventType("homeassistant_started")
-EVENT_HOMEASSISTANT_STOP: EventType[NoEventData] = EventType("homeassistant_stop")
-EVENT_HOMEASSISTANT_FINAL_WRITE: EventType[NoEventData] = EventType(
-    "homeassistant_final_write"
+EVENT_INPUI_CLOSE: EventType[NoEventData] = EventType("inpui_close")
+EVENT_INPUI_START: EventType[NoEventData] = EventType("inpui_start")
+EVENT_INPUI_STARTED: EventType[NoEventData] = EventType("inpui_started")
+EVENT_INPUI_STOP: EventType[NoEventData] = EventType("inpui_stop")
+EVENT_INPUI_FINAL_WRITE: EventType[NoEventData] = EventType(
+    "inpui_final_write"
 )
 EVENT_LABS_UPDATED: Final = "labs_updated"
 EVENT_LOGBOOK_ENTRY: Final = "logbook_entry"
@@ -968,10 +968,10 @@ class EntityCategory(StrEnum):
 
 ENTITY_CATEGORIES: Final[list[str]] = [cls.value for cls in EntityCategory]
 
-# The ID of the Home Assistant Media Player Cast App
-CAST_APP_ID_HOMEASSISTANT_MEDIA: Final = "B45F4572"
-# The ID of the Home Assistant Lovelace Cast App
-CAST_APP_ID_HOMEASSISTANT_LOVELACE: Final = "A078F6B0"
+# The ID of the Inpui Media Player Cast App
+CAST_APP_ID_INPUI_MEDIA: Final = "B45F4572"
+# The ID of the Inpui Lovelace Cast App
+CAST_APP_ID_INPUI_LOVELACE: Final = "A078F6B0"
 
 # User used by Supervisor
 HASSIO_USER_NAME = "Supervisor"

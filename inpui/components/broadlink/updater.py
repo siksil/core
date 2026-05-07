@@ -10,8 +10,8 @@ from typing import TYPE_CHECKING, Any, Generic, TypeVar
 import broadlink as blk
 from broadlink.exceptions import AuthorizationError, BroadlinkException
 
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 if TYPE_CHECKING:
     from .device import BroadlinkDevice

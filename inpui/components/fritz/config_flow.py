@@ -13,30 +13,30 @@ from fritzconnection import FritzConnection
 from fritzconnection.core.exceptions import FritzConnectionException
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_FEATURE_DEVICE_TRACKING,

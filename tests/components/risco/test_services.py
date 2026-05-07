@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.risco import DOMAIN
-from homeassistant.components.risco.const import SERVICE_SET_TIME
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_TIME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.risco import DOMAIN
+from inpui.components.risco.const import SERVICE_SET_TIME
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_TIME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import TEST_CLOUD_CONFIG
 

@@ -7,14 +7,14 @@ from typing import Any, Generic, cast
 from ring_doorbell import RingChime, RingDoorBell, RingGeneric, RingOther
 import ring_doorbell.const
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import RingConfigEntry
 from .coordinator import RingDataCoordinator

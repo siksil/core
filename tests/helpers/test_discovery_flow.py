@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, call, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import discovery_flow, json as json_helper
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.util import json as json_util
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import discovery_flow, json as json_helper
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.util import json as json_util
 
 
 @pytest.fixture
@@ -75,7 +75,7 @@ async def test_async_create_flow_deferred_until_started(
         {"properties": {"id": "aa:bb:cc:dd:ee:ff"}},
     )
     assert not mock_flow_init.mock_calls
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert mock_flow_init.mock_calls == [
         call(
@@ -90,7 +90,7 @@ async def test_async_create_flow_checks_existing_flows_after_startup(
     hass: HomeAssistant, mock_flow_init: AsyncMock
 ) -> None:
     """Test existing flows prevent an identical ones from being after startup."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     with patch(
         "homeassistant.config_entries.ConfigEntriesFlowManager.async_has_matching_discovery_flow",
         return_value=True,
@@ -116,7 +116,7 @@ async def test_async_create_flow_checks_existing_flows_before_startup(
             {"source": config_entries.SOURCE_HOMEKIT},
             {"properties": {"id": "aa:bb:cc:dd:ee:ff"}},
         )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert mock_flow_init.mock_calls == [
         call(
@@ -131,7 +131,7 @@ async def test_async_create_flow_does_nothing_after_stop(
     hass: HomeAssistant, mock_flow_init: AsyncMock
 ) -> None:
     """Test we no longer create flows when hass is stopping."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     hass.set_state(CoreState.stopping)
     mock_flow_init.reset_mock()

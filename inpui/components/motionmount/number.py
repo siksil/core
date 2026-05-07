@@ -4,11 +4,11 @@ import socket
 
 import motionmount
 
-from homeassistant.components.number import NumberEntity
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MotionMountConfigEntry
 from .const import DOMAIN

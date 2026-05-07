@@ -6,17 +6,17 @@ import logging
 
 from pysma import SMAWebConnect
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_VERIFY_SSL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_GROUP
 from .coordinator import SMADataUpdateCoordinator
@@ -55,7 +55,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SMAConfigEntry) -> bool:
         await coordinator.async_close_sma_session()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_handle_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_handle_shutdown)
     )
 
     return True

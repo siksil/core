@@ -10,27 +10,27 @@ from typing import Any
 import aiohttp
 import pyatmo
 
-from homeassistant.components import cloud
-from homeassistant.components.webhook import (
+from inpui.components import cloud
+from inpui.components.webhook import (
     async_generate_url as webhook_generate_url,
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import ConfigType
 
 from . import api
 from .const import (
@@ -172,7 +172,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             _LOGGER.error("Error during webhook registration - %s", err)
         else:
             entry.async_on_unload(
-                hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, unregister_webhook)
+                hass.bus.async_listen_once(EVENT_INPUI_STOP, unregister_webhook)
             )
 
     async def manage_cloudhook(state: cloud.CloudConnectionState) -> None:

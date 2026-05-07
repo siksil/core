@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, selector, service
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, selector, service
+from inpui.helpers.storage import STORAGE_DIR
 
 if TYPE_CHECKING:
     from . import VelbusConfigEntry

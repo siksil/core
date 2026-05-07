@@ -11,19 +11,19 @@ from uiprotect.api import DEVICE_UPDATE_INTERVAL
 from uiprotect.data import NVR, Bootstrap, CloudAccount, Light
 from uiprotect.exceptions import BadRequest, NotAuthorized
 
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     AUTH_RETRIES,
     CONF_ALLOW_EA,
     DOMAIN,
 )
-from homeassistant.components.unifiprotect.data import (
+from inpui.components.unifiprotect.data import (
     async_ufp_instance_for_config_entry_ids,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import _patch_discovery
 from .utils import MockUFPFixture, init_entry, time_changed

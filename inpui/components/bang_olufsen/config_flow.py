@@ -10,11 +10,11 @@ from mozart_api.exceptions import ApiException
 from mozart_api.mozart_client import MozartClient
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.helpers.selector import SelectSelector, SelectSelectorConfig
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.ssl import get_default_context
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.helpers.selector import SelectSelector, SelectSelectorConfig
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.ssl import get_default_context
 
 from .const import (
     ATTR_FRIENDLY_NAME,

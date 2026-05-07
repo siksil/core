@@ -10,9 +10,9 @@ from typing import Any
 from voip_utils import CallInfo, VoipDatagramProtocol
 from voip_utils.sip import SipEndpoint
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import DOMAIN
 from .store import DeviceContact, DeviceContacts, VoipStore

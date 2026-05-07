@@ -15,7 +15,7 @@ from xknx.dpt.dpt_20 import HVACControllerMode, HVACOperationMode
 from xknx.remote_value.remote_value_setpoint_shift import SetpointShiftMode
 
 from homeassistant import config_entries
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_HIGH,
     FAN_LOW,
     FAN_MEDIUM,
@@ -27,19 +27,19 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     Platform,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_SYNC_STATE,

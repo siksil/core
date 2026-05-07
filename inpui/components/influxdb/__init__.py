@@ -21,8 +21,8 @@ import urllib3.exceptions
 import voluptuous as vol
 
 from homeassistant import config as conf_util
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_DOMAIN,
     CONF_ENTITY_ID,
     CONF_EXCLUDE,
@@ -42,16 +42,16 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, HomeAssistant, State, callback
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, state as state_helper
-from homeassistant.helpers.entity_values import EntityValues
-from homeassistant.helpers.entityfilter import (
+from inpui.core import Event, HomeAssistant, State, callback
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, state as state_helper
+from inpui.helpers.entity_values import EntityValues
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     API_VERSION_2,

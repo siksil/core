@@ -6,15 +6,15 @@ from pyps4_2ndscreen.errors import CredentialTimeout
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import ps4
-from homeassistant.components.ps4.config_flow import LOCAL_UDP_PORT
-from homeassistant.components.ps4.const import (
+from inpui.components import ps4
+from inpui.components.ps4.config_flow import LOCAL_UDP_PORT
+from inpui.components.ps4.const import (
     DEFAULT_ALIAS,
     DEFAULT_NAME,
     DEFAULT_REGION,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CODE,
     CONF_HOST,
     CONF_IP_ADDRESS,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     CONF_REGION,
     CONF_TOKEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util import location as location_util
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.util import location as location_util
 
 from tests.common import MockConfigEntry
 

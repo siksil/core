@@ -13,12 +13,12 @@ from aiohttp import web
 from aiohttp.web_exceptions import HTTPServiceUnavailable
 
 from homeassistant import config_entries
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.const import ATTR_SERVICE, EVENT_HOMEASSISTANT_START
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.components.http import HomeAssistantView
+from inpui.const import ATTR_SERVICE, EVENT_INPUI_START
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import discovery_flow
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from .const import ATTR_ADDON, ATTR_UUID, DOMAIN
 from .handler import get_supervisor_client
@@ -50,7 +50,7 @@ def async_setup_discovery_view(hass: HomeAssistant) -> None:
             await asyncio.wait(jobs)
 
     hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_START, _async_discovery_start_handler
+        EVENT_INPUI_START, _async_discovery_start_handler
     )
 
     async def _handle_config_entry_removed(

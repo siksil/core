@@ -9,7 +9,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_HOME,
@@ -17,9 +17,9 @@ from homeassistant.components.alarm_control_panel import (
     SERVICE_ALARM_TRIGGER,
     AlarmControlPanelState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import initialize_entry
 

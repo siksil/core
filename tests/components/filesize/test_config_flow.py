@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.filesize.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_FILE_PATH
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.filesize.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_FILE_PATH
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import TEST_FILE_NAME, TEST_FILE_NAME2, async_create_file
 

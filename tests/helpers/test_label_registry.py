@@ -8,13 +8,13 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     label_registry as lr,
 )
-from homeassistant.util.dt import utcnow
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_capture_events, flush_store
 

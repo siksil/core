@@ -18,13 +18,13 @@ from fressnapftracker import (
 )
 import pytest
 
-from homeassistant.components.fressnapf_tracker.const import (
+from inpui.components.fressnapf_tracker.const import (
     CONF_PHONE_NUMBER,
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

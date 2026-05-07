@@ -5,10 +5,10 @@ from __future__ import annotations
 import asyncio
 from typing import Any, cast
 
-from homeassistant.components import light
-from homeassistant.components.light import ColorMode, LightEntity, LightEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import light
+from inpui.components.light import ColorMode, LightEntity, LightEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EvilGeniusConfigEntry, EvilGeniusUpdateCoordinator
 from .entity import EvilGeniusEntity

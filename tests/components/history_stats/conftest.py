@@ -9,18 +9,18 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.history_stats.const import (
+from inpui.components.history_stats.const import (
     CONF_END,
     CONF_START,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import dt as dt_util
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

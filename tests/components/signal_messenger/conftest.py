@@ -6,8 +6,8 @@ from pysignalclirestapi import SignalCliRestApi
 import pytest
 from requests_mock.mocker import Mocker
 
-from homeassistant.components.signal_messenger.notify import SignalNotificationService
-from homeassistant.core import HomeAssistant
+from inpui.components.signal_messenger.notify import SignalNotificationService
+from inpui.core import HomeAssistant
 
 SIGNAL_SEND_PATH_SUFIX = "/v2/send"
 MESSAGE = "Testing Signal Messenger platform :)"

@@ -5,15 +5,15 @@ from typing import Any
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.environment_canada.const import (
+from inpui.components.environment_canada.const import (
     DOMAIN,
     SERVICE_ENVIRONMENT_CANADA_FORECASTS,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

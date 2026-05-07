@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.melissa import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.melissa import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import async_load_json_object_fixture
 

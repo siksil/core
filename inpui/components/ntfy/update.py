@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from enum import StrEnum
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import CONF_URL, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import CONF_URL, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import NTFY_KEY
 from .const import DEFAULT_URL

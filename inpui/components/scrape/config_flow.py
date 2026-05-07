@@ -8,21 +8,21 @@ import uuid
 
 import voluptuous as vol
 
-from homeassistant.components.rest import create_rest_data_from_config
-from homeassistant.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest import create_rest_data_from_config
+from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
     DEFAULT_TIMEOUT,
 )
-from homeassistant.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
     DEFAULT_METHOD,
     METHODS,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ATTRIBUTE,
     CONF_AUTHENTICATION,
     CONF_DEVICE_CLASS,
@@ -42,16 +42,16 @@ from homeassistant.const import (
     HTTP_DIGEST_AUTHENTICATION,
     UnitOfTemperature,
 )
-from homeassistant.core import async_get_hass
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import async_get_hass
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
     SchemaFlowMenuStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     BooleanSelector,
     NumberSelector,
     NumberSelectorConfig,
@@ -65,7 +65,7 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.trigger_template_entity import CONF_AVAILABILITY
+from inpui.helpers.trigger_template_entity import CONF_AVAILABILITY
 
 from . import COMBINED_SCHEMA
 from .const import (

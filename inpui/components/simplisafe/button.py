@@ -8,12 +8,12 @@ from dataclasses import dataclass
 from simplipy.errors import SimplipyError
 from simplipy.system import System
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SimpliSafe
 from .const import DOMAIN

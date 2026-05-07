@@ -6,9 +6,9 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.hikvision.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.hikvision.const import DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_LAST_TRIP_TIME,
     CONF_HOST,
@@ -20,13 +20,13 @@ from homeassistant.const import (
     STATE_OFF,
     Platform,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .conftest import (

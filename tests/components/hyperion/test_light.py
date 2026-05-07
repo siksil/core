@@ -7,18 +7,18 @@ from unittest.mock import AsyncMock, Mock, call, patch
 from hyperion import const
 import pytest
 
-from homeassistant.components.hyperion import (
+from inpui.components.hyperion import (
     get_hyperion_device_id,
     light as hyperion_light,
 )
-from homeassistant.components.hyperion.const import (
+from inpui.components.hyperion.const import (
     CONF_EFFECT_HIDE_LIST,
     DEFAULT_ORIGIN,
     DOMAIN,
     HYPERION_MANUFACTURER_NAME,
     HYPERION_MODEL_NAME,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ATTR_HS_COLOR,
@@ -26,8 +26,8 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntry, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     CONF_PORT,
@@ -36,8 +36,8 @@ from homeassistant.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     TEST_AUTH_NOT_REQUIRED_RESP,

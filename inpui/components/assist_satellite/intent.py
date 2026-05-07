@@ -4,8 +4,8 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, intent
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, intent
 
 from .const import DOMAIN, AssistSatelliteEntityFeature
 

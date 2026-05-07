@@ -2,7 +2,7 @@
 
 import os
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 
 @callback

@@ -7,10 +7,10 @@ from datetime import datetime, timedelta
 import aiounifi
 from aiounifi.models.device import DeviceSetPoePortModeRequest
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later, async_track_time_interval
+from inpui.util import dt as dt_util
 
 
 class UnifiEntityHelper:

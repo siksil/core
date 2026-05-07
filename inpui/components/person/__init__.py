@@ -8,15 +8,15 @@ from typing import Any, Self
 
 import voluptuous as vol
 
-from homeassistant.auth import EVENT_USER_REMOVED
-from homeassistant.components import persistent_notification, websocket_api
-from homeassistant.components.device_tracker import (
+from inpui.auth import EVENT_USER_REMOVED
+from inpui.components import persistent_notification, websocket_api
+from inpui.components.device_tracker import (
     ATTR_SOURCE_TYPE,
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     SourceType,
 )
-from homeassistant.components.zone import ENTITY_ID_HOME
-from homeassistant.const import (
+from inpui.components.zone import ENTITY_ID_HOME
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_GPS_ACCURACY,
     ATTR_ID,
@@ -25,13 +25,13 @@ from homeassistant.const import (
     ATTR_NAME,
     CONF_ID,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_RELOAD,
     STATE_HOME,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
@@ -40,18 +40,18 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     collection,
     config_validation as cv,
     entity_registry as er,
     service,
 )
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import bind_hass
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import bind_hass
 
 from .const import DOMAIN
 
@@ -476,7 +476,7 @@ class Person(
                 self._async_update_config(self._config)
 
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_START, _async_person_start_hass
+                EVENT_INPUI_START, _async_person_start_hass
             )
             # Update extra state attributes now
             # as there are attributes that can already be set

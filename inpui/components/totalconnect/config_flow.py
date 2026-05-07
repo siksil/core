@@ -9,15 +9,15 @@ from total_connect_client.client import TotalConnectClient
 from total_connect_client.exceptions import AuthenticationError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_LOCATION, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers.typing import VolDictType
+from inpui.const import CONF_LOCATION, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers.typing import VolDictType
 
 from .const import AUTO_BYPASS, CODE_REQUIRED, CONF_USERCODES, DOMAIN
 

@@ -8,8 +8,8 @@ from typing import Any
 from tuya_sharing import LoginControl
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import selector
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.helpers import selector
 
 from .const import (
     CONF_ENDPOINT,

@@ -6,15 +6,15 @@ from unittest.mock import patch
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.spaceapi import (
+from inpui.components.spaceapi import (
     ATTR_SENSOR_LOCATION,
     DOMAIN,
     SPACEAPI_VERSION,
     URL_API_SPACEAPI,
 )
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

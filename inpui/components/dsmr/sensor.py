@@ -19,33 +19,33 @@ from dsmr_parser.clients.rfxtrx_protocol import (
 from dsmr_parser.objects import DSMRObject, MbusDevice, Telegram
 import serial
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_PROTOCOL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EntityCategory,
     UnitOfEnergy,
     UnitOfVolume,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.core import CoreState, Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import Throttle
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import Throttle
 
 from . import DsmrConfigEntry
 from .const import (
@@ -817,7 +817,7 @@ async def async_setup_entry(
                         transport.close()  # noqa: B023
 
                     stop_listener = hass.bus.async_listen_once(
-                        EVENT_HOMEASSISTANT_STOP, close_transport
+                        EVENT_INPUI_STOP, close_transport
                     )
 
                     # Wait for reader to close
@@ -879,7 +879,7 @@ async def async_setup_entry(
 
     # Make sure task is cancelled on shutdown (or tests complete)
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
 
     # Save the task to be able to cancel it when unloading

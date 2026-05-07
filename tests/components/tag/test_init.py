@@ -8,12 +8,12 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.tag import DOMAIN, _create_entry, async_scan_tag
-from homeassistant.const import CONF_NAME, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import collection, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.tag import DOMAIN, _create_entry, async_scan_tag
+from inpui.const import CONF_NAME, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import collection, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import TEST_DEVICE_ID, TEST_TAG_ID, TEST_TAG_ID_2, TEST_TAG_NAME, TEST_TAG_NAME_2
 

@@ -32,8 +32,8 @@ import voluptuous as vol
 from . import data_entry_flow, loader
 from .const import (
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     Platform,
 )
 from .core import (
@@ -837,7 +837,7 @@ class ConfigEntry[_DataT = Any]:
                 )
             else:
                 self._async_cancel_retry_setup = hass.bus.async_listen(
-                    EVENT_HOMEASSISTANT_STARTED,
+                    EVENT_INPUI_STARTED,
                     functools.partial(self._async_setup_again, hass),
                 )
 
@@ -2207,7 +2207,7 @@ class ConfigEntries:
         """Initialize config entry config."""
         config = await self._store.async_load()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._async_shutdown)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self._async_shutdown)
 
         if config is None:
             self._entries = ConfigEntryItems(self.hass)
@@ -2247,7 +2247,7 @@ class ConfigEntries:
 
         if not self.hass.config.recovery_mode and not self.hass.config.safe_mode:
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STARTED, self._async_scan_orphan_ignored_entries
+                EVENT_INPUI_STARTED, self._async_scan_orphan_ignored_entries
             )
 
     async def _async_scan_orphan_ignored_entries(

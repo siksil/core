@@ -5,15 +5,15 @@ from typing import Any
 from eq3btsmart import Eq3Exception
 from eq3btsmart.const import Eq3Event
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import (
+from inpui.core import callback
+from inpui.helpers.device_registry import (
     CONNECTION_BLUETOOTH,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.util import slugify
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.util import slugify
 
 from . import Eq3ConfigEntry
 from .const import (

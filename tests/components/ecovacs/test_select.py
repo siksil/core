@@ -12,18 +12,18 @@ from deebot_client.rs.map import RotationAngle  # pylint: disable=no-name-in-mod
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import select
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.const import (
+from inpui.components import select
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_OPTION,
     SERVICE_SELECT_OPTION,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .util import block_till_done
 

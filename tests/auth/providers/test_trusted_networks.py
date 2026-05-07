@@ -8,12 +8,12 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import auth
-from homeassistant.auth import auth_store
-from homeassistant.auth.providers import trusted_networks as tn_auth
-from homeassistant.components.http import CONF_TRUSTED_PROXIES, CONF_USE_X_FORWARDED_FOR
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.auth import auth_store
+from inpui.auth.providers import trusted_networks as tn_auth
+from inpui.components.http import CONF_TRUSTED_PROXIES, CONF_USE_X_FORWARDED_FOR
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

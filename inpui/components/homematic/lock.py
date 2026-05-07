@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.lock import LockEntity, LockEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import ATTR_DISCOVER_DEVICES
 from .entity import HMDevice

@@ -6,10 +6,10 @@ from dataclasses import dataclass
 from total_connect_client.location import TotalConnectLocation
 from total_connect_client.zone import TotalConnectZone
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import TotalConnectConfigEntry, TotalConnectDataUpdateCoordinator
 from .entity import TotalConnectLocationEntity, TotalConnectZoneEntity

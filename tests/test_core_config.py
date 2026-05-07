@@ -13,7 +13,7 @@ import pytest
 from voluptuous import Invalid, MultipleInvalid
 from webrtc_models import RTCConfiguration, RTCIceServer
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_FRIENDLY_NAME,
     CONF_AUTH_MFA_MODULES,
@@ -26,8 +26,8 @@ from homeassistant.const import (
     EVENT_CORE_CONFIG_UPDATE,
     __version__,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.core_config import (
+from inpui.core import HomeAssistant, State
+from inpui.core_config import (
     _CUSTOMIZE_DICT_SCHEMA,
     CORE_CONFIG_SCHEMA,
     CORE_STORAGE_KEY,
@@ -37,9 +37,9 @@ from homeassistant.core_config import (
     async_process_ha_core_config,
     validate_stun_or_turn_url,
 )
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.entity import Entity, EntityPlatformState
-from homeassistant.util.unit_system import (
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.entity import Entity, EntityPlatformState
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

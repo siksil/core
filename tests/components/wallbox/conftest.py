@@ -7,7 +7,7 @@ from unittest.mock import MagicMock, Mock, patch
 import pytest
 import requests
 
-from homeassistant.components.wallbox.const import (
+from inpui.components.wallbox.const import (
     CHARGER_DATA_POST_L1_KEY,
     CHARGER_DATA_POST_L2_KEY,
     CHARGER_ENERGY_PRICE_KEY,
@@ -21,8 +21,8 @@ from homeassistant.components.wallbox.const import (
     CONF_STATION,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import WALLBOX_AUTHORISATION_RESPONSE, WALLBOX_STATUS_RESPONSE
 

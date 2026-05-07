@@ -8,10 +8,10 @@ from typing import Any
 from renson_endura_delta.field_enum import CURRENT_LEVEL_FIELD, DataType
 from renson_endura_delta.renson import Level, RensonVentilation
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RensonCoordinator
 from .const import DOMAIN

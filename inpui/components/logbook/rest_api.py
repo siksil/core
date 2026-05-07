@@ -10,14 +10,14 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.filters import Filters
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import InvalidEntityFormatError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.filters import Filters
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import InvalidEntityFormatError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .helpers import async_determine_event_types
 from .processor import EventProcessor

@@ -15,7 +15,7 @@ from pysaunum import (
     SaunumException,
 )
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_HIGH,
     FAN_LOW,
     FAN_MEDIUM,
@@ -25,10 +25,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LeilSaunaConfigEntry, LeilSaunaCoordinator
 from .const import (

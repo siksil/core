@@ -7,10 +7,10 @@ from typing import Any
 
 from yarl import URL
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.components.webhook import async_generate_url as webhook_generate_url
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.components.webhook import async_generate_url as webhook_generate_url
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
 
 from . import CONF_CLOUDHOOK_URL, WithingsConfigEntry
 

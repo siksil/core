@@ -6,15 +6,15 @@ import asyncio
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_DELAY_SECS,
     ATTR_NUM_REPEATS,
     DEFAULT_DELAY_SECS,
     RemoteEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.trigger import PluggableAction
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.trigger import PluggableAction
 
 from . import LOGGER
 from .coordinator import PhilipsTVConfigEntry, PhilipsTVDataUpdateCoordinator

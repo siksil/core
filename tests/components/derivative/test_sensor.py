@@ -10,13 +10,13 @@ from freezegun import freeze_time
 import pytest
 
 from homeassistant import config as hass_config, core as ha
-from homeassistant.components.derivative.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.derivative.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     SERVICE_RELOAD,
     STATE_UNAVAILABLE,
@@ -28,17 +28,17 @@ from homeassistant.const import (
     UnitOfTime,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

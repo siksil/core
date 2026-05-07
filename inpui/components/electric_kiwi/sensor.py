@@ -8,17 +8,17 @@ from datetime import datetime, timedelta
 
 from electrickiwi_api.model import AccountSummary, Hop
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import CURRENCY_DOLLAR, PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.const import CURRENCY_DOLLAR, PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import ATTRIBUTION
 from .coordinator import (

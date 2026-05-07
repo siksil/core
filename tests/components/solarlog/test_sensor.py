@@ -12,10 +12,10 @@ from solarlog_cli.solarlog_exceptions import (
 from solarlog_cli.solarlog_models import InverterData
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import setup_platform
 

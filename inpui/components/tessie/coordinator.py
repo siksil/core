@@ -13,11 +13,11 @@ from tesla_fleet_api.exceptions import InvalidToken, MissingToken, TeslaFleetErr
 from tesla_fleet_api.tessie import EnergySite
 from tessie_api import get_state
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 if TYPE_CHECKING:
     from . import TessieConfigEntry

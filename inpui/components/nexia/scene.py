@@ -4,10 +4,10 @@ from typing import Any
 
 from nexia.automation import NexiaAutomation
 
-from homeassistant.components.scene import Scene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.components.scene import Scene
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from .const import ATTR_DESCRIPTION
 from .coordinator import NexiaDataUpdateCoordinator

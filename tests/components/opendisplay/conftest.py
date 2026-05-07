@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.opendisplay.const import DOMAIN
+from inpui.components.opendisplay.const import DOMAIN
 
 from . import DEVICE_CONFIG, FIRMWARE_VERSION, TEST_ADDRESS, TEST_TITLE
 

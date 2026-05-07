@@ -2,15 +2,15 @@
 
 from libpyfoscamcgi import FoscamCamera
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .config_flow import DEFAULT_RTSP_PORT
 from .const import CONF_RTSP_PORT, LOGGER

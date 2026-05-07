@@ -1,7 +1,7 @@
 """Test ONVIF util functions."""
 
-from homeassistant.components.onvif.models import Event
-from homeassistant.components.onvif.util import build_event_entity_names
+from inpui.components.onvif.models import Event
+from inpui.components.onvif.util import build_event_entity_names
 
 # Example device UID that would be used as prefix
 TEST_DEVICE_UID = "aa:bb:cc:dd:ee:ff"

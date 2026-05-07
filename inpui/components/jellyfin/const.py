@@ -3,8 +3,8 @@
 import logging
 from typing import Final
 
-from homeassistant.components.media_player import MediaClass, MediaType
-from homeassistant.const import Platform, __version__ as hass_version
+from inpui.components.media_player import MediaClass, MediaType
+from inpui.const import Platform, __version__ as hass_version
 
 DOMAIN: Final = "jellyfin"
 

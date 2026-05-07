@@ -16,7 +16,7 @@ from pysmartthings import (
     SmartThings,
 )
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -27,10 +27,10 @@ from homeassistant.components.light import (
     LightEntityFeature,
     brightness_supported,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

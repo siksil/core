@@ -12,9 +12,9 @@ from uiprotect.data import (
     ProtectAdoptableDeviceModel,
 )
 
-from homeassistant.components.lock import LockEntity, LockEntityDescription
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityDescription
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .data import ProtectDeviceType, UFPConfigEntry
 from .entity import ProtectDeviceEntity

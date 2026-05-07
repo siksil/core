@@ -13,15 +13,15 @@ from verisure import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_CODE, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import callback
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.const import CONF_CODE, CONF_EMAIL, CONF_PASSWORD
+from inpui.core import callback
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import (
     CONF_GIID,

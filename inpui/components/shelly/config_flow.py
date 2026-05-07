@@ -31,21 +31,21 @@ from bleak.backends.device import BLEDevice
 import voluptuous as vol
 from zeroconf import IPVersion
 
-from homeassistant.components import zeroconf
-from homeassistant.components.bluetooth import (
+from inpui.components import zeroconf
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
     async_clear_address_from_match_history,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_BLUETOOTH,
     SOURCE_ZEROCONF,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_HOST,
     CONF_MAC,
@@ -54,17 +54,17 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .ble_provisioning import (
     ProvisioningState,

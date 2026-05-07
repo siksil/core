@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     ATTR_TILT_POSITION,
@@ -21,9 +21,9 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER_TILT,
     CoverState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import ConfigEntryFactoryType, WebsocketDataType
 

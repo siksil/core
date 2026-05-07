@@ -8,11 +8,11 @@ from typing import Any, cast
 from aioambient import OpenAPI
 from aioambient.errors import RequestError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import API_LAST_DATA, DOMAIN, LOGGER
 from .helper import get_station_name

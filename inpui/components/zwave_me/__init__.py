@@ -2,12 +2,12 @@
 
 from zwave_me_ws import ZWaveMe, ZWaveMeData
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import DOMAIN, PLATFORMS, ZWaveMePlatform
 

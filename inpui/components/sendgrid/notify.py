@@ -9,21 +9,21 @@ from typing import Any
 from sendgrid import SendGridAPIClient
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_TITLE,
     ATTR_TITLE_DEFAULT,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_RECIPIENT,
     CONF_SENDER,
     CONTENT_TYPE_TEXT_PLAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

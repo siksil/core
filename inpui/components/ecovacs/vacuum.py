@@ -18,17 +18,17 @@ from deebot_client.events.map import Map
 from deebot_client.models import CleanAction, CleanMode, State
 import sucks
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     Segment,
     StateVacuumEntity,
     StateVacuumEntityDescription,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import slugify
 
 from . import EcovacsConfigEntry
 from .const import DOMAIN

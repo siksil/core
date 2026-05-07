@@ -1,14 +1,14 @@
 """Tests for Broadlink switches."""
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.components.switch import (
+from inpui.components.broadlink.const import DOMAIN
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import get_device
 

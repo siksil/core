@@ -1,8 +1,8 @@
 """Tests for the Lutron Caseta integration."""
 
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MockBridge, async_setup_integration
 

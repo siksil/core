@@ -7,7 +7,7 @@ from typing import Any
 
 import pypck
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_TRANSITION,
     DOMAIN as LIGHT_DOMAIN,
@@ -15,11 +15,11 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.const import CONF_DOMAIN, CONF_ENTITIES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.color import brightness_to_value, value_to_brightness
+from inpui.const import CONF_DOMAIN, CONF_ENTITIES
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
+from inpui.util.color import brightness_to_value, value_to_brightness
 
 from .const import (
     CONF_DIMMABLE,

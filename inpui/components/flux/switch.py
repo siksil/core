@@ -11,7 +11,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_RGB_COLOR,
@@ -21,8 +21,8 @@ from homeassistant.components.light import (
     VALID_TRANSITION,
     is_on,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_BRIGHTNESS,
     CONF_LIGHTS,
@@ -34,18 +34,18 @@ from homeassistant.const import (
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, event
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.sun import get_astral_event_date
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import slugify
-from homeassistant.util.color import (
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, event
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.sun import get_astral_event_date
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import slugify
+from inpui.util.color import (
     color_RGB_to_xy_brightness,
     color_temperature_to_rgb,
 )
-from homeassistant.util.dt import as_local, utcnow as dt_utcnow
+from inpui.util.dt import as_local, utcnow as dt_utcnow
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     SERVICE_PAUSE,
     SERVICE_RETURN_TO_BASE,
@@ -11,9 +11,9 @@ from homeassistant.components.vacuum import (
     SERVICE_STOP,
     VacuumActivity,
 )
-from homeassistant.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

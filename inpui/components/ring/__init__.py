@@ -8,11 +8,11 @@ import uuid
 
 from ring_doorbell import Auth, Ring
 
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.const import APPLICATION_NAME, CONF_DEVICE_ID, CONF_TOKEN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.const import APPLICATION_NAME, CONF_DEVICE_ID, CONF_TOKEN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_LISTEN_CREDENTIALS, DOMAIN, PLATFORMS
 from .coordinator import (

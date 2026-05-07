@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch
 
 from aiohttp.test_utils import TestClient
 
-from homeassistant.auth.providers.homeassistant import InvalidAuth
+from inpui.auth.providers.homeassistant import InvalidAuth
 
 
 async def test_auth_success(hassio_client_supervisor: TestClient) -> None:

@@ -5,11 +5,11 @@ from unittest.mock import patch
 from aiopyarr import exceptions
 import pytest
 
-from homeassistant.components.radarr.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.radarr.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     API_KEY,

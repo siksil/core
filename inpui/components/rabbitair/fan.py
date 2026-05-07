@@ -6,11 +6,11 @@ from typing import Any
 
 from rabbitair import Mode, Model, Speed
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

@@ -2,14 +2,14 @@
 
 from loqedAPI import loqed
 
-from homeassistant.components.lock import LockState
-from homeassistant.const import (
+from inpui.components.lock import LockState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

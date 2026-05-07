@@ -29,10 +29,10 @@ from habiticalib import (
 )
 import pytest
 
-from homeassistant.components.habitica.const import CONF_API_USER, DEFAULT_URL, DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.habitica.const import CONF_API_USER, DEFAULT_URL, DOMAIN
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture, load_fixture
 

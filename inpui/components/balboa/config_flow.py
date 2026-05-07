@@ -9,16 +9,16 @@ from pybalboa import SpaClient
 from pybalboa.exceptions import SpaConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_SYNC_TIME, DOMAIN
 

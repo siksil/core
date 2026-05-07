@@ -11,21 +11,21 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from voip_utils import CallInfo
 
-from homeassistant.components import assist_pipeline, assist_satellite, tts, voip
-from homeassistant.components.assist_satellite import AssistSatelliteEntity
+from inpui.components import assist_pipeline, assist_satellite, tts, voip
+from inpui.components.assist_satellite import AssistSatelliteEntity
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.assist_satellite.entity import AssistSatelliteState
-from homeassistant.components.voip import DOMAIN, HassVoipDatagramProtocol
-from homeassistant.components.voip.assist_satellite import Tones, VoipAssistSatellite
-from homeassistant.components.voip.devices import VoIPDevice, VoIPDevices
-from homeassistant.components.voip.voip import PreRecordMessageProtocol, make_protocol
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.setup import async_setup_component
+from inpui.components.assist_satellite.entity import AssistSatelliteState
+from inpui.components.voip import DOMAIN, HassVoipDatagramProtocol
+from inpui.components.voip.assist_satellite import Tones, VoipAssistSatellite
+from inpui.components.voip.devices import VoIPDevice, VoIPDevices
+from inpui.components.voip.voip import PreRecordMessageProtocol, make_protocol
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import EntityComponent
+from inpui.setup import async_setup_component
 
 from tests.components.tts.common import MockResultStream
 

@@ -15,29 +15,29 @@ from fritzconnection.core.exceptions import (
 from fritzconnection.lib.fritztools import ArgumentNamespace
 import pytest
 
-from homeassistant.components.fritz.const import (
+from inpui.components.fritz.const import (
     CONF_FEATURE_DEVICE_TRACKING,
     DEFAULT_CONF_FEATURE_DEVICE_TRACKING,
     DEFAULT_SSL,
     DOMAIN,
 )
-from homeassistant.components.fritz.coordinator import (
+from inpui.components.fritz.coordinator import (
     AvmWrapper,
     ClassSetupMissing,
     FritzBoxTools,
     FritzConnectionCached,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .conftest import FritzConnectionMock, FritzServiceMock
 from .const import MOCK_MESH_MASTER_MAC, MOCK_STATUS_DEVICE_INFO_DATA, MOCK_USER_DATA

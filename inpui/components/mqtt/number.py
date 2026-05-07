@@ -7,8 +7,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import number
-from homeassistant.components.number import (
+from inpui.components import number
+from inpui.components.number import (
     DEFAULT_MAX_VALUE,
     DEFAULT_MIN_VALUE,
     DEFAULT_STEP,
@@ -16,9 +16,9 @@ from homeassistant.components.number import (
     NumberMode,
     RestoreNumber,
 )
-from homeassistant.components.sensor import AMBIGUOUS_UNITS
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.sensor import AMBIGUOUS_UNITS
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_MODE,
     CONF_NAME,
@@ -26,11 +26,11 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from . import subscription
 from .config import MQTT_RW_SCHEMA

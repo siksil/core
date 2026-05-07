@@ -7,15 +7,15 @@ from unittest.mock import patch
 from hass_nabucasa.payments_api import PaymentsApiError
 import pytest
 
-from homeassistant.components.cloud.const import DOMAIN
-from homeassistant.components.cloud.repairs import (
+from inpui.components.cloud.const import DOMAIN
+from inpui.components.cloud.repairs import (
     async_manage_legacy_subscription_issue,
 )
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import mock_cloud
 

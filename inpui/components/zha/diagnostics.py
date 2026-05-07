@@ -12,11 +12,11 @@ from zigpy.application import ControllerApplication
 from zigpy.config import CONF_NWK_EXTENDED_PAN_ID
 from zigpy.types import Channels
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.diagnostics import async_redact_data
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_ALARM_MASTER_CODE
 from .helpers import (

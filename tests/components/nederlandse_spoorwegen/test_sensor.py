@@ -9,7 +9,7 @@ import pytest
 from requests.exceptions import ConnectionError as RequestsConnectionError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nederlandse_spoorwegen.const import (
+from inpui.components.nederlandse_spoorwegen.const import (
     CONF_FROM,
     CONF_TIME,
     CONF_TO,
@@ -18,10 +18,10 @@ from homeassistant.components.nederlandse_spoorwegen.const import (
     INTEGRATION_TITLE,
     SUBENTRY_TYPE_ROUTE,
 )
-from homeassistant.config_entries import ConfigSubentryDataWithId
-from homeassistant.const import CONF_API_KEY, CONF_NAME, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.config_entries import ConfigSubentryDataWithId
+from inpui.const import CONF_API_KEY, CONF_NAME, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration
 from .const import API_KEY

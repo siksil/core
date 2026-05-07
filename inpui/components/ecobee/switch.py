@@ -6,11 +6,11 @@ from datetime import tzinfo
 import logging
 from typing import Any
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.climate import HVACMode
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import EcobeeConfigEntry, EcobeeData
 from .climate import HASS_TO_ECOBEE_HVAC

@@ -7,15 +7,15 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
 
 from .const import (
     CONF_AZIMUTH,

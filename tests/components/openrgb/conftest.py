@@ -8,9 +8,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.openrgb.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.openrgb.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

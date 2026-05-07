@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
-from homeassistant.components.fastdotcom.coordinator import DEFAULT_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
+from inpui.components.fastdotcom.coordinator import DEFAULT_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

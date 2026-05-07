@@ -5,7 +5,7 @@ from typing import Any
 
 from pyhap.const import CATEGORY_THERMOSTAT
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -48,11 +48,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     DOMAIN as WATER_HEATER_DOMAIN,
     SERVICE_SET_TEMPERATURE as SERVICE_SET_TEMPERATURE_WATER_HEATER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
@@ -61,9 +61,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import State, callback
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.percentage import (
+from inpui.core import State, callback
+from inpui.util.enum import try_parse_enum
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

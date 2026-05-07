@@ -7,16 +7,16 @@ from typing import cast
 from aiohttp import ClientResponseError
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_TEMPERATURE
-from homeassistant.core import (
+from inpui.const import ATTR_DEVICE_ID, ATTR_TEMPERATURE
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.service import async_extract_config_entry_ids
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.service import async_extract_config_entry_ids
 
 from .const import DOMAIN
 from .coordinator import MieleConfigEntry

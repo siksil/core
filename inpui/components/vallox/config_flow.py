@@ -8,11 +8,11 @@ from typing import Any
 from vallox_websocket_api import Vallox, ValloxApiException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.network import is_ip_address
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util.network import is_ip_address
 
 from .const import DEFAULT_NAME, DOMAIN
 

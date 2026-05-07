@@ -22,12 +22,12 @@ from reolink_aio.exceptions import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.media_source import Unresolvable
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.translation import async_get_exception_message
+from inpui.components.media_source import Unresolvable
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.storage import Store
+from inpui.helpers.translation import async_get_exception_message
 
 from .const import DOMAIN
 

@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningIntegration,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
 
 from .const import DOMAIN
 from .helpers import get_zha_gateway

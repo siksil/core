@@ -5,14 +5,14 @@ import logging
 
 from aioautomower.model import SingleMessageData
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     DOMAIN as EVENT_DOMAIN,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AutomowerConfigEntry
 from .const import ERROR_KEYS

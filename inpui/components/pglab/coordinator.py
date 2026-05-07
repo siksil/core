@@ -9,9 +9,9 @@ from pypglab.const import SENSOR_REBOOT_TIME, SENSOR_TEMPERATURE, SENSOR_VOLTAGE
 from pypglab.device import Device as PyPGLabDevice
 from pypglab.sensor import StatusSensor as PyPGLabSensors
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.dt import utcnow
 
 from .const import DOMAIN, LOGGER
 

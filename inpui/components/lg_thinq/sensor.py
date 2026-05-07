@@ -12,23 +12,23 @@ from thinqconnect import USAGE_DAILY, USAGE_MONTHLY, DeviceType, ThinQAPIExcepti
 from thinqconnect.devices.const import Property as ThinQProperty
 from thinqconnect.integration import ActiveMode, ThinQPropertyEx, TimerProperty
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     PERCENTAGE,
     UnitOfEnergy,
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_time
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_point_in_time
+from inpui.util import dt as dt_util
 
 from . import ThinqConfigEntry
 from .coordinator import DeviceDataUpdateCoordinator

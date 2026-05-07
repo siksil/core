@@ -5,23 +5,23 @@ from __future__ import annotations
 from dataclasses import dataclass
 import logging
 
-from homeassistant.components.hassio import get_os_info
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.hassio import get_os_info
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     check_multi_pan_addon,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     guess_firmware_info,
 )
-from homeassistant.config_entries import SOURCE_HARDWARE, ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.hassio import is_hassio
+from inpui.config_entries import SOURCE_HARDWARE, ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import discovery_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.hassio import is_hassio
 
 from .const import (
     FIRMWARE,

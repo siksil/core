@@ -8,10 +8,10 @@ from typing import Any
 from yeelight import BulbException
 from yeelight.aio import KEY_CONNECTED, AsyncBulb
 
-from homeassistant.const import CONF_ID, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
+from inpui.const import CONF_ID, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
 
 from .const import (
     ACTIVE_COLOR_FLOWING,

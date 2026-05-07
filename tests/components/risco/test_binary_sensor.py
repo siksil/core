@@ -6,12 +6,12 @@ from unittest.mock import MagicMock, PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.risco import CannotConnectError, UnauthorizedError
-from homeassistant.components.risco.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.components.risco import CannotConnectError, UnauthorizedError
+from inpui.components.risco.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from .util import TEST_SITE_NAME, TEST_SITE_UUID, system_mock
 

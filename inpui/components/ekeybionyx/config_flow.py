@@ -11,16 +11,16 @@ import aiohttp
 import ekey_bionyxpy
 import voluptuous as vol
 
-from homeassistant.components.webhook import (
+from inpui.components.webhook import (
     async_generate_id as webhook_generate_id,
     async_generate_path as webhook_generate_path,
 )
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.selector import SelectOptionDict, SelectSelector
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.helpers import config_entry_oauth2_flow, config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.network import get_url
+from inpui.helpers.selector import SelectOptionDict, SelectSelector
 
 from .const import API_URL, DOMAIN, INTEGRATION_NAME, SCOPE
 

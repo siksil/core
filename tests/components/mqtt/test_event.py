@@ -7,11 +7,11 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import event, mqtt
-from homeassistant.components.mqtt.event import MQTT_EVENT_ATTRIBUTES_BLOCKED
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components import event, mqtt
+from inpui.components.mqtt.event import MQTT_EVENT_ATTRIBUTES_BLOCKED
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .common import (
     help_custom_config,

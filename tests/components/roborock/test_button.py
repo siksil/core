@@ -7,11 +7,11 @@ from roborock import RoborockException
 from roborock.exceptions import RoborockTimeout
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import SERVICE_PRESS
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import SERVICE_PRESS
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .conftest import FakeDevice
 

@@ -2,16 +2,16 @@
 
 from __future__ import annotations
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
     LightEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import BaseToggleEntity
 

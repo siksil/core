@@ -11,10 +11,10 @@ from yolink.const import ATTR_DEVICE_SPRINKLER
 from yolink.device import YoLinkDevice
 from yolink.message_resolver import sprinkler_message_resolve
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import YoLinkCoordinator

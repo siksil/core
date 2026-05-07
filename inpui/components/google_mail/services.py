@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING
 from googleapiclient.http import HttpRequest
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service import async_extract_config_entry_ids
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service import async_extract_config_entry_ids
 
 from .const import (
     ATTR_ENABLED,

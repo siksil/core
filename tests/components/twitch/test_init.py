@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, patch
 from aiohttp.client_exceptions import ClientError
 import pytest
 
-from homeassistant.components.twitch.const import DOMAIN, OAUTH2_TOKEN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.twitch.const import DOMAIN, OAUTH2_TOKEN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

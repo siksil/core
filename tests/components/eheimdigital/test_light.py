@@ -10,23 +10,23 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.eheimdigital.const import EFFECT_DAYCL_MODE
-from homeassistant.components.light import (
+from inpui.components.eheimdigital.const import EFFECT_DAYCL_MODE
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     DOMAIN as LIGHT_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.color import value_to_brightness
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util.color import value_to_brightness
 
 from .conftest import init_integration
 

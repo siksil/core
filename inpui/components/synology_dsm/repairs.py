@@ -10,10 +10,10 @@ from synology_dsm.api.file_station.models import SynoFileSharedFolder
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.selector import (
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

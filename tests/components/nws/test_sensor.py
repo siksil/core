@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components.nws.const import ATTRIBUTION, DOMAIN
-from homeassistant.components.nws.sensor import SENSOR_TYPES
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import ATTR_ATTRIBUTION, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import slugify
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.components.nws.const import ATTRIBUTION, DOMAIN
+from inpui.components.nws.sensor import SENSOR_TYPES
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import ATTR_ATTRIBUTION, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import slugify
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .const import (
     EXPECTED_FORECAST_IMPERIAL,

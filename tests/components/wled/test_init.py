@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from wled import WLEDConnectionError
 
-from homeassistant.components.wled.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE, ConfigEntryState
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.wled.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE, ConfigEntryState
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

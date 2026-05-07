@@ -7,23 +7,23 @@ import pytest
 from reolink_aio.api import Chime
 from reolink_aio.exceptions import ReolinkError
 
-from homeassistant.components.reolink.config_flow import DEFAULT_PROTOCOL
-from homeassistant.components.reolink.const import (
+from inpui.components.reolink.config_flow import DEFAULT_PROTOCOL
+from inpui.components.reolink.const import (
     CONF_BC_ONLY,
     CONF_BC_PORT,
     CONF_SUPPORTS_PRIVACY_MODE,
     CONF_USE_HTTPS,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import format_mac
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import format_mac
 
 from tests.common import MockConfigEntry
 

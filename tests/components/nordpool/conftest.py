@@ -9,9 +9,9 @@ from typing import Any
 from pynordpool import API, NordPoolClient
 import pytest
 
-from homeassistant.components.nordpool.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
+from inpui.components.nordpool.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG
 

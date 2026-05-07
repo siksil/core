@@ -9,16 +9,16 @@ from zigpy.device import Device
 import zigpy.profiles.zha
 from zigpy.zcl.clusters import general
 
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_UNIQUE_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_DEVICE_ID, CONF_UNIQUE_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE
 

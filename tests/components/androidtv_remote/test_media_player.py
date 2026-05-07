@@ -5,10 +5,10 @@ from unittest.mock import MagicMock, call
 from androidtvremote2 import ConnectionClosed
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

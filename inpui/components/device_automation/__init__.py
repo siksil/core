@@ -14,24 +14,24 @@ from typing import TYPE_CHECKING, Any, Literal, overload
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.const import (
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
     CONF_PLATFORM,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.loader import IntegrationNotFound
-from homeassistant.requirements import (
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.loader import IntegrationNotFound
+from inpui.requirements import (
     RequirementsNotFound,
     async_get_integration_with_requirements,
 )

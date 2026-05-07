@@ -6,8 +6,8 @@ import asyncio
 from datetime import datetime, timedelta
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.cover import CoverEntity
-from homeassistant.const import (
+from inpui.components.cover import CoverEntity
+from inpui.const import (
     CONF_COMMAND_CLOSE,
     CONF_COMMAND_OPEN,
     CONF_COMMAND_STATE,
@@ -16,16 +16,16 @@ from homeassistant.const import (
     CONF_SCAN_INTERVAL,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.template import Template
+from inpui.helpers.trigger_template_entity import (
     ManualTriggerEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util, slugify
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util, slugify
 
 from .const import CONF_COMMAND_TIMEOUT, LOGGER, TRIGGER_ENTITY_OPTIONS
 from .utils import async_call_shell_with_timeout, async_check_output_or_log

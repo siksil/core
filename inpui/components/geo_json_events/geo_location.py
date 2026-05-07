@@ -8,11 +8,11 @@ from typing import Any
 
 from aio_geojson_generic_client.feed_entry import GenericFeedEntry
 
-from homeassistant.components.geo_location import GeolocationEvent
-from homeassistant.const import UnitOfLength
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.geo_location import GeolocationEvent
+from inpui.const import UnitOfLength
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_EXTERNAL_ID, SIGNAL_DELETE_ENTITY, SIGNAL_UPDATE_ENTITY, SOURCE
 from .manager import GeoJsonConfigEntry, GeoJsonFeedEntityManager

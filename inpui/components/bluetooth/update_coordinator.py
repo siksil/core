@@ -7,7 +7,7 @@ import logging
 
 from habluetooth import BluetoothScanningMode
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
 
 from .api import (
     async_address_present,

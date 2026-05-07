@@ -4,10 +4,10 @@ from datetime import tzinfo
 
 import pytest
 
-from homeassistant.components.worldclock.const import CONF_TIME_FORMAT, DEFAULT_NAME
-from homeassistant.const import CONF_NAME, CONF_TIME_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.worldclock.const import CONF_TIME_FORMAT, DEFAULT_NAME
+from inpui.const import CONF_NAME, CONF_TIME_ZONE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

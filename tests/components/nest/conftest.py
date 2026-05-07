@@ -17,15 +17,15 @@ from google_nest_sdm.streaming_manager import StreamingManager
 import pytest
 from yarl import URL
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     async_import_client_credential,
 )
-from homeassistant.components.nest import DOMAIN
-from homeassistant.components.nest.const import API_URL, CONF_SUBSCRIBER_ID, SDM_SCOPES
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.nest import DOMAIN
+from inpui.components.nest.const import API_URL, CONF_SUBSCRIBER_ID, SDM_SCOPES
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import (
     DEVICE_ID,

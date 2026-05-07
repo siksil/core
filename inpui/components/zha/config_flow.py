@@ -18,16 +18,16 @@ import zigpy.backups
 from zigpy.config import CONF_DEVICE, CONF_DEVICE_PATH
 from zigpy.exceptions import CannotWriteNetworkSettings, DestructiveWriteNetworkSettings
 
-from homeassistant.components import onboarding, usb
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.components.hassio import AddonError, AddonState
-from homeassistant.components.homeassistant_hardware import silabs_multiprotocol_addon
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components import onboarding, usb
+from inpui.components.file_upload import process_uploaded_file
+from inpui.components.hassio import AddonError, AddonState
+from inpui.components.homeassistant_hardware import silabs_multiprotocol_addon
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     ZigbeeFlowStrategy,
 )
-from homeassistant.components.homeassistant_yellow import hardware as yellow_hardware
-from homeassistant.components.usb import USBDevice, scan_serial_ports
-from homeassistant.config_entries import (
+from inpui.components.homeassistant_yellow import hardware as yellow_hardware
+from inpui.components.usb import USBDevice, scan_serial_ports
+from inpui.config_entries import (
     SOURCE_IGNORE,
     SOURCE_ZEROCONF,
     ConfigEntry,
@@ -38,15 +38,15 @@ from homeassistant.config_entries import (
     OperationNotAllowed,
     OptionsFlow,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.selector import FileSelector, FileSelectorConfig
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.selector import FileSelector, FileSelectorConfig
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util import dt as dt_util
 
 from .const import CONF_BAUDRATE, CONF_FLOW_CONTROL, CONF_RADIO_TYPE, DOMAIN
 from .helpers import get_config_entry_unique_id, get_zha_gateway

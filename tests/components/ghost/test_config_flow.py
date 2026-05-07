@@ -5,14 +5,14 @@ from unittest.mock import AsyncMock
 from aioghost.exceptions import GhostAuthError, GhostConnectionError
 import pytest
 
-from homeassistant.components.ghost.const import (
+from inpui.components.ghost.const import (
     CONF_ADMIN_API_KEY,
     CONF_API_URL,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import API_KEY, API_URL, SITE_UUID
 

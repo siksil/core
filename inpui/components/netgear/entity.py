@@ -5,12 +5,12 @@ from __future__ import annotations
 from abc import abstractmethod
 from typing import Any
 
-from homeassistant.const import CONF_HOST
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_HOST
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import NetgearDataCoordinator, NetgearTrackerCoordinator

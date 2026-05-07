@@ -3,8 +3,8 @@
 from jaraco.abode.automation import Automation as AbodeAuto
 from jaraco.abode.devices.base import Device as AbodeDev
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from . import AbodeSystem
 from .const import ATTRIBUTION, DOMAIN, DOMAIN_DATA

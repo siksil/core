@@ -12,12 +12,12 @@ from typing import Any, cast
 from awesomeversion import AwesomeVersion
 from hyperion import client, const as hyperion_const
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TOKEN, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )

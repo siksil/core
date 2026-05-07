@@ -1,8 +1,8 @@
 """Test Slack integration."""
 
-from homeassistant.components.slack.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.slack.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import CONF_DATA, async_init_integration
 

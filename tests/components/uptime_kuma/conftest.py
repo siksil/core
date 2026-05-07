@@ -8,9 +8,9 @@ from pythonkuma import MonitorType, UptimeKumaMonitor, UptimeKumaVersion
 from pythonkuma.models import MonitorStatus
 from pythonkuma.update import LatestRelease
 
-from homeassistant.components.uptime_kuma.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.components.uptime_kuma.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from tests.common import MockConfigEntry
 

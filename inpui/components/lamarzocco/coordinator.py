@@ -17,11 +17,11 @@ from pylamarzocco.exceptions import (
     RequestNotSuccessful,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_OFFLINE_MODE, DOMAIN
 
@@ -159,7 +159,7 @@ class LaMarzoccoConfigUpdateCoordinator(LaMarzoccoUpdateCoordinator):
             await self.device.websocket.disconnect()
 
         self.config_entry.async_on_unload(
-            self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, websocket_close)
+            self.hass.bus.async_listen_once(EVENT_INPUI_STOP, websocket_close)
         )
         self.config_entry.async_on_unload(websocket_close)
 

@@ -2,14 +2,14 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.atag import DOMAIN
-from homeassistant.components.water_heater import (
+from inpui.components.atag import DOMAIN
+from inpui.components.water_heater import (
     DOMAIN as WATER_HEATER_DOMAIN,
     SERVICE_SET_TEMPERATURE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import UID, init_integration
 

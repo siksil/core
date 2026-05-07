@@ -12,8 +12,8 @@ from pyoctoprintapi import ApiError, OctoprintClient, OctoprintException
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PATH,
@@ -22,12 +22,12 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.ssl import get_default_context, get_default_no_verify_context
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.ssl import get_default_context, get_default_no_verify_context
 
 from .const import DOMAIN
 

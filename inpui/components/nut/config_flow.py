@@ -9,8 +9,8 @@ from typing import Any
 from aionut import NUTError, NUTLoginError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_ALIAS,
     CONF_BASE,
     CONF_HOST,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import PyNUTData, _unique_id_from_status
 from .const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN

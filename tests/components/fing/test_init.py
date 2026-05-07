@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.fing.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.fing.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock, patch
 import aiohttp
 from loqedAPI import loqed
 
-from homeassistant.components.loqed.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import get_url
-from homeassistant.setup import async_setup_component
+from inpui.components.loqed.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.helpers.network import get_url
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.typing import ClientSessionGenerator

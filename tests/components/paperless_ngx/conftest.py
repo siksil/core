@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pypaperless.models import RemoteVersion, Statistic, Status
 import pytest
 
-from homeassistant.components.paperless_ngx.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.paperless_ngx.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .const import USER_INPUT_ONE

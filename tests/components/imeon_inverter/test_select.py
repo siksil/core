@@ -5,15 +5,15 @@ from unittest.mock import MagicMock, patch
 from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.const import (
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_OPTION,
     SERVICE_SELECT_OPTION,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

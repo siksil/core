@@ -7,7 +7,7 @@ from itertools import chain
 
 import pytest
 
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_GRAMS_PER_CUBIC_METER,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_MILLIGRAMS_PER_CUBIC_METER,
@@ -37,9 +37,9 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
     UnitOfVolumetricFlux,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import unit_conversion
-from homeassistant.util.unit_conversion import (
+from inpui.exceptions import HomeAssistantError
+from inpui.util import unit_conversion
+from inpui.util.unit_conversion import (
     ApparentPowerConverter,
     AreaConverter,
     BaseUnitConverter,

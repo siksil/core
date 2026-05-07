@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from azure.storage.blob import BlobProperties
 import pytest
 
-from homeassistant.components.azure_storage.const import DOMAIN
+from inpui.components.azure_storage.const import DOMAIN
 
 from .const import BACKUP_METADATA, USER_INPUT
 

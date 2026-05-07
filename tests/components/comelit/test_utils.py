@@ -7,14 +7,14 @@ from aiocomelit.const import CLIMATE, WATT
 from aiocomelit.exceptions import CannotAuthenticate, CannotConnect, CannotRetrieveData
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.comelit.const import DOMAIN
-from homeassistant.components.humidifier import ATTR_HUMIDITY
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TURN_ON
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.climate import HVACMode
+from inpui.components.comelit.const import DOMAIN
+from inpui.components.humidifier import ATTR_HUMIDITY
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TURN_ON
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import setup_integration
 

@@ -10,18 +10,18 @@ from typing import TYPE_CHECKING, Any
 from pypglab.device import Device as PyPGLabDevice
 from pypglab.mqtt import Client as PyPGLabMqttClient
 
-from homeassistant.components.mqtt import (
+from inpui.components.mqtt import (
     EntitySubscription,
     ReceiveMessage,
     async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.dispatcher import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )

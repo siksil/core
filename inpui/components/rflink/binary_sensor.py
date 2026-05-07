@@ -6,24 +6,24 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_DEVICES,
     CONF_FORCE_UPDATE,
     CONF_NAME,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, event as evt
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, event as evt
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_ALIASES
 from .entity import RflinkDevice

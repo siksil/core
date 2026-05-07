@@ -20,7 +20,7 @@ from evohomeasync2.schemas.const import (
     ZoneType as EvoZoneType,
 )
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_AWAY,
     PRESET_ECO,
     PRESET_HOME,
@@ -29,17 +29,17 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_MODE,
     ATTR_TEMPERATURE,
     PRECISION_TENTHS,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from .const import ATTR_DURATION, ATTR_PERIOD, DOMAIN, EVOHOME_DATA, EvoService
 from .coordinator import EvoDataUpdateCoordinator

@@ -5,10 +5,10 @@ from __future__ import annotations
 from collections.abc import Iterable
 from dataclasses import replace
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import collection, entity_registry as er, restore_state
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import collection, entity_registry as er, restore_state
 
 from .const import OPTION_PREFERRED
 from .pipeline import KEY_ASSIST_PIPELINE, AssistDevice

@@ -6,11 +6,11 @@ from collections.abc import Callable
 import json
 from typing import Any
 
-from homeassistant.components.fronius.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.fronius.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

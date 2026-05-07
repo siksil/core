@@ -15,8 +15,8 @@ from habluetooth.advertisement_tracker import TRACKER_BUFFERING_WOBBLE_SECONDS
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     MONOTONIC_TIME,
     BaseHaRemoteScanner,
@@ -32,18 +32,18 @@ from homeassistant.components.bluetooth import (
     async_track_unavailable,
     storage,
 )
-from homeassistant.components.bluetooth.const import (
+from inpui.components.bluetooth.const import (
     SOURCE_LOCAL,
     UNAVAILABLE_TRACK_SECONDS,
 )
-from homeassistant.components.bluetooth.manager import HomeAssistantBluetoothManager
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.dt import utcnow
-from homeassistant.util.json import json_loads
+from inpui.components.bluetooth.manager import HomeAssistantBluetoothManager
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.dt import utcnow
+from inpui.util.json import json_loads
 
 from . import (
     HCI0_SOURCE_ADDRESS,

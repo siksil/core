@@ -10,14 +10,14 @@ from yalesmartalarmclient.const import (
     YALE_STATE_DISARM,
 )
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YaleConfigEntry
 from .const import DOMAIN, STATE_MAP, YALE_ALL_ERRORS

@@ -6,10 +6,10 @@ from typing import Any
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components import zone
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import zone
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

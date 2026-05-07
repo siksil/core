@@ -5,12 +5,12 @@ from __future__ import annotations
 from pywemo.subscribe import EVENT_TYPE_LONG_PRESS
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.components.homeassistant.triggers import event as event_trigger
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, WEMO_SUBSCRIPTION_EVENT
 from .coordinator import async_get_coordinator

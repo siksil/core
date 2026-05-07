@@ -5,10 +5,10 @@ from unittest.mock import MagicMock, Mock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.todo import ATTR_ITEM, DOMAIN as TODO_DOMAIN, TodoServices
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.todo import ATTR_ITEM, DOMAIN as TODO_DOMAIN, TodoServices
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import ENTITY_ID
 

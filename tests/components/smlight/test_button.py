@@ -6,11 +6,11 @@ from freezegun.api import FrozenDateTimeFactory
 from pysmlight import Info, Radio
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.smlight.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.smlight.const import DOMAIN, SCAN_INTERVAL
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import setup_integration
 

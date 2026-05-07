@@ -1,11 +1,11 @@
 """The tests for Cover."""
 
-from homeassistant.components import cover
-from homeassistant.components.cover import CoverState
-from homeassistant.const import ATTR_ENTITY_ID, CONF_PLATFORM, SERVICE_TOGGLE
-from homeassistant.core import HomeAssistant, ServiceResponse
-from homeassistant.helpers.entity import Entity
-from homeassistant.setup import async_setup_component
+from inpui.components import cover
+from inpui.components.cover import CoverState
+from inpui.const import ATTR_ENTITY_ID, CONF_PLATFORM, SERVICE_TOGGLE
+from inpui.core import HomeAssistant, ServiceResponse
+from inpui.helpers.entity import Entity
+from inpui.setup import async_setup_component
 
 from .common import MockCover
 

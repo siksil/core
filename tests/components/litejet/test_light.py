@@ -1,16 +1,16 @@
 """The tests for the litejet component."""
 
-from homeassistant.components import light
-from homeassistant.components.light import ATTR_BRIGHTNESS, ATTR_TRANSITION
-from homeassistant.components.litejet.const import CONF_DEFAULT_TRANSITION
-from homeassistant.const import (
+from inpui.components import light
+from inpui.components.light import ATTR_BRIGHTNESS, ATTR_TRANSITION
+from inpui.components.litejet.const import CONF_DEFAULT_TRANSITION
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import async_init_integration
 

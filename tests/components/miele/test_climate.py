@@ -6,11 +6,11 @@ from aiohttp import ClientResponseError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

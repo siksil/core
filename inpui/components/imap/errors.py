@@ -1,6 +1,6 @@
 """Exceptions raised by IMAP integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class InvalidAuth(HomeAssistantError):

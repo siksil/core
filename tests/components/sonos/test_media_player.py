@@ -16,7 +16,7 @@ from soco.data_structures import (
 from sonos_websocket.exception import SonosWebsocketError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_ALBUM_NAME,
@@ -42,17 +42,17 @@ from homeassistant.components.media_player import (
     MediaPlayerEnqueue,
     RepeatMode,
 )
-from homeassistant.components.sonos.const import (
+from inpui.components.sonos.const import (
     DOMAIN,
     MEDIA_TYPE_DIRECTORY,
     SOURCE_LINEIN,
     SOURCE_TV,
 )
-from homeassistant.components.sonos.media_player import (
+from inpui.components.sonos.media_player import (
     LONG_SERVICE_TIMEOUT,
     VOLUME_INCREMENT,
 )
-from homeassistant.components.sonos.services import (
+from inpui.components.sonos.services import (
     ATTR_ALARM_ID,
     ATTR_ENABLED,
     ATTR_INCLUDE_LINKED_ZONES,
@@ -63,7 +63,7 @@ from homeassistant.components.sonos.services import (
     SERVICE_SNAPSHOT,
     SERVICE_UPDATE_ALARM,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_TIME,
@@ -78,15 +78,15 @@ from homeassistant.const import (
     SERVICE_VOLUME_SET,
     SERVICE_VOLUME_UP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import area_registry as ar, entity_registry as er
-from homeassistant.helpers.device_registry import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import area_registry as ar, entity_registry as er
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     CONNECTION_UPNP,
     DeviceRegistry,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .conftest import MockMusicServiceItem, MockSoCo, SoCoMockFactory, SonosMockEvent
 

@@ -1,9 +1,9 @@
 """Tests for the quantum_gateway component."""
 
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def setup_platform(hass: HomeAssistant) -> None:

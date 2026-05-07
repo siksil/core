@@ -6,7 +6,7 @@ from typing import Any
 
 from mastodon.Mastodon import Account, Instance, InstanceV2, MastodonNotFoundError
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import MastodonConfigEntry
 

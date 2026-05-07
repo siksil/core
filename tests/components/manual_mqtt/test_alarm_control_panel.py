@@ -6,9 +6,9 @@ from unittest.mock import patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import alarm_control_panel
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.const import (
+from inpui.components import alarm_control_panel
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -17,10 +17,10 @@ from homeassistant.const import (
     SERVICE_ALARM_ARM_NIGHT,
     SERVICE_ALARM_ARM_VACATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     assert_setup_component,

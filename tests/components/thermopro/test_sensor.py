@@ -4,15 +4,15 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
 )
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorEntityDescription
-import homeassistant.components.thermopro as thermopro_integration
-from homeassistant.components.thermopro import sensor as thermopro_sensor
-from homeassistant.components.thermopro.const import DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorEntityDescription
+import inpui.components.thermopro as thermopro_integration
+from inpui.components.thermopro import sensor as thermopro_sensor
+from inpui.components.thermopro.const import DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
 
 from . import TP357_SERVICE_INFO, TP962R_SERVICE_INFO, TP962R_SERVICE_INFO_2
 

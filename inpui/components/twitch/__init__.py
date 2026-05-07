@@ -7,10 +7,10 @@ from typing import cast
 from aiohttp.client_exceptions import ClientError, ClientResponseError
 from twitchAPI.twitch import Twitch
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     LocalOAuth2Implementation,
     OAuth2Session,

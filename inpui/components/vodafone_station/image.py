@@ -7,12 +7,12 @@ from typing import Final, cast
 
 from aiovodafone.const import WIFI_DATA
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import _LOGGER
 from .coordinator import VodafoneConfigEntry, VodafoneStationRouter

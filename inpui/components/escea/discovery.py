@@ -9,8 +9,8 @@ from pescea import (
     discovery_service as pescea_discovery_service,
 )
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     DATA_DISCOVERY_SERVICE,

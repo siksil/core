@@ -8,8 +8,8 @@ from lojack_api.device import Vehicle
 from lojack_api.models import Location
 import pytest
 
-from homeassistant.components.lojack.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.lojack.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import (
     TEST_ACCURACY,

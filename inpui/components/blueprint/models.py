@@ -14,16 +14,16 @@ import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
 from homeassistant import loader
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEFAULT,
     CONF_DOMAIN,
     CONF_NAME,
     CONF_PATH,
     __version__,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import yaml as yaml_util
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.util import yaml as yaml_util
 
 from .const import (
     BLUEPRINT_FOLDER,

@@ -9,18 +9,18 @@ import time
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_PREFIX,
     CONF_PROTOCOL,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, state
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, state
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -89,13 +89,13 @@ class GraphiteFeeder(threading.Thread):
         self._quit_object = object()
         self._unsub_state_changed = None
 
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_START, self.start_listen)
+        hass.bus.listen_once(EVENT_INPUI_START, self.start_listen)
         _LOGGER.debug("Graphite feeding to %s:%i initialized", self._host, self._port)
 
     def start_listen(self, event):
         """Start event-processing thread."""
         _LOGGER.debug("Event processing thread started")
-        self._hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, self.shutdown)
+        self._hass.bus.listen_once(EVENT_INPUI_STOP, self.shutdown)
         self._unsub_state_changed = self._hass.bus.listen(
             EVENT_STATE_CHANGED, self.event_listener
         )

@@ -7,16 +7,16 @@ from typing import Any
 from pylamarzocco.const import FirmwareType, UpdateStatus
 from pylamarzocco.exceptions import RequestNotSuccessful
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import LaMarzoccoConfigEntry

@@ -7,8 +7,8 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.flux_led.config_flow import FluxLedConfigFlow
-from homeassistant.components.flux_led.const import (
+from inpui.components.flux_led.config_flow import FluxLedConfigFlow
+from inpui.components.flux_led.const import (
     CONF_CUSTOM_EFFECT_COLORS,
     CONF_CUSTOM_EFFECT_SPEED_PCT,
     CONF_CUSTOM_EFFECT_TRANSITION,
@@ -23,10 +23,10 @@ from homeassistant.components.flux_led.const import (
     TRANSITION_JUMP,
     TRANSITION_STROBE,
 )
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import (
     DEFAULT_ENTRY_TITLE,

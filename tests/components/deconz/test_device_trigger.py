@@ -5,22 +5,22 @@ from unittest.mock import Mock
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.binary_sensor.device_trigger import (
+from inpui.components.binary_sensor.device_trigger import (
     CONF_BAT_LOW,
     CONF_NOT_BAT_LOW,
     CONF_NOT_TAMPERED,
     CONF_TAMPERED,
 )
-from homeassistant.components.deconz import device_trigger
-from homeassistant.components.deconz.const import DOMAIN
-from homeassistant.components.deconz.device_trigger import CONF_SUBTYPE
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.deconz import device_trigger
+from inpui.components.deconz.const import DOMAIN
+from inpui.components.deconz.device_trigger import CONF_SUBTYPE
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
@@ -29,10 +29,10 @@ from homeassistant.const import (
     CONF_TYPE,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.trigger import async_initialize_triggers
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.trigger import async_initialize_triggers
+from inpui.setup import async_setup_component
 
 from .conftest import WebsocketDataType
 

@@ -10,22 +10,22 @@ from fritzconnection.lib.fritzstatus import DefaultConnectionService
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fritz.const import DOMAIN
-from homeassistant.components.switch import (
+from inpui.components.fritz.const import DOMAIN
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import FritzConnectionMock
 from .const import (

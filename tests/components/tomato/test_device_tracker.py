@@ -7,9 +7,9 @@ import requests
 import requests_mock
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.components.tomato import device_tracker as tomato
-from homeassistant.const import (
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.components.tomato import device_tracker as tomato
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PLATFORM,
@@ -18,7 +18,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 def mock_session_response(*args, **kwargs):

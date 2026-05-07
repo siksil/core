@@ -11,15 +11,15 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
     OptionsFlowWithReload,
 )
-from homeassistant.core import HomeAssistant, callback, split_entity_id
-from homeassistant.data_entry_flow import UnknownHandler
+from inpui.core import HomeAssistant, callback, split_entity_id
+from inpui.data_entry_flow import UnknownHandler
 
 from . import entity_registry as er, selector
 from .typing import UNDEFINED, UndefinedType

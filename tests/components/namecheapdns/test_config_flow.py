@@ -5,19 +5,19 @@ from unittest.mock import AsyncMock
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.components.namecheapdns.const import DOMAIN, UPDATE_URL
-from homeassistant.components.namecheapdns.helpers import AuthFailed
-from homeassistant.config_entries import (
+from inpui.components.namecheapdns.const import DOMAIN, UPDATE_URL
+from inpui.components.namecheapdns.helpers import AuthFailed
+from inpui.config_entries import (
     SOURCE_IMPORT,
     SOURCE_REAUTH,
     SOURCE_USER,
     ConfigEntryState,
 )
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_PASSWORD
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_USER_INPUT
 

@@ -9,23 +9,23 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.lifx import DOMAIN
-from homeassistant.components.lifx.config_flow import LifXConfigFlow
-from homeassistant.components.lifx.const import CONF_SERIAL
-from homeassistant.const import CONF_DEVICE, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import (
+from inpui.components.lifx import DOMAIN
+from inpui.components.lifx.config_flow import LifXConfigFlow
+from inpui.components.lifx.const import CONF_SERIAL
+from inpui.const import CONF_DEVICE, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import (
     DEFAULT_ENTRY_TITLE,

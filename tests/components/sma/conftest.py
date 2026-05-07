@@ -12,8 +12,8 @@ from pysma.definitions.webconnect import sensor_map
 from pysma.sensor import Sensors
 import pytest
 
-from homeassistant.components.sma.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.sma.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MOCK_DEVICE, MOCK_USER_INPUT
 

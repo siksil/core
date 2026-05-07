@@ -10,18 +10,18 @@ from unittest.mock import patch
 import av
 import pytest
 
-from homeassistant.components.stream import Stream, create_stream
-from homeassistant.components.stream.const import (
+from inpui.components.stream import Stream, create_stream
+from inpui.components.stream.const import (
     HLS_PROVIDER,
     OUTPUT_IDLE_TIMEOUT,
     RECORDER_PROVIDER,
 )
-from homeassistant.components.stream.core import Orientation, Part
-from homeassistant.components.stream.fmp4utils import find_box
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.stream.core import Orientation, Part
+from inpui.components.stream.fmp4utils import find_box
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     DefaultSegment as Segment,

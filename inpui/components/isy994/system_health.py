@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import system_health
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant, callback
 
 from .const import DOMAIN, ISY_URL_POSTFIX
 from .models import IsyConfigEntry

@@ -4,11 +4,11 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.sensor.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.sensor.helpers import (  # pylint: disable=hass-component-root-import
     async_parse_date_datetime,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_NAME,
@@ -18,9 +18,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.helpers import template
+from inpui.helpers.trigger_template_entity import (
     CONF_ATTRIBUTES,
     CONF_AVAILABILITY,
     CONF_PICTURE,

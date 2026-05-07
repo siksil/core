@@ -6,13 +6,13 @@ from typing import Generic
 from ring_doorbell import RingCapability, RingEvent as RingAlert
 from ring_doorbell.const import KIND_DING, KIND_INTERCOM_UNLOCK, KIND_MOTION
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RingConfigEntry
 from .coordinator import RingListenCoordinator

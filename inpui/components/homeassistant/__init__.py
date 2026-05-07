@@ -10,14 +10,14 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import config as conf_util, core_config
-from homeassistant.auth.permissions.const import CAT_ENTITIES, POLICY_CONTROL
-from homeassistant.components import persistent_notification
-from homeassistant.const import (
+from inpui.auth.permissions.const import CAT_ENTITIES, POLICY_CONTROL
+from inpui.components import persistent_notification
+from inpui.const import (
     ATTR_ELEVATION,
     ATTR_ENTITY_ID,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     RESTART_EXIT_CODE,
     SERVICE_RELOAD,
     SERVICE_SAVE_PERSISTENT_STATES,
@@ -25,7 +25,7 @@ from homeassistant.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     HomeAssistant,
     ServiceCall,
@@ -33,27 +33,27 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError, Unauthorized, UnknownUser
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, Unauthorized, UnknownUser
+from inpui.helpers import (
     config_validation as cv,
     issue_registry as ir,
     recorder,
     restore_state,
 )
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.service import (
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.service import (
     async_extract_config_entry_ids,
     async_register_admin_service,
 )
-from homeassistant.helpers.signal import KEY_HA_STOP
-from homeassistant.helpers.system_info import async_get_system_info
-from homeassistant.helpers.target import (
+from inpui.helpers.signal import KEY_HA_STOP
+from inpui.helpers.system_info import async_get_system_info
+from inpui.helpers.target import (
     TargetSelection,
     async_extract_referenced_entity_ids,
 )
-from homeassistant.helpers.template import async_load_custom_templates
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.template import async_load_custom_templates
+from inpui.helpers.typing import ConfigType
 
 # The scene integration will do a late import of scene
 # so we want to make sure its loaded with the component
@@ -454,7 +454,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
                 )
 
     # Delay deprecation check to make sure installation method is determined correctly
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, _async_check_deprecation)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, _async_check_deprecation)
 
     return True
 

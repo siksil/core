@@ -6,14 +6,14 @@ from typing import Any
 from aiostreammagic import StreamMagicClient
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import CONNECT_TIMEOUT, DOMAIN, STREAM_MAGIC_EXCEPTIONS
 

@@ -9,7 +9,7 @@ from typing import Any, Concatenate
 from pizone import Controller, Zone
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_HIGH,
     FAN_LOW,
@@ -21,21 +21,21 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_EXCLUDE,
     PRECISION_HALVES,
     PRECISION_TENTHS,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.temperature import display_temp as show_temp
-from homeassistant.helpers.typing import ConfigType, VolDictType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_platform
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.temperature import display_temp as show_temp
+from inpui.helpers.typing import ConfigType, VolDictType
 
 from .const import (
     DATA_CONFIG,

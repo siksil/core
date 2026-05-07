@@ -6,8 +6,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import fan, template
-from homeassistant.components.fan import (
+from inpui.components import fan, template
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -17,10 +17,10 @@ from homeassistant.components.fan import (
     FanEntityFeature,
     NotValidPresetModeError,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import ConfigurationStyle, async_get_flow_preview_state
 

@@ -7,20 +7,20 @@ from typing import Any, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.components.script import CONF_MODE
-from homeassistant.const import CONF_DESCRIPTION, CONF_TYPE, SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components.script import CONF_MODE
+from inpui.const import CONF_DESCRIPTION, CONF_TYPE, SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     intent,
     script,
     service,
     template,
 )
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.script import async_validate_actions_config
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.script import async_validate_actions_config
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

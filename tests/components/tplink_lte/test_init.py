@@ -1,9 +1,9 @@
 """Tests for the TP-Link LTE integration."""
 
-from homeassistant.components.tplink_lte import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.tplink_lte import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 
 async def test_tplink_lte_repair_issue(

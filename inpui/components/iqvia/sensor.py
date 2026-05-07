@@ -7,14 +7,14 @@ from typing import Any, NamedTuple, cast
 
 import numpy as np
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import ATTR_STATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_STATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     TYPE_ALLERGY_FORECAST,

@@ -6,9 +6,9 @@ from typing import Any
 
 from yarl import URL
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from . import NtfyConfigEntry
 

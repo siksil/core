@@ -9,19 +9,19 @@ from typing import Any, Literal
 from aiokafka import AIOKafkaProducer
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import ssl as ssl_util
+from inpui.core import Event, EventStateChangedData, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
+from inpui.helpers.typing import ConfigType
+from inpui.util import ssl as ssl_util
 
 DOMAIN = "apache_kafka"
 
@@ -64,7 +64,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         conf.get(CONF_PASSWORD),
     )
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, kafka.shutdown)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, kafka.shutdown)
 
     await kafka.start()
 

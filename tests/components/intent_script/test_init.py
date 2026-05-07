@@ -5,16 +5,16 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.intent_script import DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME, SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.intent_script import DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME, SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     entity_registry as er,
     floor_registry as fr,
     intent,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service, get_fixture_path
 

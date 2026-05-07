@@ -3,9 +3,9 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ccm15.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.ccm15.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

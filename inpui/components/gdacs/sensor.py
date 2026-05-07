@@ -9,12 +9,12 @@ from typing import Any
 
 from aio_georss_client.status_update import StatusUpdate
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.sensor import SensorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import GdacsConfigEntry, GdacsFeedEntityManager
 from .const import DOMAIN

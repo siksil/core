@@ -15,10 +15,10 @@ from aioairzone.const import (
 )
 import pytest
 
-from homeassistant.components.select import ATTR_OPTIONS, DOMAIN as SELECT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, SERVICE_SELECT_OPTION
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.select import ATTR_OPTIONS, DOMAIN as SELECT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, SERVICE_SELECT_OPTION
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from .util import async_init_integration
 

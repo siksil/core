@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.shopping_list import NoMatchingShoppingListItem
-from homeassistant.components.shopping_list.const import (
+from inpui.components.shopping_list import NoMatchingShoppingListItem
+from inpui.components.shopping_list.const import (
     ATTR_REVERSE,
     DOMAIN,
     EVENT_SHOPPING_LIST_UPDATED,
@@ -18,14 +18,14 @@ from homeassistant.components.shopping_list.const import (
     SERVICE_REMOVE_ITEM,
     SERVICE_SORT,
 )
-from homeassistant.components.websocket_api import (
+from inpui.components.websocket_api import (
     ERR_INVALID_FORMAT,
     ERR_NOT_FOUND,
     TYPE_RESULT,
 )
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 from tests.common import async_capture_events
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

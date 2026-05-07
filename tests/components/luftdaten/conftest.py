@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.luftdaten.const import CONF_SENSOR_ID, DOMAIN
-from homeassistant.const import CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
+from inpui.components.luftdaten.const import CONF_SENSOR_ID, DOMAIN
+from inpui.const import CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 DOMAIN = "weatherflow"
 LOGGER = logging.getLogger(__package__)

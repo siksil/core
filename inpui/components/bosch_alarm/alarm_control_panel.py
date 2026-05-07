@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from bosch_alarm_mode2 import Panel
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import BoschAlarmAreaEntity
 from .types import BoschAlarmConfigEntry

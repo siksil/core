@@ -1,8 +1,8 @@
 """Test the Govee BLE binary_sensor."""
 
-from homeassistant.components.govee_ble.const import CONF_DEVICE_TYPE, DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.govee_ble.const import CONF_DEVICE_TYPE, DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from . import (
     GV5123_CLOSED_SERVICE_INFO,

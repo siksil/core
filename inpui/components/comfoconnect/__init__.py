@@ -5,18 +5,18 @@ import logging
 from pycomfoconnect import Bridge, ComfoConnect
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PIN,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -78,7 +78,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     def _shutdown(_event: Event) -> None:
         ccb.disconnect()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, _shutdown)
+    hass.bus.listen_once(EVENT_INPUI_STOP, _shutdown)
 
     # Load platforms
     discovery.load_platform(hass, Platform.FAN, DOMAIN, {}, config)

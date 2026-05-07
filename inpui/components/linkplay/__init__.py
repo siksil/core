@@ -8,12 +8,12 @@ from linkplay.controller import LinkPlayController
 from linkplay.discovery import linkplay_factory_httpapi_bridge
 from linkplay.exceptions import LinkPlayRequestException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, PLATFORMS, SHARED_DATA, LinkPlaySharedData
 from .services import async_setup_services

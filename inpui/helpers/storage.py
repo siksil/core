@@ -15,12 +15,12 @@ from typing import Any
 
 from propcache.api import cached_property
 
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.const import (
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
@@ -28,11 +28,11 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, UnsupportedStorageVersionError
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util, json as json_util
-from homeassistant.util.file import WriteError, write_utf8_file, write_utf8_file_atomic
-from homeassistant.util.hass_dict import HassKey
+from inpui.exceptions import HomeAssistantError, UnsupportedStorageVersionError
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util, json as json_util
+from inpui.util.file import WriteError, write_utf8_file, write_utf8_file_atomic
+from inpui.util.hass_dict import HassKey
 
 from . import json as json_helper
 
@@ -122,7 +122,7 @@ class _StoreManager:
         hass = self._hass
         await hass.async_add_executor_job(self._initialize_files)
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STARTED,
+            EVENT_INPUI_STARTED,
             self._async_schedule_cleanup,
         )
 
@@ -181,7 +181,7 @@ class _StoreManager:
         )
         # Handle the case where we stop in the first 60s
         self._hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP,
+            EVENT_INPUI_STOP,
             self._async_cancel_and_cleanup,
         )
 
@@ -539,7 +539,7 @@ class Store[_T: Mapping[str, Any] | Sequence[Any]]:
         """Ensure that we write if we quit before delay has passed."""
         if self._unsub_final_write_listener is None:
             self._unsub_final_write_listener = self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_FINAL_WRITE,
+                EVENT_INPUI_FINAL_WRITE,
                 self._async_callback_final_write,
             )
 

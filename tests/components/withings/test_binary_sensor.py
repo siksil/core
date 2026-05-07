@@ -7,8 +7,8 @@ from aiowithings import NotificationCategory
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from . import call_webhook, prepare_webhook_setup, setup_integration
 from .conftest import USER_ID, WEBHOOK_ID

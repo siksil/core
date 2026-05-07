@@ -26,16 +26,16 @@ from google.protobuf import timestamp_pb2
 from google.type import latlng_pb2
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.issue_registry import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.location import find_coordinates
-from homeassistant.util import dt as dt_util
+from inpui.helpers.location import find_coordinates
+from inpui.util import dt as dt_util
 
 from .const import (
     DOMAIN,

@@ -10,10 +10,10 @@ from aiohttp.client_exceptions import ClientConnectionError, ClientResponseError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.webmin.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.webmin.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_USER_INPUT
 

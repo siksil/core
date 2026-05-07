@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.significant_change import check_absolute_change
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.significant_change import check_absolute_change
 
 from . import ATTR_BRIGHTNESS, ATTR_COLOR_TEMP_KELVIN, ATTR_EFFECT, ATTR_HS_COLOR
 

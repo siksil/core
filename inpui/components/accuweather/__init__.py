@@ -7,11 +7,11 @@ import logging
 
 from accuweather import AccuWeather
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 from .coordinator import (

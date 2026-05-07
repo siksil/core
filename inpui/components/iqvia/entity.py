@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.core import callback
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_ZIP_CODE, TYPE_ALLERGY_FORECAST, TYPE_ALLERGY_OUTLOOK
 from .coordinator import IqviaConfigEntry, IqviaUpdateCoordinator

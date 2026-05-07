@@ -13,13 +13,13 @@ from zwave_js_server.event import Event
 from zwave_js_server.exceptions import FailedZWaveCommand, NotFoundError
 from zwave_js_server.model.node import Node, NodeStatus
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
     LockState,
 )
-from homeassistant.components.zwave_js.const import (
+from inpui.components.zwave_js.const import (
     ATTR_LOCK_TIMEOUT,
     ATTR_OPERATION_TYPE,
     DOMAIN,
@@ -28,10 +28,10 @@ from homeassistant.components.zwave_js.const import (
     SERVICE_SET_LOCK_CONFIGURATION,
     SERVICE_SET_LOCK_USERCODE,
 )
-from homeassistant.components.zwave_js.helpers import ZwaveValueMatcher
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.zwave_js.helpers import ZwaveValueMatcher
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .common import SCHLAGE_BE469_LOCK_ENTITY, replace_value_of_zwave_value
 

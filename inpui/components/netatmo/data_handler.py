@@ -17,14 +17,14 @@ from pyatmo.modules.device_types import (
     DeviceType as NetatmoDeviceType,
 )
 
-from homeassistant.components import cloud
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.dispatcher import (
+from inpui.components import cloud
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     AUTH,

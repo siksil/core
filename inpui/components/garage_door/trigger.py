@@ -1,17 +1,17 @@
 """Provides triggers for garage doors."""
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverDeviceClass,
     make_cover_closed_trigger,
     make_cover_opened_trigger,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import Trigger
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import Trigger
 
 DEVICE_CLASSES_GARAGE_DOOR: dict[str, str] = {
     BINARY_SENSOR_DOMAIN: BinarySensorDeviceClass.GARAGE_DOOR,

@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.input_datetime import (
+from inpui.components.input_datetime import (
     ATTR_DATE,
     ATTR_DATETIME,
     ATTR_EDITABLE,
@@ -23,7 +23,7 @@ from homeassistant.components.input_datetime import (
     DOMAIN,
     SERVICE_RELOAD,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_NAME,
@@ -31,11 +31,11 @@ from homeassistant.const import (
     FORMAT_DATETIME,
     FORMAT_TIME,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.exceptions import Unauthorized
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.exceptions import Unauthorized
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockUser, mock_restore_cache
 from tests.typing import WebSocketGenerator

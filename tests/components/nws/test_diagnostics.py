@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import nws
-from homeassistant.core import HomeAssistant
+from inpui.components import nws
+from inpui.core import HomeAssistant
 
 from .const import NWS_CONFIG
 

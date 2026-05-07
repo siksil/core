@@ -6,15 +6,15 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.schedule.const import (
+from inpui.components.schedule.const import (
     ATTR_NEXT_EVENT,
     CONF_FROM,
     CONF_SUNDAY,
     CONF_TO,
     DOMAIN,
 )
-from homeassistant.const import CONF_ICON, CONF_NAME, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ICON, CONF_NAME, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.common import async_fire_time_changed
 from tests.components.common import (

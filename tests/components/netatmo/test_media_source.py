@@ -4,17 +4,17 @@ import ast
 
 import pytest
 
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import (
     DOMAIN as MS_DOMAIN,
     URI_SCHEME,
     PlayMedia,
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.components.netatmo import DATA_CAMERAS, DATA_EVENTS, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.netatmo import DATA_CAMERAS, DATA_EVENTS, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_load_fixture
 

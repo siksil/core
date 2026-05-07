@@ -8,12 +8,12 @@ from axis.interfaces.mqtt import mqtt_json_to_event
 from axis.models.mqtt import ClientState
 from axis.stream_manager import Signal, State
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import DOMAIN as MQTT_DOMAIN, ReceiveMessage
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.setup import async_when_setup
+from inpui.components import mqtt
+from inpui.components.mqtt import DOMAIN as MQTT_DOMAIN, ReceiveMessage
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.setup import async_when_setup
 
 
 class AxisEventSource:

@@ -9,13 +9,13 @@ from aiohomekit.model.services import Service, ServicesTypes
 from aiohomekit.protocol.statuscodes import HapStatusCode
 import pytest
 
-from homeassistant.components.homekit_controller.sensor import (
+from inpui.components.homekit_controller.sensor import (
     thread_node_capability_to_str,
     thread_status_to_str,
 )
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import TEST_DEVICE_SERVICE_INFO, Helper, setup_test_component
 

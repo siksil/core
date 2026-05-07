@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from yarl import URL
 
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_URL
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_URL
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_TOPIC, DOMAIN
 from .coordinator import BaseDataUpdateCoordinator, NtfyConfigEntry

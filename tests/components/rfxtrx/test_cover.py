@@ -4,9 +4,9 @@ from unittest.mock import call
 
 import pytest
 
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.rfxtrx import DOMAIN
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import create_rfx_test_cfg
 

@@ -12,17 +12,17 @@ from awesomeversion import AwesomeVersion, AwesomeVersionCompareException
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_PICTURE, STATE_OFF, STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import ABCCachedProperties, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_PICTURE, STATE_OFF, STATE_ON, EntityCategory
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import ABCCachedProperties, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     ATTR_AUTO_UPDATE,

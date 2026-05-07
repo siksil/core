@@ -4,10 +4,10 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import MOCK_SERIAL
 
@@ -55,7 +55,7 @@ async def test_disconnect_on_hass_stop(
     assert mock_integration.state is ConfigEntryState.LOADED
     assert mock_device.disconnect.call_count == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert mock_device.disconnect.call_count == 1

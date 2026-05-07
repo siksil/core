@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import deque
 import logging
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 class FixedSizeQueueLogHandler(logging.Handler):

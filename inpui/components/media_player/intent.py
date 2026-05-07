@@ -9,7 +9,7 @@ from typing import cast
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
     SERVICE_MEDIA_PLAY,
@@ -18,10 +18,10 @@ from homeassistant.const import (
     SERVICE_VOLUME_SET,
     STATE_PLAYING,
 )
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, intent
-from homeassistant.helpers.entity_component import EntityComponent
+from inpui.core import Context, HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, intent
+from inpui.helpers.entity_component import EntityComponent
 
 from . import MediaPlayerDeviceClass, MediaPlayerEntity
 from .browse_media import SearchMedia

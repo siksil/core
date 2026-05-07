@@ -11,17 +11,17 @@ from peblar import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.peblar.const import DOMAIN
-from homeassistant.components.select import (
+from inpui.components.peblar.const import DOMAIN
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

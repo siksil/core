@@ -9,15 +9,15 @@ from typing import Any, Final
 
 from aiohttp import ClientResponseError
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ColorMode,
     LightEntity,
     LightEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import AMBIENT_LIGHT, DOMAIN, LIGHT, LIGHT_OFF, LIGHT_ON, MieleAppliance
 from .coordinator import MieleConfigEntry

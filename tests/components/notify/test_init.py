@@ -6,18 +6,18 @@ from unittest.mock import MagicMock
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import notify
-from homeassistant.components.notify import (
+from inpui.components import notify
+from inpui.components.notify import (
     DOMAIN,
     SERVICE_SEND_MESSAGE,
     NotifyEntity,
     NotifyEntityDescription,
     NotifyEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import (
     MockConfigEntry,

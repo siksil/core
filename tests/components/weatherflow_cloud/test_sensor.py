@@ -8,18 +8,18 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from weatherflow4py.models.rest.observation import ObservationStationREST
 
-from homeassistant.components.weatherflow_cloud import DOMAIN
-from homeassistant.components.weatherflow_cloud.coordinator import (
+from inpui.components.weatherflow_cloud import DOMAIN
+from inpui.components.weatherflow_cloud.coordinator import (
     WeatherFlowObservationCoordinator,
     WeatherFlowWindCoordinator,
 )
-from homeassistant.components.weatherflow_cloud.sensor import (
+from inpui.components.weatherflow_cloud.sensor import (
     WeatherFlowWebsocketSensorObservation,
     WeatherFlowWebsocketSensorWind,
 )
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

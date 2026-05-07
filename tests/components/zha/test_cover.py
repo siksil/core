@@ -9,7 +9,7 @@ from zigpy.profiles import zha
 from zigpy.zcl.clusters import closures
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_TILT_POSITION,
@@ -25,16 +25,16 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_component import async_update_entity
 
 from .common import find_entity_id, send_attributes_report, update_attribute_cache
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

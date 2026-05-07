@@ -6,14 +6,14 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     CONF_ENTITY_ID,
     CONF_EVENT,
     CONF_PLATFORM,
     CONF_ZONE,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -21,14 +21,14 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     location,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import condition
 

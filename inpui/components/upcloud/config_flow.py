@@ -9,9 +9,9 @@ import requests.exceptions
 import upcloud_api
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
-from homeassistant.core import callback
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
+from inpui.core import callback
 
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN
 from .coordinator import UpCloudConfigEntry

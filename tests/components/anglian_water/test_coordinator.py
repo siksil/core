@@ -7,16 +7,16 @@ from pyanglianwater.meter import SmartMeter
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.anglian_water.coordinator import (
+from inpui.components.anglian_water.coordinator import (
     AnglianWaterUpdateCoordinator,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.statistics import (
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import ACCOUNT_NUMBER
 

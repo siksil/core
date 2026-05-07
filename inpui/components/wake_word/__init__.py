@@ -10,16 +10,16 @@ from typing import final
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .models import DetectionResult, WakeWord

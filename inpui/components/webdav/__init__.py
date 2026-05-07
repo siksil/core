@@ -7,10 +7,10 @@ import logging
 from aiowebdav2.client import Client
 from aiowebdav2.exceptions import UnauthorizedError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
 
 from .const import CONF_BACKUP_PATH, DATA_BACKUP_AGENT_LISTENERS, DOMAIN
 from .helpers import async_create_client, async_ensure_path_exists

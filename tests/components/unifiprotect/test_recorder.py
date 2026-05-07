@@ -7,16 +7,16 @@ from unittest.mock import Mock
 
 from uiprotect.data import Camera, Event, EventType, ModelType
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.unifiprotect.binary_sensor import EVENT_SENSORS
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.unifiprotect.binary_sensor import EVENT_SENSORS
+from inpui.components.unifiprotect.const import (
     ATTR_EVENT_ID,
     ATTR_EVENT_SCORE,
     DEFAULT_ATTRIBUTION,
 )
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_FRIENDLY_NAME, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ATTRIBUTION, ATTR_FRIENDLY_NAME, STATE_ON, Platform
+from inpui.core import HomeAssistant
 
 from .utils import MockUFPFixture, ids_from_device_description, init_entry
 

@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import template, update
-from homeassistant.const import (
+from inpui.components import template, update
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
     STATE_OFF,
@@ -14,11 +14,11 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from .conftest import (
     ConfigurationStyle,

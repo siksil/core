@@ -12,9 +12,9 @@ from gardena_bluetooth.const import (
 )
 from gardena_bluetooth.parse import CharacteristicInt
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import GardenaBluetoothConfigEntry
 from .entity import GardenaBluetoothDescriptorEntity

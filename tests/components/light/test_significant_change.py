@@ -1,12 +1,12 @@
 """Test the Light significant change platform."""
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
     ATTR_HS_COLOR,
 )
-from homeassistant.components.light.significant_change import (
+from inpui.components.light.significant_change import (
     async_check_significant_change,
 )
 

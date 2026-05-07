@@ -7,11 +7,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from teslemetry_stream import Signal
 
-from homeassistant.components.teslemetry.coordinator import VEHICLE_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.teslemetry.coordinator import VEHICLE_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, assert_entities_alt, setup_platform
 from .const import ENERGY_HISTORY_EMPTY, VEHICLE_DATA_ALT

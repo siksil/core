@@ -11,17 +11,17 @@ from deebot_client.exceptions import InvalidAuthenticationError, MqttError
 from deebot_client.mqtt_client import create_mqtt_config
 import pytest
 
-from homeassistant.components.ecovacs.const import (
+from inpui.components.ecovacs.const import (
     CONF_OVERRIDE_MQTT_URL,
     CONF_OVERRIDE_REST_URL,
     CONF_VERIFY_MQTT_CERTIFICATE,
     DOMAIN,
     InstanceMode,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_MODE, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_MODE, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     VALID_ENTRY_DATA_CLOUD,

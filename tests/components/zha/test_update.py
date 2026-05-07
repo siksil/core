@@ -18,11 +18,11 @@ from zigpy.zcl import foundation
 from zigpy.zcl.clusters import general
 import zigpy.zdo.types as zdo_t
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
@@ -30,28 +30,28 @@ from homeassistant.components.update import (
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_data,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.components.zha.update import (
+from inpui.components.zha.update import (
     OTA_MESSAGE_BATTERY_POWERED,
     OTA_MESSAGE_RELIABILITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .common import find_entity_id, update_attribute_cache
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

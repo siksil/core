@@ -6,7 +6,7 @@ from unittest.mock import Mock
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -22,10 +22,10 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER_TILT,
     CoverState,
 )
-from homeassistant.components.shelly.const import RPC_COVER_UPDATE_TIME_SEC
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.shelly.const import RPC_COVER_UPDATE_TIME_SEC
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     init_integration,

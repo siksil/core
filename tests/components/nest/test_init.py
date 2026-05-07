@@ -24,12 +24,12 @@ from google_nest_sdm.exceptions import (
 )
 import pytest
 
-from homeassistant.components.nest import DOMAIN
-from homeassistant.components.nest.const import OAUTH2_TOKEN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util.dt import utcnow
+from inpui.components.nest import DOMAIN
+from inpui.components.nest.const import OAUTH2_TOKEN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util.dt import utcnow
 
 from .common import (
     PROJECT_ID,

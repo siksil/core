@@ -9,8 +9,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,  # noqa: F401
     ATTR_ICON,
     ATTR_NAME,
@@ -20,15 +20,15 @@ from homeassistant.const import (
     SERVICE_RELOAD,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.group import (
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.group import (
     expand_entity_ids as _expand_entity_ids,
     get_entity_ids as _get_entity_ids,
 )
-from homeassistant.helpers.reload import async_reload_integration_platforms
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.helpers.reload import async_reload_integration_platforms
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 #
 # Below we ensure the config_flow is imported so it does not need the import

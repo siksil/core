@@ -7,13 +7,13 @@ import mimetypes
 
 import voluptuous as vol
 
-from homeassistant.components.camera import Camera
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_FILE_PATH, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import Camera
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_FILE_PATH, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import SERVICE_UPDATE_FILE_PATH
 from .util import check_file_path_access

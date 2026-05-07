@@ -4,13 +4,13 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.blink.const import DOMAIN
-from homeassistant.components.blink.services import SERVICE_SEND_PIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.blink.const import DOMAIN
+from inpui.components.blink.services import SERVICE_SEND_PIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_CONFIG_ENTRY_ID, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

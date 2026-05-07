@@ -7,7 +7,7 @@ import pytest
 from requests.exceptions import Timeout
 
 from homeassistant import config_entries
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components.google_generative_ai_conversation.const import (
     CONF_CHAT_MODEL,
     CONF_DANGEROUS_BLOCK_THRESHOLD,
     CONF_HARASSMENT_BLOCK_THRESHOLD,
@@ -38,9 +38,9 @@ from homeassistant.components.google_generative_ai_conversation.const import (
     RECOMMENDED_TTS_OPTIONS,
     RECOMMENDED_USE_GOOGLE_SEARCH_TOOL,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import API_ERROR_500, CLIENT_ERROR_API_KEY_INVALID
 

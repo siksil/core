@@ -10,7 +10,7 @@ from letpot.models import (
     TemperatureUnit,
 )
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

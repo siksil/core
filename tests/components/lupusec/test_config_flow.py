@@ -7,16 +7,16 @@ from lupupy import LupusecException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.lupusec.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.lupusec.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_IP_ADDRESS,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -6,9 +6,9 @@ from typing import Any
 
 from microBeesPy import MicroBees, MicroBeesException
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from .const import DOMAIN
 

@@ -8,11 +8,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-import homeassistant.util.dt as dt_util
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+import inpui.util.dt as dt_util
 
 from .common import (
     FAKE_WEBHOOK_ACTIVATION,

@@ -6,16 +6,16 @@ from pyplaato.models.device import PlaatoDeviceType
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.plaato.const import (
+from inpui.components.plaato.const import (
     CONF_DEVICE_NAME,
     CONF_DEVICE_TYPE,
     CONF_USE_WEBHOOK,
     DOMAIN,
 )
-from homeassistant.const import CONF_SCAN_INTERVAL, CONF_TOKEN, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_SCAN_INTERVAL, CONF_TOKEN, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

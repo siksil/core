@@ -1,6 +1,6 @@
 """Device automation exceptions."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class InvalidDeviceAutomationConfig(HomeAssistantError):

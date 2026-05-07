@@ -9,10 +9,10 @@ from mcp.types import CallToolResult, ErrorData, ListToolsResult, TextContent, T
 import pytest
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import llm
+from inpui.config_entries import ConfigEntryState
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import llm
 
 from .conftest import TEST_API_NAME
 

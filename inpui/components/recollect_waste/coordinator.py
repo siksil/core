@@ -7,10 +7,10 @@ from datetime import date, timedelta
 from aiorecollect.client import Client, PickupEvent
 from aiorecollect.errors import RecollectError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_PLACE_ID, CONF_SERVICE_ID, LOGGER
 

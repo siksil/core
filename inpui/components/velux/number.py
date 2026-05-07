@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pyvlx import ExteriorHeating, Intensity
 
-from homeassistant.components.number import NumberEntity
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VeluxConfigEntry
 from .entity import VeluxEntity, wrap_pyvlx_call_exceptions

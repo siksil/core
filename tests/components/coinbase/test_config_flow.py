@@ -7,15 +7,15 @@ from coinbase.rest.rest_base import HTTPError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.coinbase.const import (
+from inpui.components.coinbase.const import (
     CONF_CURRENCIES,
     CONF_EXCHANGE_PRECISION,
     CONF_EXCHANGE_RATES,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .common import (
     init_mock_coinbase,

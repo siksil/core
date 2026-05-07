@@ -3,8 +3,8 @@
 import asyncio
 import time
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import ratelimit
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import ratelimit
 
 
 async def test_hit(hass: HomeAssistant) -> None:

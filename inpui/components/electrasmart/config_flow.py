@@ -9,9 +9,9 @@ from electrasmart.api import STATUS_SUCCESS, Attributes, ElectraAPI, ElectraApiE
 from electrasmart.api.utils import generate_imei
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_IMEI, CONF_OTP, CONF_PHONE_NUMBER, DOMAIN
 

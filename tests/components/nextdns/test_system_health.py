@@ -5,9 +5,9 @@ import asyncio
 from aiohttp import ClientError
 from nextdns.const import API_ENDPOINT
 
-from homeassistant.components.nextdns.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.nextdns.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info
 from tests.test_util.aiohttp import AiohttpClientMocker

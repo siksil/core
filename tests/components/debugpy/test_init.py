@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.debugpy import (
+from inpui.components.debugpy import (
     CONF_HOST,
     CONF_PORT,
     CONF_START,
@@ -12,8 +12,8 @@ from homeassistant.components.debugpy import (
     DOMAIN,
     SERVICE_START,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

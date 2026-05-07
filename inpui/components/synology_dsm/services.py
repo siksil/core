@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, cast
 
 from synology_dsm.exceptions import SynologyDSMException
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
+from inpui.core import HomeAssistant, ServiceCall, callback
 
 from .const import CONF_SERIAL, DOMAIN, SERVICE_REBOOT, SERVICE_SHUTDOWN, SERVICES
 from .coordinator import SynologyDSMConfigEntry

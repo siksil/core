@@ -8,15 +8,15 @@ from typing import Any
 from smarttub import Spa, SpaError, SpaReminder
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import ATTR_ERRORS, ATTR_REMINDERS, ATTR_SENSORS
 from .controller import SmartTubConfigEntry

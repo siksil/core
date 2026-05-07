@@ -8,25 +8,25 @@ from typing import Any
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, async_rounded_state
-from homeassistant.components.tomorrowio.config_flow import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, async_rounded_state
+from inpui.components.tomorrowio.config_flow import (
     _get_config_schema,
     _get_unique_id,
 )
-from homeassistant.components.tomorrowio.const import (
+from inpui.components.tomorrowio.const import (
     ATTRIBUTION,
     CONF_TIMESTEP,
     DEFAULT_NAME,
     DEFAULT_TIMESTEP,
     DOMAIN,
 )
-from homeassistant.components.tomorrowio.sensor import TomorrowioSensorEntityDescription
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY, SOURCE_USER
-from homeassistant.const import ATTR_ATTRIBUTION, CONF_NAME
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.tomorrowio.sensor import TomorrowioSensorEntityDescription
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY, SOURCE_USER
+from inpui.const import ATTR_ATTRIBUTION, CONF_NAME
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import API_V4_ENTRY_DATA
 

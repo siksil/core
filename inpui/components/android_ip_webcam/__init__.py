@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from pydroid_ipcam import PyDroidIPCam
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import AndroidIPCamConfigEntry, AndroidIPCamDataUpdateCoordinator
 

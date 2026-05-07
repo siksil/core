@@ -6,8 +6,8 @@ import datetime as dt
 import logging
 import re
 
-from homeassistant.components.media_player import BrowseError, MediaClass, MediaType
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass, MediaType
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceError,
@@ -15,7 +15,7 @@ from homeassistant.components.media_source import (
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .const import DATA_CAMERAS, DATA_EVENTS, DOMAIN, MANUFACTURER
 

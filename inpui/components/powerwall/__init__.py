@@ -15,15 +15,15 @@ from tesla_powerwall import (
 )
 from yarl import URL
 
-from homeassistant.components import persistent_notification
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.update_coordinator import UpdateFailed
-from homeassistant.util.network import is_ip_address
+from inpui.components import persistent_notification
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.update_coordinator import UpdateFailed
+from inpui.util.network import is_ip_address
 
 from .const import (
     AUTH_COOKIE_KEY,

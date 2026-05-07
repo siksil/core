@@ -17,26 +17,26 @@ from opower import (
 )
 from opower.exceptions import ApiException, CannotConnect, InvalidAuth, MfaChallenge
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, UnitOfEnergy, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import EnergyConverter, VolumeConverter
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, UnitOfEnergy, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import EnergyConverter, VolumeConverter
 
 from .const import CONF_LOGIN_DATA, CONF_TOTP_SECRET, CONF_UTILITY, DOMAIN
 

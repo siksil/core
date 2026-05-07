@@ -4,9 +4,9 @@ from unittest.mock import Mock
 
 import aiohttp
 
-from homeassistant.components.android_ip_webcam.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.android_ip_webcam.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

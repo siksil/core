@@ -6,8 +6,8 @@ import time
 
 import pytest
 
-from homeassistant.components.flo.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, CONTENT_TYPE_JSON
+from inpui.components.flo.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, CONTENT_TYPE_JSON
 
 from .common import TEST_EMAIL_ADDRESS, TEST_PASSWORD, TEST_TOKEN, TEST_USER_ID
 

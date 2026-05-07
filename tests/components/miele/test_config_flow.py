@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock
 from pymiele import OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 import pytest
 
-from homeassistant.components.miele.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.miele.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import CLIENT_ID
 

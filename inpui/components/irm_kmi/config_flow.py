@@ -5,21 +5,21 @@ import logging
 from irm_kmi_api import IrmKmiApiClient, IrmKmiApiError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_LOCATION,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     LocationSelector,
     SelectSelector,
     SelectSelectorConfig,

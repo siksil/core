@@ -10,13 +10,13 @@ from aiohue.v2.models.bell_button import BellButton
 from aiohue.v2.models.button import Button
 from aiohue.v2.models.relative_rotary import RelativeRotary, RelativeRotaryDirection
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .bridge import HueConfigEntry
 from .const import DEFAULT_BUTTON_EVENT_TYPES, DEVICE_SPECIFIC_EVENT_TYPES

@@ -12,15 +12,15 @@ from typing import Any, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MAX_LENGTH_STATE_STATE
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import ExtraStoredData, RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import MAX_LENGTH_STATE_STATE
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import ExtraStoredData, RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     ATTR_MAX,

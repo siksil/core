@@ -8,18 +8,18 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.mealie import DOMAIN
-from homeassistant.components.todo import (
+from inpui.components.mealie import DOMAIN
+from inpui.components.todo import (
     ATTR_ITEM,
     ATTR_RENAME,
     ATTR_STATUS,
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

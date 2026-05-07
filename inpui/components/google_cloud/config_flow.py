@@ -9,16 +9,16 @@ from typing import TYPE_CHECKING, Any, cast
 from google.cloud import texttospeech
 import voluptuous as vol
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.components.tts import CONF_LANG
-from homeassistant.config_entries import (
+from inpui.components.file_upload import process_uploaded_file
+from inpui.components.tts import CONF_LANG
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers.selector import (
     FileSelector,
     FileSelectorConfig,
     SelectSelector,

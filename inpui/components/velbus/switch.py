@@ -4,9 +4,9 @@ from typing import Any
 
 from velbusaio.channels import Relay as VelbusRelay
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VelbusConfigEntry
 from .entity import VelbusEntity, api_call

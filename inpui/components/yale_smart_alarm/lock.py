@@ -6,11 +6,11 @@ from typing import Any
 
 from yalesmartalarmclient import YaleLock, YaleLockState
 
-from homeassistant.components.lock import LockEntity, LockState
-from homeassistant.const import ATTR_CODE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockState
+from inpui.const import ATTR_CODE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YaleConfigEntry
 from .const import (

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.chacon_dio.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.chacon_dio.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry
 

@@ -7,9 +7,9 @@ import pytest
 from requests_mock import Mocker
 import voluptuous as vol
 
-from homeassistant.components.downloader.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.downloader.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 
 @pytest.mark.usefixtures("setup_integration")

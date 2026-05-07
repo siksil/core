@@ -6,18 +6,18 @@ from aionut import NUTError
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation, device_automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation, device_automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.nut import DOMAIN
-from homeassistant.components.nut.const import INTEGRATION_SUPPORTED_COMMANDS
-from homeassistant.const import CONF_DEVICE_ID, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.nut import DOMAIN
+from inpui.components.nut.const import INTEGRATION_SUPPORTED_COMMANDS
+from inpui.const import CONF_DEVICE_ID, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .util import async_init_integration
 

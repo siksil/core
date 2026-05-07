@@ -23,16 +23,16 @@ from habluetooth import (
 )
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, EVENT_LOGGING_CHANGED
-from homeassistant.core import (
+from inpui.const import EVENT_INPUI_STOP, EVENT_LOGGING_CHANGED
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     HomeAssistant,
     callback as hass_callback,
 )
-from homeassistant.helpers import discovery_flow, issue_registry as ir
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.util.package import is_docker_env
+from inpui.helpers import discovery_flow, issue_registry as ir
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.util.package import is_docker_env
 
 from .const import (
     CONF_SOURCE,
@@ -185,7 +185,7 @@ class HomeAssistantBluetoothManager(BluetoothManager):
         self._cancel_logging_listener = self.hass.bus.async_listen(
             EVENT_LOGGING_CHANGED, self._async_logging_changed
         )
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.async_stop)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self.async_stop)
         seen: set[str] = set()
         for address, service_info in itertools.chain(
             self._connectable_history.items(), self._all_history.items()

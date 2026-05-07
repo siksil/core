@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from zinvolt.models import BatteryListResponse, BatteryState, BatteryUnit, UnitsResponse
 
-from homeassistant.components.zinvolt.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN
+from inpui.components.zinvolt.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN
 
 from .const import TOKEN
 

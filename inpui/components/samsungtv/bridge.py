@@ -34,7 +34,7 @@ from samsungtvws.exceptions import (
 from samsungtvws.remote import ChannelEmitCommand, SendRemoteKey
 from websockets.exceptions import ConnectionClosedError, WebSocketException
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DESCRIPTION,
     CONF_HOST,
     CONF_ID,
@@ -45,12 +45,12 @@ from homeassistant.const import (
     CONF_TIMEOUT,
     CONF_TOKEN,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_component
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_component
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_SESSION_ID,

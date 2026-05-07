@@ -13,7 +13,7 @@ from python_open_router import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntry,
     ConfigEntryState,
@@ -22,11 +22,11 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
-from homeassistant.core import callback
-from homeassistant.helpers import llm
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_MODEL
+from inpui.core import callback
+from inpui.helpers import llm
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

@@ -8,15 +8,15 @@ from typing import TYPE_CHECKING, Any
 from pynobo import nobo
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
 
 from .const import (
     CONF_AUTO_DISCOVERED,

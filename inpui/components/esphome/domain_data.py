@@ -6,8 +6,8 @@ from dataclasses import dataclass, field
 from functools import cache
 from typing import Self
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSONEncoder
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSONEncoder
 
 from .const import DOMAIN
 from .entry_data import ESPHomeConfigEntry, ESPHomeStorage, RuntimeEntryData

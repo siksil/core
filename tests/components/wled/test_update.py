@@ -8,14 +8,14 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from wled import Releases, WLEDError
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.components.wled.const import RELEASES_SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.wled.const import RELEASES_SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

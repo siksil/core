@@ -11,16 +11,16 @@ from pyinsteon.constants import ALDBStatus
 from pyinsteon.topics import ALDB_LINK_CHANGED, ALDB_STATUS_CHANGED
 import pytest
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon.api import async_load_api
-from homeassistant.components.insteon.api.aldb import (
+from inpui.components import insteon
+from inpui.components.insteon.api import async_load_api
+from inpui.components.insteon.api.aldb import (
     ALDB_RECORD,
     DEVICE_ADDRESS,
     ID,
     TYPE,
 )
-from homeassistant.components.insteon.api.device import INSTEON_DEVICE_NOT_FOUND
-from homeassistant.core import HomeAssistant
+from inpui.components.insteon.api.device import INSTEON_DEVICE_NOT_FOUND
+from inpui.core import HomeAssistant
 
 from .mock_devices import MockDevices
 

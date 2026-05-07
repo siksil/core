@@ -5,32 +5,32 @@ from unittest.mock import MagicMock
 from pyhap.const import HAP_REPR_AID, HAP_REPR_CHARS, HAP_REPR_IID, HAP_REPR_VALUE
 import pytest
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
     ATTR_PRESET_MODES,
     DOMAIN as FAN_DOMAIN,
     FanEntityFeature,
 )
-from homeassistant.components.homekit import (
+from inpui.components.homekit import (
     CONF_LINKED_HUMIDITY_SENSOR,
     CONF_LINKED_PM25_SENSOR,
     CONF_LINKED_TEMPERATURE_SENSOR,
 )
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     CONF_LINKED_FILTER_CHANGE_INDICATION,
     CONF_LINKED_FILTER_LIFE_LEVEL,
     THRESHOLD_FILTER_CHANGE_NEEDED,
 )
-from homeassistant.components.homekit.type_air_purifiers import (
+from inpui.components.homekit.type_air_purifiers import (
     FILTER_CHANGE_FILTER,
     FILTER_OK,
     TARGET_STATE_AUTO,
     TARGET_STATE_MANUAL,
     AirPurifier,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -40,7 +40,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     UnitOfTemperature,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_mock_service
 

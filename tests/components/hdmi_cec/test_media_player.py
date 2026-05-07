@@ -27,12 +27,12 @@ from pycec.const import (
 )
 import pytest
 
-from homeassistant.components.hdmi_cec import EVENT_HDMI_CEC_UNAVAILABLE
-from homeassistant.components.media_player import (
+from inpui.components.hdmi_cec import EVENT_HDMI_CEC_UNAVAILABLE
+from inpui.components.media_player import (
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     MediaPlayerEntityFeature as MPEF,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
@@ -53,7 +53,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MockHDMIDevice, assert_key_press_release
 from .conftest import CecEntityCreator, HDMINetworkCreator

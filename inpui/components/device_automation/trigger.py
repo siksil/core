@@ -6,10 +6,10 @@ from typing import Any, Protocol
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DOMAIN
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import (
     DEVICE_TRIGGER_BASE_SCHEMA,

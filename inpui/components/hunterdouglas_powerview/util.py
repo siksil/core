@@ -5,8 +5,8 @@ from __future__ import annotations
 from aiopvapi.helpers.aiorequest import AioRequest
 from aiopvapi.hub import Hub
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .model import PowerviewAPI, PowerviewDeviceInfo
 

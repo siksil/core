@@ -12,13 +12,13 @@ from pyliebherrhomeapi.exceptions import (
     LiebherrConnectionError,
 )
 
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
 
 from .const import DEVICE_SCAN_INTERVAL, DOMAIN
 from .coordinator import LiebherrConfigEntry, LiebherrCoordinator, LiebherrData

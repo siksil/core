@@ -2,8 +2,8 @@
 
 from typing import Any
 
-from homeassistant.components.vesync.const import DOMAIN
-from homeassistant.util.json import JsonObjectType
+from inpui.components.vesync.const import DOMAIN
+from inpui.util.json import JsonObjectType
 
 from tests.common import load_json_object_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

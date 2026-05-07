@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components.update import UpdateEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SystemBridgeDataUpdateCoordinator

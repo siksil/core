@@ -5,10 +5,10 @@ from typing import Any
 import aiosyncthing
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DEFAULT_URL, DEFAULT_VERIFY_SSL, DOMAIN
 

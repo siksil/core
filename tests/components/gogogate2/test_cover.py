@@ -16,20 +16,20 @@ from ismartgate.common import (
     Wifi,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverDeviceClass,
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.components.gogogate2.const import (
+from inpui.components.gogogate2.const import (
     DEVICE_TYPE_GOGOGATE2,
     DEVICE_TYPE_ISMARTGATE,
     DOMAIN,
     MANUFACTURER,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     CONF_DEVICE,
     CONF_IP_ADDRESS,
@@ -38,9 +38,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util.dt import utcnow
 
 from . import (
     _mocked_gogogate_open_door_response,

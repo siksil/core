@@ -5,9 +5,9 @@ from __future__ import annotations
 from aioaquacell import AquacellApi
 from aioaquacell.const import Brand
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_BRAND
 from .coordinator import AquacellConfigEntry, AquacellCoordinator

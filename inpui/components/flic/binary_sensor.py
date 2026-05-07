@@ -8,22 +8,22 @@ import threading
 import pyflic
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DISCOVERY,
     CONF_HOST,
     CONF_PORT,
     CONF_TIMEOUT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -86,7 +86,7 @@ def setup_platform(
     if discovery:
         start_scanning(config, add_entities, client)
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, lambda event: client.close())
+    hass.bus.listen_once(EVENT_INPUI_STOP, lambda event: client.close())
 
     # Start the pyflic event handling thread
     threading.Thread(target=client.handle_events).start()

@@ -5,8 +5,8 @@ from __future__ import annotations
 from typing import Any
 from urllib.parse import urlparse
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 from .. import get_instance
 from ..const import SupportedDialect

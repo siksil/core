@@ -12,8 +12,8 @@ from pynordpool import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nordpool.const import DOMAIN
-from homeassistant.components.nordpool.services import (
+from inpui.components.nordpool.const import DOMAIN
+from inpui.components.nordpool.services import (
     ATTR_AREAS,
     ATTR_CONFIG_ENTRY,
     ATTR_CURRENCY,
@@ -21,9 +21,9 @@ from homeassistant.components.nordpool.services import (
     SERVICE_GET_PRICE_INDICES_FOR_DATE,
     SERVICE_GET_PRICES_FOR_DATE,
 )
-from homeassistant.const import ATTR_DATE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import ATTR_DATE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

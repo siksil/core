@@ -10,16 +10,16 @@ from blinkpy.auth import UnauthorizedError
 from blinkpy.camera import BlinkCamera as BlinkCameraAPI
 from requests.exceptions import ChunkedEncodingError
 
-from homeassistant.components.camera import Camera
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.components.camera import Camera
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DEFAULT_BRAND, DOMAIN
 from .coordinator import BlinkConfigEntry, BlinkUpdateCoordinator

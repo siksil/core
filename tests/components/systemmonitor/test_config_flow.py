@@ -5,10 +5,10 @@ from __future__ import annotations
 from unittest.mock import AsyncMock
 
 from homeassistant import config_entries
-from homeassistant.components.systemmonitor.const import CONF_PROCESS, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.systemmonitor.const import CONF_PROCESS, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

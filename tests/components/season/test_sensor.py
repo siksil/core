@@ -6,23 +6,23 @@ from zoneinfo import ZoneInfo
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.season.const import (
+from inpui.components.season.const import (
     DOMAIN,
     TYPE_ASTRONOMICAL,
     TYPE_METEOROLOGICAL,
 )
-from homeassistant.components.season.sensor import (
+from inpui.components.season.sensor import (
     STATE_AUTUMN,
     STATE_SPRING,
     STATE_SUMMER,
     STATE_WINTER,
 )
-from homeassistant.components.sensor import ATTR_OPTIONS, SensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, CONF_TYPE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util.dt import UTC
+from inpui.components.sensor import ATTR_OPTIONS, SensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, CONF_TYPE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util.dt import UTC
 
 from tests.common import MockConfigEntry
 

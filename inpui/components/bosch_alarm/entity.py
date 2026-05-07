@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from bosch_alarm_mode2 import Panel
 
-from homeassistant.components.sensor import Entity
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.components.sensor import Entity
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN
 

@@ -1,8 +1,8 @@
 """application_credentials platform for Google Assistant SDK."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     AUTH_CALLBACK_PATH,
     MY_AUTH_CALLBACK_PATH,
 )

@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import (
+from inpui.exceptions import TemplateError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
@@ -17,7 +17,7 @@ from homeassistant.helpers import (
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class DeviceExtension(BaseTemplateExtension):

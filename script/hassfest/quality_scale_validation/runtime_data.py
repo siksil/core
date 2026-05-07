@@ -6,7 +6,7 @@ https://developers.home-assistant.io/docs/core/integration-quality-scale/rules/r
 import ast
 import re
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 from script.hassfest import ast_parse_module
 from script.hassfest.model import Config, Integration
 

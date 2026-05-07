@@ -10,10 +10,10 @@ from aiohasupervisor.models import AddonsStats, AddonState, InstalledAddonComple
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.hassio.const import DATA_CONFIG_STORE
-from homeassistant.components.hassio.handler import HassIO
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.hassio.const import DATA_CONFIG_STORE
+from inpui.components.hassio.handler import HassIO
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from . import SUPERVISOR_TOKEN
 

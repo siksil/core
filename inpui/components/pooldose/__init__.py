@@ -8,10 +8,10 @@ from typing import Any
 from pooldose.client import PooldoseClient
 from pooldose.request_status import RequestStatus
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
 
 from .coordinator import PooldoseConfigEntry, PooldoseCoordinator
 

@@ -8,13 +8,13 @@ from unittest.mock import MagicMock, call
 from mysensors.sensor import Sensor
 import pytest
 
-from homeassistant.components.text import (
+from inpui.components.text import (
     ATTR_VALUE,
     DOMAIN as TEXT_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import ATTR_BATTERY_LEVEL, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_BATTERY_LEVEL, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 
 async def test_text_node(

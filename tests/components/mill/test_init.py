@@ -3,11 +3,11 @@
 import asyncio
 from unittest.mock import patch
 
-from homeassistant.components import mill
-from homeassistant.components.recorder import Recorder
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import mill
+from inpui.components.recorder import Recorder
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

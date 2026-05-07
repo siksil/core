@@ -4,13 +4,13 @@ from pathlib import Path
 
 import pytest
 
-from homeassistant.components.downloader.const import (
+from inpui.components.downloader.const import (
     CONF_DOWNLOAD_DIR,
     DOMAIN,
     SERVICE_DOWNLOAD_FILE,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

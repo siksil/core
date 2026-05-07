@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from easyenergy import Electricity, Gas
 import pytest
 
-from homeassistant.components.easyenergy.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.easyenergy.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_json_array_fixture
 

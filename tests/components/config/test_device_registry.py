@@ -6,12 +6,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.config import device_registry
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.config import device_registry
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 from tests.typing import MockHAClientWebSocket, WebSocketGenerator

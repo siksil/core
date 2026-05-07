@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 import pytest
 from todoist_api_python.models import Task
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_DUE_DATETIME,
@@ -18,9 +18,9 @@ from homeassistant.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
 
 from .conftest import PROJECT_ID, make_api_due, make_api_response, make_api_task
 

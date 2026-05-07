@@ -9,17 +9,17 @@ from aiohttp import web
 from haffmpeg.camera import CameraMjpeg
 from kasa import Device, Module, StreamResolution
 
-from homeassistant.components import ffmpeg, stream
-from homeassistant.components.camera import (
+from inpui.components import ffmpeg, stream
+from inpui.components.camera import (
     DOMAIN as CAMERA_DOMAIN,
     Camera,
     CameraEntityDescription,
     CameraEntityFeature,
 )
-from homeassistant.config_entries import ConfigFlowContext
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigFlowContext
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry
 from .const import CONF_CAMERA_CREDENTIALS

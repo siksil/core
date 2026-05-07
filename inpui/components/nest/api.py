@@ -12,8 +12,8 @@ from google_nest_sdm.admin_client import PUBSUB_API_HOST, AdminClient
 from google_nest_sdm.auth import AbstractAuth
 from google_nest_sdm.google_nest_subscriber import GoogleNestSubscriber
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from .const import (
     API_URL,

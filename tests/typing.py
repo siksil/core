@@ -13,7 +13,7 @@ from aiohttp.test_utils import TestClient
 if TYPE_CHECKING:
     # Local import to avoid processing recorder module when running a
     # testcase which does not use the recorder.
-    from homeassistant.components.recorder import Recorder
+    from inpui.components.recorder import Recorder
 
 
 class MockHAClientWebSocket(ClientWebSocketResponse):

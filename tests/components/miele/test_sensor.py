@@ -8,12 +8,12 @@ from pymiele import MieleDevices, MieleTemperature
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.miele.const import DOMAIN
-from homeassistant.components.miele.sensor import _convert_temperature
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
+from inpui.components.miele.const import DOMAIN
+from inpui.components.miele.sensor import _convert_temperature
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

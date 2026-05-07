@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from ring_doorbell import RingOther
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RingConfigEntry
 from .coordinator import RingDataCoordinator

@@ -14,32 +14,32 @@ from typing import Any, Protocol
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_DOMAIN,
     CONF_ID,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     collection,
     config_entry_oauth2_flow,
     config_validation as cv,
 )
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import (
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import (
     IntegrationNotFound,
     async_get_application_credentials,
     async_get_integration,
 )
-from homeassistant.util import slugify
-from homeassistant.util.hass_dict import HassKey
+from inpui.util import slugify
+from inpui.util.hass_dict import HassKey
 
 __all__ = ["AuthorizationServer", "ClientCredential", "async_import_client_credential"]
 

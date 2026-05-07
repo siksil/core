@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import MAX_RETRIES_AFTER_STARTUP
 from .coordinator import AirthingsBLEConfigEntry, AirthingsBLEDataUpdateCoordinator

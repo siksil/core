@@ -2,11 +2,11 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.geniushub import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_MAC, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.geniushub import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_MAC, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

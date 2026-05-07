@@ -6,10 +6,10 @@ from yalexs.lock import LockDetail
 from yalexs.manager.data import YaleXSData
 from yalexs_ble import YaleXSBLEDiscovery
 
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import discovery_flow
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import discovery_flow
 
 from .gateway import YaleGateway
 

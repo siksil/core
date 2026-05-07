@@ -9,10 +9,10 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.orvibo.const import CONF_SWITCH_LIST, DEFAULT_NAME, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.orvibo.const import CONF_SWITCH_LIST, DEFAULT_NAME, DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

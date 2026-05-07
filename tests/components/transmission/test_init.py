@@ -10,18 +10,18 @@ from transmission_rpc.error import (
     TransmissionError,
 )
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.transmission.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.transmission.const import (
     DEFAULT_PATH,
     DEFAULT_SCAN_INTERVAL,
     DEFAULT_SSL,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PATH, CONF_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PATH, CONF_SSL
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MOCK_CONFIG_DATA_VERSION_1_1, OLD_MOCK_CONFIG_DATA
 

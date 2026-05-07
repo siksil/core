@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 from ayla_iot_unofficial import AylaAuthError
 import pytest
 
-from homeassistant.components.fujitsu_fglair.const import (
+from inpui.components.fujitsu_fglair.const import (
     CONF_REGION,
     DOMAIN,
     REGION_DEFAULT,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
 
 from .conftest import TEST_PASSWORD, TEST_PASSWORD2, TEST_USERNAME
 

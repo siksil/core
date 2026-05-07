@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import format_discovered_event_class, format_event_dispatcher_name
 from .const import (

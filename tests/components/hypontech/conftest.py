@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from hyponcloud import AdminInfo, InverterData, OverviewData, PlantData
 import pytest
 
-from homeassistant.components.hypontech.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.hypontech.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

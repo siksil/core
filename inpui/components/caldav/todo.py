@@ -12,16 +12,16 @@ import caldav
 from caldav.lib.error import DAVError, NotFoundError
 import requests
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     TodoItem,
     TodoItemStatus,
     TodoListEntity,
     TodoListEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import CalDavConfigEntry
 from .api import async_get_calendars, get_attr_value

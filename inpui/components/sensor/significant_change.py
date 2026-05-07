@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.significant_change import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.significant_change import (
     check_absolute_change,
     check_percentage_change,
     check_valid_float,

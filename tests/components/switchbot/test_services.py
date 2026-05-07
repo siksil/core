@@ -5,16 +5,16 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.switchbot.const import DOMAIN
-from homeassistant.components.switchbot.services import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.switchbot.const import DOMAIN
+from inpui.components.switchbot.services import (
     SERVICE_ADD_PASSWORD,
     async_setup_services,
 )
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from . import (
     KEYPAD_VISION_INFO,

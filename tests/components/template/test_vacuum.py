@@ -5,19 +5,19 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import template, vacuum
-from homeassistant.components.vacuum import (
+from inpui.components import template, vacuum
+from inpui.components.vacuum import (
     ATTR_BATTERY_LEVEL,
     ATTR_FAN_SPEED,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.typing import ConfigType
 
 from .conftest import (
     ConfigurationStyle,

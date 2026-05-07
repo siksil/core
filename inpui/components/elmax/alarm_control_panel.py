@@ -7,15 +7,15 @@ from elmax_api.model.alarm_status import AlarmArmStatus, AlarmStatus
 from elmax_api.model.command import AreaCommand
 from elmax_api.model.panel import PanelStatus
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, InvalidStateError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, InvalidStateError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ElmaxConfigEntry

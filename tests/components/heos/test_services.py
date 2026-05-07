@@ -3,15 +3,15 @@
 from pyheos import CommandAuthenticationError, HeosError
 import pytest
 
-from homeassistant.components.heos.const import (
+from inpui.components.heos.const import (
     ATTR_PASSWORD,
     ATTR_USERNAME,
     DOMAIN,
     SERVICE_SIGN_IN,
     SERVICE_SIGN_OUT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import MockHeos
 

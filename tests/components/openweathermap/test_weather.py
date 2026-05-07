@@ -5,17 +5,17 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.openweathermap.const import (
+from inpui.components.openweathermap.const import (
     DOMAIN,
     OWM_MODE_FREE_CURRENT,
     OWM_MODE_FREE_FORECAST,
     OWM_MODE_V30,
 )
-from homeassistant.components.openweathermap.weather import SERVICE_GET_MINUTE_FORECAST
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.openweathermap.weather import SERVICE_GET_MINUTE_FORECAST
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import setup_platform
 

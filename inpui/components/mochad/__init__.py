@@ -6,15 +6,15 @@ import threading
 from pymochad import controller, exceptions
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -55,9 +55,9 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
     def start_mochad(event):
         """Start the Mochad service."""
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, stop_mochad)
+        hass.bus.listen_once(EVENT_INPUI_STOP, stop_mochad)
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, start_mochad)
+    hass.bus.listen_once(EVENT_INPUI_START, start_mochad)
     hass.data[DOMAIN] = mochad_controller
 
     return True

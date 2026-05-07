@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 from awesomeversion import AwesomeVersion, AwesomeVersionStrategy
 import pytest
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_BACKUP,
     ATTR_VERSION,
     DOMAIN,
@@ -16,7 +16,7 @@ from homeassistant.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
 )
-from homeassistant.components.update.const import (
+from inpui.components.update.const import (
     ATTR_AUTO_UPDATE,
     ATTR_DISPLAY_PRECISION,
     ATTR_IN_PROGRESS,
@@ -29,8 +29,8 @@ from homeassistant.components.update.const import (
     ATTR_UPDATE_PERCENTAGE,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
@@ -42,11 +42,11 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
 
 from .common import MockUpdateEntity
 

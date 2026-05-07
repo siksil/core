@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 from kaleidescape import const as kaleidescape_const
 import pytest
 
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MOCK_SERIAL
 

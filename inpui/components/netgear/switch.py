@@ -8,10 +8,10 @@ from typing import Any
 
 from pynetgear import ALLOW, BLOCK
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import NetgearConfigEntry, NetgearTrackerCoordinator
 from .entity import NetgearDeviceEntity, NetgearRouterEntity

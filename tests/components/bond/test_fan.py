@@ -9,11 +9,11 @@ from bond_async import Action, DeviceType, Direction
 import pytest
 
 from homeassistant import core
-from homeassistant.components import fan
-from homeassistant.components.bond.const import DOMAIN
-from homeassistant.components.bond.fan import PRESET_MODE_BREEZE
-from homeassistant.components.bond.services import SERVICE_SET_FAN_SPEED_TRACKED_STATE
-from homeassistant.components.fan import (
+from inpui.components import fan
+from inpui.components.bond.const import DOMAIN
+from inpui.components.bond.fan import PRESET_MODE_BREEZE
+from inpui.components.bond.services import SERVICE_SET_FAN_SPEED_TRACKED_STATE
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
@@ -27,16 +27,16 @@ from homeassistant.components.fan import (
     FanEntityFeature,
     NotValidPresetModeError,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import utcnow
 
 from .common import (
     ceiling_fan,

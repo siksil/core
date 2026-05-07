@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.duckdns.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
+from inpui.components.duckdns.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_DOMAIN
 
 from tests.common import MockConfigEntry
 

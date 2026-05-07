@@ -8,7 +8,7 @@ from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     ATTR_PERCENTAGE_STEP,
     ATTR_PRESET_MODE,
@@ -19,8 +19,8 @@ from homeassistant.components.fan import (
     FanEntityFeature,
     NotValidPresetModeError,
 )
-from homeassistant.components.zwave_js.fan import ATTR_FAN_STATE
-from homeassistant.const import (
+from inpui.components.zwave_js.fan import ATTR_FAN_STATE
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
@@ -31,9 +31,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 
 @pytest.fixture

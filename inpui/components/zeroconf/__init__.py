@@ -12,18 +12,18 @@ import voluptuous as vol
 from zeroconf import InterfaceChoice, IPVersion
 from zeroconf.asyncio import AsyncServiceInfo
 
-from homeassistant.components import network
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components import network
+from inpui.const import (
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_STOP,
     __version__,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, instance_id
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_homekit, async_get_zeroconf, bind_hass
-from homeassistant.setup import async_when_setup_or_start
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, instance_id
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_homekit, async_get_zeroconf, bind_hass
+from inpui.setup import async_when_setup_or_start
 
 from . import websocket_api
 from .const import DOMAIN, ZEROCONF_TYPE
@@ -105,7 +105,7 @@ def _async_get_instance(hass: HomeAssistant) -> HaAsyncZeroconf:
 
     # Wait to the close event to shutdown zeroconf to give
     # integrations time to send a good bye message
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_stop_zeroconf)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_stop_zeroconf)
     hass.data[DOMAIN] = aio_zc
 
     return aio_zc
@@ -189,7 +189,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     async def _async_zeroconf_hass_stop(_event: Event) -> None:
         await discovery.async_stop()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_zeroconf_hass_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_zeroconf_hass_stop)
     async_when_setup_or_start(hass, "frontend", _async_zeroconf_hass_start)
 
     return True

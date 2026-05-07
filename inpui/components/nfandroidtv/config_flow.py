@@ -8,8 +8,8 @@ from typing import Any
 from notifications_android_tv.notifications import ConnectError, Notifications
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME
 
 from .const import DEFAULT_NAME, DOMAIN
 

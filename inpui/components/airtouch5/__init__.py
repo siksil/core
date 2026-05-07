@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from airtouch5py.airtouch5_simple_client import Airtouch5SimpleClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 PLATFORMS: list[Platform] = [Platform.CLIMATE, Platform.COVER]
 

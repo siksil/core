@@ -1,7 +1,7 @@
 """Tests for Airly."""
 
-from homeassistant.components.airly.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.airly.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

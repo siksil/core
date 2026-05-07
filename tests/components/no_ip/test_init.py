@@ -4,10 +4,10 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components import no_ip
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components import no_ip
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

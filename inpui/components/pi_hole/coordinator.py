@@ -8,11 +8,11 @@ import logging
 from hole import HoleV5, HoleV6
 from hole.exceptions import HoleError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import MIN_TIME_BETWEEN_UPDATES, VERSION_6_RESPONSE_TO_5_ERROR
 

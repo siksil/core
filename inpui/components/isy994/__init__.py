@@ -10,23 +10,23 @@ from pyisy import ISY, ISYConnectionError, ISYInvalidAuthError, ISYResponseParse
 from pyisy.constants import CONFIG_NETWORKING, CONFIG_PORTAL
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VARIABLES,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
 )
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     _LOGGER,
@@ -172,7 +172,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: IsyConfigEntry) -> bool:
     isy.websocket.start()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop_auto_update)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop_auto_update)
     )
 
     return True

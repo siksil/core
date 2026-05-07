@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.sky_remote.const import DEFAULT_PORT, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.components.sky_remote.const import DEFAULT_PORT, DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
 
 from tests.common import MockConfigEntry
 

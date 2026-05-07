@@ -12,11 +12,11 @@ from opendata_transport.exceptions import (
     OpendataTransportError,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonValueType
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonValueType
 
 from .const import CONNECTIONS_COUNT, DEFAULT_UPDATE_TIME, DOMAIN
 from .helper import offset_opendata

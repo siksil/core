@@ -6,11 +6,11 @@ import logging
 import subprocess
 from typing import Any
 
-from homeassistant.components.notify import BaseNotificationService
-from homeassistant.const import CONF_COMMAND
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.process import kill_subprocess
+from inpui.components.notify import BaseNotificationService
+from inpui.const import CONF_COMMAND
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.process import kill_subprocess
 
 from .const import CONF_COMMAND_TIMEOUT, LOGGER
 from .utils import render_template_args

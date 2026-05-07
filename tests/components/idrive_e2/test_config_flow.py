@@ -10,18 +10,18 @@ from idrive_e2 import CannotConnect, InvalidAuth
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.idrive_e2 import ClientError
-from homeassistant.components.idrive_e2.config_flow import CONF_ACCESS_KEY_ID
-from homeassistant.components.idrive_e2.const import (
+from inpui.components.idrive_e2 import ClientError
+from inpui.components.idrive_e2.config_flow import CONF_ACCESS_KEY_ID
+from inpui.components.idrive_e2.const import (
     CONF_BUCKET,
     CONF_ENDPOINT_URL,
     CONF_SECRET_ACCESS_KEY,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.selector import SelectSelector
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.selector import SelectSelector
 
 from .const import USER_INPUT
 

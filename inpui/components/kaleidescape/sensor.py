@@ -7,11 +7,11 @@ from dataclasses import dataclass
 
 from kaleidescape import Device as KaleidescapeDevice
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.const import PERCENTAGE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.const import PERCENTAGE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import KaleidescapeConfigEntry
 from .entity import KaleidescapeEntity

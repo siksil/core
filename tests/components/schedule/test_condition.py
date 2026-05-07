@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.schedule.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.schedule.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

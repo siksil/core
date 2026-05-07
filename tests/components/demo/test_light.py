@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo import DOMAIN
-from homeassistant.components.light import (
+from inpui.components.demo import DOMAIN
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_TEMP_KELVIN,
@@ -19,9 +19,9 @@ from homeassistant.components.light import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_LIGHT = "light.bed_light"
 

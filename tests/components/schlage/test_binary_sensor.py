@@ -6,9 +6,9 @@ from unittest.mock import Mock
 from freezegun.api import FrozenDateTimeFactory
 from pyschlage.exceptions import UnknownError
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
 
 from . import MockSchlageConfigEntry
 

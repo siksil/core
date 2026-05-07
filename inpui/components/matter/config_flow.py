@@ -9,22 +9,22 @@ from matter_server.client import MatterClient
 from matter_server.client.exceptions import CannotConnect, InvalidServerVersion
 import voluptuous as vol
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
 )
-from homeassistant.components.onboarding import async_is_onboarded
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.onboarding import async_is_onboarded
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import aiohttp_client
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .addon import get_addon_manager
 from .const import (

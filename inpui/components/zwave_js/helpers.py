@@ -32,22 +32,22 @@ from zwave_js_server.model.value import (
 )
 from zwave_js_server.version import VersionInfo, get_server_version
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
     CONF_TYPE,
     __version__ as HA_VERSION,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.group import expand_entity_ids
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.group import expand_entity_ids
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from .const import (
     ATTR_COMMAND_CLASS,

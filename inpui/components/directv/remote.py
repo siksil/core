@@ -9,9 +9,9 @@ from typing import Any
 
 from directv import DIRECTV, DIRECTVError
 
-from homeassistant.components.remote import ATTR_NUM_REPEATS, RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import ATTR_NUM_REPEATS, RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DirecTVConfigEntry
 from .entity import DIRECTVEntity

@@ -6,9 +6,9 @@ from bleak.exc import BleakError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.togrill.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.togrill.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import TOGRILL_SERVICE_INFO, TOGRILL_SERVICE_INFO_NO_NAME, setup_entry
 

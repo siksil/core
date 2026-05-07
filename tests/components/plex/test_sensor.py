@@ -8,13 +8,13 @@ import pytest
 import requests.exceptions
 import requests_mock
 
-from homeassistant.components.plex.const import PLEX_UPDATE_LIBRARY_SIGNAL
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util import dt as dt_util
+from inpui.components.plex.const import PLEX_UPDATE_LIBRARY_SIGNAL
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util import dt as dt_util
 
 from .helpers import trigger_plex_update, wait_for_debouncer
 

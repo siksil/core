@@ -6,10 +6,10 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import onboarding
-from homeassistant.components.cloud import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import onboarding
+from inpui.components.cloud import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import register_auth_provider
 from tests.typing import ClientSessionGenerator

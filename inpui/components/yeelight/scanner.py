@@ -16,12 +16,12 @@ from async_upnp_client.search import SsdpSearchListener
 from async_upnp_client.utils import CaseInsensitiveDict
 
 from homeassistant import config_entries
-from homeassistant.components import network
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.util.async_ import create_eager_task
+from inpui.components import network
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import discovery_flow
+from inpui.helpers.event import async_call_later, async_track_time_interval
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.util.async_ import create_eager_task
 
 from .const import (
     DISCOVERY_ATTEMPTS,

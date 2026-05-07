@@ -2,9 +2,9 @@
 
 from switchbot_api import Device
 
-from homeassistant.components.switchbot_cloud.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.switchbot_cloud.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -14,12 +14,12 @@ from aiohomeconnect.model.error import (
     TooManyRequestsError,
 )
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import API_DEFAULT_RETRY_AFTER, DOMAIN
 from .coordinator import HomeConnectApplianceCoordinator

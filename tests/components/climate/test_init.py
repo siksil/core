@@ -9,13 +9,13 @@ from unittest.mock import MagicMock, Mock
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN,
     SET_TEMPERATURE_SCHEMA,
     ClimateEntity,
     HVACMode,
 )
-from homeassistant.components.climate.const import (
+from inpui.components.climate.const import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_HUMIDITY,
@@ -38,9 +38,9 @@ from homeassistant.components.climate.const import (
     SWING_HORIZONTAL_ON,
     ClimateEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import (
     MockConfigEntry,

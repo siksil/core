@@ -12,18 +12,18 @@ from asyncssh.misc import PermissionDenied
 from asyncssh.sftp import SFTPNoSuchFile, SFTPPermissionDenied
 import voluptuous as vol
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.selector import (
+from inpui.components.file_upload import process_uploaded_file
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.helpers.selector import (
     FileSelector,
     FileSelectorConfig,
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.util.ulid import ulid
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.util.ulid import ulid
 
 from . import SFTPConfigEntryData
 from .client import get_client_options

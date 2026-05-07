@@ -4,9 +4,9 @@ import logging
 
 from poolsense import PoolSense
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .coordinator import PoolSenseConfigEntry, PoolSenseDataUpdateCoordinator
 

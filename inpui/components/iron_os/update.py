@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from . import IRON_OS_KEY, IronOSConfigEntry, IronOSLiveDataCoordinator
 from .coordinator import IronOSFirmwareUpdateCoordinator

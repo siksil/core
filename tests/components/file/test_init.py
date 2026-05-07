@@ -2,9 +2,9 @@
 
 from unittest.mock import MagicMock, Mock, patch
 
-from homeassistant.components.file import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.file import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, get_fixture_path
 

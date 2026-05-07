@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, patch
 from aioonkyo import Code, Instruction, Kind, Receiver, Status, Zone, status
 import pytest
 
-from homeassistant.components.onkyo.const import DOMAIN
+from inpui.components.onkyo.const import DOMAIN
 
 from . import RECEIVER_INFO, RECEIVER_INFO_2, mock_discovery
 

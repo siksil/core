@@ -7,11 +7,11 @@ from unittest.mock import MagicMock, PropertyMock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_HOST, MOCK_HOST_2
 

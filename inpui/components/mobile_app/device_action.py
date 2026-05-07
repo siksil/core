@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components import notify
-from homeassistant.components.device_automation import InvalidDeviceAutomationConfig
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.components import notify
+from inpui.components.device_automation import InvalidDeviceAutomationConfig
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .const import DOMAIN
 from .util import get_notify_service, supports_push, webhook_id_from_device_id

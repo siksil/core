@@ -10,9 +10,9 @@ import aiohttp
 from lunatone_rest_api_client import DALIBroadcast, Device, Devices, Info
 from lunatone_rest_api_client.models import InfoData
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 

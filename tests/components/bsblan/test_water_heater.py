@@ -8,7 +8,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_OPERATION_MODE,
     DOMAIN as WATER_HEATER_DOMAIN,
     SERVICE_SET_OPERATION_MODE,
@@ -19,10 +19,10 @@ from homeassistant.components.water_heater import (
     STATE_OFF,
     STATE_PERFORMANCE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_with_selected_platforms
 

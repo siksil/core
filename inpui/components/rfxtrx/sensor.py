@@ -11,14 +11,14 @@ from typing import Any, cast
 
 from RFXtrx import ControlEvent, RFXtrxDevice, RFXtrxEvent, SensorEvent
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     DEGREE,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
@@ -34,10 +34,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import DeviceTuple, async_setup_platform_entry, get_rfx_object
 from .const import ATTR_EVENT

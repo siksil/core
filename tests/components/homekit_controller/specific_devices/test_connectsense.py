@@ -1,8 +1,8 @@
 """Make sure that ConnectSense Smart Outlet2 / In-Wall Outlet is enumerated properly."""
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import UnitOfElectricCurrent, UnitOfEnergy, UnitOfPower
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorStateClass
+from inpui.const import UnitOfElectricCurrent, UnitOfEnergy, UnitOfPower
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

@@ -2,15 +2,15 @@
 
 from pysma.helpers import DeviceInfo
 
-from homeassistant.components.sma.const import CONF_GROUP
-from homeassistant.const import (
+from inpui.components.sma.const import CONF_GROUP
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

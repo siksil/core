@@ -9,7 +9,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pybalboa.enums import HeatMode, LowHighRange
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

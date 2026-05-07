@@ -18,31 +18,31 @@ from hass_nabucasa.alexa_api import (
 )
 from yarl import URL
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.alexa import (
+from inpui.components import persistent_notification
+from inpui.components.alexa import (
     DOMAIN as ALEXA_DOMAIN,
     config as alexa_config,
     entities as alexa_entities,
     errors as alexa_errors,
     state_report as alexa_state_report,
 )
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.homeassistant.exposed_entities import (
     async_expose_entity,
     async_get_assistant_settings,
     async_listen_entity_updates,
     async_should_expose,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import Event, HomeAssistant, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, start
-from homeassistant.helpers.entity import get_device_class
-from homeassistant.helpers.entityfilter import EntityFilter
-from homeassistant.helpers.event import async_call_later
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import Event, HomeAssistant, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, start
+from inpui.helpers.entity import get_device_class
+from inpui.helpers.entityfilter import EntityFilter
+from inpui.helpers.event import async_call_later
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .const import (
     CONF_ENTITY_CONFIG,

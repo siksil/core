@@ -9,25 +9,25 @@ from typing import Any
 from incomfortclient import InvalidGateway, InvalidHeaterList
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntryState,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     BooleanSelector,
     BooleanSelectorConfig,
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_LEGACY_SETPOINT_STATUS, DOMAIN
 from .coordinator import InComfortConfigEntry, async_connect_gateway

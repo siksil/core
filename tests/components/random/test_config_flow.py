@@ -7,12 +7,12 @@ import pytest
 from voluptuous import Invalid
 
 from homeassistant import config_entries
-from homeassistant.components.random import async_setup_entry
-from homeassistant.components.random.const import DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import UnitOfEnergy, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.random import async_setup_entry
+from inpui.components.random.const import DOMAIN
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import UnitOfEnergy, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

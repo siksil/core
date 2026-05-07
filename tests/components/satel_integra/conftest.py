@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.satel_integra.const import DOMAIN
+from inpui.components.satel_integra.const import DOMAIN
 
 from . import (
     MOCK_CONFIG_DATA,

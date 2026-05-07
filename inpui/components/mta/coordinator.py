@@ -8,12 +8,12 @@ import logging
 
 from pymta import BusFeed, MTAFeedError, SubwayFeed
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_LINE,

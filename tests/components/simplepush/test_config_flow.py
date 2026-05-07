@@ -6,10 +6,10 @@ import pytest
 from simplepush import UnknownError
 
 from homeassistant import config_entries
-from homeassistant.components.simplepush.const import CONF_DEVICE_KEY, CONF_SALT, DOMAIN
-from homeassistant.const import CONF_NAME, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.simplepush.const import CONF_DEVICE_KEY, CONF_SALT, DOMAIN
+from inpui.const import CONF_NAME, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, patch
 from opower import CostRead
 import pytest
 
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfEnergy, UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.opower.const import DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfEnergy, UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

@@ -7,10 +7,10 @@ import logging
 
 import upcloud_api
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 

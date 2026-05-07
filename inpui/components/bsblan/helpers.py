@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from bsblan import BSBLAN, BSBLANError
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 

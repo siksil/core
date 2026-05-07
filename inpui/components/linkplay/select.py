@@ -11,9 +11,9 @@ from linkplay.bridge import LinkPlayBridge, LinkPlayPlayer
 from linkplay.consts import AudioOutputHwMode
 from linkplay.manufacturers import MANUFACTURER_WIIM
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LinkPlayConfigEntry
 from .entity import LinkPlayBaseEntity, exception_wrap

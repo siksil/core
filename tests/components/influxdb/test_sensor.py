@@ -13,8 +13,8 @@ from influxdb_client.rest import ApiException
 import pytest
 from voluptuous import Invalid
 
-from homeassistant.components import sensor
-from homeassistant.components.influxdb.const import (
+from inpui.components import sensor
+from inpui.components.influxdb.const import (
     API_VERSION_2,
     DEFAULT_API_VERSION,
     DEFAULT_BUCKET,
@@ -23,12 +23,12 @@ from homeassistant.components.influxdb.const import (
     TEST_QUERY_V1,
     TEST_QUERY_V2,
 )
-from homeassistant.components.influxdb.sensor import PLATFORM_SCHEMA
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_platform import PLATFORM_NOT_READY_BASE_WAIT_TIME
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.influxdb.sensor import PLATFORM_SCHEMA
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_platform import PLATFORM_NOT_READY_BASE_WAIT_TIME
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

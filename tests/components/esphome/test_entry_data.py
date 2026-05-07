@@ -11,12 +11,12 @@ from aioesphomeapi import (
 )
 import pytest
 
-from homeassistant.components.esphome import DOMAIN
-from homeassistant.components.esphome.entry_data import RuntimeEntryData
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import discovery_flow, entity_registry as er
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.components.esphome import DOMAIN
+from inpui.components.esphome.entry_data import RuntimeEntryData
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import discovery_flow, entity_registry as er
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
 
 from .conftest import MockGenericDeviceEntryType
 

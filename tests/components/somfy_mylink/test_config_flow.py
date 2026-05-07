@@ -5,15 +5,15 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.somfy_mylink.const import (
+from inpui.components.somfy_mylink.const import (
     CONF_REVERSED_TARGET_IDS,
     CONF_SYSTEM_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

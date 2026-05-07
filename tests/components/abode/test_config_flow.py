@@ -10,11 +10,11 @@ from jaraco.abode.helpers.errors import MFA_CODE_REQUIRED
 import pytest
 from requests.exceptions import ConnectTimeout
 
-from homeassistant.components.abode.const import CONF_POLLING, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.abode.const import CONF_POLLING, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

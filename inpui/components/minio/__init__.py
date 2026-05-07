@@ -9,10 +9,10 @@ import threading
 
 import voluptuous as vol
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .minio_helper import MinioEventThread, create_minio_client
 
@@ -94,8 +94,8 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     queue_listener = QueueListener(hass)
     queue = queue_listener.queue
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, queue_listener.start_handler)
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, queue_listener.stop_handler)
+    hass.bus.listen_once(EVENT_INPUI_START, queue_listener.start_handler)
+    hass.bus.listen_once(EVENT_INPUI_STOP, queue_listener.stop_handler)
 
     def _setup_listener(listener_conf):
         bucket = listener_conf[CONF_LISTEN_BUCKET]
@@ -115,8 +115,8 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
             events,
         )
 
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_START, minio_listener.start_handler)
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, minio_listener.stop_handler)
+        hass.bus.listen_once(EVENT_INPUI_START, minio_listener.start_handler)
+        hass.bus.listen_once(EVENT_INPUI_STOP, minio_listener.stop_handler)
 
     for listen_conf in conf[CONF_LISTEN]:
         _setup_listener(listen_conf)

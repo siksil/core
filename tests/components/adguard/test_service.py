@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.adguard.const import (
+from inpui.components.adguard.const import (
     DOMAIN,
     SERVICE_ADD_URL,
     SERVICE_DISABLE_URL,
@@ -14,8 +14,8 @@ from homeassistant.components.adguard.const import (
     SERVICE_REFRESH,
     SERVICE_REMOVE_URL,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 pytestmark = pytest.mark.usefixtures("init_integration")
 

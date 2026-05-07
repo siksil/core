@@ -16,28 +16,28 @@ import slugify as unicode_slug
 import voluptuous as vol
 from voluptuous_openapi import UNSUPPORTED, convert
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.components.cover import INTENT_CLOSE_COVER, INTENT_OPEN_COVER
-from homeassistant.components.homeassistant import async_should_expose
-from homeassistant.components.intent import async_device_supports_timers
-from homeassistant.components.script import DOMAIN as SCRIPT_DOMAIN
-from homeassistant.components.todo import DOMAIN as TODO_DOMAIN, TodoServices
-from homeassistant.components.weather import INTENT_GET_WEATHER
-from homeassistant.const import (
+from inpui.components.cover import INTENT_CLOSE_COVER, INTENT_OPEN_COVER
+from inpui.components.homeassistant import async_should_expose
+from inpui.components.intent import async_device_supports_timers
+from inpui.components.script import DOMAIN as SCRIPT_DOMAIN
+from inpui.components.todo import DOMAIN as TODO_DOMAIN, TodoServices
+from inpui.components.weather import INTENT_GET_WEATHER
+from inpui.const import (
     ATTR_DOMAIN,
     ATTR_SERVICE,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     EVENT_SERVICE_REMOVED,
 )
-from homeassistant.core import Context, Event, HomeAssistant, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util, yaml as yaml_util
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import JsonObjectType
-from homeassistant.util.ulid import ulid_now
+from inpui.core import Context, Event, HomeAssistant, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util, yaml as yaml_util
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import JsonObjectType
+from inpui.util.ulid import ulid_now
 
 from . import (
     area_registry as ar,
@@ -217,7 +217,7 @@ class APIInstance:
 
     async def async_call_tool(self, tool_input: ToolInput) -> JsonObjectType:
         """Call a LLM tool, validate args and return the response."""
-        from homeassistant.components.conversation import (  # noqa: PLC0415
+        from inpui.components.conversation import (  # noqa: PLC0415
             ConversationTraceEventType,
             async_conversation_trace_append,
         )
@@ -895,7 +895,7 @@ def _get_cached_action_parameters(
             """Cleanup."""
             cancel()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, on_homeassistant_close)
+        hass.bus.async_listen_once(EVENT_INPUI_CLOSE, on_homeassistant_close)
 
     if domain in parameters_cache and action in parameters_cache[domain]:
         return parameters_cache[domain][action]

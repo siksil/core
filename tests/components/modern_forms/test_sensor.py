@@ -2,9 +2,9 @@
 
 from datetime import datetime
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
 
 from . import init_integration, modern_forms_timers_set_mock
 

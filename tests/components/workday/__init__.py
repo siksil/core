@@ -6,15 +6,15 @@ from typing import Any
 
 from holidays import OPTIONAL
 
-from homeassistant.components.workday.const import (
+from inpui.components.workday.const import (
     DEFAULT_EXCLUDES,
     DEFAULT_NAME,
     DEFAULT_OFFSET,
     DEFAULT_WORKDAYS,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

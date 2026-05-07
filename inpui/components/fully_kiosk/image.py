@@ -8,11 +8,11 @@ from typing import Any
 
 from fullykiosk import FullyKiosk, FullyKioskError
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import FullyKioskConfigEntry
 from .coordinator import FullyKioskDataUpdateCoordinator

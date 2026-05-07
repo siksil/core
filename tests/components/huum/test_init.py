@@ -6,9 +6,9 @@ from huum.exceptions import Forbidden, NotAuthenticated
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.huum.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.huum.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

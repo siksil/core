@@ -1,8 +1,8 @@
 """Test for a Home Assistant bridge that changes humidifier min/max at runtime."""
 
-from homeassistant.components.humidifier import ATTR_MAX_HUMIDITY, ATTR_MIN_HUMIDITY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.humidifier import ATTR_MAX_HUMIDITY, ATTR_MIN_HUMIDITY
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from ..common import (
     device_config_changed,

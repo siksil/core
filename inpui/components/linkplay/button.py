@@ -9,14 +9,14 @@ from typing import Any
 
 from linkplay.bridge import LinkPlayBridge
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LinkPlayConfigEntry
 from .entity import LinkPlayBaseEntity, exception_wrap

@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.sensor import ATTR_OPTIONS, SensorDeviceClass
-from homeassistant.components.zodiac.const import (
+from inpui.components.sensor import ATTR_OPTIONS, SensorDeviceClass
+from inpui.components.zodiac.const import (
     ATTR_ELEMENT,
     ATTR_MODALITY,
     DOMAIN,
@@ -19,11 +19,11 @@ from homeassistant.components.zodiac.const import (
     SIGN_SCORPIO,
     SIGN_TAURUS,
 )
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

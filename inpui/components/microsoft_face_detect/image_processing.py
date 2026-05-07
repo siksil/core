@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.components.image_processing import (
+from inpui.components.image_processing import (
     ATTR_AGE,
     ATTR_GENDER,
     ATTR_GLASSES,
@@ -15,13 +15,13 @@ from homeassistant.components.image_processing import (
     FaceInformation,
     ImageProcessingFaceEntity,
 )
-from homeassistant.components.microsoft_face import DATA_MICROSOFT_FACE, MicrosoftFace
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.microsoft_face import DATA_MICROSOFT_FACE, MicrosoftFace
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

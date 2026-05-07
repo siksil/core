@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from gios.model import GiosSensors, GiosStation, Sensor as GiosSensor
 import pytest
 
-from homeassistant.components.gios.const import CONF_STATION_ID, DOMAIN
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.gios.const import CONF_STATION_ID, DOMAIN
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

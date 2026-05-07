@@ -17,8 +17,8 @@ from pyatv.helpers import get_unique_id
 from pyatv.interface import BaseConfig, PairingHandler
 import voluptuous as vol
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import (
+from inpui.components import zeroconf
+from inpui.config_entries import (
     SOURCE_IGNORE,
     SOURCE_REAUTH,
     SOURCE_ZEROCONF,
@@ -26,16 +26,16 @@ from homeassistant.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ADDRESS, CONF_NAME, CONF_PIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.const import CONF_ADDRESS, CONF_NAME, CONF_PIN
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import CONF_CREDENTIALS, CONF_IDENTIFIERS, CONF_START_OFF, DOMAIN
 

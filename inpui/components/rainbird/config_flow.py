@@ -12,11 +12,11 @@ from pyrainbird.data import WifiParams
 from pyrainbird.exceptions import RainbirdApiException, RainbirdAuthException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_PASSWORD
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv, selector
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_HOST, CONF_MAC, CONF_PASSWORD
+from inpui.core import callback
+from inpui.helpers import config_validation as cv, selector
+from inpui.helpers.device_registry import format_mac
 
 from . import RainbirdConfigEntry
 from .const import (

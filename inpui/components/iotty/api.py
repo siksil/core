@@ -7,8 +7,8 @@ from typing import Any
 from aiohttp import ClientSession
 from iottycloud.cloudapi import CloudApi
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 OAUTH2_CLIENT_ID = "hass-iotty"
 IOTTYAPI_BASE = "https://homeassistant.iotty.com/"

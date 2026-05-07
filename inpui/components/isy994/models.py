@@ -12,9 +12,9 @@ from pyisy.nodes import Group, Node
 from pyisy.programs import Program
 from pyisy.variables import Variable
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import (
     CONF_NETWORK,

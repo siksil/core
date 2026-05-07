@@ -6,9 +6,9 @@ import asyncio
 
 from pytouchlinesl import TouchlineSL
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import TouchlineSLConfigEntry, TouchlineSLModuleCoordinator

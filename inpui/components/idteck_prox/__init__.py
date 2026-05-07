@@ -7,15 +7,15 @@ import logging
 from rfk101py.rfk101py import rfk101py
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -53,7 +53,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         try:
             reader = IdteckReader(hass, host, port, name)
             reader.connect()
-            hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, reader.stop)
+            hass.bus.listen_once(EVENT_INPUI_STOP, reader.stop)
         except OSError as error:
             _LOGGER.error("Error creating %s. %s", name, error)
             return False

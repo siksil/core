@@ -7,16 +7,16 @@ from uuid import UUID
 
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import (
+from inpui.components import bluetooth
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import VolDictType
 
 from .const import CONF_ALLOW_NAMELESS_UUIDS, DOMAIN
 

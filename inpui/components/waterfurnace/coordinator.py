@@ -5,8 +5,8 @@ from typing import TYPE_CHECKING
 
 from waterfurnace.waterfurnace import WaterFurnace, WFException, WFGateway, WFReading
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import UPDATE_INTERVAL
 

@@ -11,12 +11,12 @@ from eheimdigital.heater import EheimDigitalHeater
 from eheimdigital.reeflex import EheimDigitalReeflexUV
 from eheimdigital.types import HeaterUnit
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     PRECISION_HALVES,
     PRECISION_TENTHS,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator
 from .entity import EheimDigitalEntity, exception_handler

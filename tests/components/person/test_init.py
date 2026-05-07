@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import person
-from homeassistant.components.device_tracker import ATTR_SOURCE_TYPE, SourceType
-from homeassistant.components.person import (
+from inpui.components import person
+from inpui.components.device_tracker import ATTR_SOURCE_TYPE, SourceType
+from inpui.components.person import (
     ATTR_DEVICE_TRACKERS,
     ATTR_SOURCE,
     ATTR_USER_ID,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
@@ -21,13 +21,13 @@ from homeassistant.const import (
     ATTR_ID,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_RELOAD,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import DEVICE_TRACKER, DEVICE_TRACKER_2
 
@@ -133,7 +133,7 @@ async def test_setup_tracker(hass: HomeAssistant, hass_admin_user: MockUser) -> 
     state = hass.states.get("person.tracked_person")
     assert state.state == STATE_UNKNOWN
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     state = hass.states.get("person.tracked_person")
@@ -214,7 +214,7 @@ async def test_setup_two_trackers(
     assert state.attributes.get(ATTR_SOURCE) is None
     assert state.attributes.get(ATTR_USER_ID) == user_id
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     hass.states.async_set(DEVICE_TRACKER, "home", {ATTR_SOURCE_TYPE: SourceType.ROUTER})
     await hass.async_block_till_done()
@@ -305,7 +305,7 @@ async def test_setup_router_ble_trackers(
     assert state.attributes.get(ATTR_SOURCE) is None
     assert state.attributes.get(ATTR_USER_ID) == user_id
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     hass.states.async_set(
         DEVICE_TRACKER, "not_home", {ATTR_SOURCE_TYPE: SourceType.ROUTER}
@@ -372,7 +372,7 @@ async def test_ignore_unavailable_states(
     state = hass.states.get("person.tracked_person")
     assert state.state == STATE_UNKNOWN
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     hass.states.async_set(DEVICE_TRACKER, "home")
     await hass.async_block_till_done()
@@ -479,7 +479,7 @@ async def test_load_person_storage(
     assert state.attributes.get(ATTR_SOURCE) is None
     assert state.attributes.get(ATTR_USER_ID) == hass_admin_user.id
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     hass.states.async_set(DEVICE_TRACKER, "home")
     await hass.async_block_till_done()

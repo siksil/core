@@ -9,9 +9,9 @@ from typing import Any
 from aionotion.errors import InvalidCredentialsError, NotionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import CONF_REFRESH_TOKEN, CONF_USER_UUID, DOMAIN, LOGGER
 from .util import async_get_client_with_credentials

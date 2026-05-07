@@ -5,8 +5,8 @@ import struct
 
 import pytest
 
-from homeassistant.components.homeassistant import SERVICE_UPDATE_ENTITY
-from homeassistant.components.modbus.const import (
+from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.modbus.const import (
     CALL_TYPE_REGISTER_HOLDING,
     CALL_TYPE_REGISTER_INPUT,
     CONF_DATA_TYPE,
@@ -27,12 +27,12 @@ from homeassistant.components.modbus.const import (
     DOMAIN,
     DataType,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ADDRESS,
     CONF_COUNT,
@@ -48,9 +48,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_ENTITY_NAME, ReadResult
 

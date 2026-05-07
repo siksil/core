@@ -6,10 +6,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ZONE
-from homeassistant.helpers.selector import EntitySelector, EntitySelectorConfig
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ZONE
+from inpui.helpers.selector import EntitySelector, EntitySelectorConfig
 
 from .const import DOMAIN
 

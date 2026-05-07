@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import infrared_protocols
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.infrared import InfraredEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import persistent_notification
+from inpui.components.infrared import InfraredEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DOMAIN
 

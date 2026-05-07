@@ -6,15 +6,15 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 import logging
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcobeeConfigEntry, EcobeeData
 from .entity import EcobeeBaseEntity

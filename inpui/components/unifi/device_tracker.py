@@ -18,16 +18,16 @@ from aiounifi.models.device import Device
 from aiounifi.models.event import Event, EventKey
 from propcache.api import cached_property
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     ScannerEntity,
     ScannerEntityDescription,
 )
-from homeassistant.core import Event as core_Event, HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import Event as core_Event, HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import UnifiConfigEntry
 from .const import DOMAIN

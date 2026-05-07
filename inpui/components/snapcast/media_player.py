@@ -9,7 +9,7 @@ from typing import Any
 from snapcast.control.client import Snapclient
 from snapcast.control.group import Snapgroup
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
@@ -17,11 +17,11 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CLIENT_PREFIX, CLIENT_SUFFIX, DOMAIN
 from .coordinator import SnapcastUpdateCoordinator

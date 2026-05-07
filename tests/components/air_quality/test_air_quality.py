@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components.air_quality import ATTR_N2O, ATTR_OZONE, ATTR_PM_10
-from homeassistant.const import (
+from inpui.components.air_quality import ATTR_N2O, ATTR_OZONE, ATTR_PM_10
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_UNIT_OF_MEASUREMENT,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

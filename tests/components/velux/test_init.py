@@ -13,12 +13,12 @@ from unittest.mock import patch
 import pytest
 from pyvlx.exception import PyVLXException
 
-from homeassistant.components.velux.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.components.velux.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.common import AsyncMock, ConfigEntry, MockConfigEntry
 

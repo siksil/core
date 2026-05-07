@@ -9,23 +9,23 @@ from typing import cast
 from mill import Heater, Mill
 from mill_local import Mill as MillLocal
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfEnergy
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util import dt as dt_util, slugify
-from homeassistant.util.unit_conversion import EnergyConverter
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfEnergy
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util import dt as dt_util, slugify
+from inpui.util.unit_conversion import EnergyConverter
 
 from .const import DOMAIN
 

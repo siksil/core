@@ -13,14 +13,14 @@ from hassil.util import (
 )
 import voluptuous as vol
 
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.http import StaticPathConfig
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
 
 from .connection_test import ConnectionTestView
 from .const import (

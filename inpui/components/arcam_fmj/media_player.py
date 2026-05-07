@@ -9,7 +9,7 @@ from typing import Any
 
 from arcam.fmj import ConnectionFailed, SourceCodes
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
@@ -18,10 +18,10 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import EVENT_TURN_ON
 from .coordinator import ArcamFmjConfigEntry, ArcamFmjCoordinator

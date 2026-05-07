@@ -9,9 +9,9 @@ from typing import Any, Concatenate
 from velbusaio.channels import Channel as VelbusChannel
 from velbusaio.properties import Property as VelbusProperty
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

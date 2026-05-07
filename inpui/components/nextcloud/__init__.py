@@ -9,16 +9,16 @@ from nextcloudmonitor import (
     NextcloudMonitorRequestError,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_PASSWORD,
     CONF_URL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
 
 from .coordinator import NextcloudConfigEntry, NextcloudDataUpdateCoordinator
 

@@ -14,18 +14,18 @@ from egauge_async.json.client import EgaugeJsonClient
 from egauge_async.json.models import RegisterInfo
 from httpx import ConnectError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import COORDINATOR_UPDATE_INTERVAL_SECONDS, DOMAIN, LOGGER
 

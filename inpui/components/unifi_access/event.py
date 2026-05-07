@@ -6,13 +6,13 @@ from dataclasses import dataclass
 
 from unifi_access_api import Door
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import DoorEvent, UnifiAccessConfigEntry, UnifiAccessCoordinator
 from .entity import UnifiAccessEntity

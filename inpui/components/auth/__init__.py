@@ -137,29 +137,29 @@ from aiohttp import web
 from multidict import MultiDictProxy
 import voluptuous as vol
 
-from homeassistant.auth import InvalidAuthError
-from homeassistant.auth.models import (
+from inpui.auth import InvalidAuthError
+from inpui.auth.models import (
     TOKEN_TYPE_LONG_LIVED_ACCESS_TOKEN,
     Credentials,
     RefreshToken,
     User,
 )
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.http.auth import (
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS
+from inpui.components.http.auth import (
     async_sign_path,
     async_user_not_allowed_do_auth,
 )
-from homeassistant.components.http.ban import log_invalid_auth
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.http.view import HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2AuthorizeCallbackView
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.components.http.ban import log_invalid_auth
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.http.view import HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_entry_oauth2_flow import OAuth2AuthorizeCallbackView
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
 
 from . import indieauth, login_flow, mfa_setup_flow
 

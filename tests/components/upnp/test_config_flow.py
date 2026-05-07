@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.upnp.const import (
+from inpui.components.upnp.const import (
     CONFIG_ENTRY_FORCE_POLL,
     CONFIG_ENTRY_HOST,
     CONFIG_ENTRY_LOCATION,
@@ -18,9 +18,9 @@ from homeassistant.components.upnp.const import (
     DOMAIN,
     ST_IGD_V1,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

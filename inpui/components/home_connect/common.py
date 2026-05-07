@@ -7,11 +7,11 @@ from typing import cast
 
 from aiohomeconnect.model import EventKey
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import (

@@ -10,9 +10,9 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.go2rtc.server import Server
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.go2rtc.server import Server
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 TEST_BINARY = "/bin/go2rtc"
 

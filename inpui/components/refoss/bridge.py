@@ -6,9 +6,9 @@ from refoss_ha.device import DeviceInfo
 from refoss_ha.device_manager import async_build_base_device
 from refoss_ha.discovery import Discovery, Listener
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import _LOGGER, COORDINATORS, DISPATCH_DEVICE_DISCOVERED, DOMAIN
 from .coordinator import RefossDataUpdateCoordinator

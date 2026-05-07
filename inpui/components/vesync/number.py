@@ -7,15 +7,15 @@ import logging
 from pyvesync.base_devices.vesyncbasedevice import VeSyncBaseDevice
 from pyvesync.device_container import DeviceContainer
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import is_humidifier
 from .const import VS_DEVICES, VS_DISCOVERY

@@ -14,13 +14,13 @@ from aioswitcher.device import (
 )
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
 
 from . import SwitcherConfigEntry
 from .const import (

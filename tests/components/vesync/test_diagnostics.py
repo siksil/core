@@ -3,12 +3,12 @@
 from syrupy.assertion import SnapshotAssertion
 from syrupy.matchers import path_type
 
-from homeassistant.components.vesync.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.components.vesync.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from tests.components.diagnostics import (
     get_diagnostics_for_config_entry,

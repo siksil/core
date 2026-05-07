@@ -8,9 +8,9 @@ from unittest.mock import call, patch
 import pytest
 
 from homeassistant import loader, setup
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import async_get_integration
-from homeassistant.requirements import (
+from inpui.core import HomeAssistant
+from inpui.loader import async_get_integration
+from inpui.requirements import (
     CONSTRAINT_FILE,
     DEPRECATED_PACKAGES,
     RequirementsNotFound,

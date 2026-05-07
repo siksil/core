@@ -9,19 +9,19 @@ from nx584 import client
 import requests
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     PLATFORM_SCHEMA as ALARM_CONTROL_PANEL_PLATFORM_SCHEMA,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

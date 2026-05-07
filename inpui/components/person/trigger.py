@@ -1,8 +1,8 @@
 """Provides triggers for persons."""
 
-from homeassistant.const import STATE_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import (
+from inpui.const import STATE_HOME
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import (
     Trigger,
     make_entity_origin_state_trigger,
     make_entity_target_state_trigger,

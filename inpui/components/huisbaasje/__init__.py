@@ -4,8 +4,8 @@ import logging
 
 from energyflip import EnergyFlip, EnergyFlipException
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
 
 from .const import FETCH_TIMEOUT, SOURCE_TYPES
 from .coordinator import EnergyFlipConfigEntry, EnergyFlipUpdateCoordinator

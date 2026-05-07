@@ -13,10 +13,10 @@ from aiohue import HueBridgeV1, HueBridgeV2, LinkButtonNotPressed, Unauthorized
 from aiohue.errors import AiohueException, BridgeBusy
 
 from homeassistant import core
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, Platform
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, Platform
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import aiohttp_client
 
 from .const import DOMAIN
 from .v1.sensor_base import SensorManager

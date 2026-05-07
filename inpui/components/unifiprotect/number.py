@@ -16,10 +16,10 @@ from uiprotect.data import (
     ProtectAdoptableDeviceModel,
 )
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .data import ProtectData, ProtectDeviceType, UFPConfigEntry
 from .entity import (

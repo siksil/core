@@ -6,7 +6,7 @@ from datetime import timedelta
 from enum import StrEnum, unique
 from typing import TYPE_CHECKING, Final
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from . import EvoData

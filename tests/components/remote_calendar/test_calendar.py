@@ -10,8 +10,8 @@ import pytest
 import respx
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .conftest import (

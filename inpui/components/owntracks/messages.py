@@ -6,10 +6,10 @@ import logging
 from nacl.encoding import Base64Encoder
 from nacl.secret import SecretBox
 
-from homeassistant.components import zone as zone_comp
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
-from homeassistant.util import decorator, slugify
+from inpui.components import zone as zone_comp
+from inpui.components.device_tracker import SourceType
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
+from inpui.util import decorator, slugify
 
 from .helper import supports_encryption
 

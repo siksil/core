@@ -9,8 +9,8 @@ import logging
 import pyrepetierng as pyrepetier
 import voluptuous as vol
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntityDescription
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorEntityDescription
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_MONITORED_CONDITIONS,
@@ -20,13 +20,13 @@ from homeassistant.const import (
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.event import track_time_interval
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import slugify as util_slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.event import track_time_interval
+from inpui.helpers.typing import ConfigType
+from inpui.util import slugify as util_slugify
 
 _LOGGER = logging.getLogger(__name__)
 

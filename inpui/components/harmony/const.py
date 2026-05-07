@@ -1,6 +1,6 @@
 """Constants for the Harmony component."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "harmony"
 SERVICE_SYNC = "sync"

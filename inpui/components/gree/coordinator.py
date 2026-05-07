@@ -13,12 +13,12 @@ from greeclimate.discovery import Discovery, Listener
 from greeclimate.exceptions import DeviceNotBoundError, DeviceTimeoutError
 from greeclimate.network import Response
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.json import json_dumps
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.dt import utcnow
 
 from .const import (
     DISCOVERY_TIMEOUT,

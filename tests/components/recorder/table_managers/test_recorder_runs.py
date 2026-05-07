@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder.db_schema import RecorderRuns
-from homeassistant.components.recorder.models import process_timestamp
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components import recorder
+from inpui.components.recorder.db_schema import RecorderRuns
+from inpui.components.recorder.models import process_timestamp
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.typing import RecorderInstanceGenerator
 

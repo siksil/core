@@ -3,10 +3,10 @@
 import dataclasses
 import uuid
 
-from homeassistant.components.todo import DOMAIN, TodoItem, TodoListEntity
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.todo import DOMAIN, TodoItem, TodoListEntity
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import MockConfigEntry, MockPlatform, mock_platform
 

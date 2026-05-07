@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import HA_INELS_PATH
 from .common import DOMAIN, MockConfigEntry, get_entity_state, set_mock_mqtt

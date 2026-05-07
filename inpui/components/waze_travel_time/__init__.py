@@ -7,17 +7,17 @@ import logging
 from pywaze.route_calculator import WazeRouteCalculator
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_REGION, Platform
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_REGION, Platform
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.location import find_coordinates
-from homeassistant.helpers.selector import (
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.location import find_coordinates
+from inpui.helpers.selector import (
     BooleanSelector,
     DurationSelector,
     DurationSelectorConfig,

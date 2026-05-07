@@ -6,7 +6,7 @@ import asyncio
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_SUPPORTED_FEATURES,
     SERVICE_MEDIA_PAUSE,
     SERVICE_MEDIA_PLAY,
@@ -22,7 +22,7 @@ from homeassistant.const import (
     STATE_PAUSED,
     STATE_PLAYING,
 )
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.core import Context, HomeAssistant, State
 
 from .const import (
     ATTR_INPUT_SOURCE,

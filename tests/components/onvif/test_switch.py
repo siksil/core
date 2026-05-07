@@ -2,10 +2,10 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MAC, Capabilities, setup_onvif_integration
 

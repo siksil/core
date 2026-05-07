@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.lawn_mower.const import LawnMowerActivity
-from homeassistant.core import HomeAssistant
+from inpui.components.lawn_mower.const import LawnMowerActivity
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

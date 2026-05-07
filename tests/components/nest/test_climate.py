@@ -12,7 +12,7 @@ from unittest.mock import AsyncMock
 import aiohttp
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -33,13 +33,13 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from .common import (
     DEVICE_COMMAND,

@@ -17,8 +17,8 @@ from tplink_omada_client.devices import (
 )
 from tplink_omada_client.exceptions import OmadaClientException
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import OmadaConfigEntry

@@ -5,22 +5,22 @@ from unittest.mock import AsyncMock, MagicMock
 from serial import SerialException
 
 from homeassistant import config_entries
-from homeassistant.components.opentherm_gw.const import (
+from inpui.components.opentherm_gw.const import (
     CONF_FLOOR_TEMP,
     CONF_READ_PRECISION,
     CONF_SET_PRECISION,
     CONF_TEMPORARY_OVRD_MODE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_ID,
     CONF_NAME,
     PRECISION_HALVES,
     PRECISION_TENTHS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

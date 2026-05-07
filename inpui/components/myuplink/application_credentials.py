@@ -1,7 +1,7 @@
 """application_credentials platform the myUplink integration."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 

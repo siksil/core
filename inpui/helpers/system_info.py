@@ -8,11 +8,11 @@ import logging
 import platform
 from typing import Any
 
-from homeassistant.const import __version__ as current_version
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import bind_hass
-from homeassistant.util.package import is_docker_env, is_virtual_env
-from homeassistant.util.system_info import is_official_image
+from inpui.const import __version__ as current_version
+from inpui.core import HomeAssistant
+from inpui.loader import bind_hass
+from inpui.util.package import is_docker_env, is_virtual_env
+from inpui.util.system_info import is_official_image
 
 from .hassio import is_hassio
 from .singleton import singleton
@@ -96,7 +96,7 @@ async def async_get_system_info(hass: HomeAssistant) -> dict[str, Any]:
     # Enrich with Supervisor information
     if is_hassio_:
         # Local import to avoid circular dependencies
-        from homeassistant.components import hassio  # noqa: PLC0415
+        from inpui.components import hassio  # noqa: PLC0415
 
         if not (info := hassio.get_info(hass)):
             _LOGGER.warning("No Home Assistant Supervisor info available")

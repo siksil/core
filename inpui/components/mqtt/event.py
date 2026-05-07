@@ -8,20 +8,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import event
-from homeassistant.components.event import (
+from inpui.components import event
+from inpui.components.event import (
     ENTITY_ID_FORMAT,
     EventDeviceClass,
     EventEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_NAME, CONF_VALUE_TEMPLATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS, CONF_NAME, CONF_VALUE_TEMPLATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
 
 from . import subscription
 from .config import MQTT_RO_SCHEMA

@@ -1,7 +1,7 @@
 """application_credentials platform the Monzo integration."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 OAUTH2_AUTHORIZE = "https://auth.monzo.com"
 OAUTH2_TOKEN = "https://api.monzo.com/oauth2/token"

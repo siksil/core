@@ -12,10 +12,10 @@ from hatasmota.utils import (
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components import fan
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.const import ATTR_ASSUMED_STATE, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components import fan
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.const import ATTR_ASSUMED_STATE, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
 
 from .test_common import (
     DEFAULT_CONFIG,

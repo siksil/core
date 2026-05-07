@@ -6,11 +6,11 @@ from home_assistant_bluetooth import BluetoothServiceInfo
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.victron_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.victron_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .fixtures import (
     NOT_VICTRON_SERVICE_INFO,

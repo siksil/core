@@ -7,17 +7,17 @@ from typing import Any
 from pynina import ApiError, Nina
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import section
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import callback
+from inpui.data_entry_flow import section
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     _LOGGER,

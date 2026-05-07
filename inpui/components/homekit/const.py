@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_DEVICES
-from homeassistant.util.signal_type import SignalTypeFormat
+from inpui.const import CONF_DEVICES
+from inpui.util.signal_type import SignalTypeFormat
 
 # #### Misc ####
 DEBOUNCE_TIMEOUT = 0.5

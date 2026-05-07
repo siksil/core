@@ -9,8 +9,8 @@ from typing import Any
 from hole.exceptions import HoleError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_LOCATION,

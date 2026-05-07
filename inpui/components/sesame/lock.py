@@ -7,15 +7,15 @@ from typing import Any
 import pysesame2
 import voluptuous as vol
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     PLATFORM_SCHEMA as LOCK_PLATFORM_SCHEMA,
     LockEntity,
 )
-from homeassistant.const import ATTR_BATTERY_LEVEL, ATTR_DEVICE_ID, CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import ATTR_BATTERY_LEVEL, ATTR_DEVICE_ID, CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 ATTR_SERIAL_NO = "serial"
 

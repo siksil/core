@@ -15,17 +15,17 @@ from renson_endura_delta.field_enum import (
 from renson_endura_delta.renson import Level, RensonVentilation
 import voluptuous as vol
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from .const import DOMAIN
 from .coordinator import RensonCoordinator

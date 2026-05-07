@@ -6,14 +6,14 @@ from pycasperglow import CasperGlowError, GlowState
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.casper_glow.const import DEFAULT_DIMMING_TIME_MINUTES
-from homeassistant.components.light import (
+from inpui.components.casper_glow.const import DEFAULT_DIMMING_TIME_MINUTES
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

@@ -6,18 +6,18 @@ from aioshelly.const import RPC_GENERATIONS
 from aioshelly.exceptions import DeviceConnectionError, RpcCallError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.util.json import JsonValueType
 
 from .const import ATTR_KEY, ATTR_VALUE, CONF_SLEEP_PERIOD, DOMAIN
 from .coordinator import ShellyConfigEntry

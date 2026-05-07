@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.zwave_js.scripts.convert_device_diagnostics_to_fixture import (
+from inpui.components.zwave_js.scripts.convert_device_diagnostics_to_fixture import (
     extract_fixture_data,
     get_fixtures_dir_path,
     load_file,

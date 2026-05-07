@@ -11,12 +11,12 @@ from deebot_client.events import LifeSpan
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 pytestmark = [
     pytest.mark.usefixtures("init_integration"),

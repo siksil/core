@@ -8,8 +8,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import cover
-from homeassistant.components.cover import (
+from inpui.components import cover
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     DEVICE_CLASSES_SCHEMA,
@@ -17,8 +17,8 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_NAME,
     CONF_OPTIMISTIC,
@@ -28,13 +28,13 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_OPENING,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

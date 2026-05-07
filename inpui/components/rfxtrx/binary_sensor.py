@@ -7,17 +7,17 @@ from typing import Any
 
 import RFXtrx as rfxtrxmod
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COMMAND_OFF, CONF_COMMAND_ON, STATE_ON
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import event as evt
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COMMAND_OFF, CONF_COMMAND_ON, STATE_ON
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import event as evt
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeviceTuple, async_setup_platform_entry, get_pt2262_cmd
 from .const import (

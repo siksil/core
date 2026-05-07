@@ -9,11 +9,11 @@ from miio import DeviceException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.xiaomi_miio import const
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_MAC, CONF_MODEL, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.xiaomi_miio import const
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_MAC, CONF_MODEL, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import TEST_MAC
 

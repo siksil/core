@@ -7,14 +7,14 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import TYPE_CHECKING
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     DEGREE,
     PERCENTAGE,
     EntityCategory,
@@ -24,11 +24,11 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.dt import now
-from homeassistant.util.variance import ignore_variance
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.dt import now
+from inpui.util.variance import ignore_variance
 
 from .coordinator import StarlinkConfigEntry, StarlinkData
 from .entity import StarlinkEntity

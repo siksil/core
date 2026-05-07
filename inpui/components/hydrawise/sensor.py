@@ -9,15 +9,15 @@ from typing import Any
 
 from pydrawise.schema import Controller, ControllerWaterUseSummary, Zone
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import UnitOfTime, UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.const import UnitOfTime, UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .coordinator import HydrawiseConfigEntry
 from .entity import HydrawiseEntity

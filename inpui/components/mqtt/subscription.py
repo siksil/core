@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from functools import partial
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.core import HassJobType, HomeAssistant, callback
+from inpui.core import HassJobType, HomeAssistant, callback
 
 from . import debug_info
 from .client import async_subscribe_internal

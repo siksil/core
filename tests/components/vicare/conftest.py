@@ -10,8 +10,8 @@ import pytest
 from PyViCare.PyViCareDeviceConfig import PyViCareDeviceConfig
 from PyViCare.PyViCareService import ViCareDeviceAccessor, readFeature
 
-from homeassistant.components.vicare.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.vicare.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG, MODULE, setup_integration
 

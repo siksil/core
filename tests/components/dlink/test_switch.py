@@ -2,16 +2,16 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.dlink.const import DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.dlink.const import DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import CONF_DATA
 

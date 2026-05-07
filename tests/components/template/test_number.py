@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import number
-from homeassistant.components.number import (
+from inpui.components import number
+from inpui.components.number import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_STEP,
@@ -14,9 +14,9 @@ from homeassistant.components.number import (
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE as NUMBER_SERVICE_SET_VALUE,
 )
-from homeassistant.components.template import DOMAIN
-from homeassistant.components.template.const import CONF_PICTURE
-from homeassistant.const import (
+from inpui.components.template import DOMAIN
+from inpui.components.template.const import CONF_PICTURE
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
@@ -26,8 +26,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import (
     ConfigurationStyle,

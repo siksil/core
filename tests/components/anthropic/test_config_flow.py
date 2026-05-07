@@ -16,11 +16,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components.anthropic.config_flow import (
+from inpui.components.anthropic.config_flow import (
     DEFAULT_AI_TASK_OPTIONS,
     DEFAULT_CONVERSATION_OPTIONS,
 )
-from homeassistant.components.anthropic.const import (
+from inpui.components.anthropic.const import (
     CONF_CHAT_MODEL,
     CONF_CODE_EXECUTION,
     CONF_MAX_TOKENS,
@@ -41,9 +41,9 @@ from homeassistant.components.anthropic.const import (
     DEFAULT_CONVERSATION_NAME,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

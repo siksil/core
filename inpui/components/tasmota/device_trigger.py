@@ -10,17 +10,17 @@ from hatasmota.models import DiscoveryHashType
 from hatasmota.trigger import TasmotaTrigger, TasmotaTriggerConfig
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.components.homeassistant.triggers import event as event_trigger
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, TASMOTA_EVENT
 from .discovery import TASMOTA_DISCOVERY_ENTITY_UPDATED, clear_discovery_hash

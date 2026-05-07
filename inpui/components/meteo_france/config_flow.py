@@ -9,9 +9,9 @@ from meteofrance_api.client import MeteoFranceClient
 from meteofrance_api.model import Place
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import callback
+from inpui.config_entries import SOURCE_IMPORT, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import callback
 
 from .const import CONF_CITY, DOMAIN
 

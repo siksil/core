@@ -3,9 +3,9 @@
 from datetime import timedelta
 from unittest.mock import MagicMock
 
-from homeassistant.components.vera import SubscriptionRegistry
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components.vera import SubscriptionRegistry
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from tests.common import async_fire_time_changed
 

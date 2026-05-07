@@ -9,11 +9,11 @@ import logging
 
 from voip_utils import SIP_PORT
 
-from homeassistant.auth.const import GROUP_ID_USER
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.auth.const import GROUP_ID_USER
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_SIP_PORT, DOMAIN
 from .devices import VoIPDevices

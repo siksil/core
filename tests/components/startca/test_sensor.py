@@ -2,11 +2,11 @@
 
 from http import HTTPStatus
 
-from homeassistant.components.startca.sensor import StartcaData
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.setup import async_setup_component
+from inpui.components.startca.sensor import StartcaData
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.setup import async_setup_component
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

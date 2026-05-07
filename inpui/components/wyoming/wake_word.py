@@ -8,10 +8,10 @@ from wyoming.audio import AudioChunk, AudioStart
 from wyoming.client import AsyncTcpClient
 from wyoming.wake import Detect, Detection
 
-from homeassistant.components import wake_word
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import wake_word
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .data import WyomingService, load_wyoming_info

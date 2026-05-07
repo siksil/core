@@ -9,8 +9,8 @@ from unittest.mock import AsyncMock, MagicMock, PropertyMock, patch
 import pytest
 from sense_energy import Scale
 
-from homeassistant.components.sense.binary_sensor import SenseDevice
-from homeassistant.components.sense.const import DOMAIN
+from inpui.components.sense.binary_sensor import SenseDevice
+from inpui.components.sense.const import DOMAIN
 
 from .const import (
     DEVICE_1_DAY_ENERGY,

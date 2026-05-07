@@ -2,28 +2,28 @@
 
 from __future__ import annotations
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE as CLIMATE_ATTR_CURRENT_TEMPERATURE,
     DOMAIN as CLIMATE_DOMAIN,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.components.water_heater import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.components.water_heater import (
     ATTR_CURRENT_TEMPERATURE as WATER_HEATER_ATTR_CURRENT_TEMPERATURE,
     DOMAIN as WATER_HEATER_DOMAIN,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_WEATHER_TEMPERATURE,
     ATTR_WEATHER_TEMPERATURE_UNIT,
     DOMAIN as WEATHER_DOMAIN,
 )
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
+from inpui.core import HomeAssistant, State
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     Condition,
     EntityNumericalConditionWithUnitBase,
 )
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_conversion import TemperatureConverter
 
 TEMPERATURE_DOMAIN_SPECS = {
     CLIMATE_DOMAIN: DomainSpec(

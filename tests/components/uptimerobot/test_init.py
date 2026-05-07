@@ -7,14 +7,14 @@ import pytest
 from pyuptimerobot import UptimeRobotAuthenticationException, UptimeRobotException
 
 from homeassistant import config_entries
-from homeassistant.components.uptimerobot.const import (
+from inpui.components.uptimerobot.const import (
     COORDINATOR_UPDATE_INTERVAL,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .common import (
     MOCK_UPTIMEROBOT_CONFIG_ENTRY_DATA,

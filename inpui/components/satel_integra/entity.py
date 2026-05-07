@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING
 
 from satel_integra import AsyncSatel
 
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_NAME
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_NAME
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     DOMAIN,

@@ -10,30 +10,30 @@ import pylacrosse
 from serial import SerialException
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_ID,
     CONF_NAME,
     CONF_SENSORS,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import async_generate_entity_id
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import async_generate_entity_id
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -94,7 +94,7 @@ def setup_platform(
         _LOGGER.warning("Unable to open serial port: %s", exc)
         return
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, lambda event: lacrosse.close())
+    hass.bus.listen_once(EVENT_INPUI_STOP, lambda event: lacrosse.close())
 
     if CONF_JEELINK_LED in config:
         lacrosse.led_mode_state(config.get(CONF_JEELINK_LED))

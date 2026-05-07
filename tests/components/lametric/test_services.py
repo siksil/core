@@ -14,7 +14,7 @@ from demetriek import (
 )
 import pytest
 
-from homeassistant.components.lametric.const import (
+from inpui.components.lametric.const import (
     CONF_CYCLES,
     CONF_DATA,
     CONF_ICON_TYPE,
@@ -25,10 +25,10 @@ from homeassistant.components.lametric.const import (
     SERVICE_CHART,
     SERVICE_MESSAGE,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_DEVICE_ID, CONF_ICON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 pytestmark = pytest.mark.usefixtures("init_integration")
 

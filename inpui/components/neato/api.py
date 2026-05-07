@@ -8,8 +8,8 @@ from typing import Any
 import pybotvac
 
 from homeassistant import config_entries, core
-from homeassistant.components.application_credentials import AuthImplementation
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.application_credentials import AuthImplementation
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class ConfigEntryAuth(pybotvac.OAuthSession):  # type: ignore[misc]

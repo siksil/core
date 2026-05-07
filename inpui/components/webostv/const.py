@@ -5,7 +5,7 @@ import asyncio
 import aiohttp
 from aiowebostv import WebOsTvCommandError
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "webostv"
 PLATFORMS = [Platform.MEDIA_PLAYER]

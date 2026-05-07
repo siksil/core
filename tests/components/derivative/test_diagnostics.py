@@ -1,6 +1,6 @@
 """Tests for derivative diagnostics."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.components.diagnostics import get_diagnostics_for_config_entry
 from tests.typing import ClientSessionGenerator

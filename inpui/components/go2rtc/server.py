@@ -9,8 +9,8 @@ from tempfile import NamedTemporaryFile
 from aiohttp import ClientSession
 from go2rtc_client import Go2RtcRestClient
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import HA_MANAGED_API_PORT, HA_MANAGED_URL
 from .util import get_go2rtc_unix_socket_path

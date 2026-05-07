@@ -2,16 +2,16 @@
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_OPTIONS,
     STATE_OFF,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.core import HomeAssistant, State
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     ENTITY_STATE_TRIGGER_SCHEMA_FIRST_LAST,
     EntityNumericalStateChangedTriggerWithUnitBase,
     EntityNumericalStateCrossedThresholdTriggerWithUnitBase,
@@ -22,7 +22,7 @@ from homeassistant.helpers.trigger import (
     make_entity_origin_state_trigger,
     make_entity_target_state_trigger,
 )
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import DOMAIN
 

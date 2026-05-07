@@ -14,7 +14,7 @@ from zwave_js_server.model.driver.firmware import DriverFirmwareUpdateStatus
 from zwave_js_server.model.node import Node
 from zwave_js_server.model.node.firmware import NodeFirmwareUpdateStatus
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_AUTO_UPDATE,
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
@@ -26,18 +26,18 @@ from homeassistant.components.update import (
     SERVICE_INSTALL,
     SERVICE_SKIP,
 )
-from homeassistant.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
-from homeassistant.const import (
+from inpui.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import CoreState, HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import CoreState, HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

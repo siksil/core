@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.recorder.filters import (
+from inpui.components.recorder.filters import (
     Filters,
     extract_include_exclude_filter_conf,
     merge_include_exclude_filters,
 )
-from homeassistant.const import CONF_DOMAINS, CONF_ENTITIES, CONF_EXCLUDE, CONF_INCLUDE
-from homeassistant.helpers.entityfilter import CONF_ENTITY_GLOBS
+from inpui.const import CONF_DOMAINS, CONF_ENTITIES, CONF_EXCLUDE, CONF_INCLUDE
+from inpui.helpers.entityfilter import CONF_ENTITY_GLOBS
 
 EMPTY_INCLUDE_FILTER = {
     CONF_INCLUDE: {

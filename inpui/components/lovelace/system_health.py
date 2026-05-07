@@ -3,9 +3,9 @@
 import asyncio
 from typing import Any
 
-from homeassistant.components import system_health
-from homeassistant.const import CONF_MODE
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.const import CONF_MODE
+from inpui.core import HomeAssistant, callback
 
 from .const import LOVELACE_DATA, MODE_AUTO, MODE_STORAGE, MODE_YAML
 

@@ -5,7 +5,7 @@ from unittest.mock import patch
 from aioairzone_cloud.exceptions import AirzoneCloudError
 import pytest
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_MAX_TEMP,
     ATTR_MIN_TEMP,
@@ -16,15 +16,15 @@ from homeassistant.components.water_heater import (
     STATE_ECO,
     STATE_PERFORMANCE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .util import async_init_integration
 

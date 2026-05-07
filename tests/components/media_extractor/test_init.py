@@ -9,15 +9,15 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from yt_dlp import DownloadError
 
-from homeassistant.components.media_extractor.const import (
+from inpui.components.media_extractor.const import (
     ATTR_URL,
     DOMAIN,
     SERVICE_EXTRACT_MEDIA_URL,
 )
-from homeassistant.components.media_player import SERVICE_PLAY_MEDIA
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.media_player import SERVICE_PLAY_MEDIA
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from . import YOUTUBE_EMPTY_PLAYLIST, YOUTUBE_PLAYLIST, YOUTUBE_VIDEO, MockYoutubeDL
 from .const import NO_FORMATS_RESPONSE, SOUNDCLOUD_TRACK

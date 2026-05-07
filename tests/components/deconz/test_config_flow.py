@@ -6,12 +6,12 @@ from unittest.mock import patch
 import pydeconz
 import pytest
 
-from homeassistant.components.deconz.config_flow import (
+from inpui.components.deconz.config_flow import (
     CONF_MANUAL_INPUT,
     CONF_SERIAL,
     DECONZ_MANUFACTURERURL,
 )
-from homeassistant.components.deconz.const import (
+from inpui.components.deconz.const import (
     CONF_ALLOW_CLIP_SENSOR,
     CONF_ALLOW_DECONZ_GROUPS,
     CONF_ALLOW_NEW_DEVICES,
@@ -19,12 +19,12 @@ from homeassistant.components.deconz.const import (
     DOMAIN,
     HASSIO_CONFIGURATION_URL,
 )
-from homeassistant.config_entries import SOURCE_HASSIO, SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_HASSIO, SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER_URL,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,

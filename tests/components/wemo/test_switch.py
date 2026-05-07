@@ -3,12 +3,12 @@
 import pytest
 import pywemo
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.wemo.switch import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.wemo.switch import (
     ATTR_CURRENT_STATE_DETAIL,
     ATTR_ON_LATEST_TIME,
     ATTR_ON_TODAY_TIME,
@@ -18,15 +18,15 @@ from homeassistant.components.wemo.switch import (
     ATTR_SWITCH_MODE,
     MAKER_SWITCH_MOMENTARY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_STANDBY,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import entity_test_helpers
 from .conftest import (

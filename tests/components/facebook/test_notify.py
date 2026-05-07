@@ -5,8 +5,8 @@ from http import HTTPStatus
 import pytest
 import requests_mock
 
-from homeassistant.components.facebook import notify as fb
-from homeassistant.core import HomeAssistant
+from inpui.components.facebook import notify as fb
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture

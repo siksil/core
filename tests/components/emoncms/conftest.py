@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.emoncms.const import CONF_ONLY_INCLUDE_FEEDID, DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL
+from inpui.components.emoncms.const import CONF_ONLY_INCLUDE_FEEDID, DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL
 
 from tests.common import MockConfigEntry
 

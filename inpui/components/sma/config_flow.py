@@ -16,8 +16,8 @@ from pysma import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_NAME,
@@ -25,11 +25,11 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_GROUP, DOMAIN, GROUPS
 

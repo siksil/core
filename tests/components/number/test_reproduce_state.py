@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components.number.const import (
+from inpui.components.number.const import (
     ATTR_MAX,
     ATTR_MIN,
     DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

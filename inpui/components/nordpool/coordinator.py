@@ -17,12 +17,12 @@ from pynordpool import (
     NordPoolResponseError,
 )
 
-from homeassistant.const import CONF_CURRENCY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_CURRENCY
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import CONF_AREAS, DOMAIN, LOGGER
 

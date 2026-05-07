@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import DEV_CLASS, DOMAIN, LOGGER, PLATFORMS
 from .coordinator import PlugwiseConfigEntry, PlugwiseDataUpdateCoordinator

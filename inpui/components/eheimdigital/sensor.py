@@ -9,14 +9,14 @@ from eheimdigital.device import EheimDigitalDevice
 from eheimdigital.filter import EheimDigitalFilter
 from eheimdigital.types import FilterErrorCode
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfFrequency, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfFrequency, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator
 from .entity import EheimDigitalEntity

@@ -1,7 +1,7 @@
 """Test bond diagnostics."""
 
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.core import HomeAssistant
 
 from .common import ceiling_fan_with_breeze, setup_platform
 

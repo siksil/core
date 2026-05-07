@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_ENTITY_PICTURE_TEMPLATE,
     CONF_ICON,
@@ -14,7 +14,7 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VARIABLES,
 )
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.helpers import config_validation as cv, selector
 
 from .const import (
     CONF_ATTRIBUTE_TEMPLATES,

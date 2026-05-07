@@ -3,18 +3,18 @@
 import asyncio
 from typing import Any
 
-from homeassistant.components.assist_pipeline import (
+from inpui.components.assist_pipeline import (
     async_create_default_pipeline,
     async_get_pipelines,
     async_setup_pipeline_store,
     async_update_pipeline,
 )
-from homeassistant.components.conversation import HOME_ASSISTANT_AGENT
-from homeassistant.components.stt import DOMAIN as STT_DOMAIN
-from homeassistant.components.tts import DOMAIN as TTS_DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.conversation import HOME_ASSISTANT_AGENT
+from inpui.components.stt import DOMAIN as STT_DOMAIN
+from inpui.components.tts import DOMAIN as TTS_DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import (
     DATA_PLATFORMS_SETUP,

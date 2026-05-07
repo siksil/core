@@ -13,11 +13,11 @@ from pytrafikverket import (
     UnknownError,
 )
 
-from homeassistant.components.trafikverket_camera.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.components.trafikverket_camera.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from . import ENTRY_CONFIG
 

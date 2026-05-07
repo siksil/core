@@ -28,15 +28,15 @@ from aiohomekit.model.characteristics import (
 )
 from aiohomekit.model.services import Service, ServicesTypes
 
-from homeassistant.components.thread import async_get_preferred_dataset
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_VIA_DEVICE, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CALLBACK_TYPE, CoreState, Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
+from inpui.components.thread import async_get_preferred_dataset
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_VIA_DEVICE, EVENT_INPUI_STARTED
+from inpui.core import CALLBACK_TYPE, CoreState, Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.event import async_call_later, async_track_time_interval
 
 from .config_flow import normalize_hkid
 from .const import (
@@ -311,7 +311,7 @@ class HKDevice:
             # is complete.
             entry.async_on_unload(
                 self.hass.bus.async_listen(
-                    EVENT_HOMEASSISTANT_STARTED,
+                    EVENT_INPUI_STARTED,
                     self._async_populate_ble_accessory_state,
                 )
             )

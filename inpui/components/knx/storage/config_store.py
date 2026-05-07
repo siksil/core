@@ -4,12 +4,12 @@ from abc import ABC, abstractmethod
 import logging
 from typing import Any, Final, TypedDict
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PLATFORM, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.storage import Store
-from homeassistant.util.ulid import ulid_now
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PLATFORM, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.storage import Store
+from inpui.util.ulid import ulid_now
 
 from ..const import DOMAIN
 from . import migration

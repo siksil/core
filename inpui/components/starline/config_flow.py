@@ -5,9 +5,9 @@ from __future__ import annotations
 from starline import StarlineAuth
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
 
 from .const import (
     _LOGGER,

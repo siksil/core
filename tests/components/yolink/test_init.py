@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.yolink import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.yolink import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

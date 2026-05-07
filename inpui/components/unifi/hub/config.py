@@ -7,8 +7,8 @@ from datetime import timedelta
 import ssl
 from typing import Literal, Self
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,

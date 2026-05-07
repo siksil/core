@@ -18,7 +18,7 @@ from . import config as conf_util, core, loader, requirements
 from .const import (
     BASE_PLATFORMS,  # noqa: F401
     EVENT_COMPONENT_LOADED,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     PLATFORM_FORMAT,
 )
 from .core import (
@@ -652,7 +652,7 @@ def _async_when_setup(
     )
     if start_event:
         listeners.append(
-            hass.bus.async_listen(EVENT_HOMEASSISTANT_START, _matched_event)
+            hass.bus.async_listen(EVENT_INPUI_START, _matched_event)
         )
 
 

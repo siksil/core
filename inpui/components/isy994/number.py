@@ -20,13 +20,13 @@ from pyisy.helpers import EventListener, NodeProperty
 from pyisy.nodes import Node, NodeChangedEvent
 from pyisy.variables import Variable
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
     RestoreNumber,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_VARIABLES,
     PERCENTAGE,
     STATE_UNAVAILABLE,
@@ -34,11 +34,11 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

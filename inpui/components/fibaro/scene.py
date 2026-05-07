@@ -6,11 +6,11 @@ from typing import Any
 
 from pyfibaro.fibaro_scene import SceneModel
 
-from homeassistant.components.scene import Scene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import slugify
+from inpui.components.scene import Scene
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import slugify
 
 from . import FibaroConfigEntry, FibaroController
 from .const import DOMAIN

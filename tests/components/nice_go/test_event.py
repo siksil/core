@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

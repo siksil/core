@@ -7,16 +7,16 @@ from unittest.mock import AsyncMock
 from pysaunum import SaunumConnectionError, SaunumException
 import pytest
 
-from homeassistant.components.saunum.const import (
+from inpui.components.saunum.const import (
     DOMAIN,
     OPT_PRESET_NAME_TYPE_1,
     OPT_PRESET_NAME_TYPE_2,
     OPT_PRESET_NAME_TYPE_3,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

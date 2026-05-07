@@ -1,9 +1,9 @@
 """Make sure that existing VOCOlinc VP3 support isn't broken."""
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import SensorStateClass
+from inpui.const import UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

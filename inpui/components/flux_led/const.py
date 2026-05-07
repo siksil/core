@@ -10,7 +10,7 @@ from flux_led.const import (
     COLOR_MODE_RGBWW as FLUX_COLOR_MODE_RGBWW,
 )
 
-from homeassistant.components.light import ColorMode
+from inpui.components.light import ColorMode
 
 DOMAIN: Final = "flux_led"
 

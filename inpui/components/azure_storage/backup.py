@@ -11,7 +11,7 @@ from typing import Any, Concatenate
 from azure.core.exceptions import AzureError, HttpResponseError, ServiceRequestError
 from azure.storage.blob import BlobProperties
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -19,7 +19,7 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from . import AzureStorageConfigEntry
 from .const import DATA_BACKUP_AGENT_LISTENERS, DOMAIN

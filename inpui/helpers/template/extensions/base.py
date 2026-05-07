@@ -12,11 +12,11 @@ from jinja2.ext import Extension
 from jinja2.nodes import Node
 from jinja2.parser import Parser
 
-from homeassistant.exceptions import TemplateError
+from inpui.exceptions import TemplateError
 
 if TYPE_CHECKING:
-    from homeassistant.core import HomeAssistant
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.core import HomeAssistant
+    from inpui.helpers.template import TemplateEnvironment
 
 
 @dataclass

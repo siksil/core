@@ -9,13 +9,13 @@ from urllib.error import HTTPError, URLError
 from panasonic_viera import EncryptionRequired, Keys, RemoteControl, SOAPError
 import voluptuous as vol
 
-from homeassistant.components.media_player import MediaPlayerState, MediaType
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT, Platform
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.script import Script
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.media_player import MediaPlayerState, MediaType
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT, Platform
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.script import Script
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_DEVICE_INFO,

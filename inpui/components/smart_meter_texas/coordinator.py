@@ -8,12 +8,12 @@ from smart_meter_texas.exceptions import (
     SmartMeterTexasAuthError,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.ssl import get_default_context
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.ssl import get_default_context
 
 from .const import DEBOUNCE_COOLDOWN, SCAN_INTERVAL
 

@@ -6,16 +6,16 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.rpi_power import binary_sensor
-from homeassistant.components.rpi_power.binary_sensor import (
+from inpui.components.rpi_power import binary_sensor
+from inpui.components.rpi_power.binary_sensor import (
     DESCRIPTION_NORMALIZED,
     DESCRIPTION_UNDER_VOLTAGE,
 )
-from homeassistant.components.rpi_power.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.rpi_power.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed, patch
 

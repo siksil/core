@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import CONF_API_KEY, CONF_MODE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.issue_registry import (
+from inpui.const import CONF_API_KEY, CONF_MODE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.start import async_at_started
+from inpui.helpers.start import async_at_started
 
 from .const import CONF_TRAFFIC_MODE, DOMAIN, TRAVEL_MODE_PUBLIC
 from .coordinator import (

@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock
 from elevenlabs.core import ApiError
 import pytest
 
-from homeassistant.components import stt
-from homeassistant.components.elevenlabs.const import (
+from inpui.components import stt
+from inpui.components.elevenlabs.const import (
     CONF_MODEL,
     CONF_STT_AUTO_LANGUAGE,
     CONF_VOICE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 # === Fixtures ===
 

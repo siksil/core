@@ -9,7 +9,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AddonInfo,
     AgentBackup,
     BackupAgentError,
@@ -18,18 +18,18 @@ from homeassistant.components.backup import (
     Folder,
     store,
 )
-from homeassistant.components.backup.agent import BackupAgentUnreachableError
-from homeassistant.components.backup.const import DATA_MANAGER, DOMAIN
-from homeassistant.components.backup.manager import (
+from inpui.components.backup.agent import BackupAgentUnreachableError
+from inpui.components.backup.const import DATA_MANAGER, DOMAIN
+from inpui.components.backup.manager import (
     AgentBackupStatus,
     CreateBackupEvent,
     CreateBackupState,
     ManagerBackup,
     NewBackup,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
 
 from .common import (
     LOCAL_AGENT_ID,

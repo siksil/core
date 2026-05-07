@@ -9,16 +9,16 @@ from amberelectric.models.site import Site
 from amberelectric.models.site_status import SiteStatus
 import pytest
 
-from homeassistant.components.amberelectric.config_flow import filter_sites
-from homeassistant.components.amberelectric.const import (
+from inpui.components.amberelectric.config_flow import filter_sites
+from inpui.components.amberelectric.const import (
     CONF_SITE_ID,
     CONF_SITE_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 API_KEY = "psk_123456789"
 

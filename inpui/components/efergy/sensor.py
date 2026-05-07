@@ -9,16 +9,16 @@ from typing import cast
 from pyefergy import Efergy
 from pyefergy.exceptions import ConnectError, DataError, ServiceError
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfEnergy, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import UnitOfEnergy, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import EfergyConfigEntry
 from .const import CONF_CURRENT_VALUES, LOGGER

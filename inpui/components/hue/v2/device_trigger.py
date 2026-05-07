@@ -7,18 +7,18 @@ from typing import TYPE_CHECKING, Any
 from aiohue.v2.models.resource import ResourceTypes
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.components.homeassistant.triggers import event as event_trigger
-from homeassistant.const import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_PLATFORM,
     CONF_TYPE,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.typing import ConfigType
 
 from ..const import (
     ATTR_HUE_EVENT,
@@ -33,7 +33,7 @@ from ..const import (
 if TYPE_CHECKING:
     from aiohue.v2 import HueBridgeV2
 
-    from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
+    from inpui.helpers.trigger import TriggerActionType, TriggerInfo
 
     from ..bridge import HueBridge
 

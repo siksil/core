@@ -5,10 +5,10 @@ from __future__ import annotations
 from functools import partial
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_DURATION, ATTR_TARGET_BRIGHTNESS, ATTR_UDP_PORT
 from .coordinator import WLEDConfigEntry, WLEDDataUpdateCoordinator

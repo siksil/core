@@ -4,23 +4,23 @@ from unittest.mock import AsyncMock, Mock, call, patch
 
 import pytest
 
-from homeassistant.components.homeassistant_hardware import (
+from inpui.components.homeassistant_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_register_firmware_info_callback,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
     OwningIntegration,
 )
-from homeassistant.components.otbr.homeassistant_hardware import async_get_firmware_info
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.otbr.homeassistant_hardware import async_get_firmware_info
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from . import TEST_COPROCESSOR_VERSION
 

@@ -2,13 +2,13 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.greeneye_monitor.sensor import (
+from inpui.components.greeneye_monitor.sensor import (
     DATA_PULSES,
     DATA_WATT_SECONDS,
 )
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     MULTI_MONITOR_CONFIG,

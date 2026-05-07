@@ -12,11 +12,11 @@ from xknx.telegram import Telegram
 from xknx.telegram.address import parse_device_group_address
 from xknx.telegram.apci import GroupValueRead, GroupValueResponse, GroupValueWrite
 
-from homeassistant.const import CONF_TYPE, SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service import async_register_admin_service
+from inpui.const import CONF_TYPE, SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service import async_register_admin_service
 
 from .const import (
     DOMAIN,

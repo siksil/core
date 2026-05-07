@@ -9,11 +9,11 @@ from functools import partial
 from devolo_plc_api import wifi_qr_code
 from devolo_plc_api.device_api import WifiGuestAccessGet
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import IMAGE_GUEST_WIFI, SWITCH_GUEST_WIFI
 from .coordinator import DevoloDataUpdateCoordinator, DevoloHomeNetworkConfigEntry

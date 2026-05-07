@@ -5,9 +5,9 @@ from unittest.mock import patch
 import pytest
 import pywilight
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.wilight import DOMAIN
-from homeassistant.components.wilight.switch import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.wilight import DOMAIN
+from inpui.components.wilight.switch import (
     ATTR_PAUSE_TIME,
     ATTR_TRIGGER,
     ATTR_TRIGGER_1,
@@ -20,15 +20,15 @@ from homeassistant.components.wilight.switch import (
     SERVICE_SET_TRIGGER,
     SERVICE_SET_WATERING_TIME,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     HOST,

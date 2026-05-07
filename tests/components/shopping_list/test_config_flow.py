@@ -1,9 +1,9 @@
 """Test config flow."""
 
-from homeassistant.components.shopping_list.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.shopping_list.const import DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_import(hass: HomeAssistant) -> None:

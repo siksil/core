@@ -4,17 +4,17 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pykulersky
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.kulersky.config_flow import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.kulersky.config_flow import DOMAIN
+from inpui.config_entries import (
     SOURCE_BLUETOOTH,
     SOURCE_IGNORE,
     SOURCE_INTEGRATION_DISCOVERY,
     SOURCE_USER,
 )
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 from tests.components.bluetooth import generate_advertisement_data, generate_ble_device

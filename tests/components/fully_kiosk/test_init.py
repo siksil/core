@@ -6,18 +6,18 @@ from unittest.mock import MagicMock, patch
 from fullykiosk import FullyKioskError
 import pytest
 
-from homeassistant.components.fully_kiosk.const import DOMAIN
-from homeassistant.components.fully_kiosk.entity import valid_global_mac_address
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.fully_kiosk.const import DOMAIN
+from inpui.components.fully_kiosk.entity import valid_global_mac_address
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_load_fixture
 

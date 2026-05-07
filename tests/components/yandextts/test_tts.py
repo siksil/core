@@ -6,14 +6,14 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.components.media_player import (
+from inpui.components import tts
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, async_mock_service
 from tests.components.tts.common import retrieve_media

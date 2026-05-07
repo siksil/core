@@ -8,18 +8,18 @@ from typing import Any
 
 from prana_local_api_client.models.prana_state import FanState
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     FanEntity,
     FanEntityDescription,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from .coordinator import PranaConfigEntry, PranaCoordinator
 from .entity import PranaBaseEntity

@@ -10,26 +10,26 @@ from zigpy.profiles import zha
 from zigpy.zcl.clusters import general
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     SERVICE_PRESS,
     ButtonDeviceClass,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     STATE_UNKNOWN,
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import find_entity_id
 

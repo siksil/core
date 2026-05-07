@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.seventeentrack import DOMAIN
-from homeassistant.components.seventeentrack.const import (
+from inpui.components.seventeentrack import DOMAIN
+from inpui.components.seventeentrack.const import (
     SERVICE_ARCHIVE_PACKAGE,
     SERVICE_GET_PACKAGES,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from . import init_integration
 from .conftest import (

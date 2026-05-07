@@ -9,8 +9,8 @@ import aiohttp
 from pyoctoprintapi import OctoprintClient
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_BINARY_SENSORS,
     CONF_DEVICE_ID,
@@ -23,15 +23,15 @@ from homeassistant.const import (
     CONF_SENSORS,
     CONF_SSL,
     CONF_VERIFY_SSL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import slugify as util_slugify
-from homeassistant.util.ssl import get_default_context, get_default_no_verify_context
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
+from inpui.util import slugify as util_slugify
+from inpui.util.ssl import get_default_context, get_default_no_verify_context
 
 from .const import CONF_BAUDRATE, DOMAIN, SERVICE_CONNECT
 from .coordinator import OctoprintDataUpdateCoordinator
@@ -193,7 +193,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     entry.async_on_unload(_async_close_websession)
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, _async_close_websession)
+        hass.bus.async_listen(EVENT_INPUI_STOP, _async_close_websession)
     )
 
     client = OctoprintClient(

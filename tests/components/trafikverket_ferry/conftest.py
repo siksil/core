@@ -8,10 +8,10 @@ from unittest.mock import patch
 import pytest
 from pytrafikverket.models import FerryStopModel
 
-from homeassistant.components.trafikverket_ferry.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.trafikverket_ferry.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import ENTRY_CONFIG
 

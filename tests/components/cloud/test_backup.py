@@ -11,7 +11,7 @@ from hass_nabucasa.api import CloudApiError, CloudApiNonRetryableError
 from hass_nabucasa.files import FilesError, StorageType
 import pytest
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DATA_MANAGER,
     DOMAIN as BACKUP_DOMAIN,
     AddonInfo,
@@ -19,13 +19,13 @@ from homeassistant.components.backup import (
     Folder,
     UploadBackupEvent,
 )
-from homeassistant.components.cloud import DOMAIN
-from homeassistant.components.cloud.backup import async_register_backup_agents_listener
-from homeassistant.components.cloud.const import EVENT_CLOUD_EVENT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.setup import async_setup_component
-from homeassistant.util.aiohttp import MockStreamReaderChunked
+from inpui.components.cloud import DOMAIN
+from inpui.components.cloud.backup import async_register_backup_agents_listener
+from inpui.components.cloud.const import EVENT_CLOUD_EVENT
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.setup import async_setup_component
+from inpui.util.aiohttp import MockStreamReaderChunked
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 from tests.typing import ClientSessionGenerator, MagicMock, WebSocketGenerator

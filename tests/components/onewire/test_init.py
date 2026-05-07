@@ -7,13 +7,13 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.onewire.const import DOMAIN
-from homeassistant.components.onewire.onewirehub import _DEVICE_SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.onewire.const import DOMAIN
+from inpui.components.onewire.onewirehub import _DEVICE_SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_owproxy_mock_devices
 from .const import MOCK_OWPROXY_DEVICES

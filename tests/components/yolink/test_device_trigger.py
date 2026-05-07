@@ -3,13 +3,13 @@
 from pytest_unordered import unordered
 from yolink.const import ATTR_DEVICE_DIMMER, ATTR_DEVICE_SMART_REMOTER
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.yolink import DOMAIN, YOLINK_EVENT
-from homeassistant.components.yolink.const import DEV_MODEL_FLEX_FOB_YS3604_UC
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.yolink import DOMAIN, YOLINK_EVENT
+from inpui.components.yolink.const import DEV_MODEL_FLEX_FOB_YS3604_UC
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_device_automations
 

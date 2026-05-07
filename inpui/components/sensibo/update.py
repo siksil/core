@@ -7,14 +7,14 @@ from dataclasses import dataclass
 
 from pysensibo.model import SensiboDevice
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SensiboConfigEntry
 from .coordinator import SensiboDataUpdateCoordinator

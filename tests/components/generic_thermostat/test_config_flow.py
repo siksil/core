@@ -6,9 +6,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.climate import PRESET_AWAY
-from homeassistant.components.generic_thermostat.config_flow import _validate_config
-from homeassistant.components.generic_thermostat.const import (
+from inpui.components.climate import PRESET_AWAY
+from inpui.components.generic_thermostat.config_flow import _validate_config
+from inpui.components.generic_thermostat.const import (
     CONF_AC_MODE,
     CONF_COLD_TOLERANCE,
     CONF_HEATER,
@@ -20,17 +20,17 @@ from homeassistant.components.generic_thermostat.const import (
     CONF_SENSOR,
     DOMAIN,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
     STATE_OFF,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.schema_config_entry_flow import SchemaFlowError
+from inpui.core import HomeAssistant
+from inpui.helpers.schema_config_entry_flow import SchemaFlowError
 
 from tests.common import MockConfigEntry
 

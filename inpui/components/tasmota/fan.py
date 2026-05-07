@@ -8,16 +8,16 @@ from hatasmota import const as tasmota_const, fan as tasmota_fan
 from hatasmota.entity import TasmotaEntity as HATasmotaEntity
 from hatasmota.models import DiscoveryHashType
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     DOMAIN as FAN_DOMAIN,
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

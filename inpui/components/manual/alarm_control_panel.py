@@ -7,14 +7,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     PLATFORM_SCHEMA as ALARM_CONTROL_PANEL_PLATFORM_SCHEMA,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ARMING_TIME,
     CONF_CODE,
     CONF_DELAY_TIME,
@@ -23,15 +23,15 @@ from homeassistant.const import (
     CONF_TRIGGER_TIME,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_time
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_point_in_time
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 DOMAIN = "manual"
 

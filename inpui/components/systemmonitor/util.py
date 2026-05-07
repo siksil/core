@@ -8,7 +8,7 @@ from typing import Any
 from psutil._ntuples import sfan, shwtemp
 import psutil_home_assistant as ha_psutil
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CPU_SENSOR_PREFIXES
 

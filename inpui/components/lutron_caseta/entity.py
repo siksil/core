@@ -5,9 +5,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.const import ATTR_SUGGESTED_AREA
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_SUGGESTED_AREA
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import CONFIG_URL, DOMAIN, MANUFACTURER, UNASSIGNED_AREA
 from .models import LutronCasetaData

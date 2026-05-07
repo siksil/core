@@ -8,10 +8,10 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.local_file.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_FILE_PATH, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.local_file.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_FILE_PATH, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

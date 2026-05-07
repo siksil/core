@@ -7,17 +7,17 @@ from logging import Logger
 
 from govee_ble import GoveeBluetoothDeviceData, ModelInfo, SensorUpdate, get_model_info
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import CONF_DEVICE_TYPE, DOMAIN
 

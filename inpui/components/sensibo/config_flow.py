@@ -8,10 +8,10 @@ from typing import Any
 from pysensibo.exceptions import AuthenticationError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.selector import TextSelector
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.selector import TextSelector
 
 from .const import DOMAIN
 from .util import NoDevicesError, NoUsernameError, async_validate_api

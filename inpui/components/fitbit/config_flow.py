@@ -4,9 +4,9 @@ from collections.abc import Mapping
 import logging
 from typing import Any
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_TOKEN
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import api
 from .const import DOMAIN, OAUTH_SCOPES

@@ -1,12 +1,12 @@
 """Collection of helpers."""
 
-from homeassistant.components.coinbase.const import (
+from inpui.components.coinbase.const import (
     CONF_CURRENCIES,
     CONF_EXCHANGE_RATES,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import (
     GOOD_CURRENCY_2,

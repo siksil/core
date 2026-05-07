@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .const import ATTR_INSTALLED_VERSION, ATTR_LATEST_VERSION
 

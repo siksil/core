@@ -14,13 +14,13 @@ from motioneye_client.const import (
     KEY_VIDEO_STREAMING,
 )
 
-from homeassistant.components.motioneye import get_motioneye_device_identifier
-from homeassistant.components.motioneye.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.motioneye import get_motioneye_device_identifier
+from inpui.components.motioneye.const import DEFAULT_SCAN_INTERVAL
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     TEST_CAMERA,

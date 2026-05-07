@@ -15,15 +15,15 @@ from habluetooth import BluetoothServiceInfo
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.gardena_bluetooth import DeviceUnavailable
-from homeassistant.components.gardena_bluetooth.const import DOMAIN
-from homeassistant.components.gardena_bluetooth.util import (
+from inpui.components.gardena_bluetooth import DeviceUnavailable
+from inpui.components.gardena_bluetooth.const import DOMAIN
+from inpui.components.gardena_bluetooth.util import (
     async_get_product_type as original_get_product_type,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import utcnow
 
 from . import (
     AQUA_CONTOUR_SERVICE_INFO,

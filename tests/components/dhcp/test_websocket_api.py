@@ -6,9 +6,9 @@ from unittest.mock import patch
 
 import aiodhcpwatcher
 
-from homeassistant.components.dhcp import DOMAIN
-from homeassistant.core import EVENT_HOMEASSISTANT_STARTED, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.dhcp import DOMAIN
+from inpui.core import EVENT_INPUI_STARTED, HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 
@@ -34,7 +34,7 @@ async def test_subscribe_discovery(
     ):
         await async_setup_component(hass, DOMAIN, {})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     saved_callback(aiodhcpwatcher.DHCPRequest("4.3.2.2", "happy", "44:44:33:11:23:12"))

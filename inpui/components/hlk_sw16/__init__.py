@@ -6,12 +6,12 @@ from hlk_sw16 import create_hlk_sw16_connection
 from hlk_sw16.protocol import SW16Client
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT, CONF_SWITCHES, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT, CONF_SWITCHES, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONNECTION_TIMEOUT,

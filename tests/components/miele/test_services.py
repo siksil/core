@@ -8,18 +8,18 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.miele.const import DOMAIN
-from homeassistant.components.miele.services import (
+from inpui.components.miele.const import DOMAIN
+from inpui.components.miele.services import (
     ATTR_DURATION,
     ATTR_PROGRAM_ID,
     SERVICE_GET_PROGRAMS,
     SERVICE_SET_PROGRAM,
     SERVICE_SET_PROGRAM_OVEN,
 )
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.const import ATTR_DEVICE_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.device_registry import DeviceRegistry
 
 from . import setup_integration
 

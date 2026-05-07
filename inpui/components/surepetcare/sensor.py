@@ -9,11 +9,11 @@ from surepy.entities.devices import Felaqua as SurepyFelaqua
 from surepy.entities.pet import Pet as SurepyPet
 from surepy.enums import EntityType
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_VOLTAGE, PERCENTAGE, EntityCategory, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_VOLTAGE, PERCENTAGE, EntityCategory, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, SURE_BATT_VOLTAGE_DIFF, SURE_BATT_VOLTAGE_LOW
 from .coordinator import SurePetcareDataCoordinator

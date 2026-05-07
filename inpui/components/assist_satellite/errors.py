@@ -1,6 +1,6 @@
 """Errors for assist satellite."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class AssistSatelliteError(HomeAssistantError):

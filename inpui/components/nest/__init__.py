@@ -24,22 +24,22 @@ from google_nest_sdm.exceptions import (
 from google_nest_sdm.traits import TraitType
 import voluptuous as vol
 
-from homeassistant.auth.permissions.const import POLICY_READ
-from homeassistant.components.camera import Image, img_util
-from homeassistant.components.http import KEY_HASS_USER
-from homeassistant.components.http.view import HomeAssistantView
-from homeassistant.const import (
+from inpui.auth.permissions.const import POLICY_READ
+from inpui.components.camera import Image, img_util
+from inpui.components.http import KEY_HASS_USER
+from inpui.components.http.view import HomeAssistantView
+from inpui.const import (
     CONF_BINARY_SENSORS,
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_MONITORED_CONDITIONS,
     CONF_SENSORS,
     CONF_STRUCTURE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
@@ -47,13 +47,13 @@ from homeassistant.exceptions import (
     OAuth2TokenRequestReauthError,
     Unauthorized,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.entity_registry import async_entries_for_device
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.entity_registry import async_entries_for_device
+from inpui.helpers.typing import ConfigType
 
 from . import api
 from .const import (
@@ -321,7 +321,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: NestConfigEntry) -> bool
         unsub()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, on_hass_stop)
     )
 
     update_callback.set_device_manager(device_manager)

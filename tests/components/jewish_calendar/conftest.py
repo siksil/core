@@ -12,16 +12,16 @@ from freezegun.api import FrozenDateTimeFactory
 from hdate.translator import set_language
 import pytest
 
-from homeassistant.components.jewish_calendar.const import (
+from inpui.components.jewish_calendar.const import (
     CONF_CANDLE_LIGHT_MINUTES,
     CONF_DIASPORA,
     CONF_HAVDALAH_OFFSET_MINUTES,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.const import CONF_LANGUAGE, CONF_TIME_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_LANGUAGE, CONF_TIME_ZONE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import TimeValue
 

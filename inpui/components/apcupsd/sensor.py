@@ -6,15 +6,15 @@ import logging
 
 import dateutil
 
-from homeassistant.components.automation import automations_with_entity
-from homeassistant.components.script import scripts_with_entity
-from homeassistant.components.sensor import (
+from inpui.components.automation import automations_with_entity
+from inpui.components.script import scripts_with_entity
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     EntityCategory,
     UnitOfApparentPower,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.helpers.issue_registry as ir
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.helpers.issue_registry as ir
 
 from .const import AVAILABLE_VIA_DEVICE_ATTR, DEPRECATED_SENSORS, DOMAIN, LAST_S_TEST
 from .coordinator import APCUPSdConfigEntry, APCUPSdCoordinator

@@ -6,11 +6,11 @@ import pytest
 from requests import ConnectTimeout
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.rova import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from inpui.components.rova import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
 
 from . import setup_with_selected_platforms
 

@@ -13,11 +13,11 @@ from boschshcpy.information import SHCInformation
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.bosch_shc.config_flow import write_tls_asset
-from homeassistant.components.bosch_shc.const import CONF_SHC_CERT, CONF_SHC_KEY, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.bosch_shc.config_flow import write_tls_asset
+from inpui.components.bosch_shc.const import CONF_SHC_CERT, CONF_SHC_KEY, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

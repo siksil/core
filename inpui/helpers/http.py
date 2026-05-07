@@ -21,9 +21,9 @@ from aiohttp.web_urldispatcher import AbstractResource, AbstractRoute
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import Context, HomeAssistant, is_callback
-from homeassistant.util.json import JSON_ENCODE_EXCEPTIONS, format_unserializable_data
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import Context, HomeAssistant, is_callback
+from inpui.util.json import JSON_ENCODE_EXCEPTIONS, format_unserializable_data
 
 from .json import find_paths_unserializable_data, json_bytes, json_dumps
 

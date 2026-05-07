@@ -3,18 +3,18 @@
 import pytest
 from sqlalchemy import text
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.auto_repairs.schema import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.auto_repairs.schema import (
     correct_db_schema_precision,
     correct_db_schema_utf8,
     validate_db_schema_precision,
     validate_table_schema_has_correct_collation,
     validate_table_schema_supports_utf8,
 )
-from homeassistant.components.recorder.db_schema import States
-from homeassistant.components.recorder.migration import _modify_columns
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant
+from inpui.components.recorder.db_schema import States
+from inpui.components.recorder.migration import _modify_columns
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant
 
 from ..common import async_wait_recording_done
 

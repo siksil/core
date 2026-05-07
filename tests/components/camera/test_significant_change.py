@@ -1,7 +1,7 @@
 """Test the Camera significant change platform."""
 
-from homeassistant.components.camera import CameraState
-from homeassistant.components.camera.significant_change import (
+from inpui.components.camera import CameraState
+from inpui.components.camera.significant_change import (
     async_check_significant_change,
 )
 

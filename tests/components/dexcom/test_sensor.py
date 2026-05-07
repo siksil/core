@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from pydexcom.errors import SessionError
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
 
 from . import GLUCOSE_READING, init_integration
 

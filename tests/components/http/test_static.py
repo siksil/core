@@ -6,12 +6,12 @@ from pathlib import Path
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.components.http.static import CachingStaticResource
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.http import KEY_ALLOW_CONFIGURED_CORS
-from homeassistant.setup import async_setup_component
+from inpui.components.http import StaticPathConfig
+from inpui.components.http.static import CachingStaticResource
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant
+from inpui.helpers.http import KEY_ALLOW_CONFIGURED_CORS
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 
@@ -20,7 +20,7 @@ from tests.typing import ClientSessionGenerator
 async def http(hass: HomeAssistant) -> None:
     """Ensure http is set up."""
     assert await async_setup_component(hass, "http", {})
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
 

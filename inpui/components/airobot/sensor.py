@@ -8,24 +8,24 @@ from datetime import datetime, timedelta
 
 from pyairobotrest.models import ThermostatStatus
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
     EntityCategory,
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.dt import utcnow
-from homeassistant.util.variance import ignore_variance
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.dt import utcnow
+from inpui.util.variance import ignore_variance
 
 from . import AirobotConfigEntry
 from .coordinator import AirobotDataUpdateCoordinator

@@ -6,16 +6,16 @@ from aiocomelit import CannotAuthenticate, CannotConnect
 from aiocomelit.const import BRIDGE, VEDO
 import pytest
 
-from homeassistant.components.comelit.config_flow import (
+from inpui.components.comelit.config_flow import (
     InvalidPin,
     InvalidVedoAuth,
     InvalidVedoPin,
 )
-from homeassistant.components.comelit.const import CONF_VEDO_PIN, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.comelit.const import CONF_VEDO_PIN, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     BAD_PIN,

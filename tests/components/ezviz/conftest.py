@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.ezviz import (
+from inpui.components.ezviz import (
     ATTR_TYPE_CAMERA,
     ATTR_TYPE_CLOUD,
     CONF_RFSESSION_ID,
     CONF_SESSION_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_TYPE, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_TYPE, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

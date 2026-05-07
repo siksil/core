@@ -15,16 +15,16 @@ from zeroconf import BadTypeInNameException, IPVersion, ServiceStateChange
 from zeroconf.asyncio import AsyncServiceBrowser, AsyncServiceInfo
 
 from homeassistant import config_entries
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-import homeassistant.helpers.issue_registry as ir
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import discovery_flow
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.dispatcher import async_dispatcher_connect
+import inpui.helpers.issue_registry as ir
+from inpui.helpers.service_info.zeroconf import (
     ZeroconfServiceInfo as _ZeroconfServiceInfo,
 )
-from homeassistant.loader import HomeKitDiscoveredIntegration, ZeroconfMatcher
-from homeassistant.util.hass_dict import HassKey
+from inpui.loader import HomeKitDiscoveredIntegration, ZeroconfMatcher
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN, REQUEST_TIMEOUT
 

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.camera import CameraEntityDescription
-from homeassistant.components.mjpeg import MjpegCamera
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import CameraEntityDescription
+from inpui.components.mjpeg import MjpegCamera
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import Dremel3DPrinterDataUpdateCoordinator, DremelConfigEntry
 from .entity import Dremel3DPrinterEntity

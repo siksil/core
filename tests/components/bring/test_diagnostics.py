@@ -6,8 +6,8 @@ from bring_api import BringItemsResponse
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.bring.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.components.diagnostics import get_diagnostics_for_config_entry

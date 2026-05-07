@@ -7,14 +7,14 @@ from dataclasses import dataclass
 from pyoverkiz.enums import OverkizCommand, OverkizCommandParam
 from pyoverkiz.types import StateType as OverkizStateType
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OverkizDataConfigEntry
 from .const import IGNORED_OVERKIZ_DEVICES

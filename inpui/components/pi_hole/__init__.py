@@ -8,8 +8,8 @@ from typing import Any, Literal
 from hole import Hole, HoleV5, HoleV6
 from hole.exceptions import HoleConnectionError, HoleError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_LOCATION,
@@ -17,9 +17,9 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_STATISTICS_ONLY, DOMAIN
 from .coordinator import PiHoleConfigEntry, PiHoleData, PiHoleUpdateCoordinator

@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.text import (
+from inpui.components.text import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_PATTERN,
@@ -13,14 +13,14 @@ from homeassistant.components.text import (
     DOMAIN as TEXT_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     MAX_LENGTH_STATE_STATE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_TEXT = "text.text"
 

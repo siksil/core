@@ -9,7 +9,7 @@ from typing import Any
 
 from pyotgw import vars as gw_vars
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_AWAY,
     PRESET_NONE,
     ClimateEntity,
@@ -18,12 +18,12 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, CONF_ID, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_TEMPERATURE, CONF_ID, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OpenThermGatewayHub
 from .const import (

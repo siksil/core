@@ -12,12 +12,12 @@ from motionblindsble.const import (
 from motionblindsble.device import MotionDevice
 import pytest
 
-from homeassistant.components.motionblinds_ble.const import (
+from inpui.components.motionblinds_ble.const import (
     ATTR_BATTERY,
     ATTR_SIGNAL_STRENGTH,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

@@ -5,14 +5,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.adax.const import (
+from inpui.components.adax.const import (
     ACCOUNT_ID,
     CLOUD,
     CONNECTION_TYPE,
     DOMAIN,
     LOCAL,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_TOKEN,

@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch
 from panasonic_viera import TV_TYPE_ENCRYPTED, TV_TYPE_NONENCRYPTED
 import pytest
 
-from homeassistant.components.panasonic_viera.const import (
+from inpui.components.panasonic_viera.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_MANUFACTURER,
     ATTR_MODEL_NUMBER,
@@ -19,9 +19,9 @@ from homeassistant.components.panasonic_viera.const import (
     DEFAULT_PORT,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import MockConfigEntry
 

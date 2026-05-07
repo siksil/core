@@ -7,7 +7,7 @@ import pytest
 from requests.exceptions import ConnectionError, RequestException
 import requests_mock
 
-from homeassistant.components.plex.const import (
+from inpui.components.plex.const import (
     CONF_IGNORE_NEW_SHARED_USERS,
     CONF_IGNORE_PLEX_WEB_CLIENTS,
     CONF_MONITORED_USERS,
@@ -15,8 +15,8 @@ from homeassistant.components.plex.const import (
     DOMAIN,
     SERVERS,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_DATA, DEFAULT_OPTIONS
 from .helpers import trigger_plex_update, wait_for_debouncer

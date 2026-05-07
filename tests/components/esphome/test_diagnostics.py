@@ -8,8 +8,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components import bluetooth
-from homeassistant.core import HomeAssistant
+from inpui.components import bluetooth
+from inpui.core import HomeAssistant
 
 from .common import MockDashboardRefresh
 from .conftest import MockESPHomeDevice, MockESPHomeDeviceType

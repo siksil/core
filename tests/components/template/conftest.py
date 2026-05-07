@@ -5,13 +5,13 @@ from enum import Enum, StrEnum
 
 import pytest
 
-from homeassistant.components import template
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.components import template
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, async_mock_service
 from tests.conftest import WebSocketGenerator

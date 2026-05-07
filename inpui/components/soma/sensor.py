@@ -2,12 +2,12 @@
 
 from datetime import timedelta
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle
 
 from .const import API, DEVICES, DOMAIN
 from .entity import SomaEntity

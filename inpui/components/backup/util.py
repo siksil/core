@@ -25,15 +25,15 @@ from securetar import (
     get_archive_max_ciphertext_size,
 )
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_iterator import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util
+from inpui.util.async_iterator import (
     Abort,
     AsyncIteratorReader,
     AsyncIteratorWriter,
 )
-from homeassistant.util.json import JsonObjectType, json_loads_object
+from inpui.util.json import JsonObjectType, json_loads_object
 
 from .const import BUF_SIZE, LOGGER, SECURETAR_CREATE_VERSION
 from .models import AddonInfo, AgentBackup, Folder

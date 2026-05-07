@@ -10,10 +10,10 @@ from typing import Any
 from aiohue import AiohueException, Unauthorized
 from aiohue.v1.sensors import TYPE_ZLL_PRESENCE
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.core import callback
-from homeassistant.helpers import debounce, entity
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.sensor import SensorStateClass
+from inpui.core import callback
+from inpui.helpers import debounce, entity
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from ..const import REQUEST_REFRESH_DELAY
 from .helpers import remove_devices

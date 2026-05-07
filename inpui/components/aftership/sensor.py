@@ -7,15 +7,15 @@ from typing import Any, Final
 
 from pyaftership import AfterShip, AfterShipException
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import (
+from inpui.components.sensor import SensorEntity
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle
 
 from . import AfterShipConfigEntry
 from .const import (

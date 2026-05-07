@@ -3,11 +3,11 @@
 from typing import Any
 
 from homeassistant import config_entries
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.repairs import (
@@ -188,7 +188,7 @@ async def test_orphaned_config_entry_confirm_step(
     }
 
     await hass.config_entries.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     issue = issue_registry.async_get_issue(HOMEASSISTANT_DOMAIN, issue_id)
@@ -288,7 +288,7 @@ async def test_orphaned_config_entry_ignore_step(
     }
 
     await hass.config_entries.async_initialize()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     issue = issue_registry.async_get_issue(HOMEASSISTANT_DOMAIN, issue_id)

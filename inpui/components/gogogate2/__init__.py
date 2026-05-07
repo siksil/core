@@ -1,7 +1,7 @@
 """The gogogate2 component."""
 
-from homeassistant.const import CONF_DEVICE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_DEVICE, Platform
+from inpui.core import HomeAssistant
 
 from .common import create_data_update_coordinator
 from .const import DEVICE_TYPE_GOGOGATE2

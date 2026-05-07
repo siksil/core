@@ -6,9 +6,9 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
+from inpui.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
 
 from .const import (
     ATTR_FORMAT,

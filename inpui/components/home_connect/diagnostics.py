@@ -6,8 +6,8 @@ from typing import Any
 
 from aiohomeconnect.model import GetSetting, Status
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .coordinator import HomeConnectApplianceData, HomeConnectConfigEntry

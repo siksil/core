@@ -7,8 +7,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 from zamg import ZamgData as ZamgDevice
 
-from homeassistant.components.zamg.const import CONF_STATION_ID, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.zamg.const import CONF_STATION_ID, DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

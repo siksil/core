@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 from freezegun.api import FrozenDateTimeFactory
 from fullykiosk import FullyKioskError
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.fully_kiosk.const import DOMAIN, UPDATE_INTERVAL
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.fully_kiosk.const import DOMAIN, UPDATE_INTERVAL
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     STATE_ON,
@@ -15,8 +15,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

@@ -2,7 +2,7 @@
 
 from typing import Final
 
-from homeassistant.components.cover import CoverEntityFeature
+from inpui.components.cover import CoverEntityFeature
 
 DOMAIN = "aladdin_connect"
 CONFIG_FLOW_VERSION = 2

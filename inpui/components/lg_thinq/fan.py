@@ -10,14 +10,14 @@ from thinqconnect import DeviceType
 from thinqconnect.devices.const import Property as ThinQProperty
 from thinqconnect.integration import ActiveMode
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     FanEntity,
     FanEntityDescription,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

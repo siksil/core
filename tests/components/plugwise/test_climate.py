@@ -8,7 +8,7 @@ from plugwise.exceptions import PlugwiseError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODE,
     ATTR_HVAC_MODES,
@@ -23,11 +23,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.plugwise.climate import PlugwiseClimateExtraStoredData
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.plugwise.climate import PlugwiseClimateExtraStoredData
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

@@ -8,16 +8,16 @@ import logging
 
 from pysiaalarm import SIAEvent
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT
-from homeassistant.core import CALLBACK_TYPE, State, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import StateType
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT
+from inpui.core import CALLBACK_TYPE, State, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import StateType
 
 from .const import (
     AVAILABILITY_EVENT_CODE,

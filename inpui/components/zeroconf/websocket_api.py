@@ -13,9 +13,9 @@ import voluptuous as vol
 from zeroconf import BadTypeInNameException, DNSPointer, Zeroconf, current_time_millis
 from zeroconf.asyncio import AsyncServiceInfo, IPVersion
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.json import json_bytes
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.json import json_bytes
 
 from .const import DOMAIN, REQUEST_TIMEOUT
 from .discovery import DATA_DISCOVERY, ZeroconfDiscovery

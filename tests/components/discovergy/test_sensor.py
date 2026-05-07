@@ -8,8 +8,8 @@ from pydiscovergy.error import DiscovergyClientError, HTTPError, InvalidLogin
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 
 @pytest.mark.parametrize(

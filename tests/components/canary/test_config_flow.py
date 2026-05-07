@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 from requests import ConnectTimeout, HTTPError
 
-from homeassistant.components.canary.const import (
+from inpui.components.canary.const import (
     CONF_FFMPEG_ARGUMENTS,
     DEFAULT_FFMPEG_ARGUMENTS,
     DEFAULT_TIMEOUT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_TIMEOUT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_TIMEOUT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import USER_INPUT, _patch_async_setup_entry, init_integration
 

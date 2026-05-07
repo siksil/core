@@ -5,17 +5,17 @@ from __future__ import annotations
 import os
 from typing import Any, TextIO
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_TITLE_DEFAULT,
     NotifyEntity,
     NotifyEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_FILE_PATH, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_FILE_PATH, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import CONF_TIMESTAMP, DEFAULT_NAME, DOMAIN, FILE_ICON
 

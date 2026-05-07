@@ -13,17 +13,17 @@ from b2sdk._internal.raw_simulator import BucketSimulator
 from b2sdk.v2.exception import B2Error
 import pytest
 
-from homeassistant.components.backblaze_b2.backup import (
+from inpui.components.backblaze_b2.backup import (
     _parse_metadata,
     async_register_backup_agents_listener,
 )
-from homeassistant.components.backblaze_b2.const import (
+from inpui.components.backblaze_b2.const import (
     DATA_BACKUP_AGENT_LISTENERS,
     DOMAIN,
 )
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .const import BACKUP_METADATA, TEST_BACKUP

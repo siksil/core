@@ -5,8 +5,8 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.group import DOMAIN
-from homeassistant.components.media_player import (
+from inpui.components.group import DOMAIN
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -27,7 +27,7 @@ from homeassistant.components.media_player import (
     SERVICE_VOLUME_SET,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_MEDIA_NEXT_TRACK,
@@ -46,9 +46,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_platform, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_platform, entity_registry as er
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(name="mock_media_seek")

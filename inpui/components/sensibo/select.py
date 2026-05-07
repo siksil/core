@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING, Any
 
 from pysensibo.model import SensiboDevice
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SensiboConfigEntry
 from .coordinator import SensiboDataUpdateCoordinator

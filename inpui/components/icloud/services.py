@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.util import slugify
 
 from .account import IcloudAccount, IcloudConfigEntry
 from .const import (

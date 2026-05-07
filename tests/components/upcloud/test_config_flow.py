@@ -8,10 +8,10 @@ from requests_mock import ANY
 from upcloud_api import UpCloudAPIError
 
 from homeassistant import config_entries
-from homeassistant.components.upcloud.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.upcloud.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

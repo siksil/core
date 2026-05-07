@@ -9,9 +9,9 @@ from typing import Any
 from google.oauth2.credentials import Credentials
 from gspread import Client, GSpreadException
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import DEFAULT_ACCESS, DEFAULT_NAME, DOMAIN
 

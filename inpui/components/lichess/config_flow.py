@@ -9,9 +9,9 @@ from aiolichess import AioLichess
 from aiolichess.exceptions import AioLichessError, AuthError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

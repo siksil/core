@@ -9,16 +9,16 @@ from aiohttp.client_exceptions import ClientError
 from aiopyarr.lidarr_client import LidarrClient
 import pytest
 
-from homeassistant.components.lidarr.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.lidarr.const import DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_URL,
     CONF_VERIFY_SSL,
     CONTENT_TYPE_JSON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

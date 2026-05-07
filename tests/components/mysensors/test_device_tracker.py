@@ -6,14 +6,14 @@ from collections.abc import Callable
 
 from mysensors.sensor import Sensor
 
-from homeassistant.components.device_tracker import ATTR_SOURCE_TYPE, SourceType
-from homeassistant.const import (
+from inpui.components.device_tracker import ATTR_SOURCE_TYPE, SourceType
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     STATE_NOT_HOME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_gps_sensor(

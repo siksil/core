@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.guardian import CONF_UID, DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonObjectType
+from inpui.components.guardian import CONF_UID, DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

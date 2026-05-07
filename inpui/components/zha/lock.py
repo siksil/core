@@ -5,13 +5,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import (
+from inpui.components.lock import LockEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

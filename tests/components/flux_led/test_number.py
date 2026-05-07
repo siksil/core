@@ -5,26 +5,26 @@ from datetime import timedelta
 from flux_led.const import COLOR_MODE_RGB as FLUX_COLOR_MODE_RGB
 import pytest
 
-from homeassistant.components import flux_led
-from homeassistant.components.flux_led import number as flux_number
-from homeassistant.components.flux_led.const import DOMAIN
-from homeassistant.components.number import (
+from inpui.components import flux_led
+from inpui.components.flux_led import number as flux_number
+from inpui.components.flux_led.const import DOMAIN
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     CONF_NAME,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     DEFAULT_ENTRY_TITLE,

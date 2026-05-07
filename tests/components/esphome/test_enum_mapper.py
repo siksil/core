@@ -4,7 +4,7 @@ from enum import StrEnum
 
 from aioesphomeapi import APIIntEnum
 
-from homeassistant.components.esphome.enum_mapper import EsphomeEnumMapper
+from inpui.components.esphome.enum_mapper import EsphomeEnumMapper
 
 
 class MockEnum(APIIntEnum):

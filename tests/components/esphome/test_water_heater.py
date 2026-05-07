@@ -10,7 +10,7 @@ from aioesphomeapi import (
     WaterHeaterState,
 )
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_OPERATION_LIST,
     DOMAIN as WATER_HEATER_DOMAIN,
     SERVICE_SET_OPERATION_MODE,
@@ -19,8 +19,8 @@ from homeassistant.components.water_heater import (
     SERVICE_TURN_ON,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
 
 from .conftest import MockGenericDeviceEntryType
 

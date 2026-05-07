@@ -9,7 +9,7 @@ from pysaunum import SaunumException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_HVAC_ACTION,
@@ -27,20 +27,20 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.saunum.const import (
+from inpui.components.saunum.const import (
     OPT_PRESET_NAME_TYPE_1,
     OPT_PRESET_NAME_TYPE_2,
     OPT_PRESET_NAME_TYPE_3,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

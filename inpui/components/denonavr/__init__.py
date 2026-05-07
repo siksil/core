@@ -5,13 +5,13 @@ import logging
 from denonavr import DenonAVR
 from denonavr.exceptions import AvrNetworkError, AvrTimoutError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_SHOW_ALL_SOURCES,
@@ -75,7 +75,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: DenonavrConfigEntry) -> 
 
     if use_telnet:
         entry.async_on_unload(
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_disconnect)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_disconnect)
         )
 
     return True

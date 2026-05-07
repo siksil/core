@@ -5,15 +5,15 @@ from unittest.mock import patch
 from aiohttp.client_exceptions import ClientError
 import pytest
 
-from homeassistant.components.pegel_online.const import (
+from inpui.components.pegel_online.const import (
     CONF_STATION,
     DOMAIN,
     MIN_TIME_BETWEEN_UPDATES,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import utcnow
 
 from . import PegelOnlineMock
 from .const import (

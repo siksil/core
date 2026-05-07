@@ -9,8 +9,8 @@ import pytest
 from uiprotect.data import NVR, AiPort, Camera, Event, EventType, ModelType, Sensor
 from uiprotect.data.nvr import EventMetadata
 
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.components.unifiprotect.sensor import (
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.components.unifiprotect.sensor import (
     ALL_DEVICES_SENSORS,
     CAMERA_DISABLED_SENSORS,
     CAMERA_SENSORS,
@@ -20,14 +20,14 @@ from homeassistant.components.unifiprotect.sensor import (
     SENSE_SENSORS,
     ProtectSensorEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .utils import (
     MockUFPFixture,

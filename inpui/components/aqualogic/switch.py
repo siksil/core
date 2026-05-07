@@ -7,16 +7,16 @@ from typing import Any
 from aqualogic.core import States
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import CONF_MONITORED_CONDITIONS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_MONITORED_CONDITIONS
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN, UPDATE_TOPIC, AquaLogicProcessor
 

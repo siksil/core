@@ -2,11 +2,11 @@
 
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.philips_js.const import DOMAIN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.philips_js.const import DOMAIN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_device_automations
 

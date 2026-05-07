@@ -5,14 +5,14 @@ from typing import Any
 
 import aiosyncthing
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.components.sensor import SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
 
 from . import SyncthingClient
 from .const import (

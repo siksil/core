@@ -1,6 +1,6 @@
 """Constants for the Reolink Camera integration."""
 
-from homeassistant.components.camera import CameraEntityFeature
+from inpui.components.camera import CameraEntityFeature
 
 DOMAIN = "reolink"
 

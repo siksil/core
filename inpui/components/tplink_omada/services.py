@@ -5,10 +5,10 @@ from typing import cast
 from tplink_omada_client.exceptions import OmadaClientException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, selector
 
 from .const import DOMAIN
 from .controller import OmadaSiteController

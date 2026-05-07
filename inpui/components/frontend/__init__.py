@@ -16,26 +16,26 @@ from propcache.api import cached_property
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components import onboarding, websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, StaticPathConfig
-from homeassistant.components.websocket_api import ERR_NOT_FOUND, ActiveConnection
-from homeassistant.config import async_hass_config_yaml
-from homeassistant.const import (
+from inpui.components import onboarding, websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView, StaticPathConfig
+from inpui.components.websocket_api import ERR_NOT_FOUND, ActiveConnection
+from inpui.config import async_hass_config_yaml
+from inpui.const import (
     CONF_MODE,
     CONF_NAME,
     EVENT_PANELS_UPDATED,
     EVENT_THEMES_UPDATED,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, async_get_hass, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.icon import async_get_icons
-from homeassistant.helpers.json import json_dumps_sorted
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.translation import async_get_translations
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_integration, bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, ServiceCall, async_get_hass, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.icon import async_get_icons
+from inpui.helpers.json import json_dumps_sorted
+from inpui.helpers.storage import Store
+from inpui.helpers.translation import async_get_translations
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_integration, bind_hass
+from inpui.util.hass_dict import HassKey
 
 from .pr_download import download_pr_artifact
 from .storage import (

@@ -4,15 +4,15 @@ import asyncio
 import json
 from unittest.mock import patch
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon.api.device import ID, TYPE
-from homeassistant.components.insteon.const import (
+from inpui.components import insteon
+from inpui.components.insteon.api.device import ID, TYPE
+from inpui.components.insteon.const import (
     CONF_HUB_VERSION,
     CONF_OVERRIDE,
     CONF_X10,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import (
     MOCK_DEVICE,

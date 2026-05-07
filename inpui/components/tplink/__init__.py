@@ -20,8 +20,8 @@ from kasa import (
 from kasa.httpclient import get_cookie_jar
 
 from homeassistant import config_entries
-from homeassistant.components import network
-from homeassistant.const import (
+from inpui.components import network
+from inpui.const import (
     CONF_ALIAS,
     CONF_AUTHENTICATION,
     CONF_DEVICE,
@@ -32,16 +32,16 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery_flow,
 )
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_AES_KEYS,

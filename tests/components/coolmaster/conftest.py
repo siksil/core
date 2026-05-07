@@ -8,10 +8,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.coolmaster.climate import CoolmasterClimate
-from homeassistant.components.coolmaster.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import HVACMode
+from inpui.components.coolmaster.climate import CoolmasterClimate
+from inpui.components.coolmaster.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

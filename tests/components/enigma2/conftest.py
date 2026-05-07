@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 from openwebif.api import OpenWebIfDevice, OpenWebIfServiceEvent, OpenWebIfStatus
 import pytest
 
-from homeassistant.components.enigma2.const import (
+from inpui.components.enigma2.const import (
     CONF_DEEP_STANDBY,
     CONF_SOURCE_BOUQUET,
     CONF_USE_CHANNEL_ICON,
@@ -16,7 +16,7 @@ from homeassistant.components.enigma2.const import (
     DEFAULT_VERIFY_SSL,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,

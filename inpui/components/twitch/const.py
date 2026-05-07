@@ -4,7 +4,7 @@ import logging
 
 from twitchAPI.twitch import AuthScope
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 LOGGER = logging.getLogger(__package__)
 

@@ -10,8 +10,8 @@ from wyoming.asr import Transcript
 from wyoming.info import Info, WakeModel, WakeProgram
 from wyoming.wake import Detection
 
-from homeassistant.components import wake_word
-from homeassistant.core import HomeAssistant
+from inpui.components import wake_word
+from inpui.core import HomeAssistant
 
 from . import TEST_ATTR, MockAsyncTcpClient
 

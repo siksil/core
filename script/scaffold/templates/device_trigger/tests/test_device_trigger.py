@@ -2,13 +2,13 @@
 
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.NEW_DOMAIN import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.NEW_DOMAIN import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_device_automations
 

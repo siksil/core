@@ -8,15 +8,15 @@ from typing import Any
 from kasa import Device, Module
 from kasa.smart.modules.clean import Clean, Status
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     StateVacuumEntity,
     StateVacuumEntityDescription,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TPLinkConfigEntry
 from .coordinator import TPLinkDataUpdateCoordinator

@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.util import executor
-from homeassistant.util.executor import InterruptibleThreadPoolExecutor
+from inpui.util import executor
+from inpui.util.executor import InterruptibleThreadPoolExecutor
 
 
 async def test_executor_shutdown_can_interrupt_threads(

@@ -14,10 +14,10 @@ from pytrafikverket import (
 )
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.trafikverket_train.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, SOURCE_USER, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.trafikverket_train.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, SOURCE_USER, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import ENTRY_CONFIG, OPTIONS_CONFIG
 

@@ -5,19 +5,19 @@ import logging
 from sense_energy import PlugInstance, SenseLink
 import voluptuous as vol
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     CONF_ENTITIES,
     CONF_NAME,
     CONF_UNIQUE_ID,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.template import Template, is_template_string
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.template import Template, is_template_string
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_POWER, CONF_POWER_ENTITY, DOMAIN
 
@@ -70,9 +70,9 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         except OSError as error:
             _LOGGER.error("Failed to create UDP server at port 9999: %s", error)
         else:
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_emulated_kasa)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_emulated_kasa)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, start_emulated_kasa)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, start_emulated_kasa)
 
     return True
 

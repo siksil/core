@@ -19,7 +19,7 @@ from xknx.telegram.address import (
     parse_device_group_address,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ENTITY_ID,
     CONF_VALUE_TEMPLATE,
     STATE_OFF,
@@ -27,18 +27,18 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, StateType
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import TemplateError
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, StateType
+from inpui.util import dt as dt_util
 
 from .const import CONF_RESPOND_TO_READ, KNX_ADDRESS
 from .schema import ExposeSchema

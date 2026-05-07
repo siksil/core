@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.media_player import BrowseMedia, MediaClass, MediaType
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.translation import async_get_cached_translations
+from inpui.components.media_player import BrowseMedia, MediaClass, MediaType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.translation import async_get_cached_translations
 
 from .const import MEDIA_SOURCE_DATA, URI_SCHEME, URI_SCHEME_REGEX
 

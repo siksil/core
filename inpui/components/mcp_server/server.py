@@ -17,9 +17,9 @@ from mcp.server import Server
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import llm
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import llm
 
 from .const import STATELESS_LLM_API
 

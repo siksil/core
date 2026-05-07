@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import hassio
-from homeassistant.const import __version__ as current_version
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.system_info import async_get_system_info
+from inpui.components import hassio
+from inpui.const import __version__ as current_version
+from inpui.core import HomeAssistant
+from inpui.helpers.system_info import async_get_system_info
 
 
 async def test_get_system_info(hass: HomeAssistant) -> None:

@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.notify import DOMAIN, migrate_notify_issue
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.notify import DOMAIN, migrate_notify_issue
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 from tests.components.repairs import (

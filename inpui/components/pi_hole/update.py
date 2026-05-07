@@ -7,10 +7,10 @@ from dataclasses import dataclass
 
 from hole import Hole
 
-from homeassistant.components.update import UpdateEntity, UpdateEntityDescription
-from homeassistant.const import CONF_NAME, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateEntity, UpdateEntityDescription
+from inpui.const import CONF_NAME, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PiHoleConfigEntry, PiHoleUpdateCoordinator
 from .entity import PiHoleEntity

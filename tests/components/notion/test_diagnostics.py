@@ -1,8 +1,8 @@
 """Test Notion diagnostics."""
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.notion import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.components.notion import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import ANY
 from tests.components.diagnostics import get_diagnostics_for_config_entry

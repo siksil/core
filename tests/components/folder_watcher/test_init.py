@@ -6,11 +6,11 @@ from unittest.mock import Mock, patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components import folder_watcher
-from homeassistant.components.folder_watcher.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components import folder_watcher
+from inpui.components.folder_watcher.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

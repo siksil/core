@@ -14,7 +14,7 @@ from zwave_js_server.const.command_class.humidity_control import (
 from zwave_js_server.model.driver import Driver
 from zwave_js_server.model.value import Value as ZwaveValue
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     DEFAULT_MAX_HUMIDITY,
     DEFAULT_MIN_HUMIDITY,
     DOMAIN as HUMIDIFIER_DOMAIN,
@@ -22,9 +22,9 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .discovery import ZwaveDiscoveryInfo

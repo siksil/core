@@ -7,10 +7,10 @@ import logging
 
 from aiosteamist import Steamist, SteamistStatus
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from freezegun.api import FrozenDateTimeFactory
 
 from homeassistant import config_entries
-from homeassistant.components.pvpc_hourly_pricing.const import (
+from inpui.components.pvpc_hourly_pricing.const import (
     ATTR_POWER,
     ATTR_POWER_P3,
     ATTR_TARIFF,
@@ -13,11 +13,11 @@ from homeassistant.components.pvpc_hourly_pricing.const import (
     DOMAIN,
     TARIFFS,
 )
-from homeassistant.const import CONF_API_TOKEN, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_API_TOKEN, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .conftest import check_valid_state
 

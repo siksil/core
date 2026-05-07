@@ -6,10 +6,10 @@ from httplib2 import Response
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_mail.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.google_mail.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .conftest import CLIENT_ID, GOOGLE_AUTH_URI, GOOGLE_TOKEN_URI, SCOPES, TITLE
 

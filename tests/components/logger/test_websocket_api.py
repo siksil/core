@@ -4,10 +4,10 @@ import logging
 from unittest.mock import patch
 
 from homeassistant import config_entries, loader
-from homeassistant.components.logger.helpers import DATA_LOGGER
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.logger.helpers import DATA_LOGGER
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockModule,

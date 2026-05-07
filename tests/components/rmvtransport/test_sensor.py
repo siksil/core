@@ -3,8 +3,8 @@
 import datetime
 from unittest.mock import patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 VALID_CONFIG_MINIMAL = {
     "sensor": {"platform": "rmvtransport", "next_departure": [{"station": "3000010"}]}

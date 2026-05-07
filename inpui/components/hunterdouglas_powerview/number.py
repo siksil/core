@@ -7,14 +7,14 @@ from typing import Final
 from aiopvapi.helpers.constants import ATTR_NAME, MOTION_VELOCITY
 from aiopvapi.resources.shade import BaseShade, ShadePosition
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntityDescription,
     NumberMode,
     RestoreNumber,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PowerviewShadeUpdateCoordinator
 from .entity import ShadeEntity

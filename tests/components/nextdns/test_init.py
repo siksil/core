@@ -6,10 +6,10 @@ from nextdns import ApiError, InvalidApiKeyError
 import pytest
 from tenacity import RetryError
 
-from homeassistant.components.nextdns.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.nextdns.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

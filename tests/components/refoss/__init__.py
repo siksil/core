@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, Mock
 
 from refoss_ha.discovery import Listener
 
-from homeassistant.components.refoss.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.refoss.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

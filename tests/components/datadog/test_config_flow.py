@@ -2,10 +2,10 @@
 
 from unittest.mock import MagicMock, patch
 
-from homeassistant.components.datadog.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.datadog.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .common import MOCK_CONFIG, MOCK_DATA, MOCK_OPTIONS
 

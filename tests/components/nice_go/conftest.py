@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock, patch
 from nice_go import Barrier, BarrierState, ConnectionState
 import pytest
 
-from homeassistant.components.nice_go.const import (
+from inpui.components.nice_go.const import (
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_CREATION_TIME,
     DOMAIN,
 )
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
 
 from tests.common import MockConfigEntry, load_json_array_fixture
 

@@ -6,11 +6,11 @@ import logging
 
 from aioqsw.localapi import ConnectionOptions, QnapQswApi
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
 
 from .const import DOMAIN, QSW_COORD_DATA, QSW_COORD_FW
 from .coordinator import QswDataCoordinator, QswFirmwareCoordinator

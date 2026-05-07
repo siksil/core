@@ -10,9 +10,9 @@ from aionotion.sensor.models import Sensor
 from aionotion.user.models import UserPreferences
 import pytest
 
-from homeassistant.components.notion import CONF_REFRESH_TOKEN, CONF_USER_UUID, DOMAIN
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.notion import CONF_REFRESH_TOKEN, CONF_USER_UUID, DOMAIN
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

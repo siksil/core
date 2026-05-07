@@ -1,6 +1,6 @@
 """Exceptions for Google Tasks api calls."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class GoogleTasksApiError(HomeAssistantError):

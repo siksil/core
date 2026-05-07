@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from medcom_ble import MedcomBleDevice, MedcomBleDeviceData
 
-from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
+from inpui.components.bluetooth.models import BluetoothServiceInfoBleak
 
 from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 

@@ -8,10 +8,10 @@ from aiohue.v2.models.device import DeviceArchetypes
 from aiohue.v2.models.resource import ResourceTypes
 
 from homeassistant import core
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, CONF_USERNAME
-from homeassistant.helpers import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, CONF_USERNAME
+from inpui.helpers import (
     aiohttp_client,
     device_registry as dr,
     entity_registry as er,

@@ -6,16 +6,16 @@ from typing import final
 
 from propcache.api import cached_property
 
-from homeassistant.components.conversation import (
+from inpui.components.conversation import (
     ChatLog,
     UserContent,
     async_get_chat_log,
 )
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.helpers import llm
-from homeassistant.helpers.chat_session import ChatSession
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.helpers import llm
+from inpui.helpers.chat_session import ChatSession
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.util import dt as dt_util
 
 from .const import DEFAULT_SYSTEM_PROMPT, DOMAIN, AITaskEntityFeature
 from .task import GenDataTask, GenDataTaskResult, GenImageTask, GenImageTaskResult

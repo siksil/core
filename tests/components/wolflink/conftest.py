@@ -22,14 +22,14 @@ from wolf_comm import (
     Value,
 )
 
-from homeassistant.components.wolflink.const import (
+from inpui.components.wolflink.const import (
     DEVICE_GATEWAY,
     DEVICE_ID,
     DEVICE_NAME,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

@@ -2,15 +2,15 @@
 
 import logging
 
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_UNIQUE_ID,
     CONF_UNIT_OF_MEASUREMENT,
     Platform,
 )
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
 )

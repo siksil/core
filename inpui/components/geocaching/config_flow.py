@@ -8,9 +8,9 @@ from typing import Any
 
 from geocachingapi.geocachingapi import GeocachingApi
 
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.config_entries import ConfigFlowResult
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
 
 from .const import DOMAIN, ENVIRONMENT
 

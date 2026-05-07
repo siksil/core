@@ -2,7 +2,7 @@
 
 from pysmartthings import Attribute, Capability, Category
 
-from homeassistant.const import UnitOfTemperature
+from inpui.const import UnitOfTemperature
 
 DOMAIN = "smartthings"
 

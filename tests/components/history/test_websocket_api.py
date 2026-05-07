@@ -7,13 +7,13 @@ from unittest.mock import ANY, patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import history
-from homeassistant.components.history import websocket_api
-from homeassistant.const import EVENT_HOMEASSISTANT_FINAL_WRITE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import history
+from inpui.components.history import websocket_api
+from inpui.const import EVENT_INPUI_FINAL_WRITE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import (
@@ -28,7 +28,7 @@ def listeners_without_writes(listeners: dict[str, int]) -> dict[str, int]:
     return {
         key: value
         for key, value in listeners.items()
-        if key != EVENT_HOMEASSISTANT_FINAL_WRITE
+        if key != EVENT_INPUI_FINAL_WRITE
     }
 
 

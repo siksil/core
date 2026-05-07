@@ -5,12 +5,12 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.components.remote import RemoteEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import RemoteEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import Remote
 from .const import (

@@ -7,12 +7,12 @@ import uuid
 
 from aiohttp.web_response import StreamResponse
 
-from homeassistant.components import http
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import template
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.components import http
+from inpui.const import CONF_PASSWORD
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import template
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .const import (
     API_PASSWORD,

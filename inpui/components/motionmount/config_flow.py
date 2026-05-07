@@ -9,15 +9,15 @@ from typing import Any
 import motionmount
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     DEFAULT_DISCOVERY_UNIQUE_ID,
     SOURCE_REAUTH,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PIN, CONF_PORT, CONF_UUID
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PIN, CONF_PORT, CONF_UUID
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, EMPTY_MAC
 

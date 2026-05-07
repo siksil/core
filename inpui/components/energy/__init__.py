@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components import frontend
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import frontend
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 from . import websocket_api
 from .const import DOMAIN

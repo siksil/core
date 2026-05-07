@@ -6,21 +6,21 @@ import pypck
 from pypck.device import DeviceConnection
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_BRIGHTNESS,
     CONF_DEVICE_ID,
     CONF_STATE,
     CONF_UNIT_OF_MEASUREMENT,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import (
     CONF_KEYS,

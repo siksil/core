@@ -14,14 +14,14 @@ from cookidoo_api import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
+from inpui.helpers.selector import (
     CountrySelector,
     CountrySelectorConfig,
     LanguageSelector,

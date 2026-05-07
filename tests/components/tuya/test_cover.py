@@ -9,7 +9,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     ATTR_TILT_POSITION,
@@ -20,16 +20,16 @@ from homeassistant.components.cover import (
     SERVICE_SET_COVER_TILT_POSITION,
     SERVICE_STOP_COVER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_CLOSED,
     STATE_OPEN,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceNotSupported
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceNotSupported
+from inpui.helpers import entity_registry as er
 
 from . import initialize_entry
 

@@ -1,10 +1,10 @@
 """Provides triggers for switch platform."""
 
-from homeassistant.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import Trigger, make_entity_target_state_trigger
+from inpui.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import Trigger, make_entity_target_state_trigger
 
 from .const import DOMAIN
 

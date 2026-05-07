@@ -8,13 +8,13 @@ import pytest
 from subarulink.exceptions import InvalidCredentials, InvalidPIN, SubaruException
 
 from homeassistant import config_entries
-from homeassistant.components.subaru import config_flow
-from homeassistant.components.subaru.const import CONF_UPDATE_ENABLED, DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_DEVICE_ID, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.subaru import config_flow
+from inpui.components.subaru.const import CONF_UPDATE_ENABLED, DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_DEVICE_ID, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from .conftest import (
     MOCK_API_2FA_CONTACTS,

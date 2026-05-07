@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
 
 from . import BackblazeConfigEntry
 from .const import CONF_APPLICATION_KEY, CONF_KEY_ID

@@ -4,17 +4,17 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY as CLIMATE_ATTR_CURRENT_HUMIDITY,
     HVACMode,
 )
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_CURRENT_HUMIDITY as HUMIDIFIER_ATTR_CURRENT_HUMIDITY,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.weather import ATTR_WEATHER_HUMIDITY
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.weather import ATTR_WEATHER_HUMIDITY
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

@@ -11,15 +11,15 @@ from decora_wifi.models.person import Person
 from decora_wifi.models.residence import Residence
 from decora_wifi.models.residential_account import ResidentialAccount
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_PASSWORD,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 PLATFORMS = [Platform.LIGHT]
 
@@ -78,7 +78,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: DecoraWifiConfigEntry) -
         with suppress(ValueError):
             await hass.async_add_executor_job(Person.logout, data.session)
 
-    entry.async_on_unload(hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _logout))
+    entry.async_on_unload(hass.bus.async_listen_once(EVENT_INPUI_STOP, _logout))
     entry.async_on_unload(_logout)
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

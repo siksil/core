@@ -6,16 +6,16 @@ from awesomeversion.exceptions import AwesomeVersionStrategyException
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.repairs import repairs_flow_manager
-from homeassistant.components.repairs.const import DOMAIN
-from homeassistant.components.repairs.issue_handler import (
+from inpui.components.repairs import repairs_flow_manager
+from inpui.components.repairs.const import DOMAIN
+from inpui.components.repairs.issue_handler import (
     RepairsFlowManager,
     async_process_repairs_platforms,
 )
-from homeassistant.const import __version__ as ha_version
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.const import __version__ as ha_version
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import mock_platform
 from tests.typing import WebSocketGenerator

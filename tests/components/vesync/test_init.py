@@ -10,15 +10,15 @@ from pyvesync.utils.errors import (
     VeSyncServerError,
 )
 
-from homeassistant.components.vesync import (
+from inpui.components.vesync import (
     async_remove_config_entry_device,
     async_setup_entry,
 )
-from homeassistant.components.vesync.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.vesync.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

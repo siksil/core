@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from aio_ownet.exceptions import OWServerConnectionError
 import pytest
 
-from homeassistant.components.onewire.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.onewire.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .const import MOCK_OWPROXY_DEVICES
 

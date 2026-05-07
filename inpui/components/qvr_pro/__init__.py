@@ -7,17 +7,17 @@ from pyqvrpro.client import AuthenticationError, InsufficientPermissionsError
 from requests.exceptions import ConnectionError as RequestsConnectionError
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_EXCLUDE_CHANNELS,

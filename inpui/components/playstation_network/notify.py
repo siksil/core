@@ -13,16 +13,16 @@ from psnawp_api.core.psnawp_exceptions import (
 )
 from psnawp_api.models.group.group import Group
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     DOMAIN as NOTIFY_DOMAIN,
     NotifyEntity,
     NotifyEntityDescription,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import (

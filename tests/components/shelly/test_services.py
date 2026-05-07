@@ -5,16 +5,16 @@ from unittest.mock import Mock
 from aioshelly.exceptions import DeviceConnectionError, RpcCallError
 import pytest
 
-from homeassistant.components.shelly.const import ATTR_KEY, ATTR_VALUE, DOMAIN
-from homeassistant.components.shelly.services import (
+from inpui.components.shelly.const import ATTR_KEY, ATTR_VALUE, DOMAIN
+from inpui.components.shelly.services import (
     SERVICE_GET_KVS_VALUE,
     SERVICE_SET_KVS_VALUE,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from . import init_integration
 

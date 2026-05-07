@@ -8,11 +8,11 @@ import uuid
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.const import CONF_ID, CONF_RESOURCES, CONF_TYPE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import collection, storage
+from inpui.components import websocket_api
+from inpui.const import CONF_ID, CONF_RESOURCES, CONF_TYPE
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import collection, storage
 
 from .const import (
     CONF_RESOURCE_TYPE_WS,

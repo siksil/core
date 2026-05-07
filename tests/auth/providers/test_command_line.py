@@ -7,10 +7,10 @@ import uuid
 import pytest
 
 from homeassistant import data_entry_flow
-from homeassistant.auth import AuthManager, auth_store, models as auth_models
-from homeassistant.auth.providers import command_line
-from homeassistant.const import CONF_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.auth import AuthManager, auth_store, models as auth_models
+from inpui.auth.providers import command_line
+from inpui.const import CONF_TYPE
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture

@@ -19,15 +19,15 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.husqvarna_automower.const import DOMAIN, OAUTH2_TOKEN
-from homeassistant.components.husqvarna_automower.coordinator import SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.husqvarna_automower.const import DOMAIN, OAUTH2_TOKEN
+from inpui.components.husqvarna_automower.coordinator import SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from . import setup_integration
 from .const import TEST_MOWER_ID

@@ -5,17 +5,17 @@ from datetime import timedelta
 from bond_async import Action, DeviceType
 import pytest
 
-from homeassistant.components.bond.const import DOMAIN
-from homeassistant.components.bond.services import (
+from inpui.components.bond.const import DOMAIN
+from inpui.components.bond.services import (
     ATTR_POWER_STATE,
     SERVICE_SET_POWER_TRACKED_STATE,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import utcnow
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import utcnow
 
 from .common import (
     help_test_entity_available,

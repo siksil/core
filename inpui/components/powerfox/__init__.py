@@ -11,10 +11,10 @@ from powerfox import (
     PowerfoxConnectionError,
 )
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 from .coordinator import (

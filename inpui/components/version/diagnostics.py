@@ -6,9 +6,9 @@ from typing import Any
 
 from attr import asdict
 
-from homeassistant.components.diagnostics import entity_entry_as_dict
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.diagnostics import entity_entry_as_dict
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .coordinator import VersionConfigEntry
 

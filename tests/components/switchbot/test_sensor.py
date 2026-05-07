@@ -4,14 +4,14 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.components.switchbot.const import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.components.switchbot.const import (
     CONF_ENCRYPTION_KEY,
     CONF_KEY_ID,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     CIRCULATOR_FAN_SERVICE_INFO,

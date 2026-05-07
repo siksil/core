@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.lovelace import _validate_url_slug
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.lovelace import _validate_url_slug
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, call
 
 from mysensors.sensor import Sensor
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import ATTR_BATTERY_LEVEL
-from homeassistant.core import HomeAssistant
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import ATTR_BATTERY_LEVEL
+from inpui.core import HomeAssistant
 
 
 async def test_relay_node(

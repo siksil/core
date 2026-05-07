@@ -7,21 +7,21 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import zone
-from homeassistant.components.device_tracker.legacy import Device
-from homeassistant.components.geofency import CONF_MOBILE_BEACONS, DOMAIN
-from homeassistant.const import (
+from inpui.components import zone
+from inpui.components.device_tracker.legacy import Device
+from inpui.components.geofency import CONF_MOBILE_BEACONS, DOMAIN
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     STATE_HOME,
     STATE_NOT_HOME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import slugify
 
 from tests.typing import ClientSessionGenerator
 

@@ -5,11 +5,11 @@ from __future__ import annotations
 import logging
 from typing import cast
 
-from homeassistant.components.number import NumberEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import SONOS_CREATE_LEVELS
 from .entity import SonosEntity

@@ -29,26 +29,26 @@ from aioesphomeapi import (
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components import assist_satellite, tts
-from homeassistant.components.assist_pipeline import (
+from inpui.components import assist_satellite, tts
+from inpui.components.assist_pipeline import (
     PipelineEvent,
     PipelineEventType,
     PipelineStage,
 )
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.components.intent import (
+from inpui.components.http import StaticPathConfig
+from inpui.components.intent import (
     TimerEventType,
     TimerInfo,
     async_register_timer_handler,
 )
-from homeassistant.components.media_player import async_process_play_media_url
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.singleton import singleton
-from homeassistant.util.hass_dict import HassKey
+from inpui.components.media_player import async_process_play_media_url
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.network import get_url
+from inpui.helpers.singleton import singleton
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN, WAKE_WORDS_API_PATH, WAKE_WORDS_DIR_NAME
 from .entity import EsphomeAssistEntity, convert_api_error_ha_error

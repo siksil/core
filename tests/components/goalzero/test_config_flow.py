@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from goalzero import exceptions
 
-from homeassistant.components.goalzero.const import DEFAULT_NAME, DOMAIN, MANUFACTURER
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.goalzero.const import DEFAULT_NAME, DOMAIN, MANUFACTURER
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     CONF_DATA,

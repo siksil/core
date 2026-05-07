@@ -14,13 +14,13 @@ from iottycloud.verbs import (
     OU_DEVICE_TYPE_UID,
 )
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .api import IottyProxy
 from .coordinator import IottyConfigEntry, IottyDataUpdateCoordinator

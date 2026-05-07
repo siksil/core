@@ -7,10 +7,10 @@ from typing import Any
 
 from livisi.const import CAPABILITY_MAP
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, LIVISI_REACHABILITY_CHANGE
 from .coordinator import LivisiConfigEntry, LivisiDataUpdateCoordinator

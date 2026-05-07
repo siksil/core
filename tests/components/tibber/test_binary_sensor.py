@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.recorder import Recorder
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import create_tibber_device
 

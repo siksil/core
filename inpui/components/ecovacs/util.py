@@ -7,8 +7,8 @@ import random
 import string
 from typing import TYPE_CHECKING
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant, callback
+from inpui.util import slugify
 
 from .entity import (
     EcovacsCapabilityEntityDescription,

@@ -12,20 +12,20 @@ from typing import Any, Final, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.components import device_automation
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.components.remote import DOMAIN as REMOTE_DOMAIN
-from homeassistant.components.valve import DOMAIN as VALVE_DOMAIN
-from homeassistant.config_entries import (
+from inpui.components import device_automation
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.components.remote import DOMAIN as REMOTE_DOMAIN
+from inpui.components.valve import DOMAIN as VALVE_DOMAIN
+from inpui.config_entries import (
     SOURCE_IMPORT,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     CONF_DEVICES,
     CONF_DOMAINS,
@@ -34,14 +34,14 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PORT,
 )
-from homeassistant.core import HomeAssistant, callback, split_entity_id
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback, split_entity_id
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     selector,
 )
-from homeassistant.loader import async_get_integrations
+from inpui.loader import async_get_integrations
 
 from .const import (
     CONF_ENTITY_CONFIG,

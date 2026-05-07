@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from APsystemsEZ1 import ReturnAlarmInfo, ReturnDeviceInfo, ReturnOutputData
 import pytest
 
-from homeassistant.components.apsystems.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS
+from inpui.components.apsystems.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS
 
 from tests.common import MockConfigEntry
 

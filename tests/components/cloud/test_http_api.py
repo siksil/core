@@ -24,27 +24,27 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from webrtc_models import RTCIceServer
 
-from homeassistant.components import system_health
-from homeassistant.components.alexa import errors as alexa_errors
+from inpui.components import system_health
+from inpui.components.alexa import errors as alexa_errors
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.alexa.entities import LightCapabilities
-from homeassistant.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.alexa.entities import LightCapabilities
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
     STORAGE_KEY,
 )
-from homeassistant.components.cloud.const import DEFAULT_EXPOSED_DOMAINS, DOMAIN
-from homeassistant.components.cloud.http_api import validate_language_voice
-from homeassistant.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.cloud.const import DEFAULT_EXPOSED_DOMAINS, DOMAIN
+from inpui.components.cloud.http_api import validate_language_voice
+from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
     GoogleEntity,
 )
-from homeassistant.components.homeassistant import exposed_entities
-from homeassistant.components.websocket_api import ERR_INVALID_FORMAT
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.loader import async_get_loaded_integration
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.location import LocationInfo
+from inpui.components.homeassistant import exposed_entities
+from inpui.components.websocket_api import ERR_INVALID_FORMAT
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.loader import async_get_loaded_integration
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.location import LocationInfo
 
 from tests.common import mock_platform
 from tests.components.google_assistant import MockConfig

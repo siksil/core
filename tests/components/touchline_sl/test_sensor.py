@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .conftest import make_mock_module, make_mock_zone
 

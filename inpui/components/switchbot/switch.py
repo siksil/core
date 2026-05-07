@@ -7,12 +7,12 @@ from typing import Any
 
 import switchbot
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import DOMAIN
 from .coordinator import SwitchbotConfigEntry, SwitchbotDataUpdateCoordinator

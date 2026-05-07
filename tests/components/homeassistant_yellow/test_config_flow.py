@@ -8,29 +8,29 @@ from aiohasupervisor.models import YellowOptions
 import pytest
 from universal_silabs_flasher.flasher import YellowFlasher
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     DOMAIN as HASSIO_DOMAIN,
     AddonInfo,
     AddonState,
 )
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     CONF_DISABLE_MULTI_PAN,
     get_flasher_addon_manager,
     get_multiprotocol_addon_manager,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.homeassistant_yellow.const import DOMAIN, RADIO_DEVICE
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant_yellow.const import DOMAIN, RADIO_DEVICE
+from inpui.config_entries import ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 

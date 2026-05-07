@@ -7,24 +7,24 @@ from unittest.mock import ANY, patch
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.climate import ATTR_MAX_TEMP, ATTR_MIN_TEMP, HVACMode
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.climate import ATTR_MAX_TEMP, ATTR_MIN_TEMP, HVACMode
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.demo.binary_sensor import DemoBinarySensor
+from inpui.components.demo.binary_sensor import DemoBinarySensor
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.demo.cover import DemoCover
+from inpui.components.demo.cover import DemoCover
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.demo.light import LIGHT_EFFECT_LIST, DemoLight
+from inpui.components.demo.light import LIGHT_EFFECT_LIST, DemoLight
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.demo.media_player import AbstractDemoPlayer
+from inpui.components.demo.media_player import AbstractDemoPlayer
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.demo.switch import DemoSwitch
-from homeassistant.components.google_assistant import (
+from inpui.components.demo.switch import DemoSwitch
+from inpui.components.google_assistant import (
     EVENT_COMMAND_RECEIVED,
     EVENT_QUERY_RECEIVED,
     EVENT_SYNC_RECEIVED,
@@ -32,23 +32,23 @@ from homeassistant.components.google_assistant import (
     smart_home as sh,
     trait,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     EVENT_CALL_SERVICE,
     Platform,
     UnitOfTemperature,
     __version__,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, State
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_platform,
     entity_registry as er,
 )
-from homeassistant.helpers.entity import EntityPlatformState
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity import EntityPlatformState
+from inpui.setup import async_setup_component
 
 from . import BASIC_CONFIG, MockConfig
 

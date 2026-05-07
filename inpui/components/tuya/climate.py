@@ -16,7 +16,7 @@ from tuya_device_handlers.helpers.homeassistant import (
 )
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     SWING_BOTH,
     SWING_HORIZONTAL,
     SWING_OFF,
@@ -27,10 +27,10 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TuyaConfigEntry
 from .const import TUYA_DISCOVERY_NEW, DeviceCategory

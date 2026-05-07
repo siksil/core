@@ -8,7 +8,7 @@ from typing import Any
 
 from pydaikin.daikin_base import Appliance
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
@@ -22,10 +22,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ATTR_INSIDE_TEMPERATURE,

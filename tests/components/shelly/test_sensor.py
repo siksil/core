@@ -9,19 +9,19 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_OPTIONS,
     ATTR_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.shelly.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.shelly.const import DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -38,10 +38,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.setup import async_setup_component
 
 from . import (
     MOCK_MAC,

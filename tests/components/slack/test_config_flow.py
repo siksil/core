@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.slack.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.slack.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import CONF_DATA, CONF_INPUT, TEAM_NAME, create_entry, mock_connection
 

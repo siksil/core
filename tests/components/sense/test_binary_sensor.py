@@ -5,12 +5,12 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.sense.const import ACTIVE_UPDATE_RATE
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.sense.const import ACTIVE_UPDATE_RATE
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.dt import utcnow
 
 from . import setup_platform
 from .const import DEVICE_1_NAME, DEVICE_2_NAME

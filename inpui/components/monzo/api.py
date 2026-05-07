@@ -3,7 +3,7 @@
 from aiohttp import ClientSession
 from monzopy import AbstractMonzoApi
 
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class AuthenticatedMonzoAPI(AbstractMonzoApi):

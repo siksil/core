@@ -5,12 +5,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import SERVICE_LOCK, SERVICE_UNLOCK
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import SERVICE_LOCK, SERVICE_UNLOCK
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DOMAIN, get_device_info
 from .const import (

@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.jellyfin.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.jellyfin.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import async_load_json_fixture
 

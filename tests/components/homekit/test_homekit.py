@@ -12,10 +12,10 @@ from pyhap.const import CATEGORY_CAMERA, CATEGORY_TELEVISION
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components import homekit as homekit_base, zeroconf
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.event import EventDeviceClass
-from homeassistant.components.homekit import (
+from inpui.components import homekit as homekit_base, zeroconf
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.event import EventDeviceClass
+from inpui.components.homekit import (
     MAX_DEVICES,
     STATUS_READY,
     STATUS_RUNNING,
@@ -24,8 +24,8 @@ from homeassistant.components.homekit import (
     TYPE_AIR_PURIFIER,
     HomeKit,
 )
-from homeassistant.components.homekit.accessories import HomeBridge
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.accessories import HomeBridge
+from inpui.components.homekit.const import (
     BRIDGE_NAME,
     BRIDGE_SERIAL_NUMBER,
     CONF_ADVERTISE_IP,
@@ -36,18 +36,18 @@ from homeassistant.components.homekit.const import (
     SERVICE_HOMEKIT_RESET_ACCESSORY,
     SERVICE_HOMEKIT_UNPAIR,
 )
-from homeassistant.components.homekit.models import HomeKitEntryData
-from homeassistant.components.homekit.type_triggers import DeviceTriggerAccessory
-from homeassistant.components.homekit.util import get_persist_fullpath_for_entry_id
-from homeassistant.components.light import (
+from inpui.components.homekit.models import HomeKitEntryData
+from inpui.components.homekit.type_triggers import DeviceTriggerAccessory
+from inpui.components.homekit.util import get_persist_fullpath_for_entry_id
+from inpui.components.light import (
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_ZEROCONF
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.switch import SwitchDeviceClass
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_ZEROCONF
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -55,21 +55,21 @@ from homeassistant.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONF_NAME,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     PERCENTAGE,
     SERVICE_RELOAD,
     STATE_ON,
     EntityCategory,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     instance_id,
 )
-from homeassistant.helpers.entityfilter import (
+from inpui.helpers.entityfilter import (
     CONF_EXCLUDE_DOMAINS,
     CONF_EXCLUDE_ENTITIES,
     CONF_EXCLUDE_ENTITY_GLOBS,
@@ -79,7 +79,7 @@ from homeassistant.helpers.entityfilter import (
     EntityFilter,
     convert_filter,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .util import PATH_HOMEKIT, async_init_entry, async_init_integration
 
@@ -205,7 +205,7 @@ async def test_setup_min(hass: HomeAssistant) -> None:
     )
 
     # Test auto start enabled
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert mock_homekit().async_start.called is True
 
@@ -250,7 +250,7 @@ async def test_removing_entry(port_mock, hass: HomeAssistant) -> None:
     )
 
     # Test auto start enabled
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert mock_homekit().async_start.called is True
 
@@ -1744,7 +1744,7 @@ async def test_yaml_updates_update_config_entry_for_name(hass: HomeAssistant) ->
 
     # Test auto start enabled
     mock_homekit.reset_mock()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     mock_homekit().async_start.assert_called()
@@ -1778,7 +1778,7 @@ async def test_yaml_can_link_with_default_name(hass: HomeAssistant) -> None:
         await hass.async_block_till_done()
 
     mock_homekit.reset_mock()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert entry.options["entity_config"]["camera.back_camera"]["stream_count"] == 3
 
@@ -1829,7 +1829,7 @@ async def test_yaml_can_link_with_port(hass: HomeAssistant) -> None:
         await hass.async_block_till_done()
 
     mock_homekit.reset_mock()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert entry.options["entity_config"]["camera.back_camera"]["stream_count"] == 3
     assert entry2.options == {}

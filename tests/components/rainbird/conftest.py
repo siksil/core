@@ -12,13 +12,13 @@ from unittest.mock import patch
 from pyrainbird import encryption
 import pytest
 
-from homeassistant.components.rainbird import DOMAIN
-from homeassistant.components.rainbird.const import (
+from inpui.components.rainbird import DOMAIN
+from inpui.components.rainbird.const import (
     ATTR_DURATION,
     DEFAULT_TRIGGER_TIME_MINUTES,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_CLOSE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import EVENT_INPUI_CLOSE, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker, AiohttpClientMockResponse
@@ -169,7 +169,7 @@ def aioclient_mock(hass: HomeAssistant) -> Generator[AiohttpClientMocker]:
             """Close session."""
             await session.close()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, close_session)
+        hass.bus.async_listen_once(EVENT_INPUI_CLOSE, close_session)
         return session
 
     with (

@@ -6,10 +6,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
-from homeassistant.core import HomeAssistant, callback
-import homeassistant.helpers.config_validation as cv
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
+from inpui.core import HomeAssistant, callback
+import inpui.helpers.config_validation as cv
 
 from .const import DATA_COMPONENT, VacuumEntityFeature
 

@@ -11,7 +11,7 @@ from electrasmart.api import STATUS_SUCCESS, Attributes, ElectraAPI, ElectraApiE
 from electrasmart.device import ElectraAirConditioner, OperationMode
 from electrasmart.device.const import MAX_TEMP, MIN_TEMP, Feature
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_HIGH,
     FAN_LOW,
@@ -24,11 +24,11 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElectraSmartConfigEntry
 from .const import (

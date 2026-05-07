@@ -8,8 +8,8 @@ from typing import Any
 from nhc.controller import NHCController
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
 
 from .const import DOMAIN
 

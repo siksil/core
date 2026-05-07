@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.compit.config_flow import CannotConnect, InvalidAuth
-from homeassistant.components.compit.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.compit.config_flow import CannotConnect, InvalidAuth
+from inpui.components.compit.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .consts import CONFIG_INPUT
 

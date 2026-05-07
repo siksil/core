@@ -9,7 +9,7 @@ from motionblindsble.const import MotionBlindType
 from motionblindsble.crypt import MotionCrypt
 from motionblindsble.device import MotionDevice
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothCallbackMatcher,
     BluetoothChange,
     BluetoothScanningMode,
@@ -17,12 +17,12 @@ from homeassistant.components.bluetooth import (
     async_ble_device_from_address,
     async_register_callback,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_BLIND_TYPE,

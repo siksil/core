@@ -1,6 +1,6 @@
 """Constants and mock for the twinkly component tests."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

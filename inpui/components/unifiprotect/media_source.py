@@ -13,18 +13,18 @@ from uiprotect.exceptions import NvrError
 from uiprotect.utils import from_js_time
 from yarl import URL
 
-from homeassistant.components.camera import CameraImageView
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.camera import CameraImageView
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .data import ProtectData, async_get_ufp_entries

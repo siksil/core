@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.workday.const import CONF_REMOVE_HOLIDAYS, DOMAIN
-from homeassistant.const import CONF_COUNTRY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.workday.const import CONF_REMOVE_HOLIDAYS, DOMAIN
+from inpui.const import CONF_COUNTRY
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import (
     TEST_CONFIG_INCORRECT_COUNTRY,

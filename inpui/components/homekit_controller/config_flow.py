@@ -19,22 +19,22 @@ from aiohomekit.model.status_flags import StatusFlags
 from aiohomekit.utils import domain_supported, domain_to_name, serialize_broadcast_key
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .const import DOMAIN, KNOWN_DEVICES
 from .storage import async_get_entity_storage
 from .utils import async_get_controller
 
 if TYPE_CHECKING:
-    from homeassistant.components import bluetooth
+    from inpui.components import bluetooth
 
 
 HOMEKIT_DIR = ".homekit"

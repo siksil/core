@@ -10,16 +10,16 @@ from google_photos_library_api.exceptions import GooglePhotosApiError
 from google_photos_library_api.model import NewMediaItem, SimpleMediaItem
 import voluptuous as vol
 
-from homeassistant.const import CONF_FILENAME
-from homeassistant.core import (
+from inpui.const import CONF_FILENAME
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, service
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN, UPLOAD_SCOPE
 from .coordinator import GooglePhotosConfigEntry

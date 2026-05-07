@@ -5,16 +5,16 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.dwd_weather_warnings.const import (
+from inpui.components.dwd_weather_warnings.const import (
     CONF_REGION_DEVICE_TRACKER,
     CONF_REGION_IDENTIFIER,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import SOURCE_USER
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

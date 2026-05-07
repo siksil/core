@@ -8,11 +8,11 @@ from typing import Final
 from holidays import HolidayBase
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant, SupportsResponse
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant, SupportsResponse
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

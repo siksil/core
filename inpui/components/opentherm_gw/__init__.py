@@ -7,19 +7,19 @@ from pyotgw import OpenThermGateway
 import pyotgw.vars as gw_vars
 from serial import SerialException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE,
     CONF_ID,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_TEMPORARY_OVRD_MODE,
@@ -152,7 +152,7 @@ class OpenThermGatewayHub:
             translation_key="thermostat_device",
         )
 
-        self.hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, self.cleanup)
+        self.hass.bus.async_listen(EVENT_INPUI_STOP, self.cleanup)
 
         async def handle_report(status):
             """Handle reports from the OpenTherm Gateway."""

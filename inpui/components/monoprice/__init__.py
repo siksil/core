@@ -8,10 +8,10 @@ import logging
 from pymonoprice import Monoprice, get_monoprice
 from serial import SerialException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import CONF_NOT_FIRST_RUN
 

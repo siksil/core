@@ -6,12 +6,12 @@ import time
 import pytest
 from thermopro_ble import ThermoProDevice
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import TP357_SERVICE_INFO, TP358_SERVICE_INFO
 

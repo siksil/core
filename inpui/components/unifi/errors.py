@@ -1,6 +1,6 @@
 """Errors for the UniFi Network integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class UnifiException(HomeAssistantError):

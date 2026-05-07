@@ -11,12 +11,12 @@ from smart_meter_texas.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import aiohttp_client
-from homeassistant.util.ssl import get_default_context
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import aiohttp_client
+from inpui.util.ssl import get_default_context
 
 from .const import DOMAIN
 

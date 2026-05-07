@@ -4,26 +4,26 @@ from __future__ import annotations
 
 from pyvlx import PyVLX, PyVLXException
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.exceptions import (
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     issue_registry as ir,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, LOGGER, PLATFORMS
 
@@ -133,7 +133,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: VeluxConfigEntry) -> boo
         await pyvlx.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, on_hass_stop)
     )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

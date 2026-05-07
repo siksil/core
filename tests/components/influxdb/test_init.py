@@ -10,13 +10,13 @@ from unittest.mock import ANY, MagicMock, Mock, call, patch
 
 import pytest
 
-from homeassistant.components import influxdb
-from homeassistant.components.influxdb.const import DEFAULT_BUCKET, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import PERCENTAGE, STATE_OFF, STATE_ON, STATE_STANDBY
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components import influxdb
+from inpui.components.influxdb.const import DEFAULT_BUCKET, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import PERCENTAGE, STATE_OFF, STATE_ON, STATE_STANDBY
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import (
     BASE_OPTIONS,

@@ -8,12 +8,12 @@ from arcam.fmj.state import State
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.arcam_fmj.media_player import ArcamFmj
-from homeassistant.components.homeassistant import (
+from inpui.components.arcam_fmj.media_player import ArcamFmj
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ARTIST,
     ATTR_MEDIA_CHANNEL,
@@ -33,10 +33,10 @@ from homeassistant.components.media_player import (
     SERVICE_VOLUME_UP,
     MediaType,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant, State as CoreState
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant, State as CoreState
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_ENTITY_ID
 

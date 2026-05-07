@@ -7,10 +7,10 @@ from knocki import Event, EventType, Trigger, TriggerDetails
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.knocki.const import DOMAIN
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.knocki.const import DOMAIN
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

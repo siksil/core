@@ -5,12 +5,12 @@ from unittest.mock import patch
 from pyoctoprintapi import OctoprintPrinterInfo
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.octoprint import OctoprintDataUpdateCoordinator
-from homeassistant.components.octoprint.button import InvalidPrinterState
-from homeassistant.components.octoprint.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.octoprint import OctoprintDataUpdateCoordinator
+from inpui.components.octoprint.button import InvalidPrinterState
+from inpui.components.octoprint.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture

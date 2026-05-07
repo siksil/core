@@ -6,15 +6,15 @@ from unittest.mock import MagicMock
 from pymta import MTAFeedError
 import pytest
 
-from homeassistant.components.mta.const import (
+from inpui.components.mta.const import (
     CONF_LINE,
     CONF_STOP_ID,
     CONF_STOP_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState, ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState, ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

@@ -14,8 +14,8 @@ from pyairvisual.node import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
 
 from .const import DOMAIN, LOGGER
 

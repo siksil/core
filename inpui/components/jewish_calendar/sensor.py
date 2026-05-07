@@ -11,15 +11,15 @@ from hdate import HDateInfo, Zmanim
 from hdate.holidays import HolidayDatabase
 from hdate.parasha import Parasha
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.util.dt as dt_util
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.util.dt as dt_util
 
 from .entity import JewishCalendarConfigEntry, JewishCalendarEntity
 

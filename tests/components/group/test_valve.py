@@ -7,14 +7,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.group.valve import DEFAULT_NAME
-from homeassistant.components.valve import (
+from inpui.components.group.valve import DEFAULT_NAME
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as VALVE_DOMAIN,
     ValveState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -29,10 +29,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

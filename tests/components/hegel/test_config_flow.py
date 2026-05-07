@@ -2,12 +2,12 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.hegel.const import CONF_MODEL, DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.components.hegel.const import CONF_MODEL, DOMAIN
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .const import TEST_HOST, TEST_MODEL, TEST_UDN
 

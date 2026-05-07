@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock, patch
 
-from homeassistant.components.iotty.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.iotty.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

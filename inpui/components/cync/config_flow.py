@@ -10,9 +10,9 @@ from pycync import Auth
 from pycync.exceptions import AuthFailedError, CyncError, TwoFactorRequiredError
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     CONF_AUTHORIZE_STRING,

@@ -8,8 +8,8 @@ from typing import Any
 
 from pysmartthings import DeviceEvent
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from . import SmartThingsConfigEntry
 from .const import DOMAIN

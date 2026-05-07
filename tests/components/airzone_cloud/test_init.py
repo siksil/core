@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from aioairzone_cloud.exceptions import AirzoneTimeout
 
-from homeassistant.components.airzone_cloud.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.airzone_cloud.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .util import CONFIG
 

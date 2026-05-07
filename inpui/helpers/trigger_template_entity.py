@@ -9,17 +9,17 @@ from typing import Any
 import jinja2
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA,
     STATE_CLASSES_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
 )
-from homeassistant.components.sensor.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.helpers import (  # pylint: disable=hass-component-root-import
     async_parse_date_datetime,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -29,9 +29,9 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_UNIT_OF_MEASUREMENT,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import TemplateError
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import TemplateError
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads
 
 from . import config_validation as cv
 from .entity import Entity

@@ -2,9 +2,9 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.hdfury import PLATFORMS
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.components.hdfury import PLATFORMS
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration
 

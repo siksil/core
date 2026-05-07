@@ -2,8 +2,8 @@
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, CONF_LANGUAGE, CONF_MODE
-from homeassistant.helpers.selector import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID, CONF_LANGUAGE, CONF_MODE
+from inpui.helpers.selector import (
     ConfigEntrySelector,
     SelectSelector,
     SelectSelectorConfig,

@@ -11,16 +11,16 @@ from typing import Any
 from pyControl4.error_handling import C4Exception
 from pyControl4.room import C4Room
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from . import Control4ConfigEntry, Control4RuntimeData
 from .director_utils import update_variables_for_config_entry

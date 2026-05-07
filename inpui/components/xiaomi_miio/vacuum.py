@@ -8,16 +8,16 @@ from typing import Any
 
 from miio import DeviceException
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.const import CONF_DEVICE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.dt import as_utc
+from inpui.const import CONF_DEVICE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.dt import as_utc
 
 from . import VacuumCoordinatorData
 from .const import CONF_FLOW_TYPE

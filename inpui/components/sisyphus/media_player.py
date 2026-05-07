@@ -5,16 +5,16 @@ from __future__ import annotations
 import aiohttp
 from sisyphus_control import Track
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DATA_SISYPHUS
 

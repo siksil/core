@@ -4,8 +4,8 @@ from datetime import datetime
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import DEFAULT_CHARGE_POINT, init_integration
 

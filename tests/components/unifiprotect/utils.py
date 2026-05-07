@@ -21,11 +21,11 @@ from uiprotect.data.bootstrap import ProtectDeviceRef
 from uiprotect.test_util.anonymize import random_hex
 from uiprotect.websocket import WebsocketState
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import entity_registry as er, translation
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.util import dt as dt_util
+from inpui.const import Platform
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import entity_registry as er, translation
+from inpui.helpers.entity import EntityDescription
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

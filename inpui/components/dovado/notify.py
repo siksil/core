@@ -5,9 +5,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.notify import ATTR_TARGET, BaseNotificationService
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.notify import ATTR_TARGET, BaseNotificationService
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN
 

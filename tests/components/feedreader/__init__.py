@@ -3,9 +3,9 @@
 from typing import Any
 from unittest.mock import patch
 
-from homeassistant.components.feedreader.const import CONF_MAX_ENTRIES, DOMAIN
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.feedreader.const import CONF_MAX_ENTRIES, DOMAIN
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock
 from pysyncthru import SyncThruAPINotSupported
 
 from homeassistant import config_entries
-from homeassistant.components.syncthru.const import DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_NAME, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.syncthru.const import DOMAIN
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_NAME, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_PRESENTATION_URL,

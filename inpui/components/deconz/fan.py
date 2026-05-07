@@ -7,14 +7,14 @@ from typing import Any
 from pydeconz.models.event import EventType
 from pydeconz.models.light.light import Light, LightFanSpeed
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     DOMAIN as FAN_DOMAIN,
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

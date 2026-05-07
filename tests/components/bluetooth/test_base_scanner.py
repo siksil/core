@@ -11,26 +11,26 @@ from unittest.mock import patch
 from habluetooth.advertisement_tracker import TRACKER_BUFFERING_WOBBLE_SECONDS
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     BaseHaRemoteScanner,
     HaBluetoothConnector,
     storage,
 )
-from homeassistant.components.bluetooth.const import (
+from inpui.components.bluetooth.const import (
     CONNECTABLE_FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     SCANNER_WATCHDOG_INTERVAL,
     SCANNER_WATCHDOG_TIMEOUT,
     UNAVAILABLE_TRACK_SECONDS,
 )
-from homeassistant.components.bluetooth.manager import HomeAssistantBluetoothManager
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import json_loads
+from inpui.components.bluetooth.manager import HomeAssistantBluetoothManager
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.json import json_loads
 
 from . import (
     FakeRemoteScanner as FakeScanner,

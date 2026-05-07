@@ -32,18 +32,18 @@ from zigpy.exceptions import (
 import zigpy.types
 
 from homeassistant import config_entries
-from homeassistant.components.hassio import AddonError, AddonState
-from homeassistant.components.usb import USBDevice
-from homeassistant.components.zha import config_flow, radio_manager
-from homeassistant.components.zha.const import (
+from inpui.components.hassio import AddonError, AddonState
+from inpui.components.usb import USBDevice
+from inpui.components.zha import config_flow, radio_manager
+from inpui.components.zha.const import (
     CONF_BAUDRATE,
     CONF_FLOW_CONTROL,
     CONF_RADIO_TYPE,
     DOMAIN,
     EZSP_OVERWRITE_EUI64,
 )
-from homeassistant.components.zha.radio_manager import ProbeResult, ZhaRadioManager
-from homeassistant.config_entries import (
+from inpui.components.zha.radio_manager import ProbeResult, ZhaRadioManager
+from inpui.config_entries import (
     SOURCE_SSDP,
     SOURCE_USB,
     SOURCE_USER,
@@ -52,17 +52,17 @@ from homeassistant.config_entries import (
     ConfigEntryState,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER_URL,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

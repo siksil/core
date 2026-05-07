@@ -10,9 +10,9 @@ from whois.exceptions import (
     WhoisCommandFailed,
 )
 
-from homeassistant.components.whois.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.whois.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

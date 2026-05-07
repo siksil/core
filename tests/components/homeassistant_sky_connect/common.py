@@ -1,6 +1,6 @@
 """Common constants for the SkyConnect integration tests."""
 
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 USB_DATA_SKY = UsbServiceInfo(
     device="/dev/serial/by-id/usb-Nabu_Casa_SkyConnect_v1.0_9e2adbd75b8beb119fe564a0f320645d-if00-port0",

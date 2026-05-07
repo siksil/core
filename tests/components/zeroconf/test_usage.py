@@ -7,10 +7,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.zeroconf import async_get_instance
-from homeassistant.components.zeroconf.usage import install_multiple_zeroconf_catcher
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zeroconf import async_get_instance
+from inpui.components.zeroconf.usage import install_multiple_zeroconf_catcher
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import extract_stack_to_frame
 

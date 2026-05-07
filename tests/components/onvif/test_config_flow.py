@@ -6,13 +6,13 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.onvif import DOMAIN, config_flow
-from homeassistant.config_entries import SOURCE_DHCP
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.onvif import DOMAIN, config_flow
+from inpui.config_entries import SOURCE_DHCP
+from inpui.const import CONF_HOST, CONF_NAME, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import (
     HOST,

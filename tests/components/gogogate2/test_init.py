@@ -4,16 +4,16 @@ from unittest.mock import MagicMock, patch
 
 from ismartgate import GogoGate2Api
 
-from homeassistant.components.gogogate2 import DEVICE_TYPE_GOGOGATE2
-from homeassistant.components.gogogate2.const import DEVICE_TYPE_ISMARTGATE, DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.gogogate2 import DEVICE_TYPE_GOGOGATE2
+from inpui.components.gogogate2.const import DEVICE_TYPE_ISMARTGATE, DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import (
     CONF_DEVICE,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -7,11 +7,11 @@ from typing import Any
 from tuya_device_handlers.device_wrapper import DEVICE_WARNINGS
 from tuya_sharing import CustomerDevice
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.util import dt as dt_util
+from inpui.components.diagnostics import REDACTED
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.util import dt as dt_util
 
 from . import TuyaConfigEntry
 from .const import DOMAIN, DPCode

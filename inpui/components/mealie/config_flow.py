@@ -6,10 +6,10 @@ from typing import Any
 from aiomealie import MealieAuthenticationError, MealieClient, MealieConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_PORT, CONF_VERIFY_SSL
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN, CONF_HOST, CONF_PORT, CONF_VERIFY_SSL
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from .const import DOMAIN, LOGGER, MIN_REQUIRED_MEALIE_VERSION
 from .utils import create_version

@@ -7,10 +7,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.camera import CameraState
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.const import ATTR_ASSUMED_STATE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.camera import CameraState
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.const import ATTR_ASSUMED_STATE, Platform
+from inpui.core import HomeAssistant
 
 from .test_common import (
     DEFAULT_CONFIG,

@@ -9,15 +9,15 @@ from enum import StrEnum
 from bring_api import BringList, BringUserSettingsResponse
 from bring_api.const import BRING_SUPPORTED_LOCALES
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .coordinator import BringConfigEntry, BringData, BringDataUpdateCoordinator
 from .entity import BringBaseEntity

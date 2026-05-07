@@ -6,8 +6,8 @@ import logging
 from openwebif.api import OpenWebIfDevice, OpenWebIfStatus
 from yarl import URL
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     CONF_HOST,
@@ -17,15 +17,15 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.device_registry import (
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.entity_component import DEFAULT_SCAN_INTERVAL
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.helpers.entity_component import DEFAULT_SCAN_INTERVAL
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_SOURCE_BOUQUET, DOMAIN
 

@@ -12,14 +12,14 @@ from bring_api import (
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.bring.const import DOMAIN
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntryDisabler,
     ConfigEntryState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import UUID
 

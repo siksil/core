@@ -10,13 +10,13 @@ from bthome_ble import BTHomeBluetoothDeviceData as DeviceData
 from bthome_ble.parser import EncryptionScheme
 import voluptuous as vol
 
-from homeassistant.components import onboarding
-from homeassistant.components.bluetooth import (
+from inpui.components import onboarding
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
 
 from .const import DOMAIN
 

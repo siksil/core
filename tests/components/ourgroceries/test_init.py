@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.ourgroceries import ClientError, InvalidLoginException
-from homeassistant.components.ourgroceries.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.ourgroceries import ClientError, InvalidLoginException
+from inpui.components.ourgroceries.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

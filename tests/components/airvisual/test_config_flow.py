@@ -11,17 +11,17 @@ from pyairvisual.cloud_api import (
 from pyairvisual.errors import AirVisualError
 import pytest
 
-from homeassistant.components.airvisual import (
+from inpui.components.airvisual import (
     CONF_CITY,
     CONF_INTEGRATION_TYPE,
     DOMAIN,
     INTEGRATION_TYPE_GEOGRAPHY_COORDS,
     INTEGRATION_TYPE_GEOGRAPHY_NAME,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     COORDS_CONFIG,

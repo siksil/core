@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 from tesla_fleet_api.exceptions import TeslaFleetError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .common import ERROR_AUTH, ERROR_CONNECTION, ERROR_UNKNOWN, setup_platform
 

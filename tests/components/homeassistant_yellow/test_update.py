@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_notify_firmware_info,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.homeassistant_yellow.const import RADIO_DEVICE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant_yellow.const import RADIO_DEVICE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

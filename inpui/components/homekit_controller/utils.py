@@ -5,9 +5,9 @@ from typing import cast
 
 from aiohomekit import Controller
 
-from homeassistant.components import bluetooth, zeroconf
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
+from inpui.components import bluetooth, zeroconf
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
 
 from .const import CONTROLLER
 from .storage import async_get_entity_storage
@@ -77,7 +77,7 @@ async def async_get_controller(hass: HomeAssistant) -> Controller:
 
     # Right now _async_stop_homekit_controller is only called on HA exiting
     # So we don't have to worry about leaking a callback here.
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop_homekit_controller)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop_homekit_controller)
 
     await controller.async_start()
 

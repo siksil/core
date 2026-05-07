@@ -7,9 +7,9 @@ import logging
 
 from pyopenweathermap import create_owm_client
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE
+from inpui.core import HomeAssistant
 
 from .const import CONFIG_FLOW_VERSION, DEFAULT_OWM_MODE, OWM_MODES, PLATFORMS
 from .coordinator import OWMUpdateCoordinator, get_owm_update_coordinator

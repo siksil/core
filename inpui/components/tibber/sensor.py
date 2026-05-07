@@ -11,15 +11,15 @@ import aiohttp
 from tibber import FatalHttpExceptionError, RetryableHttpExceptionError, TibberHome
 from tibber.data_api import TibberDevice
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
+    EVENT_INPUI_STOP,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS,
     EntityCategory,
@@ -30,17 +30,17 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTemperature,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, MANUFACTURER, TibberConfigEntry
 from .coordinator import (
@@ -1004,7 +1004,7 @@ class TibberRtDataCoordinator(DataUpdateCoordinator):  # pylint: disable=hass-en
         self._async_remove_device_updates_handler = self.async_add_listener(
             self._data_updated
         )
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._handle_ha_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, self._handle_ha_stop)
 
     @callback
     def _handle_ha_stop(self, _event: Event) -> None:

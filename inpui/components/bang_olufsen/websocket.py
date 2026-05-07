@@ -21,11 +21,11 @@ from mozart_api.models import (
 )
 from mozart_api.mozart_client import BaseWebSocketResponse, MozartClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.enum import try_parse_enum
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.enum import try_parse_enum
 
 from .const import (
     BEO_WEBSOCKET_EVENT,

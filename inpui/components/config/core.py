@@ -7,13 +7,13 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.components.sensor import async_update_suggested_units
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import check_config, config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util import location as location_util, unit_system
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.components.sensor import async_update_suggested_units
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import check_config, config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util import location as location_util, unit_system
 
 
 @callback

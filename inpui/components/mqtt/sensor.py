@@ -8,8 +8,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import sensor
-from homeassistant.components.sensor import (
+from inpui.components import sensor
+from inpui.components.sensor import (
     AMBIGUOUS_UNITS,
     CONF_STATE_CLASS,
     DEVICE_CLASS_UNITS,
@@ -22,8 +22,8 @@ from homeassistant.components.sensor import (
     SensorExtraStoredData,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_FORCE_UPDATE,
     CONF_NAME,
@@ -32,13 +32,13 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, State, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, HomeAssistant, State, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util import dt as dt_util
 
 from . import subscription
 from .config import MQTT_RO_SCHEMA

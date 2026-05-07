@@ -15,7 +15,7 @@ from typing import Any
 from aiohttp import web
 
 from homeassistant import core
-from homeassistant.components import (
+from inpui.components import (
     climate,
     cover,
     fan,
@@ -25,19 +25,19 @@ from homeassistant.components import (
     scene,
     script,
 )
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     SERVICE_SET_TEMPERATURE,
     ClimateEntityFeature,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     CoverEntityFeature,
 )
-from homeassistant.components.fan import ATTR_PERCENTAGE, FanEntityFeature
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.humidifier import ATTR_HUMIDITY, SERVICE_SET_HUMIDITY
-from homeassistant.components.light import (
+from inpui.components.fan import ATTR_PERCENTAGE, FanEntityFeature
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.humidifier import ATTR_HUMIDITY, SERVICE_SET_HUMIDITY
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_HS_COLOR,
@@ -46,11 +46,11 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_VOLUME_LEVEL,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
@@ -65,11 +65,11 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Event, EventStateChangedData, State
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.util import color as color_util
-from homeassistant.util.json import json_loads
-from homeassistant.util.network import is_local
+from inpui.core import Event, EventStateChangedData, State
+from inpui.helpers.event import async_track_state_change_event
+from inpui.util import color as color_util
+from inpui.util.json import json_loads
+from inpui.util.network import is_local
 
 from .config import Config
 

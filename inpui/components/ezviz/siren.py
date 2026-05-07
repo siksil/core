@@ -8,17 +8,17 @@ from typing import Any
 
 from pyezvizapi import HTTPError, PyEzvizError, SupportExt
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     SirenEntity,
     SirenEntityDescription,
     SirenEntityFeature,
 )
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import event as evt
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import event as evt
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .coordinator import EzvizConfigEntry, EzvizDataUpdateCoordinator
 from .entity import EzvizBaseEntity

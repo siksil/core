@@ -6,19 +6,19 @@ from typing import Any
 
 from wakeonlan import send_magic_packet
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     CONF_HOST,
     CONF_MAC,
     CONF_MODEL,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.trigger import PluggableAction
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.trigger import PluggableAction
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_MANUFACTURER, DOMAIN, LOGGER
 from .coordinator import SamsungTVDataUpdateCoordinator

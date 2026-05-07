@@ -6,13 +6,13 @@ from typing import Any, cast
 from aiohomeconnect.model import OptionKey, SettingKey
 from aiohomeconnect.model.error import HomeConnectError
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .common import setup_home_connect_entry, should_add_option_entity
 from .const import BSH_POWER_OFF, BSH_POWER_ON, BSH_POWER_STANDBY, DOMAIN

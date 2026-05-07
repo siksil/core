@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, patch
 from airpatrol.api import AirPatrolAPI
 import pytest
 
-from homeassistant.components.airpatrol.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.airpatrol.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

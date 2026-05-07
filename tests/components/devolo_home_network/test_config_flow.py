@@ -9,14 +9,14 @@ from devolo_plc_api.exceptions.device import DeviceNotFound, DevicePasswordProte
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.devolo_home_network.const import (
+from inpui.components.devolo_home_network.const import (
     DOMAIN,
     SERIAL_NUMBER,
     TITLE,
 )
-from homeassistant.const import CONF_BASE, CONF_IP_ADDRESS, CONF_NAME, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_BASE, CONF_IP_ADDRESS, CONF_NAME, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import configure_integration
 from .const import (

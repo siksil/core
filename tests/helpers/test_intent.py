@@ -6,15 +6,15 @@ from unittest.mock import MagicMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import light, switch
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.const import (
+from inpui.components import light, switch
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, State
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
@@ -22,7 +22,7 @@ from homeassistant.helpers import (
     floor_registry as fr,
     intent,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_mock_service
 

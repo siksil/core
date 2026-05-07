@@ -8,9 +8,9 @@ import logging
 from aiohue import HueBridgeV1, HueBridgeV2
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service import verify_domain_control
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service import verify_domain_control
 
 from .bridge import HueBridge, HueConfigEntry
 from .const import (

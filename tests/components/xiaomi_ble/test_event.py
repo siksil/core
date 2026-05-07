@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.components.xiaomi_ble.const import DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.components.xiaomi_ble.const import DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import make_advertisement
 

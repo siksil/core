@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 from pyfido.client import PyFidoError
 import pytest
 
-from homeassistant.components.fido import sensor as fido
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.fido import sensor as fido
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 

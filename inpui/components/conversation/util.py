@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import intent, llm
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import intent, llm
 
 from .chat_log import AssistantContent, ChatLog, ToolResultContent
 from .models import ConversationInput, ConversationResult

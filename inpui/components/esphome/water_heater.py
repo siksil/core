@@ -13,12 +13,12 @@ from aioesphomeapi import (
     WaterHeaterState,
 )
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
-from homeassistant.core import callback
+from inpui.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
+from inpui.core import callback
 
 from .entity import (
     EsphomeEntity,

@@ -1,8 +1,8 @@
 """Test schlage sensor."""
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
 
 from . import MockSchlageConfigEntry
 

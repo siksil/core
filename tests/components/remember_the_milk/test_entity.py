@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, call
 import pytest
 from rtmapi import RtmRequestFailedException
 
-from homeassistant.components.remember_the_milk import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.remember_the_milk import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import CONFIG, PROFILE
 

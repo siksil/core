@@ -7,26 +7,26 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import (
+from inpui.components import (
     device_sun_light_trigger,
     device_tracker,
     group,
     light,
 )
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.const import (
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PLATFORM,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_HOME,
     STATE_NOT_HOME,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import CoreState, HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, setup_test_component_platform
 from tests.components.device_tracker.common import MockScanner
@@ -270,7 +270,7 @@ async def test_initialize_start(hass: HomeAssistant) -> None:
     with patch(
         "homeassistant.components.device_sun_light_trigger.activate_automation"
     ) as mock_activate:
-        hass.bus.fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         await hass.async_block_till_done()
 

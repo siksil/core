@@ -19,7 +19,7 @@ from wiim.models import (
 )
 from wiim.wiim_device import WiimDevice
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ALBUM_NAME,
     ATTR_MEDIA_CONTENT_ID,
@@ -49,8 +49,8 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from . import fire_general_update, fire_transport_update, setup_integration
 

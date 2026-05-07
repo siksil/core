@@ -8,11 +8,11 @@ from typing import Any
 import pypca
 from serial import SerialException
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import SwitchEntity
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -41,7 +41,7 @@ def setup_platform(
         _LOGGER.warning("Unable to open serial port: %s", exc)
         return
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, pca.close)
+    hass.bus.listen_once(EVENT_INPUI_STOP, pca.close)
 
     pca.start_scan()
 

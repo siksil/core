@@ -15,33 +15,33 @@ from pychromecast.const import CAST_TYPE_CHROMECAST, CAST_TYPE_GROUP
 import pytest
 import yarl
 
-from homeassistant.components import media_player, tts
-from homeassistant.components.cast import media_player as cast
-from homeassistant.components.cast.const import (
+from inpui.components import media_player, tts
+from inpui.components.cast import media_player as cast
+from inpui.components.cast.const import (
     DOMAIN,
     SIGNAL_HASS_CAST_SHOW_VIEW,
     HomeAssistantControllerData,
 )
-from homeassistant.components.cast.media_player import ChromecastInfo
-from homeassistant.components.media_player import (
+from inpui.components.cast.media_player import ChromecastInfo
+from inpui.components.media_player import (
     BrowseMedia,
     MediaClass,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
-    CAST_APP_ID_HOMEASSISTANT_LOVELACE,
-    EVENT_HOMEASSISTANT_STOP,
+    CAST_APP_ID_INPUI_LOVELACE,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er, network
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er, network
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,
@@ -478,7 +478,7 @@ async def test_stop_discovery_called_on_stop(
     assert castbrowser_mock.return_value.start_discovery.call_count == 1
 
     # stop discovery should be called on shutdown
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done(wait_background_tasks=True)
     await hass.async_block_till_done(wait_background_tasks=True)
     assert castbrowser_mock.return_value.stop_discovery.call_count == 1
@@ -1680,7 +1680,7 @@ async def test_entity_media_states_lovelace_app(
         "media_player", "cast", str(info.uuid)
     )
 
-    chromecast.app_id = CAST_APP_ID_HOMEASSISTANT_LOVELACE
+    chromecast.app_id = CAST_APP_ID_INPUI_LOVELACE
     cast_status = MagicMock()
     cast_status_cb(cast_status)
     await hass.async_block_till_done()
@@ -2089,7 +2089,7 @@ async def test_disconnect_on_stop(hass: HomeAssistant) -> None:
 
     chromecast, _ = await async_setup_media_player_cast(hass, info)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert chromecast.disconnect.call_count == 1
 

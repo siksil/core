@@ -22,28 +22,28 @@ from airos.exceptions import (
 from airos.helpers import DetectDeviceData, async_get_firmware_data
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.data_entry_flow import section
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.data_entry_flow import section
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import (
     DEFAULT_SSL,

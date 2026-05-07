@@ -14,9 +14,9 @@ from unittest.mock import AsyncMock
 import aiohttp
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.dt import utcnow
 
 from .common import (
     DEVICE_ID,

@@ -2,10 +2,10 @@
 
 import requests_mock
 
-from homeassistant.components.plex.const import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.plex.const import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 
 async def test_cleanup_orphaned_devices(

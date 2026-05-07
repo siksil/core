@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 from fullykiosk import FullyKioskError
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 

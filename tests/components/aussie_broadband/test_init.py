@@ -5,9 +5,9 @@ from unittest.mock import patch
 from aiohttp import ClientConnectionError
 from aussiebb.exceptions import AuthenticationException, UnrecognisedServiceType
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .common import setup_platform
 

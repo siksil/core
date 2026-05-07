@@ -19,9 +19,9 @@ from aioairzone.const import (
 from aioairzone.exceptions import AirzoneError
 import pytest
 
-from homeassistant.components.airzone.const import API_TEMPERATURE_STEP
-from homeassistant.components.airzone.coordinator import SCAN_INTERVAL
-from homeassistant.components.climate import (
+from inpui.components.airzone.const import API_TEMPERATURE_STEP
+from inpui.components.airzone.coordinator import SCAN_INTERVAL
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -45,15 +45,15 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util.dt import utcnow
 
 from .util import (
     HVAC_DHW_MOCK,

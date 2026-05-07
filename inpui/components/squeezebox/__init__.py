@@ -9,31 +9,31 @@ import logging
 
 from pysqueezebox import Player, Server
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import (
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceEntryType,
     format_mac,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     CONF_HTTPS,

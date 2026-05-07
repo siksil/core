@@ -6,11 +6,11 @@ from typing import Any
 from pyvlx import PyVLX, PyVLXException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PASSWORD
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigEntryState, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PASSWORD
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN, LOGGER
 

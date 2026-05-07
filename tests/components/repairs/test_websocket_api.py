@@ -10,12 +10,12 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.components.repairs.const import DOMAIN
-from homeassistant.const import __version__ as ha_version
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.repairs import RepairsFlow
+from inpui.components.repairs.const import DOMAIN
+from inpui.const import __version__ as ha_version
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, mock_platform
 from tests.typing import (

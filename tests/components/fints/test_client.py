@@ -3,7 +3,7 @@
 from fints.client import BankIdentifier, FinTSOperations
 import pytest
 
-from homeassistant.components.fints.sensor import (
+from inpui.components.fints.sensor import (
     BankCredentials,
     FinTsClient,
     SEPAAccount,

@@ -6,11 +6,11 @@ from typing import Any
 
 from xiaomi_gateway import XiaomiGateway
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.components.lock import LockEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from .const import DOMAIN, GATEWAYS_KEY
 from .entity import XiaomiDevice

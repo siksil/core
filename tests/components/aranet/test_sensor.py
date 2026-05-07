@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.aranet.const import DOMAIN
-from homeassistant.components.sensor import ATTR_OPTIONS, ATTR_STATE_CLASS
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.aranet.const import DOMAIN
+from inpui.components.sensor import ATTR_OPTIONS, ATTR_STATE_CLASS
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     DISABLED_INTEGRATIONS_SERVICE_INFO,

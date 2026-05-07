@@ -9,19 +9,19 @@ from openrgb.utils import OpenRGBDisconnected
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.openrgb.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.openrgb.const import DOMAIN, SCAN_INTERVAL
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_OPTION,
     SERVICE_SELECT_OPTION,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

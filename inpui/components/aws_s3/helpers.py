@@ -9,7 +9,7 @@ from typing import Any
 from aiobotocore.client import AioBaseClient as S3Client
 from botocore.exceptions import BotoCoreError
 
-from homeassistant.components.backup import AgentBackup
+from inpui.components.backup import AgentBackup
 
 _LOGGER = logging.getLogger(__name__)
 

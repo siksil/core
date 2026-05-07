@@ -5,7 +5,7 @@ import logging
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.blueprint import schemas
+from inpui.components.blueprint import schemas
 
 _LOGGER = logging.getLogger(__name__)
 

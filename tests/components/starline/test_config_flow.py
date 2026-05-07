@@ -3,9 +3,9 @@
 import requests_mock
 
 from homeassistant import config_entries
-from homeassistant.components.starline import config_flow
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.starline import config_flow
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 TEST_APP_ID = "666"
 TEST_APP_SECRET = "appsecret"

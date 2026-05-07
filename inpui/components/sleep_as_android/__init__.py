@@ -7,11 +7,11 @@ from http import HTTPStatus
 from aiohttp.web import Request, Response
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import ATTR_EVENT, ATTR_VALUE1, ATTR_VALUE2, ATTR_VALUE3, DOMAIN
 

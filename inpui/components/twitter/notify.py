@@ -14,17 +14,17 @@ from typing import Any
 from TwitterAPI import TwitterAPI
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_point_in_time
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_ACCESS_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_point_in_time
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

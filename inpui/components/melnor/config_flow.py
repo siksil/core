@@ -6,10 +6,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import async_discovered_service_info
-from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
+from inpui.components.bluetooth import async_discovered_service_info
+from inpui.components.bluetooth.models import BluetoothServiceInfoBleak
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
 
 from .const import DOMAIN, MANUFACTURER_DATA_START, MANUFACTURER_ID
 

@@ -5,17 +5,17 @@ from typing import Any
 
 from switchbot_api import CommonCommands, HumidifierCommands, HumidifierV2Commands
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     MODE_AUTO,
     MODE_NORMAL,
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData
 from .const import AFTER_COMMAND_REFRESH, DOMAIN, HUMIDITY_LEVELS, Humidifier2Mode

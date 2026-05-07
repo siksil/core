@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_EXCEPTIONAL,
     ATTR_CONDITION_FOG,
@@ -18,7 +18,7 @@ from homeassistant.components.weather import (
     ATTR_CONDITION_WINDY,
     ATTR_CONDITION_WINDY_VARIANT,
 )
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "openweathermap"
 DEFAULT_NAME = "OpenWeatherMap"

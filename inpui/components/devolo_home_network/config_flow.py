@@ -10,12 +10,12 @@ from devolo_plc_api.device import Device
 from devolo_plc_api.exceptions.device import DeviceNotFound, DevicePasswordProtected
 import voluptuous as vol
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_NAME, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_NAME, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, PRODUCT, SERIAL_NUMBER, TITLE
 from .coordinator import DevoloHomeNetworkConfigEntry

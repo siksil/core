@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.template import entity as abstract_entity
-from homeassistant.core import HomeAssistant
+from inpui.components.template import entity as abstract_entity
+from inpui.core import HomeAssistant
 
 
 async def test_template_entity_not_implemented(hass: HomeAssistant) -> None:

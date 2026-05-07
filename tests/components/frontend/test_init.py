@@ -13,7 +13,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.frontend import (
+from inpui.components.frontend import (
     CONF_DEVELOPMENT_PR,
     CONF_EXTRA_JS_URL_ES5,
     CONF_EXTRA_MODULE_URL,
@@ -29,11 +29,11 @@ from homeassistant.components.frontend import (
     async_remove_panel,
     remove_extra_js_url,
 )
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import async_get_integration
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import async_get_integration
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, async_capture_events, async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

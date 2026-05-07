@@ -12,17 +12,17 @@ from mastodon.Mastodon import (
     MastodonUnauthorizedError,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import slugify
 
 from .const import CONF_BASE_URL, DOMAIN, LOGGER
 from .coordinator import MastodonConfigEntry, MastodonCoordinator, MastodonData

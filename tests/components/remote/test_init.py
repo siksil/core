@@ -1,7 +1,7 @@
 """The tests for the Remote component, adapted from Light Test."""
 
-from homeassistant.components import remote
-from homeassistant.components.remote import (
+from inpui.components import remote
+from inpui.components.remote import (
     ATTR_ALTERNATIVE,
     ATTR_COMMAND,
     ATTR_COMMAND_TYPE,
@@ -11,7 +11,7 @@ from homeassistant.components.remote import (
     ATTR_TIMEOUT,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PLATFORM,
     SERVICE_TURN_OFF,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import async_mock_service
 

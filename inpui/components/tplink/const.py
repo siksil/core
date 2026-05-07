@@ -6,7 +6,7 @@ from typing import Final
 
 from kasa.smart.modules.clean import AreaUnit
 
-from homeassistant.const import Platform, UnitOfArea, UnitOfTemperature
+from inpui.const import Platform, UnitOfArea, UnitOfTemperature
 
 DOMAIN = "tplink"
 

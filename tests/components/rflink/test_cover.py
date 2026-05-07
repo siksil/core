@@ -7,10 +7,10 @@ control of RFLink cover devices.
 
 import pytest
 
-from homeassistant.components.cover import CoverState
-from homeassistant.components.rflink.entity import EVENT_BUTTON_PRESSED
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_CLOSE_COVER, SERVICE_OPEN_COVER
-from homeassistant.core import CoreState, HomeAssistant, State, callback
+from inpui.components.cover import CoverState
+from inpui.components.rflink.entity import EVENT_BUTTON_PRESSED
+from inpui.const import ATTR_ENTITY_ID, SERVICE_CLOSE_COVER, SERVICE_OPEN_COVER
+from inpui.core import CoreState, HomeAssistant, State, callback
 
 from .test_init import mock_rflink
 

@@ -7,13 +7,13 @@ from typing import Any
 
 from zigpy.backups import NetworkBackup
 
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import json_loads_object
+from inpui.components.repairs import RepairsFlow
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.json import json_dumps
+from inpui.util.json import json_loads_object
 
 from ..const import DOMAIN
 from ..radio_manager import ZhaRadioManager

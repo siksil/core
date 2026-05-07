@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock
 from bring_api import BringAuthException, BringParseException, BringRequestException
 import pytest
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.bring.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import EMAIL, PASSWORD
 

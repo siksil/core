@@ -7,9 +7,9 @@ from typing import Any, cast
 
 from pymiele import completed_warnings
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .coordinator import MieleConfigEntry
 

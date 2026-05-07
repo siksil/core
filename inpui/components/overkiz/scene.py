@@ -7,9 +7,9 @@ from typing import Any
 from pyoverkiz.client import OverkizClient
 from pyoverkiz.models import Scenario
 
-from homeassistant.components.scene import Scene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.scene import Scene
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OverkizDataConfigEntry
 

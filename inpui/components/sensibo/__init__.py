@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from pysensibo.exceptions import AuthenticationError
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, LOGGER, PLATFORMS
 from .coordinator import SensiboDataUpdateCoordinator

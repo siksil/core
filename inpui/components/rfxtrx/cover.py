@@ -7,11 +7,11 @@ from typing import Any
 
 import RFXtrx as rfxtrxmod
 
-from homeassistant.components.cover import CoverEntity, CoverEntityFeature, CoverState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import CoverEntity, CoverEntityFeature, CoverState
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeviceTuple, async_setup_platform_entry
 from .const import (

@@ -11,18 +11,18 @@ from typing import Any, Final, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, singleton
-from homeassistant.helpers.dispatcher import (
+from inpui.components import websocket_api
+from inpui.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, singleton
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util
-from homeassistant.util.signal_type import SignalType
-from homeassistant.util.uuid import random_uuid_hex
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util
+from inpui.util.signal_type import SignalType
+from inpui.util.uuid import random_uuid_hex
 
 DOMAIN = "persistent_notification"
 

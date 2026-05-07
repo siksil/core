@@ -6,12 +6,12 @@ import shutil
 from aemet_opendata.exceptions import AemetError, TownNotFound
 from aemet_opendata.interface import AEMET, ConnectionOptions, UpdateFeature
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import CONF_RADAR_UPDATES, CONF_STATION_UPDATES, DOMAIN, PLATFORMS
 from .coordinator import AemetConfigEntry, AemetData, WeatherUpdateCoordinator

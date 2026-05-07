@@ -19,14 +19,14 @@ import voluptuous as vol
 from yarl import URL
 
 from homeassistant import data_entry_flow
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CREDENTIALS,
     CONF_NAME,
     CONF_PASSWORD,
@@ -35,9 +35,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,

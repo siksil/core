@@ -8,14 +8,14 @@ from typing import Any
 
 from melnor_bluetooth.device import Valve
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import MelnorConfigEntry, MelnorDataUpdateCoordinator
 from .entity import MelnorZoneEntity, get_entities_for_valves

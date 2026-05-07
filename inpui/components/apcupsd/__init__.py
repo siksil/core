@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Final
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import APCUPSdConfigEntry, APCUPSdCoordinator
 

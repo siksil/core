@@ -5,15 +5,15 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.sensor import RestoreSensor, SensorDeviceClass
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, STATE_UNKNOWN, UnitOfTemperature
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.components.sensor import RestoreSensor, SensorDeviceClass
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, STATE_UNKNOWN, UnitOfTemperature
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_SENSOR_ATTRIBUTES,

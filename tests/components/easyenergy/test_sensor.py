@@ -5,17 +5,17 @@ from unittest.mock import MagicMock
 from easyenergy import EasyEnergyNoDataError
 import pytest
 
-from homeassistant.components.easyenergy.const import DOMAIN
-from homeassistant.components.homeassistant import (
+from inpui.components.easyenergy.const import DOMAIN
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -26,9 +26,9 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

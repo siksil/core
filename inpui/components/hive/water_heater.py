@@ -5,15 +5,15 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import STATE_OFF, STATE_ON, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HiveConfigEntry, refresh_system
 from .const import (

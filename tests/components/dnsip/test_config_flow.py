@@ -8,8 +8,8 @@ from aiodns.error import DNSError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.dnsip.config_flow import DATA_SCHEMA, DATA_SCHEMA_ADV
-from homeassistant.components.dnsip.const import (
+from inpui.components.dnsip.config_flow import DATA_SCHEMA, DATA_SCHEMA_ADV
+from inpui.components.dnsip.const import (
     CONF_HOSTNAME,
     CONF_IPV4,
     CONF_IPV6,
@@ -19,10 +19,10 @@ from homeassistant.components.dnsip.const import (
     DEFAULT_HOSTNAME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import RetrieveDNS
 

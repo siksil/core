@@ -6,8 +6,8 @@ from alarmdecoder.util import NoDeviceError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.alarmdecoder import config_flow
-from homeassistant.components.alarmdecoder.const import (
+from inpui.components.alarmdecoder import config_flow
+from inpui.components.alarmdecoder.const import (
     CONF_ALT_NIGHT_MODE,
     CONF_AUTO_BYPASS,
     CONF_CODE_ARM_REQUIRED,
@@ -28,10 +28,10 @@ from homeassistant.components.alarmdecoder.const import (
     PROTOCOL_SERIAL,
     PROTOCOL_SOCKET,
 )
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_PROTOCOL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import CONF_HOST, CONF_PORT, CONF_PROTOCOL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

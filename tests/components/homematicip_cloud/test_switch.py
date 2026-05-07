@@ -1,10 +1,10 @@
 """Tests for HomematicIP Cloud switch."""
 
-from homeassistant.components.homematicip_cloud.entity import (
+from inpui.components.homematicip_cloud.entity import (
     ATTR_GROUP_MEMBER_UNREACHABLE,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

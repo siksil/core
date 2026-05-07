@@ -7,14 +7,14 @@ from typing import Any
 
 from xiaomi_gateway import XiaomiGateway
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     LIGHT_LUX,
     PERCENTAGE,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     UnitOfPressure,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import BATTERY_MODELS, DOMAIN, GATEWAYS_KEY, POWER_MODELS
 from .entity import XiaomiDevice

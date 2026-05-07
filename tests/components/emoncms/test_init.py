@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.emoncms.const import DOMAIN, FEED_ID, FEED_NAME
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
+from inpui.components.emoncms.const import DOMAIN, FEED_ID, FEED_NAME
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
 
 from . import setup_integration
 from .conftest import EMONCMS_FAILURE, FEEDS

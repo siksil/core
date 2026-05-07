@@ -8,12 +8,12 @@ from pyenphase.models.meters import CtType
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.enphase_envoy.const import (
+from inpui.components.enphase_envoy.const import (
     DOMAIN,
     OPTION_DIAGNOSTICS_INCLUDE_FIXTURES,
 )
-from homeassistant.components.enphase_envoy.coordinator import MAC_VERIFICATION_DELAY
-from homeassistant.core import HomeAssistant
+from inpui.components.enphase_envoy.coordinator import MAC_VERIFICATION_DELAY
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

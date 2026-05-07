@@ -1,7 +1,7 @@
 """Tests for the Arve integration."""
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

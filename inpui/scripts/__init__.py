@@ -11,10 +11,10 @@ import os
 import sys
 
 from homeassistant import runner
-from homeassistant.bootstrap import async_mount_local_lib_path
-from homeassistant.config import get_default_config_dir
-from homeassistant.requirements import pip_kwargs
-from homeassistant.util.package import install_package, is_installed, is_virtual_env
+from inpui.bootstrap import async_mount_local_lib_path
+from inpui.config import get_default_config_dir
+from inpui.requirements import pip_kwargs
+from inpui.util.package import install_package, is_installed, is_virtual_env
 
 # mypy: allow-untyped-defs, disallow-any-generics, no-warn-return-any
 

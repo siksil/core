@@ -17,14 +17,14 @@ from typing import Any, cast
 from lru import LRU
 import voluptuous as vol
 
-from homeassistant.components import persistent_notification
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_SCAN_INTERVAL, CONF_TYPE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.service import async_register_admin_service
+from inpui.components import persistent_notification
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_SCAN_INTERVAL, CONF_TYPE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.service import async_register_admin_service
 
 from .const import DOMAIN
 

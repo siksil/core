@@ -8,9 +8,9 @@ from unittest.mock import MagicMock, patch
 from gotailwind import TailwindDeviceStatus
 import pytest
 
-from homeassistant.components.tailwind.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.tailwind.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

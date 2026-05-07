@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator

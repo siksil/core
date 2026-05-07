@@ -6,11 +6,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mold_indicator
-from homeassistant.components.mold_indicator.config_flow import (
+from inpui.components import mold_indicator
+from inpui.components.mold_indicator.config_flow import (
     MoldIndicatorConfigFlowHandler,
 )
-from homeassistant.components.mold_indicator.const import (
+from inpui.components.mold_indicator.const import (
     CONF_CALIBRATION_FACTOR,
     CONF_INDOOR_HUMIDITY,
     CONF_INDOOR_TEMP,
@@ -18,11 +18,11 @@ from homeassistant.components.mold_indicator.const import (
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_NAME
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_NAME
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
 
 from tests.common import MockConfigEntry
 

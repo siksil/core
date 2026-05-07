@@ -7,17 +7,17 @@ import pytest
 from regenmaschine.errors import RainMachineError
 
 from homeassistant import config_entries, setup
-from homeassistant.components.rainmachine import (
+from inpui.components.rainmachine import (
     CONF_ALLOW_INACTIVE_ZONES_TO_RUN,
     CONF_DEFAULT_ZONE_RUN_TIME,
     CONF_USE_APP_RUN_TIMES,
     DOMAIN,
 )
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 
 async def test_duplicate_error(hass: HomeAssistant, config, config_entry) -> None:

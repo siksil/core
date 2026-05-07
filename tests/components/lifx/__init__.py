@@ -9,8 +9,8 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 from aiolifx.aiolifx import Light
 
-from homeassistant.components.lifx import discovery
-from homeassistant.components.lifx.const import TARGET_ANY
+from inpui.components.lifx import discovery
+from inpui.components.lifx.const import TARGET_ANY
 
 MODULE = "homeassistant.components.lifx"
 MODULE_CONFIG_FLOW = "homeassistant.components.lifx.config_flow"

@@ -10,7 +10,7 @@ from pyhap.const import (
 )
 import pytest
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     CONF_LINKED_HUMIDITY_SENSOR,
     PROP_MAX_VALUE,
@@ -18,8 +18,8 @@ from homeassistant.components.homekit.const import (
     PROP_MIN_VALUE,
     PROP_VALID_VALUES,
 )
-from homeassistant.components.homekit.type_humidifiers import HumidifierDehumidifier
-from homeassistant.components.humidifier import (
+from inpui.components.homekit.type_humidifiers import HumidifierDehumidifier
+from inpui.components.humidifier import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_HUMIDITY,
     ATTR_MAX_HUMIDITY,
@@ -30,8 +30,8 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     HumidifierDeviceClass,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -42,7 +42,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_mock_service
 

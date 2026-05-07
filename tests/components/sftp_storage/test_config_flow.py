@@ -10,11 +10,11 @@ from asyncssh.misc import PermissionDenied
 from asyncssh.sftp import SFTPNoSuchFile, SFTPPermissionDenied
 import pytest
 
-from homeassistant.components.sftp_storage.config_flow import (
+from inpui.components.sftp_storage.config_flow import (
     SFTPStorageInvalidPrivateKey,
     SFTPStorageMissingPasswordOrPkey,
 )
-from homeassistant.components.sftp_storage.const import (
+from inpui.components.sftp_storage.const import (
     CONF_BACKUP_LOCATION,
     CONF_HOST,
     CONF_PASSWORD,
@@ -22,10 +22,10 @@ from homeassistant.components.sftp_storage.const import (
     CONF_USERNAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.storage import STORAGE_DIR
 
 from .conftest import USER_INPUT, SSHClientConnectionMock
 

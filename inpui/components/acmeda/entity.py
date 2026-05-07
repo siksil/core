@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import aiopulse
 
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr, entity, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.core import callback
+from inpui.helpers import device_registry as dr, entity, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .const import ACMEDA_ENTITY_REMOVE, DOMAIN, LOGGER
 

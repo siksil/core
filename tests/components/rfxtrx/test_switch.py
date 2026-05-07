@@ -4,10 +4,10 @@ from unittest.mock import call
 
 import pytest
 
-from homeassistant.components.rfxtrx import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
+from inpui.components.rfxtrx import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
 
 from .conftest import create_rfx_test_cfg
 

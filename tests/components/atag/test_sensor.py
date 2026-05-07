@@ -1,8 +1,8 @@
 """Tests for the Atag sensor platform."""
 
-from homeassistant.components.atag.sensor import SENSORS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.atag.sensor import SENSORS
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import UID, init_integration
 

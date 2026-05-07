@@ -12,7 +12,7 @@ from zwave_js_server.event import Event
 from zwave_js_server.exceptions import FailedZWaveCommand
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -34,10 +34,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.zwave_js.climate import ATTR_FAN_STATE
-from homeassistant.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
-from homeassistant.components.zwave_js.helpers import ZwaveValueMatcher
-from homeassistant.const import (
+from inpui.components.zwave_js.climate import ATTR_FAN_STATE
+from inpui.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
+from inpui.components.zwave_js.helpers import ZwaveValueMatcher
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
@@ -45,8 +45,8 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .common import (
     CLIMATE_DANFOSS_LC13_ENTITY,

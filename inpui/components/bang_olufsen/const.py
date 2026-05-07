@@ -7,7 +7,7 @@ from typing import Final
 
 from mozart_api.models import Source, SourceArray, SourceTypeEnum
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerState,
     MediaType,
     RepeatMode,

@@ -3,8 +3,8 @@
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.waze_travel_time.config_flow import WazeConfigFlow
-from homeassistant.components.waze_travel_time.const import (
+from inpui.components.waze_travel_time.config_flow import WazeConfigFlow
+from inpui.components.waze_travel_time.const import (
     CONF_AVOID_FERRIES,
     CONF_AVOID_SUBSCRIPTION_ROADS,
     CONF_AVOID_TOLL_ROADS,
@@ -21,9 +21,9 @@ from homeassistant.components.waze_travel_time.const import (
     DOMAIN,
     IMPERIAL_UNITS,
 )
-from homeassistant.const import CONF_NAME, CONF_REGION
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_NAME, CONF_REGION
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import CONFIG_FLOW_USER_INPUT, MOCK_CONFIG
 

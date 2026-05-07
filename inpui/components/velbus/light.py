@@ -10,7 +10,7 @@ from velbusaio.channels import (
     Dimmer as VelbusDimmer,
 )
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_FLASH,
     ATTR_TRANSITION,
@@ -20,11 +20,11 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import brightness_to_value, value_to_brightness
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import brightness_to_value, value_to_brightness
 
 from . import VelbusConfigEntry
 from .entity import VelbusEntity, api_call

@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock
 
-from homeassistant.components.hydrawise.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.hydrawise.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 
 def test_zones_in_device_registry(

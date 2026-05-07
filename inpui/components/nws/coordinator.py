@@ -9,13 +9,13 @@ from typing import TYPE_CHECKING
 from aiohttp import ClientResponseError
 from pynws import NwsNoDataError, SimpleNWS, call_with_retry
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import debounce
-from homeassistant.helpers.update_coordinator import (
+from inpui.core import HomeAssistant
+from inpui.helpers import debounce
+from inpui.helpers.update_coordinator import (
     TimestampDataUpdateCoordinator,
     UpdateFailed,
 )
-from homeassistant.util.dt import utcnow
+from inpui.util.dt import utcnow
 
 if TYPE_CHECKING:
     from . import NWSConfigEntry

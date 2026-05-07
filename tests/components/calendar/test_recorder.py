@@ -4,11 +4,11 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

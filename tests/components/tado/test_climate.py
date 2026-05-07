@@ -7,17 +7,17 @@ from PyTado.interface.api.my_tado import TadoZone
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_HVAC_MODE,
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.tado import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.tado import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

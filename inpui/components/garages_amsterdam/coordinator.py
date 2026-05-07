@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from odp_amsterdam import Garage, ODPAmsterdam, VehicleType
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN, LOGGER, SCAN_INTERVAL
 

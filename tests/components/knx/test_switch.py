@@ -1,13 +1,13 @@
 """Test KNX switch."""
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_RESPOND_TO_READ,
     CONF_STATE_ADDRESS,
     KNX_ADDRESS,
 )
-from homeassistant.components.knx.schema import SwitchSchema
-from homeassistant.const import CONF_NAME, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant, State
+from inpui.components.knx.schema import SwitchSchema
+from inpui.const import CONF_NAME, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant, State
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

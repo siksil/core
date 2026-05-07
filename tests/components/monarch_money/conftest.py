@@ -12,8 +12,8 @@ from typedmonarchmoney.models import (
     MonarchSubscription,
 )
 
-from homeassistant.components.monarch_money.const import DOMAIN
-from homeassistant.const import CONF_TOKEN
+from inpui.components.monarch_money.const import DOMAIN
+from inpui.const import CONF_TOKEN
 
 from tests.common import MockConfigEntry, load_fixture, load_json_object_fixture
 

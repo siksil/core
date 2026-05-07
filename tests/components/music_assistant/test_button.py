@@ -6,10 +6,10 @@ from music_assistant_models.enums import EventType
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant, HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant, HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .common import (
     setup_integration_from_fixtures,

@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.components.button import ButtonEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import PlexServer
 from .const import CONF_SERVER_IDENTIFIER, DOMAIN, PLEX_UPDATE_PLATFORMS_SIGNAL

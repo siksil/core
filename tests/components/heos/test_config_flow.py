@@ -13,19 +13,19 @@ from pyheos import (
 )
 import pytest
 
-from homeassistant.components.heos.const import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.heos.const import DOMAIN
+from inpui.config_entries import (
     SOURCE_IGNORE,
     SOURCE_SSDP,
     SOURCE_USER,
     SOURCE_ZEROCONF,
     ConfigEntryState,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import MockHeos
 

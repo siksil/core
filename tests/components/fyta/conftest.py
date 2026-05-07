@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from fyta_cli.fyta_models import Credentials, Plant
 import pytest
 
-from homeassistant.components.fyta.const import CONF_EXPIRATION, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
+from inpui.components.fyta.const import CONF_EXPIRATION, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
 
 from .const import ACCESS_TOKEN, EXPIRATION, PASSWORD, USERNAME
 

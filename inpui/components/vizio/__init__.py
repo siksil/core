@@ -4,20 +4,20 @@ from __future__ import annotations
 
 from pyvizio import VizioAsync
 
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.const import (
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_DEVICE_CLASS,
     CONF_HOST,
     CONF_NAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import DEFAULT_TIMEOUT, DEVICE_ID, DOMAIN, VIZIO_DEVICE_CLASSES
 from .coordinator import (

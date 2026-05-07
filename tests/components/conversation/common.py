@@ -1,7 +1,7 @@
 """Provide common tests tools for conversation."""
 
-from homeassistant.components import conversation
-from homeassistant.core import HomeAssistant
+from inpui.components import conversation
+from inpui.core import HomeAssistant
 
 from . import MockAgent
 

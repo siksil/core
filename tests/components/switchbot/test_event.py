@@ -7,11 +7,11 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.switchbot.const import DOMAIN
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.switchbot.const import DOMAIN
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import KEYPAD_VISION_PRO_INFO
 

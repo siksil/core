@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any, cast
 from unittest.mock import AsyncMock, Mock, patch
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN,
     AddonInfo,
     AgentBackup,
@@ -16,10 +16,10 @@ from homeassistant.components.backup import (
     BackupNotFound,
     Folder,
 )
-from homeassistant.components.backup.backup import CoreLocalBackupAgent
-from homeassistant.components.backup.const import DATA_MANAGER
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.backup.backup import CoreLocalBackupAgent
+from inpui.components.backup.const import DATA_MANAGER
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import mock_platform
 

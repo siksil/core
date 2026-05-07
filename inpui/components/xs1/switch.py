@@ -7,10 +7,10 @@ from typing import Any
 from xs1_api_client.api_constants import ActuatorType
 from xs1_api_client.device.actuator import XS1Actuator
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import ACTUATORS, DOMAIN
 from .entity import XS1DeviceEntity

@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.octoprint.const import (
+from inpui.components.octoprint.const import (
     CONF_BAUDRATE,
     DOMAIN,
     SERVICE_CONNECT,
 )
-from homeassistant.const import ATTR_DEVICE_ID, CONF_PORT, CONF_PROFILE_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import ATTR_DEVICE_ID, CONF_PORT, CONF_PROFILE_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 
 @pytest.fixture

@@ -11,15 +11,15 @@ import requests_mock
 from requests_mock.adapter import _Matcher
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.metoffice.const import DEFAULT_SCAN_INTERVAL, DOMAIN
-from homeassistant.components.weather import (
+from inpui.components.metoffice.const import DEFAULT_SCAN_INTERVAL, DOMAIN
+from inpui.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import utcnow
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import utcnow
 
 from .const import (
     DEVICE_KEY_KINGSLYNN,

@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from pyipma import IPMAException
 
-from homeassistant.components.ipma.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_MODE
-from homeassistant.core import HomeAssistant
+from inpui.components.ipma.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_MODE
+from inpui.core import HomeAssistant
 
 from .test_weather import MockLocation
 

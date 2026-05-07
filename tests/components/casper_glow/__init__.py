@@ -1,7 +1,7 @@
 """Tests for the Casper Glow integration."""
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.bluetooth import (

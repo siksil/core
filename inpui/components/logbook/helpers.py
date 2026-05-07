@@ -5,8 +5,8 @@ from __future__ import annotations
 from collections.abc import Callable, Mapping
 from typing import Any
 
-from homeassistant.components.sensor import ATTR_STATE_CLASS, NON_NUMERIC_DEVICE_CLASSES
-from homeassistant.const import (
+from inpui.components.sensor import ATTR_STATE_CLASS, NON_NUMERIC_DEVICE_CLASSES
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_DEVICE_ID,
     ATTR_DOMAIN,
@@ -15,7 +15,7 @@ from homeassistant.const import (
     EVENT_LOGBOOK_ENTRY,
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -25,9 +25,9 @@ from homeassistant.core import (
     is_callback,
     split_entity_id,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.util.event_type import EventType
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_state_change_event
+from inpui.util.event_type import EventType
 
 from .const import (
     ALWAYS_CONTINUOUS_DOMAINS,

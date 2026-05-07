@@ -11,27 +11,27 @@ from google.genai.errors import APIError, ClientError
 from requests.exceptions import Timeout
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_PROMPT,

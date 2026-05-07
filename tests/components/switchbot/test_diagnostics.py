@@ -5,16 +5,16 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.switchbot.const import (
+from inpui.components.switchbot.const import (
     CONF_ENCRYPTION_KEY,
     CONF_KEY_ID,
     CONF_RETRY_COUNT,
     DEFAULT_RETRY_COUNT,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
+from inpui.core import HomeAssistant
 
 from . import WORELAY_SWITCH_1PM_SERVICE_INFO
 

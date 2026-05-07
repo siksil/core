@@ -10,10 +10,10 @@ from eq3btsmart import Thermostat
 from eq3btsmart.const import EQ3_DEFAULT_AWAY_TEMP, Eq3OperationMode
 from eq3btsmart.models import Status
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.util.dt as dt_util
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.util.dt as dt_util
 
 from . import Eq3ConfigEntry
 from .const import (

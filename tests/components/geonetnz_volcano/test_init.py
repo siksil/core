@@ -2,7 +2,7 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_component_unload_config_entry(hass: HomeAssistant, config_entry) -> None:

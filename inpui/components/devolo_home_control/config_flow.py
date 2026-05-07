@@ -7,9 +7,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import configure_mydevolo
 from .const import DOMAIN, SUPPORTED_MODEL_TYPES

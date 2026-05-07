@@ -7,9 +7,9 @@ from datetime import datetime
 
 from bring_api import ActivityType, BringList
 
-from homeassistant.components.event import EventEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BringConfigEntry
 from .coordinator import BringActivityCoordinator

@@ -6,9 +6,9 @@ from unittest.mock import ANY, MagicMock, call, patch
 from aio_geojson_usgs_earthquakes import UsgsEarthquakeHazardsProgramFeed
 from freezegun import freeze_time
 
-from homeassistant.components import geo_location
-from homeassistant.components.geo_location import ATTR_SOURCE
-from homeassistant.components.usgs_earthquakes_feed.geo_location import (
+from inpui.components import geo_location
+from inpui.components.geo_location import ATTR_SOURCE
+from inpui.components.usgs_earthquakes_feed.geo_location import (
     ATTR_ALERT,
     ATTR_EXTERNAL_ID,
     ATTR_MAGNITUDE,
@@ -20,7 +20,7 @@ from homeassistant.components.usgs_earthquakes_feed.geo_location import (
     CONF_FEED_TYPE,
     SCAN_INTERVAL,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -30,12 +30,12 @@ from homeassistant.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 
@@ -128,7 +128,7 @@ async def test_setup(hass: HomeAssistant) -> None:
             assert await async_setup_component(hass, geo_location.DOMAIN, CONFIG)
             await hass.async_block_till_done()
             # Artificially trigger update.
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+            hass.bus.async_fire(EVENT_INPUI_START)
             # Collect events.
             await hass.async_block_till_done()
 
@@ -236,7 +236,7 @@ async def test_setup_with_custom_location(hass: HomeAssistant) -> None:
             await hass.async_block_till_done()
 
             # Artificially trigger update.
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+            hass.bus.async_fire(EVENT_INPUI_START)
             # Collect events.
             await hass.async_block_till_done()
 

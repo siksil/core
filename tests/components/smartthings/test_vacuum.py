@@ -7,8 +7,8 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smartthings import MAIN
-from homeassistant.components.vacuum import (
+from inpui.components.smartthings import MAIN
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_PAUSE,
@@ -17,9 +17,9 @@ from homeassistant.components.vacuum import (
     SERVICE_START,
     VacuumActivity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

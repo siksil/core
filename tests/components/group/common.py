@@ -4,7 +4,7 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.group import (
+from inpui.components.group import (
     ATTR_ADD_ENTITIES,
     ATTR_ENTITIES,
     ATTR_OBJECT_ID,
@@ -12,9 +12,9 @@ from homeassistant.components.group import (
     SERVICE_REMOVE,
     SERVICE_SET,
 )
-from homeassistant.const import ATTR_ICON, ATTR_NAME, SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import bind_hass
+from inpui.const import ATTR_ICON, ATTR_NAME, SERVICE_RELOAD
+from inpui.core import HomeAssistant, callback
+from inpui.loader import bind_hass
 
 
 @bind_hass

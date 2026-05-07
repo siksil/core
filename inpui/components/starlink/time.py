@@ -7,10 +7,10 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, time, tzinfo
 import math
 
-from homeassistant.components.time import TimeEntity, TimeEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.time import TimeEntity, TimeEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import StarlinkConfigEntry, StarlinkData, StarlinkUpdateCoordinator
 from .entity import StarlinkEntity

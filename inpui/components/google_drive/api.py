@@ -12,15 +12,15 @@ from aiohttp import ClientSession, ClientTimeout, StreamReader
 from aiohttp.client_exceptions import ClientError, ClientResponseError
 from google_drive_api.api import AbstractAuth, GoogleDriveApi
 
-from homeassistant.components.backup import AgentBackup, suggested_filename
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.exceptions import (
+from inpui.components.backup import AgentBackup, suggested_filename
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import DOMAIN
 

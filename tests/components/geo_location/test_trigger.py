@@ -4,15 +4,15 @@ import logging
 
 import pytest
 
-from homeassistant.components import automation, zone
-from homeassistant.const import (
+from inpui.components import automation, zone
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Context, HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service, mock_component
 

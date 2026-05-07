@@ -14,8 +14,8 @@ from hassil import Intents, recognize
 from hassil.expression import Expression, Group, ListReference
 from hassil.intents import WildcardSlotList
 
-from homeassistant.components import conversation, media_source, stt, tts
-from homeassistant.components.assist_pipeline import (
+from inpui.components import conversation, media_source, stt, tts
+from inpui.components.assist_pipeline import (
     OPTION_PREFERRED,
     AudioSettings,
     PipelineEvent,
@@ -26,11 +26,11 @@ from homeassistant.components.assist_pipeline import (
     async_pipeline_from_audio_stream,
     vad,
 )
-from homeassistant.components.media_player import async_process_play_media_url
-from homeassistant.core import Context, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, entity
-from homeassistant.helpers.entity import EntityDescription
+from inpui.components.media_player import async_process_play_media_url
+from inpui.core import Context, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, entity
+from inpui.helpers.entity import EntityDescription
 
 from .const import PREANNOUNCE_URL, AssistSatelliteEntityFeature
 from .errors import AssistSatelliteError, SatelliteBusyError

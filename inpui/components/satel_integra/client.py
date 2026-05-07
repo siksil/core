@@ -4,10 +4,10 @@ from collections.abc import Callable
 
 from satel_integra import AsyncSatel
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import (
     CONF_OUTPUT_NUMBER,

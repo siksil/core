@@ -7,13 +7,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from azure.eventhub.exceptions import EventHubError
 import pytest
 
-from homeassistant.components import azure_event_hub
-from homeassistant.components.azure_event_hub.const import CONF_SEND_INTERVAL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components import azure_event_hub
+from inpui.components.azure_event_hub.const import CONF_SEND_INTERVAL, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .conftest import FilterTest
 from .const import AZURE_EVENT_HUB_PATH, BASIC_OPTIONS, CS_CONFIG_FULL, SAS_CONFIG_FULL

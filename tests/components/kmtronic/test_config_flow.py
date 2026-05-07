@@ -7,10 +7,10 @@ from aiohttp import ClientConnectorError, ClientResponseError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.kmtronic.const import CONF_REVERSE, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.kmtronic.const import CONF_REVERSE, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

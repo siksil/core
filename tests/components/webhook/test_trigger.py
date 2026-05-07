@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from tests.common import async_capture_events
 from tests.typing import ClientSessionGenerator

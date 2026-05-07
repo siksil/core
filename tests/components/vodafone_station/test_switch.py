@@ -13,14 +13,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TOGGLE
-from homeassistant.components.vodafone_station.const import DOMAIN
-from homeassistant.components.vodafone_station.coordinator import SCAN_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import slugify
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TOGGLE
+from inpui.components.vodafone_station.const import DOMAIN
+from inpui.components.vodafone_station.coordinator import SCAN_INTERVAL
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import slugify
 
 from . import setup_integration
 from .const import TEST_SERIAL_NUMBER

@@ -9,11 +9,11 @@ from maxcube.wallthermostat import MaxWallThermostat
 from maxcube.windowshutter import MaxWindowShutter
 import pytest
 
-from homeassistant.components.maxcube import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import now
+from inpui.components.maxcube import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
+from inpui.util.dt import now
 
 
 @pytest.fixture

@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pytradfri.device import Device
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import setup_integration
 

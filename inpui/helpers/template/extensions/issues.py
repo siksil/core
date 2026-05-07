@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.helpers import issue_registry as ir
+from inpui.helpers import issue_registry as ir
 
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class IssuesExtension(BaseTemplateExtension):

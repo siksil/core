@@ -23,10 +23,10 @@ from iottycloud.verbs import (
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.iotty.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.iotty.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker, mock_aiohttp_client

@@ -3,8 +3,8 @@
 import logging
 from typing import Any
 
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.helpers import llm
+from inpui.const import CONF_LLM_HASS_API
+from inpui.helpers import llm
 
 DOMAIN = "openai_conversation"
 LOGGER: logging.Logger = logging.getLogger(__package__)

@@ -21,13 +21,13 @@ from requests.exceptions import SSLError, Timeout
 from url_normalize import url_normalize
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_MAC,
     CONF_NAME,
     CONF_PASSWORD,
@@ -36,8 +36,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_MODEL_NAME,

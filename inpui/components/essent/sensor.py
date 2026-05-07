@@ -9,16 +9,16 @@ from typing import Any
 
 from essent_dynamic_pricing.models import EnergyData, Tariff
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     EntityCategory,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import CURRENCY_EURO
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.const import CURRENCY_EURO
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import EnergyType, PriceGroup
 from .coordinator import EssentConfigEntry, EssentDataUpdateCoordinator

@@ -11,35 +11,35 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import yaml
 
-from homeassistant.components import conversation, cover, media_player, weather
-from homeassistant.components.conversation import (
+from inpui.components import conversation, cover, media_player, weather
+from inpui.components.conversation import (
     async_get_agent,
     default_agent,
     get_agent_manager,
 )
-from homeassistant.components.conversation.chat_log import (
+from inpui.components.conversation.chat_log import (
     AssistantContent,
     ToolResultContent,
     async_get_chat_log,
 )
-from homeassistant.components.conversation.default_agent import METADATA_CUSTOM_SENTENCE
-from homeassistant.components.conversation.models import ConversationInput
-from homeassistant.components.cover import SERVICE_OPEN_COVER
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.conversation.default_agent import METADATA_CUSTOM_SENTENCE
+from inpui.components.conversation.models import ConversationInput
+from inpui.components.cover import SERVICE_OPEN_COVER
+from inpui.components.homeassistant.exposed_entities import (
     async_get_assistant_settings,
 )
-from homeassistant.components.intent import (
+from inpui.components.intent import (
     TimerEventType,
     TimerInfo,
     async_register_timer_handler,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_SUPPORTED_COLOR_MODES,
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
     intent as light_intent,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     STATE_CLOSED,
@@ -48,13 +48,13 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     Context,
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     chat_session,
     device_registry as dr,
@@ -62,7 +62,7 @@ from homeassistant.helpers import (
     floor_registry as fr,
     intent,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import expose_entity, expose_new
 

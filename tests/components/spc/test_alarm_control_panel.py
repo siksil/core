@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 from pyspcwebgw.const import AreaMode
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_update_alarm_device(hass: HomeAssistant, mock_client: AsyncMock) -> None:

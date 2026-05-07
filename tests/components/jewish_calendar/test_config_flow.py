@@ -3,7 +3,7 @@
 from unittest.mock import AsyncMock
 
 from homeassistant import config_entries
-from homeassistant.components.jewish_calendar.const import (
+from inpui.components.jewish_calendar.const import (
     CONF_CANDLE_LIGHT_MINUTES,
     CONF_DIASPORA,
     CONF_HAVDALAH_OFFSET_MINUTES,
@@ -12,16 +12,16 @@ from homeassistant.components.jewish_calendar.const import (
     DEFAULT_LANGUAGE,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_ELEVATION,
     CONF_LANGUAGE,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_TIME_ZONE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

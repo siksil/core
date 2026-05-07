@@ -19,11 +19,11 @@ from pyvesync.base_devices.switch_base import VeSyncSwitch
 from pyvesync.const import HumidifierFeatures
 from pyvesync.devices.vesynchumidifier import VeSyncHumid200S, VeSyncHumid200300S
 
-from homeassistant.components.vesync import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.vesync import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 from .common import DEVICE_CATEGORIES, mock_multiple_device_responses
 

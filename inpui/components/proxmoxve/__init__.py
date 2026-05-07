@@ -6,8 +6,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -15,14 +15,14 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     AUTH_OTHER,

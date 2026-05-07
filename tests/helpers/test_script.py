@@ -16,14 +16,14 @@ import voluptuous as vol
 
 # Otherwise can't test just this file (import order issue)
 from homeassistant import config_entries, exceptions
-from homeassistant.components import scene
-from homeassistant.const import (
+from inpui.components import scene
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     CoreState,
     HomeAssistant,
@@ -32,8 +32,8 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
@@ -41,10 +41,10 @@ from homeassistant.helpers import (
     template,
     trace,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.typing import UNDEFINED
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,
@@ -5362,7 +5362,7 @@ async def test_shutdown_at(
         await script_obj.async_stop()
         raise
     else:
-        hass.bus.async_fire("homeassistant_stop")
+        hass.bus.async_fire("inpui_stop")
         await hass.async_block_till_done()
 
         assert not script_obj.is_running
@@ -5385,7 +5385,7 @@ async def test_shutdown_after(
     delay_started_flag = async_watch_for_action(script_obj, delay_alias)
 
     hass.set_state(CoreState.stopping)
-    hass.bus.async_fire("homeassistant_stop")
+    hass.bus.async_fire("inpui_stop")
     await hass.async_block_till_done()
 
     try:
@@ -5424,7 +5424,7 @@ async def test_start_script_after_shutdown(
 
     # Trigger 1st stage script shutdown
     hass.set_state(CoreState.stopping)
-    hass.bus.async_fire("homeassistant_stop")
+    hass.bus.async_fire("inpui_stop")
     await hass.async_block_till_done()
     # Trigger 2nd stage script shutdown
     async_fire_time_changed(hass, dt_util.utcnow() + timedelta(seconds=60))

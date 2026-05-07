@@ -11,9 +11,9 @@ from pymystrom.exceptions import MyStromConnectionError
 from pymystrom.pir import MyStromPir
 from pymystrom.switch import MyStromSwitch
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .models import MyStromConfigEntry, MyStromData
 

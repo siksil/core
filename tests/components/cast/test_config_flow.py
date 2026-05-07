@@ -5,10 +5,10 @@ from unittest.mock import ANY, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import cast
-from homeassistant.components.cast.home_assistant_cast import CAST_USER_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components import cast
+from inpui.components.cast.home_assistant_cast import CAST_USER_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 

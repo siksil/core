@@ -5,10 +5,10 @@ from __future__ import annotations
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ruuvitag_ble.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.components.ruuvitag_ble.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 from .fixtures import (
     RUUVI_E1_SERVICE_INFO,

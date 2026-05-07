@@ -8,11 +8,11 @@ from google_weather_api import GoogleWeatherApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
@@ -22,10 +22,10 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

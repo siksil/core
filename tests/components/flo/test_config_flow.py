@@ -8,10 +8,10 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.flo.const import DOMAIN
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.flo.const import DOMAIN
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .common import TEST_EMAIL_ADDRESS, TEST_PASSWORD, TEST_TOKEN, TEST_USER_ID
 

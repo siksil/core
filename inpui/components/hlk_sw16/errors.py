@@ -1,6 +1,6 @@
 """Errors for the HLK-SW16 component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class SW16Exception(HomeAssistantError):

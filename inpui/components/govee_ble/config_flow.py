@@ -7,12 +7,12 @@ from typing import Any
 from govee_ble import GoveeBluetoothDeviceData as DeviceData
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
 
 from .const import CONF_DEVICE_TYPE, DOMAIN
 

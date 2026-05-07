@@ -15,26 +15,26 @@ import uuid
 import aiohttp
 
 from homeassistant import config as conf_util
-from homeassistant.components import hassio
-from homeassistant.components.api import ATTR_INSTALLATION_TYPE
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.energy import (
+from inpui.components import hassio
+from inpui.components.api import ATTR_INSTALLATION_TYPE
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.energy import (
     DOMAIN as ENERGY_DOMAIN,
     is_configured as energy_is_configured,
 )
-from homeassistant.components.labs import async_is_preview_feature_enabled
-from homeassistant.components.recorder import (
+from inpui.components.labs import async_is_preview_feature_enabled
+from inpui.components.recorder import (
     DOMAIN as RECORDER_DOMAIN,
     get_instance as get_recorder_instance,
 )
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_DOMAIN,
     BASE_PLATFORMS,
     __version__ as HA_VERSION,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     HassJob,
     HomeAssistant,
@@ -42,22 +42,22 @@ from homeassistant.core import (
     callback,
     get_release_channel,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.system_info import async_get_system_info
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.loader import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_call_later, async_track_time_interval
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.helpers.system_info import async_get_system_info
+from inpui.helpers.typing import UNDEFINED
+from inpui.loader import (
     Integration,
     IntegrationNotFound,
     async_get_integration,
     async_get_integrations,
 )
-from homeassistant.setup import async_get_loaded_integrations
+from inpui.setup import async_get_loaded_integrations
 
 from .const import (
     ATTR_ADDON_COUNT,

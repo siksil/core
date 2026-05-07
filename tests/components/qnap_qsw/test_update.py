@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 from aioqsw.const import API_ERROR_CODE, API_ERROR_MESSAGE, API_RESULT, API_VERSION
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_BACKUP,
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
@@ -12,8 +12,8 @@ from homeassistant.components.update import (
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .util import (
     FIRMWARE_INFO_MOCK,

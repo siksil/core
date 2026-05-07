@@ -18,8 +18,8 @@ from aioesphomeapi import (
     MediaPlayerSupportedFormat,
 )
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_EXTRA,
     BrowseMedia,
@@ -30,7 +30,7 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.core import callback
+from inpui.core import callback
 
 from .entity import (
     EsphomeEntity,

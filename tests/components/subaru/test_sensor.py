@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.subaru.sensor import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.subaru.sensor import (
     API_GEN_2_SENSORS,
     DOMAIN,
     EV_SENSORS,
     SAFETY_SENSORS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .api_responses import (
     EXPECTED_STATE_EV_METRIC,

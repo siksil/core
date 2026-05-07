@@ -9,12 +9,12 @@ from typing import Any
 import httpx
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_HEADERS,
     CONF_ICON,
@@ -28,19 +28,19 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
     TEMPLATE_ENTITY_BASE_SCHEMA,
     ManualTriggerEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 CONF_BODY_OFF = "body_off"

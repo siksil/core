@@ -9,11 +9,11 @@ import logging
 from ns_api import NSAPI, Trip
 from requests.exceptions import ConnectionError, HTTPError, Timeout
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import (
     AMS_TZ,

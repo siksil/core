@@ -6,12 +6,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import automation
-from homeassistant.components.homeassistant.triggers import time_pattern
-from homeassistant.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import automation
+from inpui.components.homeassistant.triggers import time_pattern
+from inpui.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, mock_component
 

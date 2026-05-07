@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from steamloop import FanMode, HoldType, ThermostatState, Zone, ZoneMode
 
-from homeassistant.components.trane import PLATFORMS
-from homeassistant.components.trane.const import CONF_SECRET_KEY, DOMAIN
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.trane import PLATFORMS
+from inpui.components.trane.const import CONF_SECRET_KEY, DOMAIN
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

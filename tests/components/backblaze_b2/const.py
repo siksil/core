@@ -1,7 +1,7 @@
 """Consts for Backblaze B2 tests."""
 
-from homeassistant.components.backblaze_b2.const import CONF_BUCKET, CONF_PREFIX
-from homeassistant.components.backup import AgentBackup
+from inpui.components.backblaze_b2.const import CONF_BUCKET, CONF_PREFIX
+from inpui.components.backup import AgentBackup
 
 USER_INPUT = {
     CONF_BUCKET: "testBucket",

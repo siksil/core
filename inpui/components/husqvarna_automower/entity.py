@@ -11,10 +11,10 @@ from typing import TYPE_CHECKING, Any, Concatenate, ParamSpec, TypeVar, overload
 from aioautomower.exceptions import ApiError
 from aioautomower.model import MowerActivities, MowerAttributes, MowerStates, WorkArea
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import AutomowerDataUpdateCoordinator
 from .const import DOMAIN, EXECUTION_TIME_DELAY

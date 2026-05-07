@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from togrill_bluetooth.packets import Packet, PacketA5Notify
 
-from homeassistant.components.event import EventEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import slugify
+from inpui.components.event import EventEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import slugify
 
 from . import ToGrillConfigEntry
 from .const import CONF_PROBE_COUNT

@@ -11,7 +11,7 @@ from toonapi import (
     ACTIVE_STATE_SLEEP,
 )
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_AWAY,
     PRESET_COMFORT,
     PRESET_HOME,
@@ -21,10 +21,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ToonDataUpdateCoordinator
 from .const import DEFAULT_MAX_TEMP, DEFAULT_MIN_TEMP, DOMAIN

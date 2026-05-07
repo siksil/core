@@ -5,22 +5,22 @@ from unittest.mock import MagicMock
 from demetriek import BrightnessMode, LaMetricConnectionError, LaMetricError
 import pytest
 
-from homeassistant.components.lametric.const import DOMAIN
-from homeassistant.components.select import (
+from inpui.components.lametric.const import DOMAIN
+from inpui.components.select import (
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_OPTION,
     STATE_UNAVAILABLE,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 pytestmark = pytest.mark.usefixtures("init_integration")
 

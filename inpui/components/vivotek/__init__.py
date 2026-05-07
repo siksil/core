@@ -5,8 +5,8 @@ from typing import Any
 
 from libpyvivotek.vivotek import VivotekCamera, VivotekCameraError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
@@ -16,8 +16,8 @@ from homeassistant.const import (
     HTTP_DIGEST_AUTHENTICATION,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
 
 from .const import CONF_SECURITY_LEVEL
 

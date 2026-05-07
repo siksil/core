@@ -6,11 +6,11 @@ from aiohttp import ClientError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.number import SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.number import SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

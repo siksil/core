@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.pooldose.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.pooldose.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .conftest import RequestStatus
 

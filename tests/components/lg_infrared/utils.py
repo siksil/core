@@ -1,7 +1,7 @@
 """Tests for the LG Infrared integration."""
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .conftest import MOCK_INFRARED_ENTITY_ID
 

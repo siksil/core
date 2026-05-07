@@ -8,15 +8,15 @@ from dataclasses import dataclass
 from devolo_plc_api.device import Device
 from devolo_plc_api.exceptions.device import DevicePasswordProtected, DeviceUnavailable
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, IDENTIFY, PAIRING, RESTART, START_WPS
 from .coordinator import DevoloHomeNetworkConfigEntry

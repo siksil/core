@@ -3,10 +3,10 @@
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.websocket_api.auth import TYPE_AUTH_REQUIRED
-from homeassistant.components.websocket_api.http import URL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api.auth import TYPE_AUTH_REQUIRED
+from inpui.components.websocket_api.http import URL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import (
     ClientSessionGenerator,

@@ -10,9 +10,9 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASS_UNITS,
     DEVICE_CLASSES_SCHEMA,
@@ -24,8 +24,8 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_CLASS,
     CONF_ENTITIES,
@@ -36,24 +36,24 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import (
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import (
     get_capability,
     get_device_class,
     get_unit_of_measurement,
 )
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_IGNORE_NON_NUMERIC, DOMAIN
 from .entity import GroupEntity

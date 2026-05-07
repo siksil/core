@@ -8,8 +8,8 @@ from opower import Account, Forecast, MeterType, ReadResolution, UnitOfMeasure
 from opower.utilities.pge import PGE
 import pytest
 
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.opower.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

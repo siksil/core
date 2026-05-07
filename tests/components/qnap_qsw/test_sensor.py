@@ -3,10 +3,10 @@
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.qnap_qsw.const import ATTR_MAX, DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.qnap_qsw.const import ATTR_MAX, DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .util import async_init_integration, init_config_entry
 

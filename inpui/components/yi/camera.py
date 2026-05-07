@@ -8,13 +8,13 @@ from aioftp import Client, StatusCodeError
 from haffmpeg.camera import CameraMjpeg
 import voluptuous as vol
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.camera import (
+from inpui.components import ffmpeg
+from inpui.components.camera import (
     PLATFORM_SCHEMA as CAMERA_PLATFORM_SCHEMA,
     Camera,
 )
-from homeassistant.components.ffmpeg import get_ffmpeg_manager
-from homeassistant.const import (
+from inpui.components.ffmpeg import get_ffmpeg_manager
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -22,12 +22,12 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

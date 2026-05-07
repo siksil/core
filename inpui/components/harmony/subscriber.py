@@ -6,7 +6,7 @@ import asyncio
 import logging
 from typing import Any, NamedTuple
 
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
 
 _LOGGER = logging.getLogger(__name__)
 

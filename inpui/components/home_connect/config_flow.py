@@ -7,9 +7,9 @@ from typing import Any
 import jwt
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.helpers import config_entry_oauth2_flow, device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.helpers import config_entry_oauth2_flow, device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN
 

@@ -11,10 +11,10 @@ from switchbot_api import (
 )
 from switchbot_api.commands import ArtFrameCommands, BotCommands, CommonCommands
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData, SwitchBotCoordinator
 from .const import DOMAIN

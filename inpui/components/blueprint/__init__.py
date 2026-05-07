@@ -1,8 +1,8 @@
 """The blueprint integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from . import websocket_api
 from .const import CONF_USE_BLUEPRINT, DOMAIN  # noqa: F401

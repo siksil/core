@@ -1,6 +1,6 @@
 """Exceptions for the dwd_weather_warnings integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class EntityNotFoundError(HomeAssistantError):

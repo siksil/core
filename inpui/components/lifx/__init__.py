@@ -12,18 +12,18 @@ from aiolifx.aiolifx import Light
 from aiolifx.connection import LIFXConnection
 import voluptuous as vol
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import (
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     Platform,
 )
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_call_later, async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 from .const import _LOGGER, DATA_LIFX_MANAGER, DOMAIN, TARGET_ANY
 from .coordinator import LIFXConfigEntry, LIFXUpdateCoordinator
@@ -179,7 +179,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         HassJob(_async_delayed_discovery, cancel_on_shutdown=True),
     )
     hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STARTED, discovery_manager.async_discovery
+        EVENT_INPUI_STARTED, discovery_manager.async_discovery
     )
 
     return True

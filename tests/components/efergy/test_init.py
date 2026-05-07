@@ -2,11 +2,11 @@
 
 from pyefergy import exceptions
 
-from homeassistant.components.efergy.const import DEFAULT_NAME, DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.efergy.const import DEFAULT_NAME, DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import _patch_efergy_status, create_entry, init_integration, setup_platform
 

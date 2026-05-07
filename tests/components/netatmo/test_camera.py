@@ -11,19 +11,19 @@ import pyatmo
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import camera
-from homeassistant.components.camera import CameraState
-from homeassistant.components.netatmo.const import (
+from inpui.components import camera
+from inpui.components.camera import CameraState
+from inpui.components.netatmo.const import (
     NETATMO_EVENT,
     SERVICE_SET_CAMERA_LIGHT,
     SERVICE_SET_PERSON_AWAY,
     SERVICE_SET_PERSONS_HOME,
 )
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .common import (
     fake_post_request,

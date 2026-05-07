@@ -2,7 +2,7 @@
 
 from yalexs.const import Brand
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DEFAULT_TIMEOUT = 25
 

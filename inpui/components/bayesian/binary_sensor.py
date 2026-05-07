@@ -11,13 +11,13 @@ from uuid import UUID
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ABOVE,
     CONF_BELOW,
     CONF_DEVICE_CLASS,
@@ -30,23 +30,23 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.exceptions import ConditionError, TemplateError
-from homeassistant.helpers import condition, config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.exceptions import ConditionError, TemplateError
+from inpui.helpers import condition, config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     TrackTemplate,
     TrackTemplateResult,
     TrackTemplateResultInfo,
     async_track_state_change_event,
     async_track_template_result,
 )
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.template import Template, result_as_boolean
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.template import Template, result_as_boolean
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     ATTR_OBSERVATIONS,

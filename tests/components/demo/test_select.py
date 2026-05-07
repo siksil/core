@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 ENTITY_SPEED = "select.speed"
 

@@ -7,8 +7,8 @@ import asyncio
 from pysensibo import SensiboClient
 from pysensibo.exceptions import AuthenticationError
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import LOGGER, SENSIBO_ERRORS, TIMEOUT
 

@@ -10,9 +10,9 @@ from typing import TYPE_CHECKING, Any
 from thinqconnect import ThinQAPIException
 from thinqconnect.integration import HABridge
 
-from homeassistant.const import EVENT_CORE_CONFIG_UPDATE
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import EVENT_CORE_CONFIG_UPDATE
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import ThinqConfigEntry

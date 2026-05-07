@@ -2,10 +2,10 @@
 
 from http import HTTPStatus
 
-from homeassistant.components.buienradar.const import DOMAIN
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.buienradar.const import DOMAIN
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

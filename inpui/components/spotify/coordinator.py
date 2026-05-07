@@ -16,13 +16,13 @@ from spotifyaio import (
     UserProfile,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 

@@ -6,9 +6,9 @@ from typing import Any
 
 from actron_neo_api import ActronAirAPI, ActronAirAuthError
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN
+from inpui.exceptions import HomeAssistantError
 
 from .const import _LOGGER, DOMAIN
 

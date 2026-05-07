@@ -1,13 +1,13 @@
 """Configure and test MatrixBot."""
 
-from homeassistant.components.matrix import MatrixBot
-from homeassistant.components.matrix.const import (
+from inpui.components.matrix import MatrixBot
+from inpui.components.matrix.const import (
     DOMAIN,
     SERVICE_REACT,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.core import HomeAssistant
 
 from .conftest import TEST_NOTIFIER_NAME
 

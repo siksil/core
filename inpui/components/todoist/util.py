@@ -6,7 +6,7 @@ from datetime import date, datetime
 
 from todoist_api_python.models import Due
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 
 def parse_due_date(task_due: Due | None) -> date | datetime | None:

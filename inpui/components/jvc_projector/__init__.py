@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from jvcprojector import JvcProjector, JvcProjectorAuthError, JvcProjectorTimeoutError
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .coordinator import JVCConfigEntry, JvcProjectorDataUpdateCoordinator
 
@@ -54,7 +54,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: JVCConfigEntry) -> bool:
         await device.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, disconnect)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, disconnect)
     )
 
     await async_migrate_entities(hass, entry, coordinator)

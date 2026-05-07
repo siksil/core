@@ -3,10 +3,10 @@
 import logging
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ColorMode, LightEntity
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     KNOWN_UNSUPPORTED_DEVICE_TYPES,

@@ -6,18 +6,18 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.cloud import CloudNotAvailable
-from homeassistant.components.mobile_app.const import (
+from inpui.components.cloud import CloudNotAvailable
+from inpui.components.mobile_app.const import (
     ATTR_DEVICE_NAME,
     CONF_CLOUDHOOK_URL,
     CONF_USER_ID,
     DATA_DELETED_IDS,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import CALL_SERVICE, REGISTER_CLEARTEXT
 

@@ -8,16 +8,16 @@ from typing import TYPE_CHECKING
 from httpx import HTTPStatusError, RequestError, TimeoutException
 from pythonxbox.api.provider.titlehub.models import Image, Title, TitleFields
 
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .binary_sensor import profile_pic
 from .const import DOMAIN

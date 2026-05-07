@@ -4,12 +4,12 @@ from unittest.mock import MagicMock, PropertyMock, call, patch
 
 import pytest
 
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.components.yamaha import media_player as yamaha
-from homeassistant.components.yamaha.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.setup import async_setup_component
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.components.yamaha import media_player as yamaha
+from inpui.components.yamaha.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery import async_load_platform
+from inpui.setup import async_setup_component
 
 CONFIG = {"media_player": {"platform": "yamaha", "host": "127.0.0.1"}}
 

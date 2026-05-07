@@ -5,17 +5,17 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.nut.const import DOMAIN, INTEGRATION_SUPPORTED_COMMANDS
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.nut.const import DOMAIN, INTEGRATION_SUPPORTED_COMMANDS
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .util import async_init_integration
 

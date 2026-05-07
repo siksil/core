@@ -11,10 +11,10 @@ from typing import Any
 
 from pynintendoparental.exceptions import BedtimeOutOfRangeError
 
-from homeassistant.components.time import TimeEntity, TimeEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.time import TimeEntity, TimeEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     BEDTIME_ALARM_DISABLE,

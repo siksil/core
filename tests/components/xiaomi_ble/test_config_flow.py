@@ -10,10 +10,10 @@ from xiaomi_ble import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import BluetoothChange
-from homeassistant.components.xiaomi_ble.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.bluetooth import BluetoothChange
+from inpui.components.xiaomi_ble.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     JTYJGD03MI_SERVICE_INFO,

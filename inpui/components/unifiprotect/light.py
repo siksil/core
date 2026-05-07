@@ -8,9 +8,9 @@ from typing import Any
 from uiprotect.data import Light, ModelType, ProtectAdoptableDeviceModel
 from uiprotect.data.devices import LightDeviceSettings
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .data import ProtectDeviceType, UFPConfigEntry
 from .entity import ProtectDeviceEntity

@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.minecraft_server.api import MinecraftServerType
-from homeassistant.components.minecraft_server.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS, CONF_TYPE
+from inpui.components.minecraft_server.api import MinecraftServerType
+from inpui.components.minecraft_server.const import DOMAIN
+from inpui.const import CONF_ADDRESS, CONF_TYPE
 
 from .const import TEST_ADDRESS, TEST_CONFIG_ENTRY_ID
 

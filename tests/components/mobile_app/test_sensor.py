@@ -7,7 +7,7 @@ from unittest.mock import patch
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.mobile_app.const import (
+from inpui.components.mobile_app.const import (
     ATTR_SENSOR_ATTRIBUTES,
     ATTR_SENSOR_ICON,
     ATTR_SENSOR_NAME,
@@ -15,18 +15,18 @@ from homeassistant.components.mobile_app.const import (
     ATTR_SENSOR_TYPE,
     ATTR_SENSOR_UNIQUE_ID,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     CONF_WEBHOOK_ID,
     PERCENTAGE,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

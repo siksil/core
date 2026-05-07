@@ -9,15 +9,15 @@ import logging
 
 from pysmarty2 import Smarty
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import REVOLUTIONS_PER_MINUTE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.const import REVOLUTIONS_PER_MINUTE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .coordinator import SmartyConfigEntry, SmartyCoordinator
 from .entity import SmartyEntity

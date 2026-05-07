@@ -3,12 +3,12 @@
 import datetime
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.wiz.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_FRIENDLY_NAME, CONF_HOST, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.wiz.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_FRIENDLY_NAME, CONF_HOST, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import (
     FAKE_IP,
@@ -43,7 +43,7 @@ async def test_cleanup_on_shutdown(hass: HomeAssistant) -> None:
     bulb = _mocked_wizlight(None, None, FAKE_SOCKET)
     _, entry = await async_setup_integration(hass, wizlight=bulb)
     assert entry.state is ConfigEntryState.LOADED
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done(wait_background_tasks=True)
     bulb.async_close.assert_called_once()
 

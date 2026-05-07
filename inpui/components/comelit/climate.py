@@ -8,7 +8,7 @@ from typing import Any, TypedDict, cast
 from aiocomelit import ComelitSerialBridgeObject
 from aiocomelit.const import CLIMATE
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
     ClimateEntity,
     ClimateEntityFeature,
@@ -16,9 +16,9 @@ from homeassistant.components.climate import (
     HVACMode,
     UnitOfTemperature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_TENTHS
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, PRECISION_TENTHS
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import PRESET_MODE_AUTO, PRESET_MODE_AUTO_TARGET_TEMP, PRESET_MODE_MANUAL
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge

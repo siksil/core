@@ -6,10 +6,10 @@ from collections.abc import Mapping
 from itertools import chain
 from typing import Any
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
 
 from . import UnifiConfigEntry
 

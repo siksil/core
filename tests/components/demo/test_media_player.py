@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_GROUP_MEMBERS,
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_CONTENT_ID,
@@ -27,7 +27,7 @@ from homeassistant.components.media_player import (
     RepeatMode,
     is_on,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_SUPPORTED_FEATURES,
@@ -51,9 +51,9 @@ from homeassistant.const import (
     STATE_PLAYING,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import DATA_CLIENTSESSION, _make_key
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import DATA_CLIENTSESSION, _make_key
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator, WebSocketGenerator
 

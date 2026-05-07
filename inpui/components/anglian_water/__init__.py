@@ -11,15 +11,15 @@ from pyanglianwater.exceptions import (
     SmartMeterUnavailableError,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryError
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryError
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_ACCOUNT_NUMBER, DOMAIN
 from .coordinator import AnglianWaterConfigEntry, AnglianWaterUpdateCoordinator

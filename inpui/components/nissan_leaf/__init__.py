@@ -16,14 +16,14 @@ from pycarwings2.responses import (
 )
 import voluptuous as vol
 
-from homeassistant.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME, Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import utcnow
+from inpui.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME, Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import utcnow
 
 from .const import (
     CONF_CHARGING_INTERVAL,

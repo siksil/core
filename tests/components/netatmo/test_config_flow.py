@@ -7,19 +7,19 @@ from pyatmo.const import ALL_SCOPES
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.netatmo import config_flow
-from homeassistant.components.netatmo.const import (
+from inpui.components.netatmo import config_flow
+from inpui.components.netatmo.const import (
     CONF_NEW_AREA,
     CONF_WEATHER_AREAS,
     DOMAIN,
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

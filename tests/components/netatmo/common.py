@@ -8,12 +8,12 @@ from unittest.mock import patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.netatmo.const import DOMAIN
-from homeassistant.components.webhook import async_handle_webhook
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.aiohttp import MockRequest
+from inpui.components.netatmo.const import DOMAIN
+from inpui.components.webhook import async_handle_webhook
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.aiohttp import MockRequest
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMockResponse

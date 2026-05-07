@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, patch
 from evolutionhttp import BryantEvolutionLocalClient
 import pytest
 
-from homeassistant.components.bryant_evolution.const import CONF_SYSTEM_ZONE, DOMAIN
-from homeassistant.const import CONF_FILENAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.bryant_evolution.const import CONF_SYSTEM_ZONE, DOMAIN
+from inpui.const import CONF_FILENAME
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import MockConfigEntry
 

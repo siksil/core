@@ -4,11 +4,11 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.knx.const import DOMAIN, KNX_ADDRESS, FanConf
-from homeassistant.components.knx.schema import FanSchema
-from homeassistant.const import CONF_NAME, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.knx.const import DOMAIN, KNX_ADDRESS, FanConf
+from inpui.components.knx.schema import FanSchema
+from inpui.const import CONF_NAME, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

@@ -2,11 +2,11 @@
 
 import wsdot as wsdot_api
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 PLATFORMS = [Platform.SENSOR]
 

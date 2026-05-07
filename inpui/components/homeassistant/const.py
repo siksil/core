@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Final
 
 from homeassistant import core as ha
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from .exposed_entities import ExposedEntities

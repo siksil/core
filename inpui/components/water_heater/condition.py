@@ -6,16 +6,16 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_OPTIONS,
     STATE_OFF,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.core import HomeAssistant, State
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     ENTITY_STATE_CONDITION_SCHEMA_ANY_ALL,
     Condition,
     ConditionConfig,
@@ -23,7 +23,7 @@ from homeassistant.helpers.condition import (
     EntityNumericalConditionWithUnitBase,
     make_entity_state_condition,
 )
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import DOMAIN
 

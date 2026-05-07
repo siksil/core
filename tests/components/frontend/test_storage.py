@@ -6,11 +6,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.frontend import DOMAIN
-from homeassistant.components.frontend.storage import async_user_store
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import Store
-from homeassistant.setup import async_setup_component
+from inpui.components.frontend import DOMAIN
+from inpui.components.frontend.storage import async_user_store
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import Store
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser
 from tests.typing import WebSocketGenerator

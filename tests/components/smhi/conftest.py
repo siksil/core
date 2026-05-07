@@ -12,10 +12,10 @@ from pysmhi.smhi_fire_forecast import SMHIFireForecast, SMHIFirePointForecast
 from pysmhi.smhi_forecast import SMHIForecast, SMHIPointForecast
 import pytest
 
-from homeassistant.components.smhi import PLATFORMS
-from homeassistant.components.smhi.const import DOMAIN
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.smhi import PLATFORMS
+from inpui.components.smhi.const import DOMAIN
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, Platform
+from inpui.core import HomeAssistant
 
 from . import TEST_CONFIG
 

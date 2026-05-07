@@ -1,8 +1,8 @@
 """Test Guardian diagnostics."""
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.guardian import GuardianData
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.components.guardian import GuardianData
+from inpui.core import HomeAssistant
 
 from tests.common import ANY, MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

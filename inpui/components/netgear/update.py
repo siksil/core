@@ -5,13 +5,13 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import NetgearConfigEntry, NetgearFirmwareCoordinator
 from .entity import NetgearRouterCoordinatorEntity

@@ -13,15 +13,15 @@ from httpx import HTTPStatusError, RequestError, TimeoutException
 from pythonxbox.api.provider.smartglass import SmartglassProvider
 from pythonxbox.api.provider.smartglass.models import InputKeyType, PowerState
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_DELAY_SECS,
     ATTR_NUM_REPEATS,
     DEFAULT_DELAY_SECS,
     RemoteEntity,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import XboxConfigEntry

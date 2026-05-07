@@ -5,10 +5,10 @@ from __future__ import annotations
 from aiohttp import ClientResponseError
 from incomfortclient import InvalidGateway, InvalidHeaterList
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import (

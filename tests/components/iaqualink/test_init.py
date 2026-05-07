@@ -14,16 +14,16 @@ from iaqualink.systems.iaqua.device import (
 from iaqualink.systems.iaqua.system import IaquaSystem
 import pytest
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.components.iaqualink.const import UPDATE_INTERVAL
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ASSUMED_STATE, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.components.iaqualink.const import UPDATE_INTERVAL
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ASSUMED_STATE, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import get_aqualink_device, get_aqualink_system
 

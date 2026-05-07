@@ -3,9 +3,9 @@
 import logging
 from unittest.mock import patch
 
-from homeassistant.components.freedompro.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.freedompro.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

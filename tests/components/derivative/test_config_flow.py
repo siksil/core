@@ -7,12 +7,12 @@ from freezegun import freeze_time
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.derivative.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import selector
-from homeassistant.util import dt as dt_util
+from inpui.components.derivative.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import selector
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 

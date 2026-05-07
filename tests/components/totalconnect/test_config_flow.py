@@ -4,16 +4,16 @@ from unittest.mock import AsyncMock, patch
 
 from total_connect_client.exceptions import AuthenticationError
 
-from homeassistant.components.totalconnect.const import (
+from inpui.components.totalconnect.const import (
     AUTO_BYPASS,
     CODE_REQUIRED,
     CONF_USERCODES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_LOCATION, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_LOCATION, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 from .const import LOCATION_ID, PASSWORD, USERNAME

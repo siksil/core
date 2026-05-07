@@ -6,22 +6,22 @@ from aioshelly.const import MODEL_BUTTON1
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     ATTR_CHANNEL,
     ATTR_CLICK_TYPE,
     CONF_SUBTYPE,
     DOMAIN,
     EVENT_SHELLY_CLICK,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import init_integration
 

@@ -2,12 +2,12 @@
 
 from json import dumps
 
-from homeassistant.components.azure_storage.const import (
+from inpui.components.azure_storage.const import (
     CONF_ACCOUNT_NAME,
     CONF_CONTAINER_NAME,
     CONF_STORAGE_ACCOUNT_KEY,
 )
-from homeassistant.components.backup import AgentBackup
+from inpui.components.backup import AgentBackup
 
 USER_INPUT = {
     CONF_ACCOUNT_NAME: "account",

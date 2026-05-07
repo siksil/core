@@ -9,24 +9,24 @@ import voluptuous as vol
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError, ExtractorError
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     MEDIA_PLAYER_PLAY_MEDIA_SCHEMA,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_FORMAT_QUERY,

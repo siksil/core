@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock
 from knocki import KnockiConnectionError, KnockiInvalidAuthError
 import pytest
 
-from homeassistant.components.knocki.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.knocki.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import setup_integration
 

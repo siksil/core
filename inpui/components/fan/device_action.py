@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     async_validate_entity_schema,
     toggle_entity,
 )
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.const import CONF_DOMAIN
+from inpui.core import Context, HomeAssistant
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DOMAIN
 

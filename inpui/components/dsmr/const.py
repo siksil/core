@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "dsmr"
 

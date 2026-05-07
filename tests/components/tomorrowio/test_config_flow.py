@@ -9,18 +9,18 @@ from pytomorrowio.exceptions import (
     UnknownException,
 )
 
-from homeassistant.components.tomorrowio.config_flow import (
+from inpui.components.tomorrowio.config_flow import (
     _get_config_schema,
     _get_unique_id,
 )
-from homeassistant.components.tomorrowio.const import (
+from inpui.components.tomorrowio.const import (
     CONF_TIMESTEP,
     DEFAULT_NAME,
     DEFAULT_TIMESTEP,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LOCATION,
@@ -28,9 +28,9 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_RADIUS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from .const import API_KEY, MIN_CONFIG
 

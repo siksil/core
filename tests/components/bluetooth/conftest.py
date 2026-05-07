@@ -9,8 +9,8 @@ from habluetooth import BaseHaRemoteScanner
 import habluetooth.util as habluetooth_utils
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.core import HomeAssistant
+from inpui.components import bluetooth
+from inpui.core import HomeAssistant
 
 from . import (
     HCI0_SOURCE_ADDRESS,

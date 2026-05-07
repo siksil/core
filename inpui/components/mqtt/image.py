@@ -11,17 +11,17 @@ from typing import TYPE_CHECKING, Any
 import httpx
 import voluptuous as vol
 
-from homeassistant.components import image
-from homeassistant.components.image import DEFAULT_CONTENT_TYPE, ImageEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, VolSchemaType
-from homeassistant.util import dt as dt_util
+from inpui.components import image
+from inpui.components.image import DEFAULT_CONTENT_TYPE, ImageEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, VolSchemaType
+from inpui.util import dt as dt_util
 
 from . import subscription
 from .config import MQTT_BASE_SCHEMA

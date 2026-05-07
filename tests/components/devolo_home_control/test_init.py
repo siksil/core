@@ -4,13 +4,13 @@ from unittest.mock import MagicMock, patch
 
 from devolo_home_control_api.exceptions.gateway import GatewayOfflineError
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.devolo_home_control.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.devolo_home_control.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import configure_integration
 from .mocks import HomeControlMock, HomeControlMockBinarySensor
@@ -90,7 +90,7 @@ async def test_home_assistant_stop(hass: HomeAssistant) -> None:
     ):
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         assert test_gateway.websocket_disconnect.called
         assert test_gateway2.websocket_disconnect.called

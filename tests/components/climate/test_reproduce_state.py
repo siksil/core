@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HUMIDITY,
     ATTR_PRESET_MODE,
@@ -20,9 +20,9 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.climate.reproduce_state import async_reproduce_states
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.components.climate.reproduce_state import async_reproduce_states
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import Context, HomeAssistant, State
 
 from tests.common import async_mock_service
 

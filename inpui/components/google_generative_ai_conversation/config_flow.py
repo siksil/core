@@ -12,7 +12,7 @@ from google.genai.errors import APIError, ClientError
 from requests.exceptions import Timeout
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigEntryState,
@@ -21,10 +21,10 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import llm
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import llm
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     SelectOptionDict,

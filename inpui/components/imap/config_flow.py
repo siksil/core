@@ -9,18 +9,18 @@ from typing import Any
 from aioimaplib import AioImapException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import (
     BooleanSelector,
     SelectSelector,
     SelectSelectorConfig,
@@ -28,7 +28,7 @@ from homeassistant.helpers.selector import (
     TemplateSelector,
     TemplateSelectorConfig,
 )
-from homeassistant.util.ssl import SSLCipherList
+from inpui.util.ssl import SSLCipherList
 
 from . import ImapConfigEntry
 from .const import (

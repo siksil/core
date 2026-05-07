@@ -1,11 +1,11 @@
 """Test HomematicIP Cloud valve entities."""
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     DOMAIN as VALVE_DOMAIN,
     SERVICE_OPEN_VALVE,
     ValveState,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

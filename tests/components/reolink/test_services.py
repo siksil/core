@@ -6,13 +6,13 @@ import pytest
 from reolink_aio.api import Chime
 from reolink_aio.exceptions import InvalidParameterError, ReolinkError
 
-from homeassistant.components.reolink.const import DOMAIN
-from homeassistant.components.reolink.services import ATTR_RINGTONE
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.reolink.const import DOMAIN
+from inpui.components.reolink.services import ATTR_RINGTONE
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

@@ -11,14 +11,14 @@ from python_homeassistant_analytics import (
 from python_homeassistant_analytics.models import Environment, IntegrationType
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

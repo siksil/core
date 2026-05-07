@@ -2,9 +2,9 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 
@@ -39,7 +39,7 @@ async def test_noise_setup_component_start(mock_start, hass: HomeAssistant) -> N
     assert hass.data["ffmpeg"].binary == "ffmpeg"
     assert hass.states.get("binary_sensor.ffmpeg_noise") is not None
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert mock_start.called
 
@@ -61,7 +61,7 @@ async def test_noise_setup_component_start_callback(
     assert hass.data["ffmpeg"].binary == "ffmpeg"
     assert hass.states.get("binary_sensor.ffmpeg_noise") is not None
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     entity = hass.states.get("binary_sensor.ffmpeg_noise")
@@ -97,7 +97,7 @@ async def test_motion_setup_component_start(mock_start, hass: HomeAssistant) -> 
     assert hass.data["ffmpeg"].binary == "ffmpeg"
     assert hass.states.get("binary_sensor.ffmpeg_motion") is not None
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert mock_start.called
 
@@ -119,7 +119,7 @@ async def test_motion_setup_component_start_callback(
     assert hass.data["ffmpeg"].binary == "ffmpeg"
     assert hass.states.get("binary_sensor.ffmpeg_motion") is not None
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     entity = hass.states.get("binary_sensor.ffmpeg_motion")

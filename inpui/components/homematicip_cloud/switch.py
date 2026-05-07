@@ -26,9 +26,9 @@ from homematicip.device import (
 )
 from homematicip.group import ExtendedLinkedSwitchingGroup, SwitchingGroup
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import ATTR_GROUP_MEMBER_UNREACHABLE, HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry, HomematicipHAP

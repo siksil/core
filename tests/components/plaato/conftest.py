@@ -8,14 +8,14 @@ from pyplaato.models.device import PlaatoDeviceType
 from pyplaato.models.keg import PlaatoKeg
 import pytest
 
-from homeassistant.components.plaato.const import (
+from inpui.components.plaato.const import (
     CONF_DEVICE_NAME,
     CONF_DEVICE_TYPE,
     CONF_USE_WEBHOOK,
     DOMAIN,
 )
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -13,13 +13,13 @@ from demetriek import (
 )
 import pytest
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 NOTIFY_SERVICE = "frenck_s_lametric"
 

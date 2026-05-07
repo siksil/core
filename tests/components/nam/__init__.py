@@ -2,8 +2,8 @@
 
 from unittest.mock import AsyncMock, Mock, patch
 
-from homeassistant.components.nam.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.nam.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 

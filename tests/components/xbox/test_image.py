@@ -11,11 +11,11 @@ from pythonxbox.api.provider.people.models import PeopleResponse
 import respx
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.xbox.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.xbox.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

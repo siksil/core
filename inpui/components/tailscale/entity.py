@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from tailscale import Device as TailscaleDevice
 
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import (
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
 )

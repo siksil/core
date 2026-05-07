@@ -4,10 +4,10 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components import camera, image_processing as ip
-from homeassistant.components.openalpr_cloud.image_processing import OPENALPR_API_URL
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import camera, image_processing as ip
+from inpui.components.openalpr_cloud.image_processing import OPENALPR_API_URL
+from inpui.core import Event, HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import (
     assert_setup_component,

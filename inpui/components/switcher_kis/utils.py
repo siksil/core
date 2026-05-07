@@ -9,8 +9,8 @@ from aioswitcher.api.remotes import SwitcherBreezeRemoteManager
 from aioswitcher.bridge import SwitcherBridge
 from aioswitcher.device import SwitcherBase
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import singleton
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import singleton
 
 from .const import DISCOVERY_TIME_SEC
 

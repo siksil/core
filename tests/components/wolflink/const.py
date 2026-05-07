@@ -1,11 +1,11 @@
 """Constants for the Wolf SmartSet Service tests."""
 
-from homeassistant.components.wolflink.const import (
+from inpui.components.wolflink.const import (
     DEVICE_GATEWAY,
     DEVICE_ID,
     DEVICE_NAME,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 CONFIG = {
     DEVICE_NAME: "test-device",

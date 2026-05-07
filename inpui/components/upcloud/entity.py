@@ -6,9 +6,9 @@ from typing import Any
 
 import upcloud_api
 
-from homeassistant.const import CONF_USERNAME, STATE_OFF, STATE_ON, STATE_PROBLEM
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_USERNAME, STATE_OFF, STATE_ON, STATE_PROBLEM
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import UpCloudConfigEntry, UpCloudDataUpdateCoordinator

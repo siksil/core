@@ -10,16 +10,16 @@ from pyoverkiz.enums import OverkizCommand, OverkizCommandParam, OverkizState
 from pyoverkiz.enums.ui import UIWidget
 from pyoverkiz.types import StateType as OverkizStateType
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityDescription,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OverkizDataConfigEntry
 from .coordinator import OverkizDataUpdateCoordinator

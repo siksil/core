@@ -9,17 +9,17 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import requests
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.concord232.binary_sensor import (
+from inpui.components.concord232.binary_sensor import (
     CONF_EXCLUDE_ZONES,
     CONF_ZONE_TYPES,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_time_changed
 

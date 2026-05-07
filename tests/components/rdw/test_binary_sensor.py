@@ -1,10 +1,10 @@
 """Tests for the sensors provided by the RDW integration."""
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.rdw.const import DOMAIN
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.rdw.const import DOMAIN
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

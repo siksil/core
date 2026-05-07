@@ -2,8 +2,8 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.kira import remote as kira
-from homeassistant.core import HomeAssistant
+from inpui.components.kira import remote as kira
+from inpui.core import HomeAssistant
 
 from tests.common import MockEntityPlatform
 

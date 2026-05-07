@@ -10,10 +10,10 @@ from letpot.client import LetPotClient
 from letpot.exceptions import LetPotAuthenticationException, LetPotConnectionException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,

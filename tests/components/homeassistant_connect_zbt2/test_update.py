@@ -2,15 +2,15 @@
 
 import pytest
 
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_notify_firmware_info,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import USB_DATA_ZBT2
 

@@ -9,25 +9,25 @@ from freezegun import freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.conversation import (
+from inpui.components.conversation import (
     AssistantContent,
     ConversationInput,
     async_get_agent,
     async_get_chat_log,
 )
-from homeassistant.components.conversation.const import HOME_ASSISTANT_AGENT
-from homeassistant.components.conversation.models import ConversationResult
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.conversation.const import HOME_ASSISTANT_AGENT
+from inpui.components.conversation.models import ConversationResult
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     chat_session,
     entity_registry as er,
     intent,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import MockAgent
 

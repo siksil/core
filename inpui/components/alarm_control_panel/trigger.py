@@ -1,10 +1,10 @@
 """Provides triggers for alarm control panels."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.entity import get_supported_features
-from homeassistant.helpers.trigger import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.entity import get_supported_features
+from inpui.helpers.trigger import (
     EntityTargetStateTriggerBase,
     Trigger,
     make_entity_target_state_trigger,

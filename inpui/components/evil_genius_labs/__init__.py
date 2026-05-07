@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pyevilgenius
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .coordinator import EvilGeniusConfigEntry, EvilGeniusUpdateCoordinator
 

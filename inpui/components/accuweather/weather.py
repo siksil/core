@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import cast
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CLOUD_COVERAGE,
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_HUMIDITY,
@@ -22,16 +22,16 @@ from homeassistant.components.weather import (
     Forecast,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfLength,
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utc_from_timestamp
 
 from .const import (
     API_METRIC,

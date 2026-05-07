@@ -8,25 +8,25 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from solaredge_web import EnergyData
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.statistics import statistics_during_period
-from homeassistant.components.solaredge.const import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.statistics import statistics_during_period
+from inpui.components.solaredge.const import (
     CONF_SITE_ID,
     DATA_MODULES_COORDINATOR,
     DEFAULT_NAME,
     DOMAIN,
     OVERVIEW_UPDATE_DELAY,
 )
-from homeassistant.components.solaredge.coordinator import SolarEdgeModulesCoordinator
-from homeassistant.const import (
+from inpui.components.solaredge.coordinator import SolarEdgeModulesCoordinator
+from inpui.const import (
     CONF_API_KEY,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_USERNAME,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import API_KEY, PASSWORD, SITE_ID, USERNAME
 

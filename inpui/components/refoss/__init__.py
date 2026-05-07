@@ -5,10 +5,10 @@ from __future__ import annotations
 from datetime import timedelta
 from typing import Final
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.event import async_track_time_interval
 
 from .bridge import DiscoveryService
 from .const import COORDINATORS, DATA_DISCOVERY_SERVICE, DISCOVERY_SCAN_INTERVAL, DOMAIN

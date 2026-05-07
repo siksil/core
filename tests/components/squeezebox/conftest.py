@@ -7,13 +7,13 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from homeassistant.components.media_player import MediaType
-from homeassistant.components.squeezebox import const
-from homeassistant.components.squeezebox.browse_media import (
+from inpui.components.media_player import MediaType
+from inpui.components.squeezebox import const
+from inpui.components.squeezebox.browse_media import (
     MEDIA_TYPE_TO_SQUEEZEBOX,
     SQUEEZEBOX_ID_BY_TYPE,
 )
-from homeassistant.components.squeezebox.const import (
+from inpui.components.squeezebox.const import (
     CONF_HTTPS,
     CONF_VOLUME_STEP,
     DOMAIN,
@@ -33,9 +33,9 @@ from homeassistant.components.squeezebox.const import (
     STATUS_UPDATE_NEWPLUGINS,
     STATUS_UPDATE_NEWVERSION,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

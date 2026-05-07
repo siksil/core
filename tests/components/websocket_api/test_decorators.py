@@ -4,8 +4,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import http, websocket_api
-from homeassistant.core import HomeAssistant
+from inpui.components import http, websocket_api
+from inpui.core import HomeAssistant
 
 
 async def test_async_response_request_context(

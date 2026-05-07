@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from nibe.coil import Coil, CoilData
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ENTITY_ID_FORMAT,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     PERCENTAGE,
     EntityCategory,
     UnitOfElectricCurrent,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     UnitOfTime,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import CoilCoordinator

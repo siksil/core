@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, State
+from inpui.components import tts
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, State
 
 from .common import (
     DEFAULT_LANG,

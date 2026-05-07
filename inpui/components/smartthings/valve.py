@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from pysmartthings import Attribute, Capability, Category, Command, SmartThings
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN

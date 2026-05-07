@@ -7,11 +7,11 @@ from datetime import datetime
 
 from aiowithings import WithingsClient, WorkoutCategory
 
-from homeassistant.components.calendar import CalendarEntity, CalendarEvent
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.calendar import CalendarEntity, CalendarEvent
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DOMAIN, WithingsConfigEntry
 from .coordinator import WithingsWorkoutDataUpdateCoordinator

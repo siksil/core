@@ -10,10 +10,10 @@ from wmspro.const import (
     WMS_WebControl_pro_API_responseType,
 )
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import brightness_to_value, value_to_brightness
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import brightness_to_value, value_to_brightness
 
 from . import WebControlProConfigEntry
 from .const import BRIGHTNESS_SCALE

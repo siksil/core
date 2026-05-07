@@ -5,16 +5,16 @@ from __future__ import annotations
 from datetime import timedelta
 import logging
 
-from homeassistant.components.sensor import CONF_STATE_CLASS, SensorStateClass
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID, CONF_STATE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device import async_entity_id_to_device_id
-from homeassistant.helpers.helper_integration import (
+from inpui.components.sensor import CONF_STATE_CLASS, SensorStateClass
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ENTITY_ID, CONF_STATE
+from inpui.core import HomeAssistant
+from inpui.helpers.device import async_entity_id_to_device_id
+from inpui.helpers.helper_integration import (
     async_handle_source_entity_changes,
     async_remove_helper_config_entry_from_source_device,
 )
-from homeassistant.helpers.template import Template
+from inpui.helpers.template import Template
 
 from .const import (
     CONF_DURATION,

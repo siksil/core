@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, patch
 from pyecobee import ECOBEE_PASSWORD, ECOBEE_USERNAME
 import pytest
 
-from homeassistant.components.ecobee.const import CONF_REFRESH_TOKEN, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ecobee.const import CONF_REFRESH_TOKEN, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

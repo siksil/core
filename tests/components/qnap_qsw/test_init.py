@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from aioqsw.exceptions import APIError
 
-from homeassistant.components.qnap_qsw.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.qnap_qsw.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .util import CONFIG
 

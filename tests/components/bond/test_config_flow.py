@@ -10,13 +10,13 @@ from unittest.mock import MagicMock, Mock, patch
 from aiohttp import ClientConnectionError, ClientResponseError
 
 from homeassistant import config_entries
-from homeassistant.components.bond.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.bond.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .common import (
     patch_bond_bridge,

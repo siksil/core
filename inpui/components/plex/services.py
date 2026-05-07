@@ -7,8 +7,8 @@ from plexapi.exceptions import NotFound
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN, PLEX_URI_SCHEME, SERVERS, SERVICE_REFRESH_LIBRARY
 from .errors import MediaNotFound

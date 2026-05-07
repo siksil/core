@@ -14,24 +14,24 @@ import aiohttp
 from hass_nabucasa.client import CloudClient as Interface, RemoteActivationNotAllowed
 from webrtc_models import RTCIceServer
 
-from homeassistant.components import google_assistant, persistent_notification, webhook
-from homeassistant.components.alexa import (
+from inpui.components import google_assistant, persistent_notification, webhook
+from inpui.components.alexa import (
     errors as alexa_errors,
     smart_home as alexa_smart_home,
 )
-from homeassistant.components.google_assistant import smart_home as ga
-from homeassistant.components.web_rtc import async_register_ice_servers
-from homeassistant.const import __version__ as HA_VERSION
-from homeassistant.core import Context, HassJob, HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import SERVER_SOFTWARE
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.issue_registry import (
+from inpui.components.google_assistant import smart_home as ga
+from inpui.components.web_rtc import async_register_ice_servers
+from inpui.const import __version__ as HA_VERSION
+from inpui.core import Context, HassJob, HomeAssistant, callback
+from inpui.helpers.aiohttp_client import SERVER_SOFTWARE
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.util.aiohttp import MockRequest, serialize_response
+from inpui.util.aiohttp import MockRequest, serialize_response
 
 from . import alexa_config, google_config
 from .const import DISPATCHER_REMOTE_UPDATE, DOMAIN, PREF_ENABLE_CLOUD_ICE_SERVERS

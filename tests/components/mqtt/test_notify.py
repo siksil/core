@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, notify
-from homeassistant.components.notify import ATTR_MESSAGE
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components import mqtt, notify
+from inpui.components.notify import ATTR_MESSAGE
+from inpui.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .common import (
     help_test_availability_when_connection_lost,

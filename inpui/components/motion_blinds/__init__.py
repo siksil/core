@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING
 
 from motionblinds import AsyncMotionMulticast
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_HOST, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_HOST, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import (
     CONF_BLIND_TYPE_LIST,
@@ -76,7 +76,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 multicast.Stop_listen()
 
             unsub = hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP, stop_motion_multicast
+                EVENT_INPUI_STOP, stop_motion_multicast
             )
             hass.data[DOMAIN][KEY_UNSUB_STOP] = unsub
 

@@ -9,10 +9,10 @@ import logging
 import pathlib
 from typing import Any, cast
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import Integration, async_get_integrations
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import load_json_object
+from inpui.core import HomeAssistant, callback
+from inpui.loader import Integration, async_get_integrations
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import load_json_object
 
 from .translation import build_resources
 

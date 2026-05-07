@@ -9,10 +9,10 @@ from yalexs.activity import ActivityType
 from yalexs.doorbell import Doorbell
 from yalexs.util import update_doorbell_image_from_activity
 
-from homeassistant.components.camera import Camera
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import Camera
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YaleConfigEntry, YaleData
 from .const import DEFAULT_NAME, DEFAULT_TIMEOUT

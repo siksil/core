@@ -14,8 +14,8 @@ from gassist_text import TextAssistant
 from google.oauth2.credentials import Credentials
 from grpc import RpcError
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.media_player import (
+from inpui.components.http import HomeAssistantView
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -23,12 +23,12 @@ from homeassistant.components.media_player import (
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID, CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.helpers.event import async_call_later
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID, CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.helpers.event import async_call_later
 
 from .const import CONF_LANGUAGE_CODE, DOMAIN, SUPPORTED_LANGUAGE_CODES
 

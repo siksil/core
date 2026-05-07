@@ -10,13 +10,13 @@ import logging
 from timeit import default_timer as timer
 
 from homeassistant import core
-from homeassistant.const import EVENT_STATE_CHANGED
-from homeassistant.helpers.entityfilter import convert_include_exclude_filter
-from homeassistant.helpers.event import (
+from inpui.const import EVENT_STATE_CHANGED
+from inpui.helpers.entityfilter import convert_include_exclude_filter
+from inpui.helpers.event import (
     async_track_state_change,
     async_track_state_change_event,
 )
-from homeassistant.helpers.json import JSON_DUMP
+from inpui.helpers.json import JSON_DUMP
 
 # mypy: allow-untyped-calls, allow-untyped-defs, no-check-untyped-defs
 # mypy: no-warn-return-any

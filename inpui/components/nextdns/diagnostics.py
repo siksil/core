@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_API_KEY, CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_API_KEY, CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
 
 from . import NextDnsConfigEntry
 from .const import CONF_PROFILE_ID

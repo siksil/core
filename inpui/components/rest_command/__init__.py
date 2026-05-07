@@ -12,7 +12,7 @@ from aiohttp import hdrs
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_HEADERS,
     CONF_METHOD,
@@ -26,19 +26,19 @@ from homeassistant.const import (
     HTTP_DIGEST_AUTHENTICATION,
     SERVICE_RELOAD,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.ssl import SSLCipherList
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.typing import ConfigType
+from inpui.util.ssl import SSLCipherList
 
 DOMAIN = "rest_command"
 

@@ -16,11 +16,11 @@ from aiocomelit.api import ComelitCommonApi
 from aiocomelit.const import BRIDGE
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
 
 from .const import _LOGGER, CONF_VEDO_PIN, DEFAULT_PORT, DEVICE_TYPE_LIST, DOMAIN
 from .utils import async_client_session

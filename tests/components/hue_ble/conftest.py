@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.hue_ble.const import DOMAIN
+from inpui.components.hue_ble.const import DOMAIN
 
 from . import TEST_DEVICE_MAC, TEST_DEVICE_NAME
 

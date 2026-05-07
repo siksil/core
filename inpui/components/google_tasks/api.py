@@ -11,9 +11,9 @@ from googleapiclient.errors import HttpError
 from googleapiclient.http import BatchHttpRequest, HttpRequest
 from httplib2 import ServerNotFoundError
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from .exceptions import GoogleTasksApiError
 

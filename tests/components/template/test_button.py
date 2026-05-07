@@ -8,11 +8,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import setup
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.template import DOMAIN
-from homeassistant.components.template.button import DEFAULT_NAME
-from homeassistant.components.template.const import CONF_PICTURE
-from homeassistant.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.template import DOMAIN
+from inpui.components.template.button import DEFAULT_NAME
+from inpui.components.template.const import CONF_PICTURE
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
     CONF_DEVICE_CLASS,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_ICON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, assert_setup_component
 

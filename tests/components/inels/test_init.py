@@ -4,8 +4,8 @@ from unittest.mock import ANY, AsyncMock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from . import HA_INELS_PATH
 from .common import DOMAIN, inels

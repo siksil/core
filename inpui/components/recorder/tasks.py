@@ -11,9 +11,9 @@ import logging
 import threading
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.helpers.recorder import DATA_RECORDER
-from homeassistant.helpers.typing import UndefinedType
-from homeassistant.util.event_type import EventType
+from inpui.helpers.recorder import DATA_RECORDER
+from inpui.helpers.typing import UndefinedType
+from inpui.util.event_type import EventType
 
 from . import entity_registry, purge, statistics
 from .db_schema import Statistics, StatisticsShortTerm

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.const import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -13,10 +13,10 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, Event, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, EVENT_TURN_OFF, EVENT_TURN_ON
 

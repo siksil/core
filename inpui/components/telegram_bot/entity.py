@@ -2,9 +2,9 @@
 
 import telegram
 
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.const import CONF_PLATFORM
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from . import TelegramBotConfigEntry
 from .const import DOMAIN

@@ -1,7 +1,7 @@
 """Tests for AccuWeather."""
 
-from homeassistant.components.accuweather.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.accuweather.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

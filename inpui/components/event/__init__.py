@@ -10,15 +10,15 @@ from typing import Any, Self, final
 
 from propcache.api import cached_property
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import ExtraStoredData, RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import ExtraStoredData, RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
 
 from .const import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES, DOMAIN
 

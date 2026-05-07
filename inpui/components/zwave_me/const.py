@@ -2,7 +2,7 @@
 
 from enum import StrEnum
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 # Base component constants
 DOMAIN = "zwave_me"

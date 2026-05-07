@@ -6,11 +6,11 @@ from unittest.mock import patch
 from bond_async import BPUPSubscriptions, DeviceType
 from bond_async.bpup import BPUP_ALIVE_TIMEOUT
 
-from homeassistant.components import fan
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.util import utcnow
+from inpui.components import fan
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.const import EVENT_INPUI_STOP, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import CoreState, HomeAssistant
+from inpui.util import utcnow
 
 from .common import patch_bond_device_state, setup_platform
 
@@ -205,7 +205,7 @@ async def test_polling_stops_at_the_stop_event(hass: HomeAssistant) -> None:
 
     assert hass.states.get("fan.name_1").state == STATE_UNAVAILABLE
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     hass.set_state(CoreState.stopping)
     await hass.async_block_till_done()
 

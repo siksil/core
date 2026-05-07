@@ -17,9 +17,9 @@ from aioairzone_cloud.const import (
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.airzone_cloud.const import DOMAIN
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.airzone_cloud.const import DOMAIN
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
 
 from .util import CONFIG, WS_ID, WS_ID_AIDOO, WS_ID_AIDOO_PRO, async_init_integration
 

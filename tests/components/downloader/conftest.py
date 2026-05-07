@@ -6,13 +6,13 @@ from pathlib import Path
 import pytest
 from requests_mock import Mocker
 
-from homeassistant.components.downloader.const import (
+from inpui.components.downloader.const import (
     CONF_DOWNLOAD_DIR,
     DOMAIN,
     DOWNLOAD_COMPLETED_EVENT,
     DOWNLOAD_FAILED_EVENT,
 )
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.core import Event, HomeAssistant, callback
 
 from tests.common import MockConfigEntry
 

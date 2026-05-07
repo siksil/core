@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, PropertyMock
 import blebox_uniapi
 import pytest
 
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.const import (
+from inpui.components.switch import SwitchDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -15,8 +15,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import (
     async_setup_entities,

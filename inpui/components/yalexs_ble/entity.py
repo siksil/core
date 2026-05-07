@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from yalexs_ble import ConnectionInfo, LockInfo, LockState
 
-from homeassistant.components import bluetooth
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.components import bluetooth
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .models import YaleXSBLEData

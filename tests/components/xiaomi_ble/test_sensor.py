@@ -3,19 +3,19 @@
 from datetime import timedelta
 import time
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
 )
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.components.xiaomi_ble.const import CONF_SLEEPY_DEVICE, DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.components.xiaomi_ble.const import CONF_SLEEPY_DEVICE, DOMAIN
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     HHCCJCY10_SERVICE_INFO,

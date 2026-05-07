@@ -1,6 +1,6 @@
 """Constants used for Insteon test cases."""
 
-from homeassistant.components.insteon.const import (
+from inpui.components.insteon.const import (
     CONF_CAT,
     CONF_DIM_STEPS,
     CONF_HOUSECODE,
@@ -8,7 +8,7 @@ from homeassistant.components.insteon.const import (
     CONF_UNITCODE,
     X10_PLATFORMS,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_DEVICE,
     CONF_HOST,

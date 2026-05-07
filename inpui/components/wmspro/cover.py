@@ -12,9 +12,9 @@ from wmspro.const import (
 )
 from wmspro.destination import Destination
 
-from homeassistant.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import WebControlProConfigEntry
 from .entity import WebControlProGenericEntity

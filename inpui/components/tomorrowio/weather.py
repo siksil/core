@@ -6,7 +6,7 @@ from datetime import datetime
 
 from pytomorrowio.const import DAILY, FORECASTS, HOURLY, NOWCAST, WeatherCode
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_HUMIDITY,
     ATTR_FORECAST_NATIVE_DEW_POINT,
@@ -22,8 +22,8 @@ from homeassistant.components.weather import (
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     UnitOfLength,
     UnitOfPrecipitationDepth,
@@ -31,11 +31,11 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.sun import is_up
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.sun import is_up
+from inpui.util import dt as dt_util
 
 from .const import (
     CLEAR_CONDITIONS,

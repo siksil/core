@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import template
-from homeassistant.helpers.typing import TemplateVarsType
+from inpui.core import HomeAssistant
+from inpui.helpers import template
+from inpui.helpers.typing import TemplateVarsType
 
 
 def render(

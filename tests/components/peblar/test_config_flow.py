@@ -6,12 +6,12 @@ from unittest.mock import MagicMock
 from peblar import PeblarAuthenticationError, PeblarConnectionError
 import pytest
 
-from homeassistant.components.peblar.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.peblar.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

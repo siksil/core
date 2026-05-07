@@ -9,10 +9,10 @@ from aiohue.v1.sensors import (
     TYPE_ZLL_SWITCH,
 )
 
-from homeassistant.const import CONF_DEVICE_ID, CONF_EVENT, CONF_ID, CONF_UNIQUE_ID
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util, slugify
+from inpui.const import CONF_DEVICE_ID, CONF_EVENT, CONF_ID, CONF_UNIQUE_ID
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util, slugify
 
 from ..const import ATTR_HUE_EVENT
 from .sensor_device import GenericHueDevice

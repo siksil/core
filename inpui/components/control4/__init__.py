@@ -12,8 +12,8 @@ from pyControl4.account import C4Account
 from pyControl4.director import C4Director
 from pyControl4.error_handling import BadCredentials
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
@@ -21,9 +21,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client, device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client, device_registry as dr
 
 from .const import (
     API_RETRY_TIMES,

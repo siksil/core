@@ -6,12 +6,12 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Final
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CURRENCY_EURO,
     UnitOfElectricCurrent,
     UnitOfElectricPotential,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfVolume,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 PRICE_EUR_KWH: Final = f"EUR/{UnitOfEnergy.KILO_WATT_HOUR}"
 PRICE_EUR_M3: Final = f"EUR/{UnitOfVolume.CUBIC_METERS}"

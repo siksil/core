@@ -7,15 +7,15 @@ from unittest.mock import AsyncMock, patch
 from freezegun.api import FrozenDateTimeFactory
 from motioneye_client.const import KEY_ACTIONS
 
-from homeassistant.components.motioneye import get_motioneye_device_identifier
-from homeassistant.components.motioneye.const import (
+from inpui.components.motioneye import get_motioneye_device_identifier
+from inpui.components.motioneye.const import (
     DEFAULT_SCAN_INTERVAL,
     TYPE_MOTIONEYE_ACTION_SENSOR,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     TEST_CAMERA,

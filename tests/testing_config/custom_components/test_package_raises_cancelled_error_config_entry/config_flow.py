@@ -1,7 +1,7 @@
 """Config flow."""
 
-from homeassistant.config_entries import ConfigFlow
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigFlow
+from inpui.core import HomeAssistant
 
 
 class MockConfigFlow(

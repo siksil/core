@@ -8,18 +8,18 @@ from __future__ import annotations
 
 from aiohomekit.model.characteristics import Characteristic, CharacteristicsTypes
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEFAULT_MAX_VALUE,
     DEFAULT_MIN_VALUE,
     DEFAULT_STEP,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from . import KNOWN_DEVICES
 from .connection import HKDevice

@@ -13,8 +13,8 @@ from bluetooth_adapters import (
 from bluetooth_data_tools import monotonic_time_coarse
 from habluetooth import get_manager
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
 
 from .models import BluetoothServiceInfoBleak
 from .storage import BluetoothStorage

@@ -14,24 +14,24 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
     LockState,
 )
-from homeassistant.components.webhook import async_generate_url
-from homeassistant.const import (
+from inpui.components.webhook import async_generate_url
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceNotSupported
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceNotSupported
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .conftest import WEBHOOK_ID

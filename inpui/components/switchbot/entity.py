@@ -9,15 +9,15 @@ from typing import Any, Concatenate
 import switchbot
 from switchbot import Switchbot, SwitchbotDevice, SwitchbotOperationError
 
-from homeassistant.components.bluetooth.passive_update_coordinator import (
+from inpui.components.bluetooth.passive_update_coordinator import (
     PassiveBluetoothCoordinatorEntity,
 )
-from homeassistant.const import ATTR_CONNECTIONS
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import ToggleEntity
+from inpui.const import ATTR_CONNECTIONS
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import ToggleEntity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import SwitchbotDataUpdateCoordinator

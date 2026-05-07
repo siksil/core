@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from lojack_api import ApiError, AuthenticationError
 import pytest
 
-from homeassistant.components.lojack.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.lojack.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import TEST_PASSWORD, TEST_USER_ID, TEST_USERNAME
 

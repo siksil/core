@@ -7,8 +7,8 @@ from dateutil.tz import tzutc
 from twitchAPI.object.api import FollowedChannel, Stream, UserSubscription
 from twitchAPI.type import TwitchResourceNotFound
 
-from homeassistant.components.twitch.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.twitch.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import TwitchIterObject, get_generator_from_data, setup_integration
 

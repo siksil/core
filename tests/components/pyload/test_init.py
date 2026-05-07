@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 from pyloadapi.exceptions import CannotConnect, InvalidAuth, ParserError
 import pytest
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import CONF_PATH, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import CONF_PATH, CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

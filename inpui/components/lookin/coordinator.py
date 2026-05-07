@@ -8,8 +8,8 @@ import logging
 import time
 from typing import TYPE_CHECKING
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import NEVER_TIME, POLLING_FALLBACK_SECONDS
 

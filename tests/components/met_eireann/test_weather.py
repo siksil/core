@@ -6,15 +6,15 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.met_eireann.const import DOMAIN
-from homeassistant.components.met_eireann.coordinator import UPDATE_INTERVAL
-from homeassistant.components.weather import (
+from inpui.components.met_eireann.const import DOMAIN
+from inpui.components.met_eireann.coordinator import UPDATE_INTERVAL
+from inpui.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from elgato import BatteryInfo, ElgatoNoBatteryError, Info, Settings, State
 import pytest
 
-from homeassistant.components.elgato.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
+from inpui.components.elgato.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, get_fixture_path, load_fixture
 from tests.components.light.conftest import mock_light_profiles  # noqa: F401

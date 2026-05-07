@@ -6,12 +6,12 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.motion_blinds import const
-from homeassistant.components.motion_blinds.config_flow import DEFAULT_GATEWAY_NAME
-from homeassistant.const import CONF_API_KEY, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.motion_blinds import const
+from inpui.components.motion_blinds.config_flow import DEFAULT_GATEWAY_NAME
+from inpui.const import CONF_API_KEY, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

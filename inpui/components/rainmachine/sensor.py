@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Any, cast
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     RestoreSensor,
     SensorDeviceClass,
@@ -14,11 +14,11 @@ from homeassistant.components.sensor import (
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utc_from_timestamp, utcnow
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utc_from_timestamp, utcnow
 
 from . import RainMachineConfigEntry, RainMachineData
 from .const import DATA_PROGRAMS, DATA_PROVISION_SETTINGS, DATA_ZONES

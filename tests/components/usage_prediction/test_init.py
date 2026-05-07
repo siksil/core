@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.usage_prediction import get_cached_common_control
-from homeassistant.components.usage_prediction.models import EntityUsagePredictions
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.usage_prediction import get_cached_common_control
+from inpui.components.usage_prediction.models import EntityUsagePredictions
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.mark.usefixtures("recorder_mock")

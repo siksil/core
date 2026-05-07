@@ -4,8 +4,8 @@ import logging
 
 import pyzerproc
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from .const import DOMAIN
 

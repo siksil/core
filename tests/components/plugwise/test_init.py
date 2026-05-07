@@ -15,15 +15,15 @@ from plugwise.exceptions import (
 )
 import pytest
 
-from homeassistant.components.plugwise.const import (
+from inpui.components.plugwise.const import (
     DEFAULT_UPDATE_INTERVAL,
     DOMAIN,
     P1_UPDATE_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

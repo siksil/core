@@ -8,11 +8,11 @@ from whirlpool.auth import AccountLockedError
 from whirlpool.backendselector import Brand, Region
 
 from homeassistant import config_entries
-from homeassistant.components.whirlpool.const import CONF_BRAND, DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.whirlpool.const import CONF_BRAND, DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

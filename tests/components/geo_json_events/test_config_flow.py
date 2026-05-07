@@ -3,16 +3,16 @@
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.geo_json_events.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.geo_json_events.const import DOMAIN
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_URL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import URL
 

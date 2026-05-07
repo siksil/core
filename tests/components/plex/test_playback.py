@@ -6,17 +6,17 @@ from unittest.mock import Mock, patch
 import pytest
 import requests_mock
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.components.plex.const import CONF_SERVER_IDENTIFIER, PLEX_URI_SCHEME
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.plex.const import CONF_SERVER_IDENTIFIER, PLEX_URI_SCHEME
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DEFAULT_DATA, PLEX_DIRECT_URL
 

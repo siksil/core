@@ -7,18 +7,18 @@ import time
 from habluetooth.advertisement_tracker import ADVERTISING_TIMES_NEEDED
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     async_get_learned_advertising_interval,
     async_register_scanner,
     async_track_unavailable,
 )
-from homeassistant.components.bluetooth.const import (
+from inpui.components.bluetooth.const import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     SOURCE_LOCAL,
     UNAVAILABLE_TRACK_SECONDS,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.util import dt as dt_util
 
 from . import (
     FakeScanner,

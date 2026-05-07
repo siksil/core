@@ -2,8 +2,8 @@
 
 from logging import getLogger
 
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import CoreState, HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .util import async_migration_in_progress, get_instance
 

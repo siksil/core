@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import konnected
-from homeassistant.components.konnected import config_flow
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.components import konnected
+from inpui.components.konnected import config_flow
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

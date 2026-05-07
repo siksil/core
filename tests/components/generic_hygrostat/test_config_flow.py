@@ -5,7 +5,7 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.generic_hygrostat import (
+from inpui.components.generic_hygrostat import (
     CONF_DEVICE_CLASS,
     CONF_DRY_TOLERANCE,
     CONF_HUMIDIFIER,
@@ -14,8 +14,8 @@ from homeassistant.components.generic_hygrostat import (
     CONF_WET_TOLERANCE,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -15,7 +15,7 @@ from aiohomekit.model.characteristics import (
 )
 from aiohomekit.model.services import ServicesTypes
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_FAN_MODE,
     SERVICE_SET_HUMIDITY,
@@ -25,8 +25,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_test_component
 

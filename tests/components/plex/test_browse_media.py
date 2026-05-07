@@ -6,13 +6,13 @@ from unittest.mock import Mock, patch
 import requests_mock
 from yarl import URL
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
 )
-from homeassistant.components.plex.const import CONF_SERVER_IDENTIFIER, PLEX_URI_SCHEME
-from homeassistant.components.websocket_api import ERR_UNKNOWN_ERROR, TYPE_RESULT
-from homeassistant.core import HomeAssistant
+from inpui.components.plex.const import CONF_SERVER_IDENTIFIER, PLEX_URI_SCHEME
+from inpui.components.websocket_api import ERR_UNKNOWN_ERROR, TYPE_RESULT
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_DATA
 

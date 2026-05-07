@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from pyvlx import Node, PyVLX, PyVLXException
 
-from homeassistant.components.button import ButtonDeviceClass, ButtonEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonDeviceClass, ButtonEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VeluxConfigEntry
 from .const import DOMAIN

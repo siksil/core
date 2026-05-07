@@ -8,12 +8,12 @@ import voluptuous as vol
 from zwave_js_server.const import CommandClass
 from zwave_js_server.model.value import ConfigurationValue
 
-from homeassistant.components.device_automation import InvalidDeviceAutomationConfig
-from homeassistant.const import CONF_CONDITION, CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import condition, config_validation as cv
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.components.device_automation import InvalidDeviceAutomationConfig
+from inpui.const import CONF_CONDITION, CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import condition, config_validation as cv
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .config_validation import VALUE_SCHEMA
 from .const import (

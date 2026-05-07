@@ -4,10 +4,10 @@ from unittest.mock import ANY, call, patch
 
 import pytest
 
-from homeassistant.components import logentries
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import logentries
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup_config_full(hass: HomeAssistant) -> None:

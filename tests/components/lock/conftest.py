@@ -6,12 +6,12 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.lock import DOMAIN, LockEntity, LockEntityFeature
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import DOMAIN, LockEntity, LockEntityFeature
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import (
     MockConfigEntry,

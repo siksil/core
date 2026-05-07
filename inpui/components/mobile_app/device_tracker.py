@@ -2,18 +2,18 @@
 
 from typing import Any
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     ATTR_BATTERY,
     ATTR_GPS,
     ATTR_LOCATION_NAME,
     TrackerEntity,
 )
-from homeassistant.components.zone import (
+from inpui.components.zone import (
     ENTITY_ID_FORMAT as ZONE_ENTITY_ID_FORMAT,
     HOME_ZONE,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_ID,
     ATTR_GPS_ACCURACY,
@@ -21,11 +21,11 @@ from homeassistant.const import (
     ATTR_LONGITUDE,
     STATE_HOME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     ATTR_ALTITUDE,

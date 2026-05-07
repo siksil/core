@@ -9,20 +9,20 @@ from zigpy.device import Device
 from zigpy.profiles import zha
 from zigpy.zcl.clusters import general, security
 
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import (
+from inpui.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
 
 from .common import find_entity_id
 

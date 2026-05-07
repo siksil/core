@@ -4,8 +4,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DEVICE_CLASSES_SCHEMA
-from homeassistant.const import (
+from inpui.components.binary_sensor import DEVICE_CLASSES_SCHEMA
+from inpui.const import (
     CONF_ID,
     CONF_NAME,
     CONF_PASSWORD,
@@ -14,9 +14,9 @@ from homeassistant.const import (
     CONF_URL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_AUTOSETUP,

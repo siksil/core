@@ -13,10 +13,10 @@ from switchbot_api import (
     SwitchBotAPI,
 )
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ColorMode, LightEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData, SwitchBotCoordinator
 from .const import AFTER_COMMAND_REFRESH, DOMAIN

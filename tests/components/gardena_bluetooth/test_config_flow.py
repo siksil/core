@@ -7,10 +7,10 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components.gardena_bluetooth.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.gardena_bluetooth.const import DOMAIN
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     MISSING_MANUFACTURER_DATA_SERVICE_INFO,

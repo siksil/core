@@ -6,11 +6,11 @@ from bleak import BleakError
 from medcom_ble import MedcomBleDevice
 
 from homeassistant import config_entries
-from homeassistant.components.medcom_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.medcom_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     MEDCOM_DEVICE_INFO,

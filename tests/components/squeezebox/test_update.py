@@ -6,19 +6,19 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.squeezebox.const import (
+from inpui.components.squeezebox.const import (
     SENSOR_UPDATE_INTERVAL,
     STATUS_UPDATE_NEWPLUGINS,
 )
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util
 
 from .conftest import FAKE_QUERY_RESPONSE
 

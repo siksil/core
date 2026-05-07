@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import pyvera as veraApi
 
-from homeassistant.components.binary_sensor import ENTITY_ID_FORMAT, BinarySensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import ENTITY_ID_FORMAT, BinarySensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import ControllerData, get_controller_data
 from .entity import VeraEntity

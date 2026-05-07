@@ -8,7 +8,7 @@ from typing import Any, Final, cast
 from aioshelly.block_device import Block
 from aioshelly.const import MODEL_BULB, RPC_GENERATIONS
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -22,8 +22,8 @@ from homeassistant.components.light import (
     LightEntityFeature,
     brightness_supported,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     BLOCK_MAX_TRANSITION_TIME_MS,

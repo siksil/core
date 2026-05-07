@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from roombapy import Roomba
 
-from homeassistant.components.roomba import CONF_BLID, CONF_CONTINUOUS, DOMAIN
-from homeassistant.const import CONF_DELAY, CONF_HOST, CONF_PASSWORD
+from inpui.components.roomba import CONF_BLID, CONF_CONTINUOUS, DOMAIN
+from inpui.const import CONF_DELAY, CONF_HOST, CONF_PASSWORD
 
 from tests.common import MockConfigEntry
 

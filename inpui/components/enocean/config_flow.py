@@ -6,20 +6,20 @@ from typing import Any
 from enocean_async import Gateway
 import voluptuous as vol
 
-from homeassistant.components import usb
-from homeassistant.components.usb import (
+from inpui.components import usb
+from inpui.components.usb import (
     human_readable_device_name,
     usb_unique_id_from_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import ATTR_MANUFACTURER, CONF_DEVICE, CONF_NAME
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import ATTR_MANUFACTURER, CONF_DEVICE, CONF_NAME
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import DOMAIN, ERROR_INVALID_DONGLE_PATH, LOGGER, MANUFACTURER
 

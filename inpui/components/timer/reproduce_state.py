@@ -7,8 +7,8 @@ from collections.abc import Iterable
 import logging
 from typing import Any
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import Context, HomeAssistant, State
 
 from . import (
     ATTR_DURATION,

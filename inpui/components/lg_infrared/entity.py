@@ -4,13 +4,13 @@ import logging
 
 from infrared_protocols.codes.lg.tv import LGTVCode, make_command as make_lg_tv_command
 
-from homeassistant.components.infrared import async_send_command
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import Event, EventStateChangedData, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.components.infrared import async_send_command
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import Event, EventStateChangedData, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import async_track_state_change_event
 
 from .const import DOMAIN
 

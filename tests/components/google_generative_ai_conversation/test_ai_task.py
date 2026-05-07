@@ -7,13 +7,13 @@ from google.genai.types import File, FileState, GenerateContentResponse
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import ai_task, media_source
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components import ai_task, media_source
+from inpui.components.google_generative_ai_conversation.const import (
     RECOMMENDED_IMAGE_MODEL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, selector
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, selector
 
 from tests.common import MockConfigEntry
 from tests.components.conversation import (

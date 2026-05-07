@@ -15,15 +15,15 @@ import nacl.bindings.crypto_secretstream as nss
 import pytest
 import securetar
 
-from homeassistant.components.backup import DOMAIN, AddonInfo, AgentBackup, Folder
-from homeassistant.components.backup.util import (
+from inpui.components.backup import DOMAIN, AddonInfo, AgentBackup, Folder
+from inpui.components.backup.util import (
     DecryptedBackupStreamer,
     EncryptedBackupStreamer,
     read_backup,
     suggested_filename,
     validate_password,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import get_fixture_path
 

@@ -10,18 +10,18 @@ from onvif.exceptions import ONVIFError
 from onvif.util import is_auth_error, stringify_onvif_error
 from zeep.exceptions import Fault, TransportError
 
-from homeassistant.components.ffmpeg import CONF_EXTRA_ARGUMENTS
-from homeassistant.components.stream import CONF_RTSP_TRANSPORT, RTSP_TRANSPORTS
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components.ffmpeg import CONF_EXTRA_ARGUMENTS
+from inpui.components.stream import CONF_RTSP_TRANSPORT, RTSP_TRANSPORTS
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
+    EVENT_INPUI_STOP,
     HTTP_BASIC_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
 
 from .const import (
     CONF_ENABLE_WEBHOOKS,
@@ -111,7 +111,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await hass.config_entries.async_forward_entry_setups(entry, device.platforms)
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, device.async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, device.async_stop)
     )
 
     return True

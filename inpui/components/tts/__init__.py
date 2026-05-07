@@ -24,14 +24,14 @@ from mutagen.id3 import ID3, TextFrame as ID3Text
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import ffmpeg, websocket_api
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.media_source import (
+from inpui.components import ffmpeg, websocket_api
+from inpui.components.http import HomeAssistantView
+from inpui.components.media_source import (
     generate_media_source_id as ms_generate_media_source_id,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, PLATFORM_FORMAT
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP, PLATFORM_FORMAT
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     HassJob,
@@ -40,13 +40,13 @@ from homeassistant.core import (
     ServiceCall,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.typing import UNDEFINED, ConfigType
-from homeassistant.util import language as language_util, ulid as ulid_util
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_call_later
+from inpui.helpers.network import get_url
+from inpui.helpers.typing import UNDEFINED, ConfigType
+from inpui.util import language as language_util, ulid as ulid_util
 
 from .const import (
     ATTR_CACHE,
@@ -647,7 +647,7 @@ class DictCleaning[T: HasLastUsed]:
         self.hass = hass
         self.maxage = maxage
         self.memcache = memcache
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, self._on_hass_stop)
         self.cleanup_job = HassJob(
             self._cleanup, "chat_session_cleanup", job_type=HassJobType.Callback
         )

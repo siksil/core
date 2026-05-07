@@ -15,8 +15,8 @@ from prometheus_client.metrics import MetricWrapperBase
 import voluptuous as vol
 
 from homeassistant import core as hacore
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.climate import (
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_FAN_MODES,
@@ -26,11 +26,11 @@ from homeassistant.components.climate import (
     ATTR_TARGET_TEMP_LOW,
     HVACAction,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
 )
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -39,13 +39,13 @@ from homeassistant.components.fan import (
     DIRECTION_FORWARD,
     DIRECTION_REVERSE,
 )
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.humidifier import ATTR_AVAILABLE_MODES, ATTR_HUMIDITY
-from homeassistant.components.light import ATTR_BRIGHTNESS
-from homeassistant.components.sensor import SensorDeviceClass
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.humidifier import ATTR_AVAILABLE_MODES, ATTR_HUMIDITY
+from inpui.components.light import ATTR_BRIGHTNESS
+from inpui.components.sensor import SensorDeviceClass
 
 # Alias water_heater constants to avoid name clashes with similarly named climate constants
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE as WATER_HEATER_ATTR_AWAY_MODE,
     ATTR_CURRENT_TEMPERATURE as WATER_HEATER_ATTR_CURRENT_TEMPERATURE,
     ATTR_MAX_TEMP as WATER_HEATER_ATTR_MAX_TEMP,
@@ -55,7 +55,7 @@ from homeassistant.components.water_heater import (
     ATTR_TARGET_TEMP_HIGH as WATER_HEATER_ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW as WATER_HEATER_ATTR_TARGET_TEMP_LOW,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
@@ -74,8 +74,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, State
-from homeassistant.helpers import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, State
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
@@ -84,28 +84,28 @@ from homeassistant.helpers import (
     floor_registry as fr,
     state as state_helper,
 )
-from homeassistant.helpers.area_registry import (
+from inpui.helpers.area_registry import (
     EVENT_AREA_REGISTRY_UPDATED,
     AreaEntry,
     EventAreaRegistryUpdatedData,
 )
-from homeassistant.helpers.device_registry import (
+from inpui.helpers.device_registry import (
     EVENT_DEVICE_REGISTRY_UPDATED,
     EventDeviceRegistryUpdatedData,
 )
-from homeassistant.helpers.entity_registry import (
+from inpui.helpers.entity_registry import (
     EVENT_ENTITY_REGISTRY_UPDATED,
     EventEntityRegistryUpdatedData,
 )
-from homeassistant.helpers.entity_values import EntityValues
-from homeassistant.helpers.floor_registry import (
+from inpui.helpers.entity_values import EntityValues
+from inpui.helpers.floor_registry import (
     EVENT_FLOOR_REGISTRY_UPDATED,
     EventFloorRegistryUpdatedData,
     FloorEntry,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import as_timestamp
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import as_timestamp
+from inpui.util.unit_conversion import TemperatureConverter
 
 _LOGGER = logging.getLogger(__name__)
 

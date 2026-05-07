@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from gridnet import Device as GridNetDevice, SmartBridge
 import pytest
 
-from homeassistant.components.pure_energie.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.pure_energie.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

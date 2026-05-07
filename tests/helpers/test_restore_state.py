@@ -8,14 +8,14 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CoreState, HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.reload import async_get_platform_without_config_entry
-from homeassistant.helpers.restore_state import (
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import CoreState, HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.reload import async_get_platform_without_config_entry
+from inpui.helpers.restore_state import (
     DATA_RESTORE_STATE,
     STORAGE_KEY,
     ExtraStoredData,
@@ -25,8 +25,8 @@ from homeassistant.helpers.restore_state import (
     async_get,
     async_load,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockEntityPlatform,
@@ -129,7 +129,7 @@ async def test_periodic_write(hass: HomeAssistant) -> None:
     with patch(
         "homeassistant.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert mock_write_data.called
@@ -195,7 +195,7 @@ async def test_save_persistent_states(hass: HomeAssistant) -> None:
     with patch(
         "homeassistant.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
     # Verify normal shutdown
     assert mock_write_data.called
@@ -249,7 +249,7 @@ async def test_hass_starting(hass: HomeAssistant) -> None:
     with patch(
         "homeassistant.helpers.restore_state.Store.async_save"
     ) as mock_write_data:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
     # Assert that this session states were written

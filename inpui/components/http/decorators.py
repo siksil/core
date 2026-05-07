@@ -8,8 +8,8 @@ from typing import Any, Concatenate, overload
 
 from aiohttp.web import Request, Response, StreamResponse
 
-from homeassistant.auth.models import User
-from homeassistant.exceptions import Unauthorized
+from inpui.auth.models import User
+from inpui.exceptions import Unauthorized
 
 from .view import HomeAssistantView
 

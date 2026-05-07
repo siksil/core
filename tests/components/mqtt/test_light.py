@@ -192,8 +192,8 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components import light, mqtt
-from homeassistant.components.mqtt.light.schema_basic import (
+from inpui.components import light, mqtt
+from inpui.components.mqtt.light.schema_basic import (
     CONF_BRIGHTNESS_COMMAND_TOPIC,
     CONF_COLOR_TEMP_COMMAND_TOPIC,
     CONF_EFFECT_COMMAND_TOPIC,
@@ -206,9 +206,9 @@ from homeassistant.components.mqtt.light.schema_basic import (
     MQTT_LIGHT_ATTRIBUTES_BLOCKED,
     VALUE_TEMPLATE_KEYS,
 )
-from homeassistant.components.mqtt.models import PublishPayloadType
-from homeassistant.const import ATTR_ASSUMED_STATE, STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
+from inpui.components.mqtt.models import PublishPayloadType
+from inpui.const import ATTR_ASSUMED_STATE, STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
 
 from .common import (
     help_custom_config,

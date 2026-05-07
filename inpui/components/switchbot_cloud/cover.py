@@ -13,14 +13,14 @@ from switchbot_api import (
     SwitchBotAPI,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData, SwitchBotCoordinator
 from .const import COVER_ENTITY_AFTER_COMMAND_REFRESH, DOMAIN

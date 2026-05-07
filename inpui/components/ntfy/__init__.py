@@ -13,13 +13,13 @@ from aiontfy.exceptions import (
 )
 from aiontfy.update import UpdateChecker
 
-from homeassistant.const import CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import CONF_TOKEN, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .coordinator import (

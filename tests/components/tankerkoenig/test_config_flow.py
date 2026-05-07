@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, patch
 
 from aiotankerkoenig.exceptions import TankerkoenigInvalidKeyError
 
-from homeassistant.components.tankerkoenig.const import CONF_STATIONS, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.tankerkoenig.const import CONF_STATIONS, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LOCATION,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     CONF_RADIUS,
     CONF_SHOW_ON_MAP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from .const import NEARBY_STATIONS
 

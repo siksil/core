@@ -1,7 +1,7 @@
 """Tests for the devolo_home_control integration."""
 
-from homeassistant.components.devolo_home_control.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.devolo_home_control.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -4,9 +4,9 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homee.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.homee.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import build_mock_node, setup_integration
 from .conftest import HOMEE_ID

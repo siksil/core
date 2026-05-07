@@ -8,10 +8,10 @@ from aiotractive.trackable_object import TrackableObject
 from aiotractive.tracker import Tracker
 import pytest
 
-from homeassistant.components.tractive.const import DOMAIN, SERVER_UNAVAILABLE
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.tractive.const import DOMAIN, SERVER_UNAVAILABLE
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

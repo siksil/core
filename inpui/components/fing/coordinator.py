@@ -8,11 +8,11 @@ from fing_agent_api import FingAgent
 from fing_agent_api.models import AgentInfoResponse, Device
 import httpx
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_IP_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, UPNP_AVAILABLE
 

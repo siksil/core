@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from aioacaia.acaiascale import AcaiaDeviceState, AcaiaScale
 from aioacaia.const import UnitMass as AcaiaUnitOfMass
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
@@ -14,9 +14,9 @@ from homeassistant.components.sensor import (
     SensorExtraStoredData,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, UnitOfMass, UnitOfVolumeFlowRate
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, UnitOfMass, UnitOfVolumeFlowRate
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AcaiaConfigEntry
 from .entity import AcaiaEntity

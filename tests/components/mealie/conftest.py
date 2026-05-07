@@ -17,8 +17,8 @@ from aiomealie import (
 from mashumaro.codecs.orjson import ORJSONDecoder
 import pytest
 
-from homeassistant.components.mealie.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_HOST
+from inpui.components.mealie.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_HOST
 
 from tests.common import MockConfigEntry, load_fixture
 

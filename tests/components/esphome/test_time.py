@@ -4,13 +4,13 @@ from unittest.mock import call
 
 from aioesphomeapi import APIClient, TimeInfo, TimeState
 
-from homeassistant.components.time import (
+from inpui.components.time import (
     ATTR_TIME,
     DOMAIN as TIME_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .conftest import MockGenericDeviceEntryType
 

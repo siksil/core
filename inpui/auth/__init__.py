@@ -12,16 +12,16 @@ from typing import Any, cast
 
 import jwt
 
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     HassJob,
     HassJobType,
     HomeAssistant,
     callback,
 )
-from homeassistant.data_entry_flow import FlowHandler, FlowManager, FlowResultType
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util import dt as dt_util
+from inpui.data_entry_flow import FlowHandler, FlowManager, FlowResultType
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util import dt as dt_util
 
 from . import auth_store, jwt_wrapper, models
 from .const import ACCESS_TOKEN_EXPIRATION, GROUP_ID_ADMIN, REFRESH_TOKEN_EXPIRATION

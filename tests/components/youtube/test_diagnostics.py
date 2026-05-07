@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.youtube.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.youtube.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .conftest import ComponentSetup
 

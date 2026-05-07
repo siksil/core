@@ -2,8 +2,8 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_valid_device_config(hass: HomeAssistant, mock_client: AsyncMock) -> None:

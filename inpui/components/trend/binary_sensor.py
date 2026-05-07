@@ -11,15 +11,15 @@ from typing import Any
 import numpy as np
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ATTRIBUTE,
     CONF_DEVICE_CLASS,
@@ -31,19 +31,19 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity import generate_entity_id
-from homeassistant.helpers.entity_platform import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity import generate_entity_id
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.dt import utcnow
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.dt import utcnow
 
 from . import PLATFORMS
 from .const import (

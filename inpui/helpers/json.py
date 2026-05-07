@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING, Any, Final
 
 import orjson
 
-from homeassistant.util.file import write_utf8_file, write_utf8_file_atomic
-from homeassistant.util.json import SerializationError, format_unserializable_data
+from inpui.util.file import write_utf8_file, write_utf8_file_atomic
+from inpui.util.json import SerializationError, format_unserializable_data
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -222,7 +222,7 @@ def find_paths_unserializable_data(
 
     This method is slow! Only use for error handling.
     """
-    from homeassistant.core import Event, State  # noqa: PLC0415
+    from inpui.core import Event, State  # noqa: PLC0415
 
     to_process = deque([(bad_data, "$")])
     invalid = {}

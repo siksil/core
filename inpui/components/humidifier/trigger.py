@@ -2,13 +2,13 @@
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_MODE, CONF_OPTIONS, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.entity import get_supported_features
-from homeassistant.helpers.trigger import (
+from inpui.const import ATTR_MODE, CONF_OPTIONS, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.entity import get_supported_features
+from inpui.helpers.trigger import (
     ENTITY_STATE_TRIGGER_SCHEMA_FIRST_LAST,
     EntityTargetStateTriggerBase,
     Trigger,

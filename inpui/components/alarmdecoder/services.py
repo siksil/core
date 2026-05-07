@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
 )
-from homeassistant.const import ATTR_CODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.const import ATTR_CODE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

@@ -9,12 +9,12 @@ from bring_api import (
 )
 import voluptuous as vol
 
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.components.todo import DOMAIN as TODO_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import (
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.components.todo import DOMAIN as TODO_DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     service,

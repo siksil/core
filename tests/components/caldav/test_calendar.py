@@ -11,11 +11,11 @@ from caldav.objects import Event
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.calendar import CalendarEntityFeature
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.calendar import CalendarEntityFeature
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

@@ -8,12 +8,12 @@ from propcache.api import cached_property
 from pyezvizapi.exceptions import PyEzvizError
 from pyezvizapi.utils import decrypt_image
 
-from homeassistant.components.image import Image, ImageEntity, ImageEntityDescription
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import Image, ImageEntity, ImageEntityDescription
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import CONF_PASSWORD
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import EzvizConfigEntry, EzvizDataUpdateCoordinator

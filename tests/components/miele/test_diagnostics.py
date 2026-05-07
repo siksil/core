@@ -6,9 +6,9 @@ from unittest.mock import MagicMock
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import paths
 
-from homeassistant.components.miele.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.components.miele.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
 
 from . import setup_integration
 

@@ -5,16 +5,16 @@ from typing import Any
 from nhc.const import THERMOSTAT_MODES, THERMOSTAT_MODES_REVERSE
 from nhc.thermostat import NHCThermostat
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_ECO,
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.components.sensor import UnitOfTemperature
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import UnitOfTemperature
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import NikoHomeControlConfigEntry
 from .const import (

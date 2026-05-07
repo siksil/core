@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
@@ -24,16 +24,16 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.deconz.climate import (
+from inpui.components.deconz.climate import (
     DECONZ_FAN_SMART,
     DECONZ_PRESET_AUTO,
     DECONZ_PRESET_MANUAL,
 )
-from homeassistant.components.deconz.const import CONF_ALLOW_CLIP_SENSOR
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.deconz.const import CONF_ALLOW_CLIP_SENSOR
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, STATE_OFF, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .conftest import ConfigEntryFactoryType, WebsocketDataType
 

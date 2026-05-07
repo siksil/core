@@ -1,6 +1,6 @@
 """The tests for the valve platform."""
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     DOMAIN,
     SERVICE_CLOSE_VALVE,
@@ -8,9 +8,9 @@ from homeassistant.components.valve import (
     SERVICE_SET_VALVE_POSITION,
     ValveState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service
 

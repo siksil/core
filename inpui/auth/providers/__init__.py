@@ -11,14 +11,14 @@ import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
 from homeassistant import requirements
-from homeassistant.const import CONF_ID, CONF_NAME, CONF_TYPE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowHandler
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.util import dt as dt_util
-from homeassistant.util.decorator import Registry
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import CONF_ID, CONF_NAME, CONF_TYPE
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowHandler
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.importlib import async_import_module
+from inpui.util import dt as dt_util
+from inpui.util.decorator import Registry
+from inpui.util.hass_dict import HassKey
 
 from ..auth_store import AuthStore
 from ..const import MFA_SESSION_EXPIRATION

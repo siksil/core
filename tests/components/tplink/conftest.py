@@ -7,8 +7,8 @@ from unittest.mock import DEFAULT, AsyncMock, patch
 from kasa import DeviceConfig, Module
 import pytest
 
-from homeassistant.components.tplink import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.tplink import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import _mocked_device
 from .const import (

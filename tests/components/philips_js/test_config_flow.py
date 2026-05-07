@@ -7,10 +7,10 @@ from haphilipsjs import PairingFailure
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.philips_js.const import CONF_ALLOW_NOTIFY, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.philips_js.const import CONF_ALLOW_NOTIFY, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import (
     MOCK_CONFIG,

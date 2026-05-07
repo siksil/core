@@ -6,8 +6,8 @@ import threading
 from tellcore.constants import TELLSTICK_DIM, TELLSTICK_TURNOFF, TELLSTICK_TURNON
 from tellcore.library import TelldusError
 
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .const import SIGNAL_TELLCORE_CALLBACK
 

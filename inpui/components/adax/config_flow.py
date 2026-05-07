@@ -9,15 +9,15 @@ import adax
 import adax_local
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_UNIQUE_ID,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,

@@ -6,12 +6,12 @@ import logging
 
 from wiffi import WiffiTcpServer
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     CHECK_ENTITIES_SIGNAL,

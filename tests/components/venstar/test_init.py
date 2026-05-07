@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.venstar.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_SSL
-from homeassistant.core import HomeAssistant
+from inpui.components.venstar.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_SSL
+from inpui.core import HomeAssistant
 
 from . import VenstarColorTouchMock
 

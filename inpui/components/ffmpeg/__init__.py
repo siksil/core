@@ -10,18 +10,18 @@ from haffmpeg.tools import IMAGE_JPEG, FFVersion, ImageFrame
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONTENT_TYPE_MULTIPART,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.system_info import is_official_image
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.system_info import is_official_image
 
 from .const import (
     DOMAIN,
@@ -216,7 +216,7 @@ class FFmpegBase[_HAFFmpegT: HAFFmpeg](Entity):  # pylint: disable=hass-enforce-
             """Stop FFmpeg process."""
             await self._async_stop_ffmpeg(None)
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_shutdown_handle)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, async_shutdown_handle)
 
         # start on startup
         if not self.initial_state:
@@ -227,4 +227,4 @@ class FFmpegBase[_HAFFmpegT: HAFFmpeg](Entity):  # pylint: disable=hass-enforce-
             await self._async_start_ffmpeg(None)
             self.async_write_ha_state()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, async_start_handle)
+        self.hass.bus.async_listen_once(EVENT_INPUI_START, async_start_handle)

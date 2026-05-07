@@ -19,9 +19,9 @@ import pytest
 from zeroconf.asyncio import AsyncServiceInfo
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.shelly import MacAddressMismatchError, config_flow
-from homeassistant.components.shelly.const import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.shelly import MacAddressMismatchError, config_flow
+from inpui.components.shelly.const import (
     CONF_BLE_SCANNER_MODE,
     CONF_GEN,
     CONF_SLEEP_PERIOD,
@@ -29,9 +29,9 @@ from homeassistant.components.shelly.const import (
     DOMAIN,
     BLEScannerMode,
 )
-from homeassistant.components.shelly.coordinator import ENTRY_RELOAD_COOLDOWN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.shelly.coordinator import ENTRY_RELOAD_COOLDOWN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_DEVICE,
     CONF_HOST,
     CONF_MODEL,
@@ -39,14 +39,14 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import init_integration
 

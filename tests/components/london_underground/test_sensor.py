@@ -4,11 +4,11 @@ import asyncio
 
 import pytest
 
-from homeassistant.components.london_underground.const import CONF_LINE, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.london_underground.const import CONF_LINE, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 VALID_CONFIG = {
     "sensor": {"platform": "london_underground", CONF_LINE: ["Metropolitan"]}

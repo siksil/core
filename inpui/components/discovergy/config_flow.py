@@ -11,10 +11,10 @@ from pydiscovergy.authentication import BasicAuth
 import pydiscovergy.error as discovergyError
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.selector import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,

@@ -5,15 +5,15 @@ from __future__ import annotations
 from collections.abc import Callable
 from functools import partial
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import is_internal_request
+from inpui.core import HomeAssistant
+from inpui.helpers.network import is_internal_request
 
 from .coordinator import RokuDataUpdateCoordinator
 from .helpers import format_channel_name

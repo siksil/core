@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components import geo_location
-from homeassistant.components.geo_location import GeolocationEvent
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import geo_location
+from inpui.components.geo_location import GeolocationEvent
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup_component(hass: HomeAssistant) -> None:

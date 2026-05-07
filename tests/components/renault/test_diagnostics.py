@@ -3,10 +3,10 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.renault import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.renault import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.components.diagnostics import (
     get_diagnostics_for_config_entry,

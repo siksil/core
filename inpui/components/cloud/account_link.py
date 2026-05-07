@@ -10,9 +10,9 @@ import aiohttp
 from awesomeversion import AwesomeVersion
 from hass_nabucasa import account_link
 
-from homeassistant.const import __version__ as HA_VERSION
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_entry_oauth2_flow, event
+from inpui.const import __version__ as HA_VERSION
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_entry_oauth2_flow, event
 
 from .const import DATA_CLOUD, DOMAIN
 

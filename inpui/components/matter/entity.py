@@ -18,12 +18,12 @@ from matter_server.common.helpers.util import (
 from matter_server.common.models import EventType, ServerInfoMessage
 from propcache.api import cached_property
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.typing import UndefinedType
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.typing import UndefinedType
 
 from .const import DOMAIN, FEATUREMAP_ATTRIBUTE_ID, ID_TYPE_DEVICE_ID
 from .helpers import get_device_id

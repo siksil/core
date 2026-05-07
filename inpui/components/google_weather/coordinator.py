@@ -16,10 +16,10 @@ from google_weather_api import (
     HourlyForecastResponse,
 )
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import (
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import (
     TimestampDataUpdateCoordinator,
     UpdateFailed,
 )

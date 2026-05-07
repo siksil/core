@@ -20,9 +20,9 @@ from pywebpush import WebPusher, WebPushException, webpush_async
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.notify import (
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
@@ -31,19 +31,19 @@ from homeassistant.components.notify import (
     NotifyEntity,
     NotifyEntityFeature,
 )
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_NAME, URL_ROOT
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import ensure_unique_string
-from homeassistant.util.json import load_json_object
+from inpui.components.websocket_api import ActiveConnection
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_NAME, URL_ROOT
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.json import save_json
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import ensure_unique_string
+from inpui.util.json import load_json_object
 
 from .const import (
     ATTR_VAPID_EMAIL,

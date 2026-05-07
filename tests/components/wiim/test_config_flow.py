@@ -5,14 +5,14 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.wiim.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.network import NoURLAvailableError
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.wiim.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.network import NoURLAvailableError
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

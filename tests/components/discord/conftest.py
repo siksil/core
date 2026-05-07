@@ -4,8 +4,8 @@ from http import HTTPStatus
 
 import pytest
 
-from homeassistant.components.discord.notify import DiscordNotificationService
-from homeassistant.core import HomeAssistant
+from inpui.components.discord.notify import DiscordNotificationService
+from inpui.core import HomeAssistant
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

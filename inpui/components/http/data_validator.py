@@ -11,7 +11,7 @@ from typing import Any, Concatenate
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .view import HomeAssistantView
 

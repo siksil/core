@@ -1,8 +1,8 @@
 """Constants for NextBus tests."""
 
-from homeassistant.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_STOP
+from inpui.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_STOP
 
 VALID_AGENCY = "sfmta-cis"
 VALID_ROUTE = "F"

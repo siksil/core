@@ -10,16 +10,16 @@ from bleak.backends.scanner import AdvertisementData
 from HueBLE import ConnectionError, HueBleError, HueBleLight, PairingError
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.api import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth.api import (
     async_ble_device_from_address,
     async_scanner_count,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_MAC, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_MAC, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, URL_FACTORY_RESET, URL_PAIRING_MODE
 from .light import get_available_color_modes

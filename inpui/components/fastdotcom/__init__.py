@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.start import async_at_started
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers.start import async_at_started
 
 from .const import PLATFORMS
 from .coordinator import FastdotcomConfigEntry, FastdotcomDataUpdateCoordinator

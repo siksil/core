@@ -7,12 +7,12 @@ import pytest
 from pytest_unordered import unordered
 
 from homeassistant import config_entries
-from homeassistant.components.template import DOMAIN, async_setup_entry
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
+from inpui.components.template import DOMAIN, async_setup_entry
+from inpui.config_entries import SOURCE_USER
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 from tests.typing import WebSocketGenerator

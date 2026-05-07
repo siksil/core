@@ -4,18 +4,18 @@ from unittest.mock import AsyncMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.wsdot.const import CONF_TRAVEL_TIMES, DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.wsdot.const import CONF_TRAVEL_TIMES, DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_ID,
     CONF_NAME,
     CONF_PLATFORM,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, snapshot_platform
 

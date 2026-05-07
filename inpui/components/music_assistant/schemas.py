@@ -8,8 +8,8 @@ from music_assistant_models.enums import ImageType, MediaType
 from music_assistant_models.media_items import ItemMapping
 import voluptuous as vol
 
-from homeassistant.const import ATTR_NAME
-from homeassistant.helpers import config_validation as cv
+from inpui.const import ATTR_NAME
+from inpui.helpers import config_validation as cv
 
 from .const import (
     ATTR_ACTIVE,

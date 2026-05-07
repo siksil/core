@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_CODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_CODE
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_SWITCHABLE_OUTPUT_NUMBER,

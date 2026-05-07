@@ -1,12 +1,12 @@
 """Test the PG LAB Electronics config flow."""
 
-from homeassistant.components.mqtt import MQTT_CONNECTION_STATE
-from homeassistant.components.pglab.const import DOMAIN
-from homeassistant.config_entries import SOURCE_MQTT, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.components.mqtt import MQTT_CONNECTION_STATE
+from inpui.components.pglab.const import DOMAIN
+from inpui.config_entries import SOURCE_MQTT, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
 
 from tests.common import MockConfigEntry
 from tests.typing import MqttMockHAClient

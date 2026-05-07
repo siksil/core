@@ -5,9 +5,9 @@ from unittest.mock import patch
 import pytest
 from pywaze.route_calculator import CalcRoutesResponse, WRCError
 
-from homeassistant.components.waze_travel_time.config_flow import WazeConfigFlow
-from homeassistant.components.waze_travel_time.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.waze_travel_time.config_flow import WazeConfigFlow
+from inpui.components.waze_travel_time.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

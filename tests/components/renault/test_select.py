@@ -7,16 +7,16 @@ import pytest
 from renault_api.kamereon import schemas
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.renault.const import DOMAIN
-from homeassistant.components.select import (
+from inpui.components.renault.const import DOMAIN
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import async_load_fixture, snapshot_platform
 

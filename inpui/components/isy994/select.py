@@ -22,19 +22,19 @@ from pyisy.constants import (
 from pyisy.helpers import EventListener, NodeProperty
 from pyisy.nodes import Node, NodeChangedEvent
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import (
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     EntityCategory,
     Platform,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import _LOGGER, UOM_INDEX
 from .entity import ISYAuxControlEntity

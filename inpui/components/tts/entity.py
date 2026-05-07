@@ -7,7 +7,7 @@ from typing import Any, final
 
 from propcache.api import cached_property
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -15,11 +15,11 @@ from homeassistant.components.media_player import (
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.util import dt as dt_util
 
 from .const import TtsAudioType
 from .media_source import generate_media_source_id

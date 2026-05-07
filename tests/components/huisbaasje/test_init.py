@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from energyflip import EnergyFlipException
 
-from homeassistant.components.huisbaasje.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.huisbaasje.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .test_data import MOCK_CURRENT_MEASUREMENTS
 

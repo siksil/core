@@ -11,14 +11,14 @@ from fritzconnection.core.exceptions import FritzConnectionException, FritzSecur
 from requests.exceptions import ConnectionError as RequestsConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
-from homeassistant.core import callback
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.core import callback
 
 from .base import FritzBoxPhonebook
 from .const import (

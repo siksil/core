@@ -8,11 +8,11 @@ from typing import Any, Generic, Self, cast
 from ring_doorbell import RingCapability, RingDoorBell, RingStickUpCam
 from ring_doorbell.const import DOORBELL_EXISTING_TYPE
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import RingConfigEntry
 from .coordinator import RingDataCoordinator

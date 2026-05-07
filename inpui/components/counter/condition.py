@@ -1,7 +1,7 @@
 """Provides conditions for counters."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import Condition, make_entity_numerical_condition
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import Condition, make_entity_numerical_condition
 
 DOMAIN = "counter"
 

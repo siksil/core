@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from jvcprojector import command as cmd
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import JVCConfigEntry, JvcProjectorDataUpdateCoordinator
 from .entity import JvcProjectorEntity

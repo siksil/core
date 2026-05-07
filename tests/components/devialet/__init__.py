@@ -5,10 +5,10 @@ from ipaddress import ip_address
 from aiohttp import ClientError as ServerTimeoutError
 from devialet.const import UrlSuffix
 
-from homeassistant.components.devialet.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.devialet.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

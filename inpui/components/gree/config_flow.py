@@ -2,9 +2,9 @@
 
 from greeclimate.discovery import Discovery
 
-from homeassistant.components.network import async_get_ipv4_broadcast_addresses
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.components.network import async_get_ipv4_broadcast_addresses
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from .const import DISCOVERY_TIMEOUT, DOMAIN
 

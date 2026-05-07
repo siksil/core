@@ -16,12 +16,12 @@ from sqlalchemy.util import LRUCache
 import sqlparse
 import voluptuous as vol
 
-from homeassistant.components.recorder import SupportedDialect, get_instance
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.template import Template
+from inpui.components.recorder import SupportedDialect, get_instance
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.template import Template
 
 from .const import DB_URL_RE, DOMAIN
 from .models import SQLData
@@ -191,7 +191,7 @@ def _async_get_or_init_domain_data(hass: HomeAssistant) -> SQLData:
             sessmaker.connection().engine.dispose()
 
     cancel_shutdown = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP, _shutdown_db_engines
+        EVENT_INPUI_STOP, _shutdown_db_engines
     )
 
     sql_data = SQLData(cancel_shutdown, session_makers_by_db_url)

@@ -16,20 +16,20 @@ from flux_led.const import (
 from flux_led.scanner import FluxLEDDiscovery
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigEntryState,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_DEVICE, CONF_HOST
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.const import CONF_DEVICE, CONF_HOST
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType
 
 from . import async_wifi_bulb_for_host
 from .const import (

@@ -20,7 +20,7 @@ from annotatedyaml.loader import (
 )
 import yaml
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 __all__ = [
     "HAS_C_LOADER",

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.madvr.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.components.madvr.const import DEFAULT_NAME, DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
 
 from .const import MOCK_CONFIG, MOCK_MAC
 

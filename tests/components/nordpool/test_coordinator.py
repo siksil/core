@@ -16,15 +16,15 @@ from pynordpool import (
 )
 import pytest
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.nordpool.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.nordpool.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import ENTRY_CONFIG
 

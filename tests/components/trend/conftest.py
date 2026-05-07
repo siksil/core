@@ -5,8 +5,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.trend.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.trend.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

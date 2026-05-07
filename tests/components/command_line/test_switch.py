@@ -13,14 +13,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.command_line import DOMAIN
-from homeassistant.components.command_line.switch import CommandSwitch
-from homeassistant.components.homeassistant import (
+from inpui.components.command_line import DOMAIN
+from inpui.components.command_line.switch import CommandSwitch
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -28,9 +28,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import mock_asyncio_subprocess_run
 

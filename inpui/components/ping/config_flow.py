@@ -7,20 +7,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import callback
-from homeassistant.helpers import selector
-from homeassistant.util.network import is_ip_address
+from inpui.const import CONF_HOST
+from inpui.core import callback
+from inpui.helpers import selector
+from inpui.util.network import is_ip_address
 
 from .const import CONF_PING_COUNT, DEFAULT_PING_COUNT, DOMAIN
 

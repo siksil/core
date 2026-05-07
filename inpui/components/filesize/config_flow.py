@@ -8,9 +8,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_FILE_PATH
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_FILE_PATH
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 

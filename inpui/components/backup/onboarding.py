@@ -11,14 +11,14 @@ from aiohttp import web
 from aiohttp.web_exceptions import HTTPUnauthorized
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.onboarding import (
+from inpui.components.http import KEY_HASS
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.onboarding import (
     BaseOnboardingView,
     NoAuthBaseOnboardingView,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     BackupManager,
@@ -29,7 +29,7 @@ from . import (
 )
 
 if TYPE_CHECKING:
-    from homeassistant.components.onboarding import OnboardingStoreData
+    from inpui.components.onboarding import OnboardingStoreData
 
 
 async def async_setup_views(hass: HomeAssistant, data: OnboardingStoreData) -> None:

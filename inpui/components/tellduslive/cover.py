@@ -2,12 +2,12 @@
 
 from typing import Any
 
-from homeassistant.components import cover
-from homeassistant.components.cover import CoverEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import cover
+from inpui.components.cover import CoverEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TelldusLiveClient
 from .const import DOMAIN, TELLDUS_DISCOVERY_NEW

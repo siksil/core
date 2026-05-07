@@ -8,7 +8,7 @@ from typing import Any
 import switchbot
 from switchbot import HumidifierAction as SwitchbotHumidifierAction, HumidifierMode
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     MODE_AUTO,
     MODE_NORMAL,
     HumidifierAction,
@@ -16,8 +16,8 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SwitchbotConfigEntry
 from .entity import SwitchbotSwitchedEntity, exception_handler

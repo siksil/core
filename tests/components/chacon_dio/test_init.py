@@ -2,9 +2,9 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 
@@ -38,6 +38,6 @@ async def test_cover_shutdown_event(
 
     await setup_integration(hass, mock_config_entry)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_dio_chacon_client.disconnect.assert_called()

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 
 import jwt
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

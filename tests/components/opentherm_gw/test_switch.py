@@ -4,22 +4,22 @@ from unittest.mock import AsyncMock, MagicMock, call
 
 import pytest
 
-from homeassistant.components.opentherm_gw import DOMAIN
-from homeassistant.components.opentherm_gw.const import OpenThermDeviceIdentifier
-from homeassistant.components.switch import (
+from inpui.components.opentherm_gw import DOMAIN
+from inpui.components.opentherm_gw.const import OpenThermDeviceIdentifier
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

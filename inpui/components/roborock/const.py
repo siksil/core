@@ -4,7 +4,7 @@ from datetime import timedelta
 
 from vacuum_map_parser_base.config.drawable import Drawable
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "roborock"
 CONF_ENTRY_CODE = "code"

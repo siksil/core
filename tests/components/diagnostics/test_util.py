@@ -2,12 +2,12 @@
 
 from datetime import datetime
 
-from homeassistant.components.diagnostics import (
+from inpui.components.diagnostics import (
     REDACTED,
     async_redact_data,
     entity_entry_as_dict,
 )
-from homeassistant.helpers.entity_registry import RegistryEntry
+from inpui.helpers.entity_registry import RegistryEntry
 
 
 def test_redact() -> None:

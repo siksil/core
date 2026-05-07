@@ -5,14 +5,14 @@ from __future__ import annotations
 import logging
 import time
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     MONOTONIC_TIME,
     BaseHaRemoteScanner,
     async_register_scanner,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
 
 from .coordinator import RuuviGatewayUpdateCoordinator
 

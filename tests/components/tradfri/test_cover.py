@@ -8,13 +8,13 @@ import pytest
 from pytradfri.const import ATTR_REACHABLE_STATE
 from pytradfri.device import Device
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     DOMAIN as COVER_DOMAIN,
     CoverState,
 )
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .common import CommandStore, setup_integration
 

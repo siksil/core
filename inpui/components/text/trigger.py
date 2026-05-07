@@ -1,10 +1,10 @@
 """Provides triggers for text and input_text entities."""
 
-from homeassistant.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     ENTITY_STATE_TRIGGER_SCHEMA,
     EntityTriggerBase,
     Trigger,

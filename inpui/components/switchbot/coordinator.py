@@ -10,12 +10,12 @@ from typing import TYPE_CHECKING
 import switchbot
 from switchbot import SwitchbotModel
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.active_update_coordinator import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth.active_update_coordinator import (
     ActiveBluetoothDataUpdateCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CoreState, HomeAssistant, callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import CoreState, HomeAssistant, callback
 
 if TYPE_CHECKING:
     from bleak.backends.device import BLEDevice

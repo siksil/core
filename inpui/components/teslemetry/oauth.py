@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import AUTHORIZE_URL, TOKEN_URL
 

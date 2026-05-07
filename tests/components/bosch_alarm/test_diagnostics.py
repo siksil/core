@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 from bosch_alarm_mode2.const import PanelModel
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

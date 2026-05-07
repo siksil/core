@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import Literal
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import conversation
+from inpui.config_entries import ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONVERSATION_ENTITY_UNIQUE_ID, DATA_CLOUD, DOMAIN
 from .entity import BaseCloudLLMEntity

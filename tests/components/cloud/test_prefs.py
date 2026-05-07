@@ -5,11 +5,11 @@ from unittest.mock import ANY, MagicMock, patch
 
 import pytest
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.components.cloud.const import DOMAIN, PREF_TTS_DEFAULT_VOICE
-from homeassistant.components.cloud.prefs import STORAGE_KEY, CloudPreferences
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.components.cloud.const import DOMAIN, PREF_TTS_DEFAULT_VOICE
+from inpui.components.cloud.prefs import STORAGE_KEY, CloudPreferences
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_set_username(hass: HomeAssistant) -> None:

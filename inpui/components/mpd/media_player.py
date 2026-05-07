@@ -15,8 +15,8 @@ import mpd
 from mpd.asyncio import MPDClient
 import voluptuous as vol
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     PLATFORM_SCHEMA as MEDIA_PLAYER_PLATFORM_SCHEMA,
     BrowseMedia,
     MediaPlayerEntity,
@@ -26,13 +26,13 @@ from homeassistant.components.media_player import (
     RepeatMode,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle, dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle, dt as dt_util
 
 from .const import DOMAIN, LOGGER
 

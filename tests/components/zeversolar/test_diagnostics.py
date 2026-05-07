@@ -2,9 +2,9 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.zeversolar import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.zeversolar import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import MOCK_SERIAL_NUMBER, init_integration
 

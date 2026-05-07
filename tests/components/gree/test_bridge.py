@@ -5,10 +5,10 @@ from datetime import timedelta
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN, HVACMode
-from homeassistant.components.gree.const import UPDATE_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN, HVACMode
+from inpui.components.gree.const import UPDATE_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import async_setup_gree, build_device_mock
 

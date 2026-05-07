@@ -7,16 +7,16 @@ from typing import Any, ClassVar
 
 from pywizlight.bulblibrary import BulbType, Features
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     DIRECTION_FORWARD,
     DIRECTION_REVERSE,
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import ToggleEntity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity import ToggleEntity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

@@ -8,17 +8,17 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import statistics
-from homeassistant.components.recorder.auto_repairs.statistics.duplicates import (
+from inpui.components import recorder
+from inpui.components.recorder import statistics
+from inpui.components.recorder.auto_repairs.statistics.duplicates import (
     delete_statistics_duplicates,
     delete_statistics_meta_duplicates,
 )
-from homeassistant.components.recorder.models import StatisticMeanType
-from homeassistant.components.recorder.statistics import async_add_external_statistics
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.models import StatisticMeanType
+from inpui.components.recorder.statistics import async_add_external_statistics
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from ...common import async_wait_recording_done, get_patched_live_version
 

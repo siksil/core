@@ -7,16 +7,16 @@ from nibe.connection.modbus import Modbus
 from nibe.connection.nibegw import NibeGW, ProductInfo
 from nibe.heatpump import HeatPump, Model
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_MODEL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .const import (
     CONF_CONNECTION_TYPE,
@@ -78,7 +78,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await connection.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
 
     coordinator = CoilCoordinator(hass, entry, heatpump, connection)

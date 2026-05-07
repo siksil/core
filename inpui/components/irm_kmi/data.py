@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 
 from irm_kmi_api import CurrentWeatherData, ExtendedForecast
 
-from homeassistant.components.weather import Forecast
+from inpui.components.weather import Forecast
 
 
 @dataclass

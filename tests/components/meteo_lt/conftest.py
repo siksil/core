@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 from meteo_lt import Forecast, MeteoLtAPI, Place
 import pytest
 
-from homeassistant.components.meteo_lt.const import CONF_PLACE_CODE, DOMAIN
+from inpui.components.meteo_lt.const import CONF_PLACE_CODE, DOMAIN
 
 from tests.common import (
     MockConfigEntry,

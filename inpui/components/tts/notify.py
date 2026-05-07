@@ -7,14 +7,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_ENTITY_ID, CONF_NAME
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import ATTR_ENTITY_ID, CONF_ENTITY_ID, CONF_NAME
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import ATTR_LANGUAGE, ATTR_MEDIA_PLAYER_ENTITY_ID, ATTR_MESSAGE, DOMAIN
 

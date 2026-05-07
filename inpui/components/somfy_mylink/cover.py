@@ -3,12 +3,12 @@
 import logging
 from typing import Any
 
-from homeassistant.components.cover import CoverDeviceClass, CoverEntity, CoverState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.cover import CoverDeviceClass, CoverEntity, CoverState
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     CONF_REVERSED_TARGET_IDS,

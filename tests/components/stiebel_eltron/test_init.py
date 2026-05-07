@@ -1,9 +1,9 @@
 """Tests for the STIEBEL ELTRON integration."""
 
-from homeassistant.components.stiebel_eltron.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.stiebel_eltron.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 
 async def test_async_setup_success(

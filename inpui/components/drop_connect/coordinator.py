@@ -6,10 +6,10 @@ import logging
 
 from dropmqttapi.mqttapi import DropAPI
 
-from homeassistant.components import mqtt
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.components import mqtt
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_COMMAND_TOPIC, DOMAIN
 

@@ -6,8 +6,8 @@ from typing import Any
 
 from nextdns.const import API_ENDPOINT
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 
 @callback

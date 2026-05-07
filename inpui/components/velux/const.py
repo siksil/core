@@ -2,7 +2,7 @@
 
 from logging import getLogger
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "velux"
 PLATFORMS = [

@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Any
 
 from HueBLE import HueBleLight
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_XY_COLOR,
@@ -15,10 +15,10 @@ from homeassistant.components.light import (
     LightEntity,
     filter_supported_color_modes,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import color as color_util
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -10,13 +10,13 @@ from typing import TYPE_CHECKING, Any
 from pythonxbox.api.provider.people.models import Person
 from pythonxbox.api.provider.titlehub.models import Title
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import XboxConfigEntry
 from .entity import (

@@ -6,14 +6,14 @@ from typing import TYPE_CHECKING, Any
 
 from xiaomi_gateway import XiaomiGateway
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_BATTERY_LEVEL, ATTR_VOLTAGE, CONF_MAC
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_BATTERY_LEVEL, ATTR_VOLTAGE, CONF_MAC
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo, format_mac
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util.dt import utcnow
 
 from .const import DOMAIN
 

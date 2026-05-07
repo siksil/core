@@ -12,8 +12,8 @@ from typing import Any, Concatenate
 from jsonrpc_base.jsonrpc import ProtocolError, TransportError
 from pykodi import CannotConnectError
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaPlayerEntity,
@@ -22,20 +22,20 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_NAME,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
 )
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.network import is_internal_request
-from homeassistant.util import dt as dt_util
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.network import is_internal_request
+from inpui.util import dt as dt_util
 
 from . import KodiConfigEntry
 from .browse_media import (
@@ -272,7 +272,7 @@ class KodiEntity(MediaPlayerEntity):
         if self.hass.state is CoreState.running:
             await start_watchdog()
         else:
-            self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, start_watchdog)
+            self.hass.bus.async_listen_once(EVENT_INPUI_STARTED, start_watchdog)
 
     async def _on_ws_connected(self):
         """Call after ws is connected."""

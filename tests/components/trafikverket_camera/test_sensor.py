@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 from pytrafikverket import CameraInfoModel
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")

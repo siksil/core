@@ -7,15 +7,15 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import locative
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.components.device_tracker.legacy import Device
-from homeassistant.components.locative import DOMAIN, TRACKER_UPDATE
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.dispatcher import DATA_DISPATCHER
-from homeassistant.setup import async_setup_component
+from inpui.components import locative
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.components.device_tracker.legacy import Device
+from inpui.components.locative import DOMAIN, TRACKER_UPDATE
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.dispatcher import DATA_DISPATCHER
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

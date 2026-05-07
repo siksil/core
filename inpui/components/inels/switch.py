@@ -9,10 +9,10 @@ from typing import Any
 from inelsmqtt.devices import Device
 from inelsmqtt.utils.common import Bit, Relay, SimpleRelay
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import InelsConfigEntry
 from .entity import InelsBaseEntity

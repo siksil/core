@@ -8,17 +8,17 @@ from homewizard_energy.models import Batteries
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homewizard.const import UPDATE_INTERVAL
-from homeassistant.components.select import (
+from inpui.components.homewizard.const import UPDATE_INTERVAL
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

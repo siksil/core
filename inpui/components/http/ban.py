@@ -23,12 +23,12 @@ from aiohttp.web import (
 from aiohttp.web_exceptions import HTTPForbidden, HTTPUnauthorized
 import voluptuous as vol
 
-from homeassistant.config import load_yaml_config_file
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.hassio import get_supervisor_ip, is_hassio
-from homeassistant.util import dt as dt_util, yaml as yaml_util
+from inpui.config import load_yaml_config_file
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.hassio import get_supervisor_ip, is_hassio
+from inpui.util import dt as dt_util, yaml as yaml_util
 
 from .const import KEY_HASS, is_supervisor_unix_socket_request
 from .view import HomeAssistantView
@@ -140,7 +140,7 @@ async def process_wrong_login(request: Request) -> None:
     _LOGGER.warning(log_msg)
 
     # Circular import with websocket_api
-    from homeassistant.components import persistent_notification  # noqa: PLC0415
+    from inpui.components import persistent_notification  # noqa: PLC0415
 
     persistent_notification.async_create(
         hass, notification_msg, "Login attempt failed", NOTIFICATION_ID_LOGIN

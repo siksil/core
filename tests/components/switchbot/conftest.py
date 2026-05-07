@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.switchbot.const import (
+from inpui.components.switchbot.const import (
     CONF_CURTAIN_SPEED,
     CONF_ENCRYPTION_KEY,
     CONF_KEY_ID,
@@ -12,7 +12,7 @@ from homeassistant.components.switchbot.const import (
     DOMAIN,
     SupportedModels,
 )
-from homeassistant.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
+from inpui.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
 
 from tests.common import MockConfigEntry
 

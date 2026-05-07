@@ -21,28 +21,28 @@ from hass_nabucasa.const import STATE_DISCONNECTED
 from hass_nabucasa.voice_data import TTS_VOICES
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.alexa import (
+from inpui.components import websocket_api
+from inpui.components.alexa import (
     entities as alexa_entities,
     errors as alexa_errors,
 )
-from homeassistant.components.google_assistant import helpers as google_helpers
-from homeassistant.components.homeassistant import exposed_entities
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.system_health import get_info as get_system_health_info
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.loader import (
+from inpui.components.google_assistant import helpers as google_helpers
+from inpui.components.homeassistant import exposed_entities
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.system_health import get_info as get_system_health_info
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.loader import (
     async_get_custom_components,
     async_get_loaded_integration,
 )
-from homeassistant.util.location import async_detect_location_info
-from homeassistant.util.package import async_get_installed_packages
+from inpui.util.location import async_detect_location_info
+from inpui.util.package import async_get_installed_packages
 
 from .alexa_config import entity_supported as entity_supported_by_alexa
 from .assist_pipeline import async_create_cloud_pipeline

@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo import DOMAIN, valve as demo_valve
-from homeassistant.components.valve import (
+from inpui.components.demo import DOMAIN, valve as demo_valve
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as VALVE_DOMAIN,
@@ -16,9 +16,9 @@ from homeassistant.components.valve import (
     SERVICE_SET_VALVE_POSITION,
     ValveState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, EVENT_STATE_CHANGED, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, EVENT_STATE_CHANGED, Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_capture_events, async_fire_time_changed
 

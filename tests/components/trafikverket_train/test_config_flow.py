@@ -14,16 +14,16 @@ from pytrafikverket import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.trafikverket_train.const import (
+from inpui.components.trafikverket_train.const import (
     CONF_FILTER_PRODUCT,
     CONF_FROM,
     CONF_TIME,
     CONF_TO,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_NAME, CONF_WEEKDAY, WEEKDAYS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import ENTRY_CONFIG, OPTIONS_CONFIG
 

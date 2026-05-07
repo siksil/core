@@ -5,18 +5,18 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, valve
-from homeassistant.components.mqtt.valve import (
+from inpui.components import mqtt, valve
+from inpui.components.mqtt.valve import (
     MQTT_VALVE_ATTRIBUTES_BLOCKED,
     ValveEntityFeature,
 )
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     SERVICE_SET_VALVE_POSITION,
     ValveState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -25,7 +25,7 @@ from homeassistant.const import (
     SERVICE_STOP_VALVE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

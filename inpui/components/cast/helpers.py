@@ -19,13 +19,13 @@ import pychromecast.controllers.receiver
 from pychromecast.models import CastInfo
 import pychromecast.socket_client
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .const import DOMAIN
 
 if TYPE_CHECKING:
-    from homeassistant.components import zeroconf
+    from inpui.components import zeroconf
 
 
 _LOGGER = logging.getLogger(__name__)

@@ -9,29 +9,29 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA as BINARY_SENSOR_DEVICE_CLASSES_SCHEMA,
     DOMAIN as BINARY_SENSOR_DOMAIN,
     SCAN_INTERVAL as BINARY_SENSOR_DEFAULT_SCAN_INTERVAL,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DEVICE_CLASSES_SCHEMA as COVER_DEVICE_CLASSES_SCHEMA,
     DOMAIN as COVER_DOMAIN,
     SCAN_INTERVAL as COVER_DEFAULT_SCAN_INTERVAL,
 )
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA as SENSOR_DEVICE_CLASSES_SCHEMA,
     DOMAIN as SENSOR_DOMAIN,
     SCAN_INTERVAL as SENSOR_DEFAULT_SCAN_INTERVAL,
     STATE_CLASSES_SCHEMA as SENSOR_STATE_CLASSES_SCHEMA,
 )
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SCAN_INTERVAL as SWITCH_DEFAULT_SCAN_INTERVAL,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND,
     CONF_COMMAND_CLOSE,
     CONF_COMMAND_OFF,
@@ -51,16 +51,16 @@ from homeassistant.const import (
     SERVICE_RELOAD,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_COMMAND_TIMEOUT,

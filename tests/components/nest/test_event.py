@@ -9,9 +9,9 @@ from google_nest_sdm.event import EventMessage, EventType
 from google_nest_sdm.traits import TraitType
 import pytest
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from .common import DEVICE_ID, TEST_CLIP_URL, CreateDevice, create_nest_event
 from .conftest import PlatformSetup

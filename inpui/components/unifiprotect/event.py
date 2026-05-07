@@ -8,14 +8,14 @@ from typing import Any
 from uiprotect.data import ModelType
 from uiprotect.data.nvr import Event, EventDetectedThumbnail
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_at
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_at
 
 from . import Bootstrap
 from .const import (

@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.siren import DOMAIN as SIREN_DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.siren import DOMAIN as SIREN_DOMAIN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import configure_integration
 from .mocks import HomeControlMock, HomeControlMockSiren

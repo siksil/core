@@ -4,9 +4,9 @@ from unittest.mock import MagicMock, patch
 
 from aiopyarr import ArrAuthenticationException, ArrException
 
-from homeassistant.components.sonarr.const import CONF_BASE_PATH, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.sonarr.const import CONF_BASE_PATH, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
@@ -15,7 +15,7 @@ from homeassistant.const import (
     CONF_URL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

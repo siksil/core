@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.device_tracker import TrackerEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import as_utc
+from inpui.components.device_tracker import TrackerEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import as_utc
 
 from .coordinator import TileConfigEntry, TileCoordinator
 from .entity import TileEntity

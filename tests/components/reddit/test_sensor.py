@@ -3,7 +3,7 @@
 import copy
 from unittest.mock import patch
 
-from homeassistant.components.reddit.sensor import (
+from inpui.components.reddit.sensor import (
     ATTR_BODY,
     ATTR_COMMENTS_NUMBER,
     ATTR_CREATED,
@@ -16,15 +16,15 @@ from homeassistant.components.reddit.sensor import (
     CONF_SORT_BY,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_MAXIMUM,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 VALID_CONFIG = {
     "sensor": {

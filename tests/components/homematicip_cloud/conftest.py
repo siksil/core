@@ -8,20 +8,20 @@ from homematicip.base.enums import WeatherCondition, WeatherDayTime
 from homematicip.connection.rest_connection import RestConnection
 import pytest
 
-from homeassistant.components.homematicip_cloud import (
+from inpui.components.homematicip_cloud import (
     DOMAIN,
     async_setup as hmip_async_setup,
 )
-from homeassistant.components.homematicip_cloud.const import (
+from inpui.components.homematicip_cloud.const import (
     HMIPC_AUTHTOKEN,
     HMIPC_HAPID,
     HMIPC_NAME,
     HMIPC_PIN,
 )
-from homeassistant.components.homematicip_cloud.hap import HomematicipHAP
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.homematicip_cloud.hap import HomematicipHAP
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 from .helper import AUTH_TOKEN, HAPID, HAPPIN, HomeFactory
 

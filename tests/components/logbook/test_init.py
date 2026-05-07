@@ -11,18 +11,18 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.components import logbook, recorder
+from inpui.components import logbook, recorder
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.alexa.smart_home import EVENT_ALEXA_SMART_HOME
-from homeassistant.components.automation import EVENT_AUTOMATION_TRIGGERED
-from homeassistant.components.logbook.models import EventAsRow, LazyEventPartialState
-from homeassistant.components.logbook.processor import EventProcessor
-from homeassistant.components.logbook.queries.common import PSEUDO_EVENT_STATE_CHANGED
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.script import EVENT_SCRIPT_STARTED
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import (
+from inpui.components.alexa.smart_home import EVENT_ALEXA_SMART_HOME
+from inpui.components.automation import EVENT_AUTOMATION_TRIGGERED
+from inpui.components.logbook.models import EventAsRow, LazyEventPartialState
+from inpui.components.logbook.processor import EventProcessor
+from inpui.components.logbook.queries.common import PSEUDO_EVENT_STATE_CHANGED
+from inpui.components.recorder import Recorder
+from inpui.components.script import EVENT_SCRIPT_STARTED
+from inpui.components.sensor import SensorStateClass
+from inpui.const import (
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -34,18 +34,18 @@ from homeassistant.const import (
     CONF_EXCLUDE,
     CONF_INCLUDE,
     EVENT_CALL_SERVICE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     EVENT_LOGBOOK_ENTRY,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entityfilter import CONF_ENTITY_GLOBS
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entityfilter import CONF_ENTITY_GLOBS
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import MockRow, mock_humanify
 
@@ -229,8 +229,8 @@ async def test_home_assistant_start_stop_not_grouped(hass_: HomeAssistant) -> No
     entries = mock_humanify(
         hass_,
         (
-            MockRow(EVENT_HOMEASSISTANT_STOP),
-            MockRow(EVENT_HOMEASSISTANT_START),
+            MockRow(EVENT_INPUI_STOP),
+            MockRow(EVENT_INPUI_START),
         ),
     )
 
@@ -249,7 +249,7 @@ async def test_home_assistant_start(hass_: HomeAssistant) -> None:
     entries = mock_humanify(
         hass_,
         (
-            MockRow(EVENT_HOMEASSISTANT_START),
+            MockRow(EVENT_INPUI_START),
             create_state_changed_event(pointA, entity_id, 10).row,
         ),
     )
@@ -683,7 +683,7 @@ async def test_logbook_entity_filter_with_automations(
         EVENT_SCRIPT_STARTED,
         {ATTR_NAME: "Mock script", ATTR_ENTITY_ID: "script.mock_script"},
     )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     await async_wait_recording_done(hass)
 
@@ -844,7 +844,7 @@ async def test_exclude_new_entities(
     hass.states.async_set(entity_id, STATE_OFF)
     hass.states.async_set(entity_id2, STATE_ON)
     hass.states.async_set(entity_id2, STATE_OFF)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     await async_wait_recording_done(hass)
 
@@ -885,7 +885,7 @@ async def test_exclude_removed_entities(
     hass.states.async_set(entity_id, STATE_ON)
     hass.states.async_set(entity_id, STATE_OFF)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set(entity_id2, STATE_ON)
     hass.states.async_set(entity_id2, STATE_OFF)
@@ -927,7 +927,7 @@ async def test_exclude_attribute_changes(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set("light.kitchen", STATE_OFF)
     hass.states.async_set("light.kitchen", STATE_ON, {"brightness": 100})
@@ -1006,7 +1006,7 @@ async def test_logbook_entity_context_id(
     hass.states.async_set(entity_id_second, STATE_ON, context=context)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     await hass.async_add_executor_job(
@@ -1146,7 +1146,7 @@ async def test_logbook_context_id_automation_script_started_manually(
         context=script_context,
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     script_2_context = ha.Context(
         id="01GTDGKBCH00GW0X476W5TVEEE",
@@ -1259,7 +1259,7 @@ async def test_logbook_entity_context_parent_id(
     hass.states.async_set(entity_id_second, STATE_ON, context=child_context)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     logbook.async_log_entry(
@@ -1823,7 +1823,7 @@ async def test_icon_and_state(
 
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set("light.kitchen", STATE_OFF, {"icon": "mdi:chemical-weapon"})
     hass.states.async_set(
@@ -1912,8 +1912,8 @@ async def test_exclude_events_domain(
     await async_setup_component(hass, "logbook", config)
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -1957,8 +1957,8 @@ async def test_exclude_events_domain_glob(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -2002,8 +2002,8 @@ async def test_include_events_entity(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -2040,8 +2040,8 @@ async def test_exclude_events_entity(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -2079,8 +2079,8 @@ async def test_include_events_domain(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.bus.async_fire(
         EVENT_ALEXA_SMART_HOME,
         {"request": {"namespace": "Alexa.Discovery", "name": "Discover"}},
@@ -2136,8 +2136,8 @@ async def test_include_events_domain_glob(
             logbook.ATTR_ENTITY_ID: "switch.any",
         },
     )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.bus.async_fire(
         EVENT_ALEXA_SMART_HOME,
         {"request": {"namespace": "Alexa.Discovery", "name": "Discover"}},
@@ -2193,8 +2193,8 @@ async def test_include_exclude_events_no_globs(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -2255,8 +2255,8 @@ async def test_include_exclude_events_with_glob_filters(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
     hass.states.async_set(entity_id2, None)
@@ -2307,8 +2307,8 @@ async def test_empty_config(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, 10)
 
@@ -2334,8 +2334,8 @@ async def test_context_filter(
     entity_id = "switch.blu"
     context = ha.Context()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_START)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     hass.states.async_set(entity_id, None)
     hass.states.async_set(entity_id, "on", context=context)
     hass.states.async_set(entity_id, "off")
@@ -2415,7 +2415,7 @@ async def test_get_events(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set("light.kitchen", STATE_OFF)
     await hass.async_block_till_done()
@@ -2675,7 +2675,7 @@ async def test_get_events_with_device_ids(
 
     logbook._process_logbook_platform(hass, "test", MockLogbookPlatform)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.bus.async_fire("mock_event", {"device_id": device.id})
 
     hass.states.async_set("light.kitchen", STATE_OFF)
@@ -2812,7 +2812,7 @@ async def test_logbook_select_entities_context_id(
     await hass.async_block_till_done()
     hass.states.async_set(entity_id_second, STATE_ON, context=context)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     entity_id_third = "alarm_control_panel.area_003"
 
@@ -2914,7 +2914,7 @@ async def test_get_events_with_context_state(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.states.async_set("binary_sensor.is_light", STATE_ON)
     hass.states.async_set("light.kitchen1", STATE_OFF)
     hass.states.async_set("light.kitchen2", STATE_OFF)

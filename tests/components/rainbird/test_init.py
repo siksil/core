@@ -7,11 +7,11 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.rainbird.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.rainbird.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import (
     CONFIG_ENTRY_DATA,

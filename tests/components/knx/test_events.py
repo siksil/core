@@ -4,9 +4,9 @@ import logging
 
 import pytest
 
-from homeassistant.components.knx.const import KNX_ADDRESS
-from homeassistant.const import CONF_EVENT, CONF_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.components.knx.const import KNX_ADDRESS
+from inpui.const import CONF_EVENT, CONF_TYPE
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

@@ -5,9 +5,9 @@ from unittest.mock import patch
 import pytest
 from surepy import MESTART_RESOURCE
 
-from homeassistant.components.surepetcare.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.surepetcare.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import MOCK_API_DATA
 

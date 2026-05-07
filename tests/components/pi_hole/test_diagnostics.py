@@ -3,8 +3,8 @@
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components import pi_hole
-from homeassistant.core import HomeAssistant
+from inpui.components import pi_hole
+from inpui.core import HomeAssistant
 
 from . import CONFIG_DATA_DEFAULTS, _create_mocked_hole, _patch_init_hole
 

@@ -7,11 +7,11 @@ from typing import Any
 import haffmpeg.sensor as ffmpeg_sensor
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.ffmpeg import (
+from inpui.components.ffmpeg import (
     CONF_EXTRA_ARGUMENTS,
     CONF_INITIAL_STATE,
     CONF_INPUT,
@@ -19,14 +19,14 @@ from homeassistant.components.ffmpeg import (
     FFmpegManager,
     get_ffmpeg_manager,
 )
-from homeassistant.components.ffmpeg_motion.binary_sensor import (  # pylint: disable=hass-component-root-import
+from inpui.components.ffmpeg_motion.binary_sensor import (  # pylint: disable=hass-component-root-import
     FFmpegBinarySensor,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 CONF_PEAK = "peak"
 CONF_DURATION = "duration"

@@ -1,6 +1,6 @@
 """Support for FFmpeg."""
 
-from homeassistant.util.signal_type import SignalType
+from inpui.util.signal_type import SignalType
 
 DOMAIN = "ffmpeg"
 

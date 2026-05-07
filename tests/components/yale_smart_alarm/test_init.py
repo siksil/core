@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.yale_smart_alarm.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.yale_smart_alarm.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import ENTRY_CONFIG, OPTIONS_CONFIG
 

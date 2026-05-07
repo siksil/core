@@ -9,10 +9,10 @@ from pyfreshr.models import DeviceReadings
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.freshr.const import DOMAIN
-from homeassistant.components.freshr.coordinator import READINGS_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.freshr.const import DOMAIN
+from inpui.components.freshr.coordinator import READINGS_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import DEVICE_ID
 

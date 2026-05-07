@@ -7,18 +7,18 @@ from typing import Any
 from pyisy.constants import COMMAND_FRIENDLY_NAME
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_COMMAND,
     CONF_NAME,
     CONF_UNIT_OF_MEASUREMENT,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.service import entity_service_call
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.service import entity_service_call
+from inpui.helpers.typing import VolDictType
 
 from .const import _LOGGER, DOMAIN
 from .models import IsyConfigEntry

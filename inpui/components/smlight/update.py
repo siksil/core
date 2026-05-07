@@ -11,16 +11,16 @@ from pysmlight.const import Events as SmEvents
 from pysmlight.models import Firmware, Info
 from pysmlight.sse import MessageEvent
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, LOGGER
 from .coordinator import SmConfigEntry, SmFirmwareUpdateCoordinator, SmFwData

@@ -6,9 +6,9 @@ from aiohomekit.model import Accessory
 from aiohomekit.model.characteristics import CharacteristicsTypes
 from aiohomekit.model.services import ServicesTypes
 
-from homeassistant.components.alarm_control_panel import ATTR_CODE_ARM_REQUIRED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.alarm_control_panel import ATTR_CODE_ARM_REQUIRED
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_test_component
 

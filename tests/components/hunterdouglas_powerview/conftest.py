@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 from aiopvapi.resources.shade import ShadePosition
 import pytest
 
-from homeassistant.components.hunterdouglas_powerview.const import DOMAIN
+from inpui.components.hunterdouglas_powerview.const import DOMAIN
 
 from tests.common import load_json_object_fixture, load_json_value_fixture
 

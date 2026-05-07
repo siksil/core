@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Any, TypedDict
 from chip.clusters import Objects as clusters
 from chip.clusters.Types import NullValue
 
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from .const import (
     CRED_TYPE_FACE,

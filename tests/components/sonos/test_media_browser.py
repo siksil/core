@@ -6,21 +6,21 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.components.sonos.const import MEDIA_TYPE_DIRECTORY
-from homeassistant.components.sonos.media_browser import (
+from inpui.components.sonos.const import MEDIA_TYPE_DIRECTORY
+from inpui.components.sonos.media_browser import (
     build_item_response,
     get_media,
     get_thumbnail_url_full,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .conftest import SoCoMockFactory
 

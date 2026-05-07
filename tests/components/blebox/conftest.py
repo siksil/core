@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 import blebox_uniapi
 import pytest
 
-from homeassistant.components.blebox.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.blebox.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 from tests.components.light.conftest import mock_light_profiles  # noqa: F401

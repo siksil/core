@@ -12,8 +12,8 @@ from uuid import uuid4
 import py
 import pytest
 
-from homeassistant.components.google_assistant import GOOGLE_ASSISTANT_SCHEMA
-from homeassistant.components.google_assistant.const import (
+from inpui.components.google_assistant import GOOGLE_ASSISTANT_SCHEMA
+from inpui.components.google_assistant.const import (
     DOMAIN,
     EVENT_COMMAND_RECEIVED,
     HOMEGRAPH_TOKEN_URL,
@@ -21,17 +21,17 @@ from homeassistant.components.google_assistant.const import (
     STORE_AGENT_USER_IDS,
     STORE_GOOGLE_LOCAL_WEBHOOK_ID,
 )
-from homeassistant.components.google_assistant.http import (
+from inpui.components.google_assistant.http import (
     GoogleConfig,
     GoogleConfigStore,
     _get_homegraph_jwt,
     _get_homegraph_token,
     async_get_users,
 )
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import HomeAssistant, State
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import HomeAssistant, State
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     async_capture_events,

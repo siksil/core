@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Iterable
 import logging
 
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.util import location as location_util
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import HomeAssistant, State
+from inpui.util import location as location_util
 
 _LOGGER = logging.getLogger(__name__)
 

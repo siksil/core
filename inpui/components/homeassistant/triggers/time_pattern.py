@@ -7,12 +7,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_time_change
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_time_change
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 CONF_HOURS = "hours"
 CONF_MINUTES = "minutes"

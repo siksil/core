@@ -11,7 +11,7 @@ from intellifire4py.model import (
 )
 import pytest
 
-from homeassistant.components.intellifire.const import (
+from inpui.components.intellifire.const import (
     API_MODE_LOCAL,
     CONF_AUTH_COOKIE,
     CONF_CONTROL_MODE,
@@ -21,7 +21,7 @@ from homeassistant.components.intellifire.const import (
     CONF_WEB_CLIENT_ID,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_IP_ADDRESS,

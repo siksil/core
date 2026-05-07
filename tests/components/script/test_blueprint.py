@@ -8,17 +8,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import script
-from homeassistant.components.blueprint import (
+from inpui.components import script
+from inpui.components.blueprint import (
     BLUEPRINT_SCHEMA,
     Blueprint,
     DomainBlueprints,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, template
-from homeassistant.setup import async_setup_component
-from homeassistant.util import yaml as yaml_util
+from inpui.config_entries import ConfigEntryState
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, template
+from inpui.setup import async_setup_component
+from inpui.util import yaml as yaml_util
 
 from tests.common import MockConfigEntry, async_mock_service
 

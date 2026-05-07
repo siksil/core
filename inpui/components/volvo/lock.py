@@ -6,10 +6,10 @@ from typing import Any, cast
 
 from volvocarsapi.models import VolvoApiException, VolvoCarsApiBaseModel, VolvoCarsValue
 
-from homeassistant.components.lock import LockEntity, LockEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import VolvoConfigEntry

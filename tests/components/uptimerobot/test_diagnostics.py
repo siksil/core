@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from pyuptimerobot import API_PATH_USER_ME, UptimeRobotException
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     MOCK_UPTIMEROBOT_ACCOUNT,

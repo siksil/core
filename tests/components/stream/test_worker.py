@@ -26,8 +26,8 @@ import av
 import numpy as np
 import pytest
 
-from homeassistant.components.stream import KeyFrameConverter, Stream, create_stream
-from homeassistant.components.stream.const import (
+from inpui.components.stream import KeyFrameConverter, Stream, create_stream
+from inpui.components.stream.const import (
     ATTR_SETTINGS,
     CONF_LL_HLS,
     CONF_PART_DURATION,
@@ -40,16 +40,16 @@ from homeassistant.components.stream.const import (
     SEGMENT_DURATION_ADJUSTER,
     TARGET_SEGMENT_DURATION_NON_LL_HLS,
 )
-from homeassistant.components.stream.core import Orientation, StreamSettings
-from homeassistant.components.stream.exceptions import StreamClientError
-from homeassistant.components.stream.worker import (
+from inpui.components.stream.core import Orientation, StreamSettings
+from inpui.components.stream.exceptions import StreamClientError
+from inpui.components.stream.worker import (
     StreamEndedError,
     StreamState,
     StreamWorkerError,
     stream_worker,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import dynamic_stream_settings, generate_h264_video, generate_h265_video
 from .test_ll_hls import TEST_PART_DURATION

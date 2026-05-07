@@ -11,17 +11,17 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import auth, data_entry_flow
-from homeassistant.auth import (
+from inpui.auth import (
     EVENT_USER_UPDATED,
     InvalidAuthError,
     auth_store,
     const as auth_const,
     models as auth_models,
 )
-from homeassistant.auth.const import GROUP_ID_ADMIN, MFA_SESSION_EXPIRATION
-from homeassistant.auth.models import Credentials
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util import dt as dt_util
+from inpui.auth.const import GROUP_ID_ADMIN, MFA_SESSION_EXPIRATION
+from inpui.auth.models import Credentials
+from inpui.core import HomeAssistant, callback
+from inpui.util import dt as dt_util
 
 from tests.common import (
     CLIENT_ID,

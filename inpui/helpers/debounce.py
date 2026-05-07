@@ -8,7 +8,7 @@ from contextlib import asynccontextmanager
 from logging import Logger
 from typing import Any
 
-from homeassistant.core import HassJob, HomeAssistant, callback
+from inpui.core import HassJob, HomeAssistant, callback
 
 
 class Debouncer[_R_co]:

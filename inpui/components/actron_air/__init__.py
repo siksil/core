@@ -7,9 +7,9 @@ from actron_neo_api import (
     ActronAirAuthError,
 )
 
-from homeassistant.const import CONF_API_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.const import CONF_API_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import _LOGGER, DOMAIN
 from .coordinator import (

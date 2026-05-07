@@ -7,11 +7,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from aioaquacell import AquacellApi, Softener
 import pytest
 
-from homeassistant.components.aquacell.const import (
+from inpui.components.aquacell.const import (
     CONF_REFRESH_TOKEN_CREATION_TIME,
     DOMAIN,
 )
-from homeassistant.const import CONF_EMAIL
+from inpui.const import CONF_EMAIL
 
 from . import TEST_CONFIG_ENTRY, TEST_CONFIG_ENTRY_WITHOUT_BRAND
 

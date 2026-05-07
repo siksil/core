@@ -5,18 +5,18 @@ from unittest.mock import MagicMock
 
 import speedtest
 
-from homeassistant.components.speedtestdotnet.const import (
+from inpui.components.speedtestdotnet.const import (
     CONF_SERVER_ID,
     CONF_SERVER_NAME,
     DOMAIN,
 )
-from homeassistant.components.speedtestdotnet.coordinator import (
+from inpui.components.speedtestdotnet.coordinator import (
     SpeedTestDataCoordinator,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

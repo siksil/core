@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_ACTIVITY,
     PRESET_BOOST,
     ClimateEntity,
@@ -10,8 +10,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import GeniusHubConfigEntry
 from .entity import GeniusHeatingZone

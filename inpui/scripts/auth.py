@@ -8,11 +8,11 @@ import os
 from typing import TYPE_CHECKING
 
 from homeassistant import runner
-from homeassistant.auth import auth_manager_from_config
-from homeassistant.auth.providers import homeassistant as hass_auth
-from homeassistant.config import get_default_config_dir
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.auth import auth_manager_from_config
+from inpui.auth.providers import homeassistant as hass_auth
+from inpui.config import get_default_config_dir
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 # mypy: allow-untyped-calls, allow-untyped-defs
 

@@ -1,15 +1,15 @@
 """Tests for Broadlink select."""
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.components.select import (
+from inpui.components.broadlink.const import DOMAIN
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from . import get_device
 

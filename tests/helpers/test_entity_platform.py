@@ -12,9 +12,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentryData
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, PERCENTAGE, EntityCategory
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry, ConfigSubentryData
+from inpui.const import EVENT_INPUI_STARTED, PERCENTAGE, EntityCategory
+from inpui.core import (
     CoreState,
     HomeAssistant,
     ServiceCall,
@@ -22,8 +22,8 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, PlatformNotReady
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, PlatformNotReady
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
@@ -31,19 +31,19 @@ from homeassistant.helpers import (
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, async_generate_entity_id
-from homeassistant.helpers.entity_component import (
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, async_generate_entity_id
+from inpui.helpers.entity_component import (
     DEFAULT_SCAN_INTERVAL,
     EntityComponent,
 )
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.service import async_get_all_descriptions
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.service import async_get_all_descriptions
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,
@@ -1007,7 +1007,7 @@ async def test_reset_cancels_retry_setup_when_not_started(hass: HomeAssistant) -
     """Test that resetting a platform will cancel scheduled a setup retry when not yet started."""
     hass.set_state(CoreState.starting)
     async_setup_entry = Mock(side_effect=PlatformNotReady)
-    initial_listeners = hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED]
+    initial_listeners = hass.bus.async_listeners()[EVENT_INPUI_STARTED]
 
     platform = MockPlatform(async_setup_entry=async_setup_entry)
     config_entry = MockConfigEntry()
@@ -1018,13 +1018,13 @@ async def test_reset_cancels_retry_setup_when_not_started(hass: HomeAssistant) -
     assert not await ent_platform.async_setup_entry(config_entry)
     await hass.async_block_till_done()
     assert (
-        hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED] == initial_listeners + 1
+        hass.bus.async_listeners()[EVENT_INPUI_STARTED] == initial_listeners + 1
     )
     assert ent_platform._async_cancel_retry_setup is not None
 
     await ent_platform.async_reset()
     await hass.async_block_till_done()
-    assert hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED] == initial_listeners
+    assert hass.bus.async_listeners()[EVENT_INPUI_STARTED] == initial_listeners
     assert ent_platform._async_cancel_retry_setup is None
 
 

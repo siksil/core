@@ -2,8 +2,8 @@
 
 import json
 
-from homeassistant.components.devialet.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.devialet.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

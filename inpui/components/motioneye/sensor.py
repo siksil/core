@@ -8,11 +8,11 @@ from typing import Any
 from motioneye_client.client import MotionEyeClient
 from motioneye_client.const import KEY_ACTIONS
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import get_camera_from_cameras, listen_for_new_cameras
 from .const import DOMAIN, TYPE_MOTIONEYE_ACTION_SENSOR

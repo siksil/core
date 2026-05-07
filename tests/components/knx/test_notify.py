@@ -1,10 +1,10 @@
 """Test KNX notify."""
 
-from homeassistant.components import notify
-from homeassistant.components.knx.const import KNX_ADDRESS
-from homeassistant.components.knx.schema import NotifySchema
-from homeassistant.const import CONF_NAME, CONF_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.components import notify
+from inpui.components.knx.const import KNX_ADDRESS
+from inpui.components.knx.schema import NotifySchema
+from inpui.const import CONF_NAME, CONF_TYPE
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

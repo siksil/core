@@ -2,15 +2,15 @@
 
 import pytest
 
-from homeassistant.components.camera.const import DATA_CAMERA_PREFS
-from homeassistant.components.camera.prefs import (
+from inpui.components.camera.const import DATA_CAMERA_PREFS
+from inpui.components.camera.prefs import (
     CameraPreferences,
     DynamicStreamSettings,
     get_dynamic_camera_stream_settings,
 )
-from homeassistant.components.stream import Orientation
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.stream import Orientation
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 async def test_get_dynamic_camera_stream_settings_missing_prefs(

@@ -11,7 +11,7 @@ from aiopyarr import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sonarr.const import (
+from inpui.components.sonarr.const import (
     ATTR_DISKS,
     ATTR_ENTRY_ID,
     ATTR_EPISODES,
@@ -24,9 +24,9 @@ from homeassistant.components.sonarr.const import (
     SERVICE_GET_UPCOMING,
     SERVICE_GET_WANTED,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry
 

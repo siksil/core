@@ -5,13 +5,13 @@ from dataclasses import dataclass
 from aiovlc.client import Client
 from aiovlc.exceptions import AuthError, ConnectError
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     SCAN_INTERVAL as MEDIAPLAYER_SCAN_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .const import LOGGER
 

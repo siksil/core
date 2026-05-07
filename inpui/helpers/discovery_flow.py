@@ -6,14 +6,14 @@ from collections.abc import Coroutine
 import dataclasses
 from typing import TYPE_CHECKING, Any, NamedTuple, Self
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, Event, HomeAssistant, callback
-from homeassistant.loader import bind_hass
-from homeassistant.util.async_ import gather_with_limited_concurrency
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import CoreState, Event, HomeAssistant, callback
+from inpui.loader import bind_hass
+from inpui.util.async_ import gather_with_limited_concurrency
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
-    from homeassistant.config_entries import ConfigFlowContext, ConfigFlowResult
+    from inpui.config_entries import ConfigFlowContext, ConfigFlowResult
 
 FLOW_INIT_LIMIT = 20
 DISCOVERY_FLOW_DISPATCHER: HassKey[FlowDispatcher] = HassKey(
@@ -114,7 +114,7 @@ class FlowDispatcher:
     @callback
     def async_setup(self) -> None:
         """Set up the flow disptcher."""
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, self._async_start)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STARTED, self._async_start)
 
     async def _async_start(self, event: Event) -> None:
         """Start processing pending flows."""

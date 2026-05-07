@@ -10,18 +10,18 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tomorrowio.config_flow import (
+from inpui.components.tomorrowio.config_flow import (
     _get_config_schema,
     _get_unique_id,
 )
-from homeassistant.components.tomorrowio.const import (
+from inpui.components.tomorrowio.const import (
     ATTRIBUTION,
     CONF_TIMESTEP,
     DEFAULT_NAME,
     DEFAULT_TIMESTEP,
     DOMAIN,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_SUNNY,
     ATTR_WEATHER_HUMIDITY,
     ATTR_WEATHER_OZONE,
@@ -38,11 +38,11 @@ from homeassistant.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY, SOURCE_USER
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_FRIENDLY_NAME, CONF_NAME
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY, SOURCE_USER
+from inpui.const import ATTR_ATTRIBUTION, ATTR_FRIENDLY_NAME, CONF_NAME
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .const import API_V4_ENTRY_DATA
 

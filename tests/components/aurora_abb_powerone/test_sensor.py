@@ -6,7 +6,7 @@ from aurorapy.client import AuroraError, AuroraTimeoutError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.aurora_abb_powerone.const import (
+from inpui.components.aurora_abb_powerone.const import (
     ATTR_DEVICE_NAME,
     ATTR_FIRMWARE,
     ATTR_MODEL,
@@ -14,10 +14,10 @@ from homeassistant.components.aurora_abb_powerone.const import (
     DOMAIN,
     SCAN_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_SERIAL_NUMBER, CONF_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry, RegistryEntryDisabler
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_SERIAL_NUMBER, CONF_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry, RegistryEntryDisabler
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

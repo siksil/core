@@ -9,10 +9,10 @@ from aiohttp import ClientError
 from awesomeversion import AwesomeVersion
 from ttls.client import Twinkly, TwinklyError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEV_NAME, DOMAIN, MIN_EFFECT_VERSION
 

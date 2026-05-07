@@ -4,15 +4,15 @@ from unittest.mock import Mock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     EVENT_END_DATETIME,
     EVENT_START_DATETIME,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import setup_platform
 

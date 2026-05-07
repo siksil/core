@@ -6,19 +6,19 @@ from unittest.mock import AsyncMock, patch
 from aio_ownet.exceptions import OWServerConnectionError
 import pytest
 
-from homeassistant.components.onewire.const import (
+from inpui.components.onewire.const import (
     DOMAIN,
     INPUT_ENTRY_CLEAR_OPTIONS,
     INPUT_ENTRY_DEVICE_SELECTION,
     MANUFACTURER_MAXIM,
 )
-from homeassistant.config_entries import SOURCE_HASSIO, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_HASSIO, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

@@ -1,6 +1,6 @@
 """Tests for the Elmax component."""
 
-from homeassistant.components.elmax.const import (
+from inpui.components.elmax.const import (
     CONF_ELMAX_MODE,
     CONF_ELMAX_MODE_DIRECT,
     CONF_ELMAX_MODE_DIRECT_HOST,
@@ -11,7 +11,7 @@ from homeassistant.components.elmax.const import (
     CONF_ELMAX_PANEL_PIN,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

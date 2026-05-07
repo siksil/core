@@ -10,21 +10,21 @@ from PySrDaliGateway.discovery import DaliGatewayDiscovery
 from PySrDaliGateway.exceptions import DaliGatewayError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN
 

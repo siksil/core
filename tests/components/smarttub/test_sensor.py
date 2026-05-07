@@ -3,8 +3,8 @@
 import pytest
 import smarttub
 
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize(

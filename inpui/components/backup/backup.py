@@ -8,8 +8,8 @@ from pathlib import Path
 from tarfile import TarError
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.hassio import is_hassio
+from inpui.core import HomeAssistant
+from inpui.helpers.hassio import is_hassio
 
 from .agent import BackupAgent, LocalBackupAgent, OnProgressCallback
 from .const import DOMAIN, LOGGER

@@ -8,17 +8,17 @@ from aiobotocore.session import AioSession
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CREDENTIALS,
     CONF_NAME,
     CONF_PROFILE_NAME,
     CONF_SERVICE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 # Loading the config flow file will register the flow
 from .const import (

@@ -4,10 +4,10 @@ import pytest
 from pytest_unordered import unordered
 from pywemo.subscribe import EVENT_TYPE_LONG_PRESS
 
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.wemo.const import DOMAIN, WEMO_SUBSCRIPTION_EVENT
-from homeassistant.const import (
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.wemo.const import DOMAIN, WEMO_SUBSCRIPTION_EVENT
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     CONF_TYPE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_device_automations, async_mock_service
 

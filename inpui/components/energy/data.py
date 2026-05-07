@@ -9,8 +9,8 @@ from typing import Any, Literal, NotRequired, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, callback, valid_entity_id
-from homeassistant.helpers import config_validation as cv, singleton, storage
+from inpui.core import HomeAssistant, callback, valid_entity_id
+from inpui.helpers import config_validation as cv, singleton, storage
 
 from .const import DOMAIN
 

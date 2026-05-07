@@ -9,7 +9,7 @@ from holidays import HALF_DAY, OPTIONAL
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.workday.const import (
+from inpui.components.workday.const import (
     CONF_ADD_HOLIDAYS,
     CONF_CATEGORY,
     CONF_EXCLUDES,
@@ -22,10 +22,10 @@ from homeassistant.components.workday.const import (
     DEFAULT_WORKDAYS,
     DOMAIN,
 )
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util.dt import UTC
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.util.dt import UTC
 
 from . import init_integration
 

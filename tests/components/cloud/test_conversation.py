@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.cloud.const import DOMAIN
-from homeassistant.components.cloud.conversation import CloudConversationEntity
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import intent, llm
+from inpui.components import conversation
+from inpui.components.cloud.const import DOMAIN
+from inpui.components.cloud.conversation import CloudConversationEntity
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import intent, llm
 
 from tests.common import MockConfigEntry
 

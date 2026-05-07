@@ -5,15 +5,15 @@ from unittest.mock import patch
 from pypck.lcn_defs import OutputPort, RelayPort
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN
-from homeassistant.const import (
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockConfigEntry, MockDeviceConnection, init_integration
 

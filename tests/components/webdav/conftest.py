@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.webdav.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.components.webdav.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
 
 from .const import BACKUP_METADATA, MOCK_LIST_FILES
 

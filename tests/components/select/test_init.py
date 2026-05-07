@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_CYCLE,
     ATTR_OPTION,
     ATTR_OPTIONS,
@@ -16,10 +16,10 @@ from homeassistant.components.select import (
     SERVICE_SELECT_PREVIOUS,
     SelectEntity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_PLATFORM, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, CONF_PLATFORM, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.common import setup_test_component_platform
 

@@ -9,11 +9,11 @@ from typing import Final
 
 import aioapcaccess
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import (
     REQUEST_REFRESH_DEFAULT_IMMEDIATE,
     DataUpdateCoordinator,
     UpdateFailed,

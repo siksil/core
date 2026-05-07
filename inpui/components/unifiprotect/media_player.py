@@ -8,8 +8,8 @@ from typing import Any
 from uiprotect.data import Camera, ModelType, ProtectAdoptableDeviceModel, StateType
 from uiprotect.exceptions import StreamError
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
@@ -19,9 +19,9 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .data import ProtectDeviceType, UFPConfigEntry

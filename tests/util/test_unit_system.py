@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.sensor import DEVICE_CLASS_UNITS, SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import DEVICE_CLASS_UNITS, SensorDeviceClass
+from inpui.const import (
     ACCUMULATED_PRECIPITATION,
     AREA,
     LENGTH,
@@ -24,10 +24,10 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.unit_system import (  # pylint: disable=hass-deprecated-import
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.exceptions import HomeAssistantError
+from inpui.util.unit_system import (  # pylint: disable=hass-deprecated-import
     _CONF_UNIT_SYSTEM_IMPERIAL,
     _CONF_UNIT_SYSTEM_METRIC,
     _CONF_UNIT_SYSTEM_US_CUSTOMARY,

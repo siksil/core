@@ -6,8 +6,8 @@ from collections.abc import Mapping, Sequence
 import dataclasses
 import functools
 
-from homeassistant.components import recorder, sensor
-from homeassistant.const import (
+from inpui.components import recorder, sensor
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant, callback, valid_entity_id
+from inpui.core import HomeAssistant, callback, valid_entity_id
 
 from . import data
 from .const import DOMAIN

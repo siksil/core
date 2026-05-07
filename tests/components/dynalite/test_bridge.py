@@ -10,16 +10,16 @@ from dynalite_devices_lib.dynalite_devices import (
     DynaliteNotification,
 )
 
-from homeassistant.components import dynalite
-from homeassistant.components.dynalite.const import (
+from inpui.components import dynalite
+from inpui.components.dynalite.const import (
     ATTR_AREA,
     ATTR_HOST,
     ATTR_PACKET,
     ATTR_PRESET,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from tests.common import MockConfigEntry
 

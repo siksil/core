@@ -5,8 +5,8 @@ import json
 from kasa import Device
 import pytest
 
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.tplink.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import _mocked_device, initialize_config_entry_for_device
 

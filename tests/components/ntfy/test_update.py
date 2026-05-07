@@ -11,9 +11,9 @@ from aiontfy.update import UpdateCheckerError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ntfy.const import DEFAULT_URL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.ntfy.const import DEFAULT_URL, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_TOKEN,
     CONF_URL,
     CONF_USERNAME,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 from tests.typing import WebSocketGenerator

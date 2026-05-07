@@ -11,20 +11,20 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import setup
-from homeassistant.components import binary_sensor, template
-from homeassistant.const import (
+from inpui.components import binary_sensor, template
+from inpui.const import (
     ATTR_DEVICE_CLASS,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.helpers.typing import ConfigType
 
 from .conftest import (
     ConfigurationStyle,
@@ -891,7 +891,7 @@ async def test_no_update_template_match_all(hass: HomeAssistant) -> None:
     assert hass.states.get("binary_sensor.all_entity_picture").state == STATE_UNKNOWN
     assert hass.states.get("binary_sensor.all_attribute").state == STATE_UNKNOWN
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     assert hass.states.get("binary_sensor.all_state").state == STATE_ON

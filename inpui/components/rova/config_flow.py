@@ -6,7 +6,7 @@ from requests.exceptions import ConnectTimeout, HTTPError
 from rova.rova import Rova
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import CONF_HOUSE_NUMBER, CONF_HOUSE_NUMBER_SUFFIX, CONF_ZIP_CODE, DOMAIN
 

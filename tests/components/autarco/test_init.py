@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock
 
 from autarco import AutarcoAuthenticationError, AutarcoConnectionError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

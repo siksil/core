@@ -10,8 +10,8 @@ from typing import Any, final
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (  # noqa: F401
+from inpui.config_entries import ConfigEntry
+from inpui.const import (  # noqa: F401
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
     SERVICE_SET_VALVE_POSITION,
@@ -22,12 +22,12 @@ from homeassistant.const import (  # noqa: F401
     STATE_OPEN,
     STATE_OPENING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN, ValveState
 

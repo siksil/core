@@ -9,14 +9,14 @@ from typing import Any, TypedDict, cast, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import SERVICE_TOGGLE, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import ToggleEntity, ToggleEntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import SERVICE_TOGGLE, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import ToggleEntity, ToggleEntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     ATTR_AVAILABLE_TONES,

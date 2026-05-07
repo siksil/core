@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.ecobee.humidifier import MODE_MANUAL, MODE_OFF
-from homeassistant.components.humidifier import (
+from inpui.components.ecobee.humidifier import MODE_MANUAL, MODE_OFF
+from inpui.components.humidifier import (
     ATTR_ACTION,
     ATTR_AVAILABLE_MODES,
     ATTR_CURRENT_HUMIDITY,
@@ -22,7 +22,7 @@ from homeassistant.components.humidifier import (
     HumidifierDeviceClass,
     HumidifierEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -33,7 +33,7 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 

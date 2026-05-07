@@ -9,8 +9,8 @@ from azure.kusto.data.exceptions import KustoAuthenticationError, KustoServiceEr
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.helpers.selector import BooleanSelector
+from inpui.config_entries import ConfigFlowResult
+from inpui.helpers.selector import BooleanSelector
 
 from . import AzureDataExplorerClient
 from .const import (

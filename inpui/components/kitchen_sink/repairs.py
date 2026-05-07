@@ -5,8 +5,8 @@ from __future__ import annotations
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant
 
 
 class DemoFixFlow(RepairsFlow):

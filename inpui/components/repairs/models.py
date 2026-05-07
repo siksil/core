@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Protocol
 
 from homeassistant import data_entry_flow
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 class RepairsFlow(data_entry_flow.FlowHandler):

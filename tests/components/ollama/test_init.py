@@ -7,19 +7,19 @@ from httpx import ConnectError
 from ollama import ResponseError
 import pytest
 
-from homeassistant.components import ollama
-from homeassistant.components.ollama.const import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components import ollama
+from inpui.components.ollama.const import DOMAIN
+from inpui.config_entries import (
     ConfigEntryDisabler,
     ConfigEntryState,
     ConfigSubentryData,
 )
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er, llm
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er, llm
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.setup import async_setup_component
 
 from . import TEST_OPTIONS
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 from pycoolmasternet_async import SWING_MODES
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_FAN_MODES,
@@ -24,9 +24,9 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.components.coolmaster.climate import FAN_MODES
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.coolmaster.climate import FAN_MODES
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -34,8 +34,8 @@ from homeassistant.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 async def test_climate_state(

@@ -5,9 +5,9 @@ from __future__ import annotations
 import asyncio
 from collections.abc import Callable
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.util.uuid import random_uuid_hex
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.event import async_call_later
+from inpui.util.uuid import random_uuid_hex
 
 PUSH_CONFIRM_TIMEOUT = 10  # seconds
 

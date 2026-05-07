@@ -7,9 +7,9 @@ from aiohttp import ClientError
 from indevolt_api import IndevoltAPI
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_GENERATION, CONF_SERIAL_NUMBER, DEFAULT_PORT, DOMAIN
 

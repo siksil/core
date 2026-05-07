@@ -22,24 +22,24 @@ from soco.exceptions import SoCoException
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import ssdp
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.const import CONF_HOSTS, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components import ssdp
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.const import CONF_HOSTS, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     issue_registry as ir,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later, async_track_time_interval
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later, async_track_time_interval
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.async_ import create_eager_task
+from inpui.helpers.typing import ConfigType
+from inpui.util.async_ import create_eager_task
 
 from .alarms import SonosAlarms
 from .const import (
@@ -618,7 +618,7 @@ class SonosDiscoveryManager:
         await self.hass.config_entries.async_forward_entry_setups(self.entry, PLATFORMS)
         self.entry.async_on_unload(
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP,
+                EVENT_INPUI_STOP,
                 self._async_stop_event_listener,
             )
         )
@@ -626,7 +626,7 @@ class SonosDiscoveryManager:
         if self.hosts:
             self.entry.async_on_unload(
                 self.hass.bus.async_listen_once(
-                    EVENT_HOMEASSISTANT_STOP,
+                    EVENT_INPUI_STOP,
                     self._stop_manual_heartbeat,
                 )
             )

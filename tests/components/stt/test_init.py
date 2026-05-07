@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.stt import (
+from inpui.components.stt import (
     DOMAIN,
     AudioBitRates,
     AudioChannels,
@@ -19,11 +19,11 @@ from homeassistant.components.stt import (
     async_get_provider,
     async_get_speech_to_text_engine,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from .common import (
     TEST_DOMAIN,

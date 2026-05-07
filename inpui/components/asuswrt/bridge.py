@@ -18,7 +18,7 @@ from asusrouter.modules.data import AsusData
 from asusrouter.modules.homeassistant import convert_to_ha_data, convert_to_ha_sensors
 from asusrouter.tools.connection import get_cookie_jar
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MODE,
     CONF_PASSWORD,
@@ -26,10 +26,10 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import (
     CONF_DNSMASQ,

@@ -9,17 +9,17 @@ from typing import Any
 from reolink_aio.api import Host
 from reolink_aio.const import MAX_COLOR_TEMP, MIN_COLOR_TEMP
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ColorMode,
     LightEntity,
     LightEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import color as color_util
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import color as color_util
 
 from .entity import (
     ReolinkChannelCoordinatorEntity,

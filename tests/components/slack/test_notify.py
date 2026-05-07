@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from unittest.mock import AsyncMock, Mock
 
-from homeassistant.components import notify
-from homeassistant.components.slack import DOMAIN
-from homeassistant.components.slack.notify import (
+from inpui.components import notify
+from inpui.components.slack import DOMAIN
+from inpui.components.slack.notify import (
     ATTR_THREAD_TS,
     CONF_DEFAULT_CHANNEL,
     SlackNotificationService,
 )
-from homeassistant.const import ATTR_ICON, CONF_API_KEY, CONF_NAME, CONF_PLATFORM
+from inpui.const import ATTR_ICON, CONF_API_KEY, CONF_NAME, CONF_PLATFORM
 
 from . import CONF_DATA
 

@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import DwdWeatherWarningsConfigEntry, DwdWeatherWarningsCoordinator

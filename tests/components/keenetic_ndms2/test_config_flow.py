@@ -9,12 +9,12 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import keenetic_ndms2 as keenetic
-from homeassistant.components.keenetic_ndms2 import CONF_INTERFACES, const
-from homeassistant.const import CONF_HOST, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components import keenetic_ndms2 as keenetic
+from inpui.components.keenetic_ndms2 import CONF_INTERFACES, const
+from inpui.const import CONF_HOST, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
 )

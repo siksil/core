@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_APP_NAME,
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
@@ -13,8 +13,8 @@ from homeassistant.components.media_player import (
     ATTR_MEDIA_VOLUME_LEVEL,
     ATTR_MEDIA_VOLUME_MUTED,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

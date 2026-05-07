@@ -11,15 +11,15 @@ from fressnapftracker import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.fressnapf_tracker.const import (
+from inpui.components.fressnapf_tracker.const import (
     CONF_PHONE_NUMBER,
     CONF_SMS_CODE,
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import MOCK_ACCESS_TOKEN, MOCK_PHONE_NUMBER, MOCK_USER_ID
 

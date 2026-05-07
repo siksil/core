@@ -1,6 +1,6 @@
 """Local IP constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "local_ip"
 PLATFORMS = [Platform.SENSOR]

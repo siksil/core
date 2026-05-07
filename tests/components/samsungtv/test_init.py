@@ -6,7 +6,7 @@ from unittest.mock import Mock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.samsungtv.const import (
+from inpui.components.samsungtv.const import (
     CONF_SESSION_ID,
     CONF_SSDP_MAIN_TV_AGENT_LOCATION,
     CONF_SSDP_RENDERING_CONTROL_LOCATION,
@@ -17,10 +17,10 @@ from homeassistant.components.samsungtv.const import (
     UPNP_SVC_MAIN_TV_AGENT,
     UPNP_SVC_RENDERING_CONTROL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_MAC, CONF_MODEL, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_MAC, CONF_MODEL, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_samsungtv_entry
 from .const import (

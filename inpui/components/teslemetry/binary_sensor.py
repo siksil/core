@@ -8,16 +8,16 @@ from typing import cast
 
 from teslemetry_stream.vehicle import TeslemetryStreamVehicle
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import StateType
+from inpui.const import STATE_ON, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import StateType
 
 from . import TeslemetryConfigEntry
 from .const import TeslemetryState

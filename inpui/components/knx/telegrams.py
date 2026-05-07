@@ -12,11 +12,11 @@ from xknx.exceptions import XKNXException
 from xknx.telegram import Telegram, TelegramDirection
 from xknx.telegram.apci import GroupValueResponse, GroupValueWrite
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.storage import Store
-from homeassistant.util import dt as dt_util
-from homeassistant.util.signal_type import SignalType
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.storage import Store
+from inpui.util import dt as dt_util
+from inpui.util.signal_type import SignalType
 
 from .const import DOMAIN
 from .project import KNXProject

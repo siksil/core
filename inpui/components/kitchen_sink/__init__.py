@@ -12,41 +12,41 @@ from random import random
 
 import voluptuous as vol
 
-from homeassistant.components.labs import (
+from inpui.components.labs import (
     EventLabsUpdatedData,
     async_is_preview_feature_enabled,
     async_subscribe_preview_feature,
 )
-from homeassistant.components.recorder import DOMAIN as RECORDER_DOMAIN, get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import DOMAIN as RECORDER_DOMAIN, get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     async_import_statistics,
     get_last_statistics,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     DEGREE,
     Platform,
     UnitOfEnergy,
     UnitOfTemperature,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, ServiceResponse, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.issue_registry import (
+from inpui.core import HomeAssistant, ServiceCall, ServiceResponse, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import (
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import (
     EnergyConverter,
     TemperatureConverter,
     VolumeConverter,

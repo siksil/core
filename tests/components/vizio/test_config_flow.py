@@ -4,16 +4,16 @@ import dataclasses
 
 import pytest
 
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.components.vizio import DATA_APPS
-from homeassistant.components.vizio.const import (
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.components.vizio import DATA_APPS
+from inpui.components.vizio.const import (
     CONF_APPS,
     CONF_APPS_TO_INCLUDE_OR_EXCLUDE,
     CONF_VOLUME_STEP,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_IGNORE, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IGNORE, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_DEVICE_CLASS,
     CONF_HOST,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     ACCESS_TOKEN,

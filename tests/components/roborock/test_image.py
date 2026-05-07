@@ -11,10 +11,10 @@ from roborock import MultiMapsList, RoborockException
 from roborock.data import RoborockStateCode
 from roborock.devices.traits.v1.map_content import MapContent
 
-from homeassistant.components.roborock.const import V1_LOCAL_NOT_CLEANING_INTERVAL
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.roborock.const import V1_LOCAL_NOT_CLEANING_INTERVAL
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import FakeDevice, make_home_trait
 from .mock_data import (

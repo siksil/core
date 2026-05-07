@@ -6,19 +6,19 @@ import logging
 import voluptuous as vol
 from xiaomi_gateway import AsyncXiaomiGatewayMulticast, XiaomiGateway
 
-from homeassistant.components import persistent_notification
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import persistent_notification
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_HOST,
     CONF_PORT,
     CONF_PROTOCOL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_INTERFACE,
@@ -173,7 +173,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 _LOGGER.debug("Shutting down Xiaomi Gateway Listener")
                 multicast.stop_listen()
 
-            unsub = hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_xiaomi)
+            unsub = hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_xiaomi)
             hass.data[DOMAIN][KEY_UNSUB_STOP] = unsub
 
     multicast = hass.data[DOMAIN][LISTENER_KEY]

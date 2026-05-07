@@ -7,13 +7,13 @@ from unittest.mock import MagicMock
 from matter_server.client.models.node import MatterNode
 import pytest
 
-from homeassistant.components.matter.const import DOMAIN
-from homeassistant.components.matter.helpers import (
+from inpui.components.matter.const import DOMAIN
+from inpui.components.matter.helpers import (
     get_device_id,
     get_node_from_device_entry,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .common import setup_integration_with_node_fixture
 

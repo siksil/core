@@ -12,17 +12,17 @@ from urllib.parse import urlparse
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     BinarySensorDeviceClass,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_BINARY_SENSORS,
     CONF_DISCOVERY,
@@ -37,9 +37,9 @@ from homeassistant.const import (
     CONF_TYPE,
     CONF_ZONE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_MODEL_NAME,
     SsdpServiceInfo,

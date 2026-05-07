@@ -7,16 +7,16 @@ from typing import Any
 
 from pysmartthings import Attribute, Capability, Command, SmartThings
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN

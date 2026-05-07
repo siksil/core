@@ -2,7 +2,7 @@
 
 from typing import Final
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_FOG,
@@ -14,7 +14,7 @@ from homeassistant.components.weather import (
     ATTR_CONDITION_SNOWY_RAINY,
     ATTR_CONDITION_SUNNY,
 )
-from homeassistant.const import Platform, __version__
+from inpui.const import Platform, __version__
 
 DOMAIN: Final = "irm_kmi"
 PLATFORMS: Final = [Platform.WEATHER]

@@ -6,10 +6,10 @@ from datetime import datetime, timedelta
 
 from pybalboa import EVENT_UPDATE, SpaClient
 
-from homeassistant.components.event import EventEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.components.event import EventEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
 
 from . import BalboaConfigEntry
 from .entity import BalboaEntity

@@ -3,10 +3,10 @@
 from infrared_protocols import Command as InfraredCommand
 import pytest
 
-from homeassistant.components.infrared import InfraredEntity
-from homeassistant.components.infrared.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.infrared import InfraredEntity
+from inpui.components.infrared.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

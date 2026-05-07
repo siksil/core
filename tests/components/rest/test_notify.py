@@ -5,11 +5,11 @@ from unittest.mock import patch
 import respx
 
 from homeassistant import config as hass_config
-from homeassistant.components import notify
-from homeassistant.components.rest import DOMAIN
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import notify
+from inpui.components.rest import DOMAIN
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_fixture_path
 

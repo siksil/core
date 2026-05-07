@@ -6,9 +6,9 @@ from unittest.mock import Mock
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.helpers.http import KEY_ALLOW_CONFIGURED_CORS
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.helpers.http import KEY_ALLOW_CONFIGURED_CORS
 
 from tests.typing import ClientSessionGenerator
 

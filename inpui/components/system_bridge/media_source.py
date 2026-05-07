@@ -6,8 +6,8 @@ from systembridgeconnector.models.media_directories import MediaDirectory
 from systembridgeconnector.models.media_files import MediaFile, MediaFiles
 from systembridgeconnector.models.media_get_files import MediaGetFiles
 
-from homeassistant.components.media_player import MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.media_player import MediaClass
+from inpui.components.media_source import (
     MEDIA_CLASS_MAP,
     MEDIA_MIME_TYPES,
     BrowseMediaSource,
@@ -15,9 +15,9 @@ from homeassistant.components.media_source import (
     MediaSourceItem,
     PlayMedia,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 from .coordinator import SystemBridgeDataUpdateCoordinator

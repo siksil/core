@@ -3,10 +3,10 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.media_player import DOMAIN
-from homeassistant.const import (
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.media_player import DOMAIN
+from inpui.const import (
     STATE_BUFFERING,
     STATE_IDLE,
     STATE_OFF,
@@ -15,10 +15,10 @@ from homeassistant.const import (
     STATE_PLAYING,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryHider
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryHider
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_device_automations
 

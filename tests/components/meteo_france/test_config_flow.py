@@ -5,11 +5,11 @@ from unittest.mock import patch
 from meteofrance_api.model import Place
 import pytest
 
-from homeassistant.components.meteo_france.const import CONF_CITY, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.meteo_france.const import CONF_CITY, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

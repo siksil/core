@@ -7,10 +7,10 @@ from python_picnic_api2.session import PicnicAuthError
 import requests
 
 from homeassistant import config_entries
-from homeassistant.components.picnic.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_COUNTRY_CODE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.picnic.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_COUNTRY_CODE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

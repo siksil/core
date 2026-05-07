@@ -6,27 +6,27 @@ from aiohttp import ClientError, ClientResponseError
 import pytest
 from yalexs.exceptions import InvalidAuth, YaleApiError
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.components.yale.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.components.yale.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     HomeAssistantError,
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .mocks import (
     _create_yale_with_devices,

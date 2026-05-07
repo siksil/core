@@ -3,12 +3,12 @@
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.network import async_get_source_ip
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.network import async_get_source_ip
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .binding import EmulatedRoku
 from .config_flow import configured_servers

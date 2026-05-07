@@ -15,15 +15,15 @@ from wled import (
     WLEDUnsupportedVersionError,
 )
 
-from homeassistant.components.wled.const import SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components.wled.const import SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
+    EVENT_INPUI_STOP,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 
@@ -117,7 +117,7 @@ async def test_websocket(
     assert mock_wled.disconnect.call_count == 1
     assert mock_bus.async_listen_once.call_count == 1
     assert (
-        mock_bus.async_listen_once.call_args_list[0][0][0] == EVENT_HOMEASSISTANT_STOP
+        mock_bus.async_listen_once.call_args_list[0][0][0] == EVENT_INPUI_STOP
     )
     assert (
         mock_bus.async_listen_once.call_args_list[0][0][1].__name__ == "close_websocket"
@@ -206,7 +206,7 @@ async def test_websocket_disconnect_on_home_assistant_stop(
 
     assert mock_wled.disconnect.call_count == 1
 
-    hass.bus.fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     await hass.async_block_till_done()
     assert mock_wled.disconnect.call_count == 2

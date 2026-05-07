@@ -6,10 +6,10 @@ from abc import abstractmethod
 
 from ibeacon_ble import iBeaconAdvertisement
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .const import ATTR_MAJOR, ATTR_MINOR, ATTR_SOURCE, ATTR_UUID, DOMAIN
 from .coordinator import IBeaconCoordinator, signal_seen, signal_unavailable

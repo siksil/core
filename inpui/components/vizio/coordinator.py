@@ -13,14 +13,14 @@ from pyvizio.api.input import InputItem
 from pyvizio.const import APPS, INPUT_APPS
 from pyvizio.util import gen_apps_list_from_url
 
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS, CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.storage import Store
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, VIZIO_AUDIO_SETTINGS, VIZIO_SOUND_MODE
 

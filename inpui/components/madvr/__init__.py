@@ -6,8 +6,8 @@ import logging
 
 from madvr.madvr import Madvr
 
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
 
 from .coordinator import MadVRConfigEntry, MadVRCoordinator
 
@@ -48,7 +48,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: MadVRConfigEntry) -> boo
         await async_handle_unload(coordinator=coordinator)
 
     # listen for core stop event
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, handle_unload)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, handle_unload)
 
     # handle loading operations
     await coordinator.handle_coordinator_load()

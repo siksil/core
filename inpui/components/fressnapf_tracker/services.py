@@ -2,7 +2,7 @@
 
 from fressnapftracker import FressnapfTrackerError, FressnapfTrackerInvalidTokenError
 
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
 
 from .const import DOMAIN
 

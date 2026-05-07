@@ -17,7 +17,7 @@ from roborock.devices.device import RoborockDevice
 from roborock.devices.traits.v1.status import StatusTrait
 from vacuum_map_parser_base.map_data import MapData
 
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN
 

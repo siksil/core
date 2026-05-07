@@ -12,17 +12,17 @@ from velbusaio.exceptions import VelbusConnectionFailed
 from velbusaio.vlp_reader import VlpFile
 import voluptuous as vol
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.config_entries import (
+from inpui.components.file_upload import process_uploaded_file
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import selector
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import selector
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import CONF_TLS, CONF_VLP_FILE, DOMAIN
 

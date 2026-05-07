@@ -3,9 +3,9 @@
 from unittest.mock import AsyncMock, PropertyMock, patch
 
 from homeassistant import config_entries
-from homeassistant.components.nobo_hub.const import CONF_OVERRIDE_TYPE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nobo_hub.const import CONF_OVERRIDE_TYPE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

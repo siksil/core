@@ -13,11 +13,11 @@ from typing import Any, cast
 
 from fritzconnection.core.fritzmonitor import FritzMonitor
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FritzBoxCallMonitorConfigEntry
 from .base import Contact, FritzBoxPhonebook
@@ -116,7 +116,7 @@ class FritzBoxCallSensor(SensorEntity):
         await self.hass.async_add_executor_job(self._start_call_monitor)
         self.async_on_remove(
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP, self._stop_call_monitor
+                EVENT_INPUI_STOP, self._stop_call_monitor
             )
         )
 

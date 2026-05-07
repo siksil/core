@@ -7,12 +7,12 @@ import logging
 
 from numato_gpio import NumatoGpioError
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.const import DEVICE_DEFAULT_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.const import DEVICE_DEFAULT_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import (
     CONF_BINARY_SENSORS,

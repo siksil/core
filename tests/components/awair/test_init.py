@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_awair
 from .const import LOCAL_CONFIG, LOCAL_UNIQUE_ID

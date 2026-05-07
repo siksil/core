@@ -7,16 +7,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, vacuum
-from homeassistant.components.mqtt import vacuum as mqttvacuum
-from homeassistant.components.mqtt.const import CONF_COMMAND_TOPIC, CONF_STATE_TOPIC
-from homeassistant.components.mqtt.vacuum import (
+from inpui.components import mqtt, vacuum
+from inpui.components.mqtt import vacuum as mqttvacuum
+from inpui.components.mqtt.const import CONF_COMMAND_TOPIC, CONF_STATE_TOPIC
+from inpui.components.mqtt.vacuum import (
     ALL_SERVICES,
     MQTT_VACUUM_ATTRIBUTES_BLOCKED,
     SERVICE_TO_STRING,
     services_to_strings,
 )
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     ATTR_FAN_SPEED_LIST,
     SERVICE_CLEAN_SPOT,
@@ -27,9 +27,9 @@ from homeassistant.components.vacuum import (
     SERVICE_STOP,
     VacuumActivity,
 )
-from homeassistant.const import CONF_NAME, ENTITY_MATCH_ALL, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import CONF_NAME, ENTITY_MATCH_ALL, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .common import (
     help_custom_config,

@@ -12,11 +12,11 @@ import pytest
 import voluptuous as vol
 import yaml as pyyaml
 
-from homeassistant.config import YAML_CONFIG_FILE, load_yaml_config_file
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import yaml as yaml_util
-from homeassistant.util.yaml import loader as yaml_loader
+from inpui.config import YAML_CONFIG_FILE, load_yaml_config_file
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import yaml as yaml_util
+from inpui.util.yaml import loader as yaml_loader
 
 from tests.common import extract_stack_to_frame
 

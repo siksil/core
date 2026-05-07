@@ -10,10 +10,10 @@ import logging
 
 from govee_local_api.controller import LISTENING_PORT
 
-from homeassistant.components import network
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import network
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DISCOVERY_TIMEOUT, DOMAIN
 from .coordinator import GoveeLocalApiCoordinator, GoveeLocalConfigEntry

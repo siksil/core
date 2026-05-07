@@ -19,7 +19,7 @@ from spotifyaio import (
 from spotifyaio.models import ProductType
 from yarl import URL
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ENQUEUE,
     BrowseMedia,
     MediaPlayerEnqueue,
@@ -29,8 +29,8 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .browse_media import async_browse_media_internal
 from .const import (

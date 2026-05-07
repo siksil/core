@@ -7,17 +7,17 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.rest.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.rest.const import DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PACKAGES,
     SERVICE_RELOAD,
     STATE_UNAVAILABLE,
     UnitOfInformation,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import (
     assert_setup_component,

@@ -8,15 +8,15 @@ from thinqconnect import DeviceType
 from thinqconnect.devices.const import Property as ThinQProperty
 from thinqconnect.integration import ActiveMode, TimerProperty
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import PERCENTAGE, UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ThinqConfigEntry
 from .entity import ThinQEntity

@@ -9,17 +9,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, select
-from homeassistant.components.mqtt.select import MQTT_SELECT_ATTRIBUTES_BLOCKED
-from homeassistant.components.select import (
+from inpui.components import mqtt, select
+from inpui.components.mqtt.select import MQTT_SELECT_ATTRIBUTES_BLOCKED
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ASSUMED_STATE, ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import ATTR_ASSUMED_STATE, ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers.typing import ConfigType
 
 from .common import (
     help_custom_config,

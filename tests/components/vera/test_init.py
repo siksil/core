@@ -6,15 +6,15 @@ import pytest
 import pyvera as pv
 from requests.exceptions import RequestException
 
-from homeassistant.components.vera import (
+from inpui.components.vera import (
     CONF_CONTROLLER,
     CONF_EXCLUDE,
     CONF_LIGHTS,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import ComponentFactory, ConfigSource, new_simple_controller_config
 

@@ -5,8 +5,8 @@ from unittest.mock import Mock
 from dynalite_devices_lib.switch import DynalitePresetSwitchDevice
 import pytest
 
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, State
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, State
 
 from .common import (
     ATTR_METHOD,

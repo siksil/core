@@ -2,8 +2,8 @@
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
 
 from .const import (
     ATTR_CONTROLLER_ID,

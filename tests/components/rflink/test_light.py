@@ -7,16 +7,16 @@ control of RFLink switch devices.
 
 import pytest
 
-from homeassistant.components.light import ATTR_BRIGHTNESS
-from homeassistant.components.rflink.entity import EVENT_BUTTON_PRESSED
-from homeassistant.const import (
+from inpui.components.light import ATTR_BRIGHTNESS
+from inpui.components.rflink.entity import EVENT_BUTTON_PRESSED
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import CoreState, HomeAssistant, State, callback
+from inpui.core import CoreState, HomeAssistant, State, callback
 
 from .test_init import mock_rflink
 

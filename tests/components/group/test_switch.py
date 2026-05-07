@@ -6,14 +6,14 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.group import DOMAIN, SERVICE_RELOAD
-from homeassistant.components.switch import (
+from inpui.components.group import DOMAIN, SERVICE_RELOAD
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     STATE_OFF,
@@ -21,9 +21,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import get_fixture_path
 

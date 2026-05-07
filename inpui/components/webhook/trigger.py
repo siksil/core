@@ -9,13 +9,13 @@ from typing import Any
 from aiohttp import hdrs, web
 import voluptuous as vol
 
-from homeassistant.const import CONF_PLATFORM, CONF_WEBHOOK_ID
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
-from homeassistant.util.json import json_loads
+from inpui.const import CONF_PLATFORM, CONF_WEBHOOK_ID
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.template import Template
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType, TemplateVarsType
+from inpui.util.json import json_loads
 
 from . import (
     DEFAULT_METHODS,

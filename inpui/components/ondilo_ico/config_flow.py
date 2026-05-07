@@ -3,12 +3,12 @@
 import logging
 from typing import Any
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.config_entries import ConfigFlowResult
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
 
 from .const import DOMAIN, OAUTH2_CLIENT_ID, OAUTH2_CLIENT_SECRET
 

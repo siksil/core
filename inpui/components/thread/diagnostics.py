@@ -21,9 +21,9 @@ from typing import TYPE_CHECKING, Any, TypedDict
 
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .dataset_store import async_get_store
 from .discovery import async_read_zeroconf_cache

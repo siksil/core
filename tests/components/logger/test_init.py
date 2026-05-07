@@ -8,12 +8,12 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components import logger
-from homeassistant.components.logger import LOGSEVERITY
-from homeassistant.components.logger.helpers import SAVE_DELAY_LONG
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import logger
+from inpui.components.logger import LOGSEVERITY
+from inpui.components.logger.helpers import SAVE_DELAY_LONG
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_call_logger_set_level, async_fire_time_changed
 

@@ -9,7 +9,7 @@ from typing import Any, Self
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_ENTITY_ID,
     CONF_ICON,
@@ -17,16 +17,16 @@ from homeassistant.const import (
     CONF_NAME,
     SERVICE_RELOAD,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import collection, config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.restore_state import RestoreEntity
-import homeassistant.helpers.service
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import collection, config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.restore_state import RestoreEntity
+import inpui.helpers.service
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 

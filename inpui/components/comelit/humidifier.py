@@ -8,7 +8,7 @@ from typing import Any, cast
 from aiocomelit import ComelitSerialBridgeObject
 from aiocomelit.const import CLIMATE
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     DOMAIN as HUMIDIFIER_DOMAIN,
     MODE_AUTO,
     MODE_NORMAL,
@@ -17,9 +17,9 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge

@@ -8,11 +8,11 @@ from unittest.mock import call, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import mqtt, water_heater
-from homeassistant.components.mqtt.water_heater import (
+from inpui.components import mqtt, water_heater
+from inpui.components.mqtt.water_heater import (
     MQTT_WATER_HEATER_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_OPERATION_MODE,
     DEFAULT_MAX_TEMP,
@@ -25,15 +25,15 @@ from homeassistant.components.water_heater import (
     STATE_PERFORMANCE,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     STATE_OFF,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

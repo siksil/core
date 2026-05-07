@@ -4,7 +4,7 @@ import logging
 
 import pytest
 
-from homeassistant.components.discord.notify import DiscordNotificationService
+from inpui.components.discord.notify import DiscordNotificationService
 
 from .conftest import CONTENT, MESSAGE, URL_ATTACHMENT
 

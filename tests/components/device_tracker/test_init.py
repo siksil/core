@@ -9,9 +9,9 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components import device_tracker, zone
-from homeassistant.components.device_tracker import SourceType, const, legacy
-from homeassistant.const import (
+from inpui.components import device_tracker, zone
+from inpui.components.device_tracker import SourceType, const, legacy
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
     ATTR_GPS_ACCURACY,
@@ -22,12 +22,12 @@ from homeassistant.const import (
     STATE_HOME,
     STATE_NOT_HOME,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import discovery
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import discovery
+from inpui.helpers.json import JSONEncoder
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import common
 from .common import MockScanner, mock_legacy_device_tracker_setup

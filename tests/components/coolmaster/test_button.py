@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 
 async def test_button(

@@ -8,7 +8,7 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -22,8 +22,8 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.components.smartthings.const import MAIN
-from homeassistant.const import (
+from inpui.components.smartthings.const import MAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -33,8 +33,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
 
 from . import (
     set_attribute_value,

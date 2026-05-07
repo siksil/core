@@ -9,9 +9,9 @@ from systembridgeconnector.exceptions import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.system_bridge.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.system_bridge.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     FIXTURE_AUTH_INPUT,

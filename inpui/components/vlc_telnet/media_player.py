@@ -9,8 +9,8 @@ from typing import Any, Concatenate, Literal
 from aiovlc.client import Client
 from aiovlc.exceptions import AuthError, CommandError, ConnectError
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
@@ -18,12 +18,12 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import SOURCE_HASSIO, ConfigEntry
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import SOURCE_HASSIO, ConfigEntry
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import VlcConfigEntry
 from .const import DEFAULT_NAME, DOMAIN, LOGGER

@@ -7,16 +7,16 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
-from homeassistant.components.switch_as_x.const import (
+from inpui.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
+from inpui.components.switch_as_x.const import (
     CONF_INVERT,
     CONF_TARGET_DOMAIN,
     DOMAIN,
 )
-from homeassistant.const import CONF_ENTITY_ID, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_ENTITY_ID, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from . import PLATFORMS_TO_TEST, STATE_MAP
 

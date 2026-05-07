@@ -6,17 +6,17 @@ from egauge_async.exceptions import EgaugeAuthenticationError, EgaugePermissionE
 from httpx import ConnectError
 import pytest
 
-from homeassistant.components.egauge.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.egauge.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

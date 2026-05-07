@@ -7,8 +7,8 @@ from collections.abc import Iterable, Mapping
 import logging
 from typing import Any
 
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION
+from inpui.core import Context, HomeAssistant, State
 
 from . import ATTR_OPTIONS, DOMAIN, SERVICE_SELECT_OPTION, SERVICE_SET_OPTIONS
 

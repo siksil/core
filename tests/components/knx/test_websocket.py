@@ -6,15 +6,15 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     KNX_ADDRESS,
     KNX_MODULE_KEY,
     SUPPORTED_PLATFORMS_UI,
 )
-from homeassistant.components.knx.project import STORAGE_KEY as KNX_PROJECT_STORAGE_KEY
-from homeassistant.components.knx.schema import SwitchSchema
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.knx.project import STORAGE_KEY as KNX_PROJECT_STORAGE_KEY
+from inpui.components.knx.schema import SwitchSchema
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

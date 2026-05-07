@@ -6,9 +6,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.auth.models import User
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
+from inpui.auth.models import User
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
 
 WS_TYPE_LIST = "config/auth/list"
 SCHEMA_WS_LIST = websocket_api.BASE_COMMAND_MESSAGE_SCHEMA.extend(

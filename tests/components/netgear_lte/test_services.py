@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.netgear_lte.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.netgear_lte.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import HOST
 

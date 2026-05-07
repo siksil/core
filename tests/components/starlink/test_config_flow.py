@@ -1,11 +1,11 @@
 """Test the Starlink config flow."""
 
 from homeassistant import config_entries
-from homeassistant.components.starlink.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.starlink.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .patchers import DEVICE_FOUND_PATCHER, NO_DEVICE_PATCHER, SETUP_ENTRY_PATCHER
 

@@ -7,21 +7,21 @@ from typing import Self, cast
 
 import voluptuous as vol
 
-from homeassistant.components.button import SERVICE_PRESS, ButtonEntity
-from homeassistant.const import (
+from inpui.components.button import SERVICE_PRESS, ButtonEntity
+from inpui.const import (
     ATTR_EDITABLE,
     CONF_ICON,
     CONF_ID,
     CONF_NAME,
     SERVICE_RELOAD,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import collection, config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-import homeassistant.helpers.service
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import collection, config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+import inpui.helpers.service
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
 
 DOMAIN = "input_button"
 

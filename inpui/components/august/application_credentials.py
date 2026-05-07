@@ -1,7 +1,7 @@
 """application_credentials platform for the august integration."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 OAUTH2_AUTHORIZE = "https://auth.august.com/authorization"
 OAUTH2_TOKEN = "https://auth.august.com/access_token"

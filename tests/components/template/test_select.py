@@ -6,16 +6,16 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import setup
-from homeassistant.components import select
-from homeassistant.components.select import (
+from inpui.components import select
+from inpui.components.select import (
     ATTR_OPTION as SELECT_ATTR_OPTION,
     ATTR_OPTIONS as SELECT_ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION as SELECT_SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.template import DOMAIN
-from homeassistant.components.template.const import CONF_PICTURE
-from homeassistant.const import (
+from inpui.components.template import DOMAIN
+from inpui.components.template.const import CONF_PICTURE
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
@@ -24,8 +24,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import (
     ConfigurationStyle,

@@ -5,9 +5,9 @@ from typing import Any
 from qbusmqttapi.discovery import QbusMqttOutput
 from qbusmqttapi.state import QbusMqttState, StateAction, StateType
 
-from homeassistant.components.scene import BaseScene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.scene import BaseScene
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import QbusConfigEntry
 from .entity import QbusEntity, create_new_entities

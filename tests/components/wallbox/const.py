@@ -1,6 +1,6 @@
 """Provides constants for Wallbox component tests."""
 
-from homeassistant.components.wallbox.const import (
+from inpui.components.wallbox.const import (
     CHARGER_ADDED_ENERGY_KEY,
     CHARGER_ADDED_RANGE_KEY,
     CHARGER_CHARGING_POWER_KEY,

@@ -17,9 +17,9 @@ from pysnmp.hlapi.v3arch.asyncio import (
 from pysnmp.hlapi.v3arch.asyncio.cmdgen import LCD
 from pysnmp.smi import view
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.singleton import singleton
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.singleton import singleton
 
 DATA_SNMP_ENGINE = "snmp_engine"
 
@@ -82,7 +82,7 @@ async def async_get_snmp_engine(hass: HomeAssistant) -> SnmpEngine:
         _LOGGER.debug("Unconfiguring SNMP engine")
         LCD.unconfigure(engine, None)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_shutdown_listener)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_shutdown_listener)
     return engine
 
 

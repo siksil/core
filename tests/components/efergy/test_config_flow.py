@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 from pyefergy import exceptions
 
-from homeassistant.components.efergy.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.efergy.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import CONF_DATA, HID, _patch_efergy, _patch_efergy_status, create_entry
 

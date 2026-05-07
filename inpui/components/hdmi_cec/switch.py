@@ -7,10 +7,10 @@ from typing import Any
 
 from pycec.const import POWER_OFF, POWER_ON
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import ATTR_NEW, DOMAIN
 from .entity import CecEntity

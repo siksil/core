@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components import otbr
-from homeassistant.core import HomeAssistant
+from inpui.components import otbr
+from inpui.core import HomeAssistant
 
 from . import (
     CONFIG_ENTRY_DATA_MULTIPAN,

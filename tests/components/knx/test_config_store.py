@@ -4,12 +4,12 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.knx.storage.config_store import (
+from inpui.components.knx.storage.config_store import (
     STORAGE_KEY as KNX_CONFIG_STORAGE_KEY,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

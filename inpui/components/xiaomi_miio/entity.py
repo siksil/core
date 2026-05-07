@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING, Any
 
 from miio import Device as MiioDevice, DeviceException
 
-from homeassistant.const import ATTR_CONNECTIONS, CONF_MAC, CONF_MODEL
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import (
+from inpui.const import ATTR_CONNECTIONS, CONF_MAC, CONF_MODEL
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     DataUpdateCoordinator,
 )

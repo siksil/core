@@ -5,15 +5,15 @@ import urllib
 
 import pytest
 
-from homeassistant.components.feedreader.const import (
+from inpui.components.feedreader.const import (
     CONF_MAX_ENTRIES,
     DEFAULT_MAX_ENTRIES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import create_mock_entry
 from .const import FEED_TITLE, URL, VALID_CONFIG_DEFAULT

@@ -6,8 +6,8 @@ from http import HTTPStatus
 
 from aiohttp import web
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import API_URL, DOMAIN
 from .util import get_door_station_by_token

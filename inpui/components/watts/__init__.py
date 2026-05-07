@@ -10,12 +10,12 @@ from aiohttp import ClientError, ClientResponseError
 from visionpluspython.auth import WattsVisionAuth
 from visionpluspython.client import WattsVisionClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import DOMAIN, SUPPORTED_DEVICE_TYPES
 from .coordinator import (

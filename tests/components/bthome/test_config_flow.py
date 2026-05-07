@@ -5,10 +5,10 @@ from unittest.mock import patch
 from bthome_ble import BTHomeBluetoothDeviceData as DeviceData
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import BluetoothChange
-from homeassistant.components.bthome.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.bluetooth import BluetoothChange
+from inpui.components.bthome.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     NOT_BTHOME_SERVICE_INFO,

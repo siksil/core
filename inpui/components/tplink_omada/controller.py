@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from tplink_omada_client import OmadaSiteClient
 from tplink_omada_client.devices import OmadaListDevice, OmadaSwitch
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 if TYPE_CHECKING:
     from . import OmadaConfigEntry

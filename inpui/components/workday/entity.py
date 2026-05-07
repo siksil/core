@@ -7,11 +7,11 @@ from datetime import date, datetime, timedelta
 
 from holidays import HolidayBase, __version__ as python_holidays_version
 
-from homeassistant.core import CALLBACK_TYPE, ServiceResponse, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, ServiceResponse, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util import dt as dt_util
 
 from .const import ALLOWED_DAYS, DOMAIN
 

@@ -7,8 +7,8 @@ import logging
 
 from aioesphomeapi import EntityState, InfraredCapability, InfraredInfo
 
-from homeassistant.components.infrared import InfraredCommand, InfraredEntity
-from homeassistant.core import callback
+from inpui.components.infrared import InfraredCommand, InfraredEntity
+from inpui.core import callback
 
 from .entity import (
     EsphomeEntity,

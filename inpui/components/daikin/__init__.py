@@ -9,19 +9,19 @@ from aiohttp import ClientConnectionError
 from pydaikin.daikin_base import Appliance
 from pydaikin.factory import DaikinFactory
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_UUID,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.util.ssl import client_context_no_verify
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.util.ssl import client_context_no_verify
 
 from .const import KEY_MAC, TIMEOUT_SEC
 from .coordinator import DaikinConfigEntry, DaikinCoordinator

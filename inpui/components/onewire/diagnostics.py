@@ -5,10 +5,10 @@ from __future__ import annotations
 from dataclasses import asdict
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .onewirehub import OneWireConfigEntry
 

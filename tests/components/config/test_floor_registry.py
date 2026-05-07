@@ -7,10 +7,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.config import floor_registry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import floor_registry as fr
-from homeassistant.util.dt import utcnow
+from inpui.components.config import floor_registry
+from inpui.core import HomeAssistant
+from inpui.helpers import floor_registry as fr
+from inpui.util.dt import utcnow
 
 from tests.typing import MockHAClientWebSocket, WebSocketGenerator
 

@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 
 from pynina import Warning
 
-from homeassistant.components.nina.const import CONF_REGIONS
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nina.const import CONF_REGIONS
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

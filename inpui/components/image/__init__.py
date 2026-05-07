@@ -17,26 +17,26 @@ import httpx
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_AUTHENTICATED, KEY_HASS, HomeAssistantView
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONTENT_TYPE_MULTIPART, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import (
+from inpui.components.http import KEY_AUTHENTICATED, KEY_HASS, HomeAssistantView
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONTENT_TYPE_MULTIPART, EVENT_INPUI_STOP
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     ServiceCall,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import (
     async_track_state_change_event,
     async_track_time_interval,
 )
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.typing import (
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.typing import (
     UNDEFINED,
     ConfigType,
     UndefinedType,
@@ -165,7 +165,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Unsubscribe track time interval timer."""
         unsub()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, unsub_track_time_interval)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, unsub_track_time_interval)
 
     component.async_register_entity_service(
         SERVICE_SNAPSHOT, IMAGE_SERVICE_SNAPSHOT, async_handle_snapshot_service

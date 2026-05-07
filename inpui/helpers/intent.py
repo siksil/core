@@ -15,16 +15,16 @@ from typing import Any
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components.homeassistant.exposed_entities import async_should_expose
-from homeassistant.const import (
+from inpui.components.homeassistant.exposed_entities import async_should_expose
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
 )
-from homeassistant.core import Context, HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import Context, HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
 
 from . import (
     area_registry as ar,

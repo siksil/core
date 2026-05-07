@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
 
 from .account import IcloudAccount, IcloudConfigEntry
 from .const import (

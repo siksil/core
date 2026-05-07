@@ -9,8 +9,8 @@ from typing import Any
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_URL
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_URL
 
 from .api import (
     PterodactylAPI,

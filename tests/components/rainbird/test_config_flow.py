@@ -8,12 +8,12 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.rainbird import DOMAIN
-from homeassistant.components.rainbird.const import ATTR_DURATION
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
+from inpui.components.rainbird import DOMAIN
+from inpui.components.rainbird.const import ATTR_DURATION
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
 
 from .conftest import (
     CONFIG_ENTRY_DATA,

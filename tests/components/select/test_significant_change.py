@@ -1,9 +1,9 @@
 """Test the select significant change platform."""
 
-from homeassistant.components.select.significant_change import (
+from inpui.components.select.significant_change import (
     async_check_significant_change,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_significant_change(hass: HomeAssistant) -> None:

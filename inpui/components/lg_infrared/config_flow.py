@@ -4,13 +4,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.infrared import (
+from inpui.components.infrared import (
     DOMAIN as INFRARED_DOMAIN,
     async_get_emitters,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers import entity_registry as er
+from inpui.helpers.selector import (
     EntitySelector,
     EntitySelectorConfig,
     SelectSelector,

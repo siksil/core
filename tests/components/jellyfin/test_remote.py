@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_COMMAND,
     ATTR_DELAY_SECS,
     ATTR_HOLD_SECS,
@@ -10,9 +10,9 @@ from homeassistant.components.remote import (
     DOMAIN as R_DOMAIN,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

@@ -9,27 +9,27 @@ from orvibo.s20 import S20, S20Exception
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DISCOVERY,
     CONF_HOST,
     CONF_MAC,
     CONF_NAME,
     CONF_SWITCHES,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DEFAULT_NAME, DOMAIN
 from .models import S20ConfigEntry

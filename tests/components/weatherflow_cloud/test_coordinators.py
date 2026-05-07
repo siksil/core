@@ -15,14 +15,14 @@ from weatherflow4py.models.ws.websocket_response import (
     RapidWindWS,
 )
 
-from homeassistant.components.weatherflow_cloud.coordinator import (
+from inpui.components.weatherflow_cloud.coordinator import (
     WeatherFlowCloudUpdateCoordinatorREST,
     WeatherFlowObservationCoordinator,
     WeatherFlowWindCoordinator,
 )
-from homeassistant.config_entries import ConfigEntryAuthFailed
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.config_entries import ConfigEntryAuthFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from tests.common import MockConfigEntry
 

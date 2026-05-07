@@ -5,10 +5,10 @@ from unittest.mock import ANY, Mock, patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.time_date.const import OPTION_TYPES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import event
-from homeassistant.util import dt as dt_util
+from inpui.components.time_date.const import OPTION_TYPES
+from inpui.core import HomeAssistant
+from inpui.helpers import event
+from inpui.util import dt as dt_util
 
 from . import load_int
 

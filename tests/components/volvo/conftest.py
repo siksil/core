@@ -16,21 +16,21 @@ from volvocarsapi.models import (
     VolvoCarsVehicle,
 )
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.volvo.api import VolvoAuth
-from homeassistant.components.volvo.const import CONF_VIN, DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.volvo.api import VolvoAuth
+from inpui.components.volvo.const import CONF_VIN, DOMAIN
+from inpui.const import CONF_API_KEY, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonObjectType
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonObjectType
 
 from . import async_load_fixture_as_json, async_load_fixture_as_value_field
 from .const import (

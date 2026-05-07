@@ -8,16 +8,16 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.imap.const import (
+from inpui.components.imap.const import (
     CONF_CHARSET,
     CONF_FOLDER,
     CONF_SEARCH,
     DOMAIN,
 )
-from homeassistant.components.imap.errors import InvalidAuth, InvalidFolder
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.imap.errors import InvalidAuth, InvalidFolder
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

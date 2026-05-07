@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, Mock
 
 from uiprotect.data import Doorlock, LockStatusType
 
-from homeassistant.components.lock import LockState
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.const import (
+from inpui.components.lock import LockState
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

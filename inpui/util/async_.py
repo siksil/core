@@ -36,7 +36,7 @@ def create_eager_task[_T](
             # If there is no running loop, create_eager_task is being called from
             # the wrong thread.
             # Late import to avoid circular dependencies
-            from homeassistant.helpers import frame  # noqa: PLC0415
+            from inpui.helpers import frame  # noqa: PLC0415
 
             frame.report_usage("attempted to create an asyncio task from a thread")
             raise

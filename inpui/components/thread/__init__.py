@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .dataset_store import (

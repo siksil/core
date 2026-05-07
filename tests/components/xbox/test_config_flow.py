@@ -9,26 +9,26 @@ import pytest
 from pythonxbox.api.provider.people.models import PeopleResponse
 
 from homeassistant import config_entries
-from homeassistant.components.xbox.const import (
+from inpui.components.xbox.const import (
     CONF_XUID,
     DOMAIN,
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntryState,
     ConfigSubentry,
     ConfigSubentryData,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow, device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow, device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .conftest import CLIENT_ID
 

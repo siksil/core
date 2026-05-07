@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 from miio import DeviceException
 import pytest
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_BATTERY_ICON,
     ATTR_FAN_SPEED,
     ATTR_FAN_SPEED_LIST,
@@ -23,12 +23,12 @@ from homeassistant.components.vacuum import (
     SERVICE_STOP,
     VacuumActivity,
 )
-from homeassistant.components.xiaomi_miio.const import (
+from inpui.components.xiaomi_miio.const import (
     CONF_FLOW_TYPE,
     DOMAIN,
     MODELS_VACUUM,
 )
-from homeassistant.components.xiaomi_miio.services import (
+from inpui.components.xiaomi_miio.services import (
     SERVICE_CLEAN_SEGMENT,
     SERVICE_CLEAN_ZONE,
     SERVICE_GOTO,
@@ -37,8 +37,8 @@ from homeassistant.components.xiaomi_miio.services import (
     SERVICE_START_REMOTE_CONTROL,
     SERVICE_STOP_REMOTE_CONTROL,
 )
-from homeassistant.components.xiaomi_miio.vacuum import ATTR_ERROR, ATTR_TIMERS
-from homeassistant.const import (
+from inpui.components.xiaomi_miio.vacuum import ATTR_ERROR, ATTR_TIMERS
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     CONF_DEVICE,
@@ -48,8 +48,8 @@ from homeassistant.const import (
     CONF_TOKEN,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import TEST_MAC
 

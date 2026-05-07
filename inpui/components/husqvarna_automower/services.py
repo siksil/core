@@ -4,9 +4,9 @@ from datetime import timedelta
 
 import voluptuous as vol
 
-from homeassistant.components.lawn_mower import DOMAIN as LAWN_MOWER_DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.lawn_mower import DOMAIN as LAWN_MOWER_DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN, MOW, PARK
 

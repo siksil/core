@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.indevolt.const import (
+from inpui.components.indevolt.const import (
     CONF_GENERATION,
     CONF_SERIAL_NUMBER,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_MODEL
+from inpui.const import CONF_HOST, CONF_MODEL
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

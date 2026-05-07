@@ -8,10 +8,10 @@ import itertools
 from logging import getLogger
 from typing import Any
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.storage import Store
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.storage import Store
+from inpui.util import dt as dt_util
 
 from . import models
 from .const import (

@@ -1,8 +1,8 @@
 """Test VoIP select."""
 
-from homeassistant.components.voip.devices import VoIPDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.voip.devices import VoIPDevice
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 
 async def test_pipeline_select(

@@ -14,7 +14,7 @@ from random import randint
 import time
 from typing import TYPE_CHECKING, Any, Concatenate, Generic, TypeVar
 
-from homeassistant.const import (
+from inpui.const import (
     EVENT_CORE_CONFIG_UPDATE,
     EVENT_STATE_CHANGED,
     EVENT_STATE_REPORTED,
@@ -22,7 +22,7 @@ from homeassistant.const import (
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     # Explicit reexport of 'EventStateChangedData' for backwards compatibility
@@ -36,12 +36,12 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.event_type import EventType
-from homeassistant.util.hass_dict import HassKey
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.event_type import EventType
+from inpui.util.hass_dict import HassKey
 
 from . import frame
 from .device_registry import (

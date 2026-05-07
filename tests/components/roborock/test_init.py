@@ -15,22 +15,22 @@ from roborock import (
 from roborock.exceptions import RoborockException
 from roborock.mqtt.session import MqttSessionUnauthorized
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.roborock.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.roborock.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.setup import async_setup_component
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.setup import async_setup_component
 
 from .conftest import FakeDevice
 from .mock_data import ROBOROCK_RRUID, USER_EMAIL

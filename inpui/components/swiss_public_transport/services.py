@@ -2,22 +2,22 @@
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import service
-from homeassistant.helpers.selector import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import service
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     NumberSelectorMode,
 )
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import (
     ATTR_LIMIT,

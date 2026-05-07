@@ -8,22 +8,22 @@ from async_upnp_client.ssdp_listener import SsdpListener
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import ssdp
-from homeassistant.components.ssdp import scanner
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components import ssdp
+from inpui.components.ssdp import scanner
+from inpui.const import (
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     MATCH_ALL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from . import _ssdp_headers, init_ssdp_component
 
@@ -61,7 +61,7 @@ async def test_ssdp_flow_dispatched_on_st(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert len(mock_flow_init.mock_calls) == 1
@@ -109,7 +109,7 @@ async def test_ssdp_flow_dispatched_on_manufacturer_url(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert len(mock_flow_init.mock_calls) == 1
@@ -163,7 +163,7 @@ async def test_scan_match_upnp_devicedesc_manufacturer(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     # If we get duplicate response, ensure we only look it up once
@@ -209,7 +209,7 @@ async def test_scan_match_upnp_devicedesc_devicetype(
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     # If we get duplicate response, ensure we only look it up once
@@ -259,7 +259,7 @@ async def test_scan_not_all_present(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert not mock_flow_init.mock_calls
@@ -305,7 +305,7 @@ async def test_scan_not_all_match(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert not mock_flow_init.mock_calls
@@ -333,7 +333,7 @@ async def test_flow_start_only_alive(
     """,
     )
     ssdp_listener = await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     # Search should start a flow
@@ -429,7 +429,7 @@ async def test_discovery_from_advertisement_sets_ssdp_st(
     """,
     )
     ssdp_listener = await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     mock_ssdp_advertisement = _ssdp_headers(
@@ -467,7 +467,7 @@ async def test_discovery_from_advertisement_sets_ssdp_st(
 async def test_start_stop_scanner(mock_source_set, hass: HomeAssistant) -> None:
     """Test we start and stop the scanner."""
     ssdp_listener = await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     async_fire_time_changed(hass, dt_util.utcnow() + scanner.SCAN_INTERVAL)
@@ -476,7 +476,7 @@ async def test_start_stop_scanner(mock_source_set, hass: HomeAssistant) -> None:
     assert ssdp_listener.async_search.call_count == 4
     assert ssdp_listener.async_stop.call_count == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     async_fire_time_changed(hass, dt_util.utcnow() + scanner.SCAN_INTERVAL)
     await hass.async_block_till_done()
@@ -762,7 +762,7 @@ async def test_bind_failure_skips_adapter(
     SsdpListener.async_start = _async_start
     UpnpServer.async_start = _async_start
     await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert "Failed to setup listener for" in caplog.text
@@ -802,7 +802,7 @@ async def test_ipv4_does_additional_search_for_sonos(
     """Test that only ipv4 does an additional search for Sonos."""
     ssdp_listener = await init_ssdp_component(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     async_fire_time_changed(hass, dt_util.utcnow() + scanner.SCAN_INTERVAL)
     await hass.async_block_till_done()
@@ -839,7 +839,7 @@ async def test_flow_dismiss_on_byebye(
     """,
     )
     ssdp_listener = await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     # Search should start a flow
@@ -989,7 +989,7 @@ async def test_ssdp_rediscover(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     expected_context = {
@@ -1077,7 +1077,7 @@ async def test_ssdp_rediscover_no_match(
     ssdp_listener = await init_ssdp_component(hass)
     ssdp_listener._on_search(mock_ssdp_search_response)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     expected_context = {

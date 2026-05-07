@@ -4,17 +4,17 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.emoncms.const import (
+from inpui.components.emoncms.const import (
     CONF_ONLY_INCLUDE_FEEDID,
     DOMAIN,
     SYNC_MODE,
     SYNC_MODE_AUTO,
     SYNC_MODE_MANUAL,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 from .conftest import EMONCMS_FAILURE, FLOW_RESULT, SENSOR_NAME, UNIQUE_ID

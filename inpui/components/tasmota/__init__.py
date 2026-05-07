@@ -15,16 +15,16 @@ from hatasmota.const import (
 from hatasmota.models import TasmotaDeviceConfig
 from hatasmota.mqtt import TasmotaMQTTClient
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import (
+from inpui.components import mqtt
+from inpui.components.mqtt import (
     async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceRegistry
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceRegistry
 
 from . import device_automation, discovery
 from .const import (

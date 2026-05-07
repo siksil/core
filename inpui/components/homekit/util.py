@@ -15,23 +15,23 @@ from pyhap.accessory import Accessory
 import pyqrcode
 import voluptuous as vol
 
-from homeassistant.components import (
+from inpui.components import (
     binary_sensor,
     input_number,
     media_player,
     persistent_notification,
     sensor,
 )
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.event import DOMAIN as EVENT_DOMAIN
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.media_player import (
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.event import DOMAIN as EVENT_DOMAIN
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.media_player import (
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     MediaPlayerDeviceClass,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.remote import DOMAIN as REMOTE_DOMAIN, RemoteEntityFeature
-from homeassistant.const import (
+from inpui.components.remote import DOMAIN as REMOTE_DOMAIN, RemoteEntityFeature
+from inpui.const import (
     ATTR_CODE,
     ATTR_DEVICE_CLASS,
     ATTR_SUPPORTED_FEATURES,
@@ -40,7 +40,7 @@ from homeassistant.const import (
     CONF_TYPE,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
@@ -48,9 +48,9 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.helpers import config_validation as cv
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import (
     AUDIO_CODEC_COPY,

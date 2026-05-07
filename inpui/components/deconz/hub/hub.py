@@ -11,10 +11,10 @@ from pydeconz.interfaces.api_handlers import APIHandler, GroupedAPIHandler
 from pydeconz.interfaces.groups import GroupHandler
 from pydeconz.models.event import EventType
 
-from homeassistant.config_entries import SOURCE_HASSIO
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import SOURCE_HASSIO
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from ..const import CONF_MASTER_GATEWAY, DOMAIN, HASSIO_CONFIGURATION_URL, PLATFORMS
 from .config import DeconzConfig

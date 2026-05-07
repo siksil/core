@@ -1,6 +1,6 @@
 """Exceptions for the Reolink Camera integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class ReolinkException(HomeAssistantError):

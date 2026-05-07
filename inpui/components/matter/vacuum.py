@@ -10,18 +10,18 @@ from typing import TYPE_CHECKING, Any
 from chip.clusters import Objects as clusters
 from matter_server.client.models import device_types
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     Segment,
     StateVacuumEntity,
     StateVacuumEntityDescription,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import MatterEntity, MatterEntityDescription
 from .helpers import get_matter

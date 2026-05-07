@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 from aiohttp import ClientError as HTTPClientError
 
-from homeassistant.components.directv.const import CONF_RECEIVER_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_SERIAL
+from inpui.components.directv.const import CONF_RECEIVER_ID, DOMAIN
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_HOST, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_SERIAL
 
 from . import (
     HOST,

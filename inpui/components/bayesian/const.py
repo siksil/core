@@ -1,6 +1,6 @@
 """Consts for using in modules."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "bayesian"
 PLATFORMS = [Platform.BINARY_SENSOR]

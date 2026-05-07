@@ -8,14 +8,14 @@ from unittest.mock import sentinel
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import history
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.recorder.models import process_timestamp
-from homeassistant.const import EVENT_HOMEASSISTANT_FINAL_WRITE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import history
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.recorder.models import process_timestamp
+from inpui.const import EVENT_INPUI_FINAL_WRITE
+from inpui.core import HomeAssistant, State
+from inpui.helpers.json import JSONEncoder
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.components.recorder.common import (
     assert_dict_of_states_equal_without_context_and_last_changed,
@@ -32,7 +32,7 @@ def listeners_without_writes(listeners: dict[str, int]) -> dict[str, int]:
     return {
         key: value
         for key, value in listeners.items()
-        if key != EVENT_HOMEASSISTANT_FINAL_WRITE
+        if key != EVENT_INPUI_FINAL_WRITE
     }
 
 

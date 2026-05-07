@@ -1,11 +1,11 @@
 """Tests for button platform."""
 
-from homeassistant.components import flux_led
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.flux_led.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import flux_led
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.flux_led.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     DEFAULT_ENTRY_TITLE,

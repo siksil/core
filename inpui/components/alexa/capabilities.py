@@ -6,7 +6,7 @@ from collections.abc import Generator
 import logging
 from typing import Any
 
-from homeassistant.components import (
+from inpui.components import (
     button,
     climate,
     cover,
@@ -24,14 +24,14 @@ from homeassistant.components import (
     valve,
     water_heater,
 )
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.lock import LockState
-from homeassistant.const import (
+from inpui.components.climate import HVACMode
+from inpui.components.lock import LockState
+from inpui.const import (
     ATTR_CODE_FORMAT,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
@@ -49,8 +49,8 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.util import color as color_util, dt as dt_util
+from inpui.core import HomeAssistant, State
+from inpui.util import color as color_util, dt as dt_util
 
 from .const import (
     API_TEMP_UNITS,

@@ -1,17 +1,17 @@
 """Provides conditions for doors."""
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverDeviceClass,
     make_cover_is_closed_condition,
     make_cover_is_open_condition,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import Condition
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import Condition
 
 DEVICE_CLASSES_DOOR: dict[str, str] = {
     BINARY_SENSOR_DOMAIN: BinarySensorDeviceClass.DOOR,

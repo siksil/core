@@ -9,17 +9,17 @@ from typing import Any
 
 from google_drive_api.exceptions import GoogleDriveApiError
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
     BackupNotFound,
     OnProgressCallback,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import ChunkAsyncStreamIterator
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import ChunkAsyncStreamIterator
+from inpui.util import slugify
 
 from . import DATA_BACKUP_AGENT_LISTENERS, GoogleDriveConfigEntry
 from .const import DOMAIN

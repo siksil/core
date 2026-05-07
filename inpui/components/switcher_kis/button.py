@@ -9,11 +9,11 @@ from typing import Any, cast
 from aioswitcher.api.remotes import SwitcherBreezeRemote
 from aioswitcher.device import DeviceCategory, DeviceState, ThermostatSwing
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitcherConfigEntry
 from .const import API_CONTROL_BREEZE_DEVICE, SIGNAL_DEVICE_ADD

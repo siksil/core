@@ -1,7 +1,7 @@
 """Provide info to system health."""
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 IPMA_API_URL = "http://api.ipma.pt"
 

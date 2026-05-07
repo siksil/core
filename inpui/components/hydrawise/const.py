@@ -3,7 +3,7 @@
 from datetime import timedelta
 import logging
 
-from homeassistant.const import __version__ as HA_VERSION
+from inpui.const import __version__ as HA_VERSION
 
 LOGGER = logging.getLogger(__package__)
 

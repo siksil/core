@@ -9,7 +9,7 @@ from uiprotect.data import Camera, Chime, Color, Light, ModelType, PTZPreset
 from uiprotect.data.devices import CameraZone
 from uiprotect.exceptions import BadRequest, ClientError
 
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     ATTR_MESSAGE,
     DOMAIN,
     KEYRINGS_KEY_TYPE,
@@ -19,7 +19,7 @@ from homeassistant.components.unifiprotect.const import (
     KEYRINGS_USER_FULL_NAME,
     KEYRINGS_USER_STATUS,
 )
-from homeassistant.components.unifiprotect.services import (
+from inpui.components.unifiprotect.services import (
     ATTR_PRESET,
     SERVICE_ADD_DOORBELL_TEXT,
     SERVICE_GET_USER_KEYRING_INFO,
@@ -28,11 +28,11 @@ from homeassistant.components.unifiprotect.services import (
     SERVICE_REMOVE_PRIVACY_ZONE,
     SERVICE_SET_CHIME_PAIRED,
 )
-from homeassistant.config_entries import ConfigEntryDisabler
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_ENTITY_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.config_entries import ConfigEntryDisabler
+from inpui.const import ATTR_DEVICE_ID, ATTR_ENTITY_ID, ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import patch_ufp_method
 from .utils import MockUFPFixture, init_entry

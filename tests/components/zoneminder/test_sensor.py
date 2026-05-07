@@ -9,10 +9,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from zoneminder.monitor import MonitorState, TimePeriod
 
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import create_mock_monitor
 

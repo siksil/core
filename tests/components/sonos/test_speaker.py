@@ -5,14 +5,14 @@ from unittest.mock import patch
 import pytest
 from soco.exceptions import SoCoException
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MP_DOMAIN,
     SERVICE_MEDIA_PLAY,
 )
-from homeassistant.components.sonos import DOMAIN
-from homeassistant.components.sonos.const import SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.sonos import DOMAIN
+from inpui.components.sonos.const import SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import MockSoCo, SonosMockEvent, group_speakers, ungroup_speakers
 

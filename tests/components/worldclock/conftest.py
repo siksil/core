@@ -8,15 +8,15 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.worldclock.const import (
+from inpui.components.worldclock.const import (
     CONF_TIME_FORMAT,
     DEFAULT_NAME,
     DEFAULT_TIME_STR_FORMAT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_NAME, CONF_TIME_ZONE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_NAME, CONF_TIME_ZONE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

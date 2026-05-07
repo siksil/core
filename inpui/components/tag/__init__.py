@@ -9,21 +9,21 @@ import uuid
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.const import CONF_ID, CONF_NAME
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components import websocket_api
+from inpui.const import CONF_ID, CONF_NAME
+from inpui.core import Context, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     collection,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.util import dt as dt_util, slugify
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.util import dt as dt_util, slugify
+from inpui.util.hass_dict import HassKey
 
 from .const import DEFAULT_NAME, DEVICE_ID, DOMAIN, EVENT_TAG_SCANNED, LOGGER, TAG_ID
 

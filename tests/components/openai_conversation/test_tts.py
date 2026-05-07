@@ -9,16 +9,16 @@ import httpx
 from openai import RateLimitError
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.components.media_player import (
+from inpui.components import tts
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_mock_service
 from tests.components.tts.common import retrieve_media

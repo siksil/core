@@ -8,8 +8,8 @@ import pytest
 from subarulink.const import COUNTRY_USA
 
 from homeassistant import config_entries
-from homeassistant.components.homeassistant import DOMAIN as HA_DOMAIN
-from homeassistant.components.subaru.const import (
+from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.subaru.const import (
     CONF_UPDATE_ENABLED,
     DOMAIN,
     FETCH_INTERVAL,
@@ -22,18 +22,18 @@ from homeassistant.components.subaru.const import (
     VEHICLE_MODEL_YEAR,
     VEHICLE_NAME,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_COUNTRY,
     CONF_DEVICE_ID,
     CONF_PASSWORD,
     CONF_PIN,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .api_responses import TEST_VIN_2_EV, VEHICLE_DATA, VEHICLE_STATUS_EV
 

@@ -12,9 +12,9 @@ from nextcloudmonitor import (
 )
 import pytest
 
-from homeassistant.components.nextcloud.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.nextcloud.const import DEFAULT_SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import mock_config_entry
 from .const import NC_DATA, VALID_CONFIG

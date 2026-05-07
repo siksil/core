@@ -9,11 +9,11 @@ from cookidoo_api.exceptions import (
 )
 import pytest
 
-from homeassistant.components.cookidoo.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.cookidoo.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import COUNTRY, EMAIL, LANGUAGE, PASSWORD
 from .test_init import setup_integration

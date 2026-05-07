@@ -8,19 +8,19 @@ from functools import partial
 import logging
 from typing import Any, overload
 
-from homeassistant.core import (
+from inpui.core import (
     HassJob,
     HassJobType,
     HomeAssistant,
     callback,
     get_hassjob_callable_job_type,
 )
-from homeassistant.loader import bind_hass
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.logging import catch_log_exception, log_exception
+from inpui.loader import bind_hass
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.logging import catch_log_exception, log_exception
 
 # Explicit reexport of 'SignalType' for backwards compatibility
-from homeassistant.util.signal_type import SignalType as SignalType  # noqa: PLC0414
+from inpui.util.signal_type import SignalType as SignalType  # noqa: PLC0414
 
 _LOGGER = logging.getLogger(__name__)
 DATA_DISPATCHER = "dispatcher"

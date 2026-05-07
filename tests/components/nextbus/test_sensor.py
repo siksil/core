@@ -9,12 +9,12 @@ from freezegun.api import FrozenDateTimeFactory
 from py_nextbus.client import NextBusFormatError, NextBusHTTPError
 import pytest
 
-from homeassistant.components.nextbus.const import DOMAIN
-from homeassistant.components.nextbus.coordinator import NextBusDataUpdateCoordinator
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.components.nextbus.const import DOMAIN
+from inpui.components.nextbus.coordinator import NextBusDataUpdateCoordinator
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from . import assert_setup_sensor
 from .const import (

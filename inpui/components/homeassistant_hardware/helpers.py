@@ -8,13 +8,13 @@ from contextlib import asynccontextmanager
 import logging
 from typing import TYPE_CHECKING, Protocol, TypedDict
 
-from homeassistant.components.usb import (
+from inpui.components.usb import (
     USBDevice,
     async_get_usb_matchers_for_device,
     usb_device_from_path,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
 
 from . import DATA_COMPONENT
 from .const import HARDWARE_INTEGRATION_DOMAINS

@@ -22,16 +22,16 @@ from hatasmota.mqtt import TasmotaMQTTClient
 from hatasmota.sensor import TasmotaBaseSensorConfig
 from hatasmota.utils import get_topic_command, get_topic_stat
 
-from homeassistant.components import sensor
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components import sensor
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.entity_registry import async_entries_for_device
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.entity_registry import async_entries_for_device
 
 from .const import DOMAIN, PLATFORMS
 

@@ -14,17 +14,17 @@ from tibber import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.tibber.application_credentials import TOKEN_URL
-from homeassistant.components.tibber.config_flow import (
+from inpui.components.recorder import Recorder
+from inpui.components.tibber.application_credentials import TOKEN_URL
+from inpui.components.tibber.config_flow import (
     DATA_API_DEFAULT_SCOPES,
     ERR_CLIENT,
     ERR_TOKEN,
 )
-from homeassistant.components.tibber.const import AUTH_IMPLEMENTATION, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.tibber.const import AUTH_IMPLEMENTATION, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

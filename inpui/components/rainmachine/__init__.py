@@ -13,8 +13,8 @@ from regenmaschine.controller import Controller
 from regenmaschine.errors import RainMachineError, UnknownAPICallError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
@@ -23,17 +23,17 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.update_coordinator import UpdateFailed
-from homeassistant.util.dt import as_timestamp, utcnow
-from homeassistant.util.network import is_ip_address
+from inpui.helpers.update_coordinator import UpdateFailed
+from inpui.util.dt import as_timestamp, utcnow
+from inpui.util.network import is_ip_address
 
 from .config_flow import get_client_controller
 from .const import (

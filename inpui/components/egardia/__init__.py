@@ -6,19 +6,19 @@ from pythonegardia import egardiadevice, egardiaserver
 import requests
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -124,7 +124,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
                 server.stop()
 
             # listen to Home Assistant stop event
-            hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, handle_stop_event)
+            hass.bus.listen_once(EVENT_INPUI_STOP, handle_stop_event)
 
         except OSError:
             _LOGGER.error("Binding error occurred while starting EgardiaServer")

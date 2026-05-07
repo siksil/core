@@ -2,7 +2,7 @@
 
 import caldav
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def async_get_calendars(

@@ -8,18 +8,18 @@ from typing import TYPE_CHECKING, Any
 from pylgnetcast import LG_COMMAND, LgNetCastError
 from requests import RequestException
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.const import CONF_MODEL, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.trigger import PluggableAction
+from inpui.const import CONF_MODEL, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.trigger import PluggableAction
 
 from . import LgNetCastConfigEntry
 from .const import ATTR_MANUFACTURER, DOMAIN

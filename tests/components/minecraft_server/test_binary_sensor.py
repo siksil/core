@@ -9,8 +9,8 @@ from mcstatus.responses import BedrockStatusResponse, JavaStatusResponse
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_OFF
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF
+from inpui.core import HomeAssistant
 
 from .const import (
     TEST_BEDROCK_STATUS_RESPONSE,

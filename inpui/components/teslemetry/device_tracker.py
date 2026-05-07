@@ -9,14 +9,14 @@ from tesla_fleet_api.const import Scope
 from teslemetry_stream import TeslemetryStreamVehicle
 from teslemetry_stream.const import TeslaLocation
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     TrackerEntity,
     TrackerEntityDescription,
 )
-from homeassistant.const import STATE_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import STATE_HOME
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from . import TeslemetryConfigEntry
 from .entity import TeslemetryVehiclePollingEntity, TeslemetryVehicleStreamEntity

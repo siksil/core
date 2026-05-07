@@ -8,13 +8,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from aiosteamist import Steamist, SteamistStatus
 from discovery30303 import AIODiscovery30303, Device30303
 
-from homeassistant.components import steamist
-from homeassistant.components.steamist.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_MODEL, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import steamist
+from inpui.components.steamist.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_HOST, CONF_MODEL, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

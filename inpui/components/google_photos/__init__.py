@@ -5,11 +5,11 @@ from __future__ import annotations
 from aiohttp import ClientError, ClientResponseError
 from google_photos_library_api.api import GooglePhotosLibraryApi
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_entry_oauth2_flow, config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from . import api
 from .const import DOMAIN

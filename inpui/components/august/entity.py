@@ -8,11 +8,11 @@ from yalexs.keypad import KeypadDetail
 from yalexs.lock import Lock, LockDetail
 from yalexs.util import get_configuration_url
 
-from homeassistant.const import ATTR_CONNECTIONS
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.const import ATTR_CONNECTIONS
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from . import DOMAIN, AugustData
 from .const import MANUFACTURER

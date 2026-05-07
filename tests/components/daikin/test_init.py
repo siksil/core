@@ -7,12 +7,12 @@ from aiohttp import ClientConnectionError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.daikin import update_unique_id
-from homeassistant.components.daikin.const import DOMAIN, KEY_MAC
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.daikin import update_unique_id
+from inpui.components.daikin.const import DOMAIN, KEY_MAC
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .test_config_flow import HOST, MAC
 

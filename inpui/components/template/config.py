@@ -8,30 +8,30 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
 )
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.blueprint import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.blueprint import (
     is_blueprint_instance_config,
     schemas as blueprint_schemas,
 )
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.components.event import DOMAIN as EVENT_DOMAIN
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.components.image import DOMAIN as IMAGE_DOMAIN
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN
-from homeassistant.components.vacuum import DOMAIN as VACUUM_DOMAIN
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.config import async_log_schema_error, config_without_domain
-from homeassistant.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.components.event import DOMAIN as EVENT_DOMAIN
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.components.image import DOMAIN as IMAGE_DOMAIN
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN
+from inpui.components.vacuum import DOMAIN as VACUUM_DOMAIN
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.config import async_log_schema_error, config_without_domain
+from inpui.const import (
     CONF_ACTION,
     CONF_ACTIONS,
     CONF_BINARY_SENSORS,
@@ -44,15 +44,15 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VARIABLES,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.condition import async_validate_conditions_config
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger import async_validate_trigger_config
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_notify_setup_error
-from homeassistant.util import yaml as yaml_util
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.condition import async_validate_conditions_config
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.template import Template
+from inpui.helpers.trigger import async_validate_trigger_config
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_notify_setup_error
+from inpui.util import yaml as yaml_util
 
 from . import (
     alarm_control_panel as alarm_control_panel_platform,

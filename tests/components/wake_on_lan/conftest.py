@@ -8,10 +8,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.wake_on_lan.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
-from homeassistant.core import HomeAssistant
+from inpui.components.wake_on_lan.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

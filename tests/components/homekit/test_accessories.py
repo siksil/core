@@ -7,12 +7,12 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.homekit.accessories import (
+from inpui.components.homekit.accessories import (
     HomeAccessory,
     HomeBridge,
     HomeDriver,
 )
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_DISPLAY_NAME,
     ATTR_INTEGRATION,
     ATTR_VALUE,
@@ -32,8 +32,8 @@ from homeassistant.components.homekit.const import (
     MANUFACTURER,
     SERV_ACCESSORY_INFO,
 )
-from homeassistant.components.homekit.util import format_version
-from homeassistant.const import (
+from inpui.components.homekit.util import format_version
+from inpui.const import (
     ATTR_BATTERY_CHARGING,
     ATTR_BATTERY_LEVEL,
     ATTR_ENTITY_ID,
@@ -47,7 +47,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     __version__ as hass_version,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_mock_service
 

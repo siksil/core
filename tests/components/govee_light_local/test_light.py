@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, call, patch
 from govee_local_api import GoveeDevice
 import pytest
 
-from homeassistant.components.govee_light_local.const import DOMAIN
-from homeassistant.components.light import (
+from inpui.components.govee_light_local.const import DOMAIN
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_TEMP_KELVIN,
@@ -17,9 +17,9 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
 
 from .conftest import DEFAULT_CAPABILITIES, SCENE_CAPABILITIES
 

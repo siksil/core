@@ -6,10 +6,10 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.const import SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, intent
-from homeassistant.util import color as color_util
+from inpui.const import SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, intent
+from inpui.util import color as color_util
 
 from . import ATTR_BRIGHTNESS_PCT, ATTR_COLOR_TEMP_KELVIN, ATTR_RGB_COLOR
 from .const import DOMAIN

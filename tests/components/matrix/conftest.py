@@ -26,7 +26,7 @@ from nio import (
 from PIL import Image
 import pytest
 
-from homeassistant.components.matrix import (
+from inpui.components.matrix import (
     CONF_COMMANDS,
     CONF_EXPRESSION,
     CONF_HOMESERVER,
@@ -39,18 +39,18 @@ from homeassistant.components.matrix import (
     RoomAnyID,
     RoomID,
 )
-from homeassistant.components.matrix.const import DOMAIN
-from homeassistant.components.matrix.notify import CONF_DEFAULT_ROOM
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.const import (
+from inpui.components.matrix.const import DOMAIN
+from inpui.components.matrix.notify import CONF_DEFAULT_ROOM
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PLATFORM,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import Event, HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_capture_events
 

@@ -5,18 +5,18 @@ from __future__ import annotations
 from pyprusalink import PrusaLink
 from pyprusalink.types import InvalidAuth
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.httpx_client import get_async_client
 
 from .config_flow import ConfigFlow
 from .const import DOMAIN

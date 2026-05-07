@@ -11,10 +11,10 @@ from pynordpool import API
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import async_fire_time_changed, snapshot_platform
 from tests.test_util.aiohttp import AiohttpClientMocker

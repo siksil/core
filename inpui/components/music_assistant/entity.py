@@ -8,8 +8,8 @@ from music_assistant_models.enums import EventType
 from music_assistant_models.event import MassEvent
 from music_assistant_models.player import Player
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

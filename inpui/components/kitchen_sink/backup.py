@@ -7,7 +7,7 @@ from collections.abc import AsyncIterator, Callable, Coroutine
 import logging
 from typing import Any
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AddonInfo,
     AgentBackup,
     BackupAgent,
@@ -15,7 +15,7 @@ from homeassistant.components.backup import (
     Folder,
     OnProgressCallback,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from . import DATA_BACKUP_AGENT_LISTENERS, DOMAIN
 

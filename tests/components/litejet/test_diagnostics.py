@@ -1,6 +1,6 @@
 """The tests for the litejet component."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import async_init_integration
 

@@ -9,8 +9,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import fan
-from homeassistant.components.fan import (
+from inpui.components import fan
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -18,25 +18,25 @@ from homeassistant.components.fan import (
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_NAME,
     CONF_OPTIMISTIC,
     CONF_PAYLOAD_OFF,
     CONF_PAYLOAD_ON,
     CONF_STATE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.percentage import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from . import subscription
 from .config import MQTT_RW_SCHEMA

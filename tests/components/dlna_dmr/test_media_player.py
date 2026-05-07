@@ -20,35 +20,35 @@ from didl_lite import didl_lite
 import pytest
 
 from homeassistant import const as ha_const
-from homeassistant.components import media_player as mp, ssdp
-from homeassistant.components.dlna_dmr.const import (
+from inpui.components import media_player as mp, ssdp
+from inpui.components.dlna_dmr.const import (
     CONF_BROWSE_UNFILTERED,
     CONF_CALLBACK_URL_OVERRIDE,
     CONF_LISTEN_PORT,
     CONF_POLL_AVAILABILITY,
     DOMAIN,
 )
-from homeassistant.components.dlna_dmr.data import EventListenAddr
-from homeassistant.components.dlna_dmr.media_player import DlnaDmrEntity
-from homeassistant.components.media_player import (
+from inpui.components.dlna_dmr.data import EventListenAddr
+from inpui.components.dlna_dmr.media_player import DlnaDmrEntity
+from inpui.components.media_player import (
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
     RepeatMode,
 )
-from homeassistant.components.media_source import DOMAIN as MS_DOMAIN, PlayMedia
-from homeassistant.const import (
+from inpui.components.media_source import DOMAIN as MS_DOMAIN, PlayMedia
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_MAC,
     CONF_TYPE,
     CONF_URL,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.setup import async_setup_component
 
 from .conftest import (
     LOCAL_IP,

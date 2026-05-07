@@ -17,8 +17,8 @@ from aiostreammagic.models import (
 )
 import pytest
 
-from homeassistant.components.cambridge_audio.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.cambridge_audio.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry, load_fixture, load_json_array_fixture
 

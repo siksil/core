@@ -5,11 +5,11 @@ from unittest.mock import MagicMock, patch
 import pytest
 from spotifyaio import SpotifyConnectionError, SpotifyForbiddenError
 
-from homeassistant.components.spotify.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.spotify.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

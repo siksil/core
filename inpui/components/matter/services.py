@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.water_heater import DOMAIN as WATER_HEATER_DOMAIN
-from homeassistant.core import HomeAssistant, SupportsResponse, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.water_heater import DOMAIN as WATER_HEATER_DOMAIN
+from inpui.core import HomeAssistant, SupportsResponse, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import (
     ATTR_CREDENTIAL_DATA,

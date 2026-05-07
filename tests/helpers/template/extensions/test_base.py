@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.template import TemplateEnvironment
-from homeassistant.helpers.template.extensions.base import (
+from inpui.exceptions import TemplateError
+from inpui.helpers.template import TemplateEnvironment
+from inpui.helpers.template.extensions.base import (
     BaseTemplateExtension,
     TemplateFunction,
 )

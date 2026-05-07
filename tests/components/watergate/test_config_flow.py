@@ -5,10 +5,10 @@ from collections.abc import Generator
 import pytest
 from watergate_local_api import WatergateApiException
 
-from homeassistant.components.watergate.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.watergate.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID
+from inpui.data_entry_flow import FlowResultType
 
 from .const import DEFAULT_DEVICE_STATE, DEFAULT_SERIAL_NUMBER, MOCK_WEBHOOK_ID
 

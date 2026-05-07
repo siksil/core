@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_FOG,
     ATTR_CONDITION_HAIL,
@@ -15,7 +15,7 @@ from homeassistant.components.weather import (
     ATTR_CONDITION_SUNNY,
     ATTR_CONDITION_WINDY,
 )
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 _LOGGER = logging.getLogger(__package__)
 

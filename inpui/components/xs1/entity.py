@@ -4,7 +4,7 @@ import asyncio
 
 from xs1_api_client.device import XS1Device
 
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 # Lock used to limit the amount of concurrent update requests
 # as the XS1 Gateway can only handle a very

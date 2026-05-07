@@ -8,8 +8,8 @@ from aioazuredevops.models.core import Project
 from aioazuredevops.models.work_item import WorkItem, WorkItemFields
 from aioazuredevops.models.work_item_type import Category, Icon, State, WorkItemType
 
-from homeassistant.components.azure_devops.const import CONF_ORG, CONF_PAT, CONF_PROJECT
-from homeassistant.core import HomeAssistant
+from inpui.components.azure_devops.const import CONF_ORG, CONF_PAT, CONF_PROJECT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -4,10 +4,10 @@ from collections.abc import Callable, Coroutine
 from dataclasses import dataclass, replace
 from typing import Any
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .device import ConfiguredDoorBird, async_reset_device_favorites
 from .entity import DoorBirdEntity

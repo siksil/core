@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, patch
 
 from intellifire4py.const import IntelliFireApiMode
 
-from homeassistant.components.intellifire import CONF_USER_ID
-from homeassistant.components.intellifire.const import (
+from inpui.components.intellifire import CONF_USER_ID
+from inpui.components.intellifire.const import (
     API_MODE_CLOUD,
     API_MODE_LOCAL,
     CONF_AUTH_COOKIE,
@@ -15,15 +15,15 @@ from homeassistant.components.intellifire.const import (
     CONF_WEB_CLIENT_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -5,10 +5,10 @@ import logging
 from fritzconnection.core.exceptions import FritzConnectionException, FritzSecurityError
 from requests.exceptions import ConnectionError as RequestsConnectionError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .base import FritzBoxPhonebook
 from .const import CONF_PHONEBOOK, CONF_PREFIXES, PLATFORMS

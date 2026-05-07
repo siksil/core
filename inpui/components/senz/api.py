@@ -5,7 +5,7 @@ from typing import cast
 from httpx import AsyncClient
 from pysenz import AbstractSENZAuth
 
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class SENZConfigEntryAuth(AbstractSENZAuth):

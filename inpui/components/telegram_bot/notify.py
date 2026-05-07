@@ -2,14 +2,14 @@
 
 from typing import Any
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     NotifyEntity,
     NotifyEntityDescription,
     NotifyEntityFeature,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TelegramBotConfigEntry
 from .const import ATTR_TITLE, CONF_CHAT_ID

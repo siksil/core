@@ -14,9 +14,9 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.recorder import get_instance, history
-from homeassistant.components.sensor import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.recorder import get_instance, history
+from inpui.components.sensor import (
     DEVICE_CLASS_STATE_CLASSES,
     DEVICE_CLASS_UNITS,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
@@ -24,8 +24,8 @@ from homeassistant.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
@@ -35,7 +35,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -45,21 +45,21 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_point_in_utc_time,
     async_track_state_change_event,
     async_track_state_report_event,
 )
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.enum import try_parse_enum
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
+from inpui.util.enum import try_parse_enum
 
 from . import DOMAIN, PLATFORMS
 

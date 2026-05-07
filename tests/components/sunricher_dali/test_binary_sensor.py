@@ -6,15 +6,15 @@ from PySrDaliGateway import CallbackEventType
 from PySrDaliGateway.types import MotionState
 import pytest
 
-from homeassistant.const import (
+from inpui.const import (
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import find_device_listener, trigger_availability_callback
 

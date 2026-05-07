@@ -8,10 +8,10 @@ from aiohttp import web
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components import webhook
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.components import webhook
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator, WebSocketGenerator
 

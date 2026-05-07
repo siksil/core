@@ -2,9 +2,9 @@
 
 from smarttub import LoginFailed
 
-from homeassistant.components.smarttub.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.smarttub.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 
 async def test_setup_with_no_config(

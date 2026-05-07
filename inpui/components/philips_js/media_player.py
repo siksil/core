@@ -6,7 +6,7 @@ from typing import Any
 
 from haphilipsjs import ConnectionFailure
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
@@ -16,10 +16,10 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.trigger import PluggableAction
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.trigger import PluggableAction
 
 from . import LOGGER as _LOGGER
 from .coordinator import PhilipsTVConfigEntry, PhilipsTVDataUpdateCoordinator

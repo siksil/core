@@ -6,11 +6,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import ollama
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.setup import async_setup_component
+from inpui.components import ollama
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.setup import async_setup_component
 
 from . import TEST_AI_TASK_OPTIONS, TEST_OPTIONS, TEST_USER_DATA
 

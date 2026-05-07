@@ -7,12 +7,12 @@ import pytest
 from satel_integra.satel_integra import AlarmState
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.components.satel_integra.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.satel_integra.const import DOMAIN
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -20,9 +20,9 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import MOCK_CODE, MOCK_ENTRY_ID, get_monitor_callbacks, setup_integration
 

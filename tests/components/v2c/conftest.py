@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from pytrydan.models.trydan import TrydanData
 
-from homeassistant.components.v2c.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers.json import json_dumps
+from inpui.components.v2c.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.helpers.json import json_dumps
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

@@ -12,23 +12,23 @@ from aiohomekit.model.services import Service, ServicesTypes
 from aiohomekit.testing import FakeController
 import pytest
 
-from homeassistant.components.climate import ATTR_CURRENT_TEMPERATURE
-from homeassistant.components.homekit_controller.connection import (
+from inpui.components.climate import ATTR_CURRENT_TEMPERATURE
+from inpui.components.homekit_controller.connection import (
     MAX_CHARACTERISTICS_PER_REQUEST,
 )
-from homeassistant.components.homekit_controller.const import (
+from inpui.components.homekit_controller.const import (
     DEBOUNCE_COOLDOWN,
     DOMAIN,
     IDENTIFIER_ACCESSORY_ID,
     IDENTIFIER_LEGACY_ACCESSORY_ID,
     IDENTIFIER_LEGACY_SERIAL_NUMBER,
 )
-from homeassistant.components.thread import async_add_dataset, dataset_store
-from homeassistant.const import STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.components.thread import async_add_dataset, dataset_store
+from inpui.const import STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from .common import (
     setup_accessories_from_file,

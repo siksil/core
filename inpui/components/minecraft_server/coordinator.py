@@ -5,11 +5,11 @@ from __future__ import annotations
 from datetime import timedelta
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .api import (
     MinecraftServer,

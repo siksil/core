@@ -10,16 +10,16 @@ from PIL import UnidentifiedImageError
 import pytest
 import simplehound.core as hound
 
-from homeassistant.components.image_processing import DOMAIN as IP_DOMAIN, SERVICE_SCAN
-from homeassistant.components.sighthound import image_processing as sh
-from homeassistant.const import (
+from inpui.components.image_processing import DOMAIN as IP_DOMAIN, SERVICE_SCAN
+from inpui.components.sighthound import image_processing as sh
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_API_KEY,
     CONF_ENTITY_ID,
     CONF_SOURCE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 TEST_DIR = os.path.dirname(__file__)
 

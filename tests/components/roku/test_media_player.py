@@ -7,7 +7,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from rokuecp import RokuConnectionError, RokuConnectionTimeoutError, RokuError
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_APP_ID,
     ATTR_APP_NAME,
     ATTR_INPUT_SOURCE,
@@ -27,17 +27,17 @@ from homeassistant.components.media_player import (
     MediaPlayerEntityFeature,
     MediaType,
 )
-from homeassistant.components.roku.const import (
+from inpui.components.roku.const import (
     ATTR_CONTENT_ID,
     ATTR_FORMAT,
     ATTR_MEDIA_TYPE,
     DEFAULT_PLAY_MEDIA_APP_ID,
     DOMAIN,
 )
-from homeassistant.components.roku.services import ATTR_KEYWORD, SERVICE_SEARCH
-from homeassistant.components.stream import FORMAT_CONTENT_TYPE, HLS_PROVIDER
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import (
+from inpui.components.roku.services import ATTR_KEYWORD, SERVICE_SEARCH
+from inpui.components.stream import FORMAT_CONTENT_TYPE, HLS_PROVIDER
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_NAME,
     SERVICE_MEDIA_NEXT_TRACK,
@@ -57,15 +57,15 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.typing import WebSocketGenerator

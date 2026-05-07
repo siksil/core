@@ -8,11 +8,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.trend.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.trend.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import ComponentSetup
 

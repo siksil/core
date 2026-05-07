@@ -6,14 +6,14 @@ import dataclasses
 
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 from .helpers import async_send_text_commands

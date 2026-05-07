@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.air_quality import AirQualityEntity
-from homeassistant.const import CONF_DEVICE_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.air_quality import AirQualityEntity
+from inpui.const import CONF_DEVICE_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     ATTR_AQI_LEVEL,

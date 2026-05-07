@@ -12,15 +12,15 @@ from gtts import gTTSError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import tts
-from homeassistant.components.google_translate.const import CONF_TLD, DOMAIN
-from homeassistant.components.media_player import ATTR_MEDIA_CONTENT_ID
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, CONF_PLATFORM
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import tts
+from inpui.components.google_translate.const import CONF_TLD, DOMAIN
+from inpui.components.media_player import ATTR_MEDIA_CONTENT_ID
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, CONF_PLATFORM
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, snapshot_platform
 from tests.components.tts.common import retrieve_media

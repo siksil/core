@@ -22,13 +22,13 @@ from pyheos import (
     const,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 

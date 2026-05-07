@@ -10,12 +10,12 @@ from typing import Any, cast
 from asusrouter import AsusRouterError
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_BASE,
     CONF_HOST,
     CONF_MODE,
@@ -24,15 +24,15 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.selector import SelectSelector, SelectSelectorConfig
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.selector import SelectSelector, SelectSelectorConfig
+from inpui.helpers.typing import VolDictType
 
 from .bridge import AsusWrtBridge
 from .const import (

@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.picnic import CONF_COUNTRY_CODE, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.picnic import CONF_COUNTRY_CODE, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.typing import WebSocketGenerator

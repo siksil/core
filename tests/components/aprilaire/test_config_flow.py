@@ -6,11 +6,11 @@ from pyaprilaire.client import AprilaireClient
 from pyaprilaire.const import FunctionalDomain
 import pytest
 
-from homeassistant.components.aprilaire.config_flow import (
+from inpui.components.aprilaire.config_flow import (
     STEP_USER_DATA_SCHEMA,
     AprilaireConfigFlow,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture

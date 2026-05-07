@@ -8,8 +8,8 @@ from unittest.mock import ANY, Mock, patch
 
 import pytest
 
-from homeassistant.components import automation, input_boolean, labs, script
-from homeassistant.components.automation import (
+from inpui.components import automation, input_boolean, labs, script
+from inpui.components.automation import (
     ATTR_SOURCE,
     DOMAIN,
     EVENT_AUTOMATION_RELOADED,
@@ -17,12 +17,12 @@ from homeassistant.components.automation import (
     SERVICE_TRIGGER,
     AutomationEntity,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_NAME,
     CONF_ID,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     SERVICE_RELOAD,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
@@ -31,7 +31,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     CoreState,
     HomeAssistant,
@@ -39,15 +39,15 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigValidationError,
     HomeAssistantError,
     ServiceValidationError,
     Unauthorized,
 )
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.script import (
+from inpui.helpers import device_registry as dr
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.script import (
     SCRIPT_MODE_CHOICES,
     SCRIPT_MODE_PARALLEL,
     SCRIPT_MODE_QUEUED,
@@ -55,8 +55,8 @@ from homeassistant.helpers.script import (
     SCRIPT_MODE_SINGLE,
     _async_stop_scripts_at_shutdown,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, yaml as yaml_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, yaml as yaml_util
 
 from tests.common import (
     MockConfigEntry,
@@ -1670,7 +1670,7 @@ async def test_automation_not_trigger_on_bootstrap(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert automation.is_on(hass, "automation.hello")
 
@@ -3417,7 +3417,7 @@ async def test_recursive_automation_starting_script(
 
         # Trigger 1st stage script shutdown
         hass.set_state(CoreState.stopping)
-        hass.bus.async_fire("homeassistant_stop")
+        hass.bus.async_fire("inpui_stop")
         await asyncio.wait_for(stop_scripts_at_shutdown_called.wait(), 10)
 
         # Trigger 2nd stage script shutdown
@@ -3481,7 +3481,7 @@ async def test_recursive_automation(
 
         # Trigger 1st stage script shutdown
         hass.set_state(CoreState.stopping)
-        hass.bus.async_fire("homeassistant_stop")
+        hass.bus.async_fire("inpui_stop")
         await asyncio.wait_for(stop_scripts_at_shutdown_called.wait(), 1)
 
         # Trigger 2nd stage script shutdown
@@ -3543,7 +3543,7 @@ async def test_recursive_automation_restart_mode(
 
         # Trigger 1st stage script shutdown
         hass.set_state(CoreState.stopping)
-        hass.bus.async_fire("homeassistant_stop")
+        hass.bus.async_fire("inpui_stop")
         await asyncio.wait_for(stop_scripts_at_shutdown_called.wait(), 1)
 
         # Trigger 2nd stage script shutdown

@@ -8,15 +8,15 @@ from enocean_async import EEP, EEP_SPECIFICATIONS, EEPHandler, EEPMessage, ERP1T
 from enocean_async.esp3.packet import ESP3PacketType
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import CONF_ID, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_ID, CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN, LOGGER
 from .entity import EnOceanEntity, combine_hex

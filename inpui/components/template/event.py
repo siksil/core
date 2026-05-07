@@ -7,22 +7,22 @@ from typing import Any, Final
 
 import voluptuous as vol
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     DOMAIN as EVENT_DOMAIN,
     ENTITY_ID_FORMAT,
     EventDeviceClass,
     EventEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import TriggerUpdateCoordinator
 from .entity import AbstractTemplateEntity

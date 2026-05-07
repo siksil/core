@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.button import ButtonDeviceClass, ButtonEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonDeviceClass, ButtonEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import REBOOT
 from .coordinator import PlugwiseConfigEntry, PlugwiseDataUpdateCoordinator

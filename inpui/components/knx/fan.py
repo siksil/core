@@ -11,20 +11,20 @@ from xknx.devices import Fan as XknxFan
 from xknx.telegram.address import parse_device_group_address
 
 from homeassistant import config_entries
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.percentage import (
+from inpui.helpers.typing import ConfigType
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from .const import CONF_SYNC_STATE, DOMAIN, KNX_ADDRESS, KNX_MODULE_KEY, FanConf
 from .entity import KnxUiEntity, KnxUiEntityPlatformController, KnxYamlEntity

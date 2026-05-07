@@ -9,8 +9,8 @@ from Tami4EdgeAPI.device import Device
 from Tami4EdgeAPI.device_metadata import DeviceMetadata
 from Tami4EdgeAPI.water_quality import UV, Filter, WaterQuality
 
-from homeassistant.components.tami4.const import CONF_REFRESH_TOKEN, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.tami4.const import CONF_REFRESH_TOKEN, DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

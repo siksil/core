@@ -8,19 +8,19 @@ from aiohttp.hdrs import METH_POST
 from aiohttp.web import Request, Response
 from vegehub import VegeHub
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.webhook import (
+from inpui.components.http import HomeAssistantView
+from inpui.components.webhook import (
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_IP_ADDRESS,
     CONF_MAC,
     CONF_WEBHOOK_ID,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, NAME, PLATFORMS
 from .coordinator import VegeHubConfigEntry, VegeHubCoordinator
@@ -61,7 +61,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: VegeHubConfigEntry) -> b
         )
 
         entry.async_on_unload(
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, unregister_webhook)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, unregister_webhook)
         )
 
     # Now add in all the entities for this device.

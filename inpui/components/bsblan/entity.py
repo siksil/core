@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from yarl import URL
 
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.device_registry import (
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import BSBLanData
 from .const import DEFAULT_PORT, DOMAIN

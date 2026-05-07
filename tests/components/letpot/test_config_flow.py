@@ -7,17 +7,17 @@ from unittest.mock import AsyncMock
 from letpot.exceptions import LetPotAuthenticationException, LetPotConnectionException
 import pytest
 
-from homeassistant.components.letpot.const import (
+from inpui.components.letpot.const import (
     CONF_ACCESS_TOKEN_EXPIRES,
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_EXPIRES,
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import AUTHENTICATION
 

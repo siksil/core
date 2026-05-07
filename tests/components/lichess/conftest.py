@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from aiolichess.models import LichessStatistics, LichessUser
 import pytest
 
-from homeassistant.components.lichess.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN
+from inpui.components.lichess.const import DOMAIN
+from inpui.const import CONF_API_TOKEN
 
 from tests.common import MockConfigEntry
 

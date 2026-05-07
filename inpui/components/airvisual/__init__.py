@@ -9,9 +9,9 @@ from typing import Any
 
 from pyairvisual.cloud_api import CloudAPI
 
-from homeassistant.components import automation
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.components import automation
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_COUNTRY,
     CONF_IP_ADDRESS,
@@ -21,13 +21,13 @@ from homeassistant.const import (
     CONF_STATE,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     aiohttp_client,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import (
     CONF_CITY,

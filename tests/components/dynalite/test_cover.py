@@ -7,7 +7,7 @@ from dynalite_devices_lib.cover import DynaliteTimeCoverWithTiltDevice
 from dynalite_devices_lib.dynalitebase import DynaliteBaseDevice
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -15,9 +15,9 @@ from homeassistant.components.cover import (
     CoverDeviceClass,
     CoverState,
 )
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
 
 from .common import (
     ATTR_ARGS,

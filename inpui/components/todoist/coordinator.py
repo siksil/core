@@ -9,9 +9,9 @@ from typing import TypeVar
 from todoist_api_python.api_async import TodoistAPIAsync
 from todoist_api_python.models import Label, Project, Section, Task
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import MAX_PAGE_SIZE
 

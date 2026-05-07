@@ -5,10 +5,10 @@ from __future__ import annotations
 from aiohttp.client_exceptions import ClientError
 import pytest
 
-from homeassistant.components.netgear_lte.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.netgear_lte.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

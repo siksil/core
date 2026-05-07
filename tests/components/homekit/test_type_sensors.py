@@ -2,16 +2,16 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.homekit import get_accessory
-from homeassistant.components.homekit.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.homekit import get_accessory
+from inpui.components.homekit.const import (
     CONF_THRESHOLD_CO,
     CONF_THRESHOLD_CO2,
     PROP_CELSIUS,
     THRESHOLD_CO,
     THRESHOLD_CO2,
 )
-from homeassistant.components.homekit.type_sensors import (
+from inpui.components.homekit.type_sensors import (
     BINARY_SENSOR_SERVICE_MAP,
     AirQualitySensor,
     BinarySensor,
@@ -25,10 +25,10 @@ from homeassistant.components.homekit.type_sensors import (
     TemperatureSensor,
     VolatileOrganicCompoundsSensor,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     PERCENTAGE,
     STATE_OFF,
     STATE_ON,
@@ -36,8 +36,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 
 async def test_temperature(hass: HomeAssistant, hk_driver) -> None:
@@ -632,7 +632,7 @@ async def test_sensor_restore(
         original_device_class="humidity",
         unit_of_measurement=PERCENTAGE,
     )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = get_accessory(hass, hk_driver, hass.states.get("sensor.temperature"), 2, {})

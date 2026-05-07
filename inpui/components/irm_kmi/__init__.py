@@ -4,8 +4,8 @@ import logging
 
 from irm_kmi_api import IrmKmiApiClientHa
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import IRM_KMI_TO_HA_CONDITION_MAP, PLATFORMS, USER_AGENT
 from .coordinator import IrmKmiConfigEntry, IrmKmiCoordinator

@@ -10,10 +10,10 @@ from aiohttp import hdrs
 from hass_nabucasa import remote
 import yarl
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import bind_hass
-from homeassistant.util.network import is_ip_address, is_loopback, normalize_url
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import bind_hass
+from inpui.util.network import is_ip_address, is_loopback, normalize_url
 
 from . import http
 from .hassio import is_hassio
@@ -186,7 +186,7 @@ def get_url(
         known_hostnames = ["localhost"]
         if is_hassio(hass):
             # Local import to avoid circular dependencies
-            from homeassistant.components.hassio import get_host_info  # noqa: PLC0415
+            from inpui.components.hassio import get_host_info  # noqa: PLC0415
 
             if host_info := get_host_info(hass):
                 known_hostnames.extend(
@@ -317,7 +317,7 @@ def _get_cloud_url(hass: HomeAssistant, require_current_request: bool = False) -
     """Get external Home Assistant Cloud URL of this instance."""
     if "cloud" in hass.config.components:
         # Local import to avoid circular dependencies
-        from homeassistant.components.cloud import (  # noqa: PLC0415
+        from inpui.components.cloud import (  # noqa: PLC0415
             CloudNotAvailable,
             async_remote_ui_url,
         )

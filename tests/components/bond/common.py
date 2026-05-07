@@ -11,10 +11,10 @@ from aiohttp.client_exceptions import ClientResponseError
 from bond_async import DeviceType
 
 from homeassistant import core
-from homeassistant.components.bond.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST, STATE_UNAVAILABLE
-from homeassistant.setup import async_setup_component
-from homeassistant.util import utcnow
+from inpui.components.bond.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST, STATE_UNAVAILABLE
+from inpui.setup import async_setup_component
+from inpui.util import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

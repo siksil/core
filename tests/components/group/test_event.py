@@ -2,21 +2,21 @@
 
 from pytest_unordered import unordered
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     ATTR_EVENT_TYPE,
     ATTR_EVENT_TYPES,
     DOMAIN as EVENT_DOMAIN,
 )
-from homeassistant.components.group import DOMAIN
-from homeassistant.const import (
+from inpui.components.group import DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 
 async def test_default_state(

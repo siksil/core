@@ -2,8 +2,8 @@
 
 from aiohttp import web
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.core import HomeAssistant
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.core import HomeAssistant
 
 from .analytics import async_devices_payload
 

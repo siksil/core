@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import lutron_caseta
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components import lutron_caseta
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import MockBridge, async_setup_integration, make_mock_entry
 

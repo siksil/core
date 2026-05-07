@@ -2,9 +2,9 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 
@@ -87,7 +87,7 @@ async def test_stop_event_logs_out(
     await hass.config_entries.async_setup(mock_config_entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     mock_person.logout.assert_called_once_with(mock_decora_wifi)

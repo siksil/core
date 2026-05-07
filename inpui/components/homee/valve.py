@@ -3,14 +3,14 @@
 from pyHomee.const import AttributeType
 from pyHomee.model import HomeeAttribute, HomeeNode
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityDescription,
     ValveEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeeConfigEntry
 from .entity import HomeeEntity

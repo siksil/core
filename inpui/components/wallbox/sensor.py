@@ -5,22 +5,22 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import cast
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     UnitOfElectricCurrent,
     UnitOfEnergy,
     UnitOfLength,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import (
     CHARGER_ADDED_DISCHARGED_ENERGY_KEY,

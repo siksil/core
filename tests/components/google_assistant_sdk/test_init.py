@@ -10,16 +10,16 @@ from freezegun.api import FrozenDateTimeFactory
 from grpc import RpcError
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.google_assistant_sdk import DOMAIN
-from homeassistant.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components import conversation
+from inpui.components.google_assistant_sdk import DOMAIN
+from inpui.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
+from inpui.config_entries import ConfigEntryState
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .conftest import ComponentSetup, ExpectedCredentials
 

@@ -8,9 +8,9 @@ import urllib
 
 import pytest
 
-from homeassistant.components.remote_calendar.const import CONF_CALENDAR_NAME, DOMAIN
-from homeassistant.const import CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
+from inpui.components.remote_calendar.const import CONF_CALENDAR_NAME, DOMAIN
+from inpui.const import CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

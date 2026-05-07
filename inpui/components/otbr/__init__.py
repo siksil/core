@@ -7,16 +7,16 @@ import logging
 import aiohttp
 import python_otbr_api
 
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_notify_firmware_info,
     async_register_firmware_info_provider,
 )
-from homeassistant.components.thread import async_add_dataset
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.thread import async_add_dataset
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from . import homeassistant_hardware, websocket_api
 from .const import DOMAIN

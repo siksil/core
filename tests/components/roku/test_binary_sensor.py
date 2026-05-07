@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 import pytest
 from rokuecp import Device as RokuDevice
 
-from homeassistant.components.binary_sensor import STATE_OFF, STATE_ON
-from homeassistant.components.roku.const import DOMAIN
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.binary_sensor import STATE_OFF, STATE_ON
+from inpui.components.roku.const import DOMAIN
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,

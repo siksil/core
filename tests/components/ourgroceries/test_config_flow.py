@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ourgroceries.config_flow import (
+from inpui.components.ourgroceries.config_flow import (
     ClientError,
     InvalidLoginException,
 )
-from homeassistant.components.ourgroceries.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ourgroceries.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:

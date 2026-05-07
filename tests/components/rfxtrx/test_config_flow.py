@@ -7,11 +7,11 @@ from RFXtrx import RFXtrxTransportError
 import serial.tools.list_ports
 
 from homeassistant import config_entries
-from homeassistant.components.rfxtrx import DOMAIN, config_flow
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.rfxtrx import DOMAIN, config_flow
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

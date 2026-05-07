@@ -8,9 +8,9 @@ from typing import cast
 
 from pyaprilaire.const import Attribute
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AprilaireConfigEntry, AprilaireCoordinator
 from .entity import BaseAprilaireEntity

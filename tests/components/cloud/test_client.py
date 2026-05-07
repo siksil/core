@@ -10,28 +10,28 @@ from aiohttp import web
 from hass_nabucasa.client import RemoteActivationNotAllowed
 import pytest
 
-from homeassistant.components import webhook
-from homeassistant.components.cloud import DOMAIN
-from homeassistant.components.cloud.client import (
+from inpui.components import webhook
+from inpui.components.cloud import DOMAIN
+from inpui.components.cloud.client import (
     VALID_REPAIR_TRANSLATION_KEYS,
     CloudClient,
 )
-from homeassistant.components.cloud.const import (
+from inpui.components.cloud.const import (
     DATA_CLOUD,
     PREF_ALEXA_REPORT_STATE,
     PREF_ENABLE_ALEXA,
     PREF_ENABLE_GOOGLE,
 )
-from homeassistant.components.cloud.prefs import CloudPreferences
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.cloud.prefs import CloudPreferences
+from inpui.components.homeassistant.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
 )
-from homeassistant.const import CONTENT_TYPE_JSON, __version__ as HA_VERSION
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import CONTENT_TYPE_JSON, __version__ as HA_VERSION
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import mock_cloud, mock_cloud_prefs
 

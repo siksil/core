@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyotgw.vars import OTGW, OTGW_ABOUT
 import pytest
 
-from homeassistant.components.opentherm_gw import DOMAIN
-from homeassistant.const import CONF_DEVICE, CONF_ID, CONF_NAME
+from inpui.components.opentherm_gw import DOMAIN
+from inpui.const import CONF_DEVICE, CONF_ID, CONF_NAME
 
 from tests.common import MockConfigEntry
 

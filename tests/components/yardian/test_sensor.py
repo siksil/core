@@ -10,12 +10,12 @@ import pytest
 from pyyardian import OperationInfo
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.yardian.const import DOMAIN
-from homeassistant.components.yardian.coordinator import SCAN_INTERVAL
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.yardian.const import DOMAIN
+from inpui.components.yardian.coordinator import SCAN_INTERVAL
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import setup_integration
 

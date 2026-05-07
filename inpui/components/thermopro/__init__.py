@@ -7,18 +7,18 @@ import logging
 
 from thermopro_ble import SensorUpdate, ThermoProBluetoothDeviceData
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import DOMAIN, SIGNAL_DATA_UPDATED
 

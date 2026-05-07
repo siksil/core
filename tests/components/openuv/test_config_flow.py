@@ -6,16 +6,16 @@ from pyopenuv.errors import InvalidApiKeyError
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.openuv import CONF_FROM_WINDOW, CONF_TO_WINDOW, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.openuv import CONF_FROM_WINDOW, CONF_TO_WINDOW, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_API_KEY,
     CONF_ELEVATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_API_KEY, TEST_ELEVATION, TEST_LATITUDE, TEST_LONGITUDE
 

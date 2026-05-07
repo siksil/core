@@ -11,18 +11,18 @@ from aiohttp import web
 from aiohttp.web_exceptions import HTTPUnauthorized
 import voluptuous as vol
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.auth.providers.homeassistant import HassAuthProvider
-from homeassistant.components import person
-from homeassistant.components.auth import indieauth
-from homeassistant.components.http import KEY_HASS, KEY_HASS_REFRESH_TOKEN_ID
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.http.view import HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import area_registry as ar, integration_platform
-from homeassistant.helpers.system_info import async_get_system_info
-from homeassistant.helpers.translation import async_get_translations
-from homeassistant.setup import async_setup_component, async_wait_component
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.components import person
+from inpui.components.auth import indieauth
+from inpui.components.http import KEY_HASS, KEY_HASS_REFRESH_TOKEN_ID
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.http.view import HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import area_registry as ar, integration_platform
+from inpui.helpers.system_info import async_get_system_info
+from inpui.helpers.translation import async_get_translations
+from inpui.setup import async_setup_component, async_wait_component
 
 if TYPE_CHECKING:
     from . import OnboardingData, OnboardingStorage, OnboardingStoreData
@@ -218,7 +218,7 @@ class UserOnboardingView(_BaseOnboardingStepView):
 
             # Return authorization code for fetching tokens and connect
             # during onboarding.
-            from homeassistant.components.auth import create_auth_code  # noqa: PLC0415
+            from inpui.components.auth import create_auth_code  # noqa: PLC0415
 
             auth_code = create_auth_code(hass, data["client_id"], credentials)
             return self.json({"auth_code": auth_code})
@@ -311,7 +311,7 @@ class IntegrationOnboardingView(_BaseOnboardingStepView):
                 )
 
             # Return authorization code so we can redirect user and log them in
-            from homeassistant.components.auth import create_auth_code  # noqa: PLC0415
+            from inpui.components.auth import create_auth_code  # noqa: PLC0415
 
             auth_code = create_auth_code(
                 hass, data["client_id"], refresh_token.credential

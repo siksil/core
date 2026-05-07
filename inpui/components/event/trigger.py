@@ -2,11 +2,11 @@
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_OPTIONS, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.const import CONF_OPTIONS, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     ENTITY_STATE_TRIGGER_SCHEMA,
     EntityTriggerBase,
     Trigger,

@@ -7,7 +7,7 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_REPEAT,
     ATTR_MEDIA_SHUFFLE,
@@ -17,8 +17,8 @@ from homeassistant.components.media_player import (
     SERVICE_SELECT_SOURCE,
     RepeatMode,
 )
-from homeassistant.components.smartthings.const import MAIN
-from homeassistant.const import (
+from inpui.components.smartthings.const import MAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
@@ -38,8 +38,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

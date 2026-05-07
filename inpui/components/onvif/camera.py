@@ -9,20 +9,20 @@ from onvif.exceptions import ONVIFError
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.components.ffmpeg import CONF_EXTRA_ARGUMENTS, get_ffmpeg_manager
-from homeassistant.components.stream import (
+from inpui.components import ffmpeg
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.components.ffmpeg import CONF_EXTRA_ARGUMENTS, get_ffmpeg_manager
+from inpui.components.stream import (
     CONF_RTSP_TRANSPORT,
     CONF_USE_WALLCLOCK_AS_TIMESTAMPS,
     RTSP_TRANSPORTS,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import HTTP_BASIC_AUTHENTICATION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import HTTP_BASIC_AUTHENTICATION
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ABSOLUTE_MOVE,

@@ -9,13 +9,13 @@ from aiosteamist import Steamist
 from discovery30303 import Device30303, normalize_mac
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_MODEL, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.config_entries import ConfigEntryState, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_MODEL, CONF_NAME
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType
 
 from .const import CONNECTION_EXCEPTIONS, DISCOVER_SCAN_TIMEOUT, DOMAIN
 from .discovery import (

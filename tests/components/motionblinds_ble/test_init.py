@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
-from homeassistant.components.motionblinds_ble import options_update_listener
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth.models import BluetoothServiceInfoBleak
+from inpui.components.motionblinds_ble import options_update_listener
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

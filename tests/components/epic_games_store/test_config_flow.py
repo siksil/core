@@ -4,11 +4,11 @@ from http.client import HTTPException
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.epic_games_store.config_flow import get_default_language
-from homeassistant.components.epic_games_store.const import DOMAIN
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.epic_games_store.config_flow import get_default_language
+from inpui.components.epic_games_store.const import DOMAIN
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     DATA_ERROR_ATTRIBUTE_NOT_FOUND,

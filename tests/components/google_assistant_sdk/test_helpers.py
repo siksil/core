@@ -1,12 +1,12 @@
 """Test the Google Assistant SDK helpers."""
 
-from homeassistant.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
-from homeassistant.components.google_assistant_sdk.helpers import (
+from inpui.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
+from inpui.components.google_assistant_sdk.helpers import (
     DEFAULT_LANGUAGE_CODES,
     best_matching_language_code,
     default_language_code,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 def test_default_language_codes(hass: HomeAssistant) -> None:

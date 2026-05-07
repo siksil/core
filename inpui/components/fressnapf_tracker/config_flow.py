@@ -11,14 +11,14 @@ from fressnapftracker import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.helpers.httpx_client import get_async_client
 
 from .const import CONF_PHONE_NUMBER, CONF_SMS_CODE, CONF_USER_ID, DOMAIN
 

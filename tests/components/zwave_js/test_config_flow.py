@@ -19,8 +19,8 @@ from zwave_js_server.model.node import Node
 from zwave_js_server.version import VersionInfo
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.components.zwave_js.config_flow import TITLE, get_usb_ports
-from homeassistant.components.zwave_js.const import (
+from inpui.components.zwave_js.config_flow import TITLE, get_usb_ports
+from inpui.components.zwave_js.const import (
     ADDON_SLUG,
     CONF_ADDON_DEVICE,
     CONF_ADDON_LR_S2_ACCESS_CONTROL_KEY,
@@ -34,14 +34,14 @@ from homeassistant.components.zwave_js.const import (
     CONF_USB_PATH,
     DOMAIN,
 )
-from homeassistant.components.zwave_js.helpers import SERVER_VERSION_TIMEOUT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.zwave_js.helpers import SERVER_VERSION_TIMEOUT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry, async_capture_events
 

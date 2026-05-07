@@ -8,11 +8,11 @@ import pytest
 from romy import RomyRobot
 
 from homeassistant import config_entries
-from homeassistant.components.romy.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.components.romy.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

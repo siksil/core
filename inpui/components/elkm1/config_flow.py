@@ -9,8 +9,8 @@ from elkm1_lib.discovery import ElkSystem
 from elkm1_lib.elk import Elk
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_ADDRESS,
     CONF_HOST,
     CONF_PASSWORD,
@@ -18,12 +18,12 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType, VolDictType
-from homeassistant.util import slugify
-from homeassistant.util.network import is_ip_address
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType, VolDictType
+from inpui.util import slugify
+from inpui.util.network import is_ip_address
 
 from . import ElkSyncWaiter, LoginFailed, hostname_from_url
 from .const import CONF_AUTO_CONFIGURE, DISCOVER_SCAN_TIMEOUT, DOMAIN, LOGIN_TIMEOUT

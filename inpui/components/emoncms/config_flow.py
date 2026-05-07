@@ -7,16 +7,16 @@ from typing import Any
 from pyemoncms import EmoncmsClient
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,

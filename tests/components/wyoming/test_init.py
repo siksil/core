@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 
 async def test_cannot_connect(

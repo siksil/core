@@ -4,16 +4,16 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.const import (
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.const import (
     ATTR_CONFIG_ENTRY_ID,
     CONF_FILE_PATH,
     CONF_FILENAME,
     CONF_PIN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir, service
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir, service
 
 from .const import DOMAIN
 

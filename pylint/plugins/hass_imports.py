@@ -283,7 +283,7 @@ class HassImportsFormatChecker(BaseChecker):
     ) -> bool:
         """Check for hass-import-constant-alias."""
         if current_component == imported_component:
-            # Check for `from homeassistant.components.self import DOMAIN as XYZ`
+            # Check for `from inpui.components.self import DOMAIN as XYZ`
             for name, alias in node.names:
                 if name == "DOMAIN" and (alias is not None and alias != "DOMAIN"):
                     self.add_message(
@@ -294,7 +294,7 @@ class HassImportsFormatChecker(BaseChecker):
                     return False
             return True
 
-        # Check for `from homeassistant.components.other import DOMAIN`
+        # Check for `from inpui.components.other import DOMAIN`
         for name, alias in node.names:
             if name == "DOMAIN" and (alias is None or not alias.endswith("_DOMAIN")):
                 self.add_message(
@@ -324,12 +324,12 @@ class HassImportsFormatChecker(BaseChecker):
         ):
             return True
 
-        # Check for `from homeassistant.components.other.module import something`
+        # Check for `from inpui.components.other.module import something`
         if len(imported_parts) > 3:
             self.add_message("hass-component-root-import", node=node)
             return False
 
-        # Check for `from homeassistant.components.other import const`
+        # Check for `from inpui.components.other import const`
         for name, _ in node.names:
             if name == "const":
                 self.add_message("hass-component-root-import", node=node)

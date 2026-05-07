@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     CONF_AUTH_DOMAIN,
     DEFAULT_IMPORT_NAME,
     DOMAIN,
@@ -19,16 +19,16 @@ from homeassistant.components.application_credentials import (
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_DOMAIN,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, mock_config_flow, mock_platform
 from tests.test_util.aiohttp import AiohttpClientMocker

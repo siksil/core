@@ -1,6 +1,6 @@
 """Constants for the Midea ccm15 AC Controller integration."""
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_HIGH,
     FAN_LOW,

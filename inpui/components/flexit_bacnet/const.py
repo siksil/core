@@ -12,7 +12,7 @@ from flexit_bacnet import (
     VENTILATION_MODE_STOP,
 )
 
-from homeassistant.components.climate import PRESET_AWAY, PRESET_HOME, PRESET_NONE
+from inpui.components.climate import PRESET_AWAY, PRESET_HOME, PRESET_NONE
 
 DOMAIN = "flexit_bacnet"
 

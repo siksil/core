@@ -7,12 +7,12 @@ from dataclasses import dataclass
 
 from aioguardian import Client
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     API_SENSOR_PAIR_DUMP,

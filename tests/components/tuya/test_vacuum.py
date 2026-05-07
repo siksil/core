@@ -9,7 +9,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_LOCATE,
@@ -19,9 +19,9 @@ from homeassistant.components.vacuum import (
     SERVICE_START,
     SERVICE_STOP,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import initialize_entry
 

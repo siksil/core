@@ -8,15 +8,15 @@ from babel import Locale, UnknownLocaleError
 from holidays import PUBLIC, country_holidays, list_supported_countries
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_COUNTRY
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_COUNTRY
+from inpui.core import callback
+from inpui.helpers.selector import (
     CountrySelector,
     CountrySelectorConfig,
     SelectOptionDict,
@@ -24,7 +24,7 @@ from homeassistant.helpers.selector import (
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import CONF_CATEGORIES, CONF_PROVINCE, DOMAIN
 

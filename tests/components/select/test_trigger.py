@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.const import CONF_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ENTITY_ID, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

@@ -1,8 +1,8 @@
 """Base entity for poolsense integration."""
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ATTRIBUTION, DOMAIN
 from .coordinator import PoolSenseDataUpdateCoordinator

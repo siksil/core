@@ -13,8 +13,8 @@ from habluetooth import scanner, set_manager
 from habluetooth.wrappers import HaBleakScannerWrapper
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     BluetoothChange,
     BluetoothScanningMode,
     BluetoothServiceInfo,
@@ -24,7 +24,7 @@ from homeassistant.components.bluetooth import (
     async_rediscover_address,
     async_track_unavailable,
 )
-from homeassistant.components.bluetooth.const import (
+from inpui.components.bluetooth.const import (
     BLUETOOTH_DISCOVERY_COOLDOWN_SECONDS,
     CONF_PASSIVE,
     CONF_SOURCE,
@@ -36,8 +36,8 @@ from homeassistant.components.bluetooth.const import (
     SOURCE_LOCAL,
     UNAVAILABLE_TRACK_SECONDS,
 )
-from homeassistant.components.bluetooth.manager import HomeAssistantBluetoothManager
-from homeassistant.components.bluetooth.match import (
+from inpui.components.bluetooth.manager import HomeAssistantBluetoothManager
+from inpui.components.bluetooth.match import (
     ADDRESS,
     CONNECTABLE,
     LOCAL_NAME,
@@ -45,12 +45,12 @@ from homeassistant.components.bluetooth.match import (
     SERVICE_DATA_UUID,
     SERVICE_UUID,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     FakeRemoteScanner,
@@ -87,10 +87,10 @@ async def test_setup_and_stop(
         assert await async_setup_component(
             hass, bluetooth.DOMAIN, {bluetooth.DOMAIN: {}}
         )
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert len(mock_bleak_scanner_start.mock_calls) == 1
 
@@ -131,10 +131,10 @@ async def test_setup_and_stop_passive(
         assert await async_setup_component(
             hass, bluetooth.DOMAIN, {bluetooth.DOMAIN: {}}
         )
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert init_kwargs == {
@@ -181,10 +181,10 @@ async def test_setup_and_stop_old_bluez(
         assert await async_setup_component(
             hass, bluetooth.DOMAIN, {bluetooth.DOMAIN: {}}
         )
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert init_kwargs == {
@@ -213,10 +213,10 @@ async def test_setup_and_stop_no_bluetooth(
         patch("homeassistant.components.bluetooth.discovery_flow.async_create_flow"),
     ):
         await async_setup_with_one_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert len(mock_ha_bleak_scanner.mock_calls) == 1
     assert "Failed to initialize Bluetooth" in caplog.text
@@ -239,10 +239,10 @@ async def test_setup_and_stop_broken_bluetooth(
         ),
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "Failed to start Bluetooth" in caplog.text
     assert len(bluetooth.async_discovered_service_info(hass)) == 0
@@ -270,10 +270,10 @@ async def test_setup_and_stop_broken_bluetooth_hanging(
         ),
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "Timed out starting Bluetooth" in caplog.text
 
@@ -295,7 +295,7 @@ async def test_setup_and_retry_adapter_not_yet_available(
         ),
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     entry = hass.config_entries.async_entries(bluetooth.DOMAIN)[0]
@@ -314,7 +314,7 @@ async def test_setup_and_retry_adapter_not_yet_available(
     with patch(
         "habluetooth.scanner.OriginalBleakScanner.stop",
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
 
@@ -335,7 +335,7 @@ async def test_no_race_during_manual_reload_in_retry_state(
         ),
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     entry = hass.config_entries.async_entries(bluetooth.DOMAIN)[0]
@@ -355,7 +355,7 @@ async def test_no_race_during_manual_reload_in_retry_state(
     with patch(
         "habluetooth.scanner.OriginalBleakScanner.stop",
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
 
@@ -376,10 +376,10 @@ async def test_calling_async_discovered_devices_no_bluetooth(
         ),
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "Failed to initialize Bluetooth" in caplog.text
     assert not bluetooth.async_discovered_service_info(hass)
@@ -402,7 +402,7 @@ async def test_discovery_match_by_service_uuid(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -454,7 +454,7 @@ async def test_discovery_match_by_service_uuid_and_short_local_name(
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -504,7 +504,7 @@ async def test_discovery_match_by_service_uuid_connectable(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -556,7 +556,7 @@ async def test_discovery_match_by_service_uuid_not_connectable(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -606,7 +606,7 @@ async def test_discovery_match_by_name_connectable_false(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -677,7 +677,7 @@ async def test_discovery_match_by_local_name(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -723,7 +723,7 @@ async def test_discovery_match_by_service_uuid_when_name_changes_from_mac(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -783,7 +783,7 @@ async def test_discovery_match_by_manufacturer_id_and_manufacturer_data_start(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -867,7 +867,7 @@ async def test_discovery_match_by_service_data_uuid_then_others(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1018,7 +1018,7 @@ async def test_discovery_match_by_service_data_uuid_when_format_changes(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1098,7 +1098,7 @@ async def test_discovery_match_by_service_data_uuid_bthome(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1145,7 +1145,7 @@ async def test_discovery_match_first_by_service_uuid_and_then_manufacturer_id(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init") as mock_config_flow:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1205,7 +1205,7 @@ async def test_rediscovery(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1253,7 +1253,7 @@ async def test_clear_address_from_match_history(
         patch.object(hass.config_entries.flow, "async_init") as mock_config_flow,
     ):
         await async_setup_with_default_adapter(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1321,7 +1321,7 @@ async def test_async_discovered_device_api(
         await async_setup_with_default_adapter(hass)
 
         with patch.object(hass.config_entries.flow, "async_init"):
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+            hass.bus.async_fire(EVENT_INPUI_STARTED)
             await hass.async_block_till_done()
 
             assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -1423,7 +1423,7 @@ async def test_register_callbacks(
     ):
         await async_setup_with_default_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         seen_switchbot_device = generate_ble_device("44:44:33:11:23:46", "wohand")
@@ -1508,7 +1508,7 @@ async def test_register_callbacks_raises_exception(
     ):
         await async_setup_with_default_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1568,7 +1568,7 @@ async def test_register_callback_by_address(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1665,7 +1665,7 @@ async def test_register_callback_by_address_connectable_only(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1738,7 +1738,7 @@ async def test_register_callback_by_manufacturer_id(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1794,7 +1794,7 @@ async def test_register_callback_by_connectable(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1850,7 +1850,7 @@ async def test_not_filtering_wanted_apple_devices(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1911,7 +1911,7 @@ async def test_filtering_noisy_apple_devices(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -1962,7 +1962,7 @@ async def test_register_callback_by_address_connectable_manufacturer_id(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2017,7 +2017,7 @@ async def test_register_callback_by_manufacturer_id_and_address(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2083,7 +2083,7 @@ async def test_register_callback_by_service_uuid_and_address(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2157,7 +2157,7 @@ async def test_register_callback_by_service_data_uuid_and_address(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2231,7 +2231,7 @@ async def test_register_callback_by_local_name(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2321,7 +2321,7 @@ async def test_register_callback_by_service_data_uuid(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = bluetooth.async_register_callback(
@@ -2376,7 +2376,7 @@ async def test_register_callback_survives_reload(
     ):
         await async_setup_with_default_adapter(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     cancel = bluetooth.async_register_callback(
@@ -2542,7 +2542,7 @@ async def test_wrapped_instance_with_filter(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         detected = []
@@ -2615,7 +2615,7 @@ async def test_wrapped_instance_with_service_uuids(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         detected = []
@@ -2675,7 +2675,7 @@ async def test_wrapped_instance_with_service_uuids_with_coro_callback(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         detected = []
@@ -2735,7 +2735,7 @@ async def test_wrapped_instance_with_broken_callbacks(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         detected = []
@@ -2780,7 +2780,7 @@ async def test_wrapped_instance_changes_uuids(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         detected = []
 
@@ -2836,7 +2836,7 @@ async def test_wrapped_instance_changes_filters(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         detected = []
 
@@ -2895,7 +2895,7 @@ async def test_wrapped_instance_unsupported_filter(
         await async_setup_with_default_adapter(hass)
 
     with patch.object(hass.config_entries.flow, "async_init"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert _get_manager() is not None
         scanner = HaBleakScannerWrapper()
@@ -2942,7 +2942,7 @@ async def test_async_ble_device_from_address(
 
         await async_setup_with_default_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_bleak_scanner_start.mock_calls) == 1
@@ -3346,7 +3346,7 @@ async def test_issue_outdated_haos_removed(
     """Test we do not create an issue on outdated haos anymore."""
     assert await async_setup_component(hass, bluetooth.DOMAIN, {})
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     issue = issue_registry.async_get_issue(DOMAIN, "haos_outdated")
@@ -3367,7 +3367,7 @@ async def test_haos_9_or_later(
     entry.add_to_hass(hass)
     assert await async_setup_component(hass, bluetooth.DOMAIN, {})
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     issue = issue_registry.async_get_issue(DOMAIN, "haos_outdated")
     assert issue is None

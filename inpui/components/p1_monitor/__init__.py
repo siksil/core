@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import LOGGER
 from .coordinator import P1MonitorConfigEntry, P1MonitorDataUpdateCoordinator

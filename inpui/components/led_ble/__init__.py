@@ -6,11 +6,11 @@ import asyncio
 
 from led_ble import LEDBLE
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
-from homeassistant.const import CONF_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
+from inpui.const import CONF_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DEVICE_TIMEOUT
 from .coordinator import LEDBLEConfigEntry, LEDBLECoordinator, LEDBLEData
@@ -79,7 +79,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: LEDBLEConfigEntry) -> bo
         await led_ble.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
     return True
 

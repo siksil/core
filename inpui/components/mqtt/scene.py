@@ -6,14 +6,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import scene
-from homeassistant.components.scene import Scene
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_PAYLOAD_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import scene
+from inpui.components.scene import Scene
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_PAYLOAD_ON
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .config import MQTT_BASE_SCHEMA
 from .const import CONF_COMMAND_TOPIC, CONF_RETAIN

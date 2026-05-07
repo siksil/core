@@ -10,11 +10,11 @@ from typing import Any
 from pyhomematic import HMConnection
 from pyhomematic.devicetypes.generic import HMGeneric
 
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.event import track_time_interval
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.event import track_time_interval
 
 from .const import (
     ATTR_ADDRESS,

@@ -4,15 +4,15 @@ from __future__ import annotations
 
 from ihcsdk.ihccontroller import IHCController
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.enum import try_parse_enum
+from inpui.const import CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.enum import try_parse_enum
 
 from .const import CONF_INVERTING, DOMAIN, IHC_CONTROLLER
 from .entity import IHCEntity

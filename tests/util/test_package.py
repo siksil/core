@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, Mock, call, patch
 
 import pytest
 
-from homeassistant.util import package
+from inpui.util import package
 
 RESOURCE_DIR = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "resources")

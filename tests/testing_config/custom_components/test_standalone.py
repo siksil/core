@@ -1,7 +1,7 @@
 """Provide a mock standalone component."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "test_standalone"
 

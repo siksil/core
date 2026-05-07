@@ -7,8 +7,8 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.const import CONF_FOR, CONF_PLATFORM, CONF_VALUE_TEMPLATE
-from homeassistant.core import (
+from inpui.const import CONF_FOR, CONF_PLATFORM, CONF_VALUE_TEMPLATE
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -16,16 +16,16 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.event import (
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.event import (
     TrackTemplate,
     TrackTemplateResult,
     async_call_later,
     async_track_template_result,
 )
-from homeassistant.helpers.template import Template, result_as_boolean
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.template import Template, result_as_boolean
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

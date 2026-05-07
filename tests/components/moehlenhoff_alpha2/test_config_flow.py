@@ -4,9 +4,9 @@ from functools import partialmethod
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.moehlenhoff_alpha2.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.moehlenhoff_alpha2.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_BASE_HOST, mock_update_data
 

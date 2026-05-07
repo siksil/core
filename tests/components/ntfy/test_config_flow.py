@@ -13,7 +13,7 @@ from aiontfy.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ntfy.const import (
+from inpui.components.ntfy.const import (
     CONF_MESSAGE,
     CONF_PRIORITY,
     CONF_TAGS,
@@ -23,8 +23,8 @@ from homeassistant.components.ntfy.const import (
     SECTION_AUTH,
     SECTION_FILTER,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigSubentry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER, ConfigSubentry
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TOKEN,
@@ -32,8 +32,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

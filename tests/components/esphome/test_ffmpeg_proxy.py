@@ -15,13 +15,13 @@ from aiohttp import client_exceptions
 import mutagen
 import pytest
 
-from homeassistant.components import esphome
-from homeassistant.components.esphome.ffmpeg_proxy import (
+from inpui.components import esphome
+from inpui.components.esphome.ffmpeg_proxy import (
     _MAX_STDERR_LINES,
     async_create_proxy_url,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

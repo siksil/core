@@ -4,11 +4,11 @@ from unittest.mock import MagicMock
 
 import pycfdns
 
-from homeassistant.components.cloudflare.const import CONF_RECORDS, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_TOKEN, CONF_SOURCE, CONF_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.cloudflare.const import CONF_RECORDS, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_TOKEN, CONF_SOURCE, CONF_ZONE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     ENTRY_CONFIG,

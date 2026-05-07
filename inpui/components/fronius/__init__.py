@@ -9,15 +9,15 @@ from typing import Final
 
 from pyfronius import Fronius, FroniusError
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import ATTR_MODEL, ATTR_SW_VERSION, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import ATTR_MODEL, ATTR_SW_VERSION, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     DOMAIN,

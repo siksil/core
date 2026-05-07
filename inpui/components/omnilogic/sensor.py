@@ -2,9 +2,9 @@
 
 from typing import Any
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
     UnitOfElectricPotential,
@@ -12,8 +12,8 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import check_guard
 from .const import COORDINATOR, DEFAULT_PH_OFFSET, DOMAIN, PUMP_TYPES

@@ -7,16 +7,16 @@ from typing import Any
 
 from pushover_complete import BadAPIRequestError, PushoverAPI
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
     ATTR_TITLE_DEFAULT,
     BaseNotificationService,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     ATTR_ATTACHMENT,

@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.demo import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

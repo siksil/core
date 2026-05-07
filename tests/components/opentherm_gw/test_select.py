@@ -15,27 +15,27 @@ from pyotgw.vars import (
 )
 import pytest
 
-from homeassistant.components.opentherm_gw import DOMAIN
-from homeassistant.components.opentherm_gw.const import (
+from inpui.components.opentherm_gw import DOMAIN
+from inpui.components.opentherm_gw.const import (
     DATA_GATEWAYS,
     DATA_OPENTHERM_GW,
     OpenThermDeviceIdentifier,
 )
-from homeassistant.components.opentherm_gw.select import (
+from inpui.components.opentherm_gw.select import (
     OpenThermSelectGPIOMode,
     OpenThermSelectLEDMode,
     PyotgwGPIOMode,
     PyotgwLEDMode,
 )
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.const import ATTR_ENTITY_ID, CONF_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from tests.common import MockConfigEntry
 

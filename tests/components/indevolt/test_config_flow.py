@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.components.indevolt.const import (
+from inpui.components.indevolt.const import (
     CONF_GENERATION,
     CONF_SERIAL_NUMBER,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_RECONFIGURE, SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_RECONFIGURE, SOURCE_USER
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_DEVICE_SN_GEN2, TEST_HOST
 

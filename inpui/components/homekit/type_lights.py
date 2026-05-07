@@ -8,7 +8,7 @@ from typing import Any
 
 from pyhap.const import CATEGORY_LIGHTBULB
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_MODE,
@@ -26,15 +26,15 @@ from homeassistant.components.light import (
     color_supported,
     color_temp_supported,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import CALLBACK_TYPE, State, callback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.util.color import (
+from inpui.core import CALLBACK_TYPE, State, callback
+from inpui.helpers.event import async_call_later
+from inpui.util.color import (
     color_temperature_kelvin_to_mired,
     color_temperature_mired_to_kelvin,
     color_temperature_to_hs,

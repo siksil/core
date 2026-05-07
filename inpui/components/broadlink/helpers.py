@@ -3,8 +3,8 @@
 from base64 import b64decode
 
 from homeassistant import config_entries
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_HOST
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 

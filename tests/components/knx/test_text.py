@@ -1,10 +1,10 @@
 """Test KNX number."""
 
-from homeassistant.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
-from homeassistant.components.knx.schema import TextSchema
-from homeassistant.components.text import TextMode
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, State
+from inpui.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
+from inpui.components.knx.schema import TextSchema
+from inpui.components.text import TextMode
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant, State
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

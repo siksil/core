@@ -8,15 +8,15 @@ from azure.eventhub.exceptions import EventHubError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.azure_event_hub.const import (
+from inpui.components.azure_event_hub.const import (
     CONF_MAX_DELAY,
     CONF_SEND_INTERVAL,
     DOMAIN,
     STEP_CONN_STRING,
     STEP_SAS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     BASE_CONFIG_CS,

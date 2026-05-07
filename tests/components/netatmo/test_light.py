@@ -4,15 +4,15 @@ from unittest.mock import AsyncMock, patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.netatmo import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.netatmo import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     FAKE_WEBHOOK_ACTIVATION,

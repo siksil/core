@@ -11,16 +11,16 @@ from volvocarsapi.api import VolvoCarsApi
 from volvocarsapi.models import VolvoApiException, VolvoCarsVehicle
 from volvocarsapi.scopes import ALL_SCOPES
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_API_KEY, CONF_NAME, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_ACCESS_TOKEN, CONF_API_KEY, CONF_NAME, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

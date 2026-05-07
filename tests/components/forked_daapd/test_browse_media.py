@@ -3,19 +3,19 @@
 from http import HTTPStatus
 from unittest.mock import patch
 
-from homeassistant.components import media_source, spotify
-from homeassistant.components.forked_daapd.browse_media import (
+from inpui.components import media_source, spotify
+from inpui.components.forked_daapd.browse_media import (
     MediaContent,
     create_media_content_id,
     is_owntone_media_content_id,
 )
-from homeassistant.components.media_player import BrowseMedia, MediaClass, MediaType
-from homeassistant.components.spotify.const import (  # pylint: disable=hass-component-root-import
+from inpui.components.media_player import BrowseMedia, MediaClass, MediaType
+from inpui.components.spotify.const import (  # pylint: disable=hass-component-root-import
     MEDIA_PLAYER_PREFIX as SPOTIFY_MEDIA_PLAYER_PREFIX,
 )
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

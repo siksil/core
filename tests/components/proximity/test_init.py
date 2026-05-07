@@ -2,21 +2,21 @@
 
 import pytest
 
-from homeassistant.components.proximity.const import (
+from inpui.components.proximity.const import (
     CONF_IGNORED_ZONES,
     CONF_TOLERANCE,
     CONF_TRACKED_ENTITIES,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     CONF_ZONE,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.util import slugify
 
 from tests.common import MockConfigEntry
 

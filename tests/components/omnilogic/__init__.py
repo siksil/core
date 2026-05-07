@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.omnilogic.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.omnilogic.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import TELEMETRY
 

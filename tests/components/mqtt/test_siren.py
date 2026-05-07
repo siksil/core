@@ -6,9 +6,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, siren
-from homeassistant.components.siren import ATTR_VOLUME_LEVEL
-from homeassistant.const import (
+from inpui.components import mqtt, siren
+from inpui.components.siren import ATTR_VOLUME_LEVEL
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
@@ -18,7 +18,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

@@ -15,9 +15,9 @@ from aiogithubapi import (
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.components.frontend import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.frontend import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

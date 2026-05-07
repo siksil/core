@@ -12,16 +12,16 @@ from aiopyarr.sonarr_client import SonarrClient
 import voluptuous as vol
 import yarl
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     CONF_UPCOMING_DAYS,

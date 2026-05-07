@@ -11,11 +11,11 @@ from nacl.encoding import Base64Encoder
 from nacl.secret import SecretBox
 import pytest
 
-from homeassistant.components import owntracks
-from homeassistant.components.device_tracker.legacy import Device
-from homeassistant.const import STATE_NOT_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import owntracks
+from inpui.components.device_tracker.legacy import Device
+from inpui.const import STATE_NOT_HOME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_fire_mqtt_message
 from tests.typing import ClientSessionGenerator, MqttMockHAClient

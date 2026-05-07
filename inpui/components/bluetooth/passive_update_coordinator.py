@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.update_coordinator import (
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.update_coordinator import (
     BaseCoordinatorEntity,
     BaseDataUpdateCoordinatorProtocol,
 )

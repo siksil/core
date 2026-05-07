@@ -16,14 +16,14 @@ from typing import Any, cast
 
 from propcache.api import cached_property
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import (
     Integration,
     async_get_issue_integration,
     async_suggest_report_issue,
 )
-from homeassistant.util.async_ import run_callback_threadsafe
+from inpui.util.async_ import run_callback_threadsafe
 
 _LOGGER = logging.getLogger(__name__)
 

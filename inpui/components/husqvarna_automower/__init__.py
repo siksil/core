@@ -3,19 +3,19 @@
 from aioautomower.session import AutomowerSession
 from aiohttp import ClientResponseError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     aiohttp_client,
     config_entry_oauth2_flow,
     config_validation as cv,
 )
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from . import api
 from .const import DOMAIN

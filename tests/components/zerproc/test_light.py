@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 import pyzerproc
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_HS_COLOR,
@@ -15,12 +15,12 @@ from homeassistant.components.light import (
     SCAN_INTERVAL,
     ColorMode,
 )
-from homeassistant.components.zerproc.const import (
+from inpui.components.zerproc.const import (
     DATA_ADDRESSES,
     DATA_DISCOVERY_SUBSCRIPTION,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -28,8 +28,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

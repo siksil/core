@@ -1,9 +1,9 @@
 """Tests for the buienradar component."""
 
-from homeassistant.components.buienradar.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.buienradar.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

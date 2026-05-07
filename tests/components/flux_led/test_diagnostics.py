@@ -1,8 +1,8 @@
 """Test flux_led diagnostics."""
 
-from homeassistant.components.flux_led.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.flux_led.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     _mock_config_entry_for_bulb,

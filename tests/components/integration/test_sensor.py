@@ -7,9 +7,9 @@ from freezegun import freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.integration.const import DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import (
+from inpui.components.integration.const import DOMAIN
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
@@ -21,21 +21,21 @@ from homeassistant.const import (
     UnitOfTime,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     condition,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

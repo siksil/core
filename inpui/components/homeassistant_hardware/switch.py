@@ -5,10 +5,10 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.switch import SwitchEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.helpers.restore_state import RestoreEntity
 
 from .coordinator import FirmwareUpdateCoordinator
 

@@ -6,7 +6,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from xknx.io import DEFAULT_MCAST_GRP, DEFAULT_MCAST_PORT
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_KNX_AUTOMATIC,
     CONF_KNX_CONNECTION_TYPE,
     CONF_KNX_DEFAULT_RATE_LIMIT,
@@ -23,7 +23,7 @@ from homeassistant.components.knx.const import (
     DEFAULT_ROUTING_IA,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

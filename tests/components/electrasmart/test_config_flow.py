@@ -4,14 +4,14 @@ from json import loads
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.electrasmart.config_flow import ElectraApiError
-from homeassistant.components.electrasmart.const import (
+from inpui.components.electrasmart.config_flow import ElectraApiError
+from inpui.components.electrasmart.const import (
     CONF_OTP,
     CONF_PHONE_NUMBER,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import async_load_fixture
 

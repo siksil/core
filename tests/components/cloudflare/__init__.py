@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pycfdns
 
-from homeassistant.components.cloudflare.const import CONF_RECORDS, DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.cloudflare.const import CONF_RECORDS, DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_ZONE
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import MockConfigEntry
 

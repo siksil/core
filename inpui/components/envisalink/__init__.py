@@ -6,19 +6,19 @@ import logging
 from pyenvisalink import EnvisalinkAlarmPanel
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_CODE,
     CONF_HOST,
     CONF_TIMEOUT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -154,7 +154,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Network failure callback."""
         _LOGGER.error("Could not establish a connection with the Envisalink- retrying")
         if not sync_connect.done():
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_envisalink)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_envisalink)
             sync_connect.set_result(True)
 
     @callback
@@ -162,7 +162,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Handle a successful connection."""
         _LOGGER.debug("Established a connection with the Envisalink")
         if not sync_connect.done():
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_envisalink)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_envisalink)
             sync_connect.set_result(True)
 
     @callback

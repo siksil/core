@@ -9,13 +9,13 @@ from typing import Any
 from broadlink.exceptions import BroadlinkException
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchDeviceClass,
     SwitchEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_COMMAND_OFF,
     CONF_COMMAND_ON,
     CONF_HOST,
@@ -27,15 +27,15 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import BroadlinkDevice
 from .const import DOMAIN

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.webmin.const import DEFAULT_PORT, DOMAIN
-from homeassistant.const import (
+from inpui.components.webmin.const import DEFAULT_PORT, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -14,7 +14,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 

@@ -7,31 +7,31 @@ from typing import TYPE_CHECKING, Any, Protocol
 
 from universal_silabs_flasher.flasher import Zbt1Flasher
 
-from homeassistant.components import usb
-from homeassistant.components.homeassistant_hardware import (
+from inpui.components import usb
+from inpui.components.homeassistant_hardware import (
     firmware_config_flow,
     silabs_multiprotocol_addon,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     HardwareFirmwareDiscoveryInfo,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.usb import (
+from inpui.components.usb import (
     usb_service_info_from_device,
     usb_unique_id_from_service_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigEntryBaseFlow,
     ConfigFlowContext,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.core import callback
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import (
     DESCRIPTION,

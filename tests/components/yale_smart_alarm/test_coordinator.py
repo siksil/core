@@ -13,12 +13,12 @@ from yalesmartalarmclient import (
     YaleSmartAlarmData,
 )
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.yale_smart_alarm.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.yale_smart_alarm.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import ENTRY_CONFIG, OPTIONS_CONFIG
 

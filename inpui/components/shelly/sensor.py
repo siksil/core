@@ -8,7 +8,7 @@ from typing import Final, cast
 from aioshelly.block_device import Block
 from aioshelly.const import RPC_GENERATIONS
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     RestoreSensor,
     SensorDeviceClass,
@@ -17,7 +17,7 @@ from homeassistant.components.sensor import (
     SensorExtraStoredData,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_MILLION,
     DEGREE,
     LIGHT_LUX,
@@ -37,10 +37,10 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
+from inpui.helpers.typing import StateType
 
 from .const import CONF_SLEEP_PERIOD, ROLE_GENERIC
 from .coordinator import ShellyBlockCoordinator, ShellyConfigEntry, ShellyRpcCoordinator

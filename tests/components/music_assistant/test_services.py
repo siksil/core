@@ -6,18 +6,18 @@ from music_assistant_models.media_items import SearchResults
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.music_assistant.const import (
+from inpui.components.music_assistant.const import (
     ATTR_FAVORITE,
     ATTR_MEDIA_TYPE,
     ATTR_SEARCH_NAME,
     DOMAIN,
 )
-from homeassistant.components.music_assistant.services import (
+from inpui.components.music_assistant.services import (
     SERVICE_GET_LIBRARY,
     SERVICE_SEARCH,
 )
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
 
 from .common import create_library_albums_from_fixture, setup_integration_from_fixtures
 

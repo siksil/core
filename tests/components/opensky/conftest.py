@@ -6,19 +6,19 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from python_opensky import StatesResponse
 
-from homeassistant.components.opensky.const import (
+from inpui.components.opensky.const import (
     CONF_ALTITUDE,
     CONF_CONTRIBUTING_USER,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_RADIUS,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_json_object_fixture
 

@@ -15,21 +15,21 @@ from pysmartthings import (
 from pysmartthings.models import HealthStatus, InstalledApp
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.smartthings import CONF_INSTALLED_APP_ID, OLD_DATA
-from homeassistant.components.smartthings.const import (
+from inpui.components.smartthings import CONF_INSTALLED_APP_ID, OLD_DATA
+from inpui.components.smartthings.const import (
     CONF_LOCATION_ID,
     CONF_REFRESH_TOKEN,
     DOMAIN,
     SCOPES,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import DEVICE_FIXTURES, get_device_response, get_device_status, get_fixture_name
 

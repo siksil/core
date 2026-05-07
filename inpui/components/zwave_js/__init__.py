@@ -26,33 +26,33 @@ from zwave_js_server.model.notification import (
 )
 from zwave_js_server.model.value import Value, ValueNotification
 
-from homeassistant.components.hassio import AddonError, AddonManager, AddonState
-from homeassistant.components.persistent_notification import async_create
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.hassio import AddonError, AddonManager, AddonState
+from inpui.components.persistent_notification import async_create
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
     CONF_URL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EVENT_LOGGING_CHANGED,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.typing import UNDEFINED, ConfigType
+from inpui.helpers.typing import UNDEFINED, ConfigType
 
 from .addon import get_addon_manager
 from .api import async_register_api
@@ -226,7 +226,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ZwaveJSConfigEntry) -> b
         await client.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, handle_ha_shutdown)
+        hass.bus.async_listen(EVENT_INPUI_STOP, handle_ha_shutdown)
     )
 
     driver_ready_task = entry.async_create_task(

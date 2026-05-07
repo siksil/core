@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, Mock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     BRIDGE_NAME,
     CONF_AUDIO_CODEC,
     CONF_AUDIO_MAP,
@@ -53,8 +53,8 @@ from homeassistant.components.homekit.const import (
     TYPE_SWITCH,
     TYPE_VALVE,
 )
-from homeassistant.components.homekit.models import HomeKitEntryData
-from homeassistant.components.homekit.util import (
+from inpui.components.homekit.models import HomeKitEntryData
+from inpui.components.homekit.util import (
     accessory_friendly_name,
     async_dismiss_setup_message,
     async_find_next_available_port,
@@ -71,8 +71,8 @@ from homeassistant.components.homekit.util import (
     validate_entity_config as vec,
     validate_media_player_features,
 )
-from homeassistant.components.persistent_notification import async_create, async_dismiss
-from homeassistant.const import (
+from inpui.components.persistent_notification import async_create, async_dismiss
+from inpui.const import (
     ATTR_CODE,
     ATTR_SUPPORTED_FEATURES,
     CONF_NAME,
@@ -81,7 +81,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
+from inpui.core import HomeAssistant, State
 
 from .util import async_init_integration
 

@@ -3,12 +3,12 @@
 from ipaddress import ip_address
 from unittest.mock import AsyncMock
 
-from homeassistant.components.russound_rio.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.russound_rio.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import MOCK_CONFIG, MOCK_RECONFIGURATION_CONFIG, MODEL
 

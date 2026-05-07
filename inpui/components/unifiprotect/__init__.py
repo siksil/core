@@ -15,21 +15,21 @@ from uiprotect.exceptions import BadRequest, ClientError, NotAuthorized
 # diagnostics module will not be imported in the executor.
 from uiprotect.test_util.anonymize import anonymize_data  # noqa: F401
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     issue_registry as ir,
 )
-from homeassistant.helpers.issue_registry import IssueSeverity
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.issue_registry import IssueSeverity
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     AUTH_RETRIES,
@@ -144,7 +144,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: UFPConfigEntry) -> bool:
 
     entry.runtime_data = data_service
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, data_service.async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, data_service.async_stop)
     )
 
     await _async_setup_entry(hass, entry, data_service, bootstrap)

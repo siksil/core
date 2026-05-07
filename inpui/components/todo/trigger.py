@@ -10,14 +10,14 @@ from typing import TYPE_CHECKING, cast, override
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID, CONF_TARGET
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.target import TargetEntityChangeTracker, TargetSelection
-from homeassistant.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import ATTR_ENTITY_ID, CONF_TARGET
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.target import TargetEntityChangeTracker, TargetSelection
+from inpui.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
+from inpui.helpers.typing import ConfigType
 
 from . import TodoItem, TodoListEntity
 from .const import DATA_COMPONENT, DOMAIN, TodoItemStatus

@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 from ns_api import Station, Trip
 import pytest
 
-from homeassistant.components.nederlandse_spoorwegen.const import (
+from inpui.components.nederlandse_spoorwegen.const import (
     CONF_FROM,
     CONF_TIME,
     CONF_TO,
@@ -15,8 +15,8 @@ from homeassistant.components.nederlandse_spoorwegen.const import (
     INTEGRATION_TITLE,
     SUBENTRY_TYPE_ROUTE,
 )
-from homeassistant.config_entries import ConfigSubentryDataWithId
-from homeassistant.const import CONF_API_KEY, CONF_NAME
+from inpui.config_entries import ConfigSubentryDataWithId
+from inpui.const import CONF_API_KEY, CONF_NAME
 
 from .const import API_KEY, SUBENTRY_ID_1, SUBENTRY_ID_2
 

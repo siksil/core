@@ -26,8 +26,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import conversation
-from homeassistant.components.anthropic.const import (
+from inpui.components import conversation
+from inpui.components.anthropic.const import (
     CONF_CHAT_MODEL,
     CONF_CODE_EXECUTION,
     CONF_THINKING_BUDGET,
@@ -41,14 +41,14 @@ from homeassistant.components.anthropic.const import (
     CONF_WEB_SEARCH_USER_LOCATION,
     DOMAIN,
 )
-from homeassistant.components.anthropic.entity import CitationDetails, ContentDetails
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, entity_registry as er, intent, llm
-from homeassistant.setup import async_setup_component
-from homeassistant.util import ulid as ulid_util
+from inpui.components.anthropic.entity import CitationDetails, ContentDetails
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, entity_registry as er, intent, llm
+from inpui.setup import async_setup_component
+from inpui.util import ulid as ulid_util
 
 from . import (
     create_bash_code_execution_block,

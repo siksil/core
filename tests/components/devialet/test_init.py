@@ -1,8 +1,8 @@
 """Test the Devialet init."""
 
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN, MediaPlayerState
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import DOMAIN as MP_DOMAIN, MediaPlayerState
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import NAME, setup_integration
 

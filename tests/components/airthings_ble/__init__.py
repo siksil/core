@@ -11,11 +11,11 @@ from airthings_ble import (
 )
 from bleak.backends.device import BLEDevice
 
-from homeassistant.components.airthings_ble.const import DOMAIN
-from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import (
+from inpui.components.airthings_ble.const import DOMAIN
+from inpui.components.bluetooth.models import BluetoothServiceInfoBleak
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import (
     CONNECTION_BLUETOOTH,
     DeviceEntry,
     DeviceRegistry,

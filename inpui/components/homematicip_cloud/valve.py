@@ -3,13 +3,13 @@
 from homematicip.base.functionalChannels import FunctionalChannelType
 from homematicip.device import Device
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry, HomematicipHAP

@@ -6,10 +6,10 @@ from datetime import UTC, datetime
 
 from unifi_access_api import Door, DoorLockRuleType
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import UnifiAccessConfigEntry, UnifiAccessCoordinator
 from .entity import UnifiAccessEntity

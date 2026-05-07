@@ -5,9 +5,9 @@ from __future__ import annotations
 import time
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .helpers import SonosConfigEntry

@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from aiohttp import ClientError
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.solaredge.const import CONF_SITE_ID, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.recorder import Recorder
+from inpui.components.solaredge.const import CONF_SITE_ID, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .conftest import API_KEY, PASSWORD, SITE_ID, USERNAME
 

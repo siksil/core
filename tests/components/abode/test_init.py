@@ -8,11 +8,11 @@ from jaraco.abode.exceptions import (
     Exception as AbodeException,
 )
 
-from homeassistant.components.abode.const import DOMAIN
-from homeassistant.components.alarm_control_panel import DOMAIN as ALARM_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.abode.const import DOMAIN
+from inpui.components.alarm_control_panel import DOMAIN as ALARM_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 

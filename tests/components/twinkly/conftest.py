@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.twinkly import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
+from inpui.components.twinkly import DOMAIN
+from inpui.const import CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
 
 from .const import TEST_MAC, TEST_MODEL, TEST_NAME
 

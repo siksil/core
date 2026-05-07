@@ -5,8 +5,8 @@ from typing import Any
 from pyecobee import ECOBEE_API_KEY, ECOBEE_PASSWORD, ECOBEE_USERNAME, Ecobee
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
 
 from .const import CONF_REFRESH_TOKEN, DOMAIN
 

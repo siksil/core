@@ -6,10 +6,10 @@ from typing import Any
 
 from pyfibaro.fibaro_device import DeviceModel
 
-from homeassistant.components.lock import ENTITY_ID_FORMAT, LockEntity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import ENTITY_ID_FORMAT, LockEntity
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FibaroConfigEntry
 from .entity import FibaroEntity

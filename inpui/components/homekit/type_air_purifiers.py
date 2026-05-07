@@ -8,21 +8,21 @@ from pyhap.const import CATEGORY_AIR_PURIFIER
 from pyhap.service import Service
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HassJobType,
     State,
     callback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.helpers.event import async_track_state_change_event
 
 from .accessories import TYPES
 from .const import (

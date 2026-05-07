@@ -10,10 +10,10 @@ from typing import TYPE_CHECKING
 
 import caldav
 
-from homeassistant.components.calendar import CalendarEvent, extract_offset
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util import dt as dt_util
+from inpui.components.calendar import CalendarEvent, extract_offset
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util import dt as dt_util
 
 from .api import get_attr_value
 

@@ -9,14 +9,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ENTITY_ID,
     CONF_NAME,
     CONF_STATE,
@@ -25,18 +25,18 @@ from homeassistant.const import (
     PERCENTAGE,
     UnitOfTime,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity_platform import (
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import HistoryStatsConfigEntry
 from .const import (

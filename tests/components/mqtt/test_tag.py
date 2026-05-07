@@ -7,11 +7,11 @@ from unittest.mock import ANY, AsyncMock
 
 import pytest
 
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.mqtt.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.mqtt.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .common import help_test_unload_config_entry
 

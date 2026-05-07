@@ -10,16 +10,16 @@ from zigpy.device import Device as ZigpyDevice
 import zigpy.profiles.zha
 import zigpy.types
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.zha.helpers import get_zha_gateway
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.zha.helpers import get_zha_gateway
+from inpui.const import Platform
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_device_automations
 

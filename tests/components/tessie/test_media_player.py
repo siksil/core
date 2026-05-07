@@ -5,10 +5,10 @@ from datetime import timedelta
 from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tessie.coordinator import TESSIE_SYNC_INTERVAL
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.tessie.coordinator import TESSIE_SYNC_INTERVAL
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

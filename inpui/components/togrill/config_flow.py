@@ -10,14 +10,14 @@ from togrill_bluetooth.client import Client
 from togrill_bluetooth.packets import PacketA0Notify
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import AbortFlow
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import AbortFlow
 
 from .const import CONF_HAS_AMBIENT, CONF_PROBE_COUNT, DOMAIN
 from .coordinator import LOGGER

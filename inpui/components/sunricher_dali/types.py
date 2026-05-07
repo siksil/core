@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from PySrDaliGateway import DaliGateway, Device, Scene
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 
 @dataclass

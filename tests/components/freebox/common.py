@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.freebox.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.freebox.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import MOCK_HOST, MOCK_PORT
 

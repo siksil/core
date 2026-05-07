@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import requests_mock
 
-from homeassistant.components.qbittorrent import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.components.qbittorrent import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

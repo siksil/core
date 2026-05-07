@@ -12,7 +12,7 @@ from xknx.core.connection_state import XknxConnectionState, XknxConnectionType
 from xknx.devices import Device as XknxDevice, Sensor as XknxSensor
 
 from homeassistant import config_entries
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     RestoreSensor,
     SensorDeviceClass,
@@ -20,7 +20,7 @@ from homeassistant.components.sensor import (
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
@@ -31,13 +31,13 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType, StateType
-from homeassistant.util.enum import try_parse_enum
+from inpui.helpers.typing import ConfigType, StateType
+from inpui.util.enum import try_parse_enum
 
 from .const import ATTR_SOURCE, CONF_SYNC_STATE, DOMAIN, KNX_MODULE_KEY
 from .dpt import get_supported_dpts

@@ -8,11 +8,11 @@ from freezegun.api import FrozenDateTimeFactory
 from homewizard_energy.errors import DisabledError, UnauthorizedError
 import pytest
 
-from homeassistant.components.homewizard import get_main_device
-from homeassistant.components.homewizard.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from inpui.components.homewizard import get_main_device
+from inpui.components.homewizard.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

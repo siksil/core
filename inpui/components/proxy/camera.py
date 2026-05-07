@@ -10,20 +10,20 @@ import logging
 from PIL import Image
 import voluptuous as vol
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     PLATFORM_SCHEMA as CAMERA_PLATFORM_SCHEMA,
     Camera,
     async_get_image,
     async_get_mjpeg_stream,
     async_get_still_stream,
 )
-from homeassistant.const import CONF_ENTITY_ID, CONF_MODE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_ENTITY_ID, CONF_MODE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 

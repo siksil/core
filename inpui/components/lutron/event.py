@@ -5,11 +5,11 @@ from typing import cast
 
 from pylutron import Button, Keypad, Lutron, LutronEntity, LutronEvent
 
-from homeassistant.components.event import EventEntity
-from homeassistant.const import ATTR_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import slugify
+from inpui.components.event import EventEntity
+from inpui.const import ATTR_ID
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import slugify
 
 from . import ATTR_ACTION, ATTR_FULL_ID, ATTR_UUID, LutronConfigEntry
 from .entity import LutronKeypad

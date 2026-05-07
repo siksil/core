@@ -1,9 +1,9 @@
 """The html5 component."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
 
 from .const import DOMAIN
 

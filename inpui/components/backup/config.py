@@ -12,11 +12,11 @@ from typing import TYPE_CHECKING, Self, TypedDict
 
 from cronsim import CronSim
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.event import async_call_later, async_track_point_in_time
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.event import async_call_later, async_track_point_in_time
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, LOGGER
 from .models import BackupManagerError, Folder

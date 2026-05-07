@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.apcupsd import PLATFORMS
-from homeassistant.components.apcupsd.const import DOMAIN
-from homeassistant.components.apcupsd.coordinator import APCUPSdData
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.apcupsd import PLATFORMS
+from inpui.components.apcupsd.const import DOMAIN
+from inpui.components.apcupsd.coordinator import APCUPSdData
+from inpui.config_entries import SOURCE_USER
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from . import CONF_DATA, MOCK_STATUS
 

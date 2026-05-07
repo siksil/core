@@ -14,19 +14,19 @@ from amcrest import AmcrestError
 from haffmpeg.camera import CameraMjpeg
 import voluptuous as vol
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.components.ffmpeg import FFmpegManager, get_ffmpeg_manager
-from homeassistant.const import ATTR_ENTITY_ID, CONF_NAME, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import (
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.components.ffmpeg import FFmpegManager, get_ffmpeg_manager
+from inpui.const import ATTR_ENTITY_ID, CONF_NAME, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import (
     async_aiohttp_proxy_stream,
     async_aiohttp_proxy_web,
     async_get_clientsession,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CAMERA_WEB_SESSION_TIMEOUT,

@@ -11,18 +11,18 @@ from typing import Any, final, override
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import persistent_notification as pn
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_PLATFORM, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import persistent_notification as pn
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_PLATFORM, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.hass_dict import HassKey
 
 from .const import (  # noqa: F401
     ATTR_DATA,

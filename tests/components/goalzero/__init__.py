@@ -2,11 +2,11 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.goalzero.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.goalzero.const import DEFAULT_NAME, DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

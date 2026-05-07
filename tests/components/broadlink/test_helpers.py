@@ -3,8 +3,8 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.broadlink.helpers import data_packet, mac_address
-from homeassistant.core import HomeAssistant
+from inpui.components.broadlink.helpers import data_packet, mac_address
+from inpui.core import HomeAssistant
 
 
 async def test_padding(hass: HomeAssistant) -> None:

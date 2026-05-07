@@ -4,19 +4,19 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockEntity
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockEntity
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_INVERT
 from .entity import BaseInvertableEntity

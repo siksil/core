@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     ATTR_CODE,
     CONF_DEFAULT_CODE,
     DOMAIN,
@@ -17,10 +17,10 @@ from homeassistant.components.lock import (
     LockEntityFeature,
     LockState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .conftest import MockLock
 

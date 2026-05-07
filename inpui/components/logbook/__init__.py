@@ -7,31 +7,31 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import frontend
-from homeassistant.components.recorder import DOMAIN as RECORDER_DOMAIN
-from homeassistant.components.recorder.filters import (
+from inpui.components import frontend
+from inpui.components.recorder import DOMAIN as RECORDER_DOMAIN
+from inpui.components.recorder.filters import (
     extract_include_exclude_filter_conf,
     merge_include_exclude_filters,
     sqlalchemy_filter_from_include_exclude_conf,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
     ATTR_NAME,
     EVENT_LOGBOOK_ENTRY,
 )
-from homeassistant.core import Context, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import (
+from inpui.core import Context, HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.integration_platform import (
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.event_type import EventType
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.event_type import EventType
 
 from . import rest_api, websocket_api
 from .const import (  # noqa: F401

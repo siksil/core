@@ -8,7 +8,7 @@ from govee_local_api import GoveeLightCapabilities, GoveeLightFeatures
 from govee_local_api.light_capabilities import COMMON_FEATURES, SCENE_CODES
 import pytest
 
-from homeassistant.components.govee_light_local.coordinator import GoveeController
+from inpui.components.govee_light_local.coordinator import GoveeController
 
 
 @pytest.fixture(name="mock_govee_api")

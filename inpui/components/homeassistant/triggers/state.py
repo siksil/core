@@ -9,8 +9,8 @@ import logging
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.const import CONF_ATTRIBUTE, CONF_FOR, CONF_PLATFORM, MATCH_ALL
-from homeassistant.core import (
+from inpui.const import CONF_ATTRIBUTE, CONF_FOR, CONF_PLATFORM, MATCH_ALL
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -19,18 +19,18 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     template,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_same_state,
     async_track_state_change_event,
     process_state_match,
 )
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

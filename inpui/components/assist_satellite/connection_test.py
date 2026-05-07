@@ -5,7 +5,7 @@ from pathlib import Path
 
 from aiohttp import web
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http import KEY_HASS, HomeAssistantView
 
 from .const import CONNECTION_TEST_DATA
 

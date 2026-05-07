@@ -6,13 +6,13 @@ from pysma import SmaAuthenticationException, SmaConnectionException, SmaReadExc
 from pysma.helpers import DeviceInfo
 import pytest
 
-from homeassistant.components.sma.const import CONF_GROUP, DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_SSL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.sma.const import CONF_GROUP, DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import CONF_HOST, CONF_MAC, CONF_SSL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import (
     MOCK_DEVICE,

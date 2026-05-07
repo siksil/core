@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import numato
+from inpui.components import numato
 
 from .common import NUMATO_CFG
 from .numato_mock import NumatoModuleMock

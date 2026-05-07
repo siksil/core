@@ -12,17 +12,17 @@ from typing import Any
 from reolink_aio.api import RETRY_ATTEMPTS
 from reolink_aio.exceptions import CredentialsInvalidError, ReolinkError
 
-from homeassistant.const import CONF_PORT, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import CONF_PORT, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     BATTERY_PASSIVE_WAKE_UPDATE_INTERVAL,
@@ -92,7 +92,7 @@ async def async_setup_entry(
         raise
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, host.stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, host.stop)
     )
 
     # update the config info if needed for the next time

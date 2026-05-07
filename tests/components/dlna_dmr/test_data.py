@@ -9,10 +9,10 @@ from async_upnp_client.aiohttp import AiohttpNotifyServer
 from async_upnp_client.event_handler import UpnpEventHandler
 import pytest
 
-from homeassistant.components.dlna_dmr.const import DOMAIN
-from homeassistant.components.dlna_dmr.data import EventListenAddr, get_domain_data
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
+from inpui.components.dlna_dmr.const import DOMAIN
+from inpui.components.dlna_dmr.data import EventListenAddr, get_domain_data
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
 
 
 @pytest.fixture
@@ -120,7 +120,7 @@ async def test_cleanup_event_notifiers(
         EventListenAddr(None, 0, "different"), hass
     )
 
-    await domain_data.async_cleanup_event_notifiers(Event(EVENT_HOMEASSISTANT_STOP))
+    await domain_data.async_cleanup_event_notifiers(Event(EVENT_INPUI_STOP))
 
     assert not domain_data.event_notifiers
     assert not domain_data.event_notifier_refs

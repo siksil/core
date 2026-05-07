@@ -8,20 +8,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     GreenOptions,
     SupervisorError,
     get_supervisor_client,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import HomeAssistant, async_get_hass, callback
-from homeassistant.helpers import selector
-from homeassistant.helpers.hassio import is_hassio
+from inpui.core import HomeAssistant, async_get_hass, callback
+from inpui.helpers import selector
+from inpui.helpers.hassio import is_hassio
 
 from .const import DOMAIN
 

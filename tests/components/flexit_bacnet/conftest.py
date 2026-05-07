@@ -7,10 +7,10 @@ from flexit_bacnet import FlexitBACnet
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.flexit_bacnet.const import DOMAIN
-from homeassistant.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.flexit_bacnet.const import DOMAIN
+from inpui.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -2,8 +2,8 @@
 
 from ayla_iot_unofficial.fujitsu_hvac import FujitsuHVAC
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

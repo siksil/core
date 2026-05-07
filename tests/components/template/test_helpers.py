@@ -5,71 +5,71 @@ from unittest.mock import AsyncMock, Mock
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.device_automation import toggle_entity
-from homeassistant.components.template.alarm_control_panel import (
+from inpui.components.device_automation import toggle_entity
+from inpui.components.template.alarm_control_panel import (
     LEGACY_FIELDS as ALARM_CONTROL_PANEL_LEGACY_FIELDS,
     SCRIPT_FIELDS as ALARM_CONTROL_PANEL_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.binary_sensor import (
+from inpui.components.template.binary_sensor import (
     LEGACY_FIELDS as BINARY_SENSOR_LEGACY_FIELDS,
 )
-from homeassistant.components.template.button import (
+from inpui.components.template.button import (
     SCRIPT_FIELDS as BUTTON_SCRIPT_FIELDS,
     StateButtonEntity,
 )
-from homeassistant.components.template.cover import (
+from inpui.components.template.cover import (
     LEGACY_FIELDS as COVER_LEGACY_FIELDS,
     SCRIPT_FIELDS as COVER_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.fan import (
+from inpui.components.template.fan import (
     LEGACY_FIELDS as FAN_LEGACY_FIELDS,
     SCRIPT_FIELDS as FAN_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.helpers import (
+from inpui.components.template.helpers import (
     async_setup_template_platform,
     create_legacy_template_issue,
     format_migration_config,
     rewrite_legacy_to_modern_config,
     rewrite_legacy_to_modern_configs,
 )
-from homeassistant.components.template.light import (
+from inpui.components.template.light import (
     LEGACY_FIELDS as LIGHT_LEGACY_FIELDS,
     SCRIPT_FIELDS as LIGHT_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.lock import (
+from inpui.components.template.lock import (
     LEGACY_FIELDS as LOCK_LEGACY_FIELDS,
     SCRIPT_FIELDS as LOCK_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.number import (
+from inpui.components.template.number import (
     SCRIPT_FIELDS as NUMBER_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.select import (
+from inpui.components.template.select import (
     SCRIPT_FIELDS as SELECT_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.sensor import (
+from inpui.components.template.sensor import (
     LEGACY_FIELDS as SENSOR_LEGACY_FIELDS,
 )
-from homeassistant.components.template.switch import (
+from inpui.components.template.switch import (
     LEGACY_FIELDS as SWITCH_LEGACY_FIELDS,
     SCRIPT_FIELDS as SWITCH_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.update import (
+from inpui.components.template.update import (
     SCRIPT_FIELDS as UPDATE_SCRIPT_FIELDS,
 )
-from homeassistant.components.template.vacuum import (
+from inpui.components.template.vacuum import (
     LEGACY_FIELDS as VACUUM_LEGACY_FIELDS,
     SCRIPT_FIELDS as VACUUM_SCRIPT_FIELDS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from .conftest import (
     ConfigurationStyle,

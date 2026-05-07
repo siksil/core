@@ -8,8 +8,8 @@ from typing import Any
 
 from requests import RequestException
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .utils import is_api_response_success

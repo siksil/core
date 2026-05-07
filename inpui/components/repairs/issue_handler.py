@@ -7,10 +7,10 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.integration_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
 

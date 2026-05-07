@@ -6,18 +6,18 @@ import httpx
 import pytest
 import respx
 
-from homeassistant.components.rest import DOMAIN
-from homeassistant.components.rest.switch import (
+from inpui.components.rest import DOMAIN
+from inpui.components.rest.switch import (
     CONF_BODY_OFF,
     CONF_BODY_ON,
     CONF_STATE_RESOURCE,
 )
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SCAN_INTERVAL,
     SwitchDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
@@ -40,11 +40,11 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.trigger_template_entity import CONF_PICTURE
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.trigger_template_entity import CONF_PICTURE
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

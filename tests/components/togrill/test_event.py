@@ -6,11 +6,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from togrill_bluetooth.packets import PacketA1Notify, PacketA5Notify
 
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import slugify
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import slugify
 
 from . import TOGRILL_SERVICE_INFO, setup_entry
 

@@ -1,11 +1,11 @@
 """Tests for the diagnostics data provided by the AsusWRT integration."""
 
-from homeassistant.components.asuswrt.const import DOMAIN
-from homeassistant.components.asuswrt.diagnostics import TO_REDACT
-from homeassistant.components.device_tracker import CONF_CONSIDER_HOME
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.asuswrt.const import DOMAIN
+from inpui.components.asuswrt.diagnostics import TO_REDACT
+from inpui.components.device_tracker import CONF_CONSIDER_HOME
+from inpui.components.diagnostics import async_redact_data
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .common import CONFIG_DATA_TELNET, ROUTER_MAC_ADDR
 

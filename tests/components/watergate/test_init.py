@@ -3,10 +3,10 @@
 from collections.abc import Generator
 from unittest.mock import patch
 
-from homeassistant.components.valve import ValveState
-from homeassistant.components.watergate.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.valve import ValveState
+from inpui.components.watergate.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import init_integration
 from .const import MOCK_WEBHOOK_ID

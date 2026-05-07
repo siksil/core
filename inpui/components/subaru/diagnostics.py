@@ -12,12 +12,12 @@ from subarulink.const import (
     VEHICLE_NAME,
 )
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID, CONF_PASSWORD, CONF_PIN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import async_redact_data
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID, CONF_PASSWORD, CONF_PIN, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN, ENTRY_CONTROLLER, ENTRY_COORDINATOR, VEHICLE_VIN
 

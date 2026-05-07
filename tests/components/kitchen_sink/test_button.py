@@ -5,12 +5,12 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 ENTITY_RESTART = "button.power_strip_with_2_sockets_restart"
 

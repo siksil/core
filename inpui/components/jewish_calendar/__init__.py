@@ -7,7 +7,7 @@ import logging
 
 from hdate import Location
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ELEVATION,
     CONF_LANGUAGE,
     CONF_LATITUDE,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     CONF_TIME_ZONE,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_CANDLE_LIGHT_MINUTES,

@@ -8,10 +8,10 @@ from typing import TYPE_CHECKING, Final
 from synology_dsm.api.core.upgrade import SynoCoreUpgrade
 from yarl import URL
 
-from homeassistant.components.update import UpdateEntity, UpdateEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateEntity, UpdateEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SynologyDSMCentralUpdateCoordinator, SynologyDSMConfigEntry
 from .entity import SynologyDSMBaseEntity, SynologyDSMEntityDescription

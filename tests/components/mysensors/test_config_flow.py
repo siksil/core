@@ -8,7 +8,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.mysensors.const import (
+from inpui.components.mysensors.const import (
     CONF_BAUD_RATE,
     CONF_GATEWAY_TYPE,
     CONF_GATEWAY_TYPE_MQTT,
@@ -23,9 +23,9 @@ from homeassistant.components.mysensors.const import (
     DOMAIN,
     ConfGatewayType,
 )
-from homeassistant.const import CONF_DEVICE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
+from inpui.const import CONF_DEVICE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
 
 from tests.common import MockConfigEntry
 

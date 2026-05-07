@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tankerkoenig import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.tankerkoenig import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import PRICES_MISSING_FUELTYPE, STATION_MISSING_FUELTYPE
 

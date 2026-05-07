@@ -12,11 +12,11 @@ from switchbot_api import (
     SwitchBotAPI,
 )
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData
 from .const import AFTER_COMMAND_REFRESH, DOMAIN, AirPurifierMode

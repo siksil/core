@@ -9,18 +9,18 @@ from pyuptimerobot import (
     UptimeRobotException,
 )
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.uptimerobot.const import COORDINATOR_UPDATE_INTERVAL
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.uptimerobot.const import COORDINATOR_UPDATE_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import dt as dt_util
 
 from .common import (
     MOCK_UPTIMEROBOT_CONFIG_ENTRY_DATA,

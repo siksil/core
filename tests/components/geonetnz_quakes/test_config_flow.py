@@ -4,20 +4,20 @@ from datetime import timedelta
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.geonetnz_quakes import (
+from inpui.components.geonetnz_quakes import (
     CONF_MINIMUM_MAGNITUDE,
     CONF_MMI,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
     CONF_UNIT_SYSTEM,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_duplicate_error(hass: HomeAssistant, config_entry) -> None:

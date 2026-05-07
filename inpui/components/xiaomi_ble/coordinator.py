@@ -6,18 +6,18 @@ from typing import Any
 
 from xiaomi_ble import SensorUpdate, XiaomiBluetoothDeviceData
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.active_update_processor import (
+from inpui.components.bluetooth.active_update_processor import (
     ActiveBluetoothProcessorCoordinator,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
 
 from .const import CONF_SLEEPY_DEVICE
 from .types import XiaomiBLEConfigEntry

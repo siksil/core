@@ -9,15 +9,15 @@ from elevenlabs import AsyncElevenLabs, Model
 from elevenlabs.core import ApiError
 from httpx import ConnectError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.helpers.httpx_client import get_async_client
 
 from .const import CONF_MODEL, CONF_STT_MODEL
 

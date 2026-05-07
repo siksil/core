@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.co2signal.const import DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.co2signal.const import DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import VALID_RESPONSE
 

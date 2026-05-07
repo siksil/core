@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from serial import SerialException
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -14,14 +14,14 @@ from homeassistant.components.media_player import (
     SERVICE_SELECT_SOURCE,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.monoprice.const import (
+from inpui.components.monoprice.const import (
     CONF_NOT_FIRST_RUN,
     CONF_SOURCES,
     DOMAIN,
     SERVICE_RESTORE,
     SERVICE_SNAPSHOT,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_PORT,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -30,9 +30,9 @@ from homeassistant.const import (
     SERVICE_VOLUME_SET,
     SERVICE_VOLUME_UP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from tests.common import MockConfigEntry
 

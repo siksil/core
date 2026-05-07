@@ -3,15 +3,15 @@
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.islamic_prayer_times.const import (
+from inpui.components.islamic_prayer_times.const import (
     CONF_CALC_METHOD,
     CONF_LAT_ADJ_METHOD,
     CONF_MIDNIGHT_MODE,
     CONF_SCHOOL,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_CONFIG, MOCK_USER_INPUT
 

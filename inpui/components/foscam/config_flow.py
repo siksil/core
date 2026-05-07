@@ -10,16 +10,16 @@ from libpyfoscamcgi.foscamcgi import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
 
 from .const import CONF_RTSP_PORT, CONF_STREAM, DOMAIN, LOGGER
 

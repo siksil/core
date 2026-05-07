@@ -13,10 +13,10 @@ from pyipma.location import Location
 from pyipma.rcm import RCM
 from pyipma.uv import UV
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle
 
 from . import IpmaConfigEntry
 from .const import MIN_TIME_BETWEEN_UPDATES

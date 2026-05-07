@@ -3,15 +3,15 @@
 from typing import cast
 from unittest.mock import Mock
 
-from homeassistant.components.dlna_dms.const import (
+from inpui.components.dlna_dms.const import (
     CONF_SOURCE_ID,
     CONFIG_VERSION,
     DOMAIN,
 )
-from homeassistant.components.dlna_dms.dms import DlnaDmsData
-from homeassistant.const import CONF_DEVICE_ID, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.dlna_dms.dms import DlnaDmsData
+from inpui.const import CONF_DEVICE_ID, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import (
     MOCK_DEVICE_LOCATION,

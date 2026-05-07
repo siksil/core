@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.template import TemplateError
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.template import TemplateError
 
 from tests.common import MockConfigEntry
 from tests.helpers.template.helpers import assert_result_info, render_to_info

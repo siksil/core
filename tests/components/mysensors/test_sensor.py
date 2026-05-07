@@ -7,12 +7,12 @@ from collections.abc import Callable
 from mysensors.sensor import Sensor
 import pytest
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_CLASS,
     ATTR_ICON,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon.const import CONF_DEV_PATH, DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import insteon
+from inpui.components.insteon.const import CONF_DEV_PATH, DOMAIN
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import MOCK_USER_INPUT_PLM
 from .mock_devices import MockDevices
@@ -42,7 +42,7 @@ async def test_setup_entry(hass: HomeAssistant) -> None:
             {},
         )
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         assert insteon.devices.async_save.call_count == 1
         assert mock_close.called
@@ -86,7 +86,7 @@ async def test_import_frontend_dev_url(hass: HomeAssistant) -> None:
         )
         await hass.async_block_till_done()
         assert hass.data[DOMAIN][CONF_DEV_PATH] == "/some/path"
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         assert insteon.devices.async_save.call_count == 1
         assert mock_close.called

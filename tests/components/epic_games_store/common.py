@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.epic_games_store.const import DOMAIN
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.epic_games_store.const import DOMAIN
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import MOCK_COUNTRY, MOCK_LANGUAGE
 

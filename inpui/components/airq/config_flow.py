@@ -9,16 +9,16 @@ from aioairq import AirQ, InvalidAuth
 from aiohttp.client_exceptions import ClientConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.selector import BooleanSelector
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.helpers.selector import BooleanSelector
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

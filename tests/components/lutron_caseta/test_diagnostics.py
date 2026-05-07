@@ -2,14 +2,14 @@
 
 from unittest.mock import ANY
 
-from homeassistant.components.lutron_caseta import DOMAIN
-from homeassistant.components.lutron_caseta.const import (
+from inpui.components.lutron_caseta import DOMAIN
+from inpui.components.lutron_caseta.const import (
     CONF_CA_CERTS,
     CONF_CERTFILE,
     CONF_KEYFILE,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from . import MockBridge, async_setup_integration
 

@@ -7,16 +7,16 @@ from typing import Any
 import voluptuous as vol
 from wirelesstagpy import SensorTag
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import CONF_MONITORED_CONDITIONS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_MONITORED_CONDITIONS, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import WirelessTagPlatform
 from .const import WIRELESSTAG_DATA

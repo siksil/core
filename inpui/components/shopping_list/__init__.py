@@ -12,15 +12,15 @@ from aiohttp import web
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import http, websocket_api
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_NAME, Platform
-from homeassistant.core import Context, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.json import JsonValueType, load_json_array
+from inpui.components import http, websocket_api
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_NAME, Platform
+from inpui.core import Context, HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import save_json
+from inpui.helpers.typing import ConfigType
+from inpui.util.json import JsonValueType, load_json_array
 
 from .const import (
     ATTR_REVERSE,

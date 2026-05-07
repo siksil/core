@@ -11,10 +11,10 @@ from typing import TYPE_CHECKING
 import voluptuous as vol
 import yarl
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.util import yaml as yaml_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.util import yaml as yaml_util
 
 from .models import Blueprint
 from .schemas import BLUEPRINT_SCHEMA, is_blueprint_config

@@ -6,10 +6,10 @@ from aiohttp import ClientError
 from blinkpy.auth import LoginError
 import pytest
 
-from homeassistant.components.blink.const import DOMAIN
-from homeassistant.components.blink.services import SERVICE_SAVE_VIDEO
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.blink.const import DOMAIN
+from inpui.components.blink.services import SERVICE_SAVE_VIDEO
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.kaleidescape.const import DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.kaleidescape.const import DOMAIN
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_HOST, MOCK_SSDP_DISCOVERY_INFO
 

@@ -3,10 +3,10 @@
 import logging
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import CONF_NAME, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import CONF_NAME, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FirmataConfigEntry
 from .const import CONF_INITIAL_STATE, CONF_NEGATE_STATE, CONF_PIN_MODE

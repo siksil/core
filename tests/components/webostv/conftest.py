@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, Mock, patch
 from aiowebostv import WebOsTvInfo, WebOsTvState
 import pytest
 
-from homeassistant.components.webostv.const import LIVE_TV_APP_ID
+from inpui.components.webostv.const import LIVE_TV_APP_ID
 
 from .const import (
     CHANNEL_1,

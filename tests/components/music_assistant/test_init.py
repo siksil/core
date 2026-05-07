@@ -7,18 +7,18 @@ from unittest.mock import AsyncMock, MagicMock
 from music_assistant_models.enums import EventType
 from music_assistant_models.errors import ActionUnavailable, AuthenticationRequired
 
-from homeassistant.components.music_assistant.const import (
+from inpui.components.music_assistant.const import (
     ATTR_CONF_EXPOSE_PLAYER_TO_HA,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .common import setup_integration_from_fixtures, trigger_subscription_callback
 

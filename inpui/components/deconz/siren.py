@@ -7,14 +7,14 @@ from typing import Any
 from pydeconz.models.event import EventType
 from pydeconz.models.light.siren import Siren
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     DOMAIN as SIREN_DOMAIN,
     SirenEntity,
     SirenEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .entity import DeconzDevice

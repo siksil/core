@@ -5,10 +5,10 @@ from unittest.mock import MagicMock
 import pytest
 from tplink_omada_client.exceptions import OmadaClientException
 
-from homeassistant.components.tplink_omada.const import DOMAIN
-from homeassistant.components.tplink_omada.services import async_setup_services
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.tplink_omada.const import DOMAIN
+from inpui.components.tplink_omada.services import async_setup_services
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry
 

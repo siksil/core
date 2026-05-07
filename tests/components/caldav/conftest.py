@@ -4,8 +4,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.caldav.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.caldav.const import DOMAIN
+from inpui.const import (
     CONF_PASSWORD,
     CONF_URL,
     CONF_USERNAME,

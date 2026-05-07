@@ -9,9 +9,9 @@ from typing import Any
 from Tami4EdgeAPI import Tami4EdgeAPI, exceptions
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
 
 from .const import CONF_PHONE, CONF_REFRESH_TOKEN, DOMAIN
 

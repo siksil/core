@@ -6,14 +6,14 @@ from decimal import Decimal
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.recorder import Recorder, get_instance
-from homeassistant.components.sql.util import (
+from inpui.components.recorder import Recorder, get_instance
+from inpui.components.sql.util import (
     convert_value,
     resolve_db_url,
     validate_sql_select,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.template import Template
+from inpui.core import HomeAssistant
+from inpui.helpers.template import Template
 
 
 async def test_resolve_db_url_when_none_configured(

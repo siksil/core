@@ -11,10 +11,10 @@ from pyuptimerobot import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.uptimerobot.const import DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.uptimerobot.const import DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .common import (
     MOCK_UPTIMEROBOT_ACCOUNT,

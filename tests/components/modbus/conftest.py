@@ -11,8 +11,8 @@ from freezegun.api import FrozenDateTimeFactory
 from pymodbus.exceptions import ModbusException
 import pytest
 
-from homeassistant.components.modbus.const import DOMAIN, TCP
-from homeassistant.const import (
+from inpui.components.modbus.const import DOMAIN, TCP
+from inpui.const import (
     CONF_ADDRESS,
     CONF_HOST,
     CONF_NAME,
@@ -20,10 +20,10 @@ from homeassistant.const import (
     CONF_SENSORS,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
 
 from tests.common import async_fire_time_changed, mock_restore_cache
 

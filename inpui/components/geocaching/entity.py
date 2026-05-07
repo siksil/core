@@ -4,8 +4,8 @@ from typing import cast
 
 from geocachingapi.models import GeocachingCache
 
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import GeocachingDataUpdateCoordinator

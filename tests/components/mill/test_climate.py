@@ -8,19 +8,19 @@ from mill import Heater
 from mill_local import OperationMode
 import pytest
 
-from homeassistant.components import mill
-from homeassistant.components.climate import (
+from inpui.components import mill
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_HVAC_MODE,
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.mill.const import DOMAIN
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.mill.const import DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 

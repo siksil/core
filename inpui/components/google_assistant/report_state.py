@@ -7,8 +7,8 @@ import logging
 from typing import TYPE_CHECKING, Any
 from uuid import uuid4
 
-from homeassistant.const import EVENT_STATE_CHANGED
-from homeassistant.core import (
+from inpui.const import EVENT_STATE_CHANGED
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -16,8 +16,8 @@ from homeassistant.core import (
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.significant_change import create_checker
+from inpui.helpers.event import async_call_later
+from inpui.helpers.significant_change import create_checker
 
 from .const import DOMAIN
 from .error import SmartHomeError

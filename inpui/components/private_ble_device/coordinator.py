@@ -9,9 +9,9 @@ from typing import cast
 from bluetooth_data_tools import get_cipher_for_irk, resolve_private_address
 from cryptography.hazmat.primitives.ciphers import Cipher
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import BluetoothCallbackMatcher
-from homeassistant.core import HomeAssistant
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import BluetoothCallbackMatcher
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 

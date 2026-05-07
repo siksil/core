@@ -9,11 +9,11 @@ from freezegun.api import FrozenDateTimeFactory
 import motionmount
 import pytest
 
-from homeassistant.components.motionmount.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PIN, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.motionmount.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PIN, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     HOST,

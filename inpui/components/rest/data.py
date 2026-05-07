@@ -10,11 +10,11 @@ from aiohttp import hdrs
 from multidict import CIMultiDictProxy
 import xmltodict
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import template
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.ssl import SSLCipherList
+from inpui.core import HomeAssistant
+from inpui.helpers import template
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.json import json_dumps
+from inpui.util.ssl import SSLCipherList
 
 from .const import XML_MIME_TYPES
 

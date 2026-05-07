@@ -31,8 +31,8 @@ from mozart_api.models import (
 )
 import pytest
 
-from homeassistant.components.bang_olufsen.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.bang_olufsen.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import (
     TEST_BATTERY,

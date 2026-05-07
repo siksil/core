@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from iometer import Reading, Status
 import pytest
 
-from homeassistant.components.iometer.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.iometer.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry, load_fixture
 

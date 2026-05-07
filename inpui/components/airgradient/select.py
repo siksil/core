@@ -6,15 +6,15 @@ from dataclasses import dataclass
 from airgradient import AirGradientClient, Config
 from airgradient.models import ConfigurationControl, LedBarMode, TemperatureUnit
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SelectEntity,
     SelectEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AirGradientConfigEntry
 from .const import DOMAIN, PM_STANDARD, PM_STANDARD_REVERSE

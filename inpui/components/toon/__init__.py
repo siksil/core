@@ -2,23 +2,23 @@
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_SCAN_INTERVAL,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     Platform,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.core import CoreState, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_AGREEMENT_ID, CONF_MIGRATE, DEFAULT_SCAN_INTERVAL, DOMAIN
 from .coordinator import ToonDataUpdateCoordinator
@@ -139,7 +139,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await coordinator.register_webhook()
     else:
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STARTED, coordinator.register_webhook
+            EVENT_INPUI_STARTED, coordinator.register_webhook
         )
 
     return True

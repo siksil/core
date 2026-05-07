@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.dt import utcnow
 
 from .conftest import get_states_response_for_uid
 

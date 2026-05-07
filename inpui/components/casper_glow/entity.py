@@ -6,12 +6,12 @@ from collections.abc import Awaitable
 
 from pycasperglow import CasperGlowError
 
-from homeassistant.components.bluetooth.passive_update_coordinator import (
+from inpui.components.bluetooth.passive_update_coordinator import (
     PassiveBluetoothCoordinatorEntity,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo, format_mac
 
 from .const import DOMAIN
 from .coordinator import CasperGlowCoordinator

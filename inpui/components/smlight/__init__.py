@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pysmlight import Api2
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import (
     SmConfigEntry,

@@ -2,16 +2,16 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.abode import ATTR_DEVICE_ID
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN, CoverState
-from homeassistant.const import (
+from inpui.components.abode import ATTR_DEVICE_ID
+from inpui.components.cover import DOMAIN as COVER_DOMAIN, CoverState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

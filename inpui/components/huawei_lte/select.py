@@ -9,16 +9,16 @@ import logging
 
 from huawei_lte_api.enums.net import LTEBandEnum, NetworkBandEnum, NetworkModeEnum
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SelectEntity,
     SelectEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import Router
 from .const import DOMAIN, KEY_NET_NET_MODE

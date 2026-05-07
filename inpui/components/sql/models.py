@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 from sqlalchemy.orm import scoped_session
 
-from homeassistant.core import CALLBACK_TYPE
+from inpui.core import CALLBACK_TYPE
 
 
 @dataclass(slots=True)

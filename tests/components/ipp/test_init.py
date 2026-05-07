@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 from pyipp import IPPConnectionError
 
-from homeassistant.components.ipp.coordinator import IPPDataUpdateCoordinator
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.ipp.coordinator import IPPDataUpdateCoordinator
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

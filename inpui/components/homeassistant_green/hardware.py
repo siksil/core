@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.hardware import BoardInfo, HardwareInfo
-from homeassistant.components.hassio import get_os_info
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.hardware import BoardInfo, HardwareInfo
+from inpui.components.hassio import get_os_info
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 

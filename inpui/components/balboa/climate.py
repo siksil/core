@@ -8,20 +8,20 @@ from typing import Any
 from pybalboa import SpaClient, SpaControl
 from pybalboa.enums import HeatMode, HeatState, TemperatureUnit
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     PRECISION_HALVES,
     PRECISION_WHOLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BalboaConfigEntry
 from .const import DOMAIN

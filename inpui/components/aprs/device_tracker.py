@@ -11,11 +11,11 @@ from aprslib import ConnectionError as AprsConnectionError, LoginError
 import geopy.distance
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     PLATFORM_SCHEMA as DEVICE_TRACKER_PLATFORM_SCHEMA,
     SeeCallback,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_GPS_ACCURACY,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
@@ -23,12 +23,12 @@ from homeassistant.const import (
     CONF_PASSWORD,
     CONF_TIMEOUT,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import slugify
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import slugify
 
 DOMAIN = "aprs"
 
@@ -108,7 +108,7 @@ def setup_scanner(
         aprs_listener.stop()
 
     aprs_listener.start()
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, aprs_disconnect)
+    hass.bus.listen_once(EVENT_INPUI_STOP, aprs_disconnect)
 
     if not aprs_listener.start_event.wait(timeout):
         _LOGGER.error("Timeout waiting for APRS to connect")

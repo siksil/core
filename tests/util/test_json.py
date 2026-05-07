@@ -6,8 +6,8 @@ import re
 import orjson
 import pytest
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.json import (
+from inpui.exceptions import HomeAssistantError
+from inpui.util.json import (
     json_loads,
     json_loads_array,
     json_loads_object,

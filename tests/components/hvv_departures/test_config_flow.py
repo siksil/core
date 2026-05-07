@@ -5,16 +5,16 @@ from unittest.mock import patch
 
 from pygti.exceptions import CannotConnect, InvalidAuth
 
-from homeassistant.components.hvv_departures.const import (
+from inpui.components.hvv_departures.const import (
     CONF_FILTER,
     CONF_REAL_TIME,
     CONF_STATION,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_OFFSET, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_OFFSET, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, load_fixture
 

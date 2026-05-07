@@ -5,9 +5,9 @@ from unittest.mock import patch
 from notifications_android_tv.notifications import ConnectError
 
 from homeassistant import config_entries
-from homeassistant.components.nfandroidtv.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nfandroidtv.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     CONF_CONFIG_FLOW,

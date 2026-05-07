@@ -6,9 +6,9 @@ from typing import Any
 
 from py_dormakaba_dkey.commands import UnlockStatus
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import DormakabaDkeyConfigEntry, DormakabaDkeyCoordinator
 from .entity import DormakabaDkeyEntity

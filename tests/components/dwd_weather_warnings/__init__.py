@@ -1,6 +1,6 @@
 """Tests for Deutscher Wetterdienst (DWD) Weather Warnings."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -2,9 +2,9 @@
 
 from pyatag import AtagException
 
-from homeassistant.components.atag import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.atag import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

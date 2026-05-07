@@ -9,17 +9,17 @@ from aiohttp.hdrs import METH_POST
 from aiohttp.web import Request, Response
 from aiotedee.exceptions import TedeeDataUpdateException, TedeeWebhookException
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.webhook import (
+from inpui.components.http import HomeAssistantView
+from inpui.components.webhook import (
     async_generate_id as webhook_generate_id,
     async_generate_url as webhook_generate_url,
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.const import CONF_WEBHOOK_ID, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.network import get_url
+from inpui.const import CONF_WEBHOOK_ID, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.network import get_url
 
 from .const import DOMAIN, NAME
 from .coordinator import TedeeApiCoordinator, TedeeConfigEntry
@@ -87,7 +87,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: TedeeConfigEntry) -> boo
             _LOGGER.exception("Failed to register Tedee webhook from bridge")
         else:
             entry.async_on_unload(
-                hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, unregister_webhook)
+                hass.bus.async_listen_once(EVENT_INPUI_STOP, unregister_webhook)
             )
 
     entry.async_create_background_task(

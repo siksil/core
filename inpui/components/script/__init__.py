@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING, Any, cast
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import automation, websocket_api
-from homeassistant.components.blueprint import CONF_USE_BLUEPRINT
-from homeassistant.components.labs import (
+from inpui.components import automation, websocket_api
+from inpui.components.blueprint import CONF_USE_BLUEPRINT
+from inpui.components.labs import (
     EventLabsUpdatedData,
     async_subscribe_preview_feature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     ATTR_NAME,
@@ -35,7 +35,7 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     HomeAssistant,
     ServiceCall,
@@ -43,17 +43,17 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_validation import make_entity_service_schema
-from homeassistant.helpers.entity import ToggleEntity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_validation import make_entity_service_schema
+from inpui.helpers.entity import ToggleEntity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.script import (
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.script import (
     ATTR_CUR,
     ATTR_MAX,
     CONF_MAX,
@@ -62,12 +62,12 @@ from homeassistant.helpers.script import (
     ScriptRunResult,
     script_stack_cv,
 )
-from homeassistant.helpers.service import async_set_service_schema
-from homeassistant.helpers.trace import trace_get, trace_path
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.dt import parse_datetime
+from inpui.helpers.service import async_set_service_schema
+from inpui.helpers.trace import trace_get, trace_path
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.async_ import create_eager_task
+from inpui.util.dt import parse_datetime
 
 from .config import ScriptConfig, ValidationStatus
 from .const import (

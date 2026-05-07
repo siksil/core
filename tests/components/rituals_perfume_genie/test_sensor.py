@@ -1,14 +1,14 @@
 """Tests for the Rituals Perfume Genie sensor platform."""
 
-from homeassistant.components.rituals_perfume_genie.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.rituals_perfume_genie.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     init_integration,

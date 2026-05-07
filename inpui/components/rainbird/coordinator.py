@@ -15,10 +15,10 @@ from pyrainbird.async_client import (
 )
 from pyrainbird.data import ModelAndVersion, Schedule
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, MANUFACTURER, TIMEOUT_SECONDS
 from .types import RainbirdConfigEntry

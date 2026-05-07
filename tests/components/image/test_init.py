@@ -11,12 +11,12 @@ import httpx
 import pytest
 import respx
 
-from homeassistant.components import image
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components import image
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from .conftest import (
     MockImageEntity,

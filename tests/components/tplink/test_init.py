@@ -20,16 +20,16 @@ from kasa import (
 from kasa.iot import IotStrip
 import pytest
 
-from homeassistant.components import tplink
-from homeassistant.components.tplink.const import (
+from inpui.components import tplink
+from inpui.components.tplink.const import (
     CONF_AES_KEYS,
     CONF_CONNECTION_PARAMETERS,
     CONF_CREDENTIALS_HASH,
     CONF_DEVICE_CONFIG,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_ALIAS,
     CONF_AUTHENTICATION,
     CONF_HOST,
@@ -40,10 +40,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     _mocked_device,

@@ -13,21 +13,21 @@ from pytautulli import (
     PyTautulliApiUser,
 )
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
 
 from .const import ATTR_TOP_USER, DOMAIN
 from .coordinator import TautulliConfigEntry, TautulliDataUpdateCoordinator

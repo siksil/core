@@ -7,15 +7,15 @@ from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.const import EnergyExportMode, EnergyOperationMode
 from tesla_fleet_api.exceptions import VehicleOffline
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.tesla_fleet.select import LOW
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.tesla_fleet.select import LOW
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, setup_platform
 from .const import COMMAND_OK, VEHICLE_DATA_ALT

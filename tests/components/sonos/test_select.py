@@ -6,18 +6,18 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.sonos.const import (
+from inpui.components.sonos.const import (
     ATTR_DIALOG_LEVEL,
     MODEL_SONOS_ARC_ULTRA,
     SCAN_INTERVAL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import create_rendering_control_event
 

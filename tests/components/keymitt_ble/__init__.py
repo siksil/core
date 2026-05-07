@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.const import CONF_ADDRESS
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.const import CONF_ADDRESS
 
 from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 

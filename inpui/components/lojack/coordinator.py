@@ -9,10 +9,10 @@ from lojack_api import ApiError, AuthenticationError, LoJackClient
 from lojack_api.device import Vehicle
 from lojack_api.models import Location
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEFAULT_UPDATE_INTERVAL, DOMAIN, LOGGER
 

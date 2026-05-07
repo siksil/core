@@ -12,7 +12,7 @@ import httpx
 import ollama
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigEntryState,
     ConfigFlow,
@@ -20,10 +20,10 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME, CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, llm
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API, CONF_NAME, CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, llm
+from inpui.helpers.selector import (
     BooleanSelector,
     NumberSelector,
     NumberSelectorConfig,
@@ -36,7 +36,7 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.util.ssl import get_default_context
+from inpui.util.ssl import get_default_context
 
 from . import OllamaConfigEntry
 from .const import (

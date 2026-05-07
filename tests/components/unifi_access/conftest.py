@@ -14,9 +14,9 @@ from unifi_access_api import (
     EmergencyStatus,
 )
 
-from homeassistant.components.unifi_access.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
+from inpui.components.unifi_access.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

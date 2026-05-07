@@ -1,8 +1,8 @@
 """Test the Intelligent Storage Acceleration setup."""
 
-from homeassistant.components.isal import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.isal import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup(hass: HomeAssistant) -> None:

@@ -5,10 +5,10 @@ from unittest.mock import ANY
 
 import pytest
 
-from homeassistant.components import mqtt
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components import mqtt
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import async_fire_mqtt_message
 from tests.components.diagnostics import (

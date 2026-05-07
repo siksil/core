@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 import pytest
 from steamloop import PairingError, SteamloopConnectionError
 
-from homeassistant.components.trane.const import CONF_SECRET_KEY, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.trane.const import CONF_SECRET_KEY, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import MOCK_HOST, MOCK_SECRET_KEY
 

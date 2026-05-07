@@ -6,12 +6,12 @@ from collections.abc import Callable, Coroutine
 from functools import partial
 from typing import Any
 
-from homeassistant.core import HassJob, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo as _SsdpServiceInfo
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_ssdp, bind_hass
-from homeassistant.util.logging import catch_log_exception
+from inpui.core import HassJob, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo as _SsdpServiceInfo
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_ssdp, bind_hass
+from inpui.util.logging import catch_log_exception
 
 from . import websocket_api
 from .const import DOMAIN, SSDP_SCANNER, UPNP_SERVER

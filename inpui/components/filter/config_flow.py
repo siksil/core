@@ -7,14 +7,14 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_ENTITY_ID, CONF_NAME
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     DurationSelector,
     DurationSelectorConfig,
     EntitySelector,

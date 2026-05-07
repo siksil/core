@@ -7,7 +7,7 @@ import pytest
 from yeelight import BulbException, BulbType
 from yeelight.aio import KEY_CONNECTED
 
-from homeassistant.components.yeelight.const import (
+from inpui.components.yeelight.const import (
     CONF_DETECTED_MODEL,
     CONF_NIGHTLIGHT_SWITCH,
     CONF_NIGHTLIGHT_SWITCH_TYPE,
@@ -15,8 +15,8 @@ from homeassistant.components.yeelight.const import (
     NIGHTLIGHT_SWITCH_TYPE_LIGHT,
     STATE_CHANGE_TIME,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_ID,
@@ -24,10 +24,10 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     CONFIG_ENTRY_DATA,

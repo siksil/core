@@ -21,13 +21,13 @@ from deebot_client.events import (
 )
 from sucks import VacBot
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     CONF_DESCRIPTION,
     PERCENTAGE,
@@ -35,10 +35,10 @@ from homeassistant.const import (
     UnitOfArea,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.icon import icon_for_battery_level
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.icon import icon_for_battery_level
+from inpui.helpers.typing import StateType
 
 from . import EcovacsConfigEntry
 from .const import LEGACY_SUPPORTED_LIFESPANS, SUPPORTED_LIFESPANS

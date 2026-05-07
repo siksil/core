@@ -3,9 +3,9 @@
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import paths
 
-from homeassistant.components.sonos.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.components.sonos.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import (

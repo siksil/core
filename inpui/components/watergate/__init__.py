@@ -9,18 +9,18 @@ import logging
 from watergate_local_api import WatergateLocalApiClient
 from watergate_local_api.models import WebhookEvent
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.webhook import (
+from inpui.components.http import HomeAssistantView
+from inpui.components.webhook import (
     Request,
     Response,
     async_generate_url,
     async_register,
     async_unregister,
 )
-from homeassistant.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import AUTO_SHUT_OFF_EVENT_NAME, DOMAIN
 from .coordinator import WatergateConfigEntry, WatergateDataCoordinator

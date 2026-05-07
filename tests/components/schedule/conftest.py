@@ -7,8 +7,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.schedule import STORAGE_VERSION, STORAGE_VERSION_MINOR
-from homeassistant.components.schedule.const import (
+from inpui.components.schedule import STORAGE_VERSION, STORAGE_VERSION_MINOR
+from inpui.components.schedule.const import (
     CONF_DATA,
     CONF_FRIDAY,
     CONF_FROM,
@@ -21,9 +21,9 @@ from homeassistant.components.schedule.const import (
     CONF_WEDNESDAY,
     DOMAIN,
 )
-from homeassistant.const import CONF_ICON, CONF_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_ICON, CONF_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from aemet_opendata.const import ATTR_BYTES, ATTR_DATA, ATTR_TIMESTAMP, ATTR_TYPE
 
-from homeassistant.components.aemet.const import CONF_RADAR_UPDATES, DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.aemet.const import CONF_RADAR_UPDATES, DOMAIN
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_value_fixture
 

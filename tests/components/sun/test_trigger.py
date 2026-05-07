@@ -5,8 +5,8 @@ from datetime import datetime
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import automation, sun
-from homeassistant.const import (
+from inpui.components import automation, sun
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
@@ -14,9 +14,9 @@ from homeassistant.const import (
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, mock_component
 

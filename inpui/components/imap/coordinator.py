@@ -14,24 +14,24 @@ from typing import TYPE_CHECKING, Any
 
 from aioimaplib import AUTH, IMAP4_SSL, NONAUTH, SELECTED, AioImapException
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
     CONTENT_TYPE_TEXT_PLAIN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     TemplateError,
 )
-from homeassistant.helpers.json import json_bytes
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.ssl import (
+from inpui.helpers.json import json_bytes
+from inpui.helpers.template import Template
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.ssl import (
     SSLCipherList,
     client_context,
     create_no_verify_ssl_context,

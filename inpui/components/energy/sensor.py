@@ -9,36 +9,36 @@ from dataclasses import dataclass
 import logging
 from typing import Any, Final, Literal, cast
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_LAST_RESET,
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
     reset_detected,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfEnergy,
     UnitOfPower,
     UnitOfVolume,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     State,
     callback,
     split_entity_id,
     valid_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util, unit_conversion
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util, unit_conversion
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import DOMAIN
 from .data import EnergyManager, PowerConfig, async_get_manager

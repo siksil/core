@@ -4,14 +4,14 @@ from collections.abc import Callable
 
 import pytest
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
     LockState,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .conftest import WebsocketDataType
 

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.otp.const import DOMAIN
-from homeassistant.const import CONF_NAME, CONF_TOKEN
+from inpui.components.otp.const import DOMAIN
+from inpui.const import CONF_NAME, CONF_TOKEN
 
 from tests.common import MockConfigEntry
 

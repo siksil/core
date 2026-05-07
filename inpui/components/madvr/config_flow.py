@@ -8,13 +8,13 @@ import aiohttp
 from madvr.madvr import HeartBeatError, Madvr
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_NAME, DEFAULT_PORT, DOMAIN
 from .errors import CannotConnect

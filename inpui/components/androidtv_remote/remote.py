@@ -6,7 +6,7 @@ import asyncio
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_DELAY_SECS,
     ATTR_HOLD_SECS,
@@ -17,8 +17,8 @@ from homeassistant.components.remote import (
     RemoteEntity,
     RemoteEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_APP_NAME
 from .entity import AndroidTVRemoteBaseEntity

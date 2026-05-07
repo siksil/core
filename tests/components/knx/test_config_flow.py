@@ -12,14 +12,14 @@ from xknx.secure.keyring import sync_load_keyring
 from xknx.telegram import IndividualAddress
 
 from homeassistant import config_entries
-from homeassistant.components.knx.config_flow import (
+from inpui.components.knx.config_flow import (
     CONF_KEYRING_FILE,
     CONF_KNX_GATEWAY,
     CONF_KNX_TUNNELING_TYPE,
     DEFAULT_ENTRY_DATA,
     OPTION_MANUAL_TUNNEL,
 )
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_KNX_AUTOMATIC,
     CONF_KNX_CONNECTION_TYPE,
     CONF_KNX_DEFAULT_STATE_UPDATER,
@@ -46,9 +46,9 @@ from homeassistant.components.knx.const import (
     CONF_KNX_TUNNELING_TCP_SECURE,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, get_fixture_path
 

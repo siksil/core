@@ -2,11 +2,11 @@
 
 from aiohue.util import normalize_bridge_id
 
-from homeassistant.components import persistent_notification
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import persistent_notification
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .bridge import HueBridge, HueConfigEntry
 from .const import DOMAIN

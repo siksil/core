@@ -4,17 +4,17 @@ from kasa import Feature
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.components.tplink.entity import EXCLUDED_FEATURES
-from homeassistant.components.tplink.select import SELECT_DESCRIPTIONS
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.tplink.const import DOMAIN
+from inpui.components.tplink.entity import EXCLUDED_FEATURES
+from inpui.components.tplink.select import SELECT_DESCRIPTIONS
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     _mocked_device,

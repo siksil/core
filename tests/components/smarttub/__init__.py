@@ -2,9 +2,9 @@
 
 from datetime import timedelta
 
-from homeassistant.components.smarttub.const import SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.smarttub.const import SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

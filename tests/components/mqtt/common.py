@@ -14,32 +14,32 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config as module_hass_config
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import debug_info
-from homeassistant.components.mqtt.const import (
+from inpui.components import mqtt
+from inpui.components.mqtt import debug_info
+from inpui.components.mqtt.const import (
     MQTT_CONNECTION_STATE,
     SUPPORTED_COMPONENTS,
 )
-from homeassistant.components.mqtt.entity import MQTT_ATTRIBUTES_BLOCKED
-from homeassistant.components.mqtt.models import PublishPayloadType
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.mqtt.entity import MQTT_ATTRIBUTES_BLOCKED
+from inpui.components.mqtt.models import PublishPayloadType
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     SERVICE_RELOAD,
     STATE_UNAVAILABLE,
     EntityCategory,
 )
-from homeassistant.core import HassJobType, HomeAssistant
-from homeassistant.generated.mqtt import MQTT
-from homeassistant.helpers import (
+from inpui.core import HassJobType, HomeAssistant
+from inpui.generated.mqtt import MQTT
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_mqtt_message
 from tests.typing import MqttMockHAClientGenerator, MqttMockPahoClient

@@ -5,10 +5,10 @@ from __future__ import annotations
 from aioecowitt import EcoWittListener
 from aiohttp import web
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
 
 from .const import DOMAIN
 
@@ -39,7 +39,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: EcowittConfigEntry) -> b
         webhook.async_unregister(hass, entry.data[CONF_WEBHOOK_ID])
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _stop_ecowitt)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _stop_ecowitt)
     )
 
     return True

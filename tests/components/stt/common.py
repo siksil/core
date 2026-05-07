@@ -6,7 +6,7 @@ from collections.abc import AsyncIterable, Callable, Coroutine
 from pathlib import Path
 from typing import Any
 
-from homeassistant.components.stt import (
+from inpui.components.stt import (
     AudioBitRates,
     AudioChannels,
     AudioCodecs,
@@ -18,10 +18,10 @@ from homeassistant.components.stt import (
     SpeechResultState,
     SpeechToTextEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from tests.common import MockPlatform, mock_platform
 

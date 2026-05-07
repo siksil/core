@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_SWING_MODE,
@@ -20,14 +20,14 @@ from homeassistant.components.climate import (
     SWING_BOTH,
     HVACMode,
 )
-from homeassistant.components.fujitsu_fglair.climate import (
+from inpui.components.fujitsu_fglair.climate import (
     HA_TO_FUJI_FAN,
     HA_TO_FUJI_HVAC,
     HA_TO_FUJI_SWING,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import entity_id
 

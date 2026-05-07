@@ -8,10 +8,10 @@ from typing import Any
 
 from b2sdk.v2 import Bucket, exception
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.event import async_track_time_interval
 
 # Import from b2_client to ensure timeout configuration is applied
 from .b2_client import B2Api, InMemoryAccountInfo

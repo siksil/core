@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING, Any
 
 from music_assistant_models.errors import MusicAssistantError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 if TYPE_CHECKING:
     from music_assistant_client import MusicAssistantClient

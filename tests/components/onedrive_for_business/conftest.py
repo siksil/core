@@ -18,19 +18,19 @@ from onedrive_personal_sdk.models.items import (
 )
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.onedrive_for_business.const import (
+from inpui.components.onedrive_for_business.const import (
     CONF_FOLDER_ID,
     CONF_FOLDER_PATH,
     CONF_TENANT_ID,
     DOMAIN,
     OAUTH_SCOPES,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import BACKUP_METADATA, CLIENT_ID, CLIENT_SECRET, IDENTITY_SET, TENANT_ID
 

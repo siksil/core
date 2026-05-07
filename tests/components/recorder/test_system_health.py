@@ -4,10 +4,10 @@ from unittest.mock import ANY, Mock, patch
 
 import pytest
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.const import SupportedDialect
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.const import SupportedDialect
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import async_wait_recording_done
 

@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 from adguardhome import AdGuardHomeConnectionError
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -7,7 +7,7 @@ from unittest.mock import MagicMock, patch
 import av
 import pytest
 
-from homeassistant.components.stream import (
+from inpui.components.stream import (
     SOURCE_TIMEOUT,
     StreamClientError,
     StreamOpenClientError,
@@ -15,11 +15,11 @@ from homeassistant.components.stream import (
     async_check_stream_client_error,
     create_stream,
 )
-from homeassistant.components.stream.const import ATTR_PREFER_TCP
-from homeassistant.const import EVENT_LOGGING_CHANGED
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.stream.const import ATTR_PREFER_TCP
+from inpui.const import EVENT_LOGGING_CHANGED
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from .common import dynamic_stream_settings
 

@@ -8,13 +8,13 @@ import pytest
 from ring_doorbell import Ring
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ring.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.ring.const import DOMAIN, SCAN_INTERVAL
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import MockConfigEntry, async_check_entity_translations, setup_platform
 from .device_mocks import (

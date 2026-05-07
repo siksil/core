@@ -11,8 +11,8 @@ from async_upnp_client.exceptions import UpnpCommunicationError
 from async_upnp_client.profiles.igd import IgdDevice
 import pytest
 
-from homeassistant.components import ssdp
-from homeassistant.components.upnp.const import (
+from inpui.components import ssdp
+from inpui.components.upnp.const import (
     CONFIG_ENTRY_FORCE_POLL,
     CONFIG_ENTRY_LOCATION,
     CONFIG_ENTRY_MAC_ADDRESS,
@@ -21,8 +21,8 @@ from homeassistant.components.upnp.const import (
     CONFIG_ENTRY_UDN,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
 
 from .conftest import (
     TEST_DISCOVERY,

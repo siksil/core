@@ -6,9 +6,9 @@ from unittest.mock import patch
 from lacrosse_view import HTTPError, Sensor
 import pytest
 
-from homeassistant.components.lacrosse_view.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.lacrosse_view.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import (
     MOCK_ENTRY_DATA,

@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.helpers.device_registry import (
+from inpui.helpers.device_registry import (
     CONNECTION_BLUETOOTH,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import HusqvarnaCoordinator

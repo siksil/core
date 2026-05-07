@@ -15,7 +15,7 @@ from aioshelly.exceptions import (
 from aioshelly.rpc_device.utils import bluetooth_mac_from_primary_mac
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     BLE_SCANNER_FIRMWARE_UNSUPPORTED_ISSUE_ID,
     BLE_SCANNER_MIN_FIRMWARE,
     BLOCK_EXPECTED_SLEEP_PERIOD,
@@ -27,23 +27,23 @@ from homeassistant.components.shelly.const import (
     MODELS_WITH_WRONG_SLEEP_PERIOD,
     BLEScannerMode,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_MODEL,
     CONF_PORT,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.device_registry import (
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceRegistry,
     format_mac,
 )
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.setup import async_setup_component
 
 from . import MOCK_MAC, init_integration, mutate_rpc_device_status, register_sub_device
 

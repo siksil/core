@@ -5,8 +5,8 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.pegel_online.const import CONF_STATION, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.pegel_online.const import CONF_STATION, DOMAIN
+from inpui.core import HomeAssistant
 
 from . import PegelOnlineMock
 from .const import (

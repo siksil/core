@@ -9,18 +9,18 @@ import aiohttp
 from aiohttp.client_exceptions import ClientError, ClientResponseError
 import tibber
 
-from homeassistant.const import CONF_ACCESS_TOKEN, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.const import CONF_ACCESS_TOKEN, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util, ssl as ssl_util
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util, ssl as ssl_util
 
 from .const import AUTH_IMPLEMENTATION, DATA_HASS_CONFIG, DOMAIN, TibberConfigEntry
 from .coordinator import (
@@ -115,7 +115,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: TibberConfigEntry) -> bo
     async def _close(event: Event) -> None:
         await tibber_connection.rt_disconnect()
 
-    entry.async_on_unload(hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _close))
+    entry.async_on_unload(hass.bus.async_listen_once(EVENT_INPUI_STOP, _close))
 
     try:
         await tibber_connection.update_info()

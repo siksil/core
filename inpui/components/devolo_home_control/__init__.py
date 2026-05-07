@@ -12,12 +12,12 @@ from devolo_home_control_api.exceptions.gateway import GatewayOfflineError
 from devolo_home_control_api.homecontrol import HomeControl
 from devolo_home_control_api.mydevolo import Mydevolo
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN, PLATFORMS
 
@@ -39,12 +39,12 @@ async def async_setup_entry(
     def shutdown(event: Event) -> None:
         for gateway in entry.runtime_data:
             gateway.websocket_disconnect(
-                f"websocket disconnect requested by {EVENT_HOMEASSISTANT_STOP}"
+                f"websocket disconnect requested by {EVENT_INPUI_STOP}"
             )
 
-    # Listen when EVENT_HOMEASSISTANT_STOP is fired
+    # Listen when EVENT_INPUI_STOP is fired
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown)
     )
 
     zeroconf_instance = await zeroconf.async_get_instance(hass)

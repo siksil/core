@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock, patch
 
 from pytautulli import exceptions
 
-from homeassistant.components.tautulli.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.tautulli.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import CONF_DATA, NAME, patch_config_flow_tautulli, setup_integration
 

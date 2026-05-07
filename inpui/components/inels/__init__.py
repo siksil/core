@@ -10,16 +10,16 @@ from inelsmqtt import InelsMqtt
 from inelsmqtt.devices import Device
 from inelsmqtt.discovery import InelsDiscovery
 
-from homeassistant.components import mqtt as ha_mqtt
-from homeassistant.components.mqtt import (
+from inpui.components import mqtt as ha_mqtt
+from inpui.components.mqtt import (
     ReceiveMessage,
     async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import LOGGER, PLATFORMS
 

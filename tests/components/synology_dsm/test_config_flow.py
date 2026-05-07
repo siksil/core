@@ -14,15 +14,15 @@ from synology_dsm.exceptions import (
 )
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.synology_dsm.config_flow import CONF_OTP_CODE
-from homeassistant.components.synology_dsm.const import (
+from inpui.components.synology_dsm.config_flow import CONF_OTP_CODE
+from inpui.components.synology_dsm.const import (
     CONF_BACKUP_PATH,
     CONF_BACKUP_SHARE,
     CONF_SNAPSHOT_QUALITY,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -31,14 +31,14 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .common import mock_dsm_information
 from .consts import (

@@ -10,22 +10,22 @@ from typing import Any, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_MODE,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import ToggleEntity, ToggleEntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import ToggleEntity, ToggleEntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
 
 from .const import (  # noqa: F401
     ATTR_ACTION,

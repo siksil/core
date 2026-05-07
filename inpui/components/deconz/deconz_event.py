@@ -13,16 +13,16 @@ from pydeconz.models.sensor.presence import Presence, PresenceStatePresenceEvent
 from pydeconz.models.sensor.relative_rotary import RelativeRotary, RelativeRotaryEvent
 from pydeconz.models.sensor.switch import Switch
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_EVENT,
     CONF_ID,
     CONF_UNIQUE_ID,
     CONF_XY,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import slugify
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.util import slugify
 
 from .const import ATTR_DURATION, ATTR_ROTATION, CONF_ANGLE, CONF_GESTURE, LOGGER
 from .entity import DeconzBase

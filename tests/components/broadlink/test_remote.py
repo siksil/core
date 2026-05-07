@@ -3,16 +3,16 @@
 from base64 import b64decode
 from unittest.mock import call
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.components.remote import (
+from inpui.components.broadlink.const import DOMAIN
+from inpui.components.remote import (
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_SEND_COMMAND,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import get_device
 

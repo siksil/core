@@ -11,9 +11,9 @@ from pytrafikverket.exceptions import InvalidAuthentication, NoTrainAnnouncement
 from pytrafikverket.models import TrainStopModel
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntry
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from tests.common import async_fire_time_changed
 

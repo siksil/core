@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import uuid
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import singleton, storage
 

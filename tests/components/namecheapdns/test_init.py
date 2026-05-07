@@ -6,9 +6,9 @@ from aiohttp import ClientError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.namecheapdns.const import UPDATE_URL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.namecheapdns.const import UPDATE_URL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import TEST_USER_INPUT
 

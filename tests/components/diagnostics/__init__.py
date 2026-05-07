@@ -3,12 +3,12 @@
 from http import HTTPStatus
 from typing import cast
 
-from homeassistant.components.diagnostics import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonObjectType
+from inpui.components.diagnostics import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonObjectType
 
 from tests.typing import ClientSessionGenerator
 

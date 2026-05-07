@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, TypedDict
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 

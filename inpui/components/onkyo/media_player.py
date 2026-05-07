@@ -8,16 +8,16 @@ from typing import TYPE_CHECKING, Any
 
 from aioonkyo import Code, Kind, Status, Zone, command, query, status
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     DOMAIN,

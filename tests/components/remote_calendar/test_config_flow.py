@@ -4,11 +4,11 @@ from httpx import HTTPError, InvalidURL, Response, TimeoutException
 import pytest
 import respx
 
-from homeassistant.components.remote_calendar.const import CONF_CALENDAR_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.remote_calendar.const import CONF_CALENDAR_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 from .conftest import CALENDAR_NAME, CALENDER_URL

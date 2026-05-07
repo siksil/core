@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from tiltpi import TiltColor, TiltHydrometerData
 
-from homeassistant.components.tilt_pi.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.components.tilt_pi.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
 
 from tests.common import MockConfigEntry
 

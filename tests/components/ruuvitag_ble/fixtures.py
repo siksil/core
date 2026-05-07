@@ -1,6 +1,6 @@
 """Fixtures for testing Ruuvi BLE."""
 
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 NOT_RUUVITAG_SERVICE_INFO = BluetoothServiceInfo(
     name="Not it",

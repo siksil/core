@@ -2,7 +2,7 @@
 
 import json
 
-from homeassistant.util import slugify
+from inpui.util import slugify
 from script.hassfest.manifest import SUPPORTED_IOT_CLASSES
 
 from .const import COMPONENT_DIR

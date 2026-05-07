@@ -9,9 +9,9 @@ from bosch_alarm_mode2 import Panel
 from bosch_alarm_mode2.const import ALARM_MEMORY_PRIORITIES
 from bosch_alarm_mode2.panel import Area
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BoschAlarmConfigEntry
 from .entity import BoschAlarmAreaEntity

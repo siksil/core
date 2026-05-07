@@ -8,10 +8,10 @@ from unittest.mock import Mock, call, patch
 import pytest
 
 from homeassistant import loader
-from homeassistant.const import EVENT_CORE_CONFIG_UPDATE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import translation
-from homeassistant.setup import async_setup_component
+from inpui.const import EVENT_CORE_CONFIG_UPDATE
+from inpui.core import HomeAssistant
+from inpui.helpers import translation
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

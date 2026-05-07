@@ -18,18 +18,18 @@ from reolink_aio.exceptions import (
     UnexpectedDataError,
 )
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.components.reolink.const import DOMAIN
-from homeassistant.components.reolink.util import get_device_uid_and_ch
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.components.reolink.const import DOMAIN
+from inpui.components.reolink.util import get_device_uid_and_ch
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from .conftest import TEST_CAM_NAME, TEST_UID, TEST_UID_CAM
 

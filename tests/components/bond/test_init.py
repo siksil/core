@@ -6,17 +6,17 @@ from aiohttp import ClientConnectionError, ClientResponseError
 from bond_async import DeviceType
 import pytest
 
-from homeassistant.components.bond import DOMAIN, BondData
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ASSUMED_STATE, CONF_ACCESS_TOKEN, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.bond import DOMAIN, BondData
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ASSUMED_STATE, CONF_ACCESS_TOKEN, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .common import (
     ceiling_fan,

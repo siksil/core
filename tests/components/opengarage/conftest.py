@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.opengarage.const import CONF_DEVICE_KEY, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
+from inpui.components.opengarage.const import CONF_DEVICE_KEY, DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

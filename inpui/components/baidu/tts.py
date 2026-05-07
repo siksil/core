@@ -6,14 +6,14 @@ from typing import Any
 from aip import AipSpeech
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_API_KEY
+from inpui.helpers import config_validation as cv
 
 _LOGGER = logging.getLogger(__name__)
 

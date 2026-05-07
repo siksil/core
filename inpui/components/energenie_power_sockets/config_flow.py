@@ -6,7 +6,7 @@ from pyegps import get_device, search_for_devices
 from pyegps.exceptions import MissingLibrary, UsbError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import CONF_DEVICE_API_ID, DOMAIN, LOGGER
 

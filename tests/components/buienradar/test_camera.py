@@ -7,12 +7,12 @@ from http import HTTPStatus
 
 from aiohttp.client_exceptions import ClientResponseError
 
-from homeassistant.components.buienradar.const import CONF_DELTA, DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.buienradar.const import CONF_DELTA, DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

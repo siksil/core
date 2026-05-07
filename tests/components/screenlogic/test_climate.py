@@ -7,7 +7,7 @@ import pytest
 from screenlogicpy import ScreenLogicGateway
 from screenlogicpy.device_const.heat import HEAT_MODE
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODES,
@@ -18,8 +18,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.util import slugify
 
 from . import (
     DATA_MISSING_VALUES_CHEM_CHLOR,

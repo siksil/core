@@ -6,27 +6,27 @@ from unittest.mock import ANY, AsyncMock, Mock, call, patch
 import pytest
 from universal_silabs_flasher.flasher import Zbt2Flasher
 
-from homeassistant.components.homeassistant_connect_zbt2.const import DOMAIN
-from homeassistant.components.homeassistant_hardware import (
+from inpui.components.homeassistant_connect_zbt2.const import DOMAIN
+from inpui.components.homeassistant_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_notify_firmware_info,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.usb import DOMAIN as USB_DOMAIN, USBDevice
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components.usb import DOMAIN as USB_DOMAIN, USBDevice
+from inpui.config_entries import ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.setup import async_setup_component
 
 from .common import USB_DATA_ZBT2
 

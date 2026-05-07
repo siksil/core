@@ -7,9 +7,9 @@ from typing import Any
 from pydeconz.models.event import EventType
 from pydeconz.models.light.light import Light
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .const import POWER_PLUGS

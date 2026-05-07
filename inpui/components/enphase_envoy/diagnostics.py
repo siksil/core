@@ -11,18 +11,18 @@ from attr import asdict
 from pyenphase.envoy import Envoy
 from pyenphase.exceptions import EnvoyError
 
-from homeassistant.components.diagnostics import async_redact_data, entity_entry_as_dict
-from homeassistant.const import (
+from inpui.components.diagnostics import async_redact_data, entity_entry_as_dict
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_UNIQUE_ID,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import json_loads
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.json import json_dumps
+from inpui.util.json import json_loads
 
 from .const import OPTION_DIAGNOSTICS_INCLUDE_FIXTURES
 from .coordinator import EnphaseConfigEntry

@@ -7,17 +7,17 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.bayesian import binary_sensor as bayesian
-from homeassistant.components.bayesian.const import (
+from inpui.components.bayesian import binary_sensor as bayesian
+from inpui.components.bayesian.const import (
     DEFAULT_PROBABILITY_THRESHOLD,
     DOMAIN,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import (
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_RELOAD,
     STATE_OFF,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, get_fixture_path
 

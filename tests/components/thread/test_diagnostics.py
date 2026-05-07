@@ -7,10 +7,10 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from zeroconf import DNSCache, ServiceInfo
 
-from homeassistant.components.thread import dataset_store
-from homeassistant.components.thread.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.thread import dataset_store
+from inpui.components.thread.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import DATASET_1
 

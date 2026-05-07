@@ -12,12 +12,12 @@ from PIL import Image, ImageDraw, UnidentifiedImageError
 from pydoods import PyDOODS
 import voluptuous as vol
 
-from homeassistant.components.image_processing import (
+from inpui.components.image_processing import (
     CONF_CONFIDENCE,
     PLATFORM_SCHEMA as IMAGE_PROCESSING_PLATFORM_SCHEMA,
     ImageProcessingEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_COVERS,
     CONF_ENTITY_ID,
     CONF_NAME,
@@ -25,11 +25,11 @@ from homeassistant.const import (
     CONF_TIMEOUT,
     CONF_URL,
 )
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.pil import draw_box
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.pil import draw_box
 
 _LOGGER = logging.getLogger(__name__)
 

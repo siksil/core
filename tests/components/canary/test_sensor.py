@@ -3,23 +3,23 @@
 from datetime import timedelta
 from unittest.mock import patch
 
-from homeassistant.components.canary.const import DOMAIN, MANUFACTURER
-from homeassistant.components.canary.sensor import (
+from inpui.components.canary.const import DOMAIN, MANUFACTURER
+from inpui.components.canary.sensor import (
     ATTR_AIR_QUALITY,
     STATE_AIR_QUALITY_ABNORMAL,
     STATE_AIR_QUALITY_NORMAL,
     STATE_AIR_QUALITY_VERY_ABNORMAL,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.dt import utcnow
 
 from . import init_integration, mock_device, mock_location, mock_reading
 

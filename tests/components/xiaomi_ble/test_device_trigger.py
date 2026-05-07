@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.bluetooth import DOMAIN as BLUETOOTH_DOMAIN
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.xiaomi_ble.const import CONF_SUBTYPE, DOMAIN
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.bluetooth import DOMAIN as BLUETOOTH_DOMAIN
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.xiaomi_ble.const import CONF_SUBTYPE, DOMAIN
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import make_advertisement
 

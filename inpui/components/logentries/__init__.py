@@ -6,10 +6,10 @@ import logging
 import requests
 import voluptuous as vol
 
-from homeassistant.const import CONF_TOKEN, EVENT_STATE_CHANGED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, state as state_helper
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_TOKEN, EVENT_STATE_CHANGED
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, state as state_helper
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

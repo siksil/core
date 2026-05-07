@@ -6,9 +6,9 @@ from typing import Any
 
 from elkm1_lib.tasks import Task
 
-from homeassistant.components.scene import Scene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.scene import Scene
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElkM1ConfigEntry
 from .entity import ElkAttachedEntity, ElkEntity, create_elk_entities

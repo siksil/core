@@ -8,9 +8,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import kira
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import kira
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 TEST_CONFIG = {
     kira.DOMAIN: {

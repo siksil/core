@@ -1,8 +1,8 @@
 """Tests for flux_led sensor platform."""
 
-from homeassistant.components import flux_led
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import flux_led
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     FLUX_DISCOVERY,

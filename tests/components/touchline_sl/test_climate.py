@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.touchline_sl import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.climate import HVACMode
+from inpui.components.touchline_sl import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import make_mock_module, make_mock_zone
 

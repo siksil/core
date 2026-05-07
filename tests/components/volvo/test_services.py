@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from httpx import AsyncClient, HTTPError, HTTPStatusError, Request, Response
 import pytest
 
-from homeassistant.components.volvo.const import DOMAIN
-from homeassistant.components.volvo.services import (
+from inpui.components.volvo.const import DOMAIN
+from inpui.components.volvo.services import (
     CONF_CONFIG_ENTRY_ID,
     CONF_IMAGE_TYPES,
     SERVICE_GET_IMAGE_URL,
     _async_image_exists,
     _parse_exterior_image_url,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry
 

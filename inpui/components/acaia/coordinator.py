@@ -8,12 +8,12 @@ import logging
 from aioacaia.acaiascale import AcaiaScale
 from aioacaia.exceptions import AcaiaDeviceNotFound, AcaiaError
 
-from homeassistant.components.bluetooth import async_get_scanner
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.components.bluetooth import async_get_scanner
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_IS_NEW_STYLE_SCALE
 

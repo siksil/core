@@ -4,16 +4,16 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_SWING_MODE,
     DOMAIN as CLIMATE_DOMAIN,
     HVACMode,
 )
-from homeassistant.const import ATTR_MODE, ATTR_STATE
-from homeassistant.core import HomeAssistant, SupportsResponse, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.const import ATTR_MODE, ATTR_STATE
+from inpui.core import HomeAssistant, SupportsResponse, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

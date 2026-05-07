@@ -3,14 +3,14 @@
 from datetime import timedelta
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.advantage_air.const import DOMAIN
-from homeassistant.components.advantage_air.sensor import (
+from inpui.components.advantage_air.const import DOMAIN
+from inpui.components.advantage_air.sensor import (
     ADVANTAGE_AIR_SET_COUNTDOWN_VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import add_mock_config
 

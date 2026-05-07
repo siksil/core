@@ -7,13 +7,13 @@ from unittest.mock import patch
 from pycsspeechtts import pycsspeechtts
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.components.media_player import ATTR_MEDIA_CONTENT_ID
-from homeassistant.components.microsoft.tts import SUPPORTED_LANGUAGES
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.exceptions import ServiceNotFound
-from homeassistant.setup import async_setup_component
+from inpui.components import tts
+from inpui.components.media_player import ATTR_MEDIA_CONTENT_ID
+from inpui.components.microsoft.tts import SUPPORTED_LANGUAGES
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.core_config import async_process_ha_core_config
+from inpui.exceptions import ServiceNotFound
+from inpui.setup import async_setup_component
 
 from tests.components.tts.common import retrieve_media
 from tests.typing import ClientSessionGenerator

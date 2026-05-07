@@ -6,16 +6,16 @@ from unittest.mock import MagicMock
 from pysaunum import SaunumException
 import pytest
 
-from homeassistant.components.saunum.const import DOMAIN
-from homeassistant.components.saunum.services import (
+from inpui.components.saunum.const import DOMAIN
+from inpui.components.saunum.services import (
     ATTR_DURATION,
     ATTR_FAN_DURATION,
     ATTR_TARGET_TEMPERATURE,
     SERVICE_START_SESSION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry
 

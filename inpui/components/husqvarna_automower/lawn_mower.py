@@ -5,14 +5,14 @@ from typing import TYPE_CHECKING
 
 from aioautomower.model import MowerActivities, MowerStates, WorkArea
 
-from homeassistant.components.lawn_mower import (
+from inpui.components.lawn_mower import (
     LawnMowerActivity,
     LawnMowerEntity,
     LawnMowerEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AutomowerConfigEntry
 from .const import DOMAIN, ERROR_STATES, MOW, PARK

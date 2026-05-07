@@ -8,12 +8,12 @@ from typing import TYPE_CHECKING
 from google.genai.errors import APIError
 from google.genai.types import GenerateContentConfig, Part, PartUnionDict
 
-from homeassistant.components import ai_task, conversation
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.json import json_loads
+from inpui.components import ai_task, conversation
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.json import json_loads
 
 from .const import (
     CONF_CHAT_MODEL,
@@ -29,7 +29,7 @@ from .entity import (
 )
 
 if TYPE_CHECKING:
-    from homeassistant.config_entries import ConfigSubentry
+    from inpui.config_entries import ConfigSubentry
 
     from . import GoogleGenerativeAIConfigEntry
 

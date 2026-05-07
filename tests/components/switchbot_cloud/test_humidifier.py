@@ -7,12 +7,12 @@ import switchbot_api
 from switchbot_api import Device
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.humidifier import DOMAIN as HUMIDIFIER_DOMAIN
-from homeassistant.components.switchbot_cloud import SwitchBotAPI
-from homeassistant.components.switchbot_cloud.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.humidifier import DOMAIN as HUMIDIFIER_DOMAIN
+from inpui.components.switchbot_cloud import SwitchBotAPI
+from inpui.components.switchbot_cloud.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import HUMIDIFIER2_INFO, HUMIDIFIER_INFO, configure_integration
 

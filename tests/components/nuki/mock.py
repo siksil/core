@@ -1,8 +1,8 @@
 """Mockup Nuki device."""
 
-from homeassistant.components.nuki.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.nuki.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

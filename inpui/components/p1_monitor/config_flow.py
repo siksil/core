@@ -7,10 +7,10 @@ from typing import Any
 from p1monitor import P1Monitor, P1MonitorError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     NumberSelectorMode,

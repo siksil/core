@@ -21,15 +21,15 @@ from aioairzone_cloud.const import (
     AZD_TEMP_SET_MIN,
 )
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_PERFORMANCE,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AirzoneCloudConfigEntry, AirzoneUpdateCoordinator
 from .entity import AirzoneHotWaterEntity

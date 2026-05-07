@@ -4,8 +4,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, config_validation as cv, intent
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, config_validation as cv, intent
 
 from . import (
     DOMAIN,

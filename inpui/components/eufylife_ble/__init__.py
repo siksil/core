@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from eufylife_ble_client import EufyLifeBLEDevice
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
-from homeassistant.const import CONF_MODEL, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import ADDRESS, BluetoothCallbackMatcher
+from inpui.const import CONF_MODEL, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
 
 from .models import EufyLifeConfigEntry, EufyLifeData
 
@@ -52,7 +52,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: EufyLifeConfigEntry) -> 
         await client.stop()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
     )
     return True
 

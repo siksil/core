@@ -5,8 +5,8 @@ from datetime import timedelta
 from bond_async import Action, DeviceType
 import pytest
 
-from homeassistant.components.bond.const import DOMAIN
-from homeassistant.components.bond.services import (
+from inpui.components.bond.const import DOMAIN
+from inpui.components.bond.services import (
     ATTR_POWER_STATE,
     SERVICE_SET_LIGHT_BRIGHTNESS_TRACKED_STATE,
     SERVICE_SET_LIGHT_POWER_TRACKED_STATE,
@@ -14,24 +14,24 @@ from homeassistant.components.bond.services import (
     SERVICE_START_INCREASING_BRIGHTNESS,
     SERVICE_STOP,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import utcnow
 
 from .common import (
     help_test_entity_available,

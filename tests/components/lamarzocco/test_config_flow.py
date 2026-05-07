@@ -8,25 +8,25 @@ from pylamarzocco.const import ModelName
 from pylamarzocco.exceptions import AuthFail, RequestNotSuccessful
 import pytest
 
-from homeassistant.components.lamarzocco.config_flow import CONF_MACHINE
-from homeassistant.components.lamarzocco.const import (
+from inpui.components.lamarzocco.config_flow import CONF_MACHINE
+from inpui.components.lamarzocco.const import (
     CONF_INSTALLATION_KEY,
     CONF_OFFLINE_MODE,
     CONF_USE_BLUETOOTH,
     DOMAIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_BLUETOOTH,
     SOURCE_DHCP,
     SOURCE_USER,
     ConfigEntryState,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ADDRESS, CONF_MAC, CONF_PASSWORD, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_ADDRESS, CONF_MAC, CONF_PASSWORD, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import (
     MOCK_INSTALLATION_KEY,

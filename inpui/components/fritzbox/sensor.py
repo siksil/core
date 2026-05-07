@@ -9,14 +9,14 @@ from typing import Final
 
 from pyfritzhome.fritzhomedevice import FritzhomeDevice
 
-from homeassistant.components.climate import PRESET_COMFORT, PRESET_ECO
-from homeassistant.components.sensor import (
+from inpui.components.climate import PRESET_COMFORT, PRESET_ECO
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     EntityCategory,
     UnitOfElectricCurrent,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.dt import utc_from_timestamp
 
 from .coordinator import FritzboxConfigEntry
 from .entity import FritzBoxDeviceEntity

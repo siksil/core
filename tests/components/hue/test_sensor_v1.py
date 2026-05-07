@@ -5,12 +5,12 @@ from unittest.mock import Mock
 import aiohue
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components import hue
-from homeassistant.components.hue.const import ATTR_HUE_EVENT
-from homeassistant.components.hue.v1 import sensor_base
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components import hue
+from inpui.components.hue.const import ATTR_HUE_EVENT
+from inpui.components.hue.v1 import sensor_base
+from inpui.const import EntityCategory, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .conftest import create_mock_bridge, setup_platform
 

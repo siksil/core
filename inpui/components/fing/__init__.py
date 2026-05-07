@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
 
 from .coordinator import FingConfigEntry, FingDataUpdateCoordinator
 

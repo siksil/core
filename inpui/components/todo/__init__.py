@@ -12,23 +12,23 @@ from typing import Any, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import frontend, websocket_api
-from homeassistant.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID
-from homeassistant.core import (
+from inpui.components import frontend, websocket_api
+from inpui.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ENTITY_ID
+from inpui.core import (
     CALLBACK_TYPE,
     HomeAssistant,
     ServiceCall,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_DESCRIPTION,

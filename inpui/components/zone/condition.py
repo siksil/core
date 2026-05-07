@@ -6,7 +6,7 @@ from typing import Any, Unpack, cast
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_GPS_ACCURACY,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
@@ -16,17 +16,17 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ConditionErrorContainer, ConditionErrorMessage
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import move_top_level_schema_fields_to_options
-from homeassistant.helpers.condition import (
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ConditionErrorContainer, ConditionErrorMessage
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import move_top_level_schema_fields_to_options
+from inpui.helpers.condition import (
     Condition,
     ConditionChecker,
     ConditionCheckParams,
     ConditionConfig,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from . import in_zone
 

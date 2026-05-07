@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.generic.diagnostics import redact_url
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.components.generic.diagnostics import redact_url
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

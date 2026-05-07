@@ -10,9 +10,9 @@ from huum.exceptions import Forbidden, NotAuthenticated
 from huum.huum import Huum
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

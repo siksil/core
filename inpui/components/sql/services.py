@@ -9,18 +9,18 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 import voluptuous as vol
 
-from homeassistant.components.recorder import CONF_DB_URL, get_instance
-from homeassistant.core import (
+from inpui.components.recorder import CONF_DB_URL, get_instance
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.trigger_template_entity import ValueTemplate
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.trigger_template_entity import ValueTemplate
+from inpui.util.json import JsonValueType
 
 from .const import CONF_QUERY, DOMAIN
 from .util import (

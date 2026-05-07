@@ -11,9 +11,9 @@ import pytest
 import respx
 
 from homeassistant import config_entries
-from homeassistant.components.generic.const import DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.core import HomeAssistant
+from inpui.components.generic.const import DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

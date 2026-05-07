@@ -8,15 +8,15 @@ from typing import Any
 from omnilogic import LoginException, OmniLogic, OmniLogicException
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers import aiohttp_client
 
 from .const import CONF_SCAN_INTERVAL, DEFAULT_PH_OFFSET, DEFAULT_SCAN_INTERVAL, DOMAIN
 

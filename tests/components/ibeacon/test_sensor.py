@@ -4,16 +4,16 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
-from homeassistant.components.ibeacon.const import DOMAIN, UPDATE_INTERVAL
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
+from inpui.components.ibeacon.const import DOMAIN, UPDATE_INTERVAL
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     BLUECHARM_BEACON_SERVICE_INFO,

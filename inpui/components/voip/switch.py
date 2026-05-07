@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.switch import SwitchEntity, SwitchEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import restore_state
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity, SwitchEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON, EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import restore_state
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .devices import VoIPDevice

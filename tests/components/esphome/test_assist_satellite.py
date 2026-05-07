@@ -22,35 +22,35 @@ from aioesphomeapi import (
 )
 import pytest
 
-from homeassistant.components import (
+from inpui.components import (
     assist_pipeline,
     assist_satellite,
     conversation,
     tts,
 )
-from homeassistant.components.assist_pipeline import PipelineEvent, PipelineEventType
-from homeassistant.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline import PipelineEvent, PipelineEventType
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
     KEY_ASSIST_PIPELINE,
 )
-from homeassistant.components.assist_satellite import (
+from inpui.components.assist_satellite import (
     AssistSatelliteConfiguration,
     AssistSatelliteEntityFeature,
     AssistSatelliteWakeWord,
 )
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.assist_satellite.entity import AssistSatelliteState
-from homeassistant.components.esphome.assist_satellite import VoiceAssistantUDPServer
-from homeassistant.components.esphome.const import NO_WAKE_WORD
-from homeassistant.components.select import (
+from inpui.components.assist_satellite.entity import AssistSatelliteState
+from inpui.components.esphome.assist_satellite import VoiceAssistantUDPServer
+from inpui.components.esphome.const import NO_WAKE_WORD
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, intent as intent_helper
-from homeassistant.helpers.network import get_url
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, intent as intent_helper
+from inpui.helpers.network import get_url
+from inpui.setup import async_setup_component
 
 from .common import get_satellite_entity
 from .conftest import MockESPHomeDeviceType

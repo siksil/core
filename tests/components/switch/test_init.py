@@ -3,10 +3,10 @@
 import pytest
 
 from homeassistant import core
-from homeassistant.components import switch
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import switch
+from inpui.const import CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import common
 from .common import MockSwitch

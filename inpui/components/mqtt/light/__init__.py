@@ -6,11 +6,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import light
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.components import light
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from ..entity import async_setup_entity_entry_helper
 from .schema import CONF_SCHEMA, MQTT_LIGHT_SCHEMA_SCHEMA

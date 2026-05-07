@@ -1,6 +1,6 @@
 """Tests for the OneDrive for Business integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

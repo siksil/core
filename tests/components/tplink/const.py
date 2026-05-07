@@ -7,7 +7,7 @@ from kasa import (
     DeviceFamily,
 )
 
-from homeassistant.components.tplink import (
+from inpui.components.tplink import (
     CONF_AES_KEYS,
     CONF_ALIAS,
     CONF_CAMERA_CREDENTIALS,

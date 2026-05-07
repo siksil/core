@@ -8,16 +8,16 @@ from bleak import BleakError
 from bluetooth_data_tools import monotonic_time_coarse
 from pycasperglow import CasperGlow
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothChange,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.active_update_coordinator import (
+from inpui.components.bluetooth.active_update_coordinator import (
     ActiveBluetoothDataUpdateCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
 
 from .const import STATE_POLL_INTERVAL
 

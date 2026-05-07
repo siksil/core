@@ -5,12 +5,12 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DATA_MANAGER as BACKUP_DATA_MANAGER,
     BackupManager,
 )
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
 
 from .const import (
     CONF_ACCESS_KEY_ID,

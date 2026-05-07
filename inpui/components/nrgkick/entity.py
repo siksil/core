@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Awaitable
 from typing import Any
 
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_HOST
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .api import async_api_call
 from .const import DOMAIN

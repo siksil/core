@@ -7,9 +7,9 @@ from typing import Final
 from aemet_opendata.const import AOD_DATETIME, AOD_IMG_BYTES, AOD_IMG_TYPE, AOD_RADAR
 from aemet_opendata.helpers import dict_nested_value
 
-from homeassistant.components.image import Image, ImageEntity, ImageEntityDescription
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.image import Image, ImageEntity, ImageEntityDescription
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AemetConfigEntry, WeatherUpdateCoordinator
 from .entity import AemetEntity

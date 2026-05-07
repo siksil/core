@@ -6,10 +6,10 @@ from dataclasses import dataclass
 
 from kaleidescape import Device as KaleidescapeDevice, KaleidescapeError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
 
 PLATFORMS = [Platform.MEDIA_PLAYER, Platform.REMOTE, Platform.SENSOR]
 
@@ -38,7 +38,7 @@ async def async_setup_entry(
         await device.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, disconnect)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, disconnect)
     )
     entry.async_on_unload(device.disconnect)
 

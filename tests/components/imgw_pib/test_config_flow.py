@@ -6,10 +6,10 @@ from aiohttp import ClientError
 from imgw_pib.exceptions import ApiError
 import pytest
 
-from homeassistant.components.imgw_pib.const import CONF_STATION_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.imgw_pib.const import CONF_STATION_ID, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_create_entry(

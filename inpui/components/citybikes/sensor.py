@@ -12,31 +12,31 @@ from citybikes import __version__ as CITYBIKES_CLIENT_VERSION
 from citybikes.asyncio import Client as CitybikesClient
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     APPLICATION_NAME,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_NAME,
     CONF_RADIUS,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     UnitOfLength,
     __version__,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import async_generate_entity_id
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import location as location_util
-from homeassistant.util.unit_conversion import DistanceConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import async_generate_entity_id
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import location as location_util
+from inpui.util.unit_conversion import DistanceConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -117,7 +117,7 @@ async def async_setup_platform(
     async def _async_close_client(event):
         await client.close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_client)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_close_client)
 
     # Create a single instance of CityBikesNetworks.
     networks = hass.data.setdefault(CITYBIKES_NETWORKS, CityBikesNetworks(hass))

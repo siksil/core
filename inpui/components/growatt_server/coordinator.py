@@ -9,17 +9,17 @@ from typing import TYPE_CHECKING, Any
 
 import growattServer
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.components.sensor import SensorStateClass
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import (
     BATT_MODE_BATTERY_FIRST,

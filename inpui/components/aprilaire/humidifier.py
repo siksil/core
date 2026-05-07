@@ -8,15 +8,15 @@ from typing import Any, cast
 
 from pyaprilaire.const import Attribute
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     HumidifierAction,
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .coordinator import AprilaireConfigEntry, AprilaireCoordinator
 from .entity import BaseAprilaireEntity

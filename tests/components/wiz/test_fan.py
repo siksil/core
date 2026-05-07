@@ -7,7 +7,7 @@ import pytest
 from pywizlight import BulbType
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
@@ -18,8 +18,8 @@ from homeassistant.components.fan import (
     SERVICE_SET_PERCENTAGE,
     SERVICE_SET_PRESET_MODE,
 )
-from homeassistant.components.wiz.fan import PRESET_MODE_BREEZE
-from homeassistant.const import (
+from inpui.components.wiz.fan import PRESET_MODE_BREEZE
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -27,8 +27,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     FAKE_DIMMABLE_FAN,

@@ -6,12 +6,12 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from typing import Any
 
-from homeassistant.components.trace import (
+from inpui.components.trace import (
     CONF_STORED_TRACES,
     ActionTrace,
     async_store_trace,
 )
-from homeassistant.core import Context, HomeAssistant
+from inpui.core import Context, HomeAssistant
 
 from .const import DOMAIN
 

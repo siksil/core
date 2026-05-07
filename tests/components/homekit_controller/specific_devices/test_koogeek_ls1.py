@@ -8,11 +8,11 @@ from aiohomekit.model import CharacteristicsTypes, ServicesTypes
 from aiohomekit.testing import FakeController, FakePairing
 import pytest
 
-from homeassistant.components.homekit_controller.connection import (
+from inpui.components.homekit_controller.connection import (
     MAX_POLL_FAILURES_TO_DECLARE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from ..common import Helper, setup_accessories_from_file, setup_test_accessories
 

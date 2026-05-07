@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 VALID_CONFIG_MINIMAL = {"sensor": {"platform": "hddtemp"}}
 

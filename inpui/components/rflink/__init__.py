@@ -10,15 +10,15 @@ from rflink.protocol import create_rflink_connection
 from serial import SerialException
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND,
     CONF_DEVICE_ID,
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EVENT_LOGGING_CHANGED,
 )
-from homeassistant.core import (
+from inpui.core import (
     CoreState,
     Event,
     HassJob,
@@ -26,13 +26,13 @@ from homeassistant.core import (
     ServiceCall,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     DATA_DEVICE_REGISTER,
@@ -279,7 +279,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
         # handle shutdown of Rflink asyncio transport
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, lambda x: transport.close()
+            EVENT_INPUI_STOP, lambda x: transport.close()
         )
 
         _LOGGER.debug("Connected to Rflink")

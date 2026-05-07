@@ -1,6 +1,6 @@
 """Test Media Source initialization."""
 
-from homeassistant.components import media_source
+from inpui.components import media_source
 
 
 async def test_is_media_source_id() -> None:

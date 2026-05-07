@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import Trigger
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import Trigger
 
 from .triggers import event, value_updated
 

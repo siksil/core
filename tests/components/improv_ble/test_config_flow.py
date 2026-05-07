@@ -15,16 +15,16 @@ from improv_ble_client import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import improv_ble
-from homeassistant.components.bluetooth import (
+from inpui.components import improv_ble
+from inpui.components.bluetooth import (
     BluetoothChange,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.improv_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE, FlowType
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
+from inpui.components.improv_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE, FlowType
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
 
 from . import (
     BAD_IMPROV_BLE_DISCOVERY_INFO,

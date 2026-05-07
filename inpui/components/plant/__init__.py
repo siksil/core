@@ -12,8 +12,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.recorder import get_instance, history
-from homeassistant.const import (
+from inpui.components.recorder import get_instance, history
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_SENSORS,
     LIGHT_LUX,
@@ -25,20 +25,20 @@ from homeassistant.const import (
     UnitOfConductivity,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_DICT_OF_UNITS_OF_MEASUREMENT,

@@ -11,24 +11,24 @@ from tesla_fleet_api.exceptions import (
     TeslaFleetError,
 )
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.tesla_fleet.config_flow import OAuth2FlowHandler
-from homeassistant.components.tesla_fleet.const import (
+from inpui.components.tesla_fleet.config_flow import OAuth2FlowHandler
+from inpui.components.tesla_fleet.const import (
     AUTHORIZE_URL,
     CONF_DOMAIN,
     DOMAIN,
     SCOPES,
     TOKEN_URL,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

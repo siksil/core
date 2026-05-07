@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.swiss_public_transport.const import (
+from inpui.components.swiss_public_transport.const import (
     CONF_DESTINATION,
     CONF_START,
     CONF_TIME_FIXED,
@@ -13,11 +13,11 @@ from homeassistant.components.swiss_public_transport.const import (
     CONF_VIA,
     DOMAIN,
 )
-from homeassistant.components.swiss_public_transport.helper import unique_id_from_config
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.swiss_public_transport.helper import unique_id_from_config
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

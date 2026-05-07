@@ -5,11 +5,11 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_MAXIMUM, CONF_MINIMUM, CONF_NAME, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_MAXIMUM, CONF_MINIMUM, CONF_NAME, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FirmataConfigEntry
 from .board import FirmataPinType

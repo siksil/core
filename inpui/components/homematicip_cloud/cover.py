@@ -16,14 +16,14 @@ from homematicip.device import (
 )
 from homematicip.group import ExtendedLinkedShutterGroup
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverDeviceClass,
     CoverEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry, HomematicipHAP

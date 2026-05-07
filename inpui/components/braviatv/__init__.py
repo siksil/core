@@ -7,9 +7,9 @@ from typing import Final
 from aiohttp import CookieJar
 from pybravia import BraviaClient
 
-from homeassistant.const import CONF_HOST, CONF_MAC, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.const import CONF_HOST, CONF_MAC, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_USE_SSL
 from .coordinator import BraviaTVConfigEntry, BraviaTVCoordinator

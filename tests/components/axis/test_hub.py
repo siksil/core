@@ -12,14 +12,14 @@ import axis as axislib
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import axis
-from homeassistant.components.axis.const import DOMAIN
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.config_entries import SOURCE_ZEROCONF, ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import axis
+from inpui.components.axis.const import DOMAIN
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.config_entries import SOURCE_ZEROCONF, ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .conftest import RtspEventMock, RtspStateType
 from .const import (

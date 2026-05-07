@@ -7,11 +7,11 @@ from typing import Any
 
 from pywemo import CoffeeMaker, Insight, Maker, StandbyState, Switch
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_STANDBY, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON, STATE_STANDBY, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import async_wemo_dispatcher_connect
 from .coordinator import DeviceCoordinator

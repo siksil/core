@@ -6,8 +6,8 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, WALLCONNECTOR_DEVICE_NAME
 from .coordinator import WallConnectorCoordinator, WallConnectorData

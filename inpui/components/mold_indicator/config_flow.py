@@ -7,18 +7,18 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import websocket_api
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     EntitySelector,
     EntitySelectorConfig,
     NumberSelector,
@@ -26,7 +26,7 @@ from homeassistant.helpers.selector import (
     NumberSelectorMode,
     TextSelector,
 )
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import (
     CONF_CALIBRATION_FACTOR,

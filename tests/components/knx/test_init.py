@@ -13,11 +13,11 @@ from xknx.io import (
     SecureConfig,
 )
 
-from homeassistant.components.knx.config_flow import (
+from inpui.components.knx.config_flow import (
     DEFAULT_ENTRY_DATA,
     DEFAULT_ROUTING_IA,
 )
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_KNX_AUTOMATIC,
     CONF_KNX_CONNECTION_TYPE,
     CONF_KNX_DEFAULT_RATE_LIMIT,
@@ -44,9 +44,9 @@ from homeassistant.components.knx.const import (
     DOMAIN,
     KNXConfigEntryData,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

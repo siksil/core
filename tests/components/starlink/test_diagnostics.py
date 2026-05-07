@@ -2,9 +2,9 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.starlink.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
+from inpui.components.starlink.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
 
 from .patchers import (
     HISTORY_STATS_SUCCESS_PATCHER,

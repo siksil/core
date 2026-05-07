@@ -10,16 +10,16 @@ from typing import Any
 from pyControl4.error_handling import C4Exception
 from pyControl4.light import C4Light
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_TRANSITION,
     ColorMode,
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from . import Control4ConfigEntry, Control4RuntimeData, get_items_of_category
 from .const import CONTROL4_ENTITY_TYPE

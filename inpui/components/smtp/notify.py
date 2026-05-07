@@ -17,7 +17,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
@@ -25,7 +25,7 @@ from homeassistant.components.notify import (
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_PASSWORD,
     CONF_PORT,
     CONF_RECIPIENT,
@@ -35,13 +35,13 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.reload import setup_reload_service
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.ssl import create_client_context
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.reload import setup_reload_service
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
+from inpui.util.ssl import create_client_context
 
 from .const import (
     ATTR_HTML,

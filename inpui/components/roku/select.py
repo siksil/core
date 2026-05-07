@@ -8,9 +8,9 @@ from dataclasses import dataclass
 from rokuecp import Roku
 from rokuecp.models import Device as RokuDevice
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import RokuConfigEntry
 from .entity import RokuEntity

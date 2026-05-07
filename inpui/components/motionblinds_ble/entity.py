@@ -5,9 +5,9 @@ import logging
 from motionblindsble.const import MotionBlindType
 from motionblindsble.device import MotionDevice
 
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.const import CONF_ADDRESS
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from . import MotionConfigEntry
 from .const import CONF_BLIND_TYPE, CONF_MAC_CODE, MANUFACTURER

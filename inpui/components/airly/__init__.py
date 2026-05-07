@@ -5,11 +5,11 @@ from __future__ import annotations
 from datetime import timedelta
 import logging
 
-from homeassistant.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_USE_NEAREST, DOMAIN, MIN_UPDATE_INTERVAL
 from .coordinator import AirlyConfigEntry, AirlyDataUpdateCoordinator

@@ -22,20 +22,20 @@ from typing import IO, TYPE_CHECKING, Any, Protocol, TypedDict, cast
 import aiohttp
 from securetar import SecureTarArchive, atomic_contents_add
 
-from homeassistant.backup_restore import RESTORE_BACKUP_FILE, RESTORE_BACKUP_RESULT_FILE
-from homeassistant.const import __version__ as HAVERSION
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.backup_restore import RESTORE_BACKUP_FILE, RESTORE_BACKUP_RESULT_FILE
+from inpui.const import __version__ as HAVERSION
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     frame,
     instance_id,
     integration_platform,
     issue_registry as ir,
     start,
 )
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.json import json_bytes
-from homeassistant.util import dt as dt_util, json as json_util
-from homeassistant.util.async_iterator import AsyncIteratorReader
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.json import json_bytes
+from inpui.util import dt as dt_util, json as json_util
+from inpui.util.async_iterator import AsyncIteratorReader
 
 from . import util as backup_util
 from .agent import (

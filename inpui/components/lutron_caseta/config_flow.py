@@ -12,10 +12,10 @@ from pylutron_caseta.pairing import PAIR_CA, PAIR_CERT, PAIR_KEY, async_pair
 from pylutron_caseta.smartbridge import Smartbridge
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import callback
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     ABORT_REASON_CANNOT_CONNECT,

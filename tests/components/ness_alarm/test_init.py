@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, patch
 
 from nessclient import ArmingMode, ArmingState
 
-from homeassistant.components import alarm_control_panel
-from homeassistant.components.alarm_control_panel import (
+from inpui.components import alarm_control_panel
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.ness_alarm.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.ness_alarm.const import (
     ATTR_OUTPUT_ID,
     CONF_SHOW_HOME_MODE,
     CONF_ZONE_NUMBER,
@@ -20,8 +20,8 @@ from homeassistant.components.ness_alarm.const import (
     SERVICE_PANIC,
     SUBENTRY_TYPE_ZONE,
 )
-from homeassistant.config_entries import ConfigEntryState, ConfigSubentry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState, ConfigSubentry
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     ATTR_STATE,
@@ -34,9 +34,9 @@ from homeassistant.const import (
     SERVICE_ALARM_TRIGGER,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 
@@ -506,7 +506,7 @@ async def test_homeassistant_stop_event(hass: HomeAssistant, mock_nessclient) ->
     await hass.async_block_till_done()
 
     # Fire the homeassistant_stop event
-    hass.bus.async_fire("homeassistant_stop")
+    hass.bus.async_fire("inpui_stop")
     await hass.async_block_till_done()
 
     # Client should be closed

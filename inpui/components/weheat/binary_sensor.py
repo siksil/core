@@ -5,14 +5,14 @@ from dataclasses import dataclass
 
 from weheat.abstractions.heat_pump import HeatPump
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .coordinator import HeatPumpInfo, WeheatConfigEntry, WeheatDataUpdateCoordinator
 from .entity import WeheatEntity

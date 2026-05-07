@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components import persistent_notification as pn
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import persistent_notification as pn
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

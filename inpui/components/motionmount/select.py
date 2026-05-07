@@ -6,10 +6,10 @@ import socket
 
 import motionmount
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MotionMountConfigEntry
 from .const import DOMAIN, WALL_PRESET_NAME

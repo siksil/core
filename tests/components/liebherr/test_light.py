@@ -11,9 +11,9 @@ from pyliebherrhomeapi.exceptions import LiebherrConnectionError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.liebherr.const import DOMAIN
-from homeassistant.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import (
+from inpui.components.liebherr.const import DOMAIN
+from inpui.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -23,9 +23,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_DEVICE, MOCK_DEVICE_STATE
 

@@ -9,14 +9,14 @@ from unittest.mock import MagicMock, Mock, call, patch, sentinel
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import usb
-from homeassistant.components.usb import DOMAIN
-from homeassistant.components.usb.models import USBDevice
-from homeassistant.components.usb.utils import scan_serial_ports, usb_device_from_path
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import usb
+from inpui.components.usb import DOMAIN
+from inpui.components.usb.models import USBDevice
+from inpui.components.usb.utils import scan_serial_ports, usb_device_from_path
+from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     force_usb_polling_watcher,  # noqa: F401
@@ -87,7 +87,7 @@ async def test_aiousbwatcher_discovery(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert aiousbwatcher_callback is not None
@@ -119,7 +119,7 @@ async def test_aiousbwatcher_discovery(
         assert len(mock_config_flow.mock_calls) == 2
         assert mock_config_flow.mock_calls[1][1][0] == "test2"
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
 
@@ -162,7 +162,7 @@ async def test_polling_discovery(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         # Wait until a new device is discovered after a few polling attempts
@@ -173,7 +173,7 @@ async def test_polling_discovery(
     assert len(mock_config_flow.mock_calls) == 1
     assert mock_config_flow.mock_calls[0][1][0] == "test1"
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
 
@@ -202,12 +202,12 @@ async def test_removal_by_aiousbwatcher_before_started(hass: HomeAssistant) -> N
         await hass.async_block_till_done()
 
     with patch_scanned_serial_ports(return_value=[]):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_config_flow.mock_calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
 
@@ -236,7 +236,7 @@ async def test_discovered_by_websocket_scan(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -275,7 +275,7 @@ async def test_discovered_by_websocket_scan_limited_by_description_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -315,7 +315,7 @@ async def test_most_targeted_matcher_wins(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -354,7 +354,7 @@ async def test_discovered_by_websocket_scan_rejected_by_description_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -397,7 +397,7 @@ async def test_discovered_by_websocket_scan_limited_by_serial_number_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -436,7 +436,7 @@ async def test_discovered_by_websocket_scan_rejected_by_serial_number_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -479,7 +479,7 @@ async def test_discovered_by_websocket_scan_limited_by_manufacturer_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -523,7 +523,7 @@ async def test_discovered_by_websocket_scan_rejected_by_manufacturer_matcher(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -561,7 +561,7 @@ async def test_discovered_by_websocket_rejected_with_empty_serial_number_only(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -597,7 +597,7 @@ async def test_discovered_by_websocket_scan_match_vid_only(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -634,7 +634,7 @@ async def test_discovered_by_websocket_scan_match_vid_wrong_pid(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -670,7 +670,7 @@ async def test_discovered_by_websocket_no_vid_pid(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -706,7 +706,7 @@ async def test_non_matching_discovered_by_scanner_after_started(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -741,7 +741,7 @@ async def test_aiousbwatcher_on_wsl_fallback_without_throwing_exception(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -789,7 +789,7 @@ async def test_discovered_by_aiousbwatcher_before_started(hass: HomeAssistant) -
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert len(mock_config_flow.mock_calls) == 0
@@ -900,7 +900,7 @@ async def test_web_socket_triggers_discovery_request_callbacks(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         cancel = usb.async_register_scan_request_callback(hass, mock_callback)
@@ -942,7 +942,7 @@ async def test_initial_scan_callback(
         assert len(mock_callback_1.mock_calls) == 0
 
         # This triggers the initial scan
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert len(mock_callback_1.mock_calls) == 1
 
@@ -978,7 +978,7 @@ async def test_cancel_initial_scan_callback(
         cancel()
 
         # This triggers the initial scan
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert len(mock_callback.mock_calls) == 0
 
@@ -1074,7 +1074,7 @@ async def test_cp2102n_ordering_on_macos(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         ws_client = await hass_ws_client(hass)
         await ws_client.send_json({"id": 1, "type": "usb/scan"})
@@ -1493,7 +1493,7 @@ async def test_removal_aborts_discovery_flows(
     ):
         assert await async_setup_component(hass, DOMAIN, {"usb": {}})
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         # Discovery will create five flows (device5 is matched by both domains)

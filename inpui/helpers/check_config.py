@@ -12,7 +12,7 @@ from annotatedyaml import loader as yaml_loader
 import voluptuous as vol
 
 from homeassistant import loader
-from homeassistant.config import (  # type: ignore[attr-defined]
+from inpui.config import (  # type: ignore[attr-defined]
     CONF_PACKAGES,
     YAML_CONFIG_FILE,
     config_per_platform,
@@ -22,10 +22,10 @@ from homeassistant.config import (  # type: ignore[attr-defined]
     load_yaml_config_file,
     merge_packages_config,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.core_config import CORE_CONFIG_SCHEMA
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.requirements import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.core_config import CORE_CONFIG_SCHEMA
+from inpui.exceptions import HomeAssistantError
+from inpui.requirements import (
     RequirementsNotFound,
     async_clear_install_history,
     async_get_integration_with_requirements,

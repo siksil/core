@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .coordinator import OpenRGBConfigEntry, OpenRGBCoordinator

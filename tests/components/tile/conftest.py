@@ -8,8 +8,8 @@ import pytest
 from pytile.api import API
 from pytile.tile import Tile
 
-from homeassistant.components.tile.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.tile.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import TEST_PASSWORD, TEST_USERNAME
 

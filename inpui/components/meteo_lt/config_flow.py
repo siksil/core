@@ -9,7 +9,7 @@ import aiohttp
 from meteo_lt import MeteoLtAPI, Place
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import CONF_PLACE_CODE, DOMAIN
 

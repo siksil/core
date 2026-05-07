@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 
 from volvocarsapi.models import VolvoCarsValueField
 
-from homeassistant.components.volvo.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonObjectType, json_loads_object
+from inpui.components.volvo.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonObjectType, json_loads_object
 
 from tests.common import async_load_fixture
 

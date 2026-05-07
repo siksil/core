@@ -15,8 +15,8 @@ from pysmartthings import (
 )
 from pysmartthings.models import HealthStatus
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from . import FullDevice
 from .const import DOMAIN, MAIN

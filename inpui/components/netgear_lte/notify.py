@@ -7,10 +7,10 @@ from typing import Any
 import eternalegypt
 from eternalegypt.eternalegypt import Modem
 
-from homeassistant.components.notify import ATTR_TARGET, BaseNotificationService
-from homeassistant.const import CONF_RECIPIENT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.notify import ATTR_TARGET, BaseNotificationService
+from inpui.const import CONF_RECIPIENT
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_NOTIFY, LOGGER
 

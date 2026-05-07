@@ -6,18 +6,18 @@ import logging
 
 from aioesphomeapi import APIClient, APIConnectionError
 
-from homeassistant.components import zeroconf
-from homeassistant.components.bluetooth import async_remove_scanner
-from homeassistant.const import (
+from inpui.components import zeroconf
+from inpui.components.bluetooth import async_remove_scanner
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     __version__ as ha_version,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.issue_registry import async_delete_issue
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.issue_registry import async_delete_issue
+from inpui.helpers.typing import ConfigType
 
 from . import assist_satellite, dashboard, ffmpeg_proxy
 from .const import CONF_BLUETOOTH_MAC_ADDRESS, CONF_NOISE_PSK, DOMAIN

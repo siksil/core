@@ -7,9 +7,9 @@ from typing import Any
 from leaone_ble import LeaoneBluetoothDeviceData as DeviceData
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import async_discovered_service_info
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
+from inpui.components.bluetooth import async_discovered_service_info
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
 
 from .const import DOMAIN
 

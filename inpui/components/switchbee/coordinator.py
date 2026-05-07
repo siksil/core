@@ -10,10 +10,10 @@ from switchbee.api import CentralUnitPolling, CentralUnitWsRPC
 from switchbee.api.central_unit import SwitchBeeError
 from switchbee.device import DeviceType, SwitchBeeBaseDevice
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, SCAN_INTERVAL_SEC
 

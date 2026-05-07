@@ -6,17 +6,17 @@ import aiohttp
 from gassist_text import TextAssistant
 from google.oauth2.credentials import Credentials
 
-from homeassistant.components import conversation
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, discovery, intent
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components import conversation
+from inpui.const import CONF_ACCESS_TOKEN, CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, discovery, intent
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_LANGUAGE_CODE, DOMAIN, SUPPORTED_LANGUAGE_CODES
 from .helpers import (

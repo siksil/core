@@ -9,12 +9,12 @@ from typing import Any, Literal, TypeGuard
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_AFTER,
     CONF_BEFORE,
     CONF_NAME,
@@ -22,15 +22,15 @@ from homeassistant.const import (
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, event
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, event
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.sun import get_astral_event_date, get_astral_event_next
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.sun import get_astral_event_date, get_astral_event_next
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_AFTER_OFFSET,

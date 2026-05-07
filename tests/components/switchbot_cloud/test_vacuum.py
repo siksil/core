@@ -10,9 +10,9 @@ from switchbot_api import (
     VacuumCommands,
 )
 
-from homeassistant.components.switchbot_cloud import SwitchBotAPI
-from homeassistant.components.switchbot_cloud.const import VACUUM_FAN_SPEED_QUIET
-from homeassistant.components.vacuum import (
+from inpui.components.switchbot_cloud import SwitchBotAPI
+from inpui.components.switchbot_cloud.const import VACUUM_FAN_SPEED_QUIET
+from inpui.components.vacuum import (
     ATTR_FAN_SPEED,
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_PAUSE,
@@ -21,8 +21,8 @@ from homeassistant.components.vacuum import (
     SERVICE_START,
     VacuumActivity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from . import configure_integration
 

@@ -5,16 +5,16 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import (
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import (
     DATA_DISPATCHER,
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.json import ExtendedJSONEncoder
-from homeassistant.helpers.script import (
+from inpui.helpers.json import ExtendedJSONEncoder
+from inpui.helpers.script import (
     SCRIPT_BREAKPOINT_HIT,
     SCRIPT_DEBUG_CONTINUE_ALL,
     breakpoint_clear,

@@ -6,16 +6,16 @@ from aiohttp.client_exceptions import ClientError
 from pyControl4.error_handling import BadCredentials, NotFound, Unauthorized
 import pytest
 
-from homeassistant.components.control4.const import DEFAULT_SCAN_INTERVAL, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.control4.const import DEFAULT_SCAN_INTERVAL, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import MOCK_HOST, MOCK_PASSWORD, MOCK_USERNAME
 

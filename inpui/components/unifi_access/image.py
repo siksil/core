@@ -6,10 +6,10 @@ from datetime import UTC, datetime
 
 from unifi_access_api import Door
 
-from homeassistant.components.image import ImageEntity
-from homeassistant.const import CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.image import ImageEntity
+from inpui.const import CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import UnifiAccessConfigEntry, UnifiAccessCoordinator
 from .entity import UnifiAccessEntity

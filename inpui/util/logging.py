@@ -13,7 +13,7 @@ import time
 import traceback
 from typing import Any, cast, overload, override
 
-from homeassistant.core import (
+from inpui.core import (
     HassJobType,
     HomeAssistant,
     callback,

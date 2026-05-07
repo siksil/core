@@ -8,16 +8,16 @@ from unittest.mock import AsyncMock, Mock
 import pytest
 from uiprotect.data import Camera, Chime, Doorlock, IRLEDMode, Light, RingSetting
 
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.components.unifiprotect.number import (
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.components.unifiprotect.number import (
     CAMERA_NUMBERS,
     DOORLOCK_NUMBERS,
     LIGHT_NUMBERS,
     ProtectNumberEntityDescription,
 )
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

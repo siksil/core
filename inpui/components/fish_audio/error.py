@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 _LOGGER = logging.getLogger(__package__)
 

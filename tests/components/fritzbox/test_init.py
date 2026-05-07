@@ -8,23 +8,23 @@ from pyfritzhome import LoginError
 import pytest
 from requests.exceptions import ConnectionError as RequestConnectionError
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     STATE_UNAVAILABLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import FritzDeviceSwitchMock, setup_config_entry
 from .const import CONF_FAKE_AIN, CONF_FAKE_NAME, MOCK_CONFIG
@@ -223,7 +223,7 @@ async def test_logout_on_stop(hass: HomeAssistant, fritz: Mock) -> None:
     state = hass.states.get(entity_id)
     assert state
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert fritz().logout.call_count == 1

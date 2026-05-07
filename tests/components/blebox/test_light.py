@@ -6,22 +6,22 @@ from unittest.mock import AsyncMock, PropertyMock
 import blebox_uniapi
 import pytest
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ATTR_RGBW_COLOR,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import async_setup_entity, mock_feature
 

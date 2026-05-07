@@ -7,9 +7,9 @@ from dataclasses import dataclass
 
 from pyecoforest.models.device import Device
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EcoforestConfigEntry
 from .entity import EcoforestEntity

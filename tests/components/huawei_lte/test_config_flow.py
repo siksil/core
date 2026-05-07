@@ -13,12 +13,12 @@ import requests_mock
 from requests_mock import ANY
 
 from homeassistant import config_entries
-from homeassistant.components.huawei_lte.const import (
+from inpui.components.huawei_lte.const import (
     CONF_UNAUTHENTICATED_MODE,
     CONF_UPNP_UDN,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_RECIPIENT,
@@ -26,9 +26,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,

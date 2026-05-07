@@ -9,7 +9,7 @@ from fishaudio import AsyncFishAudio
 from fishaudio.exceptions import AuthenticationError, FishAudioError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntry,
     ConfigEntryState,
@@ -18,8 +18,8 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.selector import (
     LanguageSelector,
     LanguageSelectorConfig,
     SelectOptionDict,

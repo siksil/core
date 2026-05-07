@@ -6,10 +6,10 @@ import time
 
 from momonga import Momonga, MomongaError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN
 

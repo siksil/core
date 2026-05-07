@@ -10,8 +10,8 @@
 # and add the following to the end of script/bootstrap:
 # sudo chmod 777 /dev/ttyUSB0
 
-from homeassistant.const import CONF_ADDRESS, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ADDRESS, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import AuroraAbbConfigEntry, AuroraAbbDataUpdateCoordinator
 

@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.components.zamg.const import CONF_STATION_ID, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.components.zamg.const import CONF_STATION_ID, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import FIXTURE_CONFIG_ENTRY
 from .conftest import (

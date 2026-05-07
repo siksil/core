@@ -12,18 +12,18 @@ from aiontfy.exceptions import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.components.ntfy.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.ntfy.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import AsyncMock, MockConfigEntry, snapshot_platform
 

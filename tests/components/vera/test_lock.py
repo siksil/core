@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 import pyvera as pv
 
-from homeassistant.components.lock import LockState
-from homeassistant.core import HomeAssistant
+from inpui.components.lock import LockState
+from inpui.core import HomeAssistant
 
 from .common import ComponentFactory, new_simple_controller_config
 

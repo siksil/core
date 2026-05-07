@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from pydactyl.responses import PaginatedResponse
 import pytest
 
-from homeassistant.components.pterodactyl.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL
+from inpui.components.pterodactyl.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL
 
 from .const import TEST_API_KEY, TEST_URL
 

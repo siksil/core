@@ -6,11 +6,11 @@ from typing import Any
 
 from aiowebostv import WebOsClient
 
-from homeassistant.components.notify import ATTR_DATA, BaseNotificationService
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.notify import ATTR_DATA, BaseNotificationService
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import WebOsTvConfigEntry
 from .const import DOMAIN, WEBOSTV_EXCEPTIONS

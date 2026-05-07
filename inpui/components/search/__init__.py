@@ -10,20 +10,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import automation, group, person, script, websocket_api
-from homeassistant.components.homeassistant import scene
-from homeassistant.core import HomeAssistant, callback, split_entity_id
-from homeassistant.helpers import (
+from inpui.components import automation, group, person, script, websocket_api
+from inpui.components.homeassistant import scene
+from inpui.core import HomeAssistant, callback, split_entity_id
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.entity import (
+from inpui.helpers.entity import (
     EntityInfo,
     entity_sources as get_entity_sources,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "search"
 _LOGGER = logging.getLogger(__name__)

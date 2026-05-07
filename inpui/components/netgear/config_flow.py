@@ -9,27 +9,27 @@ from urllib.parse import urlparse
 from pynetgear import DEFAULT_HOST, DEFAULT_PORT, DEFAULT_USER
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import callback
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_MODEL_NUMBER,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.util.network import is_ipv4_address
+from inpui.util.network import is_ipv4_address
 
 from .const import (
     CONF_CONSIDER_HOME,

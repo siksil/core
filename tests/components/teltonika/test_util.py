@@ -1,6 +1,6 @@
 """Test Teltonika utility helpers."""
 
-from homeassistant.components.teltonika.util import get_url_variants, normalize_url
+from inpui.components.teltonika.util import get_url_variants, normalize_url
 
 
 def test_normalize_url_adds_https_scheme() -> None:

@@ -4,12 +4,12 @@ from dataclasses import dataclass
 
 from volvocarsapi.models import VolvoCarsApiBaseModel, VolvoCarsLocation
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     TrackerEntity,
     TrackerEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import VolvoConfigEntry
 from .entity import VolvoEntity, VolvoEntityDescription

@@ -7,9 +7,9 @@ import logging
 
 from govee_ble import GoveeBluetoothDeviceData
 
-from homeassistant.components.bluetooth import BluetoothScanningMode
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth import BluetoothScanningMode
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import (
     GoveeBLEBluetoothProcessorCoordinator,

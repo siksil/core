@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.config_entries import ConfigEntry
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 _LOGGER = logging.getLogger(__name__)
 

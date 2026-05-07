@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.auth import indieauth
-from homeassistant.core import HomeAssistant
+from inpui.components.auth import indieauth
+from inpui.core import HomeAssistant
 
 from tests.test_util.aiohttp import AiohttpClientMocker
 

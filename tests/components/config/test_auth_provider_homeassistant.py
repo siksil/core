@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.auth.providers import homeassistant as prov_ha
-from homeassistant.components.config import auth_provider_homeassistant as auth_ha
-from homeassistant.core import HomeAssistant
+from inpui.auth.providers import homeassistant as prov_ha
+from inpui.components.config import auth_provider_homeassistant as auth_ha
+from inpui.core import HomeAssistant
 
 from tests.common import CLIENT_ID, MockUser
 from tests.typing import WebSocketGenerator

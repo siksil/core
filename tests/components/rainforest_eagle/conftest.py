@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.rainforest_eagle.const import (
+from inpui.components.rainforest_eagle.const import (
     CONF_CLOUD_ID,
     CONF_HARDWARE_ADDRESS,
     CONF_INSTALL_CODE,
@@ -13,9 +13,9 @@ from homeassistant.components.rainforest_eagle.const import (
     TYPE_EAGLE_100,
     TYPE_EAGLE_200,
 )
-from homeassistant.const import CONF_HOST, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_HOST, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MOCK_200_RESPONSE_WITHOUT_PRICE, MOCK_CLOUD_ID
 

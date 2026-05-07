@@ -7,17 +7,17 @@ from unittest.mock import AsyncMock, Mock
 from uiprotect.data import Light
 from uiprotect.data.types import LEDLevel
 
-from homeassistant.components.light import ATTR_BRIGHTNESS
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.const import (
+from inpui.components.light import ATTR_BRIGHTNESS
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .utils import (
     MockUFPFixture,

@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock
 
 from aiostreammagic import StreamMagicError
 
-from homeassistant.components.cambridge_audio.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.cambridge_audio.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

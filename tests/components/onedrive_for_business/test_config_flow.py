@@ -8,7 +8,7 @@ from onedrive_personal_sdk.models.items import Drive, IdentitySet
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.onedrive_for_business.const import (
+from inpui.components.onedrive_for_business.const import (
     CONF_FOLDER_ID,
     CONF_FOLDER_PATH,
     CONF_TENANT_ID,
@@ -16,11 +16,11 @@ from homeassistant.components.onedrive_for_business.const import (
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import setup_integration
 from .const import CLIENT_ID, TENANT_ID

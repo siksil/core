@@ -24,8 +24,8 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config as hass_config
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.modbus.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.modbus.const import (
     ATTR_ADDRESS,
     ATTR_HUB,
     ATTR_SLAVE,
@@ -80,7 +80,7 @@ from homeassistant.components.modbus.const import (
     UDP,
     DataType,
 )
-from homeassistant.components.modbus.validators import (
+from inpui.components.modbus.validators import (
     check_config,
     duplicate_fan_mode_validator,
     duplicate_swing_mode_validator,
@@ -91,8 +91,8 @@ from homeassistant.components.modbus.validators import (
     register_int_list_validator,
     struct_validator,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     ATTR_STATE,
     CONF_ADDRESS,
     CONF_BINARY_SENSORS,
@@ -109,16 +109,16 @@ from homeassistant.const import (
     CONF_STRUCTURE,
     CONF_TIMEOUT,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     SERVICE_RELOAD,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import (
     TEST_ENTITY_NAME,
@@ -1285,7 +1285,7 @@ async def test_shutdown(
     mock_modbus_with_pymodbus,
 ) -> None:
     """Run test for shutdown."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     await hass.async_block_till_done()
     assert mock_pymodbus.close.called

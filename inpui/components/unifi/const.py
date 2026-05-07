@@ -4,7 +4,7 @@ import logging
 
 from aiounifi.models.device import DeviceState
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 LOGGER = logging.getLogger(__package__)
 DOMAIN = "unifi"

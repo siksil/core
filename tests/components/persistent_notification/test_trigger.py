@@ -2,9 +2,9 @@
 
 from typing import Any
 
-from homeassistant.components import persistent_notification as pn
-from homeassistant.components.persistent_notification import trigger
-from homeassistant.core import Context, HomeAssistant, callback
+from inpui.components import persistent_notification as pn
+from inpui.components.persistent_notification import trigger
+from inpui.core import Context, HomeAssistant, callback
 
 
 async def test_automation_with_pn_trigger(hass: HomeAssistant) -> None:

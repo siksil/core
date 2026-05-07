@@ -5,9 +5,9 @@ from typing import cast
 from aiohttp import BasicAuth, ClientSession
 from aiolyric.client import LyricClient
 
-from homeassistant.components.application_credentials import AuthImplementation
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.application_credentials import AuthImplementation
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 
 class OAuth2SessionLyric(config_entry_oauth2_flow.OAuth2Session):

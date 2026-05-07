@@ -18,7 +18,7 @@ from anova_wifi import (
 )
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 DUMMY_ID = "anova_id"
 

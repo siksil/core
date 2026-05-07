@@ -6,11 +6,11 @@ from typing import Any
 
 from pyisy.constants import ISY_VALUE_UNKNOWN
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import (
+from inpui.components.lock import LockEntity
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

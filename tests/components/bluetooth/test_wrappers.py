@@ -16,13 +16,13 @@ from habluetooth.usage import (
 )
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     MONOTONIC_TIME,
     BaseHaRemoteScanner,
     HaBluetoothConnector,
     HomeAssistantBluetoothManager,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
+from inpui.core import CALLBACK_TYPE, HomeAssistant
 
 from . import _get_manager, generate_advertisement_data, generate_ble_device
 

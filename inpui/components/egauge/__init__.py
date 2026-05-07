@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, MANUFACTURER, MODEL
 from .coordinator import EgaugeConfigEntry, EgaugeDataCoordinator

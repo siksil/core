@@ -7,21 +7,21 @@ import PyTado
 import PyTado.exceptions
 from PyTado.interface import Tado
 
-from homeassistant.const import (
+from inpui.const import (
     APPLICATION_NAME,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
     __version__ as HA_VERSION,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_FALLBACK,

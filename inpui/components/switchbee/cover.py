@@ -8,16 +8,16 @@ from switchbee.api.central_unit import SwitchBeeError, SwitchBeeTokenError
 from switchbee.const import SomfyCommand
 from switchbee.device import SwitchBeeShutter, SwitchBeeSomfy
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SwitchBeeCoordinator

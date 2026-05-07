@@ -3,9 +3,9 @@
 from datetime import UTC, datetime
 from unittest.mock import MagicMock
 
-from homeassistant.components.forecast_solar import energy
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.forecast_solar import energy
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

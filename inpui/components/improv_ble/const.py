@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import asyncio
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN = "improv_ble"
 

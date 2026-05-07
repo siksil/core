@@ -11,18 +11,18 @@ from pythonkuma import MonitorType, UptimeKumaMonitor
 from pythonkuma.models import MonitorStatus
 from yarl import URL
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import CONF_URL, PERCENTAGE, EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_URL, PERCENTAGE, EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, HAS_CERT, HAS_HOST, HAS_PORT, HAS_URL, LOCAL_INSTANCE
 from .coordinator import UptimeKumaConfigEntry, UptimeKumaDataUpdateCoordinator

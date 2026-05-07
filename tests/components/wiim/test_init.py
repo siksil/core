@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from wiim.exceptions import WiimDeviceException, WiimRequestException
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
 
 from . import setup_integration
 

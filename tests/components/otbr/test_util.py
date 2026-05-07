@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import python_otbr_api
 
-from homeassistant.components import otbr
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import otbr
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 OTBR_MULTIPAN_URL = "http://core-silabs-multiprotocol:8081"
 OTBR_NON_MULTIPAN_URL = "/dev/ttyAMA1"

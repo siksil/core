@@ -4,19 +4,19 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.homeassistant import exposed_entities
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.homeassistant import exposed_entities
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity import Entity, ToggleEntity
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity import Entity, ToggleEntity
+from inpui.helpers.event import async_track_state_change_event
 
 from .const import DOMAIN
 

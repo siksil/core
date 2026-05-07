@@ -29,8 +29,8 @@ from aioshelly.const import (
     MODEL_WALL_DISPLAY_XL,
 )
 
-from homeassistant.components.number import NumberMode
-from homeassistant.const import UnitOfVolumeFlowRate
+from inpui.components.number import NumberMode
+from inpui.const import UnitOfVolumeFlowRate
 
 DOMAIN: Final = "shelly"
 

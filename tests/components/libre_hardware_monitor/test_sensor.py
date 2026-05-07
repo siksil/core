@@ -20,19 +20,19 @@ from librehardwaremonitor_api.sensor_type import SensorType
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.libre_hardware_monitor.const import (
+from inpui.components.libre_hardware_monitor.const import (
     DEFAULT_SCAN_INTERVAL,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.helpers.device_registry import DeviceEntry
 
 from . import init_integration
 

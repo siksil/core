@@ -7,19 +7,19 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import sensor
-from homeassistant.components.mqtt import CONF_QOS, CONF_STATE_TOPIC, DEFAULT_QOS
-from homeassistant.const import (
+from inpui.components import sensor
+from inpui.components.mqtt import CONF_QOS, CONF_STATE_TOPIC, DEFAULT_QOS
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_NAME,
     CONF_PLATFORM,
     CONF_TIMEOUT,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_mqtt_message
 from tests.typing import MqttMockHAClient

@@ -7,14 +7,14 @@ from typing import Any
 from xknx.devices import Device as XknxDevice, Scene as XknxScene
 
 from homeassistant import config_entries
-from homeassistant.components.scene import BaseScene
-from homeassistant.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.components.scene import BaseScene
+from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, KNX_ADDRESS, KNX_MODULE_KEY, SceneConf
 from .entity import (

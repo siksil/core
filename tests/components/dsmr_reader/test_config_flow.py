@@ -1,9 +1,9 @@
 """Tests for the config flow."""
 
-from homeassistant.components.dsmr_reader.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.dsmr_reader.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_user_step(hass: HomeAssistant) -> None:

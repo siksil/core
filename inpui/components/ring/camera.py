@@ -13,8 +13,8 @@ from haffmpeg.camera import CameraMjpeg
 from ring_doorbell import RingDoorBell
 from ring_doorbell.webrtcstream import RingWebRtcMessage
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.camera import (
+from inpui.components import ffmpeg
+from inpui.components.camera import (
     Camera,
     CameraEntityDescription,
     CameraEntityFeature,
@@ -24,11 +24,11 @@ from homeassistant.components.camera import (
     WebRTCError,
     WebRTCSendMessage,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import RingConfigEntry
 from .const import DOMAIN

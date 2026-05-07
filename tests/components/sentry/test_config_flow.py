@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from sentry_sdk.utils import BadDsn
 
-from homeassistant.components.sentry.const import (
+from inpui.components.sentry.const import (
     CONF_ENVIRONMENT,
     CONF_EVENT_CUSTOM_COMPONENTS,
     CONF_EVENT_HANDLED,
@@ -16,9 +16,9 @@ from homeassistant.components.sentry.const import (
     CONF_TRACING_SAMPLE_RATE,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

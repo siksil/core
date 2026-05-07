@@ -9,8 +9,8 @@ from contextvars import ContextVar
 from functools import wraps
 from typing import Any
 
-from homeassistant.core import ServiceResponse
-from homeassistant.util import dt as dt_util
+from inpui.core import ServiceResponse
+from inpui.util import dt as dt_util
 
 from .typing import TemplateVarsType
 

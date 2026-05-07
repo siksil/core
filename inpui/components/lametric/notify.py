@@ -17,12 +17,12 @@ from demetriek import (
     Sound,
 )
 
-from homeassistant.components.notify import ATTR_DATA, BaseNotificationService
-from homeassistant.const import CONF_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.enum import try_parse_enum
+from inpui.components.notify import ATTR_DATA, BaseNotificationService
+from inpui.const import CONF_ICON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.enum import try_parse_enum
 
 from .const import CONF_CYCLES, CONF_ICON_TYPE, CONF_PRIORITY, CONF_SOUND
 from .coordinator import LaMetricConfigEntry

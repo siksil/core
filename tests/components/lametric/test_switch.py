@@ -5,13 +5,13 @@ from unittest.mock import MagicMock
 from demetriek import LaMetricConnectionError, LaMetricError
 import pytest
 
-from homeassistant.components.lametric.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.components.switch import (
+from inpui.components.lametric.const import DOMAIN, SCAN_INTERVAL
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -19,10 +19,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

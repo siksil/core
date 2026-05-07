@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from librehardwaremonitor_api.parser import LibreHardwareMonitorParser
 import pytest
 
-from homeassistant.components.libre_hardware_monitor.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.components.libre_hardware_monitor.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

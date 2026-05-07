@@ -1,7 +1,7 @@
 """Issues for Duck DNS integration."""
 
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import DOMAIN
 

@@ -7,15 +7,15 @@ from typing import Any
 import axis
 from axis.models.configuration import Configuration
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from ..const import LOGGER
 from ..errors import AuthenticationRequired, CannotConnect

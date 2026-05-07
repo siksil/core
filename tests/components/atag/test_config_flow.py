@@ -5,9 +5,9 @@ from unittest.mock import PropertyMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.atag import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.atag import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import UID, USER_INPUT, init_integration, mock_connection
 

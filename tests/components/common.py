@@ -9,7 +9,7 @@ from typing import Any, TypedDict
 
 import pytest
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_FLOOR_ID,
@@ -23,21 +23,21 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     floor_registry as fr,
     label_registry as lr,
 )
-from homeassistant.helpers.condition import (
+from inpui.helpers.condition import (
     ConditionCheckerTypeOptional,
     async_from_config as async_condition_from_config,
 )
-from homeassistant.helpers.trigger import async_initialize_triggers
-from homeassistant.helpers.typing import UNDEFINED, TemplateVarsType, UndefinedType
-from homeassistant.setup import async_setup_component
+from inpui.helpers.trigger import async_initialize_triggers
+from inpui.helpers.typing import UNDEFINED, TemplateVarsType, UndefinedType
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, mock_device_registry
 
@@ -759,7 +759,7 @@ def parametrize_numerical_state_value_changed_trigger_states(
     entities where the tracked numerical value is in state.state (e.g. sensor
     entities), not in an attribute.
     """
-    from homeassistant.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
+    from inpui.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
 
     required_filter_attributes = {ATTR_DEVICE_CLASS: device_class}
     trigger_options = trigger_options or {}
@@ -840,7 +840,7 @@ def parametrize_numerical_state_value_crossed_threshold_trigger_states(
     this is for entities where the tracked numerical value is in state.state
     (e.g. sensor entities), not in an attribute.
     """
-    from homeassistant.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
+    from inpui.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
 
     required_filter_attributes = {ATTR_DEVICE_CLASS: device_class}
     trigger_options = trigger_options or {}
@@ -1015,7 +1015,7 @@ async def assert_condition_gated_by_labs_flag(
     """Helper to check that a condition is gated by the labs flag."""
 
     # Local include to avoid importing the automation component unnecessarily
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     await async_setup_component(
         hass,
@@ -1049,7 +1049,7 @@ async def assert_trigger_gated_by_labs_flag(
     """Helper to check that a trigger is gated by the labs flag."""
 
     # Local include to avoid importing the automation component unnecessarily
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     await async_setup_component(
         hass,
@@ -1335,7 +1335,7 @@ def parametrize_numerical_condition_above_below_any(
 
     Returns a list of tuples with (condition, condition_options, states).
     """
-    from homeassistant.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
+    from inpui.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
 
     required_filter_attributes = {ATTR_DEVICE_CLASS: device_class}
     condition_options = condition_options or {}
@@ -1425,7 +1425,7 @@ def parametrize_numerical_condition_above_below_all(
 
     Returns a list of tuples with (condition, condition_options, states).
     """
-    from homeassistant.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
+    from inpui.const import ATTR_DEVICE_CLASS  # noqa: PLC0415
 
     required_filter_attributes = {ATTR_DEVICE_CLASS: device_class}
     condition_options = condition_options or {}

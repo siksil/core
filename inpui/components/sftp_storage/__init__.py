@@ -8,10 +8,10 @@ import errno
 import logging
 from pathlib import Path
 
-from homeassistant.components.backup import BackupAgentError
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
+from inpui.components.backup import BackupAgentError
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
 
 from .client import BackupAgentClient
 from .const import (

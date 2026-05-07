@@ -11,12 +11,12 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.mqtt import DOMAIN as MQTT_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components.mqtt import DOMAIN as MQTT_DOMAIN
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,
@@ -72,9 +72,9 @@ async def test_hassio_discovery_startup(
 
     assert get_addon_discovery_info.call_count == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert get_addon_discovery_info.call_count == 1
     assert mock_mqtt.async_step_hassio.called
@@ -171,7 +171,7 @@ async def test_hassio_discovery_webhook(
         json={"addon": "mosquitto", "service": "mqtt", "uuid": str(uuid)},
     )
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert resp.status == HTTPStatus.OK
@@ -243,7 +243,7 @@ async def test_hassio_rediscover(
 ) -> None:
     """Test we reinitiate flows when an ignored config entry is removed."""
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     entry = MockConfigEntry(
@@ -319,7 +319,7 @@ async def test_hassio_rediscover_no_match(
 
     mock_integration(hass, MockModule(entry_domain))
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     entry = MockConfigEntry(

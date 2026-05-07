@@ -8,11 +8,11 @@ from typing import Final, override
 
 from whirlpool.appliance import Appliance
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import WhirlpoolConfigEntry
 from .const import DOMAIN

@@ -10,34 +10,34 @@ from pyhomeworks import exceptions as hw_exceptions
 from pyhomeworks.pyhomeworks import Homeworks
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import async_get_hass, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import (
+from inpui.core import async_get_hass, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import (
     config_validation as cv,
     entity_registry as er,
     selector,
 )
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
     SchemaFlowMenuStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.selector import TextSelector
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.util import slugify
+from inpui.helpers.selector import TextSelector
+from inpui.helpers.typing import VolDictType
+from inpui.util import slugify
 
 from .const import (
     CONF_ADDR,

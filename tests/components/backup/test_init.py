@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.backup.const import DATA_MANAGER, DOMAIN
-from homeassistant.config_entries import SOURCE_SYSTEM, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceNotFound
+from inpui.components.backup.const import DATA_MANAGER, DOMAIN
+from inpui.config_entries import SOURCE_SYSTEM, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceNotFound
 
 from .common import setup_backup_integration
 

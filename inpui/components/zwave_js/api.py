@@ -60,21 +60,21 @@ from zwave_js_server.model.utils import (
 from zwave_js_server.model.value import ConfigurationValueFormat
 from zwave_js_server.util.node import async_set_config_parameter
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.components.websocket_api import (
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.components.websocket_api import (
     ERR_INVALID_FORMAT,
     ERR_NOT_FOUND,
     ERR_NOT_SUPPORTED,
     ERR_UNKNOWN_ERROR,
     ActiveConnection,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .config_validation import BITMASK_SCHEMA
 from .const import (

@@ -3,11 +3,11 @@
 import asyncio
 from unittest.mock import AsyncMock, MagicMock
 
-from homeassistant.components.harmony.subscriber import (
+from inpui.components.harmony.subscriber import (
     HarmonyCallback,
     HarmonySubscriberMixin,
 )
-from homeassistant.core import HassJob, HomeAssistant
+from inpui.core import HassJob, HomeAssistant
 
 _NO_PARAM_CALLBACKS = {
     "connected": "_connected",

@@ -14,15 +14,15 @@ from aiohttp import web
 from aiohttp.hdrs import CONTENT_DISPOSITION, CONTENT_TYPE
 import pytest
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AddonInfo,
     AgentBackup,
     BackupAgentError,
     BackupNotFound,
     Folder,
 )
-from homeassistant.components.backup.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.backup.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .common import (
     TEST_BACKUP_ABC123,

@@ -2,9 +2,9 @@
 
 from velbusaio.channels import Button as VelbusButton
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VelbusConfigEntry
 from .entity import VelbusEntity

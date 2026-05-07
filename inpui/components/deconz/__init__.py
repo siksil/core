@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_MASTER_GATEWAY, DOMAIN, PLATFORMS
 from .deconz_event import async_setup_events, async_unload_events
@@ -59,7 +59,7 @@ async def async_setup_entry(
     api.start()
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, hub.shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, hub.shutdown)
     )
 
     return True

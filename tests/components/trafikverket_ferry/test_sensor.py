@@ -8,9 +8,9 @@ from unittest.mock import patch
 import pytest
 from pytrafikverket.models import FerryStopModel
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

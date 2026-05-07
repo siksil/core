@@ -8,11 +8,11 @@ from typing import Any
 import aioruuvigateway.api as gw_api
 from aioruuvigateway.excs import CannotConnect, InvalidAuth
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_TOKEN
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_TOKEN
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import DOMAIN
 from .schemata import CONFIG_SCHEMA, get_config_schema_with_default_host

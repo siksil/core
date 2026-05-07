@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.satel_integra.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.satel_integra.const import (
     CONF_ARM_HOME_MODE,
     CONF_OUTPUT_NUMBER,
     CONF_PARTITION_NUMBER,
@@ -19,9 +19,9 @@ from homeassistant.components.satel_integra.const import (
     SUBENTRY_TYPE_SWITCHABLE_OUTPUT,
     SUBENTRY_TYPE_ZONE,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

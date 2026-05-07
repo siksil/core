@@ -2,6 +2,6 @@
 
 from orvibo.s20 import S20
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type S20ConfigEntry = ConfigEntry[S20]

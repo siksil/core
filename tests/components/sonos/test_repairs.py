@@ -4,14 +4,14 @@ from unittest.mock import Mock
 
 from soco import SoCo
 
-from homeassistant.components.sonos.const import (
+from inpui.components.sonos.const import (
     DOMAIN,
     SCAN_INTERVAL,
     SUB_FAIL_ISSUE_ID,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
 
 from .conftest import SonosMockEvent, SonosMockSubscribe
 

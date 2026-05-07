@@ -9,7 +9,7 @@ from intellifire4py.cloud_interface import IntelliFireCloudInterface
 from intellifire4py.const import IntelliFireApiMode
 from intellifire4py.model import IntelliFireCommonFireplaceData
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_IP_ADDRESS,
@@ -17,8 +17,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import (
     API_MODE_LOCAL,

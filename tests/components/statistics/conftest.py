@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.statistics import DOMAIN
-from homeassistant.components.statistics.sensor import (
+from inpui.components.statistics import DOMAIN
+from inpui.components.statistics.sensor import (
     CONF_KEEP_LAST_SAMPLE,
     CONF_MAX_AGE,
     CONF_PERCENTILE,
@@ -19,14 +19,14 @@ from homeassistant.components.statistics.sensor import (
     DEFAULT_NAME,
     STAT_AVERAGE_LINEAR,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
     CONF_NAME,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_sensor import VALUES_NUMERIC
 

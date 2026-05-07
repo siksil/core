@@ -9,8 +9,8 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bryant_evolution.climate import SCAN_INTERVAL
-from homeassistant.components.climate import (
+from inpui.components.bryant_evolution.climate import SCAN_INTERVAL
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODE,
@@ -21,9 +21,9 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACAction,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

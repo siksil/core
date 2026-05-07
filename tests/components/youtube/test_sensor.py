@@ -8,9 +8,9 @@ from syrupy.assertion import SnapshotAssertion
 from youtubeaio.types import UnauthorizedError, YouTubeBackendError
 
 from homeassistant import config_entries
-from homeassistant.components.youtube.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.youtube.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import MockYouTube
 from .conftest import ComponentSetup

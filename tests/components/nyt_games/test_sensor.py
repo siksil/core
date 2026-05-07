@@ -8,10 +8,10 @@ from nyt_games import NYTGamesError, WordleStats
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nyt_games.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.nyt_games.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

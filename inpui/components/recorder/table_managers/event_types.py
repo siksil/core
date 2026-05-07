@@ -8,9 +8,9 @@ from typing import TYPE_CHECKING, Any, cast
 from lru import LRU
 from sqlalchemy.orm.session import Session
 
-from homeassistant.core import Event
-from homeassistant.util.collection import chunked_or_all
-from homeassistant.util.event_type import EventType
+from inpui.core import Event
+from inpui.util.collection import chunked_or_all
+from inpui.util.event_type import EventType
 
 from ..db_schema import EventTypes
 from ..queries import find_event_type_ids

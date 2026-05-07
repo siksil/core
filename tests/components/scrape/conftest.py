@@ -9,22 +9,22 @@ import uuid
 
 import pytest
 
-from homeassistant.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
     DEFAULT_TIMEOUT,
 )
-from homeassistant.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
     DEFAULT_METHOD,
     DEFAULT_VERIFY_SSL,
 )
-from homeassistant.components.scrape.const import (
+from inpui.components.scrape.const import (
     CONF_ENCODING,
     CONF_INDEX,
     CONF_SELECT,
     DEFAULT_ENCODING,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_METHOD,
     CONF_NAME,
     CONF_RESOURCE,
@@ -32,7 +32,7 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MockRestData
 

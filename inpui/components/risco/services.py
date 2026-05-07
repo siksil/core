@@ -4,10 +4,10 @@ from datetime import datetime
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_TIME, CONF_TYPE
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_TIME, CONF_TYPE
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN, SERVICE_SET_TIME, TYPE_LOCAL
 from .models import LocalData

@@ -27,8 +27,8 @@ from pysmartthings import (
 )
 from pysmartthings.models import HealthStatus
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_HW_VERSION,
     ATTR_MANUFACTURER,
@@ -40,24 +40,24 @@ from homeassistant.const import (
     ATTR_VIA_DEVICE,
     CONF_ACCESS_TOKEN,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .const import (
     BINARY_SENSOR_ATTRIBUTES_TO_CAPABILITIES,
@@ -298,7 +298,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SmartThingsConfigEntry) 
         await client.delete_subscription(subscription_id)
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _handle_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _handle_shutdown)
     )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import system_info
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import system_info
 
 
 @callback

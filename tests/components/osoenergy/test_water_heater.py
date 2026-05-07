@@ -5,8 +5,8 @@ from unittest.mock import ANY, MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.osoenergy.const import DOMAIN
-from homeassistant.components.osoenergy.water_heater import (
+from inpui.components.osoenergy.const import DOMAIN
+from inpui.components.osoenergy.water_heater import (
     ATTR_DURATION_DAYS,
     ATTR_UNTIL_TEMP_LIMIT,
     ATTR_V40MIN,
@@ -15,22 +15,22 @@ from homeassistant.components.osoenergy.water_heater import (
     SERVICE_SET_V40MIN,
     SERVICE_TURN_AWAY_MODE_ON,
 )
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE,
     DOMAIN as WATER_HEATER_DOMAIN,
     SERVICE_SET_AWAY_MODE,
     SERVICE_SET_TEMPERATURE,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import snapshot_platform
 

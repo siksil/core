@@ -11,14 +11,14 @@ from pypck.connection import (
 import pytest
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.components.lcn.config_flow import LcnFlowHandler, validate_connection
-from homeassistant.components.lcn.const import (
+from inpui.components.lcn.config_flow import LcnFlowHandler, validate_connection
+from inpui.components.lcn.const import (
     CONF_ACKNOWLEDGE,
     CONF_DIM_MODE,
     CONF_SK_NUM_TRIES,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_BASE,
     CONF_DEVICES,
     CONF_ENTITIES,
@@ -28,7 +28,7 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

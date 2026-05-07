@@ -8,8 +8,8 @@ import logging
 from aio_geojson_geonetnz_volcano import GeonetnzVolcanoFeedManager
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
@@ -17,12 +17,12 @@ from homeassistant.const import (
     CONF_UNIT_SYSTEM,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
+from inpui.util.unit_conversion import DistanceConverter
 
 from .config_flow import configured_instances
 from .const import (

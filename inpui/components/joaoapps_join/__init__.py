@@ -13,10 +13,10 @@ from pyjoin import (
 )
 import voluptuous as vol
 
-from homeassistant.const import CONF_API_KEY, CONF_DEVICE_ID, CONF_NAME
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_API_KEY, CONF_DEVICE_ID, CONF_NAME
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

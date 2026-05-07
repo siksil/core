@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import init_integration, mock_weather_response
 

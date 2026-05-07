@@ -10,18 +10,18 @@ from pylgnetcast import AccessTokenError, LgNetCastClient, SessionIdError
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_HOST,
     CONF_ID,
     CONF_MODEL,
     CONF_NAME,
 )
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util.network import is_host_valid
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.event import async_track_time_interval
+from inpui.util.network import is_host_valid
 
 from .const import DEFAULT_NAME, DOMAIN
 from .helpers import LGNetCastDetailDiscoveryError, async_discover_netcast_details

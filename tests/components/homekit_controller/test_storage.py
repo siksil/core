@@ -7,9 +7,9 @@ from aiohomekit.model import Accessory
 from aiohomekit.model.characteristics import CharacteristicsTypes
 from aiohomekit.model.services import ServicesTypes
 
-from homeassistant.components.homekit_controller.const import ENTITY_MAP
-from homeassistant.components.homekit_controller.storage import EntityMapStorage
-from homeassistant.core import HomeAssistant
+from inpui.components.homekit_controller.const import ENTITY_MAP
+from inpui.components.homekit_controller.storage import EntityMapStorage
+from inpui.core import HomeAssistant
 
 from .common import setup_platform, setup_test_component
 

@@ -9,13 +9,13 @@ import serial
 from syrupy.assertion import SnapshotAssertion
 from ultraheat_api.response import HeatMeterResponse
 
-from homeassistant.components.homeassistant import DOMAIN as HA_DOMAIN
-from homeassistant.components.landisgyr_heat_meter.const import DOMAIN, POLLING_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.landisgyr_heat_meter.const import DOMAIN, POLLING_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

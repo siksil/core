@@ -3,7 +3,7 @@
 import jwt
 import pytest
 
-from homeassistant.auth import jwt_wrapper
+from inpui.auth import jwt_wrapper
 
 
 async def test_all_default_options_are_in_verify_options() -> None:

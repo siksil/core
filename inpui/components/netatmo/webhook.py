@@ -4,9 +4,9 @@ import logging
 
 from aiohttp.web import Request
 
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.const import ATTR_DEVICE_ID, ATTR_ID, ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     ATTR_EVENT_TYPE,

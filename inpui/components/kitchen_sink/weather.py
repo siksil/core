@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_EXCEPTIONAL,
     ATTR_CONDITION_FOG,
@@ -23,12 +23,12 @@ from homeassistant.components.weather import (
     WeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.util import dt as dt_util
 
 CONDITION_CLASSES: dict[str, list[str]] = {
     ATTR_CONDITION_CLOUDY: [],

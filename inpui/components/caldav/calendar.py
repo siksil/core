@@ -12,7 +12,7 @@ from caldav.lib.error import DAVError
 import requests
 import voluptuous as vol
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as CALENDAR_PLATFORM_SCHEMA,
     CalendarEntity,
@@ -20,23 +20,23 @@ from homeassistant.components.calendar import (
     CalendarEvent,
     is_offset_reached,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_URL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import async_generate_entity_id
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import async_generate_entity_id
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import CalDavConfigEntry
 from .api import async_get_calendars

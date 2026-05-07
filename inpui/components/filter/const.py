@@ -1,6 +1,6 @@
 """The filter component constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "filter"
 PLATFORMS = [Platform.SENSOR]

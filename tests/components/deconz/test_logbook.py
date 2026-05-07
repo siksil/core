@@ -4,23 +4,23 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.deconz.const import CONF_GESTURE, DOMAIN
-from homeassistant.components.deconz.deconz_event import (
+from inpui.components.deconz.const import CONF_GESTURE, DOMAIN
+from inpui.components.deconz.deconz_event import (
     CONF_DECONZ_ALARM_EVENT,
     CONF_DECONZ_EVENT,
 )
-from homeassistant.components.deconz.util import serial_from_unique_id
-from homeassistant.const import (
+from inpui.components.deconz.util import serial_from_unique_id
+from inpui.const import (
     CONF_CODE,
     CONF_DEVICE_ID,
     CONF_EVENT,
     CONF_ID,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util import slugify
 
 from tests.components.logbook.common import MockRow, mock_humanify
 

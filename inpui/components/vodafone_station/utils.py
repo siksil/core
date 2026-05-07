@@ -2,8 +2,8 @@
 
 from aiohttp import ClientSession, CookieJar
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 
 async def async_client_session(hass: HomeAssistant) -> ClientSession:

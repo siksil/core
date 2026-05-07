@@ -6,11 +6,11 @@ from unittest.mock import patch
 from aioesphomeapi import APIClient, DeviceInfo, InvalidEncryptionKeyAPIError
 import pytest
 
-from homeassistant.components.esphome import CONF_NOISE_PSK, DOMAIN, dashboard
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.esphome import CONF_NOISE_PSK, DOMAIN, dashboard
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from . import VALID_NOISE_PSK
 from .common import MockDashboardRefresh

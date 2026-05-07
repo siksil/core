@@ -6,11 +6,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pyvlx.exception import PyVLXException
 
-from homeassistant.components.velux import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.velux import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import update_polled_entities
 

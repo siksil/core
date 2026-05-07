@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfPower
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfPower
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

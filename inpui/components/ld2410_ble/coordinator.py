@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING
 
 from ld2410_ble import LD2410BLE, LD2410BLEState
 
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 

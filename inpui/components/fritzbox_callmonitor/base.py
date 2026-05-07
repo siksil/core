@@ -10,7 +10,7 @@ import re
 
 from fritzconnection.lib.fritzphonebook import FritzPhonebook
 
-from homeassistant.util import Throttle
+from inpui.util import Throttle
 
 from .const import REGEX_NUMBER, UNKNOWN_NAME
 

@@ -10,10 +10,10 @@ from letpot.deviceclient import LetPotDeviceClient
 from letpot.exceptions import LetPotAuthenticationException, LetPotException
 from letpot.models import AuthenticationInfo
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_EMAIL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_ACCESS_TOKEN, CONF_EMAIL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     CONF_ACCESS_TOKEN_EXPIRES,

@@ -7,11 +7,11 @@ import logging
 import anthemav
 from anthemav.device_error import DeviceError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import ANTHEMAV_UPDATE_SIGNAL, DEVICE_TIMEOUT_SECONDS
 
@@ -52,7 +52,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: AnthemavConfigEntry) -> 
         avr.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, close_avr)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, close_avr)
     )
 
     return True

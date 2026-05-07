@@ -58,14 +58,14 @@ from openai.types.responses.web_search_tool_param import UserLocation
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, issue_registry as ir, llm
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util import slugify
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, issue_registry as ir, llm
+from inpui.helpers.entity import Entity
+from inpui.helpers.json import json_dumps
+from inpui.util import slugify
 
 from .const import (
     CONF_CHAT_MODEL,

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import aiohttp
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import (
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import (
     async_create_clientsession,
     async_get_clientsession,
 )

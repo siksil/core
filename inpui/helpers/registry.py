@@ -7,7 +7,7 @@ from collections import UserDict, defaultdict
 from collections.abc import Mapping, Sequence, ValuesView
 from typing import TYPE_CHECKING, Any, Literal
 
-from homeassistant.core import CoreState, HomeAssistant, callback
+from inpui.core import CoreState, HomeAssistant, callback
 
 if TYPE_CHECKING:
     from .storage import Store

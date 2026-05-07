@@ -21,24 +21,24 @@ from oauth2client.client import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.google.const import (
+from inpui.components.google.const import (
     CONF_CALENDAR_ACCESS,
     CONF_CREDENTIAL_TYPE,
     DOMAIN,
     CredentialType,
     FeatureAccess,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .conftest import CLIENT_ID, CLIENT_SECRET, EMAIL_ADDRESS, AsyncYieldFixture
 

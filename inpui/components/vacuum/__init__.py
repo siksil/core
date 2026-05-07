@@ -13,8 +13,8 @@ from typing import Any, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (  # noqa: F401 # STATE_PAUSED/IDLE are API
+from inpui.config_entries import ConfigEntry
+from inpui.const import (  # noqa: F401 # STATE_PAUSED/IDLE are API
     ATTR_BATTERY_LEVEL,
     ATTR_COMMAND,
     SERVICE_TOGGLE,
@@ -22,16 +22,16 @@ from homeassistant.const import (  # noqa: F401 # STATE_PAUSED/IDLE are API
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.helpers.frame import ReportBehavior, report_usage
-from homeassistant.helpers.icon import icon_for_battery_level
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.helpers.frame import ReportBehavior, report_usage
+from inpui.helpers.icon import icon_for_battery_level
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 from .const import DATA_COMPONENT, DOMAIN, VacuumActivity, VacuumEntityFeature
 from .websocket import async_register_websocket_handlers

@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock, patch
 
 from switchbot_api import Device
 
-from homeassistant.components.switchbot_cloud import DOMAIN
-from homeassistant.components.switchbot_cloud.image import SwitchBotCloudImage
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.switchbot_cloud import DOMAIN
+from inpui.components.switchbot_cloud.image import SwitchBotCloudImage
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from . import configure_integration
 

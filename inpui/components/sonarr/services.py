@@ -7,12 +7,12 @@ from typing import Any, cast
 from aiopyarr import exceptions
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import selector
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import selector
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_DISKS,

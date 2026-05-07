@@ -11,11 +11,11 @@ from pymiele import OAUTH2_TOKEN
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.miele.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.miele.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow, device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 

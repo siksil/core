@@ -2,9 +2,9 @@
 
 from pysabnzbd import SabnzbdApi, SabnzbdApiException
 
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import _LOGGER, HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import _LOGGER, HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 
 async def get_client(hass: HomeAssistant, data):

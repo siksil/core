@@ -9,9 +9,9 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.auth.providers import homeassistant as hass_auth
-from homeassistant.core import HomeAssistant
-from homeassistant.scripts import auth as script_auth
+from inpui.auth.providers import homeassistant as hass_auth
+from inpui.core import HomeAssistant
+from inpui.scripts import auth as script_auth
 
 from tests.common import register_auth_provider
 

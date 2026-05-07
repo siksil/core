@@ -16,8 +16,8 @@ from plugwise.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     ATTR_CONFIGURATION_URL,
     CONF_BASE,
     CONF_HOST,
@@ -26,9 +26,9 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     ANNA_WITH_ADAM,

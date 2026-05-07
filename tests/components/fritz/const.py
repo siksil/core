@@ -4,8 +4,8 @@ from typing import Any
 
 from fritzconnection.lib.fritzstatus import DefaultConnectionService
 
-from homeassistant.components.fritz.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.fritz.const import DOMAIN
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_PASSWORD,
@@ -13,7 +13,7 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

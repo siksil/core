@@ -7,11 +7,11 @@ import pytest
 from yolink.const import OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 
 from homeassistant import config_entries, setup
-from homeassistant.components import application_credentials
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components import application_credentials
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

@@ -15,7 +15,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import paths
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_GROUP_MEMBERS,
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ENQUEUE,
@@ -31,7 +31,7 @@ from homeassistant.components.media_player import (
     SERVICE_UNJOIN,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.music_assistant.const import (
+from inpui.components.music_assistant.const import (
     ATTR_ALBUM,
     ATTR_ANNOUNCE_VOLUME,
     ATTR_ARTIST,
@@ -45,14 +45,14 @@ from homeassistant.components.music_assistant.const import (
     ATTR_USE_PRE_ANNOUNCE,
     DOMAIN,
 )
-from homeassistant.components.music_assistant.services import (
+from inpui.components.music_assistant.services import (
     SERVICE_GET_QUEUE,
     SERVICE_PLAY_ANNOUNCEMENT,
     SERVICE_PLAY_MEDIA_ADVANCED,
     SERVICE_TRANSFER_QUEUE,
 )
-from homeassistant.config_entries import HomeAssistantError
-from homeassistant.const import (
+from inpui.config_entries import HomeAssistantError
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
@@ -69,8 +69,8 @@ from homeassistant.const import (
     SERVICE_VOLUME_UP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     setup_integration_from_fixtures,

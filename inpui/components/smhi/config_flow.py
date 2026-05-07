@@ -7,16 +7,16 @@ from typing import Any
 from pysmhi import SmhiForecastException, SMHIPointForecast
 import voluptuous as vol
 
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     aiohttp_client,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.selector import LocationSelector
+from inpui.helpers.selector import LocationSelector
 
 from .const import DEFAULT_NAME, DOMAIN, HOME_LOCATION_NAME
 

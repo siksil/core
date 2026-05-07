@@ -1,6 +1,6 @@
 """Constants for Blink."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "blink"
 HARDWARE_ID = "Home Assistant"

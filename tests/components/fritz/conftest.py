@@ -12,7 +12,7 @@ from fritzconnection.lib.fritzhosts import FritzHosts
 from fritzconnection.lib.fritzstatus import FritzStatus
 import pytest
 
-from homeassistant.components.fritz.coordinator import FritzConnectionCached
+from inpui.components.fritz.coordinator import FritzConnectionCached
 
 from .const import (
     MOCK_FB_SERVICES,

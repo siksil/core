@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, Mock, PropertyMock, patch
 import pytest
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components import camera
-from homeassistant.components.camera.const import StreamType
-from homeassistant.components.camera.webrtc import WebRTCAnswer, WebRTCSendMessage
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components import camera
+from inpui.components.camera.const import StreamType
+from inpui.components.camera.webrtc import WebRTCAnswer, WebRTCSendMessage
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.setup import async_setup_component
 
 from .common import STREAM_SOURCE, WEBRTC_ANSWER, SomeTestProvider
 

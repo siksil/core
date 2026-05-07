@@ -9,11 +9,11 @@ import logging
 from flexit_bacnet import FlexitBACnet
 from flexit_bacnet.bacnet import DecodingError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 

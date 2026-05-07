@@ -6,13 +6,13 @@ from gotailwind import TailwindError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import number
-from homeassistant.components.number import ATTR_VALUE, SERVICE_SET_VALUE
-from homeassistant.components.tailwind.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components import number
+from inpui.components.number import ATTR_VALUE, SERVICE_SET_VALUE
+from inpui.components.tailwind.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 pytestmark = pytest.mark.usefixtures("init_integration")
 

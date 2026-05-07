@@ -6,11 +6,11 @@ from elvia import error as ElviaError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.elvia.const import CONF_METERING_POINT_ID, DOMAIN
-from homeassistant.components.recorder.core import Recorder
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType, UnknownFlow
+from inpui.components.elvia.const import CONF_METERING_POINT_ID, DOMAIN
+from inpui.components.recorder.core import Recorder
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType, UnknownFlow
 
 from tests.common import MockConfigEntry
 

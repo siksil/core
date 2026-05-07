@@ -5,12 +5,12 @@ from unittest.mock import Mock, patch
 from aiohttp import WSMsgType
 import voluptuous as vol
 
-from homeassistant.components.websocket_api import (
+from inpui.components.websocket_api import (
     async_register_command,
     const,
     messages,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_invalid_message_format(websocket_client) -> None:

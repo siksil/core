@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.lock import SERVICE_LOCK, SERVICE_UNLOCK
-from homeassistant.components.wallbox.coordinator import InsufficientRights
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.lock import SERVICE_LOCK, SERVICE_UNLOCK
+from inpui.components.wallbox.coordinator import InsufficientRights
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import http_403_error, http_404_error, http_429_error, setup_integration
 from .const import MOCK_LOCK_ENTITY_ID

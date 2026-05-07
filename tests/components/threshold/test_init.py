@@ -4,13 +4,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import threshold
-from homeassistant.components.threshold.config_flow import ConfigFlowHandler
-from homeassistant.components.threshold.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
+from inpui.components import threshold
+from inpui.components.threshold.config_flow import ConfigFlowHandler
+from inpui.components.threshold.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
 
 from tests.common import MockConfigEntry
 

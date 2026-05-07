@@ -8,7 +8,7 @@ from typing import Any
 from pyhomematic import HMConnection
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     ATTR_NAME,
@@ -22,11 +22,11 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_ADDRESS,
@@ -259,7 +259,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     homematic.start()
 
     # Stops server when Home Assistant is shutting down
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, hass.data[DATA_HOMEMATIC].stop)
+    hass.bus.listen_once(EVENT_INPUI_STOP, hass.data[DATA_HOMEMATIC].stop)
 
     # Init homematic hubs
     entity_hubs = [HMHub(hass, homematic, hub_name) for hub_name in hosts]

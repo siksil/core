@@ -7,10 +7,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import stt
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import chat_session
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import stt
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import chat_session
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DEBUG_RECORDING_DIR,

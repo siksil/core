@@ -5,15 +5,15 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import cover, template
-from homeassistant.components.cover import (
+from inpui.components import cover, template
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     DOMAIN as COVER_DOMAIN,
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_CLOSE_COVER_TILT,
@@ -29,9 +29,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import ConfigurationStyle, async_get_flow_preview_state
 

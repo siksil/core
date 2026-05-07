@@ -9,13 +9,13 @@ from bluetooth_data_tools import human_readable_name
 from pycasperglow import CasperGlow, CasperGlowError
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
+from inpui.helpers.device_registry import format_mac
 
 from .const import DOMAIN, LOCAL_NAMES
 

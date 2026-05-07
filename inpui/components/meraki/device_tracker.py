@@ -8,15 +8,15 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     PLATFORM_SCHEMA as DEVICE_TRACKER_PLATFORM_SCHEMA,
     AsyncSeeCallback,
     SourceType,
 )
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 CONF_VALIDATOR = "validator"
 CONF_SECRET = "secret"

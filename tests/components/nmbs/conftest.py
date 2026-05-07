@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 from pyrail.models import StationsApiResponse
 import pytest
 
-from homeassistant.components.nmbs.const import (
+from inpui.components.nmbs.const import (
     CONF_STATION_FROM,
     CONF_STATION_TO,
     DOMAIN,

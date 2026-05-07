@@ -6,14 +6,14 @@ import logging
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_PAYLOAD_LENGTH,
     KNX_ADDRESS,
     KNX_MODULE_KEY,
 )
-from homeassistant.components.knx.schema import ButtonSchema
-from homeassistant.const import CONF_NAME, CONF_PAYLOAD, CONF_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.components.knx.schema import ButtonSchema
+from inpui.const import CONF_NAME, CONF_PAYLOAD, CONF_TYPE
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

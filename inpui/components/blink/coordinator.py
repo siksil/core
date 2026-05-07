@@ -10,14 +10,14 @@ from aiohttp import ClientError
 from blinkpy.auth import BlinkTwoFARequiredError, UnauthorizedError
 from blinkpy.blinkpy import Blink
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 

@@ -8,12 +8,12 @@ from xml.parsers.expat import ExpatError
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_FORCE_UPDATE,
     CONF_ICON,
@@ -23,19 +23,19 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.template import Template
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
     ManualTriggerEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from . import async_get_config_and_coordinator, create_rest_data_from_config
 from .const import DEFAULT_BINARY_SENSOR_NAME

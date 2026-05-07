@@ -6,12 +6,12 @@ from freezegun.api import FrozenDateTimeFactory
 import infrared_protocols
 import pytest
 
-from homeassistant.components.infrared import async_send_command
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.infrared import async_send_command
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 ENTITY_IR_TRANSMITTER = "infrared.ir_blaster_infrared_transmitter"
 

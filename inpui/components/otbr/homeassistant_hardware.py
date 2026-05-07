@@ -6,18 +6,18 @@ import logging
 
 from yarl import URL
 
-from homeassistant.components.hassio import AddonManager
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.hassio import AddonManager
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
     OwningIntegration,
     get_otbr_addon_firmware_info,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.hassio import is_hassio
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.hassio import is_hassio
 
 from .const import DOMAIN
 from .types import OTBRConfigEntry

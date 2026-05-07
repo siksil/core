@@ -6,13 +6,13 @@ from typing import Any
 
 from pyinsteon import devices
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 from .const import (
     DOMAIN,

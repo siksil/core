@@ -9,11 +9,11 @@ from librehardwaremonitor_api import (
 )
 import pytest
 
-from homeassistant.components.libre_hardware_monitor.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.libre_hardware_monitor.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import AUTH_INPUT, REAUTH_INPUT, VALID_CONFIG, VALID_CONFIG_WITH_AUTH
 

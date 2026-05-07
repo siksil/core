@@ -38,9 +38,9 @@ from sqlalchemy.sql.expression import and_, true
 from sqlalchemy.sql.lambdas import StatementLambdaElement
 from sqlalchemy.types import BINARY
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.ulid import ulid_at_time, ulid_to_bytes
+from inpui.core import HomeAssistant
+from inpui.util.enum import try_parse_enum
+from inpui.util.ulid import ulid_at_time, ulid_to_bytes
 
 from .auto_repairs.events.schema import (
     correct_db_schema as events_correct_db_schema,

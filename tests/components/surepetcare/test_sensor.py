@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
 
 from . import HOUSEHOLD_ID, MOCK_FELAQUA, MOCK_PET
 

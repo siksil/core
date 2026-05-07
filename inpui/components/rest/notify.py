@@ -9,7 +9,7 @@ from typing import Any
 import httpx
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TARGET,
     ATTR_TITLE,
@@ -17,7 +17,7 @@ from homeassistant.components.notify import (
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_HEADERS,
     CONF_METHOD,
@@ -30,11 +30,11 @@ from homeassistant.const import (
     HTTP_BASIC_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 CONF_DATA = "data"
 CONF_DATA_TEMPLATE = "data_template"

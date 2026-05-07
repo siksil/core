@@ -7,8 +7,8 @@ from unittest.mock import patch
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components import fan, mqtt
-from homeassistant.components.fan import (
+from inpui.components import fan, mqtt
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -16,7 +16,7 @@ from homeassistant.components.fan import (
     ATTR_PRESET_MODES,
     NotValidPresetModeError,
 )
-from homeassistant.components.mqtt.fan import (
+from inpui.components.mqtt.fan import (
     CONF_DIRECTION_COMMAND_TOPIC,
     CONF_DIRECTION_STATE_TOPIC,
     CONF_OSCILLATION_COMMAND_TOPIC,
@@ -27,14 +27,14 @@ from homeassistant.components.mqtt.fan import (
     CONF_PRESET_MODE_STATE_TOPIC,
     MQTT_FAN_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

@@ -11,9 +11,9 @@ from aiogithubapi import (
 )
 import pytest
 
-from homeassistant.components.github.const import CONF_REPOSITORIES, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.github.const import CONF_REPOSITORIES, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import MOCK_ACCESS_TOKEN, TEST_REPOSITORY
 

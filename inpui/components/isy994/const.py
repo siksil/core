@@ -4,8 +4,8 @@ import logging
 
 from pyisy.constants import PROP_ON_LEVEL, PROP_RAMP_RATE
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.climate import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_HIGH,
     FAN_MEDIUM,
@@ -15,8 +15,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.lock import LockState
-from homeassistant.const import (
+from inpui.components.lock import LockState
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION,
     CURRENCY_CENT,

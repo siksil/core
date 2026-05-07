@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.deako.const import DOMAIN
+from inpui.components.deako.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

@@ -9,15 +9,15 @@ import uuid
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_SHOW_ON_MAP, CONF_UUID
-from homeassistant.core import callback
-from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
+from inpui.const import CONF_SHOW_ON_MAP, CONF_UUID
+from inpui.core import callback
+from inpui.helpers import config_entry_oauth2_flow, config_validation as cv
 
 from .api import get_api_scopes
 from .const import (

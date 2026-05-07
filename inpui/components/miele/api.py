@@ -5,7 +5,7 @@ from typing import cast
 from aiohttp import ClientSession
 from pymiele import MIELE_API, AbstractAuth
 
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class AsyncConfigEntryAuth(AbstractAuth):

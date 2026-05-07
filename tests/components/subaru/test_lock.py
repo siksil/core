@@ -5,17 +5,17 @@ from unittest.mock import patch
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.subaru.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.subaru.const import (
     ATTR_DOOR,
     DOMAIN,
     SERVICE_UNLOCK_SPECIFIC_DOOR,
     UNLOCK_DOOR_DRIVERS,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_LOCK, SERVICE_UNLOCK
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, SERVICE_LOCK, SERVICE_UNLOCK
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_API
 

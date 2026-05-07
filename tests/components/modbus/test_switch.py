@@ -6,8 +6,8 @@ from unittest import mock
 from pymodbus.exceptions import ModbusException
 import pytest
 
-from homeassistant.components.homeassistant import SERVICE_UPDATE_ENTITY
-from homeassistant.components.modbus.const import (
+from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.modbus.const import (
     CALL_TYPE_COIL,
     CALL_TYPE_DISCRETE,
     CALL_TYPE_REGISTER_HOLDING,
@@ -21,8 +21,8 @@ from homeassistant.components.modbus.const import (
     CONF_WRITE_TYPE,
     DOMAIN,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ADDRESS,
     CONF_COMMAND_OFF,
@@ -40,9 +40,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import TEST_ENTITY_NAME, ReadResult
 

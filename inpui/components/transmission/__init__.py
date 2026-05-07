@@ -14,7 +14,7 @@ from transmission_rpc.error import (
     TransmissionError,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -24,15 +24,15 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import DeviceEntryType
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import DeviceEntryType
+from inpui.helpers.typing import ConfigType
 
 from .const import DEFAULT_PATH, DEFAULT_SSL, DOMAIN
 from .coordinator import TransmissionConfigEntry, TransmissionDataUpdateCoordinator

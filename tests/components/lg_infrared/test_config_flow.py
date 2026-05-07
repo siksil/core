@@ -4,21 +4,21 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.infrared import (
+from inpui.components.infrared import (
     DATA_COMPONENT as INFRARED_DATA_COMPONENT,
     DOMAIN as INFRARED_DOMAIN,
 )
-from homeassistant.components.lg_infrared.const import (
+from inpui.components.lg_infrared.const import (
     CONF_DEVICE_TYPE,
     CONF_INFRARED_ENTITY_ID,
     DOMAIN,
     LGDeviceType,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_INFRARED_ENTITY_ID, MockInfraredEntity
 

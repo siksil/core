@@ -22,15 +22,15 @@ from kasa.smart.modules.clean import AreaUnit, Clean, ErrorCode, Status
 from kasa.smartcam.modules.camera import LOCAL_STREAMING_PORT, Camera
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.translation import async_get_translations
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.setup import async_setup_component
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.tplink.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.translation import async_get_translations
+from inpui.helpers.typing import UNDEFINED
+from inpui.setup import async_setup_component
 
 from .const import (
     ALIAS,

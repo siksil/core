@@ -7,10 +7,10 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from teslemetry_stream import Signal
 
-from homeassistant.components.teslemetry.coordinator import VEHICLE_INTERVAL
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.teslemetry.coordinator import VEHICLE_INTERVAL
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, assert_entities_alt, setup_platform
 from .const import VEHICLE_DATA_ALT

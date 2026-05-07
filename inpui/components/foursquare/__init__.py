@@ -7,11 +7,11 @@ from aiohttp import web
 import requests
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

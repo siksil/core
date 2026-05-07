@@ -9,13 +9,13 @@ from typing import Any
 from webio_api import Output as NASwebOutput
 from webio_api.const import STATE_ENTITY_UNAVAILABLE, STATE_OUTPUT_OFF, STATE_OUTPUT_ON
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.helpers.update_coordinator import (
     BaseCoordinatorEntity,
     BaseDataUpdateCoordinatorProtocol,
 )

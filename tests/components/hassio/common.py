@@ -18,8 +18,8 @@ from aiohasupervisor.models import (
     StoreAddonComplete,
 )
 
-from homeassistant.components.hassio.addon_manager import AddonManager
-from homeassistant.core import HomeAssistant
+from inpui.components.hassio.addon_manager import AddonManager
+from inpui.core import HomeAssistant
 
 LOGGER = logging.getLogger(__name__)
 INSTALLED_ADDON_FIELDS = [field.name for field in fields(InstalledAddonComplete)]

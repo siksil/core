@@ -6,10 +6,10 @@ import uuid
 import pytest
 from zwave_me_ws import ZWaveMeData
 
-from homeassistant.components.zwave_me import ZWaveMePlatform
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.zwave_me import ZWaveMePlatform
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

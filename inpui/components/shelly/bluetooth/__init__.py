@@ -7,11 +7,11 @@ from typing import TYPE_CHECKING
 from aioshelly.ble import async_start_scanner, create_scanner
 from aioshelly.ble.const import BLE_SCAN_RESULT_EVENT, BLE_SCAN_RESULT_VERSION
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     async_register_scanner,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
 
 from ..const import BLEScannerMode
 

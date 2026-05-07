@@ -10,10 +10,10 @@ from pyinsteon.config.extended_property import ExtendedProperty
 from pyinsteon.constants import RelayMode, ToggleMode
 import pytest
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon.api import async_load_api
-from homeassistant.components.insteon.api.device import INSTEON_DEVICE_NOT_FOUND
-from homeassistant.components.insteon.api.properties import (
+from inpui.components import insteon
+from inpui.components.insteon.api import async_load_api
+from inpui.components.insteon.api.device import INSTEON_DEVICE_NOT_FOUND
+from inpui.components.insteon.api.properties import (
     DEVICE_ADDRESS,
     ID,
     PROPERTY_NAME,
@@ -23,7 +23,7 @@ from homeassistant.components.insteon.api.properties import (
     SHOW_ADVANCED,
     TYPE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .mock_devices import MockDevices
 

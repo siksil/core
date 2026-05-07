@@ -9,19 +9,19 @@ from adext import AdExt
 from alarmdecoder.devices import SerialDevice, SocketDevice
 from alarmdecoder.util import NoDeviceError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_PROTOCOL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DEVICE_BAUD,
@@ -138,7 +138,7 @@ async def async_setup_entry(
     controller.on_expander_message += handle_rel_message
 
     remove_stop_listener = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP, stop_alarmdecoder
+        EVENT_INPUI_STOP, stop_alarmdecoder
     )
 
     entry.runtime_data = AlarmDecoderData(

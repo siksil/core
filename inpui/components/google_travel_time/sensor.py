@@ -10,25 +10,25 @@ from google.api_core.client_options import ClientOptions
 from google.api_core.exceptions import GoogleAPIError, PermissionDenied
 from google.maps.routing_v2 import Route, RoutesAsyncClient
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_LANGUAGE,
     CONF_MODE,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     UnitOfTime,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.location import find_coordinates
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.location import find_coordinates
 
 from .const import (
     ATTRIBUTION,
@@ -128,7 +128,7 @@ class GoogleTravelTimeSensor(SensorEntity):
         """Handle when entity is added."""
         if self.hass.state is not CoreState.running:
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STARTED, self.first_update
+                EVENT_INPUI_STARTED, self.first_update
             )
         else:
             await self.first_update()

@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, Mock, call, patch
 
 from dynalite_devices_lib.dynalitebase import DynaliteBaseDevice
 
-from homeassistant.components import dynalite
-from homeassistant.const import ATTR_SERVICE, CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components import dynalite
+from inpui.const import ATTR_SERVICE, CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -5,13 +5,13 @@ from datetime import datetime
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.dremel_3d_printer.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.dremel_3d_printer.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
@@ -19,9 +19,9 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import UTC
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import UTC
 
 from tests.common import MockConfigEntry
 

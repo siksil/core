@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
@@ -17,7 +17,7 @@ from homeassistant.helpers import (
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class LabelExtension(BaseTemplateExtension):
@@ -91,7 +91,7 @@ class LabelExtension(BaseTemplateExtension):
         ent_reg = er.async_get(self.hass)
 
         # Import here, not at top-level to avoid circular import
-        from homeassistant.helpers import config_validation as cv  # noqa: PLC0415
+        from inpui.helpers import config_validation as cv  # noqa: PLC0415
 
         lookup_value = str(lookup_value)
 

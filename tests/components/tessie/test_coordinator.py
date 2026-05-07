@@ -6,17 +6,17 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from tesla_fleet_api.exceptions import Forbidden, InvalidToken, MissingToken
 
-from homeassistant.components.tessie import PLATFORMS
-from homeassistant.components.tessie.const import DOMAIN
-from homeassistant.components.tessie.coordinator import (
+from inpui.components.tessie import PLATFORMS
+from inpui.components.tessie.const import DOMAIN
+from inpui.components.tessie.coordinator import (
     TESSIE_ENERGY_HISTORY_INTERVAL,
     TESSIE_FLEET_API_SYNC_INTERVAL,
     TESSIE_SYNC_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .common import ERROR_AUTH, ERROR_CONNECTION, ERROR_UNKNOWN, setup_platform
 

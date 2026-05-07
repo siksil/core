@@ -5,9 +5,9 @@ from unittest.mock import Mock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.freebox import SCAN_INTERVAL
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.freebox import SCAN_INTERVAL
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 from .const import (

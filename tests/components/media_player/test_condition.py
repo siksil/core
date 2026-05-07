@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.media_player.const import MediaPlayerState
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player.const import MediaPlayerState
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

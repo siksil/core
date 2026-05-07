@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 from linkplay.controller import LinkPlayController
 
-from homeassistant.const import Platform
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import Platform
+from inpui.util.hass_dict import HassKey
 
 
 @dataclass

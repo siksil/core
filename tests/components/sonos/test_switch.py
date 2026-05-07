@@ -6,12 +6,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.sonos import DOMAIN
-from homeassistant.components.sonos.const import (
+from inpui.components.sonos import DOMAIN
+from inpui.components.sonos.const import (
     DATA_SONOS_DISCOVERY_MANAGER,
     MODEL_SONOS_ARC_ULTRA,
 )
-from homeassistant.components.sonos.switch import (
+from inpui.components.sonos.switch import (
     ATTR_DURATION,
     ATTR_ID,
     ATTR_INCLUDE_LINKED_ZONES,
@@ -21,10 +21,10 @@ from homeassistant.components.sonos.switch import (
     ATTR_SPEECH_ENHANCEMENT_ENABLED,
     ATTR_VOLUME,
 )
-from homeassistant.components.ssdp import SsdpChange
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.components.ssdp import SsdpChange
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TIME,
     SERVICE_TURN_OFF,
@@ -32,11 +32,11 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import (
     MockSoCo,

@@ -7,13 +7,13 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     DEGREE,
@@ -23,19 +23,19 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import (
     CoordinatorEntity,
     TimestampDataUpdateCoordinator,
 )
-from homeassistant.util.dt import parse_datetime
-from homeassistant.util.unit_conversion import (
+from inpui.util.dt import parse_datetime
+from inpui.util.unit_conversion import (
     DistanceConverter,
     PressureConverter,
     SpeedConverter,
 )
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import NWSConfigEntry, NWSData, base_unique_id, device_info
 from .const import ATTRIBUTION, CONF_STATION

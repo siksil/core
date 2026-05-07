@@ -6,16 +6,16 @@ from total_connect_client import ArmingHelper
 from total_connect_client.exceptions import BadResultCodeError, UsercodeInvalid
 from total_connect_client.location import TotalConnectLocation
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CODE_REQUIRED, DOMAIN
 from .coordinator import TotalConnectConfigEntry, TotalConnectDataUpdateCoordinator

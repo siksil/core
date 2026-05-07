@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Callable, Coroutine
 from typing import Any
 
-from homeassistant.const import EVENT_LABS_UPDATED
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.frame import report_usage
+from inpui.const import EVENT_LABS_UPDATED
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.frame import report_usage
 
 from .const import LABS_DATA
 from .models import EventLabsUpdatedData

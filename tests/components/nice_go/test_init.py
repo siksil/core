@@ -9,11 +9,11 @@ from nice_go import ApiError, AuthFailedError, Barrier, BarrierState
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nice_go.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.nice_go.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
 
 from . import setup_integration
 
@@ -388,7 +388,7 @@ async def test_reconnect_hass_stopping(
         """Stop reconnecting if hass is stopping."""
         wait_for_hass.set()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_ha_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_ha_stop)
 
     with (
         patch("homeassistant.components.nice_go.coordinator.RECONNECT_DELAY", 0.1),
@@ -396,7 +396,7 @@ async def test_reconnect_hass_stopping(
     ):
         await setup_integration(hass, mock_config_entry, [Platform.COVER])
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await wait_for_hass.wait()
         await hass.async_block_till_done(wait_background_tasks=True)
 

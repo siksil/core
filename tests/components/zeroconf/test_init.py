@@ -13,19 +13,19 @@ from zeroconf import (
 from zeroconf.asyncio import AsyncServiceInfo
 
 from homeassistant import config_entries
-from homeassistant.components import zeroconf
-from homeassistant.components.zeroconf import discovery
-from homeassistant.const import (
+from inpui.components import zeroconf
+from inpui.components.zeroconf import discovery
+from inpui.const import (
     EVENT_COMPONENT_LOADED,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.generated import zeroconf as zc_gen
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.setup import ATTR_COMPONENT, async_setup_component
+from inpui.core import HomeAssistant
+from inpui.generated import zeroconf as zc_gen
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.setup import ATTR_COMPONENT, async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 
@@ -181,7 +181,7 @@ async def test_setup(hass: HomeAssistant, mock_async_zeroconf: MagicMock) -> Non
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -236,7 +236,7 @@ async def test_setup_with_overly_long_url_and_name(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
     assert "https://this.url.is.way.too.long" in caplog.text
@@ -257,7 +257,7 @@ async def test_setup_with_defaults(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     mock_zeroconf.assert_called_with(
@@ -302,7 +302,7 @@ async def test_zeroconf_match_macaddress(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -351,7 +351,7 @@ async def test_zeroconf_match_manufacturer(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -392,7 +392,7 @@ async def test_zeroconf_match_model(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -433,7 +433,7 @@ async def test_zeroconf_match_manufacturer_not_present(hass: HomeAssistant) -> N
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -469,7 +469,7 @@ async def test_zeroconf_no_match(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -509,7 +509,7 @@ async def test_zeroconf_no_match_manufacturer(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -544,7 +544,7 @@ async def test_homekit_match_partial_space(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -592,7 +592,7 @@ async def test_device_with_invalid_name(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -630,7 +630,7 @@ async def test_homekit_match_partial_dash(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -666,7 +666,7 @@ async def test_homekit_match_partial_fnmatch(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -702,7 +702,7 @@ async def test_homekit_match_full(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -741,7 +741,7 @@ async def test_homekit_already_paired(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -778,7 +778,7 @@ async def test_homekit_invalid_paring_status(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -807,7 +807,7 @@ async def test_homekit_not_paired(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -851,7 +851,7 @@ async def test_homekit_controller_still_discovered_unpaired_for_cloud(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -896,7 +896,7 @@ async def test_homekit_controller_still_discovered_unpaired_for_polling(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -1009,12 +1009,12 @@ async def test_get_instance(
     """Test we get an instance."""
     assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
     assert await zeroconf.async_get_async_instance(hass) is mock_async_zeroconf
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert len(mock_async_zeroconf.ha_async_close.mock_calls) == 0
     # Only shutdown at the close event so integrations have time
     # to send out their goodbyes
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
     assert len(mock_async_zeroconf.ha_async_close.mock_calls) == 1
 
@@ -1052,7 +1052,7 @@ async def test_removed_ignored(hass: HomeAssistant) -> None:
         ) as mock_service_info,
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_info.mock_calls) == 2
@@ -1091,7 +1091,7 @@ async def test_async_detect_interfaces_setting_non_loopback_route(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert mock_zc.mock_calls[0] == call(
@@ -1179,7 +1179,7 @@ async def test_async_detect_interfaces_setting_empty_route_linux(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
     assert mock_zc.mock_calls[0] == call(
         interfaces=[
@@ -1213,7 +1213,7 @@ async def test_async_detect_interfaces_setting_empty_route_freebsd(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
     assert mock_zc.mock_calls[0] == call(
         interfaces=[
@@ -1264,7 +1264,7 @@ async def test_async_detect_interfaces_explicitly_set_ipv6_linux(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert mock_zc.mock_calls[0] == call(
@@ -1293,7 +1293,7 @@ async def test_async_detect_interfaces_explicitly_set_ipv6_freebsd(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert mock_zc.mock_calls[0] == call(
@@ -1323,7 +1323,7 @@ async def test_async_detect_interfaces_explicitly_before_setup(
     ):
         # Call before async_setup has been called
         await zeroconf.async_get_async_instance(hass)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert mock_zc.mock_calls[0] == call(
@@ -1337,7 +1337,7 @@ async def test_no_name(hass: HomeAssistant, mock_async_zeroconf: MagicMock) -> N
     hass.config.location_name = ""
     with patch("homeassistant.components.zeroconf.HaZeroconf"):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
     register_call = mock_async_zeroconf.async_register_service.mock_calls[-1]
@@ -1362,7 +1362,7 @@ async def test_setup_with_disallowed_characters_in_local_name(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
     calls = mock_async_zeroconf.async_register_service.mock_calls
@@ -1422,7 +1422,7 @@ async def test_zeroconf_removed(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_service_browser.mock_calls) == 1
@@ -1479,7 +1479,7 @@ async def test_zeroconf_removed_dismiss_protected(hass: HomeAssistant) -> None:
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     # Only the unprotected flow should be aborted
@@ -1602,7 +1602,7 @@ async def test_zeroconf_rediscover(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         expected_context = {
@@ -1722,7 +1722,7 @@ async def test_zeroconf_rediscover_no_match(
         ),
     ):
         assert await async_setup_component(hass, zeroconf.DOMAIN, {zeroconf.DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         expected_context = {

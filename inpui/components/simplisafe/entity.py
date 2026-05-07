@@ -17,10 +17,10 @@ from simplipy.websocket import (
     WebsocketEvent,
 )
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import SimpliSafe
 from .const import (

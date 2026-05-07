@@ -8,24 +8,24 @@ from typing import NamedTuple
 from nessclient import ArmingMode, ArmingState, Client
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA as BINARY_SENSOR_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_SCAN_INTERVAL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, Event, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, Event, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_INFER_ARMING_STATE,
@@ -179,7 +179,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: NessAlarmConfigEntry) ->
     async def _close(event: Event) -> None:
         await client.close()
 
-    entry.async_on_unload(hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _close))
+    entry.async_on_unload(hass.bus.async_listen_once(EVENT_INPUI_STOP, _close))
 
     async def _started(hass: HomeAssistant) -> None:
         _LOGGER.debug("Invoking client keepalive() & update()")

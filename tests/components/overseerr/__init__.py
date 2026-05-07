@@ -5,8 +5,8 @@ from urllib.parse import urlparse
 
 from aiohttp.test_utils import TestClient
 
-from homeassistant.components.webhook import async_generate_url
-from homeassistant.core import HomeAssistant
+from inpui.components.webhook import async_generate_url
+from inpui.core import HomeAssistant
 
 from .const import WEBHOOK_ID
 

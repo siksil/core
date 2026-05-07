@@ -16,18 +16,18 @@ from pyicloud.exceptions import (
 )
 from pyicloud.services.findmyiphone import AppleDevice
 
-from homeassistant.components.zone import async_active_zone
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.event import track_point_in_utc_time
-from homeassistant.helpers.storage import Store
-from homeassistant.util import slugify
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.dt import utcnow
-from homeassistant.util.location import distance
+from inpui.components.zone import async_active_zone
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_USERNAME
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.event import track_point_in_utc_time
+from inpui.helpers.storage import Store
+from inpui.util import slugify
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.dt import utcnow
+from inpui.util.location import distance
 
 from .const import (
     ATTR_ACCOUNT_FETCH_INTERVAL,

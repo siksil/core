@@ -8,10 +8,10 @@ from functools import partial
 
 from wled import Segment
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_INTENSITY, ATTR_SPEED
 from .coordinator import WLEDConfigEntry, WLEDDataUpdateCoordinator

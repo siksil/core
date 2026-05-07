@@ -6,12 +6,12 @@ from ssl import SSLError
 
 from bosch_alarm_mode2 import Panel
 
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_PASSWORD, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, CONF_MAC, CONF_PASSWORD, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_INSTALLER_CODE, CONF_USER_CODE, DOMAIN
 from .services import async_setup_services

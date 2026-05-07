@@ -5,14 +5,14 @@ from typing import Any
 
 from dio_chacon_wifi_api.const import DeviceTypeEnum, ShutterMoveEnum
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ChaconDioConfigEntry
 from .entity import ChaconDioEntity

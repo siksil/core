@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.local_todo.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.local_todo.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import STORAGE_KEY, TODO_NAME
 

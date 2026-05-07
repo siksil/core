@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, Mock
 import zigpy.zcl
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.zha.helpers import ZHADeviceProxy
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.zha.helpers import ZHADeviceProxy
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

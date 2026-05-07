@@ -6,12 +6,12 @@ import asyncio
 import logging
 from typing import TYPE_CHECKING
 
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .coordinator import (

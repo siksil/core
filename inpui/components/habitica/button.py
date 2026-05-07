@@ -9,14 +9,14 @@ from typing import Any
 
 from habiticalib import Habitica, HabiticaClass, Skill, TaskType
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN as BUTTON_DOMAIN,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ASSETS_URL, DOMAIN
 from .coordinator import HabiticaConfigEntry, HabiticaData

@@ -3,10 +3,10 @@
 from typing import Any
 import uuid
 
-from homeassistant.components import person
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.helpers import entity_registry as er
+from inpui.components import person
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import ATTR_DEVICE_ID
+from inpui.helpers import entity_registry as er
 
 from .const import ATTR_APP_ID, ATTR_DEVICE_NAME, CONF_USER_ID, DOMAIN
 

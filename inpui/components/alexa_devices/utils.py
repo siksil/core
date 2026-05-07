@@ -12,11 +12,11 @@ from aioamazondevices.const.schedules import (
 )
 from aioamazondevices.exceptions import CannotConnect, CannotRetrieveData
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-import homeassistant.helpers.entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+import inpui.helpers.entity_registry as er
 
 from .const import _LOGGER, DOMAIN
 from .coordinator import AmazonDevicesCoordinator

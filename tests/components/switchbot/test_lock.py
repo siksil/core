@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.const import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     LOCK_LITE_SERVICE_INFO,

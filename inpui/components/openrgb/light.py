@@ -8,7 +8,7 @@ from typing import Any
 from openrgb.orgb import Device
 from openrgb.utils import ModeColors, ModeData, RGBColor
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ATTR_RGB_COLOR,
@@ -17,13 +17,13 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import slugify
-from homeassistant.util.color import color_hs_to_RGB, color_RGB_to_hsv
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import slugify
+from inpui.util.color import color_hs_to_RGB, color_RGB_to_hsv
 
 from .const import (
     CONNECTION_ERRORS,

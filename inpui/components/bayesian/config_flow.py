@@ -7,32 +7,32 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import DOMAIN as ALARM_DOMAIN
-from homeassistant.components.binary_sensor import (
+from inpui.components.alarm_control_panel import DOMAIN as ALARM_DOMAIN
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.calendar import DOMAIN as CALENDAR_DOMAIN
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
-from homeassistant.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
-from homeassistant.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
-from homeassistant.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN
-from homeassistant.components.person import DOMAIN as PERSON_DOMAIN
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.sun import DOMAIN as SUN_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.todo import DOMAIN as TODO_DOMAIN
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.calendar import DOMAIN as CALENDAR_DOMAIN
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.components.device_tracker import DOMAIN as DEVICE_TRACKER_DOMAIN
+from inpui.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
+from inpui.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
+from inpui.components.input_text import DOMAIN as INPUT_TEXT_DOMAIN
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN
+from inpui.components.person import DOMAIN as PERSON_DOMAIN
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.sun import DOMAIN as SUN_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.todo import DOMAIN as TODO_DOMAIN
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlowResult,
     ConfigSubentry,
@@ -40,7 +40,7 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ABOVE,
     CONF_BELOW,
     CONF_DEVICE_CLASS,
@@ -50,9 +50,9 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import selector, translation
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import callback
+from inpui.helpers import selector, translation
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,

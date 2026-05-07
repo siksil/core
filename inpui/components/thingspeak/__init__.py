@@ -6,16 +6,16 @@ from requests.exceptions import RequestException
 import thingspeak
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_ID,
     CONF_WHITELIST,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, event, state as state_helper
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, event, state as state_helper
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

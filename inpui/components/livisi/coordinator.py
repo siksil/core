@@ -10,11 +10,11 @@ from livisi import LivisiEvent, Websocket
 from livisi.aiolivisi import AioLivisi
 from livisi.errors import TokenExpiredException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     AVATAR,

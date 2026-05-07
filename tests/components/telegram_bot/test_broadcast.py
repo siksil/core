@@ -2,9 +2,9 @@
 
 from httpx import Request as HTTPXRequest
 
-from homeassistant.components.telegram_bot.bot import TelegramBotConfigEntry
-from homeassistant.components.telegram_bot.const import DEFAULT_TIMEOUT_SECONDS
-from homeassistant.core import HomeAssistant
+from inpui.components.telegram_bot.bot import TelegramBotConfigEntry
+from inpui.components.telegram_bot.const import DEFAULT_TIMEOUT_SECONDS
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

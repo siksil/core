@@ -12,7 +12,7 @@ from psnawp_api.models.trophies import PlatformType, TrophySummary, TrophyTitle
 from psnawp_api.models.user import User
 from pyrate_limiter import Duration, Rate
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import SUPPORTED_PLATFORMS
 

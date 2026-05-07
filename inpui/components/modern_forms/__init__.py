@@ -8,8 +8,8 @@ from typing import Any, Concatenate
 
 from aiomodernforms import ModernFormsConnectionError, ModernFormsError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import ModernFormsConfigEntry, ModernFormsDataUpdateCoordinator
 from .entity import ModernFormsDeviceEntity

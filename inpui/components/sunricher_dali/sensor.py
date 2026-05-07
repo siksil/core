@@ -8,15 +8,15 @@ from PySrDaliGateway import CallbackEventType, Device
 from PySrDaliGateway.helper import is_illuminance_sensor, is_light_device
 from PySrDaliGateway.types import IlluminanceStatus
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import LIGHT_LUX, EntityCategory, UnitOfEnergy
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import LIGHT_LUX, EntityCategory, UnitOfEnergy
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, MANUFACTURER
 from .entity import DaliDeviceEntity

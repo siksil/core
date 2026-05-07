@@ -6,12 +6,12 @@ from pyfibaro.fibaro_client import FibaroAuthenticationFailed, FibaroConnectFail
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.fibaro import DOMAIN
-from homeassistant.components.fibaro.config_flow import _normalize_url
-from homeassistant.components.fibaro.const import CONF_IMPORT_PLUGINS
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
+from inpui.components.fibaro import DOMAIN
+from inpui.components.fibaro.config_flow import _normalize_url
+from inpui.components.fibaro.const import CONF_IMPORT_PLUGINS
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
 
 from .conftest import TEST_NAME, TEST_PASSWORD, TEST_URL, TEST_USERNAME
 

@@ -8,9 +8,9 @@ from typing import Any
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.components.file_upload import process_uploaded_file
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PATH,
@@ -21,15 +21,15 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant
+from inpui.helpers.selector import (
     FileSelector,
     FileSelectorConfig,
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.helpers.storage import STORAGE_DIR
 
 from . import DOMAIN, create_influx_url, get_influx_connection
 from .const import (

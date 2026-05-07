@@ -5,11 +5,11 @@ from unittest.mock import patch
 from aemet_opendata.exceptions import AemetTimeout
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.aemet.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.aemet.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .util import mock_api_call
 

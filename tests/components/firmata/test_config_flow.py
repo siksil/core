@@ -5,10 +5,10 @@ from unittest.mock import patch
 from pymata_express.pymata_express_serial import serial
 
 from homeassistant import config_entries
-from homeassistant.components.firmata.const import CONF_SERIAL_PORT, DOMAIN
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.firmata.const import CONF_SERIAL_PORT, DOMAIN
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_import_cannot_connect_pymata(hass: HomeAssistant) -> None:

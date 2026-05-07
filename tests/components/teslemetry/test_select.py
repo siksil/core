@@ -9,16 +9,16 @@ from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.const import EnergyExportMode, EnergyOperationMode
 from teslemetry_stream.const import Signal
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.teslemetry.coordinator import ENERGY_INFO_INTERVAL
-from homeassistant.components.teslemetry.select import LOW
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.teslemetry.coordinator import ENERGY_INFO_INTERVAL
+from inpui.components.teslemetry.select import LOW
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, reload_platform, setup_platform
 from .const import COMMAND_OK, SITE_INFO, VEHICLE_DATA_ALT

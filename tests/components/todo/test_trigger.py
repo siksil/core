@@ -4,15 +4,15 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.todo import (
+from inpui.components import automation
+from inpui.components.todo import (
     DOMAIN,
     TodoItem,
     TodoItemStatus,
     TodoListEntityFeature,
 )
-from homeassistant.components.todo.const import ATTR_ITEM, ATTR_STATUS, TodoServices
-from homeassistant.const import (
+from inpui.components.todo.const import ATTR_ITEM, ATTR_STATUS, TodoServices
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -23,15 +23,15 @@ from homeassistant.const import (
     CONF_TARGET,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     floor_registry as fr,
     label_registry as lr,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import MockTodoListEntity, create_mock_platform
 

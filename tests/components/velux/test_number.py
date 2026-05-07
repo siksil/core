@@ -7,16 +7,16 @@ from unittest.mock import AsyncMock
 import pytest
 from pyvlx import Intensity
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.components.velux.const import DOMAIN
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.velux.const import DOMAIN
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import update_callback_entity
 

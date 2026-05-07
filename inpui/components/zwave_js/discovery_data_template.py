@@ -103,7 +103,7 @@ from zwave_js_server.util.command_class.multilevel_sensor import (
     get_multilevel_sensor_type,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION,
     DEGREE,

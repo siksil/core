@@ -9,8 +9,8 @@ from typing import Any
 from aiomusiccast import MusicCastGroupException, MusicCastMediaContent
 from aiomusiccast.features import ZoneFeature
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
@@ -21,12 +21,12 @@ from homeassistant.components.media_player import (
     RepeatMode,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import uuid as uuid_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import uuid as uuid_util
 
 from .const import (
     ATTR_MAIN_SYNC,
@@ -550,7 +550,7 @@ class MusicCastMediaPlayer(MusicCastDeviceEntity, MediaPlayerEntity):
     def media_position_updated_at(self):
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
         if self._is_netusb:
             return self.coordinator.data.netusb_play_time_updated

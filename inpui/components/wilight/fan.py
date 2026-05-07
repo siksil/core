@@ -16,11 +16,11 @@ from pywilight.const import (
 )
 from pywilight.wilight_device import PyWiLightDevice
 
-from homeassistant.components.fan import DIRECTION_FORWARD, FanEntity, FanEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.components.fan import DIRECTION_FORWARD, FanEntity, FanEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )

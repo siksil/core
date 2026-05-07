@@ -9,21 +9,21 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import text
-from homeassistant.components.text import TextEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import text
+from inpui.components.text import TextEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_MODE,
     CONF_NAME,
     CONF_OPTIMISTIC,
     CONF_VALUE_TEMPLATE,
     MAX_LENGTH_STATE_STATE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from . import subscription
 from .config import MQTT_RW_SCHEMA

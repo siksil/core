@@ -2,16 +2,16 @@
 
 import pytest
 
-from homeassistant.components.tado.const import (
+from inpui.components.tado.const import (
     CONST_OVERLAY_MANUAL,
     CONST_OVERLAY_TADO_DEFAULT,
     CONST_OVERLAY_TADO_MODE,
     DOMAIN,
     WATER_HEATER_FALLBACK_REPAIR,
 )
-from homeassistant.components.tado.repairs import manage_water_heater_fallback_issue
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.tado.repairs import manage_water_heater_fallback_issue
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 
 class MockWaterHeater:

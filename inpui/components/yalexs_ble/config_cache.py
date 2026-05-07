@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from yalexs_ble import ValidatedLockConfig
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.util.hass_dict import HassKey
 
 CONFIG_CACHE: HassKey[dict[str, ValidatedLockConfig]] = HassKey(
     "yalexs_ble_config_cache"

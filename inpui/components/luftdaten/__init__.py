@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from luftdaten import Luftdaten
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import CONF_SENSOR_ID
 from .coordinator import LuftdatenConfigEntry, LuftdatenDataUpdateCoordinator

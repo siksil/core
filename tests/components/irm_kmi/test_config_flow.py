@@ -2,16 +2,16 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.irm_kmi.const import CONF_LANGUAGE_OVERRIDE, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.irm_kmi.const import CONF_LANGUAGE_OVERRIDE, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_LOCATION,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.proxmoxve.const import (
+from inpui.components.proxmoxve.const import (
     CONF_AUTH_METHOD,
     CONF_CONTAINERS,
     CONF_NODE,
@@ -16,7 +16,7 @@ from homeassistant.components.proxmoxve.const import (
     CONF_VMS,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,

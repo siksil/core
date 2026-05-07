@@ -12,11 +12,11 @@ from fressnapftracker import (
     Tracker,
 )
 
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import CONF_USER_ID, DOMAIN
 from .coordinator import (

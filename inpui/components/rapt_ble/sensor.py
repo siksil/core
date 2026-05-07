@@ -5,28 +5,28 @@ from __future__ import annotations
 from rapt_ble import DeviceClass, DeviceKey, SensorUpdate, Units
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothDataUpdate,
     PassiveBluetoothEntityKey,
     PassiveBluetoothProcessorCoordinator,
     PassiveBluetoothProcessorEntity,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     EntityCategory,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .const import DOMAIN
 

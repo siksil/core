@@ -7,17 +7,17 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smartthings import MAIN
-from homeassistant.components.valve import DOMAIN as VALVE_DOMAIN, ValveState
-from homeassistant.const import (
+from inpui.components.smartthings import MAIN
+from inpui.components.valve import DOMAIN as VALVE_DOMAIN, ValveState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

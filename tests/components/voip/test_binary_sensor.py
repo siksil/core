@@ -4,13 +4,13 @@ from http import HTTPStatus
 
 import pytest
 
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.components.voip import DOMAIN
-from homeassistant.components.voip.devices import VoIPDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.components.voip import DOMAIN
+from inpui.components.voip.devices import VoIPDevice
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

@@ -3,7 +3,7 @@
 from collections.abc import Callable
 from typing import Final
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN: Final = "idrive_e2"
 

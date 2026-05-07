@@ -13,10 +13,10 @@ from volvocarsapi.models import (
     VolvoCarsValueField,
 )
 
-from homeassistant.components.volvo.const import DOMAIN
-from homeassistant.components.volvo.coordinator import VERY_SLOW_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.volvo.const import DOMAIN
+from inpui.components.volvo.coordinator import VERY_SLOW_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import configure_mock
 

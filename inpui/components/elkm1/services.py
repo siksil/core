@@ -5,10 +5,10 @@ from __future__ import annotations
 from elkm1_lib.elk import Elk, Panel
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .models import ELKM1Data

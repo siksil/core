@@ -2,7 +2,7 @@
 
 from typing import Final
 
-from homeassistant.const import CONF_URL
+from inpui.const import CONF_URL
 
 DEFAULT_NAME = "Discord"
 DOMAIN: Final = "discord"

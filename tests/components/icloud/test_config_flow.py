@@ -5,11 +5,11 @@ from unittest.mock import MagicMock, Mock, patch
 from pyicloud.exceptions import PyiCloudFailedLoginException
 import pytest
 
-from homeassistant.components.icloud.config_flow import (
+from inpui.components.icloud.config_flow import (
     CONF_TRUSTED_DEVICE,
     CONF_VERIFICATION_CODE,
 )
-from homeassistant.components.icloud.const import (
+from inpui.components.icloud.const import (
     CONF_GPS_ACCURACY_THRESHOLD,
     CONF_MAX_INTERVAL,
     CONF_WITH_FAMILY,
@@ -18,10 +18,10 @@ from homeassistant.components.icloud.const import (
     DEFAULT_WITH_FAMILY,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     MOCK_CONFIG,

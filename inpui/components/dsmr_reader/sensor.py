@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-from homeassistant.components import mqtt
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.util import slugify
+from inpui.components import mqtt
+from inpui.components.sensor import SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.util import slugify
 
 from .const import DOMAIN
 from .definitions import SENSORS, DSMRReaderSensorEntityDescription

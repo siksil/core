@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     DOMAIN as LOCK_DOMAIN,
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as LOCK_PLATFORM_SCHEMA,
@@ -14,8 +14,8 @@ from homeassistant.components.lock import (
     LockEntityFeature,
     LockState,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CODE,
     CONF_NAME,
     CONF_OPTIMISTIC,
@@ -23,14 +23,14 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError, TemplateError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError, TemplateError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import validators as template_validators
 from .const import DOMAIN

@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import datetime
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.manual.alarm_control_panel import (  # pylint: disable=hass-component-root-import
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.manual.alarm_control_panel import (  # pylint: disable=hass-component-root-import
     ManualAlarm,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ARMING_TIME, CONF_DELAY_TIME, CONF_TRIGGER_TIME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ARMING_TIME, CONF_DELAY_TIME, CONF_TRIGGER_TIME
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 
 async def async_setup_entry(

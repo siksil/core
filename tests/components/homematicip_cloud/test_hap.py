@@ -10,22 +10,22 @@ from homematicip.exceptions.connection_exceptions import (
 )
 import pytest
 
-from homeassistant.components.homematicip_cloud import DOMAIN
-from homeassistant.components.homematicip_cloud.const import (
+from inpui.components.homematicip_cloud import DOMAIN
+from inpui.components.homematicip_cloud.const import (
     HMIPC_AUTHTOKEN,
     HMIPC_HAPID,
     HMIPC_NAME,
     HMIPC_PIN,
 )
-from homeassistant.components.homematicip_cloud.errors import HmipcConnectionError
-from homeassistant.components.homematicip_cloud.hap import (
+from inpui.components.homematicip_cloud.errors import HmipcConnectionError
+from inpui.components.homematicip_cloud.hap import (
     AsyncHome,
     HomematicipAuth,
     HomematicipHAP,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .helper import HAPID, HAPPIN, HomeFactory
 

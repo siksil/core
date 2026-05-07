@@ -1,13 +1,13 @@
 """Support for the Swedish weather institute weather service."""
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
     CONF_NAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import (
     SMHIConfigEntry,

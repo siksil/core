@@ -5,16 +5,16 @@ from __future__ import annotations
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.template import DOMAIN
-from homeassistant.components.template.config import (
+from inpui.components.template import DOMAIN
+from inpui.components.template.config import (
     CONFIG_SECTION_SCHEMA,
     async_validate_config_section,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.template import Template
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.template import Template
+from inpui.setup import async_setup_component
 
 
 @pytest.mark.parametrize(

@@ -11,11 +11,11 @@ import pytest
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm.session import Session
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import db_schema
-from homeassistant.components.recorder.const import MAX_IDS_FOR_INDEXED_GROUP_BY
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant
+from inpui.components import recorder
+from inpui.components.recorder import db_schema
+from inpui.components.recorder.const import MAX_IDS_FOR_INDEXED_GROUP_BY
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant
 
 
 def pytest_configure(config):

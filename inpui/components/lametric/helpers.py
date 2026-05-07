@@ -7,9 +7,9 @@ from typing import Any, Concatenate
 
 from demetriek import LaMetricConnectionError, LaMetricError
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import LaMetricConfigEntry, LaMetricDataUpdateCoordinator

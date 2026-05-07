@@ -12,11 +12,11 @@ from zwave_js_server.model.node import Node
 from zwave_js_server.model.value import ValueDataType
 from zwave_js_server.util.node import dump_node_state
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import USER_AGENT
 from .helpers import (

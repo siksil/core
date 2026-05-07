@@ -6,9 +6,9 @@ from typing import Any
 
 from duotecno.unit import DuoswitchUnit
 
-from homeassistant.components.cover import CoverEntity, CoverEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import CoverEntity, CoverEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DuotecnoConfigEntry
 from .entity import DuotecnoEntity, api_call

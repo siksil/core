@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from fjaraskupan import device_filter
 
-from homeassistant.components.bluetooth import async_discovered_service_info
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_flow import register_discovery_flow
+from inpui.components.bluetooth import async_discovered_service_info
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_flow import register_discovery_flow
 
 from .const import DOMAIN
 

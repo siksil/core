@@ -6,10 +6,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.components.wmspro.const import DOMAIN
-from homeassistant.components.wmspro.cover import SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.components.wmspro.const import DOMAIN
+from inpui.components.wmspro.cover import SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     STATE_CLOSED,
     STATE_OPEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_config_entry
 

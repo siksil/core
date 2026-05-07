@@ -7,7 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import _LOGGER, DOMAIN, HMIPC_AUTHTOKEN, HMIPC_HAPID, HMIPC_NAME, HMIPC_PIN
 from .hap import HomematicipAuth

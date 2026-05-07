@@ -7,7 +7,7 @@ from py_aosmith.models import OperationMode
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE,
     ATTR_OPERATION_MODE,
     ATTR_TEMPERATURE,
@@ -20,10 +20,10 @@ from homeassistant.components.water_heater import (
     STATE_HEAT_PUMP,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_SUPPORTED_FEATURES, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_SUPPORTED_FEATURES, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

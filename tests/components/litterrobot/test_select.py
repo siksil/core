@@ -5,16 +5,16 @@ from unittest.mock import AsyncMock, MagicMock
 from pylitterbot import LitterRobot3, LitterRobot4
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .conftest import setup_integration
 

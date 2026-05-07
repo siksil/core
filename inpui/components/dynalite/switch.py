@@ -2,10 +2,10 @@
 
 from typing import Any
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .bridge import DynaliteConfigEntry
 from .entity import DynaliteBase, async_setup_entry_base

@@ -8,16 +8,16 @@ from typing import TYPE_CHECKING
 
 from pyblu import Player
 
-from homeassistant.components.button import ButtonEntity, ButtonEntityDescription
-from homeassistant.const import CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import (
+from inpui.components.button import ButtonEntity, ButtonEntityDescription
+from inpui.const import CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import BluesoundCoordinator

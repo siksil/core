@@ -7,7 +7,7 @@ from itertools import groupby
 from math import atan2, cos, degrees, radians, sin
 from typing import Any
 
-from homeassistant.core import State
+from inpui.core import State
 
 
 def find_state_attributes(states: list[State], key: str) -> Iterator[Any]:

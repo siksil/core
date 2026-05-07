@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, patch
 from aionotion.errors import InvalidCredentialsError, NotionError
 import pytest
 
-from homeassistant.components.notion import CONF_REFRESH_TOKEN, CONF_USER_UUID, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.notion import CONF_REFRESH_TOKEN, CONF_USER_UUID, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_PASSWORD, TEST_REFRESH_TOKEN, TEST_USER_UUID, TEST_USERNAME
 

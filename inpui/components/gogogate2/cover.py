@@ -11,13 +11,13 @@ from ismartgate.common import (
     get_configured_doors,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import cover_unique_id
 from .coordinator import DeviceDataUpdateCoordinator, GogoGateConfigEntry

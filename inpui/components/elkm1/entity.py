@@ -10,10 +10,10 @@ from typing import Any
 from elkm1_lib.elements import Element
 from elkm1_lib.elk import Elk
 
-from homeassistant.const import ATTR_CONNECTIONS
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_CONNECTIONS
+from inpui.core import callback
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .models import ELKM1Data

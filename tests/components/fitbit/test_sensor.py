@@ -9,12 +9,12 @@ from requests.exceptions import ConnectionError as RequestsConnectionError
 from requests_mock.mocker import Mocker
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fitbit.const import DOMAIN, OAUTH2_TOKEN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util.unit_system import (
+from inpui.components.fitbit.const import DOMAIN, OAUTH2_TOKEN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

@@ -19,10 +19,10 @@ from xknxproject.models import (
     ProjectInfo,
 )
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import Store
+from inpui.components.file_upload import process_uploaded_file
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 

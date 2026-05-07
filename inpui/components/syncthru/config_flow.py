@@ -8,10 +8,10 @@ from pysyncthru import ConnectionMode, SyncThru, SyncThruAPINotSupported
 from url_normalize import url_normalize
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_NAME, CONF_URL
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_NAME, CONF_URL
+from inpui.helpers import aiohttp_client
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_PRESENTATION_URL,
     ATTR_UPNP_UDN,

@@ -7,14 +7,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pycfdns
 import pytest
 
-from homeassistant.components.cloudflare.const import (
+from inpui.components.cloudflare.const import (
     CONF_RECORDS,
     DEFAULT_UPDATE_INTERVAL,
     DOMAIN,
     SERVICE_UPDATE_RECORDS,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG, init_integration
 from .conftest import LOCATION_PATCH_TARGET

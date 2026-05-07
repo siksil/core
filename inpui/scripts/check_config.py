@@ -17,16 +17,16 @@ from annotatedyaml import loader as yaml_loader
 from annotatedyaml.loader import Secrets
 
 from homeassistant import core, loader
-from homeassistant.config import get_default_config_dir
-from homeassistant.config_entries import ConfigEntries
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.config import get_default_config_dir
+from inpui.config_entries import ConfigEntries
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.check_config import async_check_ha_config_file
+from inpui.helpers.check_config import async_check_ha_config_file
 
 # mypy: allow-untyped-calls, allow-untyped-defs
 

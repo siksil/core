@@ -12,9 +12,9 @@ from plugwise.exceptions import (
 )
 import pytest
 
-from homeassistant.components.plugwise.const import DEFAULT_PORT, DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
-from homeassistant.const import (
+from inpui.components.plugwise.const import DEFAULT_PORT, DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     CONF_SOURCE,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

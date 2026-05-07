@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import ATTR_HW_VERSION, ATTR_MODEL, ATTR_SW_VERSION
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import ATTR_HW_VERSION, ATTR_MODEL, ATTR_SW_VERSION
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import FoscamCoordinator

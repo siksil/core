@@ -8,10 +8,10 @@ import logging
 from python_snoo.exceptions import InvalidSnooAuth, SnooAuthException, SnooDeviceError
 from python_snoo.snoo import Snoo
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import SnooConfigEntry, SnooCoordinator
 

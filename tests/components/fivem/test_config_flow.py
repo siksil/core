@@ -5,11 +5,11 @@ from unittest.mock import patch
 from fivem import FiveMServerOfflineError
 
 from homeassistant import config_entries
-from homeassistant.components.fivem.config_flow import DEFAULT_PORT
-from homeassistant.components.fivem.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.fivem.config_flow import DEFAULT_PORT
+from inpui.components.fivem.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 USER_INPUT = {
     CONF_HOST: "fivem.dummyserver.com",

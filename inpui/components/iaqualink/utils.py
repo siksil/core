@@ -7,7 +7,7 @@ from collections.abc import Awaitable
 import httpx
 from iaqualink.exception import AqualinkServiceException
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 async def await_or_reraise(awaitable: Awaitable) -> None:

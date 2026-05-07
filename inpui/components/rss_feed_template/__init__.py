@@ -7,11 +7,11 @@ from html import escape
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.http import HomeAssistantView
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType
 
 CONTENT_TYPE_XML = "text/xml"
 DOMAIN = "rss_feed_template"

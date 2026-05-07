@@ -17,32 +17,32 @@ import pytest
 from universal_silabs_flasher.flasher import DeviceSpecificFlasher, Zbt1Flasher
 from yarl import URL
 
-from homeassistant.components.homeassistant_hardware.const import (
+from inpui.components.homeassistant_hardware.const import (
     DOMAIN,
     Z2M_EMBER_DOCS_URL,
 )
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     STEP_PICK_FIRMWARE_THREAD,
     STEP_PICK_FIRMWARE_ZIGBEE,
     BaseFirmwareConfigFlow,
     BaseFirmwareOptionsFlow,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IGNORE,
     SOURCE_USER,
     ConfigEntry,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import (
     ANY,

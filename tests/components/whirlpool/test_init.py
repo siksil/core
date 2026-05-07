@@ -7,10 +7,10 @@ import pytest
 from whirlpool.auth import AccountLockedError
 from whirlpool.backendselector import Brand, Region
 
-from homeassistant.components.whirlpool.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.whirlpool.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import init_integration, init_integration_with_entry
 

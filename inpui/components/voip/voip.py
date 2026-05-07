@@ -17,14 +17,14 @@ from voip_utils import (
     VoipDatagramProtocol,
 )
 
-from homeassistant.components.assist_pipeline import (
+from inpui.components.assist_pipeline import (
     Pipeline,
     PipelineNotFound,
     async_get_pipeline,
     select as pipeline_select,
 )
-from homeassistant.const import __version__
-from homeassistant.core import HomeAssistant
+from inpui.const import __version__
+from inpui.core import HomeAssistant
 
 from .const import CHANNELS, DOMAIN, RATE, RTP_AUDIO_SETTINGS, WIDTH
 

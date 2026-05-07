@@ -4,17 +4,17 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.srp_energy.const import CONF_IS_TOU, DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.srp_energy.const import CONF_IS_TOU, DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import (
     CONF_ID,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_SOURCE,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     ACCNT_ID,

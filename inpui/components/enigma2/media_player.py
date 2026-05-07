@@ -8,15 +8,15 @@ from logging import getLogger
 from aiohttp.client_exceptions import ServerDisconnectedError
 from openwebif.enums import PowerState, RemoteControlCodes, SetVolumeOption
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import Enigma2ConfigEntry, Enigma2UpdateCoordinator
 

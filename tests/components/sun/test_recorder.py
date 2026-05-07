@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.sun import DOMAIN
-from homeassistant.components.sun.entity import (
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.sun import DOMAIN
+from inpui.components.sun.entity import (
     STATE_ATTR_AZIMUTH,
     STATE_ATTR_ELEVATION,
     STATE_ATTR_NEXT_DAWN,
@@ -18,10 +18,10 @@ from homeassistant.components.sun.entity import (
     STATE_ATTR_NEXT_SETTING,
     STATE_ATTR_RISING,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.indevolt.coordinator import SCAN_INTERVAL
-from homeassistant.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.indevolt.coordinator import SCAN_INTERVAL
+from inpui.components.switch import SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

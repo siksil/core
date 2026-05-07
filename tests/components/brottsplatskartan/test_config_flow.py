@@ -5,10 +5,10 @@ from __future__ import annotations
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.brottsplatskartan.const import CONF_AREA, DOMAIN
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.brottsplatskartan.const import CONF_AREA, DOMAIN
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 pytestmark = pytest.mark.usefixtures("mock_setup_entry")
 

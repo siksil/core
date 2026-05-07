@@ -5,10 +5,10 @@ from __future__ import annotations
 from pypglab.device import Device as PyPGLabDevice
 from pypglab.entity import Entity as PyPGLabEntity
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import PGLabSensorsCoordinator

@@ -3,9 +3,9 @@
 from dataclasses import asdict
 from typing import Any
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.redact import async_redact_data
+from inpui.const import CONF_ACCESS_TOKEN, CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.redact import async_redact_data
 
 from .const import CONF_VIN
 from .coordinator import VolvoConfigEntry

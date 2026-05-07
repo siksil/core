@@ -6,10 +6,10 @@ import logging
 from ccm15 import CCM15Device, CCM15DeviceState, CCM15SlaveDevice
 import httpx
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.climate import HVACMode
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     CONST_FAN_CMD_MAP,

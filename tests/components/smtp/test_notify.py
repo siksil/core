@@ -7,14 +7,14 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components import notify
-from homeassistant.components.smtp.const import DOMAIN
-from homeassistant.components.smtp.notify import MailNotificationService
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
-from homeassistant.util.ssl import create_client_context
+from inpui.components import notify
+from inpui.components.smtp.const import DOMAIN
+from inpui.components.smtp.notify import MailNotificationService
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
+from inpui.util.ssl import create_client_context
 
 from tests.common import get_fixture_path
 

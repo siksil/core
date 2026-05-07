@@ -2,15 +2,15 @@
 
 import pytest
 
-from homeassistant.components.select.const import (
+from inpui.components.select.const import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

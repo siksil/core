@@ -5,9 +5,9 @@ Functions:
         Test a successful setup entry and unload of entry.
 """
 
-from homeassistant.components.ekeybionyx.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.ekeybionyx.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

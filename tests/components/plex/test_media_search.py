@@ -6,17 +6,17 @@ from plexapi.exceptions import BadRequest, NotFound
 import pytest
 import requests_mock
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.components.plex.const import DOMAIN
-from homeassistant.components.plex.errors import MediaNotFound
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.plex.const import DOMAIN
+from inpui.components.plex.errors import MediaNotFound
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 
 async def test_media_lookups(

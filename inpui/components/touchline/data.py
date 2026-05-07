@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 from pytouchline_extended import PyTouchline
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type TouchlineConfigEntry = ConfigEntry[TouchlineData]
 

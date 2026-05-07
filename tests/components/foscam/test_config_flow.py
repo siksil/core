@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.foscam import config_flow
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.foscam import config_flow
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import setup_mock_foscam_camera
 from .const import CAMERA_NAME, INVALID_RESPONSE_CONFIG, VALID_CONFIG

@@ -9,21 +9,21 @@ from typing import TYPE_CHECKING, Any
 
 import aiotractive
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_BATTERY_CHARGING,
     ATTR_BATTERY_LEVEL,
     CONF_EMAIL,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     ATTR_DAILY_GOAL,
@@ -133,7 +133,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: TractiveConfigEntry) -> 
         await tractive.unsubscribe()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, cancel_listen_task)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, cancel_listen_task)
     )
     entry.async_on_unload(tractive.unsubscribe)
 

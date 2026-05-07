@@ -6,18 +6,18 @@ from unittest.mock import patch
 from aiounifi.models.message import MessageKey
 import pytest
 
-from homeassistant.components import unifi
-from homeassistant.components.unifi.const import (
+from inpui.components import unifi
+from inpui.components.unifi.const import (
     CONF_ALLOW_BANDWIDTH_SENSORS,
     CONF_ALLOW_UPTIME_SENSORS,
     CONF_TRACK_CLIENTS,
     CONF_TRACK_DEVICES,
 )
-from homeassistant.components.unifi.errors import AuthenticationRequired, CannotConnect
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.unifi.errors import AuthenticationRequired, CannotConnect
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .conftest import (
     DEFAULT_CONFIG_ENTRY_ID,

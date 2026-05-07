@@ -7,11 +7,11 @@ from unittest.mock import patch
 from aiohttp import ClientSession
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import Unresolvable
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import Unresolvable
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import TEST_IMAGE
 

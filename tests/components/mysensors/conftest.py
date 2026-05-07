@@ -13,18 +13,18 @@ from mysensors.persistence import MySensorsJSONDecoder
 from mysensors.sensor import Sensor
 import pytest
 
-from homeassistant.components.mqtt import DOMAIN as MQTT_DOMAIN
-from homeassistant.components.mysensors.config_flow import DEFAULT_BAUD_RATE
-from homeassistant.components.mysensors.const import (
+from inpui.components.mqtt import DOMAIN as MQTT_DOMAIN
+from inpui.components.mysensors.config_flow import DEFAULT_BAUD_RATE
+from inpui.components.mysensors.const import (
     CONF_BAUD_RATE,
     CONF_GATEWAY_TYPE,
     CONF_GATEWAY_TYPE_SERIAL,
     CONF_VERSION,
     DOMAIN,
 )
-from homeassistant.const import CONF_DEVICE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_DEVICE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture
 

@@ -7,10 +7,10 @@ from typing import Any
 
 from aioamazondevices.structures import AmazonDevice
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .coordinator import AmazonConfigEntry
 

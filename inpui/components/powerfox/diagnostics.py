@@ -7,7 +7,7 @@ from typing import Any
 
 from powerfox import DeviceReport, HeatMeter, PowerMeter, WaterMeter
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import PowerfoxConfigEntry
 

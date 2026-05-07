@@ -9,11 +9,11 @@ from tesla_wall_connector import WallConnector
 from tesla_wall_connector.exceptions import WallConnectorError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN, WALLCONNECTOR_DEVICE_NAME, WALLCONNECTOR_SERIAL_NUMBER
 

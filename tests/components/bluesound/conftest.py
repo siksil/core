@@ -11,9 +11,9 @@ from unittest.mock import AsyncMock, patch
 from pyblu import Input, Player, Preset, Status, SyncStatus
 import pytest
 
-from homeassistant.components.bluesound.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.bluesound.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .utils import LongPollingMock
 

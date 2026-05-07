@@ -17,16 +17,16 @@ from matter_server.client.exceptions import (
 from matter_server.common.errors import MatterError
 import pytest
 
-from homeassistant.components.matter.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.matter.const import DOMAIN
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .common import (
     FIXTURES,

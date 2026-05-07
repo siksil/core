@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.jellyfin.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.jellyfin.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME, ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

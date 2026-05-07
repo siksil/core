@@ -7,17 +7,17 @@ import logging
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.network import async_get_source_ip
-from homeassistant.const import (
+from inpui.components.http import KEY_HASS
+from inpui.components.network import async_get_source_ip
+from inpui.const import (
     CONF_ENTITIES,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .config import (
     CONF_ADVERTISE_IP,
@@ -122,7 +122,7 @@ async def start_emulated_hue_bridge(
         await site.stop()
         await runner.cleanup()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_emulated_hue_bridge)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_emulated_hue_bridge)
 
 
 async def async_setup(hass: HomeAssistant, yaml_config: ConfigType) -> bool:
@@ -154,6 +154,6 @@ async def async_setup(hass: HomeAssistant, yaml_config: ConfigType) -> bool:
         """Start the bridge."""
         await start_emulated_hue_bridge(hass, config, app)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, _start)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, _start)
 
     return True

@@ -7,14 +7,14 @@ from collections.abc import Callable, Collection, Mapping
 import logging
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_GROUP_ENTITIES,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -23,10 +23,10 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.helpers import start
-from homeassistant.helpers.entity import Entity, async_generate_entity_id
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.helpers import start
+from inpui.helpers.entity import Entity, async_generate_entity_id
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_state_change_event
 
 from .const import ATTR_AUTO, ATTR_ORDER, DATA_COMPONENT, DOMAIN, GROUP_ORDER, REG_KEY
 from .registry import GroupIntegrationRegistry, SingleStateType

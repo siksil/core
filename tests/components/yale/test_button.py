@@ -1,8 +1,8 @@
 """The button tests for the yale platform."""
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .mocks import _create_yale_api_with_devices, _mock_lock_from_fixture
 

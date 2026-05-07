@@ -9,12 +9,12 @@ from uuid import UUID, uuid4
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.auth.models import User
-from homeassistant.components.hassio import HASSIO_USER_NAME
-from homeassistant.components.hassio.const import DATA_CONFIG_STORE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.auth.models import User
+from inpui.components.hassio import HASSIO_USER_NAME
+from inpui.components.hassio.const import DATA_CONFIG_STORE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser
 from tests.typing import WebSocketGenerator

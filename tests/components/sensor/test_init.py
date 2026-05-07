@@ -11,13 +11,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import sensor
-from homeassistant.components.number import (
+from inpui.components import sensor
+from inpui.components.number import (
     AMBIGUOUS_UNITS as NUMBER_AMBIGUOUS_UNITS,
     UNIT_CONVERTERS as NUMBER_UNIT_CONVERTERS,
     NumberDeviceClass,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     AMBIGUOUS_UNITS as SENSOR_AMBIGUOUS_UNITS,
     DEVICE_CLASS_STATE_CLASSES,
     DEVICE_CLASS_UNITS,
@@ -30,9 +30,9 @@ from homeassistant.components.sensor import (
     async_rounded_state,
     async_update_suggested_units,
 )
-from homeassistant.components.sensor.const import STATE_CLASS_UNITS, UNIT_CONVERTERS
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.components.sensor.const import STATE_CLASS_UNITS, UNIT_CONVERTERS
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONCENTRATION_PARTS_PER_MILLION,
     PERCENTAGE,
@@ -65,13 +65,13 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .common import MockRestoreSensor, MockSensor
 

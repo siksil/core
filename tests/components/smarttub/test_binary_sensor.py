@@ -6,8 +6,8 @@ from unittest.mock import create_autospec
 import pytest
 import smarttub
 
-from homeassistant.components.binary_sensor import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 
 async def test_binary_sensors(spa, setup_entry, hass: HomeAssistant) -> None:

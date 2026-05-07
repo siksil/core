@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, patch
 from autoskope_client.models import Vehicle
 import pytest
 
-from homeassistant.components.autoskope.const import DEFAULT_HOST, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.components.autoskope.const import DEFAULT_HOST, DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_fixture
 

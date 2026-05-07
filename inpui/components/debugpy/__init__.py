@@ -9,11 +9,11 @@ from threading import Thread
 import debugpy  # noqa: T100
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "debugpy"
 CONF_START = "start"

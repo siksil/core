@@ -25,14 +25,14 @@ from uiprotect.exceptions import ClientError, NotAuthorized
 from uiprotect.utils import log_event
 from uiprotect.websocket import WebsocketState
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     AUTH_RETRIES,

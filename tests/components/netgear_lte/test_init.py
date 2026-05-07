@@ -7,12 +7,12 @@ from eternalegypt.eternalegypt import Error
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.netgear_lte.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.components.netgear_lte.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from .conftest import CONF_DATA
 

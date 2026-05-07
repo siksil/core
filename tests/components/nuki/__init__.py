@@ -2,8 +2,8 @@
 
 import requests_mock
 
-from homeassistant.components.nuki.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.nuki.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .mock import MOCK_INFO, setup_nuki_integration
 

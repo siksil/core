@@ -13,16 +13,16 @@ from tesla_fleet_api.exceptions import (
     TeslaFleetError,
 )
 
-from homeassistant.components.teslemetry.const import (
+from inpui.components.teslemetry.const import (
     AUTHORIZE_URL,
     CLIENT_ID,
     DOMAIN,
     TOKEN_URL,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import setup_platform
 from .const import CONFIG_V1, UNIQUE_ID

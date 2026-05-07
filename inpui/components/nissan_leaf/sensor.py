@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import PERCENTAGE, UnitOfLength
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.icon import icon_for_battery_level
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
-from homeassistant.util.unit_conversion import DistanceConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import PERCENTAGE, UnitOfLength
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.icon import icon_for_battery_level
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.util.unit_conversion import DistanceConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import LeafDataStore
 from .const import (

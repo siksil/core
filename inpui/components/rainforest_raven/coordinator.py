@@ -12,11 +12,11 @@ from aioraven.data import DeviceInfo as RAVEnDeviceInfo
 from aioraven.device import RAVEnConnectionError
 from aioraven.serial import RAVEnSerialDevice
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 

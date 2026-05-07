@@ -8,15 +8,15 @@ import logging
 from clearpasspy import ClearPass
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     PLATFORM_SCHEMA as DEVICE_TRACKER_PLATFORM_SCHEMA,
     DeviceScanner,
 )
-from homeassistant.const import CONF_API_KEY, CONF_CLIENT_ID, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_API_KEY, CONF_CLIENT_ID, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 SCAN_INTERVAL = timedelta(seconds=120)
 

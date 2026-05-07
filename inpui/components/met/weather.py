@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_TIME,
     ATTR_WEATHER_CLOUD_COVERAGE,
@@ -22,7 +22,7 @@ from homeassistant.components.weather import (
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_NAME,
@@ -31,11 +31,11 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er, sun
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er, sun
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import (
     ATTR_CONDITION_CLEAR_NIGHT,

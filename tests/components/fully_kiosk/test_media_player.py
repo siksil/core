@@ -4,14 +4,14 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components import media_player
-from homeassistant.components.fully_kiosk.const import DOMAIN, MEDIA_SUPPORT_FULLYKIOSK
-from homeassistant.components.media_source import DOMAIN as MS_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import media_player
+from inpui.components.fully_kiosk.const import DOMAIN, MEDIA_SUPPORT_FULLYKIOSK
+from inpui.components.media_source import DOMAIN as MS_DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

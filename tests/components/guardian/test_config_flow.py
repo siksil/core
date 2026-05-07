@@ -7,17 +7,17 @@ from unittest.mock import patch
 from aioguardian.errors import GuardianError
 import pytest
 
-from homeassistant.components.guardian import CONF_UID, DOMAIN
-from homeassistant.components.guardian.config_flow import (
+from inpui.components.guardian import CONF_UID, DOMAIN
+from inpui.components.guardian.config_flow import (
     async_get_pin_from_discovery_hostname,
     async_get_pin_from_uid,
 )
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

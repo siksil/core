@@ -6,10 +6,10 @@ from xknx import XKNX
 from xknx.core import XknxConnectionState
 from xknx.io.gateway_scanner import GatewayDescriptor
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import DOMAIN
 

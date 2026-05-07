@@ -14,8 +14,8 @@ from python_homeassistant_analytics import (
 )
 from python_homeassistant_analytics.models import Addon
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     CONF_TRACKED_APPS,

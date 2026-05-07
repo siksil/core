@@ -5,10 +5,10 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 from pyfronius import BadStatusError, FroniusError
 
-from homeassistant.components.fronius.coordinator import (
+from inpui.components.fronius.coordinator import (
     FroniusInverterUpdateCoordinator,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import mock_responses, setup_fronius_integration
 

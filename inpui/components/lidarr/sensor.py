@@ -8,15 +8,15 @@ from typing import Any, Generic
 
 from aiopyarr import LidarrQueue, LidarrQueueItem, LidarrRootFolder
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import BYTE_SIZES
 from .coordinator import LidarrConfigEntry, LidarrDataUpdateCoordinator, T

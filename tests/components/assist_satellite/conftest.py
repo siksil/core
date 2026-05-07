@@ -5,8 +5,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from homeassistant.components.assist_pipeline import PipelineEvent
-from homeassistant.components.assist_satellite import (
+from inpui.components.assist_pipeline import PipelineEvent
+from inpui.components.assist_satellite import (
     DOMAIN,
     AssistSatelliteAnnouncement,
     AssistSatelliteConfiguration,
@@ -14,12 +14,12 @@ from homeassistant.components.assist_satellite import (
     AssistSatelliteEntityFeature,
     AssistSatelliteWakeWord,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import DeviceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util.ulid import ulid_hex
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity import DeviceInfo
+from inpui.setup import async_setup_component
+from inpui.util.ulid import ulid_hex
 
 from tests.common import (
     MockConfigEntry,

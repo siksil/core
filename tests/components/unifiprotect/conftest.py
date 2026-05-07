@@ -31,9 +31,9 @@ from uiprotect.data import (
 )
 from uiprotect.websocket import WebsocketState
 
-from homeassistant.components.unifiprotect.const import DOMAIN
-from homeassistant.components.unifiprotect.utils import _async_unifi_mac_from_hass
-from homeassistant.const import (
+from inpui.components.unifiprotect.const import DOMAIN
+from inpui.components.unifiprotect.utils import _async_unifi_mac_from_hass
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PASSWORD,
@@ -41,8 +41,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import _patch_discovery
 from .utils import MockUFPFixture

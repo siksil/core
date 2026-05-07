@@ -3,7 +3,7 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_WEATHER_APPARENT_TEMPERATURE,
     ATTR_WEATHER_CLOUD_COVERAGE,
     ATTR_WEATHER_DEW_POINT,
@@ -19,9 +19,9 @@ from homeassistant.components.weather import (
     SERVICE_GET_FORECASTS,
     WeatherEntityFeature,
 )
-from homeassistant.components.weatherkit.const import ATTRIBUTION
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
+from inpui.components.weatherkit.const import ATTRIBUTION
+from inpui.const import ATTR_ATTRIBUTION, ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
 
 from . import init_integration, mock_weather_response
 

@@ -4,9 +4,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.utility_meter.const import DOMAIN
-from homeassistant.components.utility_meter.sensor import ATTR_LAST_RESET
-from homeassistant.core import HomeAssistant, State
+from inpui.components.utility_meter.const import DOMAIN
+from inpui.components.utility_meter.sensor import ATTR_LAST_RESET
+from inpui.core import HomeAssistant, State
 
 from tests.common import MockConfigEntry, mock_restore_cache_with_extra_data
 from tests.components.diagnostics import get_diagnostics_for_config_entry

@@ -6,24 +6,24 @@ from unittest.mock import Mock, call, patch
 from requests.exceptions import HTTPError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fritzbox.const import COLOR_MODE, COLOR_TEMP_MODE, DOMAIN
-from homeassistant.components.light import (
+from inpui.components.fritzbox.const import COLOR_MODE, COLOR_TEMP_MODE, DOMAIN
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_HS_COLOR,
     DOMAIN as LIGHT_DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICES,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import FritzDeviceLightMock, set_devices, setup_config_entry
 from .const import CONF_FAKE_NAME, MOCK_CONFIG

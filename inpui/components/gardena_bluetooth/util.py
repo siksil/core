@@ -5,7 +5,7 @@ from collections.abc import AsyncIterator
 
 from gardena_bluetooth.parse import ManufacturerData, ProductType
 
-from homeassistant.components import bluetooth
+from inpui.components import bluetooth
 
 
 async def _async_service_info(

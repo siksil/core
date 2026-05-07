@@ -4,12 +4,12 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

@@ -1,8 +1,8 @@
 """The tests for notify_events."""
 
-from homeassistant.components.notify_events.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.notify_events.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup(hass: HomeAssistant) -> None:

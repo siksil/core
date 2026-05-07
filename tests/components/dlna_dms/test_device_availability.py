@@ -12,13 +12,13 @@ from async_upnp_client.exceptions import UpnpConnectionError, UpnpError
 from didl_lite import didl_lite
 import pytest
 
-from homeassistant.components import media_source, ssdp
-from homeassistant.components.dlna_dms.const import DOMAIN
-from homeassistant.components.dlna_dms.dms import get_domain_data
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import Unresolvable
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.components import media_source, ssdp
+from inpui.components.dlna_dms.const import DOMAIN
+from inpui.components.dlna_dms.dms import get_domain_data
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import Unresolvable
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .conftest import (
     MOCK_DEVICE_LOCATION,

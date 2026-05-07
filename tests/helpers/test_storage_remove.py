@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import py
 
-from homeassistant.helpers import storage
-from homeassistant.util import dt as dt_util
+from inpui.helpers import storage
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_test_home_assistant
 

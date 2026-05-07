@@ -10,10 +10,10 @@ from syrupy.assertion import SnapshotAssertion
 from teltasync import TeltonikaAuthenticationError, TeltonikaConnectionError
 from teltasync.error_codes import TeltonikaErrorCode
 
-from homeassistant.components.teltonika.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.teltonika.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

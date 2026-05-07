@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import importlib
+from inpui.core import HomeAssistant
+from inpui.helpers import importlib
 
 from tests.common import MockModule
 

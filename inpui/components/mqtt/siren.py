@@ -8,8 +8,8 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import siren
-from homeassistant.components.siren import (
+from inpui.components import siren
+from inpui.components.siren import (
     ATTR_AVAILABLE_TONES,
     ATTR_DURATION,
     ATTR_TONE,
@@ -20,21 +20,21 @@ from homeassistant.components.siren import (
     SirenTurnOnServiceParameters,
     process_turn_on_params,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_NAME,
     CONF_OPTIMISTIC,
     CONF_PAYLOAD_OFF,
     CONF_PAYLOAD_ON,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType, VolSchemaType
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.json import json_dumps
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, TemplateVarsType, VolSchemaType
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads_object
 
 from . import subscription
 from .config import MQTT_RW_SCHEMA

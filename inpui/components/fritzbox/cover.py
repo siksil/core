@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import FritzboxConfigEntry
 from .entity import FritzBoxDeviceEntity

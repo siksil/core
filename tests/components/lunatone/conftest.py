@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 from lunatone_rest_api_client import Device, Devices
 import pytest
 
-from homeassistant.components.lunatone.const import DOMAIN
-from homeassistant.const import CONF_URL
+from inpui.components.lunatone.const import DOMAIN
+from inpui.const import CONF_URL
 
 from . import BASE_URL, INFO_DATA, PRODUCT_NAME, SERIAL_NUMBER, build_devices_data
 

@@ -5,13 +5,13 @@ from http import HTTPStatus
 
 import pytest
 
-from homeassistant.components.fitbit.const import (
+from inpui.components.fitbit.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import (
     CLIENT_ID,

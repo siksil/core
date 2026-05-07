@@ -3,13 +3,13 @@
 import pytest
 from zwave_js_server.event import Event
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_AVAILABLE_TONES,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
 
 SIREN_ENTITY = "siren.indoor_siren_6_play_tone_2"
 

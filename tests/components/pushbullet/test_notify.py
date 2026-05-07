@@ -4,9 +4,9 @@ from http import HTTPStatus
 
 import requests_mock
 
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.components.pushbullet.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.components.pushbullet.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MOCK_CONFIG
 

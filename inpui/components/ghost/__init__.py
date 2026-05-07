@@ -7,10 +7,10 @@ import logging
 
 from aioghost import GhostAdminAPI
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_ADMIN_API_KEY, CONF_API_URL, DOMAIN as DOMAIN
 from .coordinator import GhostDataUpdateCoordinator

@@ -6,10 +6,10 @@ from typing import Any, Literal
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.json import JsonValueType
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.util.json import JsonValueType
 
 from .const import DATA_COMPONENT, DOMAIN, VALID_UNITS, WeatherEntityFeature
 

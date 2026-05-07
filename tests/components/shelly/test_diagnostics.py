@@ -8,14 +8,14 @@ from aioshelly.const import MODEL_25
 from aioshelly.exceptions import DeviceConnectionError
 import pytest
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.shelly.const import (
+from inpui.components.diagnostics import REDACTED
+from inpui.components.shelly.const import (
     CONF_BLE_SCANNER_MODE,
     DOMAIN,
     BLEScannerMode,
 )
-from homeassistant.components.shelly.diagnostics import TO_REDACT
-from homeassistant.core import HomeAssistant
+from inpui.components.shelly.diagnostics import TO_REDACT
+from inpui.core import HomeAssistant
 
 from . import init_integration, inject_rpc_device_event
 from .conftest import MOCK_STATUS_COAP

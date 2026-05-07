@@ -9,14 +9,14 @@ from unittest.mock import AsyncMock, MagicMock, call, patch
 from aioimaplib import AUTH, NONAUTH, SELECTED, AioImapException, Response
 import pytest
 
-from homeassistant.components.imap import DOMAIN
-from homeassistant.components.imap.const import CONF_CHARSET
-from homeassistant.components.imap.errors import InvalidAuth, InvalidFolder
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.util.dt import utcnow
+from inpui.components.imap import DOMAIN
+from inpui.components.imap.const import CONF_CHARSET
+from inpui.components.imap.errors import InvalidAuth, InvalidFolder
+from inpui.components.sensor import SensorStateClass
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.util.dt import utcnow
 
 from .const import (
     BAD_RESPONSE,

@@ -1,6 +1,6 @@
 """Tests for the Powerfox Local integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

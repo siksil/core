@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, call, patch
 
 import pytest
 
-from homeassistant.components.minio import (
+from inpui.components.minio import (
     CONF_ACCESS_KEY,
     CONF_HOST,
     CONF_LISTEN,
@@ -17,8 +17,8 @@ from homeassistant.components.minio import (
     DOMAIN,
     QueueListener,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from .common import TEST_EVENT
 

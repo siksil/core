@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import (
     CONF_TRACK_HOME,

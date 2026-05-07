@@ -4,9 +4,9 @@ import logging
 
 from flipr_api import FliprAPIRestClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import (
     FliprConfigEntry,

@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from typing import cast
 
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant, State
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant, State
 
 from .const import DATA_COMPONENT, DOMAIN
 

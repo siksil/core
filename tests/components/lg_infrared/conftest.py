@@ -8,21 +8,21 @@ from unittest.mock import patch
 from infrared_protocols import Command as InfraredCommand
 import pytest
 
-from homeassistant.components.infrared import (
+from inpui.components.infrared import (
     DATA_COMPONENT as INFRARED_DATA_COMPONENT,
     DOMAIN as INFRARED_DOMAIN,
     InfraredEntity,
 )
-from homeassistant.components.lg_infrared import PLATFORMS
-from homeassistant.components.lg_infrared.const import (
+from inpui.components.lg_infrared import PLATFORMS
+from inpui.components.lg_infrared.const import (
     CONF_DEVICE_TYPE,
     CONF_INFRARED_ENTITY_ID,
     DOMAIN,
     LGDeviceType,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

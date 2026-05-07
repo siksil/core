@@ -5,18 +5,18 @@ from unittest.mock import call
 from aioesphomeapi import APIClient, SelectInfo, SelectState, VoiceAssistantFeature
 import pytest
 
-from homeassistant.components.assist_satellite import (
+from inpui.components.assist_satellite import (
     AssistSatelliteConfiguration,
     AssistSatelliteWakeWord,
 )
-from homeassistant.components.esphome.const import NO_WAKE_WORD
-from homeassistant.components.select import (
+from inpui.components.esphome.const import NO_WAKE_WORD
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .common import get_satellite_entity
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType

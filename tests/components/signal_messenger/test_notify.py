@@ -12,8 +12,8 @@ import pytest
 from requests_mock.mocker import Mocker
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import (
     CONTENT,

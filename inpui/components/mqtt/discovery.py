@@ -14,27 +14,27 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_MQTT,
     ConfigEntry,
     signal_discovered_config_entry_removed,
 )
-from homeassistant.const import CONF_DEVICE, CONF_PLATFORM
-from homeassistant.core import HassJobType, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import CONF_DEVICE, CONF_PLATFORM
+from inpui.core import HassJobType, HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     discovery_flow,
     entity_registry as er,
 )
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo, ReceivePayloadType
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.loader import async_get_mqtt
-from homeassistant.util.json import json_loads_object
-from homeassistant.util.signal_type import SignalTypeFormat
+from inpui.helpers.service_info.mqtt import MqttServiceInfo, ReceivePayloadType
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.loader import async_get_mqtt
+from inpui.util.json import json_loads_object
+from inpui.util.signal_type import SignalTypeFormat
 
 from .abbreviations import ABBREVIATIONS, DEVICE_ABBREVIATIONS, ORIGIN_ABBREVIATIONS
 from .client import async_subscribe_internal

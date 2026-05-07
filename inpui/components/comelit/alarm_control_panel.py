@@ -8,15 +8,15 @@ from typing import TYPE_CHECKING, cast
 from aiocomelit.api import ComelitVedoAreaObject
 from aiocomelit.const import ALARM_AREA, AlarmAreaState
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge, ComelitVedoSystem
 

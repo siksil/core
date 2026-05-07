@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from aiohttp import ClientConnectorError
 
-from homeassistant.components.number import NumberDeviceClass, NumberEntity, NumberMode
-from homeassistant.const import UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.components.number import NumberDeviceClass, NumberEntity, NumberMode
+from inpui.const import UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import DiscoveryInfoType
 
 from .coordinator import ApSystemsConfigEntry, ApSystemsData
 from .entity import ApSystemsEntity

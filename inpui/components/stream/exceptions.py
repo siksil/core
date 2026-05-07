@@ -1,6 +1,6 @@
 """Stream component exceptions."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import StreamClientError
 

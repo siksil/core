@@ -5,9 +5,9 @@ from unittest.mock import call, patch
 
 import pytest
 
-from homeassistant.components.tcp import common as tcp
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.tcp import common as tcp
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 

@@ -6,8 +6,8 @@ from typing import Any
 
 from accuweather.const import ENDPOINT
 
-from homeassistant.components import system_health
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import system_health
+from inpui.core import HomeAssistant, callback
 
 from .const import DOMAIN
 from .coordinator import AccuWeatherConfigEntry

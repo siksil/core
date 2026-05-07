@@ -8,14 +8,14 @@ import uuid
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.usage_prediction.common_control import (
+from inpui.components.usage_prediction.common_control import (
     async_predict_common_control,
     time_category,
 )
-from homeassistant.components.usage_prediction.models import EntityUsagePredictions
-from homeassistant.const import EVENT_CALL_SERVICE
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.usage_prediction.models import EntityUsagePredictions
+from inpui.const import EVENT_CALL_SERVICE
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.components.recorder.common import async_wait_recording_done
 

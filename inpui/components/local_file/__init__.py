@@ -1,9 +1,9 @@
 """The local_file component."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_FILE_PATH, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_FILE_PATH, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
 
 from .const import DOMAIN
 from .util import check_file_path_access

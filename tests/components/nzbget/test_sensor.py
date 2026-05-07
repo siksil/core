@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfDataRate,
     UnitOfInformation,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import init_integration
 

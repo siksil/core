@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any, TypedDict
 from plexapi.gdm import GDM
 from plexwebsocket import PlexWebsocket
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
+from inpui.core import CALLBACK_TYPE, HomeAssistant
 
 from .const import DOMAIN, SERVERS
 

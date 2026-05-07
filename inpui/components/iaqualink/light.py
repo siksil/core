@@ -6,15 +6,15 @@ from typing import Any
 
 from iaqualink.device import AqualinkLight
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ColorMode,
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AqualinkConfigEntry, refresh_system
 from .entity import AqualinkEntity

@@ -5,11 +5,11 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
-from homeassistant.components.knx.schema import NumberSchema
-from homeassistant.const import CONF_NAME, CONF_TYPE, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
+from inpui.components.knx.schema import NumberSchema
+from inpui.const import CONF_NAME, CONF_TYPE, Platform
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ServiceValidationError
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

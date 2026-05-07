@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import DEGREE, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, StateType, UndefinedType
+from inpui.config_entries import ConfigEntry
+from inpui.const import DEGREE, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, StateType, UndefinedType
 
 from . import DOMAIN
 from .device import async_create_device

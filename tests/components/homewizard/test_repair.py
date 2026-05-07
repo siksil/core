@@ -4,13 +4,13 @@ from unittest.mock import MagicMock, patch
 
 from homewizard_energy.errors import DisabledError
 
-from homeassistant.components.homewizard.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.homewizard.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.repairs import (

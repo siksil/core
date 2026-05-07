@@ -3,7 +3,7 @@
 from aioimmich.albums.models import ImmichAlbum
 from aioimmich.assets.models import ImmichAsset
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,

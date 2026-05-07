@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pyhik.hikvision import VideoChannel
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HikvisionConfigEntry
 from .entity import HikvisionEntity

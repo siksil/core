@@ -28,21 +28,21 @@ from nio.responses import (
 from PIL import Image
 import voluptuous as vol
 
-from homeassistant.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
-from homeassistant.const import (
+from inpui.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event as HassEvent, HomeAssistant, ServiceCall
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import save_json
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.json import JsonObjectType, load_json_object
+from inpui.core import Event as HassEvent, HomeAssistant, ServiceCall
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import save_json
+from inpui.helpers.typing import ConfigType
+from inpui.util.json import JsonObjectType, load_json_object
 
 from .const import (
     ATTR_FORMAT,
@@ -189,7 +189,7 @@ class MatrixBot:
             if self._client is not None:
                 await self._client.close()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_client)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_client)
 
         async def handle_startup(event: HassEvent) -> None:
             """Run once when Home Assistant finished startup."""
@@ -217,7 +217,7 @@ class MatrixBot:
                 name=f"{self.__class__.__name__}: sync_forever for '{self._mx_id}'",
             )
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, handle_startup)
+        self.hass.bus.async_listen_once(EVENT_INPUI_START, handle_startup)
 
     def _load_commands(self, commands: list[ConfigCommand]) -> None:
         for command in commands:

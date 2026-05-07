@@ -6,12 +6,12 @@ from ipaddress import IPv4Address, IPv6Address, ip_interface
 import logging
 from pathlib import Path
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.typing import UNDEFINED, ConfigType, UndefinedType
-from homeassistant.loader import bind_hass
-from homeassistant.util import package
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.typing import UNDEFINED, ConfigType, UndefinedType
+from inpui.loader import bind_hass
+from inpui.util import package
 
 from . import util
 from .const import (

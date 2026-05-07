@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 from libpyvivotek.vivotek import VivotekCameraError
 import pytest
 
-from homeassistant.components.vivotek.camera import DEFAULT_FRAMERATE, DEFAULT_NAME
-from homeassistant.components.vivotek.const import (
+from inpui.components.vivotek.camera import DEFAULT_FRAMERATE, DEFAULT_NAME
+from inpui.components.vivotek.const import (
     CONF_FRAMERATE,
     CONF_SECURITY_LEVEL,
     CONF_STREAM_PATH,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     HTTP_BASIC_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

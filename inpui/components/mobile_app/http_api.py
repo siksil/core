@@ -10,12 +10,12 @@ from aiohttp.web import Request, Response
 from nacl.secret import SecretBox
 import voluptuous as vol
 
-from homeassistant.components import cloud
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util import slugify
+from inpui.components import cloud
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID
+from inpui.helpers import config_validation as cv
+from inpui.util import slugify
 
 from .const import (
     ATTR_APP_DATA,

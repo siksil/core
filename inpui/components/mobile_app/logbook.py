@@ -5,15 +5,15 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
-from homeassistant.components.logbook import (
+from inpui.components.logbook import (
     LOGBOOK_ENTRY_ENTITY_ID,
     LOGBOOK_ENTRY_ICON,
     LOGBOOK_ENTRY_MESSAGE,
     LOGBOOK_ENTRY_NAME,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_ICON
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.util.event_type import EventType
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_ICON
+from inpui.core import Event, HomeAssistant, callback
+from inpui.util.event_type import EventType
 
 from .const import DOMAIN
 

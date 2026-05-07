@@ -11,20 +11,20 @@ from typing import Any
 from propcache.api import cached_property
 from zha.mixins import LogMixin
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_MANUFACTURER,
     ATTR_MODEL,
     ATTR_NAME,
     ATTR_VIA_DEVICE,
     EntityCategory,
 )
-from homeassistant.core import State, callback
-from homeassistant.helpers.device_registry import CONNECTION_ZIGBEE, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.group import IntegrationSpecificGroup
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.core import State, callback
+from inpui.helpers.device_registry import CONNECTION_ZIGBEE, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.group import IntegrationSpecificGroup
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .const import DOMAIN
 from .helpers import SIGNAL_REMOVE_ENTITIES, EntityData, convert_zha_error_to_ha_error

@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from mill import Heater, MillDevice
 
-from homeassistant.components.number import NumberDeviceClass, NumberEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_USERNAME, UnitOfPower
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberDeviceClass, NumberEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_USERNAME, UnitOfPower
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CLOUD, CONNECTION_TYPE, DOMAIN
 from .coordinator import MillDataUpdateCoordinator

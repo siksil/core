@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock, MagicMock
 from azure.core.exceptions import ClientAuthenticationError, ResourceNotFoundError
 import pytest
 
-from homeassistant.components.azure_storage.const import (
+from inpui.components.azure_storage.const import (
     CONF_ACCOUNT_NAME,
     CONF_CONTAINER_NAME,
     CONF_STORAGE_ACCOUNT_KEY,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER, ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 from .const import USER_INPUT

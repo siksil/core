@@ -5,8 +5,8 @@ from typing import Any
 
 from ical.diagnostics import redact_ics
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import RemoteCalendarConfigEntry
 

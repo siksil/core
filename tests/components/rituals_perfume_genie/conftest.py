@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.rituals_perfume_genie import ACCOUNT_HASH, DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.components.rituals_perfume_genie import ACCOUNT_HASH, DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
 
 from .const import TEST_EMAIL, TEST_PASSWORD
 

@@ -12,7 +12,7 @@ from soco.data_structures import DidlFavorite
 from soco.events_base import Event as SonosEvent
 from soco.exceptions import SoCoException
 
-from homeassistant.helpers.dispatcher import async_dispatcher_send, dispatcher_send
+from inpui.helpers.dispatcher import async_dispatcher_send, dispatcher_send
 
 from .const import SONOS_CREATE_FAVORITES_SENSOR, SONOS_FAVORITES_UPDATED
 from .helpers import soco_error

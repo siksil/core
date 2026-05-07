@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, cast
 
 from aiohttp import web
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .const import (
     EXT_X_START_LL_HLS,
@@ -28,7 +28,7 @@ from .core import (
 from .fmp4utils import get_codec_string, transform_init
 
 if TYPE_CHECKING:
-    from homeassistant.components.camera import DynamicStreamSettings
+    from inpui.components.camera import DynamicStreamSettings
 
     from . import Stream
 

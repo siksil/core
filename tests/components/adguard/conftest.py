@@ -13,8 +13,8 @@ from adguardhome.stats import AdGuardHomeStats
 from adguardhome.update import AdGuardHomeAvailableUpdate, AdGuardHomeUpdate
 import pytest
 
-from homeassistant.components.adguard import DOMAIN, PLATFORMS
-from homeassistant.const import (
+from inpui.components.adguard import DOMAIN, PLATFORMS
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -23,7 +23,7 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

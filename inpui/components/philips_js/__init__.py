@@ -7,14 +7,14 @@ import logging
 from haphilipsjs import PhilipsTV
 from haphilipsjs.typing import SystemType
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_VERSION,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CONF_SYSTEM
 from .coordinator import PhilipsTVConfigEntry, PhilipsTVDataUpdateCoordinator

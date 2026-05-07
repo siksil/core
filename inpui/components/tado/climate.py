@@ -9,7 +9,7 @@ from typing import Any
 import PyTado
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     PRESET_AWAY,
     PRESET_HOME,
@@ -23,11 +23,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
+from inpui.const import ATTR_TEMPERATURE, PRECISION_TENTHS, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONST_EXCLUSIVE_OVERLAY_GROUP,

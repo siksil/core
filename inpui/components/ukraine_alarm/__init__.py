@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 import aiohttp
 from uasiren.client import Client
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_REGION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_REGION
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import UkraineAlarmDataUpdateCoordinator

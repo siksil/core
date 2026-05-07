@@ -9,11 +9,11 @@ from simplipy.errors import SimplipyError
 from simplipy.system.v3 import SystemV3
 from simplipy.websocket import EVENT_LOCK_LOCKED, EVENT_LOCK_UNLOCKED, WebsocketEvent
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SimpliSafe
 from .const import DOMAIN, LOGGER

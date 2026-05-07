@@ -8,8 +8,8 @@ import logging
 import sys
 from types import ModuleType
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 

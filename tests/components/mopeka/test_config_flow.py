@@ -5,9 +5,9 @@ from unittest.mock import patch
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.mopeka.const import CONF_MEDIUM_TYPE, DOMAIN, MediumType
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.mopeka.const import CONF_MEDIUM_TYPE, DOMAIN, MediumType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import NOT_MOPEKA_SERVICE_INFO, PRO_SERVICE_INFO
 

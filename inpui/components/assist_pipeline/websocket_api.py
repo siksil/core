@@ -11,15 +11,15 @@ from typing import Any, Final
 import audioop  # pylint: disable=deprecated-module
 import voluptuous as vol
 
-from homeassistant.components import conversation, stt, tts, websocket_api
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_SECONDS, MATCH_ALL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components import conversation, stt, tts, websocket_api
+from inpui.const import ATTR_DEVICE_ID, ATTR_SECONDS, MATCH_ALL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     chat_session,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.util import language as language_util
+from inpui.util import language as language_util
 
 from .const import (
     DEFAULT_PIPELINE_TIMEOUT,

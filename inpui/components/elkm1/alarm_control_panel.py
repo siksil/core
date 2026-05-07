@@ -11,18 +11,18 @@ from elkm1_lib.elk import Elk
 from elkm1_lib.keypads import Keypad
 import voluptuous as vol
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     ATTR_CHANGED_BY,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import VolDictType
 
 from . import ElkM1ConfigEntry
 from .const import (

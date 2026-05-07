@@ -4,13 +4,13 @@ from unittest.mock import AsyncMock, patch
 
 from jvcprojector import JvcProjectorAuthError, JvcProjectorTimeoutError
 
-from homeassistant.components.jvc_projector.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.issue_registry import IssueRegistry
+from inpui.components.jvc_projector.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.issue_registry import IssueRegistry
 
 from . import MOCK_MAC
 
@@ -54,7 +54,7 @@ async def test_disconnect_on_hass_stop(
     assert mock_integration.state is ConfigEntryState.LOADED
     assert mock_device.disconnect.call_count == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert mock_device.disconnect.call_count == 1

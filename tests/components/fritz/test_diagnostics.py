@@ -5,8 +5,8 @@ from __future__ import annotations
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.fritz.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.fritz.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import MOCK_USER_DATA
 

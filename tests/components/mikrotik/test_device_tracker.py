@@ -8,11 +8,11 @@ from typing import Any
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import device_tracker, mikrotik
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.components import device_tracker, mikrotik
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.dt import utcnow
 
 from . import (
     DEVICE_2_WIRELESS,

@@ -6,10 +6,10 @@ import logging
 
 from aiotankerkoenig import GasType, Station
 
-from homeassistant.components.sensor import SensorEntity, SensorStateClass
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, CURRENCY_EURO
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorEntity, SensorStateClass
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, CURRENCY_EURO
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ATTR_BRAND,

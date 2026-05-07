@@ -8,8 +8,8 @@ from unittest.mock import call, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import climate, mqtt
-from homeassistant.components.climate import (
+from inpui.components import climate, mqtt
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -28,17 +28,17 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.mqtt.climate import (
+from inpui.components.mqtt.climate import (
     MQTT_CLIMATE_ATTRIBUTES_BLOCKED,
     VALUE_TEMPLATE_KEYS,
 )
-from homeassistant.components.mqtt.const import (
+from inpui.components.mqtt.const import (
     DEFAULT_CLIMATE_INITIAL_TEMPERATURE as DEFAULT_INITIAL_TEMPERATURE,
 )
-from homeassistant.const import ATTR_TEMPERATURE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.util.unit_system import (
+from inpui.const import ATTR_TEMPERATURE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

@@ -2,7 +2,7 @@
 
 from homematicip.base.enums import SmokeDetectorAlarmType, WindowState
 
-from homeassistant.components.homematicip_cloud.binary_sensor import (
+from inpui.components.homematicip_cloud.binary_sensor import (
     ATTR_ACCELERATION_SENSOR_MODE,
     ATTR_ACCELERATION_SENSOR_NEUTRAL_POSITION,
     ATTR_ACCELERATION_SENSOR_SENSITIVITY,
@@ -14,15 +14,15 @@ from homeassistant.components.homematicip_cloud.binary_sensor import (
     ATTR_WATER_LEVEL_DETECTED,
     ATTR_WINDOW_STATE,
 )
-from homeassistant.components.homematicip_cloud.entity import (
+from inpui.components.homematicip_cloud.entity import (
     ATTR_EVENT_DELAY,
     ATTR_GROUP_MEMBER_UNREACHABLE,
     ATTR_LOW_BATTERY,
     ATTR_RSSI_DEVICE,
     ATTR_SABOTAGE,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

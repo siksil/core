@@ -11,7 +11,7 @@ from aioesphomeapi import (
     FanState,
 )
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -27,8 +27,8 @@ from homeassistant.components.fan import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .conftest import MockGenericDeviceEntryType
 

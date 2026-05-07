@@ -4,12 +4,12 @@ from unittest.mock import AsyncMock, MagicMock
 
 from pyotgw.vars import OTGW_MODE_RESET
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.opentherm_gw import DOMAIN
-from homeassistant.components.opentherm_gw.const import OpenThermDeviceIdentifier
-from homeassistant.const import ATTR_ENTITY_ID, CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.opentherm_gw import DOMAIN
+from inpui.components.opentherm_gw.const import OpenThermDeviceIdentifier
+from inpui.const import ATTR_ENTITY_ID, CONF_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MINIMAL_STATUS
 

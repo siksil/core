@@ -2,22 +2,22 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.cpuspeed.const import DOMAIN
-from homeassistant.components.cpuspeed.sensor import ATTR_ARCH, ATTR_BRAND, ATTR_HZ
-from homeassistant.components.homeassistant import (
+from inpui.components.cpuspeed.const import DOMAIN
+from inpui.components.cpuspeed.sensor import ATTR_ARCH, ATTR_BRAND, ATTR_HZ
+from inpui.components.homeassistant import (
     DOMAIN as HOME_ASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

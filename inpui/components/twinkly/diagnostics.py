@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import ATTR_SW_VERSION, CONF_HOST, CONF_IP_ADDRESS, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.diagnostics import async_redact_data
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.const import ATTR_SW_VERSION, CONF_HOST, CONF_IP_ADDRESS, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import DOMAIN
 from .coordinator import TwinklyConfigEntry

@@ -9,9 +9,9 @@ from glances_api.exceptions import (
 )
 import pytest
 
-from homeassistant.components.glances.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.glances.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import MOCK_USER_INPUT
 

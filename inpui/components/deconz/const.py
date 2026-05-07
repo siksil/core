@@ -4,7 +4,7 @@ import logging
 
 from pydeconz.models import ResourceType
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 LOGGER = logging.getLogger(__package__)
 

@@ -6,21 +6,21 @@ import logging
 from aio_geojson_geonetnz_quakes import GeonetnzQuakesFeedManager
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.unit_conversion import DistanceConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
+from inpui.util.unit_conversion import DistanceConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (
     CONF_MINIMUM_MAGNITUDE,

@@ -10,15 +10,15 @@ from typing import Any, cast
 from propcache.api import under_cached_property
 import voluptuous as vol
 
-from homeassistant.components.blueprint import CONF_USE_BLUEPRINT
-from homeassistant.const import (
+from inpui.components.blueprint import CONF_USE_BLUEPRINT
+from inpui.const import (
     CONF_ICON,
     CONF_NAME,
     CONF_PATH,
     CONF_VARIABLES,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -27,23 +27,23 @@ from homeassistant.core import (
     callback,
     validate_state,
 )
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, async_generate_entity_id
-from homeassistant.helpers.event import (
+from inpui.exceptions import TemplateError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, async_generate_entity_id
+from inpui.helpers.event import (
     TrackTemplate,
     TrackTemplateResult,
     TrackTemplateResultInfo,
     async_track_template_result,
 )
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.start import async_at_start
-from homeassistant.helpers.template import (
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.start import async_at_start
+from inpui.helpers.template import (
     Template,
     TemplateStateFromEntityId,
     result_as_boolean,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_ATTRIBUTES, CONF_AVAILABILITY, CONF_PICTURE
 from .entity import AbstractTemplateEntity

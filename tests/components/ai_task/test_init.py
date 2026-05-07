@@ -8,12 +8,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import media_source
-from homeassistant.components.ai_task import AITaskPreferences
-from homeassistant.components.ai_task.const import DATA_MEDIA_SOURCE, DATA_PREFERENCES
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import selector
+from inpui.components import media_source
+from inpui.components.ai_task import AITaskPreferences
+from inpui.components.ai_task.const import DATA_MEDIA_SOURCE, DATA_PREFERENCES
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import selector
 
 from .conftest import TEST_ENTITY_ID, MockAITaskEntity
 

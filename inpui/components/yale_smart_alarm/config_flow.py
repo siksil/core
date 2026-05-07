@@ -9,15 +9,15 @@ import voluptuous as vol
 from yalesmartalarmclient.client import YaleSmartAlarmClient
 from yalesmartalarmclient.exceptions import AuthenticationError
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
 
 from .const import (
     CONF_AREA_ID,

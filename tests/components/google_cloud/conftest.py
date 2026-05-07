@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from google.cloud.texttospeech_v1.types import cloud_tts
 import pytest
 
-from homeassistant.components.google_cloud.const import (
+from inpui.components.google_cloud.const import (
     CONF_SERVICE_ACCOUNT_INFO,
     DOMAIN,
 )

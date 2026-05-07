@@ -2,8 +2,8 @@
 
 from aiohttp.helpers import BasicAuth
 
-from homeassistant.components.blebox.helpers import get_maybe_authenticated_session
-from homeassistant.core import HomeAssistant
+from inpui.components.blebox.helpers import get_maybe_authenticated_session
+from inpui.core import HomeAssistant
 
 
 async def test_get_maybe_authenticated_session_none(hass: HomeAssistant) -> None:

@@ -6,15 +6,15 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE, CONF_NAME
+from inpui.core import callback
+from inpui.helpers.selector import (
     LocationSelector,
     SelectSelector,
     SelectSelectorConfig,

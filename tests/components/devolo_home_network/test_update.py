@@ -6,16 +6,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.devolo_home_network.const import (
+from inpui.components.devolo_home_network.const import (
     DOMAIN,
     FIRMWARE_UPDATE_INTERVAL,
 )
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import configure_integration
 from .const import FIRMWARE_UPDATE_AVAILABLE

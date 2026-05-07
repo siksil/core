@@ -2,10 +2,10 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import lifx
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import lifx
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     DEFAULT_ENTRY_TITLE,

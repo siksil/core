@@ -7,8 +7,8 @@ from typing import TypedDict
 
 from yarl import URL
 
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
@@ -16,8 +16,8 @@ from homeassistant.components.media_source import (
     Unresolvable,
     generate_media_source_id as ms_generate_media_source_id,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
 
 from .const import DATA_COMPONENT, DATA_TTS_MANAGER, DOMAIN, MEDIA_SOURCE_STREAM_PATH
 from .helper import get_engine_instance

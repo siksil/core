@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import thread
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import thread
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 TEST_ZEROCONF_RECORD = ZeroconfServiceInfo(
     ip_address=ip_address("127.0.0.1"),

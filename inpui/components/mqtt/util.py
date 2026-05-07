@@ -13,18 +13,18 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import MAX_LENGTH_STATE_STATE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import MAX_LENGTH_STATE_STATE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     template,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.async_ import create_eager_task
+from inpui.helpers.typing import ConfigType
+from inpui.util.async_ import create_eager_task
 
 from .const import (
     ATTR_PAYLOAD,

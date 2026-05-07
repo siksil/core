@@ -5,10 +5,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import significant_change
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers import significant_change
 
 
 @pytest.fixture(name="checker")

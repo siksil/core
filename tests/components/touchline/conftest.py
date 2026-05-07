@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.touchline.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.touchline.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

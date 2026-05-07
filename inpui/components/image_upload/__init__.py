@@ -14,15 +14,15 @@ from aiohttp.web_request import FileField
 from PIL import Image, ImageOps, UnidentifiedImageError
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.http.static import CACHE_HEADERS
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import collection, config_validation as cv
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.util import dt as dt_util
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http.static import CACHE_HEADERS
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import collection, config_validation as cv
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, FOLDER_IMAGE
 

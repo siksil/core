@@ -16,14 +16,14 @@ from pykoplenti import (
     ExtendedApiClient,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, EVENT_INPUI_STOP
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.event import async_call_later
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_SERVICE_CODE, DOMAIN
 from .helper import get_hostname_id
@@ -78,7 +78,7 @@ class Plenticore:
             _LOGGER.debug("Log-in successfully to %s", self.host)
 
         self._shutdown_remove_listener = self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, self._async_shutdown
+            EVENT_INPUI_STOP, self._async_shutdown
         )
 
         # get some device meta data

@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -15,11 +15,11 @@ from homeassistant.components.climate import (
     ATTR_TARGET_TEMP_LOW,
     ATTR_TEMPERATURE,
 )
-from homeassistant.components.climate.significant_change import (
+from inpui.components.climate.significant_change import (
     async_check_significant_change,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import (
     METRIC_SYSTEM as METRIC,
     US_CUSTOMARY_SYSTEM as IMPERIAL,
     UnitSystem,

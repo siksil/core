@@ -5,10 +5,10 @@ from unittest.mock import patch
 from pyprusalink.types import Conflict
 import pytest
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

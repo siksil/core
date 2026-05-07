@@ -6,12 +6,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     PLATFORM_SCHEMA as LIGHT_PLATFORM_SCHEMA,
     ColorMode,
     LightEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ENTITY_ID,
     CONF_NAME,
@@ -20,11 +20,11 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN
 

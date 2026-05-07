@@ -6,9 +6,9 @@ from typing import Any
 
 from yalexs_ble import ConnectionInfo, LockInfo, LockState, LockStatus
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YALEXSBLEConfigEntry
 from .entity import YALEXSBLEEntity

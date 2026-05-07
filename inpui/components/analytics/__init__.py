@@ -4,11 +4,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import labs, websocket_api
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import labs, websocket_api
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .analytics import (
     Analytics,
@@ -89,7 +89,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     labs.async_subscribe_preview_feature(
         hass, DOMAIN, LABS_SNAPSHOT_FEATURE, _async_handle_labs_update
     )
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, start_schedule)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, start_schedule)
 
     websocket_api.async_register_command(hass, websocket_analytics)
     websocket_api.async_register_command(hass, websocket_analytics_preferences)

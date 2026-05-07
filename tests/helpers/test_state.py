@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.lock import LockState
-from homeassistant.components.sun import STATE_ABOVE_HORIZON, STATE_BELOW_HORIZON
-from homeassistant.const import (
+from inpui.components.lock import LockState
+from inpui.components.sun import STATE_ABOVE_HORIZON, STATE_BELOW_HORIZON
+from inpui.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_CLOSED,
@@ -17,8 +17,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_OPEN,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import state
+from inpui.core import HomeAssistant, State
+from inpui.helpers import state
 
 from tests.common import async_mock_service
 

@@ -7,10 +7,10 @@ from typing import Any
 from aioflo.location import SLEEP_MINUTE_OPTIONS, SYSTEM_MODE_HOME, SYSTEM_REVERT_MODES
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import FloConfigEntry, FloDeviceDataUpdateCoordinator
 from .entity import FloEntity

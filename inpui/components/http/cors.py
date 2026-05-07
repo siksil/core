@@ -15,9 +15,9 @@ from aiohttp.web_urldispatcher import (
 )
 import aiohttp_cors
 
-from homeassistant.const import HTTP_HEADER_X_REQUESTED_WITH
-from homeassistant.core import callback
-from homeassistant.helpers.http import (
+from inpui.const import HTTP_HEADER_X_REQUESTED_WITH
+from inpui.core import callback
+from inpui.helpers.http import (
     KEY_ALLOW_ALL_CORS,
     KEY_ALLOW_CONFIGURED_CORS,
     AllowCorsType,

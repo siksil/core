@@ -7,9 +7,9 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.aemet.const import ATTRIBUTION
-from homeassistant.components.aemet.coordinator import WEATHER_UPDATE_INTERVAL
-from homeassistant.components.weather import (
+from inpui.components.aemet.const import ATTRIBUTION
+from inpui.components.aemet.coordinator import WEATHER_UPDATE_INTERVAL
+from inpui.components.weather import (
     ATTR_CONDITION_SNOWY,
     ATTR_WEATHER_HUMIDITY,
     ATTR_WEATHER_PRESSURE,
@@ -20,8 +20,8 @@ from homeassistant.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.const import ATTR_ATTRIBUTION
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ATTRIBUTION
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration, mock_api_call
 

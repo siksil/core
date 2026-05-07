@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.auth import models as auth_models
-from homeassistant.components.config import auth as auth_config
-from homeassistant.core import HomeAssistant
+from inpui.auth import models as auth_models
+from inpui.components.config import auth as auth_config
+from inpui.core import HomeAssistant
 
 from tests.common import CLIENT_ID, MockGroup, MockUser
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

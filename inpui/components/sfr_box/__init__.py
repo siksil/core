@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 from sfrbox_api.bridge import SFRBox
 from sfrbox_api.exceptions import SFRBoxAuthenticationError, SFRBoxError
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, PLATFORMS, PLATFORMS_WITH_AUTH
 from .coordinator import SFRConfigEntry, SFRDataUpdateCoordinator, SFRRuntimeData

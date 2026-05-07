@@ -6,12 +6,12 @@ from reolink_aio.api import Chime
 from reolink_aio.enums import ChimeToneEnum
 import voluptuous as vol
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     service,

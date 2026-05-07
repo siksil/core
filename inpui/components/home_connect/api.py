@@ -5,9 +5,9 @@ from typing import cast
 from aiohomeconnect.client import AbstractAuth
 from aiohomeconnect.const import API_ENDPOINT
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.httpx_client import get_async_client
 
 
 class AsyncConfigEntryAuth(AbstractAuth):

@@ -11,7 +11,7 @@ import packaging
 from packaging.version import Version
 
 from homeassistant import const
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 _PACKAGING_VERSION_BELOW_26 = Version(packaging.__version__) < Version("26.0dev0")
 

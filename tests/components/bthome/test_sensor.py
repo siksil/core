@@ -6,18 +6,18 @@ import time
 
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
 )
-from homeassistant.components.bthome.const import CONF_SLEEPY_DEVICE, DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.bthome.const import CONF_SLEEPY_DEVICE, DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import make_bthome_v1_adv, make_bthome_v2_adv, make_encrypted_bthome_v1_adv
 

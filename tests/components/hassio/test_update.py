@@ -23,17 +23,17 @@ from aiohasupervisor.models import (
 )
 import pytest
 
-from homeassistant.components.backup import BackupManagerError, ManagerBackup
+from inpui.components.backup import BackupManagerError, ManagerBackup
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.backup.manager import AgentBackupStatus
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.components.hassio.const import REQUEST_REFRESH_DELAY
-from homeassistant.const import __version__ as HAVERSION
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.backup.manager import AgentBackupStatus
+from inpui.components.hassio import DOMAIN
+from inpui.components.hassio.const import REQUEST_REFRESH_DELAY
+from inpui.const import __version__ as HAVERSION
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.typing import WebSocketGenerator

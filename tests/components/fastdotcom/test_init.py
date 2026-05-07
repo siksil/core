@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, STATE_UNKNOWN
-from homeassistant.core import CoreState, HomeAssistant
+from inpui.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STARTED, STATE_UNKNOWN
+from inpui.core import CoreState, HomeAssistant
 
 from . import MOCK_DATA
 
@@ -65,7 +65,7 @@ async def test_delayed_speedtest_during_startup(
         "homeassistant.components.fastdotcom.coordinator.fast_com",
         return_value=MOCK_DATA,
     ):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     state = hass.states.get("sensor.fast_com_download")

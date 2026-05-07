@@ -8,10 +8,10 @@ from aiohttp.client_exceptions import ClientError
 import pytest
 from yarl import URL
 
-from homeassistant.components.qwikswitch import DOMAIN
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.qwikswitch import DOMAIN
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.test_util.aiohttp import (
     AiohttpClientMocker,

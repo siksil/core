@@ -6,18 +6,18 @@ from unittest.mock import create_autospec, patch
 
 import pywemo
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.wemo import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.wemo import (
     CONF_DISCOVERY,
     CONF_STATIC,
     WemoDiscovery,
     async_wemo_dispatcher_connect,
 )
-from homeassistant.components.wemo.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.wemo.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import entity_test_helpers
 from .conftest import (

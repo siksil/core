@@ -13,16 +13,16 @@ import pytest
 from pytest_unordered import unordered
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bang_olufsen.const import (
+from inpui.components.bang_olufsen.const import (
     BEO_WEBSOCKET_EVENT,
     CONNECTION_STATUS,
     DOMAIN,
     WebsocketNotification,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_registry import EntityRegistry
 
 from .const import (
     TEST_NAME,

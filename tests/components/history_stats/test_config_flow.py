@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, patch
 from freezegun import freeze_time
 
 from homeassistant import config_entries
-from homeassistant.components.history_stats.const import (
+from inpui.components.history_stats.const import (
     CONF_DURATION,
     CONF_END,
     CONF_START,
@@ -16,12 +16,12 @@ from homeassistant.components.history_stats.const import (
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_STATE, CONF_TYPE
+from inpui.core import HomeAssistant, State
+from inpui.data_entry_flow import FlowResultType
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

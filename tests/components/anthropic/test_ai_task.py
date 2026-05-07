@@ -9,11 +9,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import ai_task, media_source
-from homeassistant.components.anthropic.const import CONF_CHAT_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, selector
+from inpui.components import ai_task, media_source
+from inpui.components.anthropic.const import CONF_CHAT_MODEL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, selector
 
 from . import create_content_block, create_thinking_block, create_tool_use_block
 

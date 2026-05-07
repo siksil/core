@@ -6,12 +6,12 @@ from dataclasses import dataclass
 
 from renault_api.kamereon.models import KamereonVehicleLocationData
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     TrackerEntity,
     TrackerEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RenaultConfigEntry
 from .entity import RenaultDataEntity, RenaultDataEntityDescription

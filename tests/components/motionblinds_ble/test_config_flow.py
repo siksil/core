@@ -6,11 +6,11 @@ from motionblindsble.const import MotionBlindType
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
-from homeassistant.components.motionblinds_ble import const
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.bluetooth.models import BluetoothServiceInfoBleak
+from inpui.components.motionblinds_ble import const
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

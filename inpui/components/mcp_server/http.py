@@ -37,11 +37,11 @@ from mcp import JSONRPCRequest, types
 from mcp.server import InitializationOptions, Server
 from mcp.shared.message import SessionMessage
 
-from homeassistant.components import conversation
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import llm
+from inpui.components import conversation
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import llm
 
 from .const import DOMAIN
 from .server import create_server

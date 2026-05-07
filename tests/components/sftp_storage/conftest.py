@@ -7,9 +7,9 @@ from unittest.mock import patch
 from asyncssh import generate_private_key
 import pytest
 
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
-from homeassistant.components.sftp_storage import SFTPConfigEntryData
-from homeassistant.components.sftp_storage.const import (
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN, AgentBackup
+from inpui.components.sftp_storage import SFTPConfigEntryData
+from inpui.components.sftp_storage.const import (
     CONF_BACKUP_LOCATION,
     CONF_HOST,
     CONF_PASSWORD,
@@ -19,10 +19,10 @@ from homeassistant.components.sftp_storage.const import (
     DEFAULT_PKEY_NAME,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.setup import async_setup_component
-from homeassistant.util.ulid import ulid
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.setup import async_setup_component
+from inpui.util.ulid import ulid
 
 from .asyncssh_mock import SSHClientConnectionMock, async_context_manager
 

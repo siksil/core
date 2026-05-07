@@ -2,10 +2,10 @@
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_DEVICE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DEVICE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "elv"
 

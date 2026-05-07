@@ -4,18 +4,18 @@ from unittest.mock import AsyncMock, MagicMock
 
 from PySrDaliGateway.exceptions import DaliGatewayError
 
-from homeassistant.components.sunricher_dali.const import CONF_SERIAL_NUMBER, DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import (
+from inpui.components.sunricher_dali.const import CONF_SERIAL_NUMBER, DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

@@ -5,11 +5,11 @@ import logging
 from aioimmich.exceptions import ImmichError
 import voluptuous as vol
 
-from homeassistant.components.media_source import async_resolve_media
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import service
-from homeassistant.helpers.selector import MediaSelector
+from inpui.components.media_source import async_resolve_media
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import service
+from inpui.helpers.selector import MediaSelector
 
 from .const import DOMAIN
 from .coordinator import ImmichConfigEntry

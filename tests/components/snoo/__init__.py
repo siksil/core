@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock
 import pytest
 from python_snoo.containers import SnooData
 
-from homeassistant.components.snoo.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.snoo.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

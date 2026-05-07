@@ -6,7 +6,7 @@ from datetime import datetime, time
 
 from open_meteo import Forecast as OpenMeteoForecast
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_NATIVE_PRECIPITATION,
     ATTR_FORECAST_NATIVE_TEMP,
@@ -17,12 +17,12 @@ from homeassistant.components.weather import (
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import UnitOfPrecipitationDepth, UnitOfSpeed, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util import dt as dt_util
+from inpui.const import UnitOfPrecipitationDepth, UnitOfSpeed, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, WMO_TO_HA_CONDITION_MAP
 from .coordinator import OpenMeteoConfigEntry

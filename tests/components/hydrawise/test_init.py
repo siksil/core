@@ -7,11 +7,11 @@ from aiohttp import ClientError
 from freezegun.api import FrozenDateTimeFactory
 from pydrawise.schema import Controller, User, Zone
 
-from homeassistant.components.hydrawise.const import DOMAIN, MAIN_SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.components.hydrawise.const import DOMAIN, MAIN_SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceRegistry
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

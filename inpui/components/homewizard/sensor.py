@@ -10,14 +10,14 @@ from typing import Final
 from homewizard_energy.const import Model
 from homewizard_energy.models import CombinedModels, ExternalDevice
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DEVICE_CLASS_UNITS,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_VIA_DEVICE,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS,
@@ -32,12 +32,12 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.dt import utcnow
-from homeassistant.util.variance import ignore_variance
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.dt import utcnow
+from inpui.util.variance import ignore_variance
 
 from .const import DOMAIN
 from .coordinator import HomeWizardConfigEntry, HWEnergyDeviceUpdateCoordinator

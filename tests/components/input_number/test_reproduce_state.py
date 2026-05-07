@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
+from inpui.setup import async_setup_component
 
 VALID_NUMBER1 = "19.0"
 VALID_NUMBER2 = "99.9"

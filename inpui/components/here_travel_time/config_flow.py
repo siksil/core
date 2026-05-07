@@ -16,23 +16,23 @@ from here_routing import (
 from here_transit import HERETransitError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_MODE,
     CONF_NAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import (
     BooleanSelector,
     EntitySelector,
     LocationSelector,

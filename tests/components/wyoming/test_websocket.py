@@ -1,7 +1,7 @@
 """Websocket tests for Wyoming integration."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from tests.typing import WebSocketGenerator
 

@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     AMBIGUOUS_UNITS,
     ATTR_MAX,
     ATTR_MIN,
@@ -20,16 +20,16 @@ from homeassistant.components.number import (
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.components.number.const import (
+from inpui.components.number.const import (
     DEVICE_CLASS_UNITS as NUMBER_DEVICE_CLASS_UNITS,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DEVICE_CLASS_UNITS as SENSOR_DEVICE_CLASS_UNITS,
     NON_NUMERIC_DEVICE_CLASSES,
     SensorDeviceClass,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_PLATFORM,
@@ -37,13 +37,13 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from . import common
 

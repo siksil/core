@@ -5,8 +5,8 @@ from unittest.mock import mock_open, patch
 
 import pytest
 
-from homeassistant.components import remember_the_milk as rtm
-from homeassistant.core import HomeAssistant
+from inpui.components import remember_the_milk as rtm
+from inpui.core import HomeAssistant
 
 from .const import JSON_STRING, PROFILE, TOKEN
 

@@ -1,10 +1,10 @@
 """Tests for analytics platform."""
 
-from homeassistant.components.analytics import async_devices_payload
-from homeassistant.components.mobile_app import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.analytics import async_devices_payload
+from inpui.components.mobile_app import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

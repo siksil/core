@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 from luftdaten.exceptions import LuftdatenConnectionError
 import pytest
 
-from homeassistant.components.luftdaten.const import CONF_SENSOR_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.luftdaten.const import CONF_SENSOR_ID, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

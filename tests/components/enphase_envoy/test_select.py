@@ -6,8 +6,8 @@ from pyenphase.exceptions import EnvoyError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.enphase_envoy.const import Platform
-from homeassistant.components.enphase_envoy.select import (
+from inpui.components.enphase_envoy.const import Platform
+from inpui.components.enphase_envoy.select import (
     RELAY_ACTION_MAP,
     RELAY_MODE_MAP,
     REVERSE_RELAY_ACTION_MAP,
@@ -15,11 +15,11 @@ from homeassistant.components.enphase_envoy.select import (
     REVERSE_STORAGE_MODE_MAP,
     STORAGE_MODE_MAP,
 )
-from homeassistant.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.select import ATTR_OPTION, DOMAIN as SELECT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

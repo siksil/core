@@ -1,8 +1,8 @@
 """The pvpc_hourly_pricing integration to collect Spain official electric prices."""
 
-from homeassistant.const import CONF_API_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_API_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .coordinator import ElecPricesDataUpdateCoordinator, PVPCConfigEntry
 from .helpers import get_enabled_sensor_keys

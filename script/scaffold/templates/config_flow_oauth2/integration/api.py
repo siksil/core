@@ -5,8 +5,8 @@ from asyncio import run_coroutine_threadsafe
 from aiohttp import ClientSession
 import my_pypi_package
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 # TODO the following two API examples are based on our suggested best practices
 # for libraries using OAuth2 with requests or aiohttp. Delete the one you won't use.

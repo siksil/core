@@ -1,9 +1,9 @@
 """Utility to setup the Insteon integration."""
 
-from homeassistant.components.insteon.api import async_load_api
-from homeassistant.components.insteon.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.insteon.api import async_load_api
+from inpui.components.insteon.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import MOCK_USER_INPUT_PLM
 from .mock_devices import MockDevices

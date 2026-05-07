@@ -9,9 +9,9 @@ from typing import Any
 import justnimbus
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_CLIENT_ID
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_CLIENT_ID
+from inpui.helpers import config_validation as cv
 
 from .const import CONF_ZIP_CODE, DOMAIN
 

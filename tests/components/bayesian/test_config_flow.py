@@ -9,13 +9,13 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.bayesian.config_flow import (
+from inpui.components.bayesian.config_flow import (
     OBSERVATION_SELECTOR,
     USER,
     ObservationTypes,
     OptionsFlowSteps,
 )
-from homeassistant.components.bayesian.const import (
+from inpui.components.bayesian.const import (
     CONF_P_GIVEN_F,
     CONF_P_GIVEN_T,
     CONF_PRIOR,
@@ -23,12 +23,12 @@ from homeassistant.components.bayesian.const import (
     CONF_TO_STATE,
     DOMAIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigSubentry,
     ConfigSubentryDataWithId,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ABOVE,
     CONF_BELOW,
     CONF_DEVICE_CLASS,
@@ -38,8 +38,8 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

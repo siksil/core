@@ -20,12 +20,12 @@ from roborock.devices.device_manager import UserParams, create_device_manager
 from roborock.map.map_parser import MapParserConfig
 from roborock.mqtt.session import MqttSessionUnauthorized
 
-from homeassistant.const import CONF_USERNAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_USERNAME, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_BASE_URL,
@@ -125,7 +125,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: RoborockConfigEntry) -> 
         await asyncio.gather(device_manager.close(), cache.flush())
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown_roborock)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown_roborock)
     )
     entry.async_on_unload(shutdown_roborock)
 

@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.accuweather.const import DOMAIN
+from inpui.components.accuweather.const import DOMAIN
 
 from tests.common import load_json_array_fixture, load_json_object_fixture
 

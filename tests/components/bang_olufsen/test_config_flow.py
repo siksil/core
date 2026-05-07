@@ -6,11 +6,11 @@ from aiohttp.client_exceptions import ClientConnectorError
 from mozart_api.exceptions import ApiException
 import pytest
 
-from homeassistant.components.bang_olufsen.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.bang_olufsen.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     TEST_DATA_CREATE_ENTRY,

@@ -5,16 +5,16 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.lawn_mower import (
+from inpui.components.lawn_mower import (
     DOMAIN,
     LawnMowerActivity,
     LawnMowerEntity,
     LawnMowerEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import (
     MockConfigEntry,

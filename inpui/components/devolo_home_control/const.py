@@ -1,6 +1,6 @@
 """Constants for the devolo_home_control integration."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "devolo_home_control"
 PLATFORMS = [

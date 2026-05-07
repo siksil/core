@@ -1,13 +1,13 @@
 """Tests for the BMW Connected Drive integration."""
 
-from homeassistant.components.bmw_connected_drive import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.bmw_connected_drive import DOMAIN
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigEntryDisabler,
     ConfigEntryState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

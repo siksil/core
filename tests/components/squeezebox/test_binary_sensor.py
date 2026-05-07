@@ -7,10 +7,10 @@ from unittest.mock import MagicMock, patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.squeezebox.const import PLAYER_UPDATE_INTERVAL
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.squeezebox.const import PLAYER_UPDATE_INTERVAL
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
 
 from .conftest import FAKE_QUERY_RESPONSE
 

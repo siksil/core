@@ -6,16 +6,16 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_LINE, CONF_ROUTE, CONF_STOP_NAME, DOMAIN, SUBENTRY_TYPE_BUS
 from .coordinator import MTAArrival, MTAConfigEntry, MTADataUpdateCoordinator

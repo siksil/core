@@ -25,8 +25,8 @@ from pyheos import (
 )
 from pyheos.util import mediauri as heos_source
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_ENQUEUE,
     BrowseError,
     BrowseMedia,
@@ -39,15 +39,15 @@ from homeassistant.components.media_player import (
     RepeatMode,
     async_process_play_media_url,
 )
-from homeassistant.components.media_source import BrowseMediaSource
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, ServiceResponse, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.dt import utcnow
+from inpui.components.media_source import BrowseMediaSource
+from inpui.const import Platform
+from inpui.core import HomeAssistant, ServiceResponse, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.dt import utcnow
 
 from . import services
 from .const import DOMAIN

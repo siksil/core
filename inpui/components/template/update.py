@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     DEVICE_CLASSES_SCHEMA,
@@ -16,21 +16,21 @@ from homeassistant.components.update import (
     UpdateEntity,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_NAME,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.trigger_template_entity import CONF_PICTURE
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.trigger_template_entity import CONF_PICTURE
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import TriggerUpdateCoordinator, validators as template_validators
 from .const import DOMAIN

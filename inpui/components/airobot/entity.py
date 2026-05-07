@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_MAC
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_MAC
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import AirobotDataUpdateCoordinator

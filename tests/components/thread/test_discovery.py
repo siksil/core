@@ -5,10 +5,10 @@ from unittest.mock import ANY, AsyncMock, MagicMock, Mock
 import pytest
 from zeroconf.asyncio import AsyncServiceInfo
 
-from homeassistant.components.thread import discovery
-from homeassistant.components.thread.const import DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.components.thread import discovery
+from inpui.components.thread.const import DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from . import (
     ROUTER_DISCOVERY_GOOGLE_1,

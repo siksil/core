@@ -5,11 +5,11 @@ Call init before using it in your tests to ensure clean test data.
 
 from typing import Any, Literal
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.light import ColorMode, LightEntity
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from tests.common import MockToggleEntity
 

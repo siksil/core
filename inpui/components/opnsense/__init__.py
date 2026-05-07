@@ -6,11 +6,11 @@ from pyopnsense import diagnostics
 from pyopnsense.exceptions import APIException
 import voluptuous as vol
 
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_API_SECRET,

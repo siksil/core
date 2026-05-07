@@ -6,14 +6,14 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.risco.config_flow import (
+from inpui.components.risco.config_flow import (
     CannotConnectError,
     UnauthorizedError,
 )
-from homeassistant.components.risco.const import CONF_COMMUNICATION_DELAY, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.risco.const import CONF_COMMUNICATION_DELAY, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

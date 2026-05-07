@@ -2,9 +2,9 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import format_mac
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import format_mac
 
 from . import ZEROCONF_NAME
 

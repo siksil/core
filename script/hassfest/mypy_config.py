@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 from typing import Final
 
-from homeassistant.const import REQUIRED_PYTHON_VER
+from inpui.const import REQUIRED_PYTHON_VER
 
 from .model import Config, Integration
 

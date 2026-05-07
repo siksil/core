@@ -13,11 +13,11 @@ from aioamazondevices.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_CODE, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-import homeassistant.helpers.config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_CODE, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+import inpui.helpers.config_validation as cv
 
 from .const import CONF_LOGIN_DATA, DOMAIN
 

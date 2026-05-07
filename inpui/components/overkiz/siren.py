@@ -5,14 +5,14 @@ from typing import Any
 from pyoverkiz.enums import OverkizState
 from pyoverkiz.enums.command import OverkizCommand, OverkizCommandParam
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     SirenEntity,
     SirenEntityFeature,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import OverkizDataConfigEntry
 from .entity import OverkizEntity

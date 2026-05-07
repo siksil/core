@@ -9,21 +9,21 @@ import evohomeasync2 as evo
 from evohomeasync2.const import SZ_STATE_STATUS, SZ_TEMPERATURE_STATUS
 from evohomeasync2.schemas.const import DhwState as EvoDhwState, ZoneMode as EvoZoneMode
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     PRECISION_TENTHS,
     PRECISION_WHOLE,
     STATE_OFF,
     STATE_ON,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from .const import EVOHOME_DATA
 from .coordinator import EvoDataUpdateCoordinator

@@ -6,13 +6,13 @@ from aioqsw.const import API_MAC_ADDR, API_PRODUCT, API_RESULT
 from aioqsw.exceptions import LoginError, QswError
 
 from homeassistant import config_entries
-from homeassistant.components.qnap_qsw.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.qnap_qsw.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .util import CONFIG, LIVE_MOCK, SYSTEM_BOARD_MOCK, USERS_LOGIN_MOCK
 

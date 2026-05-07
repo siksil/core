@@ -6,9 +6,9 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import chat_session
-from homeassistant.util import dt as dt_util, ulid as ulid_util
+from inpui.core import HomeAssistant
+from inpui.helpers import chat_session
+from inpui.util import dt as dt_util, ulid as ulid_util
 
 from tests.common import async_fire_time_changed
 

@@ -8,10 +8,10 @@ from twitchAPI.object.api import FollowedChannel, Stream, TwitchUser, UserSubscr
 from twitchAPI.twitch import Twitch
 from twitchAPI.type import TwitchAPIException, TwitchResourceNotFound
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONF_CHANNELS, DOMAIN, LOGGER, OAUTH_SCOPES
 

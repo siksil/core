@@ -6,8 +6,8 @@ from collections.abc import Generator
 from contextlib import contextmanager
 import contextvars
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 CONF_ACTIVE_AUTHORIZATION_SERVER = "active_authorization_server"
 

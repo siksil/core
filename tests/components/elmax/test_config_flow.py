@@ -7,7 +7,7 @@ from elmax_api.exceptions import ElmaxBadLoginError, ElmaxBadPinError, ElmaxNetw
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.elmax.const import (
+from inpui.components.elmax.const import (
     CONF_ELMAX_MODE,
     CONF_ELMAX_MODE_CLOUD,
     CONF_ELMAX_MODE_DIRECT,
@@ -22,9 +22,9 @@ from homeassistant.components.elmax.const import (
     CONF_ELMAX_USERNAME,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import (
     MOCK_DIRECT_CERT,

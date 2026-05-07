@@ -8,20 +8,20 @@ from zwave_js_server.client import Client
 from zwave_js_server.const import CommandClass
 from zwave_js_server.model.node import Node
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.zwave_js import DOMAIN, device_action
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.zwave_js import DOMAIN, device_action
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_device_automations
 

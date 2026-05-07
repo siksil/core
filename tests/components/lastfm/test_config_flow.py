@@ -5,16 +5,16 @@ from unittest.mock import patch
 from pylast import WSError
 import pytest
 
-from homeassistant.components.lastfm.const import (
+from inpui.components.lastfm.const import (
     CONF_MAIN_USER,
     CONF_USERS,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     API_KEY,

@@ -10,10 +10,10 @@ from unittest.mock import patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.util import dt as dt_util
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.util import dt as dt_util
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from tests.helpers.template.helpers import render, render_to_info
 

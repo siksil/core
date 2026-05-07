@@ -5,9 +5,9 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import template
-from homeassistant.components.template.const import CONF_PICTURE
-from homeassistant.components.weather import (
+from inpui.components import template
+from inpui.components.template.const import CONF_PICTURE
+from inpui.components.weather import (
     ATTR_WEATHER_APPARENT_TEMPERATURE,
     ATTR_WEATHER_CLOUD_COVERAGE,
     ATTR_WEATHER_DEW_POINT,
@@ -24,7 +24,7 @@ from homeassistant.components.weather import (
     SERVICE_GET_FORECASTS,
     Forecast,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
@@ -32,9 +32,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant, State
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
 
 from .conftest import (
     ConfigurationStyle,

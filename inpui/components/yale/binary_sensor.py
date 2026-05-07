@@ -14,15 +14,15 @@ from yalexs.lock import LockDetail, LockDoorStatus
 from yalexs.manager.const import ACTIVITY_UPDATE_INTERVAL
 from yalexs.util import update_lock_detail_from_activity
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from . import YaleConfigEntry, YaleData
 from .entity import YaleDescriptionEntity

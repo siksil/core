@@ -28,11 +28,11 @@ from buienradar.constants import (
 )
 from buienradar.urls import JSON_FEED_URL, json_precipitation_forecast_url
 
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util import dt as dt_util
 
 from .const import DEFAULT_TIMEOUT, SCHEDULE_NOK, SCHEDULE_OK
 

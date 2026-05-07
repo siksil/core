@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from refoss_ha.discovery import Discovery
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import singleton
+from inpui.core import HomeAssistant
+from inpui.helpers import singleton
 
 
 @singleton.singleton("refoss_discovery_server")

@@ -5,9 +5,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID, CONF_DESCRIPTION, CONF_SELECTOR
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID, CONF_DESCRIPTION, CONF_SELECTOR
+from inpui.core import (
     HassJobType,
     HomeAssistant,
     ServiceCall,
@@ -15,9 +15,9 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv, selector, storage
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import UNDEFINED, ConfigType, UndefinedType
+from inpui.helpers import config_validation as cv, selector, storage
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import UNDEFINED, ConfigType, UndefinedType
 
 from .const import (
     ATTR_ATTACHMENTS,

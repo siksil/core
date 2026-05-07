@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.aws_s3.backup import suggested_filenames
-from homeassistant.components.aws_s3.const import DOMAIN
-from homeassistant.components.backup import AgentBackup
+from inpui.components.aws_s3.backup import suggested_filenames
+from inpui.components.aws_s3.const import DOMAIN
+from inpui.components.backup import AgentBackup
 
 from .const import CONFIG_ENTRY_DATA
 

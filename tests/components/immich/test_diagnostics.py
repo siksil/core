@@ -7,7 +7,7 @@ from unittest.mock import Mock
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

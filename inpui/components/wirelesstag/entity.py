@@ -5,14 +5,14 @@ from typing import Any
 
 from wirelesstagpy import SensorTag
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_VOLTAGE,
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
     UnitOfElectricPotential,
 )
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 from . import WirelessTagPlatform
 

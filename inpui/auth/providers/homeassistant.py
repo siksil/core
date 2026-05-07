@@ -11,11 +11,11 @@ from typing import Any, cast
 import bcrypt
 import voluptuous as vol
 
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.storage import Store
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.storage import Store
 
 from ..models import AuthFlowContext, AuthFlowResult, Credentials, UserMeta
 from . import AUTH_PROVIDER_SCHEMA, AUTH_PROVIDERS, AuthProvider, LoginFlow

@@ -2,9 +2,9 @@
 
 from pyoverkiz.enums import OverkizCommand, UIClass
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .. import OverkizDataConfigEntry
 from .awning import Awning

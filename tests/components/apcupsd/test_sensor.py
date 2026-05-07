@@ -6,28 +6,28 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import automation, script
-from homeassistant.components.apcupsd.const import DEPRECATED_SENSORS, DOMAIN
-from homeassistant.components.apcupsd.coordinator import REQUEST_REFRESH_COOLDOWN
-from homeassistant.components.homeassistant import (
+from inpui.components import automation, script
+from inpui.components.apcupsd.const import DEPRECATED_SENSORS, DOMAIN
+from inpui.components.apcupsd.coordinator import REQUEST_REFRESH_COOLDOWN
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import slugify
-from homeassistant.util.dt import utcnow
+from inpui.setup import async_setup_component
+from inpui.util import slugify
+from inpui.util.dt import utcnow
 
 from . import MOCK_MINIMAL_STATUS, MOCK_STATUS
 

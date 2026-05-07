@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_ENQUEUE,
@@ -14,11 +14,11 @@ from homeassistant.components.media_player import (
     MediaPlayerEnqueue,
     MediaType,
 )
-from homeassistant.components.plex import DOMAIN as PLEX_DOMAIN, PLEX_URI_SCHEME
-from homeassistant.components.sonos.media_player import LONG_SERVICE_TIMEOUT
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.plex import DOMAIN as PLEX_DOMAIN, PLEX_URI_SCHEME
+from inpui.components.sonos.media_player import LONG_SERVICE_TIMEOUT
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import MockSoCo
 

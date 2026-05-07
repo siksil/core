@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from APsystemsEZ1 import APsystemsEZ1M
 
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_PORT
 from .coordinator import ApSystemsConfigEntry, ApSystemsData, ApSystemsDataCoordinator

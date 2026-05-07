@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components import voip
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components import voip
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

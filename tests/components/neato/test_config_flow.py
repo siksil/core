@@ -6,15 +6,15 @@ from pybotvac.neato import Neato
 import pytest
 
 from homeassistant import config_entries, setup
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.neato.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.neato.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

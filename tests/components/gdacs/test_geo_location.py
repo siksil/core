@@ -5,8 +5,8 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from homeassistant.components.gdacs.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.components.gdacs.geo_location import (
+from inpui.components.gdacs.const import DEFAULT_SCAN_INTERVAL
+from inpui.components.gdacs.geo_location import (
     ATTR_ALERT_LEVEL,
     ATTR_COUNTRY,
     ATTR_DESCRIPTION,
@@ -19,8 +19,8 @@ from homeassistant.components.gdacs.geo_location import (
     ATTR_TO_DATE,
     ATTR_VULNERABILITY,
 )
-from homeassistant.components.geo_location import ATTR_SOURCE
-from homeassistant.const import (
+from inpui.components.geo_location import ATTR_SOURCE
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -28,13 +28,13 @@ from homeassistant.const import (
     ATTR_LONGITUDE,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_RADIUS,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import _generate_mock_feed_entry
 
@@ -105,7 +105,7 @@ async def test_setup(
         )
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         # 3 geolocation and 1 sensor entities
@@ -241,7 +241,7 @@ async def test_setup_imperial(
         assert await hass.config_entries.async_setup(
             config_entry.entry_id
         )  # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         assert (

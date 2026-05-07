@@ -10,15 +10,15 @@ from freezegun import freeze_time
 import pytest
 
 from homeassistant import core
-from homeassistant.components import logbook, recorder
-from homeassistant.components.automation import ATTR_SOURCE, EVENT_AUTOMATION_TRIGGERED
-from homeassistant.components.logbook import websocket_api
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.util import get_instance
-from homeassistant.components.script import EVENT_SCRIPT_STARTED
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorDeviceClass
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import (
+from inpui.components import logbook, recorder
+from inpui.components.automation import ATTR_SOURCE, EVENT_AUTOMATION_TRIGGERED
+from inpui.components.logbook import websocket_api
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.util import get_instance
+from inpui.components.script import EVENT_SCRIPT_STARTED
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorDeviceClass
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
@@ -29,17 +29,17 @@ from homeassistant.const import (
     CONF_ENTITIES,
     CONF_EXCLUDE,
     CONF_INCLUDE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_START,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import Event, HomeAssistant, State, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entityfilter import CONF_ENTITY_GLOBS
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant, State, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entityfilter import CONF_ENTITY_GLOBS
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.components.recorder.common import (
@@ -55,7 +55,7 @@ def listeners_without_writes(listeners: dict[str, int]) -> dict[str, int]:
     return {
         key: value
         for key, value in listeners.items()
-        if key != EVENT_HOMEASSISTANT_FINAL_WRITE
+        if key != EVENT_INPUI_FINAL_WRITE
     }
 
 
@@ -187,7 +187,7 @@ async def test_get_events(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set("light.kitchen", STATE_OFF)
     await hass.async_block_till_done()
@@ -307,7 +307,7 @@ async def test_get_events_entities_filtered_away(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set("light.kitchen", STATE_ON)
     await hass.async_block_till_done()
@@ -476,7 +476,7 @@ async def test_get_events_with_device_ids(
     device = devices[0]
     device2 = devices[1]
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.bus.async_fire("mock_event", {"device_id": device.id})
     hass.bus.async_fire("mock_event", {"device_id": device2.id})
 
@@ -1187,7 +1187,7 @@ async def test_subscribe_unsubscribe_logbook_stream(
     init_listeners = hass.bus.async_listeners()
     init_listeners = {
         **init_listeners,
-        EVENT_HOMEASSISTANT_START: init_listeners[EVENT_HOMEASSISTANT_START] - 1,
+        EVENT_INPUI_START: init_listeners[EVENT_INPUI_START] - 1,
     }
     await websocket_client.send_json(
         {"id": 7, "type": "logbook/event_stream", "start_time": now.isoformat()}
@@ -1275,7 +1275,7 @@ async def test_subscribe_unsubscribe_logbook_stream(
             ATTR_SOURCE: "numeric state of sensor.hungry_dogs",
         },
     )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     msg = await asyncio.wait_for(websocket_client.receive_json(), 2)
@@ -3131,7 +3131,7 @@ async def test_consistent_stream_and_recorder_filtering(
     )
     await async_recorder_block_till_done(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set(entity_id, "1.0", attributes)
     hass.states.async_set("binary_sensor.other_entity", "off")

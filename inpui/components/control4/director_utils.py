@@ -8,9 +8,9 @@ from pyControl4.account import C4Account
 from pyControl4.director import C4Director
 from pyControl4.error_handling import BadToken
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from . import Control4ConfigEntry
 from .const import CONF_CONTROLLER_UNIQUE_ID

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.control4.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.components.control4.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
 
 from tests.common import MockConfigEntry, load_fixture
 

@@ -4,23 +4,23 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     DeviceNotFound,
 )
-from homeassistant.components.homeassistant.triggers import event as event_trigger
-from homeassistant.const import (
+from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_EVENT,
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, NANOLEAF_EVENT, TOUCH_GESTURE_TRIGGER_MAP, TOUCH_MODELS
 

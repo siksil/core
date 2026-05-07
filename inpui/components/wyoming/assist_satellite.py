@@ -25,19 +25,19 @@ from wyoming.tts import Synthesize, SynthesizeVoice
 from wyoming.vad import VoiceStarted, VoiceStopped
 from wyoming.wake import Detect, Detection
 
-from homeassistant.components import assist_pipeline, ffmpeg, intent, tts
-from homeassistant.components.assist_pipeline import PipelineEvent
-from homeassistant.components.assist_satellite import (
+from inpui.components import assist_pipeline, ffmpeg, intent, tts
+from inpui.components.assist_pipeline import PipelineEvent
+from inpui.components.assist_satellite import (
     AssistSatelliteAnnouncement,
     AssistSatelliteConfiguration,
     AssistSatelliteEntity,
     AssistSatelliteEntityDescription,
     AssistSatelliteEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.ulid import ulid_now
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.ulid import ulid_now
 
 from .const import DOMAIN, SAMPLE_CHANNELS, SAMPLE_WIDTH
 from .data import WyomingService

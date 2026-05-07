@@ -15,13 +15,13 @@ from gardena_bluetooth.exceptions import (
 )
 from gardena_bluetooth.parse import CharacteristicTime
 
-from homeassistant.components import bluetooth
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.util import dt as dt_util
+from inpui.components import bluetooth
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import (

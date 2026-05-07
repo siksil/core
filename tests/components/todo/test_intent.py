@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.todo import (
+from inpui.components import conversation
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.todo import (
     ATTR_ITEM,
     DOMAIN,
     TodoItem,
@@ -14,11 +14,11 @@ from homeassistant.components.todo import (
     TodoListEntity,
     intent as todo_intent,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
 
 from . import MockTodoListEntity, create_mock_platform
 

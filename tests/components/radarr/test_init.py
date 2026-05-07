@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.radarr.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.radarr.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import create_entry, mock_connection_invalid_auth, setup_integration
 

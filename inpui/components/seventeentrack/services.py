@@ -5,16 +5,16 @@ from typing import Any, Final
 from pyseventeentrack.package import PACKAGE_STATUS_MAP, Package
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_FRIENDLY_NAME, ATTR_LOCATION
-from homeassistant.core import (
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_FRIENDLY_NAME, ATTR_LOCATION
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import config_validation as cv, selector, service
-from homeassistant.util import slugify
+from inpui.helpers import config_validation as cv, selector, service
+from inpui.util import slugify
 
 from . import SeventeenTrackCoordinator
 from .const import (

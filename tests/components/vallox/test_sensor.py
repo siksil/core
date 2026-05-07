@@ -6,8 +6,8 @@ from typing import Any
 import pytest
 from vallox_websocket_api import MetricData
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

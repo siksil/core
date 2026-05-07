@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .coordinator import FeedReaderConfigEntry, FeedReaderCoordinator, StoredData

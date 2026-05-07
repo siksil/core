@@ -7,11 +7,11 @@ from bleak import BleakError
 from home_assistant_bluetooth import BluetoothServiceInfoBleak
 import pytest
 
-from homeassistant.components.airthings_ble.const import DEVICE_MODEL, DOMAIN
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_IGNORE, SOURCE_USER
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.airthings_ble.const import DEVICE_MODEL, DOMAIN
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_IGNORE, SOURCE_USER
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     UNKNOWN_AIRTHINGS_SERVICE_INFO,

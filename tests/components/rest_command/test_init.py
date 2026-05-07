@@ -8,15 +8,15 @@ import aiohttp
 import pytest
 from yarl import URL
 
-from homeassistant.components.rest_command import DOMAIN
-from homeassistant.const import (
+from inpui.components.rest_command import DOMAIN
+from inpui.const import (
     CONTENT_TYPE_JSON,
     CONTENT_TYPE_TEXT_PLAIN,
     HTTP_DIGEST_AUTHENTICATION,
     SERVICE_RELOAD,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import TEST_URL, ComponentSetup
 

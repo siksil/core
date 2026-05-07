@@ -6,15 +6,15 @@ from unittest.mock import AsyncMock, MagicMock
 from aiogithubapi import GitHubException
 import pytest
 
-from homeassistant.components.github.const import (
+from inpui.components.github.const import (
     CONF_REPOSITORIES,
     DEFAULT_REPOSITORIES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType, UnknownFlow
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType, UnknownFlow
 
 from .const import MOCK_ACCESS_TOKEN
 

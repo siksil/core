@@ -1,6 +1,6 @@
 """Constants for Leviton Decora Wi-Fi integration tests."""
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 TEST_USERNAME = "test@example.com"
 TEST_PASSWORD = "test-password"

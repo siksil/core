@@ -1,7 +1,7 @@
 """Tests for the melissa component."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 VALID_CONFIG = {"melissa": {"username": "********", "password": "********"}}
 

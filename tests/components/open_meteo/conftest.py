@@ -8,8 +8,8 @@ from unittest.mock import MagicMock, patch
 from open_meteo import Forecast
 import pytest
 
-from homeassistant.components.open_meteo.const import DOMAIN
-from homeassistant.const import CONF_ZONE
+from inpui.components.open_meteo.const import DOMAIN
+from inpui.const import CONF_ZONE
 
 from tests.common import MockConfigEntry, load_fixture
 

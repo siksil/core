@@ -1,11 +1,11 @@
 """Application Credentials platform the Teslemetry integration."""
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     AuthorizationServer,
     ClientCredential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import AUTHORIZE_URL, TOKEN_URL
 from .oauth import TeslemetryImplementation

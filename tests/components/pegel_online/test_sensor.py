@@ -5,9 +5,9 @@ from unittest.mock import patch
 from aiopegelonline.models import Station, StationMeasurements
 import pytest
 
-from homeassistant.components.pegel_online.const import CONF_STATION, DOMAIN
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
+from inpui.components.pegel_online.const import CONF_STATION, DOMAIN
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
 
 from . import PegelOnlineMock
 from .const import (

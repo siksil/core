@@ -2,17 +2,17 @@
 
 import pytest
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_PAYLOAD_LENGTH,
     CONF_RESPOND_TO_READ,
     CONF_STATE_ADDRESS,
     CONF_SYNC_STATE,
     KNX_ADDRESS,
 )
-from homeassistant.components.knx.schema import SelectSchema
-from homeassistant.const import CONF_NAME, CONF_PAYLOAD, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.knx.schema import SelectSchema
+from inpui.const import CONF_NAME, CONF_PAYLOAD, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import KNXTestKit
 

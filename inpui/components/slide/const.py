@@ -1,6 +1,6 @@
 """Define constants for the Slide component."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 API = "api"
 COMPONENT_PLATFORM = Platform.COVER

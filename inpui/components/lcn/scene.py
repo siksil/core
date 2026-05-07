@@ -6,11 +6,11 @@ from typing import Any
 
 import pypck
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, Scene
-from homeassistant.const import CONF_DOMAIN, CONF_ENTITIES, CONF_SCENE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, Scene
+from inpui.const import CONF_DOMAIN, CONF_ENTITIES, CONF_SCENE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DOMAIN_DATA,

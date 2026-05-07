@@ -6,10 +6,10 @@ from freezegun.api import FrozenDateTimeFactory
 from pyhomeworks.pyhomeworks import HW_KEYPAD_LED_CHANGED
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.homeworks import KEYPAD_LEDSTATE_POLL_COOLDOWN
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.homeworks import KEYPAD_LEDSTATE_POLL_COOLDOWN
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

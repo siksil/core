@@ -7,10 +7,10 @@ from typing import Any
 from pdunehd import DuneHDPlayer
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.network import is_host_valid
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.exceptions import HomeAssistantError
+from inpui.util.network import is_host_valid
 
 from .const import DOMAIN
 

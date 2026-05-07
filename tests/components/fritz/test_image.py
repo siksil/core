@@ -8,14 +8,14 @@ import pytest
 from requests.exceptions import ReadTimeout
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fritz.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.components.image import DOMAIN as IMAGE_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.util import slugify
+from inpui.components.fritz.const import DOMAIN, SCAN_INTERVAL
+from inpui.components.image import DOMAIN as IMAGE_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.util import slugify
 
 from .const import MOCK_FB_SERVICES, MOCK_MESH_MASTER_MAC, MOCK_USER_DATA
 

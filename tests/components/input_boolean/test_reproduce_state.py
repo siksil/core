@@ -1,8 +1,8 @@
 """Test reproduce state for input boolean."""
 
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
+from inpui.setup import async_setup_component
 
 
 async def test_reproducing_states(hass: HomeAssistant) -> None:

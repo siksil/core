@@ -5,10 +5,10 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from homeassistant.components.datetime import ATTR_DATETIME, DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.datetime import ATTR_DATETIME, DOMAIN, SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import MockDateTimeEntity
 

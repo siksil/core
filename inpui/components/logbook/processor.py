@@ -12,20 +12,20 @@ from typing import TYPE_CHECKING, Any
 from sqlalchemy.engine import Result
 from sqlalchemy.engine.row import Row
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.filters import Filters
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.filters import Filters
+from inpui.components.recorder.models import (
     bytes_to_uuid_hex_or_none,
     extract_event_type_ids,
     extract_metadata_ids,
     process_timestamp_to_utc_isoformat,
 )
-from homeassistant.components.recorder.util import (
+from inpui.components.recorder.util import (
     execute_stmt_lambda_element,
     session_scope,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     ATTR_DOMAIN,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -34,10 +34,10 @@ from homeassistant.const import (
     EVENT_CALL_SERVICE,
     EVENT_LOGBOOK_ENTRY,
 )
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.event_type import EventType
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.event_type import EventType
 
 from .const import (
     ATTR_MESSAGE,

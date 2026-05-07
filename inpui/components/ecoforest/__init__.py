@@ -11,9 +11,9 @@ from pyecoforest.exceptions import (
     EcoforestConnectionError,
 )
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import EcoforestConfigEntry, EcoforestCoordinator
 

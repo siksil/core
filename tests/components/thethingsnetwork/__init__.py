@@ -1,6 +1,6 @@
 """Define tests for the The Things Network."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def init_integration(hass: HomeAssistant, config_entry) -> None:

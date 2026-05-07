@@ -23,11 +23,11 @@ from yeelight import (
 from yeelight.flow import Action, Flow
 from yeelight.main import _MODEL_SPECS
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_TEMP_KELVIN,
@@ -42,7 +42,7 @@ from homeassistant.components.light import (
     SERVICE_TURN_ON,
     LightEntityFeature,
 )
-from homeassistant.components.yeelight.const import (
+from inpui.components.yeelight.const import (
     ATTR_COUNT,
     ATTR_MODE_MUSIC,
     ATTR_TRANSITIONS,
@@ -62,7 +62,7 @@ from homeassistant.components.yeelight.const import (
     YEELIGHT_SLEEP_TRANSACTION,
     YEELIGHT_TEMPERATURE_TRANSACTION,
 )
-from homeassistant.components.yeelight.light import (
+from inpui.components.yeelight.light import (
     ATTR_KELVIN,
     ATTR_MINUTES,
     ATTR_MODE,
@@ -91,7 +91,7 @@ from homeassistant.components.yeelight.light import (
     SERVICE_START_FLOW,
     YEELIGHT_COLOR_EFFECT_LIST,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     CONF_NAME,
@@ -99,11 +99,11 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     CAPABILITIES,

@@ -9,14 +9,14 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DOMAIN as CAMERA_DOMAIN,
     SERVICE_DISABLE_MOTION,
     SERVICE_ENABLE_MOTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import initialize_entry
 

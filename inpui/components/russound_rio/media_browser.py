@@ -4,8 +4,8 @@ from aiorussound import RussoundClient, Zone
 from aiorussound.const import FeatureFlag
 from aiorussound.util import is_feature_supported
 
-from homeassistant.components.media_player import BrowseMedia, MediaClass
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import BrowseMedia, MediaClass
+from inpui.core import HomeAssistant
 
 
 async def async_browse_media(

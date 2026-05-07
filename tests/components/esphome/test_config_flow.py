@@ -19,8 +19,8 @@ import aiohttp
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.esphome import dashboard
-from homeassistant.components.esphome.const import (
+from inpui.components.esphome import dashboard
+from inpui.components.esphome.const import (
     CONF_ALLOW_SERVICE_CALLS,
     CONF_DEVICE_NAME,
     CONF_NOISE_PSK,
@@ -28,19 +28,19 @@ from homeassistant.components.esphome.const import (
     DEFAULT_NEW_CONFIG_ALLOW_ALLOW_SERVICE_CALLS,
     DOMAIN,
 )
-from homeassistant.components.esphome.encryption_key_storage import (
+from inpui.components.esphome.encryption_key_storage import (
     ENCRYPTION_KEY_STORAGE_KEY,
 )
-from homeassistant.config_entries import SOURCE_IGNORE, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_IGNORE, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import discovery_flow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import VALID_NOISE_PSK
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType

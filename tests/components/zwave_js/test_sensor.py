@@ -10,12 +10,12 @@ from zwave_js_server.event import Event
 from zwave_js_server.exceptions import FailedZWaveCommand
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.zwave_js.const import (
+from inpui.components.zwave_js.const import (
     ATTR_METER_TYPE,
     ATTR_METER_TYPE_NAME,
     ATTR_VALUE,
@@ -23,13 +23,13 @@ from homeassistant.components.zwave_js.const import (
     SERVICE_REFRESH_VALUE,
     SERVICE_RESET_METER,
 )
-from homeassistant.components.zwave_js.helpers import get_valueless_base_unique_id
-from homeassistant.components.zwave_js.sensor import (
+from inpui.components.zwave_js.helpers import get_valueless_base_unique_id
+from inpui.components.zwave_js.sensor import (
     CONTROLLER_STATISTICS_KEY_MAP,
     NODE_STATISTICS_KEY_MAP,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -46,10 +46,10 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .common import (
     AIR_TEMPERATURE_SENSOR,

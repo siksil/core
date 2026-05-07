@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 from autoskope_client.models import CannotConnect, InvalidAuth
 import pytest
 
-from homeassistant.components.autoskope.const import (
+from inpui.components.autoskope.const import (
     DEFAULT_HOST,
     DOMAIN,
     SECTION_ADVANCED_SETTINGS,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

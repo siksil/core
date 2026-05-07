@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.components.remote import ATTR_NUM_REPEATS, RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import ATTR_NUM_REPEATS, RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import BraviaTVConfigEntry
 from .entity import BraviaTVEntity

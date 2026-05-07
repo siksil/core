@@ -11,11 +11,11 @@ from serial.tools import list_ports
 import ultraheat_api
 import voluptuous as vol
 
-from homeassistant.components import usb
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import usb
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN, ULTRAHEAT_TIMEOUT
 

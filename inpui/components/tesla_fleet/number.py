@@ -10,16 +10,16 @@ from typing import Any
 from tesla_fleet_api.const import Scope
 from tesla_fleet_api.tesla import EnergySite, VehicleFleet
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import PERCENTAGE, PRECISION_WHOLE, UnitOfElectricCurrent
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.icon import icon_for_battery_level
+from inpui.const import PERCENTAGE, PRECISION_WHOLE, UnitOfElectricCurrent
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.icon import icon_for_battery_level
 
 from . import TeslaFleetConfigEntry
 from .entity import TeslaFleetEnergyInfoEntity, TeslaFleetVehicleEntity

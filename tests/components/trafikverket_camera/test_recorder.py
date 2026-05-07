@@ -5,11 +5,11 @@ from __future__ import annotations
 import pytest
 from pytrafikverket import CameraInfoModel
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.components.recorder.common import async_wait_recording_done
 from tests.test_util.aiohttp import AiohttpClientMocker

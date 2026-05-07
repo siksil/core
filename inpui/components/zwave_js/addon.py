@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.hassio import AddonManager
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.singleton import singleton
+from inpui.components.hassio import AddonManager
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.singleton import singleton
 
 from .const import ADDON_SLUG, DOMAIN, LOGGER
 

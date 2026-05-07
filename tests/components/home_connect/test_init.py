@@ -14,18 +14,18 @@ from aiohomeconnect.model.error import (
 import aiohttp
 import pytest
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.home_connect.const import DOMAIN
-from homeassistant.components.home_connect.utils import bsh_key_to_translation_key
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.home_connect.const import DOMAIN
+from inpui.components.home_connect.utils import bsh_key_to_translation_key
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 from script.hassfest.translations import RE_TRANSLATION_KEY

@@ -8,33 +8,33 @@ import datetime
 from enum import StrEnum
 import logging
 
-from homeassistant.components.recorder.models import StatisticMeanType
-from homeassistant.components.recorder.models.statistics import (
+from inpui.components.recorder.models import StatisticMeanType
+from inpui.components.recorder.models.statistics import (
     StatisticData,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_instance,
     get_last_statistics,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfEnergy, UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import (
+from inpui.const import UnitOfEnergy, UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import (
     DeviceEntry,
     DeviceEntryType,
     DeviceInfo,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.unit_conversion import EnergyConverter, VolumeConverter
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.unit_conversion import EnergyConverter, VolumeConverter
 
 from .const import DOMAIN
 from .coordinator import IstaConfigEntry, IstaCoordinator

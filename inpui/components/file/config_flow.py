@@ -7,13 +7,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_FILE_PATH,
     CONF_NAME,
     CONF_PLATFORM,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     Platform,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers.selector import (
     BooleanSelector,
     BooleanSelectorConfig,
     TemplateSelector,

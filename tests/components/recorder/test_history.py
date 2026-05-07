@@ -11,19 +11,19 @@ from unittest.mock import patch, sentinel
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import Recorder, history
-from homeassistant.components.recorder.db_schema import (
+from inpui.components import recorder
+from inpui.components.recorder import Recorder, history
+from inpui.components.recorder.db_schema import (
     StateAttributes,
     States,
     StatesMeta,
 )
-from homeassistant.components.recorder.filters import Filters
-from homeassistant.components.recorder.models import process_timestamp
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.filters import Filters
+from inpui.components.recorder.models import process_timestamp
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant, State
+from inpui.helpers.json import JSONEncoder
+from inpui.util import dt as dt_util
 
 from .common import (
     assert_dict_of_states_equal_without_context_and_last_changed,

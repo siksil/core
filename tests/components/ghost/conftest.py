@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.ghost.const import (
+from inpui.components.ghost.const import (
     CONF_ADMIN_API_KEY,
     CONF_API_URL,
     DOMAIN,

@@ -5,11 +5,11 @@ from __future__ import annotations
 from aiodns.error import DNSError
 from radios import RadioBrowser, RadioBrowserError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import __version__
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigEntry
+from inpui.const import __version__
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 type RadioBrowserConfigEntry = ConfigEntry[RadioBrowser]
 

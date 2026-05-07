@@ -1,9 +1,9 @@
 """Support for my.home-assistant.io redirect service."""
 
-from homeassistant.components import frontend
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import frontend
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "my"
 URL_PATH = "_my_redirect"

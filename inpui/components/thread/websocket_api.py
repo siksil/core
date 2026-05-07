@@ -7,8 +7,8 @@ from typing import Any
 from python_otbr_api.tlv_parser import TLVError
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
 
 from . import dataset_store, discovery
 

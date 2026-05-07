@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.iotawatt.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.iotawatt.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

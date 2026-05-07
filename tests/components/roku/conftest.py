@@ -7,9 +7,9 @@ from unittest.mock import MagicMock, patch
 import pytest
 from rokuecp import Device as RokuDevice
 
-from homeassistant.components.roku.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.roku.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 

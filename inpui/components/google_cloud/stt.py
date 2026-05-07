@@ -10,7 +10,7 @@ from google.api_core.retry import AsyncRetry
 from google.cloud import speech_v1
 from propcache.api import cached_property
 
-from homeassistant.components.stt import (
+from inpui.components.stt import (
     AudioBitRates,
     AudioChannels,
     AudioCodecs,
@@ -21,10 +21,10 @@ from homeassistant.components.stt import (
     SpeechResultState,
     SpeechToTextEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_SERVICE_ACCOUNT_INFO,

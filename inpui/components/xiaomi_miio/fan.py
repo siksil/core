@@ -32,13 +32,13 @@ from miio.integrations.fan.zhimi.zhimi_miot import (
 )
 import voluptuous as vol
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.const import ATTR_ENTITY_ID, CONF_DEVICE, CONF_MODEL
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.const import ATTR_ENTITY_ID, CONF_DEVICE, CONF_MODEL
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

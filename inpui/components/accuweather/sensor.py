@@ -6,13 +6,13 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any, cast
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_PARTS_PER_CUBIC_METER,
     PERCENTAGE,
     UV_INDEX,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     UnitOfTime,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     AIR_QUALITY_CATEGORY_MAP,

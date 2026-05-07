@@ -16,26 +16,26 @@ from aiohttp.web import json_response
 from awesomeversion import AwesomeVersion
 from yarl import URL
 
-from homeassistant.components import webhook
-from homeassistant.const import (
+from inpui.components import webhook
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_SUPPORTED_FEATURES,
     CLOUD_NEVER_EXPOSED_ENTITIES,
     CONF_NAME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import CALLBACK_TYPE, Context, HomeAssistant, State, callback
-from homeassistant.helpers import (
+from inpui.core import CALLBACK_TYPE, Context, HomeAssistant, State, callback
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     intent,
     start,
 )
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.redact import partial_redact
-from homeassistant.util.dt import utcnow
+from inpui.helpers.event import async_call_later
+from inpui.helpers.network import get_url
+from inpui.helpers.redact import partial_redact
+from inpui.util.dt import utcnow
 
 from . import trait
 from .const import (
@@ -657,7 +657,7 @@ class GoogleEntity:
         if "matter" in self.hass.config.components and any(
             x for x in device_entry.identifiers if x[0] == "matter"
         ):
-            from homeassistant.components.matter import (  # noqa: PLC0415
+            from inpui.components.matter import (  # noqa: PLC0415
                 get_matter_device_info,
             )
 

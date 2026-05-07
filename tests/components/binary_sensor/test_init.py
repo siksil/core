@@ -5,11 +5,11 @@ from unittest import mock
 
 import pytest
 
-from homeassistant.components import binary_sensor
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import STATE_OFF, STATE_ON, EntityCategory, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import binary_sensor
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import STATE_OFF, STATE_ON, EntityCategory, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import MockBinarySensor
 

@@ -7,14 +7,14 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_FILE_PATH, CONF_NAME
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.const import CONF_FILE_PATH, CONF_NAME
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import TextSelector
+from inpui.helpers.selector import TextSelector
 
 from .const import DEFAULT_NAME, DOMAIN
 from .util import check_file_path_access

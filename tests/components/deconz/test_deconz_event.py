@@ -7,8 +7,8 @@ from pydeconz.models.sensor.ancillary_control import (
 from pydeconz.models.sensor.presence import PresenceStatePresenceEvent
 import pytest
 
-from homeassistant.components.deconz.const import DOMAIN
-from homeassistant.components.deconz.deconz_event import (
+from inpui.components.deconz.const import DOMAIN
+from inpui.components.deconz.deconz_event import (
     ATTR_DURATION,
     ATTR_ROTATION,
     CONF_DECONZ_ALARM_EVENT,
@@ -17,9 +17,9 @@ from homeassistant.components.deconz.deconz_event import (
     CONF_DECONZ_RELATIVE_ROTARY_EVENT,
     RELATIVE_ROTARY_DECONZ_TO_EVENT,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_EVENT, CONF_ID, CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_DEVICE_ID, CONF_EVENT, CONF_ID, CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import WebsocketDataType
 

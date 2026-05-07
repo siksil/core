@@ -12,15 +12,15 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import recorder, websocket_api
-from homeassistant.components.recorder.statistics import StatisticsRow
-from homeassistant.const import UnitOfEnergy
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.integration_platform import (
+from inpui.components import recorder, websocket_api
+from inpui.components.recorder.statistics import StatisticsRow
+from inpui.const import UnitOfEnergy
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.helpers.singleton import singleton
-from homeassistant.util import dt as dt_util
+from inpui.helpers.singleton import singleton
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .data import (

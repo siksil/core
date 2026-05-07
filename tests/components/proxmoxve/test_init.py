@@ -8,7 +8,7 @@ import pytest
 import requests
 from requests.exceptions import ConnectTimeout, SSLError
 
-from homeassistant.components.proxmoxve.const import (
+from inpui.components.proxmoxve.const import (
     AUTH_PAM,
     CONF_AUTH_METHOD,
     CONF_CONTAINERS,
@@ -18,12 +18,12 @@ from homeassistant.components.proxmoxve.const import (
     CONF_VMS,
     DOMAIN,
 )
-from homeassistant.components.proxmoxve.coordinator import (
+from inpui.components.proxmoxve.coordinator import (
     ProxmoxNodesNotFoundError,
     ProxmoxPermissionsError,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -32,10 +32,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-import homeassistant.helpers.issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+import inpui.helpers.issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 

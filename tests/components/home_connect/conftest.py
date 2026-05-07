@@ -31,16 +31,16 @@ from aiohomeconnect.model.error import HomeConnectApiError, HomeConnectError
 from aiohomeconnect.model.program import EnumerateProgram
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.home_connect.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.home_connect.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MOCK_AVAILABLE_COMMANDS, MOCK_PROGRAMS, MOCK_SETTINGS, MOCK_STATUS
 

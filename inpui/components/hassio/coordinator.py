@@ -19,14 +19,14 @@ from aiohasupervisor.models import (
 )
 from aiohasupervisor.models.base import ResponseData
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_MANUFACTURER, ATTR_NAME
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.loader import bind_hass
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_MANUFACTURER, ATTR_NAME
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.loader import bind_hass
 
 from .const import (
     ATTR_AUTO_UPDATE,

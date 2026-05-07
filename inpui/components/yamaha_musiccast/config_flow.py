@@ -10,10 +10,10 @@ from aiohttp import ClientConnectorError, DummyCookieJar
 from aiomusiccast import MusicCastConnectionException, MusicCastDevice
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,

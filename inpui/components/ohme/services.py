@@ -5,14 +5,14 @@ from typing import Final
 from ohme import OhmeApiClient
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import selector, service
+from inpui.helpers import selector, service
 
 from .const import DOMAIN
 from .coordinator import OhmeConfigEntry

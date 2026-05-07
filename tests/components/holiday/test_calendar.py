@@ -6,19 +6,19 @@ from freezegun.api import FrozenDateTimeFactory
 from holidays import CATHOLIC
 import pytest
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN as CALENDAR_DOMAIN,
     SERVICE_GET_EVENTS,
 )
-from homeassistant.components.holiday.const import (
+from inpui.components.holiday.const import (
     CONF_CATEGORIES,
     CONF_PROVINCE,
     DOMAIN,
 )
-from homeassistant.const import CONF_COUNTRY
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_COUNTRY
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

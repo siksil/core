@@ -6,11 +6,11 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import frontend
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.components import frontend
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 _LOGGER = logging.getLogger(__name__)
 

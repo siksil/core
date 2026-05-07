@@ -12,7 +12,7 @@ from mcstatus.responses import (
     LegacyStatusResponse,
 )
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

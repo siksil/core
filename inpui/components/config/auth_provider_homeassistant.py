@@ -6,10 +6,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.auth.providers import homeassistant as auth_ha
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import Unauthorized
+from inpui.auth.providers import homeassistant as auth_ha
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import Unauthorized
 
 
 @callback

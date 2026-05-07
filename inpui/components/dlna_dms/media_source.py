@@ -12,14 +12,14 @@ Media identifiers can look like:
 
 from __future__ import annotations
 
-from homeassistant.components.media_player import BrowseError, MediaClass, MediaType
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass, MediaType
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     Unresolvable,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, LOGGER, PATH_OBJECT_ID_FLAG, ROOT_OBJECT_ID, SOURCE_SEP
 from .dms import DidlPlayMedia, get_domain_data

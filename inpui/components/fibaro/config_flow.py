@@ -10,9 +10,9 @@ from pyfibaro.fibaro_client import FibaroAuthenticationFailed, FibaroConnectFail
 from slugify import slugify
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import connect_fibaro_client
 from .const import CONF_IMPORT_PLUGINS, DOMAIN

@@ -5,18 +5,18 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     floor_registry as fr,
 )
-from homeassistant.helpers.template.helpers import resolve_area_id
+from inpui.helpers.template.helpers import resolve_area_id
 
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class FloorExtension(BaseTemplateExtension):

@@ -5,16 +5,16 @@ from unittest.mock import AsyncMock
 from aiowaqi import WAQIAuthenticationError, WAQIConnectionError
 import pytest
 
-from homeassistant.components.waqi.const import CONF_STATION_NUMBER, DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigSubentryData
-from homeassistant.const import (
+from inpui.components.waqi.const import CONF_STATION_NUMBER, DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigSubentryData
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LOCATION,
     ATTR_LONGITUDE,
     CONF_API_KEY,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

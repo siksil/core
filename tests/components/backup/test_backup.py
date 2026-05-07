@@ -12,9 +12,9 @@ from unittest.mock import MagicMock, mock_open, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import DOMAIN, backup
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.backup import DOMAIN, backup
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import (
     TEST_BACKUP_ABC123,

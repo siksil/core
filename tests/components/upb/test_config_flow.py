@@ -4,10 +4,10 @@ from asyncio import TimeoutError
 from unittest.mock import AsyncMock, MagicMock, PropertyMock, patch
 
 from homeassistant import config_entries
-from homeassistant.components.upb.const import DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.upb.const import DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 def mocked_upb(sync_complete=True, config_ok=True):

@@ -7,12 +7,12 @@ from typing import Any
 
 import RFXtrx as rfxtrxmod
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeviceTuple, async_setup_platform_entry
 from .const import COMMAND_OFF_LIST, COMMAND_ON_LIST

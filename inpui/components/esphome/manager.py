@@ -32,15 +32,15 @@ from aioesphomeapi import (
 from awesomeversion import AwesomeVersion
 import voluptuous as vol
 
-from homeassistant.components import bluetooth, tag, zeroconf
-from homeassistant.const import (
+from inpui.components import bluetooth, tag, zeroconf
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_MODE,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     EVENT_LOGGING_CHANGED,
     Platform,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -51,13 +51,13 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotFound,
     ServiceValidationError,
     TemplateError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
@@ -65,16 +65,16 @@ from homeassistant.helpers import (
     json as json_helper,
     template,
 )
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.service import async_set_service_schema
-from homeassistant.helpers.template import Template
-from homeassistant.util.json import json_loads_object
+from inpui.helpers.service import async_set_service_schema
+from inpui.helpers.template import Template
+from inpui.util.json import json_loads_object
 
 from .bluetooth import async_connect_scanner
 from .const import (
@@ -955,7 +955,7 @@ class ESPHomeManager:
         # proxy has a chance to shut down properly.
         bus = hass.bus
         cleanups = (
-            bus.async_listen(EVENT_HOMEASSISTANT_CLOSE, self.on_stop),
+            bus.async_listen(EVENT_INPUI_CLOSE, self.on_stop),
             bus.async_listen(EVENT_LOGGING_CHANGED, self._async_handle_logging_changed),
             reconnect_logic.stop_callback,
         )

@@ -15,15 +15,15 @@ from aiohue.v2 import HueBridgeV2
 import slugify as unicode_slug
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST
-from homeassistant.core import callback
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST
+from inpui.core import callback
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .bridge import HueConfigEntry
 from .const import (

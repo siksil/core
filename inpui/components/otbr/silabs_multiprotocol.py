@@ -11,12 +11,12 @@ import aiohttp
 from python_otbr_api import tlv_parser
 from python_otbr_api.tlv_parser import MeshcopTLVType
 
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
-from homeassistant.components.thread import async_add_dataset
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.thread import async_add_dataset
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 from .util import OTBRData

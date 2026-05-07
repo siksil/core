@@ -10,8 +10,8 @@ import os
 from serial.tools.list_ports import comports
 from serial.tools.list_ports_common import ListPortInfo
 
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.loader import USBMatcher
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.loader import USBMatcher
 
 from .models import USBDevice
 

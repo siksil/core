@@ -9,9 +9,9 @@ from elkm1_lib.discovery import ElkSystem
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.elkm1.const import CONF_AUTO_CONFIGURE, DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import (
+from inpui.components.elkm1.const import CONF_AUTO_CONFIGURE, DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import (
     CONF_ADDRESS,
     CONF_HOST,
     CONF_PASSWORD,
@@ -19,10 +19,10 @@ from homeassistant.const import (
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import (
     ELK_DISCOVERY,

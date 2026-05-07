@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Any
 
 from dropmqttapi.discovery import DropDiscovery
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
 
 from .const import (
     CONF_COMMAND_TOPIC,

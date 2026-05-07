@@ -18,7 +18,7 @@ from telegram import (
 )
 from telegram.constants import ChatType
 
-from homeassistant.components.telegram_bot.const import (
+from inpui.components.telegram_bot.const import (
     ATTR_MEDIA,
     ATTR_PARSER,
     CONF_ALLOWED_CHAT_IDS,
@@ -32,9 +32,9 @@ from homeassistant.components.telegram_bot.const import (
     PLATFORM_POLLING,
     PLATFORM_WEBHOOKS,
 )
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

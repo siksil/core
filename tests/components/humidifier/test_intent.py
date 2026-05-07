@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.humidifier import (
+from inpui.components import conversation
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.humidifier import (
     ATTR_AVAILABLE_MODES,
     ATTR_HUMIDITY,
     DOMAIN,
@@ -12,7 +12,7 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_MODE,
     intent,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     ATTR_SUPPORTED_FEATURES,
@@ -20,8 +20,8 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.intent import (
+from inpui.core import HomeAssistant
+from inpui.helpers.intent import (
     IntentHandleError,
     IntentResponseType,
     InvalidSlotInfo,
@@ -29,7 +29,7 @@ from homeassistant.helpers.intent import (
     MatchFailedReason,
     async_handle,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service
 

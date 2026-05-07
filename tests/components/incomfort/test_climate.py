@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import climate
-from homeassistant.components.incomfort.coordinator import InComfortData
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components import climate
+from inpui.components.incomfort.coordinator import InComfortData
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_HEATER_STATUS, MOCK_HEATER_STATUS_HEATING
 

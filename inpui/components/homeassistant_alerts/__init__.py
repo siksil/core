@@ -4,19 +4,19 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.issue_registry import (
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import EventComponentLoaded
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import ConfigType
+from inpui.setup import EventComponentLoaded
 
 from .const import COMPONENT_LOADED_COOLDOWN, DOMAIN, REQUEST_TIMEOUT
 from .coordinator import AlertUpdateCoordinator

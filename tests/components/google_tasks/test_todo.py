@@ -11,8 +11,8 @@ from httplib2 import Response
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.google_tasks.coordinator import UPDATE_INTERVAL
-from homeassistant.components.todo import (
+from inpui.components.google_tasks.coordinator import UPDATE_INTERVAL
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_ITEM,
@@ -21,9 +21,9 @@ from homeassistant.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import (
     LIST_TASK_LIST_RESPONSE,

@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.dsmr_reader.const import DOMAIN
-from homeassistant.components.dsmr_reader.definitions import (
+from inpui.components.dsmr_reader.const import DOMAIN
+from inpui.components.dsmr_reader.definitions import (
     dsmr_transform,
     tariff_transform,
 )
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_mqtt_message
 

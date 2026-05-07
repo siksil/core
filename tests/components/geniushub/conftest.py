@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from geniushubclient import GeniusDevice, GeniusZone
 import pytest
 
-from homeassistant.components.geniushub.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
+from inpui.components.geniushub.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN, CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_json_array_fixture
 

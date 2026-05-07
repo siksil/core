@@ -7,10 +7,10 @@ from unittest.mock import MagicMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.const import ATTR_ID, ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.const import ATTR_ID, ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_HOST, MOCK_HOST_2, create_mock_zm_client
 

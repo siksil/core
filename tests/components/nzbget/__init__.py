@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.nzbget.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.nzbget.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -13,7 +13,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

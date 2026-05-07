@@ -7,14 +7,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.onewire.onewirehub import _DEVICE_SCAN_INTERVAL
-from homeassistant.components.select import (
+from inpui.components.onewire.onewirehub import _DEVICE_SCAN_INTERVAL
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_owproxy_mock_devices
 from .const import MOCK_OWPROXY_DEVICES

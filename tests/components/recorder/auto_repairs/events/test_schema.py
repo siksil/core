@@ -4,7 +4,7 @@ from unittest.mock import ANY, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from ...common import async_wait_recording_done
 

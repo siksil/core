@@ -6,23 +6,23 @@ import logging
 
 from universal_silabs_flasher.flasher import Zbt1Flasher
 
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.homeassistant_hardware.update import (
+from inpui.components.homeassistant_hardware.update import (
     BaseFirmwareUpdateEntity,
     FirmwareUpdateEntityDescription,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.update import UpdateDeviceClass
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateDeviceClass
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeAssistantSkyConnectConfigEntry
 from .const import (

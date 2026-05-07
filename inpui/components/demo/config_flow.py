@@ -6,14 +6,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
 
 from . import DOMAIN
 

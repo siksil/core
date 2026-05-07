@@ -2,13 +2,13 @@
 
 from datetime import timedelta
 
-from homeassistant.const import CONF_TIMEOUT
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.util.dt import utcnow
+from inpui.const import CONF_TIMEOUT
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.util.dt import utcnow
 
 from .const import CHECK_ENTITIES_SIGNAL, DEFAULT_TIMEOUT, DOMAIN, UPDATE_ENTITY_SIGNAL
 

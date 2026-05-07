@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import CCM15ConfigEntry, CCM15Coordinator
 

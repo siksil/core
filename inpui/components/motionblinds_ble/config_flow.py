@@ -10,13 +10,13 @@ from bleak.backends.device import BLEDevice
 from motionblindsble.const import DISPLAY_NAME, SETTING_DISCONNECT_TIME, MotionBlindType
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.selector import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_ADDRESS
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,

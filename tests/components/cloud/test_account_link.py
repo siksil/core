@@ -9,12 +9,12 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.cloud import account_link
-from homeassistant.components.cloud.const import DATA_CLOUD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.util.dt import utcnow
+from inpui.components.cloud import account_link
+from inpui.components.cloud.const import DATA_CLOUD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed, mock_platform
 

@@ -21,7 +21,7 @@ from xknx.telegram.apci import (
     SecureAPDU,
 )
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_KNX_AUTOMATIC,
     CONF_KNX_CONNECTION_TYPE,
     CONF_KNX_DEFAULT_RATE_LIMIT,
@@ -34,15 +34,15 @@ from homeassistant.components.knx.const import (
     DEFAULT_ROUTING_IA,
     DOMAIN,
 )
-from homeassistant.components.knx.project import STORAGE_KEY as KNX_PROJECT_STORAGE_KEY
-from homeassistant.components.knx.storage.config_store import (
+from inpui.components.knx.project import STORAGE_KEY as KNX_PROJECT_STORAGE_KEY
+from inpui.components.knx.storage.config_store import (
     STORAGE_KEY as KNX_CONFIG_STORAGE_KEY,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from . import KnxEntityGenerator
 

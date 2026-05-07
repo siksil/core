@@ -10,10 +10,10 @@ from aiohasupervisor import SupervisorError
 from aiohasupervisor.models import ContextType
 import voluptuous as vol
 
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
+from inpui.components.repairs import RepairsFlow
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
 
 from . import get_addons_list
 from .const import (

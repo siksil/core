@@ -1,6 +1,6 @@
 """Mock inputs for Prana tests."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

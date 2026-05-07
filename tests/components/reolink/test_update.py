@@ -9,13 +9,13 @@ import pytest
 from reolink_aio.exceptions import ApiError, ReolinkError
 from reolink_aio.software_version import NewSoftwareVersion
 
-from homeassistant.components.reolink.update import POLL_AFTER_INSTALL, POLL_PROGRESS
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.dt import utcnow
+from inpui.components.reolink.update import POLL_AFTER_INSTALL, POLL_PROGRESS
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util.dt import utcnow
 
 from .conftest import TEST_CAM_NAME, TEST_NVR_NAME
 

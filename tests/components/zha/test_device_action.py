@@ -10,14 +10,14 @@ from zigpy.profiles import zha
 from zigpy.zcl.clusters import general, security
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.zha import DOMAIN
-from homeassistant.components.zha.helpers import get_zha_gateway
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.zha import DOMAIN
+from inpui.components.zha.helpers import get_zha_gateway
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE
 

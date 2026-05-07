@@ -10,22 +10,22 @@ import aiohttp
 from pyrainbird.async_client import AsyncRainbirdController, create_controller
 from pyrainbird.exceptions import RainbirdApiException, RainbirdAuthException
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN, TIMEOUT_SECONDS
 from .coordinator import (
@@ -60,7 +60,7 @@ def _async_register_clientsession_shutdown(
         await clientsession.close()
 
     unsub = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_CLOSE, _async_close_websession
+        EVENT_INPUI_CLOSE, _async_close_websession
     )
     entry.async_on_unload(unsub)
     entry.async_on_unload(_async_close_websession)

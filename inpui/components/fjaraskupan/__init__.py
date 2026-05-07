@@ -7,7 +7,7 @@ import logging
 
 from fjaraskupan import Device
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothCallbackMatcher,
     BluetoothChange,
     BluetoothScanningMode,
@@ -15,16 +15,16 @@ from homeassistant.components.bluetooth import (
     async_rediscover_address,
     async_register_callback,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DISPATCH_DETECTION, DOMAIN
 from .coordinator import FjaraskupanConfigEntry, FjaraskupanCoordinator

@@ -8,17 +8,17 @@ from typing import TYPE_CHECKING
 
 from pyliebherrhomeapi import TemperatureControl, TemperatureUnit
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEFAULT_MAX_VALUE,
     DEFAULT_MIN_VALUE,
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import LiebherrConfigEntry, LiebherrCoordinator

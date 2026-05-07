@@ -1,6 +1,6 @@
 """Errors for the Media Player component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class MediaPlayerException(HomeAssistantError):

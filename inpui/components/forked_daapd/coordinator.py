@@ -9,10 +9,10 @@ from typing import Any
 
 from pyforked_daapd import ForkedDaapdAPI
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     SIGNAL_ADD_ZONES,

@@ -7,14 +7,14 @@ import pytest
 from pyweatherflowudp.errors import AddressInUseError
 
 from homeassistant import config_entries
-from homeassistant.components.weatherflow.const import (
+from inpui.components.weatherflow.const import (
     DOMAIN,
     ERROR_MSG_ADDRESS_IN_USE,
     ERROR_MSG_CANNOT_CONNECT,
     ERROR_MSG_NO_DEVICE_FOUND,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

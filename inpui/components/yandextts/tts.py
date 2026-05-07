@@ -8,15 +8,15 @@ from typing import TYPE_CHECKING, Any
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -14,13 +14,13 @@ from ibeacon_ble import (
     iBeaconParser,
 )
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.match import BluetoothCallbackMatcher
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.components import bluetooth
+from inpui.components.bluetooth.match import BluetoothCallbackMatcher
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     CONF_ALLOW_NAMELESS_UUIDS,

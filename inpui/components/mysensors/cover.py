@@ -5,12 +5,12 @@ from __future__ import annotations
 from enum import Enum, unique
 from typing import Any
 
-from homeassistant.components.cover import ATTR_POSITION, CoverEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import ATTR_POSITION, CoverEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import setup_mysensors_platform
 from .const import MYSENSORS_DISCOVERY, DiscoveryInfo

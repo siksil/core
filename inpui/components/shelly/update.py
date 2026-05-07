@@ -11,7 +11,7 @@ from aioshelly.const import RPC_GENERATIONS
 from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCallError
 from awesomeversion import AwesomeVersion, AwesomeVersionStrategy
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     UpdateDeviceClass,
@@ -19,11 +19,11 @@ from homeassistant.components.update import (
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     CONF_SLEEP_PERIOD,

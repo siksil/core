@@ -5,10 +5,10 @@ from unittest.mock import patch
 from serial import SerialException
 
 from homeassistant import config_entries
-from homeassistant.components.litejet.const import CONF_DEFAULT_TRANSITION, DOMAIN
-from homeassistant.const import CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.litejet.const import CONF_DEFAULT_TRANSITION, DOMAIN
+from inpui.const import CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

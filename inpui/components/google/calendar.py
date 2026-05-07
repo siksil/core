@@ -21,7 +21,7 @@ from gcal_sync.model import (
 from gcal_sync.store import ScopedCalendarStore
 from gcal_sync.sync import CalendarEventSyncManager
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     CREATE_EVENT_SCHEMA,
     ENTITY_ID_FORMAT,
     EVENT_DESCRIPTION,
@@ -37,14 +37,14 @@ from homeassistant.components.calendar import (
     extract_offset,
     is_offset_reached,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_ENTITIES, CONF_NAME, CONF_OFFSET
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError, PlatformNotReady
-from homeassistant.helpers import entity_platform, entity_registry as er
-from homeassistant.helpers.entity import generate_entity_id
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_DEVICE_ID, CONF_ENTITIES, CONF_NAME, CONF_OFFSET
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError, PlatformNotReady
+from inpui.helpers import entity_platform, entity_registry as er
+from inpui.helpers.entity import generate_entity_id
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from . import (
     CONF_IGNORE_AVAILABILITY,

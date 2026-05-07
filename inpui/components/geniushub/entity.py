@@ -3,10 +3,10 @@
 from datetime import datetime, timedelta
 from typing import Any
 
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.util import dt as dt_util
 
 from . import ATTR_DURATION, ATTR_ZONE_MODE, DOMAIN, SVC_SET_ZONE_OVERRIDE
 

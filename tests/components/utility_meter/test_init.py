@@ -8,32 +8,32 @@ from unittest.mock import patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import utility_meter
-from homeassistant.components.select import (
+from inpui.components import utility_meter
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.utility_meter import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.utility_meter import (
     select as um_select,
     sensor as um_sensor,
 )
-from homeassistant.components.utility_meter.config_flow import ConfigFlowHandler
-from homeassistant.components.utility_meter.const import DOMAIN, SERVICE_RESET
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.utility_meter.config_flow import ConfigFlowHandler
+from inpui.components.utility_meter.const import DOMAIN, SERVICE_RESET
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_PLATFORM,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     UnitOfEnergy,
 )
-from homeassistant.core import Event, HomeAssistant, State, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant, State, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, mock_restore_cache
 
@@ -175,7 +175,7 @@ async def test_services(hass: HomeAssistant, meter) -> None:
     assert await async_setup_component(hass, SENSOR_DOMAIN, config)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     entity_id = config[DOMAIN]["energy_bill"]["source"]
     hass.states.async_set(
         entity_id, 1, {ATTR_UNIT_OF_MEASUREMENT: UnitOfEnergy.KILO_WATT_HOUR}
@@ -301,7 +301,7 @@ async def test_services_config_entry(hass: HomeAssistant) -> None:
     assert await hass.config_entries.async_setup(config_entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     entity_id = "sensor.energy"
     hass.states.async_set(
         entity_id, 1, {ATTR_UNIT_OF_MEASUREMENT: UnitOfEnergy.KILO_WATT_HOUR}

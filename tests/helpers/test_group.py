@@ -1,9 +1,9 @@
 """Test the group helper."""
 
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_GROUP_ENTITIES, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, group
-from homeassistant.helpers.group import (
+from inpui.const import ATTR_ENTITY_ID, ATTR_GROUP_ENTITIES, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, group
+from inpui.helpers.group import (
     GenericGroup,
     IntegrationSpecificGroup,
     get_group_entities,

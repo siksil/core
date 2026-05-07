@@ -1,6 +1,6 @@
 """The DoorBird integration constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "doorbird"
 PLATFORMS = [Platform.BUTTON, Platform.CAMERA, Platform.EVENT]

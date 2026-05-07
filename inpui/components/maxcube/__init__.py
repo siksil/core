@@ -7,13 +7,13 @@ import time
 from maxcube.cube import MaxCube
 import voluptuous as vol
 
-from homeassistant.components import persistent_notification
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_SCAN_INTERVAL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import now
+from inpui.components import persistent_notification
+from inpui.const import CONF_HOST, CONF_PORT, CONF_SCAN_INTERVAL, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import now
 
 _LOGGER = logging.getLogger(__name__)
 

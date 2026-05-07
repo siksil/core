@@ -7,8 +7,8 @@ import voluptuous as vol
 from zwave_js_server.exceptions import FailedZWaveCommand
 from zwave_js_server.model.value import SetConfigParameterResult
 
-from homeassistant.components.group import Group
-from homeassistant.components.zwave_js.const import (
+from inpui.components.group import Group
+from inpui.components.zwave_js.const import (
     ATTR_BROADCAST,
     ATTR_COMMAND_CLASS,
     ATTR_CONFIG_PARAMETER,
@@ -37,16 +37,16 @@ from homeassistant.components.zwave_js.const import (
     SERVICE_SET_CONFIG_PARAMETER,
     SERVICE_SET_VALUE,
 )
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.const import ATTR_AREA_ID, ATTR_DEVICE_ID, ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.const import ATTR_AREA_ID, ATTR_DEVICE_ID, ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .common import (
     AEON_SMART_SWITCH_LIGHT_ENTITY,

@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.backup.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .common import setup_backup_integration
 

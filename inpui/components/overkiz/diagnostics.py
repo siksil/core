@@ -7,8 +7,8 @@ from typing import Any
 from pyoverkiz.enums import APIType
 from pyoverkiz.obfuscate import obfuscate_id
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from . import OverkizDataConfigEntry
 from .const import CONF_API_TYPE, CONF_HUB

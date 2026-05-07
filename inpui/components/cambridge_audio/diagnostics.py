@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import CambridgeAudioConfigEntry
 

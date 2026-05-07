@@ -7,21 +7,21 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.mcp.const import (
+from inpui.components.mcp.const import (
     CONF_ACCESS_TOKEN,
     CONF_AUTHORIZATION_URL,
     CONF_SCOPE,
     CONF_TOKEN_URL,
     DOMAIN,
 )
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

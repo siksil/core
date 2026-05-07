@@ -5,10 +5,10 @@ from __future__ import annotations
 import aiohttp
 from genie_partner_sdk.client import AladdinConnectClient
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     aiohttp_client,
     config_entry_oauth2_flow,
     device_registry as dr,

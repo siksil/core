@@ -12,18 +12,18 @@ from gspread.exceptions import APIError
 from gspread.utils import ValueInputOption
 import voluptuous as vol
 
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import (
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.selector import ConfigEntrySelector
-from homeassistant.util.json import JsonObjectType
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.selector import ConfigEntrySelector
+from inpui.util.json import JsonObjectType
 
 from .const import DOMAIN
 

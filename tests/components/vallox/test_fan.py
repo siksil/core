@@ -5,7 +5,7 @@ from unittest.mock import call
 import pytest
 from vallox_websocket_api import MetricData, MetricValue, Profile, ValloxApiException
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
     DOMAIN as FAN_DOMAIN,
@@ -13,9 +13,9 @@ from homeassistant.components.fan import (
     SERVICE_SET_PRESET_MODE,
     NotValidPresetModeError,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import patch_set_fan_speed, patch_set_profile, patch_set_values
 

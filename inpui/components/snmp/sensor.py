@@ -20,11 +20,11 @@ from pysnmp.proto.rfc1902 import Opaque
 from pysnmp.proto.rfc1905 import NoSuchObject
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_HOST,
     CONF_ICON,
@@ -36,18 +36,18 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.template import Template
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
     TEMPLATE_SENSOR_BASE_SCHEMA,
     ManualTriggerSensorEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CONF_ACCEPT_ERRORS,

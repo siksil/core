@@ -6,8 +6,8 @@ from xknx import XKNX
 from xknx.devices import Weather as XknxWeather
 
 from homeassistant import config_entries
-from homeassistant.components.weather import WeatherEntity
-from homeassistant.const import (
+from inpui.components.weather import WeatherEntity
+from inpui.const import (
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     Platform,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import KNX_MODULE_KEY
 from .entity import KnxYamlEntity

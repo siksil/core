@@ -22,10 +22,10 @@ from hatasmota.utils import (
 )
 import pytest
 
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockMqttReasonCode, async_fire_mqtt_message
 from tests.typing import MqttMockHAClient, MqttMockPahoClient, WebSocketGenerator

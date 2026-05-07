@@ -1,12 +1,12 @@
 """Test the Opower repairs."""
 
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.opower.const import DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.repairs import (

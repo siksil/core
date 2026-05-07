@@ -9,10 +9,10 @@ from unittest.mock import patch
 from pyuptimerobot import API_PATH_MONITORS, UptimeRobotApiResponse
 
 from homeassistant import config_entries
-from homeassistant.components.uptimerobot.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.uptimerobot.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

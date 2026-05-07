@@ -8,8 +8,8 @@ from typing import Any
 import radiotherm
 from radiotherm.thermostat import CommonThermostat
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import TIMEOUT
 

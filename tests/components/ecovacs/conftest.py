@@ -13,11 +13,11 @@ from deebot_client.models import Credentials
 import pytest
 from sucks import EventEmitter
 
-from homeassistant.components.ecovacs import PLATFORMS
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.const import CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.ecovacs import PLATFORMS
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.const import CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
 
 from .const import VALID_ENTRY_DATA_CLOUD
 

@@ -7,11 +7,11 @@ from tellcore.telldus import AsyncioCallbackDispatcher, TelldusCore
 from tellcorenet import TellCoreClient
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_DISCOVER_CONFIG,
@@ -86,7 +86,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
             """Event handler to stop the client."""
             net_client.stop()
 
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, stop_tellcore_net)
+        hass.bus.listen_once(EVENT_INPUI_STOP, stop_tellcore_net)
 
     try:
         tellcore_lib = TelldusCore(
@@ -145,6 +145,6 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         if callback_id is not None:
             tellcore_lib.unregister_callback(callback_id)
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, clean_up_callback)
+    hass.bus.listen_once(EVENT_INPUI_STOP, clean_up_callback)
 
     return True

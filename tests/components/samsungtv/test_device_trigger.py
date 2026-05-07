@@ -2,18 +2,18 @@
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.samsungtv import device_trigger
-from homeassistant.components.samsungtv.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.samsungtv import device_trigger
+from inpui.components.samsungtv.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_samsungtv_entry
 from .const import ENTRYDATA_ENCRYPTED_WEBSOCKET

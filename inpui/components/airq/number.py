@@ -8,11 +8,11 @@ import logging
 
 from aioairq.core import AirQ
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import AirQConfigEntry, AirQCoordinator
 

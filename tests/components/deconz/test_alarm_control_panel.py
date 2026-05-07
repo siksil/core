@@ -7,11 +7,11 @@ from pydeconz.models.sensor.ancillary_control import AncillaryControlPanel
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -20,8 +20,8 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import ConfigEntryFactoryType, WebsocketDataType
 

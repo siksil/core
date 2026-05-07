@@ -8,15 +8,15 @@ from dataclasses import dataclass
 from arcam.fmj import IncomingVideoAspectRatio, IncomingVideoColorspace
 from arcam.fmj.state import IncomingAudioConfig, IncomingAudioFormat, State
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfFrequency
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfFrequency
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import ArcamFmjConfigEntry
 from .entity import ArcamFmjEntity

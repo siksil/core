@@ -7,12 +7,12 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import CONF_TYPE
-from homeassistant.helpers import selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components.input_number import DOMAIN as INPUT_NUMBER_DOMAIN
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import CONF_TYPE
+from inpui.helpers import selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
 )

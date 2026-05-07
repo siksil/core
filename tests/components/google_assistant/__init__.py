@@ -2,8 +2,8 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.google_assistant import http
-from homeassistant.core import HomeAssistant
+from inpui.components.google_assistant import http
+from inpui.core import HomeAssistant
 
 
 def mock_google_config_store(agent_user_ids=None):

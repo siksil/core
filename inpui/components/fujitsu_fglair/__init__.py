@@ -7,9 +7,9 @@ from contextlib import suppress
 from ayla_iot_unofficial import new_ayla_api
 from ayla_iot_unofficial.fujitsu_consts import FGLAIR_APP_CREDENTIALS
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .const import API_TIMEOUT, CONF_EUROPE, CONF_REGION, REGION_DEFAULT, REGION_EU
 from .coordinator import FGLairConfigEntry, FGLairCoordinator

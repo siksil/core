@@ -6,10 +6,10 @@ import logging
 
 from brother import Brother, SnmpError
 
-from homeassistant.components.snmp import async_get_snmp_engine
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TYPE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.components.snmp import async_get_snmp_engine
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TYPE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
 
 from .const import (
     CONF_COMMUNITY,

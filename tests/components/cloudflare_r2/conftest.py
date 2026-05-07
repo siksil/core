@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.backup import AgentBackup
-from homeassistant.components.cloudflare_r2.backup import (
+from inpui.components.backup import AgentBackup
+from inpui.components.cloudflare_r2.backup import (
     MULTIPART_MIN_PART_SIZE_BYTES,
     suggested_filenames,
 )
-from homeassistant.components.cloudflare_r2.const import CONF_PREFIX, DOMAIN
+from inpui.components.cloudflare_r2.const import CONF_PREFIX, DOMAIN
 
 from .const import USER_INPUT
 

@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_flow
 
 from .const import _LOGGER, DISCOVERY_TIMEOUT, DOMAIN
 from .util import refoss_discovery_server

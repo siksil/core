@@ -19,11 +19,11 @@ from aioshelly.exceptions import NotInitialized
 from aioshelly.rpc_device import RpcDevice, RpcUpdateType
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     EVENT_SHELLY_CLICK,
     REST_SENSORS_UPDATE_INTERVAL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MOCK_MAC
 

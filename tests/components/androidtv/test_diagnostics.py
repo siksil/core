@@ -1,10 +1,10 @@
 """Tests for the diagnostics data provided by the AndroidTV integration."""
 
-from homeassistant.components.androidtv.diagnostics import TO_REDACT
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.androidtv.diagnostics import TO_REDACT
+from inpui.components.diagnostics import async_redact_data
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import patchers
 from .common import CONFIG_ANDROID_DEFAULT, SHELL_RESPONSE_OFF, setup_mock_entry

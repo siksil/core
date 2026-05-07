@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 import aiohttp
 
-from homeassistant.components.rituals_perfume_genie.const import ACCOUNT_HASH, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.rituals_perfume_genie.const import ACCOUNT_HASH, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     init_integration,

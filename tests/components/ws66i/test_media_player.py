@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -14,15 +14,15 @@ from homeassistant.components.media_player import (
     SERVICE_SELECT_SOURCE,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.ws66i.const import (
+from inpui.components.ws66i.const import (
     CONF_SOURCES,
     DOMAIN,
     INIT_OPTIONS_DEFAULT,
     MAX_VOL,
     POLL_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_IP_ADDRESS,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -33,8 +33,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

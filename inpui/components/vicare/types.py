@@ -10,13 +10,13 @@ from PyViCare.PyViCare import PyViCare
 from PyViCare.PyViCareDevice import Device as PyViCareDevice
 from PyViCare.PyViCareDeviceConfig import PyViCareDeviceConfig
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_COMFORT,
     PRESET_ECO,
     PRESET_HOME,
     PRESET_SLEEP,
 )
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 
 class HeatingProgram(enum.StrEnum):

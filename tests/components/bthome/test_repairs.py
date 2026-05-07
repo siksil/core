@@ -8,12 +8,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothChange
-from homeassistant.components.bthome import get_encryption_issue_id
-from homeassistant.components.bthome.const import CONF_BINDKEY, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.bluetooth import BluetoothChange
+from inpui.components.bthome import get_encryption_issue_id
+from inpui.components.bthome.const import CONF_BINDKEY, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import PRST_SERVICE_INFO, TEMP_HUMI_ENCRYPTED_SERVICE_INFO
 

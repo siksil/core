@@ -8,23 +8,23 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import network
-from homeassistant.components.device_tracker import (
+from inpui.components import network
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     CONF_SCAN_INTERVAL,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.components.network import MDNS_TARGET_IP
-from homeassistant.config_entries import (
+from inpui.components.network import MDNS_TARGET_IP
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import TextSelector, TextSelectorConfig
-from homeassistant.helpers.typing import VolDictType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import TextSelector, TextSelectorConfig
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_HOME_INTERVAL,

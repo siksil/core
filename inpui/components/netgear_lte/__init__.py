@@ -6,12 +6,12 @@ from aiohttp.cookiejar import CookieJar
 import eternalegypt
 from eternalegypt.eternalegypt import SMS
 
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_FROM,

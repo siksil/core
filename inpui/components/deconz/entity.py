@@ -8,10 +8,10 @@ from pydeconz.models.light import LightBase as PydeconzLightBase
 from pydeconz.models.scene import Scene as PydeconzScene
 from pydeconz.models.sensor import SensorBase as PydeconzSensorBase
 
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import CONNECTION_ZIGBEE, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.device_registry import CONNECTION_ZIGBEE, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .hub import DeconzHub

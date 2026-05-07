@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.components.assist_pipeline import OPTION_PREFERRED
-from homeassistant.components.wyoming import DOMAIN
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, device_registry as dr
+from inpui.components.assist_pipeline import OPTION_PREFERRED
+from inpui.components.wyoming import DOMAIN
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, device_registry as dr
 
 
 async def test_device_registry_info(

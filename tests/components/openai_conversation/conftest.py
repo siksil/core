@@ -21,7 +21,7 @@ from openai.types.responses import (
 from openai.types.responses.response import IncompleteDetails
 import pytest
 
-from homeassistant.components.openai_conversation.const import (
+from inpui.components.openai_conversation.const import (
     CONF_CHAT_MODEL,
     DEFAULT_AI_TASK_NAME,
     DEFAULT_CONVERSATION_NAME,
@@ -31,11 +31,11 @@ from homeassistant.components.openai_conversation.const import (
     RECOMMENDED_STT_OPTIONS,
     RECOMMENDED_TTS_OPTIONS,
 )
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

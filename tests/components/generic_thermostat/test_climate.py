@@ -9,8 +9,8 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config as hass_config, core as ha
-from homeassistant.components import input_boolean, switch
-from homeassistant.components.climate import (
+from inpui.components import input_boolean, switch
+from inpui.components.climate import (
     ATTR_PRESET_MODE,
     DOMAIN as CLIMATE_DOMAIN,
     PRESET_ACTIVITY,
@@ -22,8 +22,8 @@ from homeassistant.components.climate import (
     PRESET_SLEEP,
     HVACMode,
 )
-from homeassistant.components.generic_thermostat.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.generic_thermostat.const import DOMAIN
+from inpui.const import (
     ATTR_TEMPERATURE,
     SERVICE_RELOAD,
     SERVICE_TURN_OFF,
@@ -34,7 +34,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
     HomeAssistant,
@@ -42,16 +42,16 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import (
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import (
     device_registry as dr,
     entity_platform,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import StateType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.helpers.typing import StateType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from tests.common import (
     MockConfigEntry,

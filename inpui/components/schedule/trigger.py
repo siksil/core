@@ -1,9 +1,9 @@
 """Provides triggers for schedules."""
 
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     EntityTransitionTriggerBase,
     Trigger,
     make_entity_target_state_trigger,

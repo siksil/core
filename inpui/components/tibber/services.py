@@ -10,15 +10,15 @@ import aiohttp
 import tibber
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 

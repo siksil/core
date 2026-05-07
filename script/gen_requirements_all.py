@@ -13,7 +13,7 @@ import sys
 import tomllib
 from typing import Any
 
-from homeassistant.util.yaml.loader import load_yaml
+from inpui.util.yaml.loader import load_yaml
 from script.hassfest.model import Config, Integration
 
 # Requirements which can't be installed on all systems because they rely on additional

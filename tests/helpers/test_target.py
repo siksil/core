@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.group import Group
-from homeassistant.const import (
+from inpui.components.group import Group
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -14,9 +14,9 @@ from homeassistant.const import (
     STATE_ON,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
@@ -24,8 +24,8 @@ from homeassistant.helpers import (
     label_registry as lr,
     target,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

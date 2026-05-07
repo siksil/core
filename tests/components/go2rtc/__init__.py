@@ -1,6 +1,6 @@
 """Go2rtc tests."""
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
+from inpui.components.camera import Camera, CameraEntityFeature
 
 
 class MockCamera(Camera):

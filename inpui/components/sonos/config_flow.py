@@ -2,11 +2,11 @@
 
 from collections.abc import Awaitable
 
-from homeassistant.components import ssdp
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_flow import DiscoveryFlowHandler
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import ssdp
+from inpui.config_entries import ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_flow import DiscoveryFlowHandler
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DATA_SONOS_DISCOVERY_MANAGER, DOMAIN, UPNP_ST
 from .helpers import hostname_to_uid

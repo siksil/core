@@ -2,9 +2,9 @@
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.weather import ATTR_CONDITION_SNOWY
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.weather import ATTR_CONDITION_SNOWY
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .util import async_init_integration
 

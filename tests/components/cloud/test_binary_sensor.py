@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 from hass_nabucasa.const import DISPATCH_REMOTE_CONNECT, DISPATCH_REMOTE_DISCONNECT
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

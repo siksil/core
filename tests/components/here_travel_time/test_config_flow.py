@@ -6,11 +6,11 @@ from here_routing import HERERoutingError, HERERoutingUnauthorizedError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.here_travel_time.config_flow import (
+from inpui.components.here_travel_time.config_flow import (
     DEFAULT_OPTIONS,
     HERETravelTimeConfigFlow,
 )
-from homeassistant.components.here_travel_time.const import (
+from inpui.components.here_travel_time.const import (
     CONF_ARRIVAL_TIME,
     CONF_DEPARTURE_TIME,
     CONF_DESTINATION_ENTITY_ID,
@@ -27,9 +27,9 @@ from homeassistant.components.here_travel_time.const import (
     TRAVEL_MODE_CAR,
     TRAVEL_MODE_PUBLIC,
 )
-from homeassistant.const import CONF_API_KEY, CONF_MODE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_MODE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     API_KEY,

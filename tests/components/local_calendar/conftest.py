@@ -10,10 +10,10 @@ import urllib
 from aiohttp import ClientWebSocketResponse
 import pytest
 
-from homeassistant.components.local_calendar import LocalCalendarStore
-from homeassistant.components.local_calendar.const import CONF_CALENDAR_NAME, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.local_calendar import LocalCalendarStore
+from inpui.components.local_calendar.const import CONF_CALENDAR_NAME, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

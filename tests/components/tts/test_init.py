@@ -12,8 +12,8 @@ import wave
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import ffmpeg, tts
-from homeassistant.components.media_player import (
+from inpui.components import ffmpeg, tts
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -21,12 +21,12 @@ from homeassistant.components.media_player import (
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     DEFAULT_LANG,

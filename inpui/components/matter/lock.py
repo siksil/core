@@ -10,16 +10,16 @@ from chip.clusters import Objects as clusters
 from matter_server.common.errors import MatterError
 from matter_server.common.models import EventType, MatterNodeEvent
 
-from homeassistant.components.lock import (
+from inpui.components.lock import (
     LockEntity,
     LockEntityDescription,
     LockEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_CODE, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_CODE, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ATTR_CREDENTIAL_DATA,

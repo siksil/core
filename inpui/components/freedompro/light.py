@@ -7,18 +7,18 @@ from typing import Any
 
 from pyfreedompro import put_state
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_HS_COLOR,
     ColorMode,
     LightEntity,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import FreedomproConfigEntry, FreedomproDataUpdateCoordinator

@@ -6,15 +6,15 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     ATTR_SOURCE,
     CONF_STATE_ADDRESS,
     CONF_SYNC_STATE,
 )
-from homeassistant.components.knx.schema import SensorSchema
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import CONF_NAME, CONF_TYPE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant, State
+from inpui.components.knx.schema import SensorSchema
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import CONF_NAME, CONF_TYPE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant, State
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

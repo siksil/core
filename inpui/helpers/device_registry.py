@@ -15,21 +15,21 @@ from typing import TYPE_CHECKING, Any, Literal, TypedDict
 import attr
 from yarl import URL
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import (
+from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP
+from inpui.core import (
     Event,
     HomeAssistant,
     ReleaseChannel,
     callback,
     get_release_channel,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import async_suggest_report_issue
-from homeassistant.util import uuid as uuid_util
-from homeassistant.util.dt import utc_from_timestamp, utcnow
-from homeassistant.util.event_type import EventType
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import format_unserializable_data
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import async_suggest_report_issue
+from inpui.util import uuid as uuid_util
+from inpui.util.dt import utc_from_timestamp, utcnow
+from inpui.util.event_type import EventType
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import format_unserializable_data
 
 from . import storage, translation
 from .debounce import Debouncer
@@ -44,7 +44,7 @@ if TYPE_CHECKING:
     # mypy cannot workout _cache Protocol with attrs
     from propcache.api import cached_property as under_cached_property
 
-    from homeassistant.config_entries import ConfigEntry
+    from inpui.config_entries import ConfigEntry
 
     from . import entity_registry
 else:
@@ -1912,11 +1912,11 @@ def async_setup_cleanup(hass: HomeAssistant, dev_reg: DeviceRegistry) -> None:
         _async_listen_for_cleanup()
         await debounced_cleanup.async_call()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, startup_clean)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, startup_clean)
 
     @callback
     def _on_homeassistant_stop(event: Event) -> None:
         """Cancel debounced cleanup."""
         debounced_cleanup.async_cancel()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _on_homeassistant_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _on_homeassistant_stop)

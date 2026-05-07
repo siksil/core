@@ -14,13 +14,13 @@ import serial
 import serial.tools.list_ports
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND_OFF,
     CONF_COMMAND_ON,
     CONF_DEVICE,
@@ -30,15 +30,15 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_TYPE,
 )
-from homeassistant.core import Event, EventStateChangedData, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Event, EventStateChangedData, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import VolDictType
 
 from . import (
     DOMAIN,

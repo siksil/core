@@ -14,12 +14,12 @@ from typing import TYPE_CHECKING, Any
 
 from aiounifi.interfaces.api_handlers import ItemEvent
 
-from homeassistant.const import Platform
-from homeassistant.core import callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.const import Platform
+from inpui.core import callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from ..const import LOGGER, UNIFI_WIRELESS_CLIENTS
 from ..entity import UnifiEntity, UnifiEntityDescription

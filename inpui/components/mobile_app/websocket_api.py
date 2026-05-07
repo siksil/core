@@ -7,8 +7,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
 
 from .const import CONF_USER_ID, DATA_CONFIG_ENTRIES, DATA_PUSH_CHANNEL, DOMAIN
 from .push_notification import PushChannel

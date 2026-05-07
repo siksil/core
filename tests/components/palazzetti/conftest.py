@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pypalazzetti.temperature import TemperatureDefinition, TemperatureDescriptionKey
 import pytest
 
-from homeassistant.components.palazzetti.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.palazzetti.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

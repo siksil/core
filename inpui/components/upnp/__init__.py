@@ -7,12 +7,12 @@ from datetime import timedelta
 
 from async_upnp_client.exceptions import UpnpConnectionError
 
-from homeassistant.components import ssdp
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.components import ssdp
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .const import (
     CONFIG_ENTRY_FORCE_POLL,

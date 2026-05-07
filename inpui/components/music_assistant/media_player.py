@@ -23,8 +23,8 @@ from music_assistant_models.event import MassEvent
 from music_assistant_models.media_items import ItemMapping, MediaItemType, Track
 from music_assistant_models.player_queue import PlayerQueue
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_EXTRA,
     BrowseMedia,
     MediaPlayerDeviceClass,
@@ -38,12 +38,12 @@ from homeassistant.components.media_player import (
     SearchMediaQuery,
     async_process_play_media_url,
 )
-from homeassistant.const import ATTR_NAME, STATE_OFF, Platform
-from homeassistant.core import HomeAssistant, ServiceResponse
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.const import ATTR_NAME, STATE_OFF, Platform
+from inpui.core import HomeAssistant, ServiceResponse
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utc_from_timestamp
 
 from . import MusicAssistantConfigEntry
 from .const import (

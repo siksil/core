@@ -7,15 +7,15 @@ from dataclasses import dataclass
 from zwave_js_server.model.driver import Driver
 from zwave_js_server.model.value import Value, ValueNotification
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     DOMAIN as EVENT_DOMAIN,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_VALUE, DOMAIN
 from .entity import NewZwaveDiscoveryInfo, ZWaveBaseEntity

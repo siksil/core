@@ -7,26 +7,26 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_EXCLUDE,
     EVENT_RECORDER_5MIN_STATISTICS_GENERATED,  # noqa: F401
     EVENT_RECORDER_HOURLY_STATISTICS_GENERATED,  # noqa: F401
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     INCLUDE_EXCLUDE_FILTER_SCHEMA_INNER,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.integration_platform import (
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.helpers.recorder import DATA_INSTANCE
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.event_type import EventType
+from inpui.helpers.recorder import DATA_INSTANCE
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.event_type import EventType
 
 # Pre-import backup to avoid it being imported
 # later when the import executor is busy and delaying

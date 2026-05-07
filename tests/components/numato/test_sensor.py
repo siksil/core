@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import discovery
-from homeassistant.setup import async_setup_component
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import discovery
+from inpui.setup import async_setup_component
 
 from .common import NUMATO_CFG, mockup_raise
 

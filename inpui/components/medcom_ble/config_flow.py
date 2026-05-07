@@ -11,14 +11,14 @@ from medcom_ble import MedcomBleDevice, MedcomBleDeviceData
 from medcom_ble.const import INSPECTOR_SERVICE_UUID
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     BluetoothServiceInfo,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.data_entry_flow import AbortFlow
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
+from inpui.data_entry_flow import AbortFlow
 
 from .const import DOMAIN
 

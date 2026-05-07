@@ -6,8 +6,8 @@ from typing import cast
 from aiohttp import ClientSession
 import pyatmo
 
-from homeassistant.components import cloud
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components import cloud
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import API_SCOPES_EXCLUDED_FROM_CLOUD
 

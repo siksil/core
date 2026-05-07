@@ -1,12 +1,12 @@
 """Tests for the sensors provided by the Pure Energie integration."""
 
-from homeassistant.components.pure_energie.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.pure_energie.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -14,8 +14,8 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

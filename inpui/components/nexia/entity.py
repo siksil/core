@@ -5,18 +5,18 @@ from typing import TYPE_CHECKING
 from nexia.thermostat import NexiaThermostat
 from nexia.zone import NexiaThermostatZone
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_IDENTIFIERS,
     ATTR_NAME,
     ATTR_SUGGESTED_AREA,
     ATTR_VIA_DEVICE,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     ATTRIBUTION,

@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from . import MOCK_NAME, MOCK_RECORDINGS_LIST
 

@@ -5,9 +5,9 @@ from typing import Any
 
 from tesla_fleet_api.exceptions import TeslaFleetError
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, LOGGER
 

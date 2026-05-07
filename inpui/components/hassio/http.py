@@ -23,13 +23,13 @@ from aiohttp.hdrs import (
 )
 from aiohttp.web_exceptions import HTTPBadGateway
 
-from homeassistant.components.http import (
+from inpui.components.http import (
     KEY_AUTHENTICATED,
     KEY_HASS,
     KEY_HASS_USER,
     HomeAssistantView,
 )
-from homeassistant.components.onboarding import async_is_onboarded
+from inpui.components.onboarding import async_is_onboarded
 
 from .const import X_HASS_SOURCE
 

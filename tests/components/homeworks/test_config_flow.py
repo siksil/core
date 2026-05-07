@@ -6,9 +6,9 @@ from pyhomeworks import exceptions as hw_exceptions
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.homeworks.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.homeworks.const import (
     CONF_ADDR,
     CONF_INDEX,
     CONF_LED,
@@ -17,16 +17,16 @@ from homeassistant.components.homeworks.const import (
     CONF_RELEASE_DELAY,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

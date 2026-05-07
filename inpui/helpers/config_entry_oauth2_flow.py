@@ -28,15 +28,15 @@ import voluptuous as vol
 from yarl import URL
 
 from homeassistant import config_entries
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import (
     HomeAssistantError,
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.loader import async_get_application_credentials
-from homeassistant.util.hass_dict import HassKey
+from inpui.loader import async_get_application_credentials
+from inpui.util.hass_dict import HassKey
 
 from . import http
 from .aiohttp_client import async_get_clientsession

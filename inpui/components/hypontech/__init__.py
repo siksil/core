@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from hyponcloud import AuthenticationError, HyponCloud, RequestError
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import HypontechConfigEntry, HypontechDataCoordinator
 

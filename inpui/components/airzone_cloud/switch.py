@@ -7,13 +7,13 @@ from typing import Any, Final
 
 from aioairzone_cloud.const import API_POWER, API_VALUE, AZD_POWER, AZD_ZONES
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AirzoneCloudConfigEntry, AirzoneUpdateCoordinator
 from .entity import AirzoneEntity, AirzoneZoneEntity

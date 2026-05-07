@@ -15,8 +15,8 @@ from async_upnp_client.client import UpnpDevice
 from async_upnp_client.profiles.igd import IgdDevice, IgdState
 import pytest
 
-from homeassistant.components import ssdp
-from homeassistant.components.upnp.const import (
+from inpui.components import ssdp
+from inpui.components.upnp.const import (
     CONFIG_ENTRY_LOCATION,
     CONFIG_ENTRY_MAC_ADDRESS,
     CONFIG_ENTRY_ORIGINAL_UDN,
@@ -24,8 +24,8 @@ from homeassistant.components.upnp.const import (
     CONFIG_ENTRY_UDN,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,

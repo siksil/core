@@ -9,16 +9,16 @@ from pyschlage.exceptions import Error as SchlageError
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.components.schlage.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.components.schlage.const import (
     DOMAIN,
     SERVICE_ADD_CODE,
     SERVICE_DELETE_CODE,
     SERVICE_GET_CODES,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_LOCK, SERVICE_UNLOCK
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.const import ATTR_ENTITY_ID, SERVICE_LOCK, SERVICE_UNLOCK
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import MockSchlageConfigEntry
 

@@ -6,16 +6,16 @@ from dataclasses import asdict
 
 import pytest
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     DOMAIN,
     Segment,
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api import ERR_NOT_FOUND, ERR_NOT_SUPPORTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     MockVacuumWithCleanArea,

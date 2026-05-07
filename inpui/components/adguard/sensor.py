@@ -9,10 +9,10 @@ from typing import Any
 
 from adguardhome import AdGuardHome
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.const import PERCENTAGE, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.const import PERCENTAGE, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AdGuardConfigEntry, AdGuardData
 from .const import DOMAIN

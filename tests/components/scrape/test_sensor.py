@@ -8,7 +8,7 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.scrape.const import (
+from inpui.components.scrape.const import (
     CONF_ENCODING,
     CONF_INDEX,
     CONF_SELECT,
@@ -16,13 +16,13 @@ from homeassistant.components.scrape.const import (
     DEFAULT_SCAN_INTERVAL,
     DEFAULT_VERIFY_SSL,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_METHOD,
@@ -37,14 +37,14 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import MockRestData, return_integration_config
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 from homematicip.base.enums import WeatherCondition
 from homematicip.device import WeatherSensor, WeatherSensorPlus, WeatherSensorPro
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_FOG,
     ATTR_CONDITION_LIGHTNING,
@@ -18,9 +18,9 @@ from homeassistant.components.weather import (
     ATTR_CONDITION_WINDY,
     WeatherEntity,
 )
-from homeassistant.const import UnitOfSpeed, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfSpeed, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry, HomematicipHAP

@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components.hassio import get_os_info
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.hassio import is_hassio
+from inpui.components.hassio import get_os_info
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.hassio import is_hassio
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

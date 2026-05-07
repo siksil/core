@@ -5,12 +5,12 @@ from datetime import datetime
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import trace
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import automation
+from inpui.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import trace
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.typing import WebSocketGenerator
 

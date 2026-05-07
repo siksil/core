@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_STEP,
@@ -15,10 +15,10 @@ from homeassistant.components.number import (
     SERVICE_SET_VALUE,
     NumberMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_MODE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, ATTR_MODE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 ENTITY_VOLUME = "number.volume"
 ENTITY_PWM = "number.pwm_1"

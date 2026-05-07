@@ -6,24 +6,24 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.watttime.config_flow import (
+from inpui.components.watttime.config_flow import (
     CONF_LOCATION_TYPE,
     LOCATION_TYPE_COORDINATES,
 )
-from homeassistant.components.watttime.const import (
+from inpui.components.watttime.const import (
     CONF_BALANCING_AUTHORITY,
     CONF_BALANCING_AUTHORITY_ABBREV,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonObjectType
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

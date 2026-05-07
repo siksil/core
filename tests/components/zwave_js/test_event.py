@@ -6,9 +6,9 @@ from freezegun import freeze_time
 import pytest
 from zwave_js_server.event import Event
 
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 BASIC_EVENT_VALUE_ENTITY = "event.honeywell_in_wall_smart_fan_control_event_value"
 CENTRAL_SCENE_ENTITY = "event.node_51_scene_002"

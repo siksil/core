@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.input_select import (
+from inpui.components.input_select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     CONF_INITIAL,
@@ -19,7 +19,7 @@ from homeassistant.components.input_select import (
     STORAGE_VERSION,
     STORAGE_VERSION_MINOR,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -27,10 +27,10 @@ from homeassistant.const import (
     ATTR_NAME,
     SERVICE_RELOAD,
 )
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant, State
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, mock_restore_cache
 from tests.typing import WebSocketGenerator

@@ -21,18 +21,18 @@ from hyperion.const import (
     KEY_UPDATE,
 )
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DEFAULT_CONTENT_TYPE,
     Camera,
     async_get_still_stream,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import (
     HyperionConfigEntry,

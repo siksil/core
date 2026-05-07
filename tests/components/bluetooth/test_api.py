@@ -5,8 +5,8 @@ import time
 from bleak.backends.scanner import AdvertisementData, BLEDevice
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth import (
     MONOTONIC_TIME,
     BaseHaRemoteScanner,
     BluetoothScanningMode,
@@ -14,7 +14,7 @@ from homeassistant.components.bluetooth import (
     async_scanner_by_source,
     async_scanner_devices_by_address,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     FakeRemoteScanner,

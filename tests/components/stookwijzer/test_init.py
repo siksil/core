@@ -4,12 +4,12 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.stookwijzer.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.stookwijzer.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
 
 from tests.common import MockConfigEntry
 

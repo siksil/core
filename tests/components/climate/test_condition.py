@@ -4,18 +4,18 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.climate.const import (
+from inpui.components.climate.const import (
     ATTR_HUMIDITY,
     ATTR_HVAC_ACTION,
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

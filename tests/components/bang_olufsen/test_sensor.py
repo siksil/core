@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 from freezegun.api import FrozenDateTimeFactory
 from mozart_api.models import PairedRemote, PairedRemoteResponse
 
-from homeassistant.components.bang_olufsen.sensor import SCAN_INTERVAL
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.bang_olufsen.sensor import SCAN_INTERVAL
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .conftest import mock_websocket_connection
 from .const import (

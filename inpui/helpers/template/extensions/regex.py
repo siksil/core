@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Any
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 # Module-level regex cache shared across all instances
 _regex_cache = lru_cache(maxsize=128)(re.compile)

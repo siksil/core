@@ -12,13 +12,13 @@ import pytest
 from requests.models import Response
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.google_sheets.const import DOMAIN
-from homeassistant.components.google_sheets.services import (
+from inpui.components.google_sheets.const import DOMAIN
+from inpui.components.google_sheets.services import (
     ADD_CREATED_COLUMN,
     DATA,
     DATA_CONFIG_ENTRY,
@@ -27,18 +27,18 @@ from homeassistant.components.google_sheets.services import (
     SERVICE_GET_SHEET,
     WORKSHEET,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     HomeAssistantError,
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
     ServiceValidationError,
 )
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

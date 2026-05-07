@@ -7,12 +7,12 @@ from datetime import datetime, timedelta
 import logging
 from typing import Any, Self, cast
 
-from homeassistant.const import ATTR_RESTORED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, State, callback, valid_entity_id
-from homeassistant.exceptions import HomeAssistantError, UnsupportedStorageVersionError
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import json_loads
+from inpui.const import ATTR_RESTORED, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, State, callback, valid_entity_id
+from inpui.exceptions import HomeAssistantError, UnsupportedStorageVersionError
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import json_loads
 
 from . import start
 from .entity import Entity
@@ -259,7 +259,7 @@ class RestoreStateData:
 
         # Dump states when stopping hass
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, _async_dump_states_at_stop
+            EVENT_INPUI_STOP, _async_dump_states_at_stop
         )
 
     @callback

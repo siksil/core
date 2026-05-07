@@ -10,7 +10,7 @@ from aiostreammagic import (
 )
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ARTIST,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -23,7 +23,7 @@ from homeassistant.components.media_player import (
     MediaPlayerEntityFeature,
     RepeatMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_MEDIA_NEXT_TRACK,
@@ -46,8 +46,8 @@ from homeassistant.const import (
     STATE_PAUSED,
     STATE_PLAYING,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import mock_state_update, setup_integration
 from .const import ENTITY_ID

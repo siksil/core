@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.energy import async_get_manager
-from homeassistant.components.energy.data import EnergyManager
-from homeassistant.components.recorder import Recorder
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.energy import async_get_manager
+from inpui.components.energy.data import EnergyManager
+from inpui.components.recorder import Recorder
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

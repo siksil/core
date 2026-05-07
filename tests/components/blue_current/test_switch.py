@@ -1,16 +1,16 @@
 """The tests for Bluecurrent switches."""
 
-from homeassistant.components.blue_current import CHARGEPOINT_SETTINGS, PLUG_AND_CHARGE
-from homeassistant.components.blue_current.const import (
+from inpui.components.blue_current import CHARGEPOINT_SETTINGS, PLUG_AND_CHARGE
+from inpui.components.blue_current.const import (
     ACTIVITY,
     CHARGEPOINT_STATUS,
     PUBLIC_CHARGING,
     UNAVAILABLE,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import DEFAULT_CHARGE_POINT, init_integration
 

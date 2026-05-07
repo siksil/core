@@ -8,10 +8,10 @@ from urllib.parse import urlparse
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_HASSIO, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_HASSIO, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN
 from .data import WyomingService

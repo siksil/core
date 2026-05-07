@@ -7,15 +7,15 @@ from dataclasses import dataclass
 
 from python_snoo.containers import SnooData, SnooStates
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     EntityCategory,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     StateType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SnooConfigEntry
 from .entity import SnooDescriptionEntity

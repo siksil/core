@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
 
 # Ensure that incorrectly formatted mac addresses are rejected, even
 # on a constant outside of a test

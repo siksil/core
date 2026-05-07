@@ -14,15 +14,15 @@ import tempfile
 from aiohttp import BodyPartReader, web
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import raise_if_invalid_filename
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.ulid import ulid_hex
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import raise_if_invalid_filename
+from inpui.util.hass_dict import HassKey
+from inpui.util.ulid import ulid_hex
 
 DOMAIN = "file_upload"
 _DATA: HassKey[FileUploadData] = HassKey(DOMAIN)
@@ -89,7 +89,7 @@ class FileUploadData:
             """Clean up unused files."""
             shutil.rmtree(temp_dir)
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, cleanup_unused_files)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, cleanup_unused_files)
 
         return cls(temp_dir, {})
 

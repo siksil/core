@@ -5,12 +5,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.config_entries import ConfigSubentryFlow, SubentryFlowResult
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.selector import EntitySelector, EntitySelectorConfig
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.config_entries import ConfigSubentryFlow, SubentryFlowResult
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.selector import EntitySelector, EntitySelectorConfig
 
 from .const import CONF_ENERGYID_KEY, CONF_HA_ENTITY_UUID, DOMAIN, NAME
 

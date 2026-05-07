@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.helpers.device_registry import HomeAssistant
-from homeassistant.helpers.entity_platform import timedelta
+from inpui.helpers.device_registry import HomeAssistant
+from inpui.helpers.entity_platform import timedelta
 
 from tests.common import async_fire_time_changed
 

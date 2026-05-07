@@ -13,7 +13,7 @@ from psnawp_api.core.psnawp_exceptions import (
 from psnawp_api.utils.misc import parse_npsso_token
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigEntryState,
@@ -22,9 +22,9 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_NAME
+from inpui.core import callback
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

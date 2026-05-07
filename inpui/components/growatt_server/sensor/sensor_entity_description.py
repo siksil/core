@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from homeassistant.components.sensor import SensorEntityDescription
+from inpui.components.sensor import SensorEntityDescription
 
 
 @dataclass(frozen=True, kw_only=True)

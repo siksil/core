@@ -2,9 +2,9 @@
 
 from zinvolt.models import Unit
 
-from homeassistant.const import ATTR_VIA_DEVICE
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import ATTR_VIA_DEVICE
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import BatteryData, ZinvoltDeviceCoordinator

@@ -8,10 +8,10 @@ from pyrisco import RiscoCloud
 from pyrisco.cloud.zone import Zone as CloudZone
 from pyrisco.local.zone import Zone as LocalZone
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import zone_update_signal
 from .const import DOMAIN

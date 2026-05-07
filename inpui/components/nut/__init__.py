@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 from aionut import AIONUTClient, NUTError
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ALIAS,
     CONF_HOST,
     CONF_PASSWORD,
@@ -16,12 +16,12 @@ from homeassistant.const import (
     CONF_RESOURCES,
     CONF_SCAN_INTERVAL,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
 
 from .const import DOMAIN, INTEGRATION_SUPPORTED_COMMANDS, PLATFORMS
 from .coordinator import NutConfigEntry, NutCoordinator, NutRuntimeData
@@ -67,7 +67,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: NutConfigEntry) -> bool:
     # Note that async_listen_once is not used here because the listener
     # could be removed after the event is fired.
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, data.async_shutdown)
+        hass.bus.async_listen(EVENT_INPUI_STOP, data.async_shutdown)
     )
     status = coordinator.data
 

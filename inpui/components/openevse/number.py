@@ -6,21 +6,21 @@ from typing import Any
 
 from openevsehttp.__main__ import OpenEVSE
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_SERIAL_NUMBER,
     EntityCategory,
     UnitOfElectricCurrent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import OpenEVSEConfigEntry, OpenEVSEDataUpdateCoordinator

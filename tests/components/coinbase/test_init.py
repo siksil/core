@@ -4,18 +4,18 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.coinbase import create_and_update_instance
-from homeassistant.components.coinbase.const import (
+from inpui.components.coinbase import create_and_update_instance
+from inpui.components.coinbase.const import (
     API_TYPE_VAULT,
     CONF_CURRENCIES,
     CONF_EXCHANGE_RATES,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import entity_registry as er
 
 from .common import (
     init_mock_coinbase,

@@ -16,9 +16,9 @@ import py
 import pytest
 
 from homeassistant import core, runner
-from homeassistant.const import __version__
-from homeassistant.core import HomeAssistant
-from homeassistant.util import executor, thread
+from inpui.const import __version__
+from inpui.core import HomeAssistant
+from inpui.util import executor, thread
 
 # https://github.com/home-assistant/supervisor/blob/main/supervisor/docker/homeassistant.py
 SUPERVISOR_HARD_TIMEOUT = 240

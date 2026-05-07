@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PRESET_MODE,
     ATTR_PRESET_MODES,
     DOMAIN,
@@ -11,9 +11,9 @@ from homeassistant.components.fan import (
     FanEntityFeature,
     NotValidPresetModeError,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import MockFan
 

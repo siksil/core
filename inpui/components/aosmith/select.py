@@ -1,8 +1,8 @@
 """The select platform for the A. O. Smith integration."""
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AOSmithConfigEntry
 from .coordinator import AOSmithStatusCoordinator

@@ -10,12 +10,12 @@ from iottycloud.device import Device
 from iottycloud.shutter import Shutter
 from iottycloud.verbs import OPEN_PERCENTAGE, RESULT, STATUS
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import OAuth2Session
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import OAuth2Session
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from . import api
 from .const import DOMAIN

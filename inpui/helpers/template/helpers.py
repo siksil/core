@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Any, NoReturn
 
 import voluptuous as vol
 
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
@@ -15,7 +15,7 @@ from homeassistant.helpers import (
 from .context import template_cv
 
 if TYPE_CHECKING:
-    from homeassistant.core import HomeAssistant
+    from inpui.core import HomeAssistant
 
 
 def raise_no_default(function: str, value: Any) -> NoReturn:
@@ -48,7 +48,7 @@ def resolve_area_id(hass: HomeAssistant, lookup_value: Any) -> str | None:
         return areas_list[0].id
 
     # Import here, not at top-level to avoid circular import
-    from homeassistant.helpers import config_validation as cv  # noqa: PLC0415
+    from inpui.helpers import config_validation as cv  # noqa: PLC0415
 
     # Check if it's an entity ID
     try:

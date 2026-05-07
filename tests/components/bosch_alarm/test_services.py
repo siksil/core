@@ -8,16 +8,16 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.bosch_alarm.const import (
+from inpui.components.bosch_alarm.const import (
     ATTR_DATETIME,
     DOMAIN,
     SERVICE_SET_DATE_TIME,
 )
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import setup_integration
 

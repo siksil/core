@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from venstarcolortouch import VenstarColorTouch
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PIN,
@@ -13,7 +13,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, VENSTAR_TIMEOUT
 from .coordinator import VenstarDataUpdateCoordinator

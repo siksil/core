@@ -10,8 +10,8 @@ from typing import Any
 from rokuecp.helpers import guess_stream_format
 import yarl
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_EXTRA,
     BrowseMedia,
     MediaPlayerDeviceClass,
@@ -21,10 +21,10 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.components.stream import FORMAT_CONTENT_TYPE, HLS_PROVIDER
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.stream import FORMAT_CONTENT_TYPE, HLS_PROVIDER
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .browse_media import async_browse_media
 from .const import (

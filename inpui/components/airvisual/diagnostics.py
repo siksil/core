@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import (
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import (
     CONF_API_KEY,
     CONF_COUNTRY,
     CONF_LATITUDE,
@@ -13,7 +13,7 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CONF_CITY
 from .coordinator import AirVisualConfigEntry

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 
 from pyHomee.model import HomeeAttribute, HomeeNode
 
-from homeassistant.components.homee.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.homee.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

@@ -8,10 +8,10 @@ from typing import Any
 from pyaprilaire.const import Attribute
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
 
 from .const import DOMAIN
 from .coordinator import AprilaireCoordinator

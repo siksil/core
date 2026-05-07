@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from airthings import Airthings, AirthingsDevice
 import pytest
 
-from homeassistant.components.airthings.const import CONF_SECRET, DOMAIN
-from homeassistant.const import CONF_ID
+from inpui.components.airthings.const import CONF_SECRET, DOMAIN
+from inpui.const import CONF_ID
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

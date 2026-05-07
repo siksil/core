@@ -28,7 +28,7 @@ from typing import (
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ABOVE,
@@ -55,8 +55,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     WEEKDAYS,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import (
     ConditionError,
     ConditionErrorContainer,
     ConditionErrorIndex,
@@ -64,17 +64,17 @@ from homeassistant.exceptions import (
     HomeAssistantError,
     TemplateError,
 )
-from homeassistant.loader import (
+from inpui.loader import (
     Integration,
     IntegrationNotFound,
     async_get_integration,
     async_get_integrations,
 )
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.unit_conversion import BaseUnitConverter
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.hass_dict import HassKey
+from inpui.util.unit_conversion import BaseUnitConverter
+from inpui.util.yaml import load_yaml_dict
 
 from . import config_validation as cv, entity_registry as er, selector
 from .automation import (
@@ -177,7 +177,7 @@ _CONDITIONS_DESCRIPTION_SCHEMA = vol.Schema(
 
 async def async_setup(hass: HomeAssistant) -> None:
     """Set up the condition helper."""
-    from homeassistant.components import automation, labs  # noqa: PLC0415
+    from inpui.components import automation, labs  # noqa: PLC0415
 
     hass.data[CONDITION_DESCRIPTION_CACHE] = {}
     hass.data[CONDITION_DISABLED_CONDITIONS] = set()
@@ -227,7 +227,7 @@ async def _register_condition_platform(
     If the condition platform does not provide any conditions, or it is disabled,
     listeners will not be notified.
     """
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     new_conditions: set[str] = set()
     conditions = hass.data[CONDITIONS]
@@ -803,7 +803,7 @@ def trace_condition_function(
 async def _async_get_condition_platform(
     hass: HomeAssistant, condition_key: str
 ) -> tuple[str, ConditionProtocol | None]:
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     platform_and_sub_type = condition_key.split(".")
     platform: str | None = platform_and_sub_type[0]
@@ -1361,7 +1361,7 @@ def time(
     for the opposite. "(23:59 <= now < 00:01)" would be the same as
     "not (00:01 <= now < 23:59)".
     """
-    from homeassistant.components.sensor import SensorDeviceClass  # noqa: PLC0415
+    from inpui.components.sensor import SensorDeviceClass  # noqa: PLC0415
 
     now = dt_util.now()
     now_time = now.time()
@@ -1732,7 +1732,7 @@ async def async_get_all_descriptions(
     hass: HomeAssistant,
 ) -> dict[str, dict[str, Any] | None]:
     """Return descriptions (i.e. user documentation) for all conditions."""
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     descriptions_cache = hass.data[CONDITION_DESCRIPTION_CACHE]
 

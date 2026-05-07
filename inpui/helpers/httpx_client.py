@@ -12,11 +12,11 @@ from typing import Any, Self
 import httpcore  # noqa: F401
 import httpx
 
-from homeassistant.const import APPLICATION_NAME, EVENT_HOMEASSISTANT_CLOSE, __version__
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.ssl import (
+from inpui.const import APPLICATION_NAME, EVENT_INPUI_CLOSE, __version__
+from inpui.core import Event, HomeAssistant, callback
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
+from inpui.util.ssl import (
     SSL_ALPN_HTTP11,
     SSL_ALPN_HTTP11_HTTP2,
     SSLALPNProtocols,
@@ -152,4 +152,4 @@ def _async_register_async_client_shutdown(
         """Close httpx client."""
         await original_aclose()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_client)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_close_client)

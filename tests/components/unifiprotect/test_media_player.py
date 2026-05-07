@@ -8,12 +8,12 @@ import pytest
 from uiprotect.data import AiPort, Camera
 from uiprotect.exceptions import StreamError
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_VOLUME_LEVEL,
 )
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.const import (
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -21,9 +21,9 @@ from homeassistant.const import (
     STATE_PLAYING,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

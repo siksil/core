@@ -2,13 +2,13 @@
 
 from webrtc_models import RTCIceServer
 
-from homeassistant.components.web_rtc import (
+from inpui.components.web_rtc import (
     async_get_ice_servers,
     async_register_ice_servers,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

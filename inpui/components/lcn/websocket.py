@@ -10,21 +10,21 @@ import lcn_frontend as lcn_panel
 from pypck.device import DeviceConnection
 import voluptuous as vol
 
-from homeassistant.components import panel_custom, websocket_api
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.components.websocket_api import (
+from inpui.components import panel_custom, websocket_api
+from inpui.components.http import StaticPathConfig
+from inpui.components.websocket_api import (
     ActiveConnection,
     AsyncWebSocketCommandHandler,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_DEVICES,
     CONF_DOMAIN,
     CONF_ENTITIES,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,

@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from requests.exceptions import ConnectionError as RequestConnectionError, HTTPError
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, UnitOfTemperature
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.const import EVENT_INPUI_STOP, UnitOfTemperature
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .const import DOMAIN, LOGGER, PLATFORMS
 from .coordinator import FritzboxConfigEntry, FritzboxDataUpdateCoordinator
@@ -51,7 +51,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: FritzboxConfigEntry) -> 
         coordinator.fritz.logout()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, logout_fritzbox)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, logout_fritzbox)
     )
 
     return True

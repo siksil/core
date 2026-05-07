@@ -7,17 +7,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import lawn_mower, mqtt
-from homeassistant.components.lawn_mower import (
+from inpui.components import lawn_mower, mqtt
+from inpui.components.lawn_mower import (
     DOMAIN as LAWN_MOWER_DOMAIN,
     SERVICE_DOCK,
     SERVICE_PAUSE,
     SERVICE_START_MOWING,
     LawnMowerEntityFeature,
 )
-from homeassistant.components.mqtt.lawn_mower import MQTT_LAWN_MOWER_ATTRIBUTES_BLOCKED
-from homeassistant.const import ATTR_ASSUMED_STATE, ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State
+from inpui.components.mqtt.lawn_mower import MQTT_LAWN_MOWER_ATTRIBUTES_BLOCKED
+from inpui.const import ATTR_ASSUMED_STATE, ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State
 
 from .common import (
     help_custom_config,

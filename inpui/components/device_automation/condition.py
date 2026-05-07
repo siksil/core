@@ -6,16 +6,16 @@ from typing import Any, Protocol
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_DOMAIN, CONF_OPTIONS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.condition import (
+from inpui.const import CONF_DOMAIN, CONF_OPTIONS
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.condition import (
     Condition,
     ConditionChecker,
     ConditionCheckerType,
     ConditionConfig,
 )
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DeviceAutomationType, async_get_device_automation_platform
 from .helpers import async_validate_device_automation_config

@@ -16,24 +16,24 @@ from pyhomeworks.pyhomeworks import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_ID,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ConfigEntryNotReady, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import slugify
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ConfigEntryNotReady, ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.dispatcher import async_dispatcher_connect, dispatcher_send
+from inpui.helpers.typing import ConfigType
+from inpui.util import slugify
 
 from .const import CONF_ADDR, CONF_CONTROLLER_ID, CONF_KEYPADS, DOMAIN
 
@@ -165,7 +165,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HomeworksConfigEntry) ->
     def cleanup(event: Event) -> None:
         controller.stop()
 
-    entry.async_on_unload(hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, cleanup))
+    entry.async_on_unload(hass.bus.async_listen_once(EVENT_INPUI_STOP, cleanup))
 
     keypads: dict[str, HomeworksKeypad] = {}
     for key_config in config.get(CONF_KEYPADS, []):

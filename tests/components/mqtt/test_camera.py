@@ -7,9 +7,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import camera, mqtt
-from homeassistant.components.mqtt.camera import MQTT_CAMERA_ATTRIBUTES_BLOCKED
-from homeassistant.core import HomeAssistant
+from inpui.components import camera, mqtt
+from inpui.components.mqtt.camera import MQTT_CAMERA_ATTRIBUTES_BLOCKED
+from inpui.core import HomeAssistant
 
 from .common import (
     help_test_availability_when_connection_lost,

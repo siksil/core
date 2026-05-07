@@ -7,8 +7,8 @@ from unittest.mock import PropertyMock, patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.auth import auth_store
-from homeassistant.core import HomeAssistant
+from inpui.auth import auth_store
+from inpui.core import HomeAssistant
 
 MOCK_STORAGE_DATA = {
     "version": 1,

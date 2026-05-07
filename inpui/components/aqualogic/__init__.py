@@ -10,16 +10,16 @@ import time
 from aqualogic.core import AquaLogic
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -44,8 +44,8 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     port = config[DOMAIN][CONF_PORT]
     processor = AquaLogicProcessor(hass, host, port)
     hass.data[DOMAIN] = processor
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, processor.start_listen)
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, processor.shutdown)
+    hass.bus.listen_once(EVENT_INPUI_START, processor.start_listen)
+    hass.bus.listen_once(EVENT_INPUI_STOP, processor.shutdown)
     _LOGGER.debug("AquaLogicProcessor %s:%i initialized", host, port)
     return True
 

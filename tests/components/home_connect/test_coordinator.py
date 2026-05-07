@@ -32,18 +32,18 @@ from aiohomeconnect.model.program import Option, OptionKey, Program, ProgramKey
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.home_connect.const import (
+from inpui.components.home_connect.const import (
     BSH_DOOR_STATE_OPEN,
     BSH_EVENT_PRESENT_STATE_PRESENT,
     BSH_POWER_OFF,
     DOMAIN,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.config_entries import ConfigEntries, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntries, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     EVENT_STATE_REPORTED,
     STATE_OFF,
@@ -51,15 +51,15 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event as HassEvent,
     EventStateReportedData,
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

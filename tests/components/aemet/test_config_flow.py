@@ -6,15 +6,15 @@ from aemet_opendata.exceptions import AuthError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.aemet.const import (
+from inpui.components.aemet.const import (
     CONF_RADAR_UPDATES,
     CONF_STATION_UPDATES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .util import mock_api_call
 

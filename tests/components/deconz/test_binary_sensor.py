@@ -7,16 +7,16 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.deconz.const import (
+from inpui.components.deconz.const import (
     CONF_ALLOW_CLIP_SENSOR,
     CONF_ALLOW_NEW_DEVICES,
     CONF_MASTER_GATEWAY,
     DOMAIN,
 )
-from homeassistant.components.deconz.services import SERVICE_DEVICE_REFRESH
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.deconz.services import SERVICE_DEVICE_REFRESH
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import ConfigEntryFactoryType, WebsocketDataType
 

@@ -5,11 +5,11 @@ from __future__ import annotations
 from xknx.devices import RawValue as XknxRawValue
 
 from homeassistant import config_entries
-from homeassistant.components.button import ButtonEntity
-from homeassistant.const import CONF_ENTITY_CATEGORY, CONF_NAME, CONF_PAYLOAD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.button import ButtonEntity
+from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, CONF_PAYLOAD, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_PAYLOAD_LENGTH, KNX_ADDRESS, KNX_MODULE_KEY
 from .entity import KnxYamlEntity

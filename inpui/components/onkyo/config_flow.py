@@ -8,16 +8,16 @@ from aioonkyo import ReceiverInfo
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import section
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_HOST
+from inpui.core import callback
+from inpui.data_entry_flow import section
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     NumberSelectorMode,
@@ -27,7 +27,7 @@ from homeassistant.helpers.selector import (
     SelectSelectorMode,
     TextSelector,
 )
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from . import OnkyoConfigEntry
 from .const import (

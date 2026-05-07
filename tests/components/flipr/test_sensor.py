@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 from flipr_api.exceptions import FliprError
 
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorStateClass
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorStateClass
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, PERCENTAGE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

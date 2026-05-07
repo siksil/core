@@ -8,11 +8,11 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from tplink_omada_client.clients import OmadaConnectedClient
 
-from homeassistant.components.tplink_omada.const import DOMAIN
-from homeassistant.components.tplink_omada.coordinator import POLL_CLIENTS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.components.tplink_omada.const import DOMAIN
+from inpui.components.tplink_omada.coordinator import POLL_CLIENTS
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

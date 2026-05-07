@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, PLATFORMS
 from .coordinator import WhoisCoordinator

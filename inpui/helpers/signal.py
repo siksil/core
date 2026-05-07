@@ -4,14 +4,14 @@ import asyncio
 import logging
 import signal
 
-from homeassistant.const import RESTART_EXIT_CODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import RESTART_EXIT_CODE
+from inpui.core import HomeAssistant, callback
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 
-KEY_HA_STOP: HassKey[asyncio.Task[None]] = HassKey("homeassistant_stop")
+KEY_HA_STOP: HassKey[asyncio.Task[None]] = HassKey("inpui_stop")
 
 
 @callback

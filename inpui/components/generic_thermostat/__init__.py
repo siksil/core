@@ -2,12 +2,12 @@
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device import async_entity_id_to_device_id
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.helpers.helper_integration import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device import async_entity_id_to_device_id
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.helpers.helper_integration import (
     async_handle_source_entity_changes,
     async_remove_helper_config_entry_from_source_device,
 )

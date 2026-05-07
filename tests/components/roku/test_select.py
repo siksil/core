@@ -11,18 +11,18 @@ from rokuecp import (
     RokuError,
 )
 
-from homeassistant.components.roku.const import DOMAIN
-from homeassistant.components.roku.coordinator import SCAN_INTERVAL
-from homeassistant.components.select import (
+from inpui.components.roku.const import DOMAIN
+from inpui.components.roku.coordinator import SCAN_INTERVAL
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, SERVICE_SELECT_OPTION
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

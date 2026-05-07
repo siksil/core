@@ -7,8 +7,8 @@ from PyTado.http import DeviceActivationStatus
 import pytest
 import requests_mock
 
-from homeassistant.components.tado import CONF_REFRESH_TOKEN, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.tado import CONF_REFRESH_TOKEN, DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture, load_json_object_fixture
 

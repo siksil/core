@@ -13,7 +13,7 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import block_async_io
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import extract_stack_to_frame
 

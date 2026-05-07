@@ -9,12 +9,12 @@ from unittest import mock
 from aiohomekit import AccessoryNotFoundError
 from aiohomekit.testing import FakePairing
 
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.climate import ClimateEntityFeature
+from inpui.components.sensor import SensorStateClass
+from inpui.config_entries import ConfigEntryState
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

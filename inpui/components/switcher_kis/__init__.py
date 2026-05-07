@@ -7,10 +7,10 @@ import logging
 from aioswitcher.bridge import SwitcherBridge
 from aioswitcher.device import SwitcherBase
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .coordinator import SwitcherDataUpdateCoordinator
@@ -78,7 +78,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: SwitcherConfigEntry) -> 
     entry.async_on_unload(stop_bridge)
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_bridge)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_bridge)
     )
 
     return True

@@ -8,7 +8,7 @@ from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCal
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_MODE,
@@ -18,18 +18,18 @@ from homeassistant.components.number import (
     SERVICE_SET_VALUE,
     NumberMode,
 )
-from homeassistant.components.shelly.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.shelly.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import init_integration, patch_platforms, register_device, register_entity
 

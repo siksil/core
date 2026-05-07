@@ -14,13 +14,13 @@ from pyhap.iid_manager import IIDManager
 from pyhap.service import Service
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.components.cover import CoverDeviceClass, CoverEntityFeature
-from homeassistant.components.lawn_mower import LawnMowerEntityFeature
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.components.remote import RemoteEntityFeature
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.const import (
+from inpui.components.cover import CoverDeviceClass, CoverEntityFeature
+from inpui.components.lawn_mower import LawnMowerEntityFeature
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.components.remote import RemoteEntityFeature
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.switch import SwitchDeviceClass
+from inpui.const import (
     ATTR_BATTERY_CHARGING,
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_CLASS,
@@ -42,7 +42,7 @@ from homeassistant.const import (
     UnitOfTemperature,
     __version__,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     Event,
@@ -53,9 +53,9 @@ from homeassistant.core import (
     callback as ha_callback,
     split_entity_id,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.util.decorator import Registry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_state_change_event
+from inpui.util.decorator import Registry
 
 from .const import (
     ATTR_DISPLAY_NAME,

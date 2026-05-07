@@ -17,10 +17,10 @@ from doorbirdpy import (
 )
 from propcache.api import cached_property
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import get_url
-from homeassistant.util import dt as dt_util, slugify
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers.network import get_url
+from inpui.util import dt as dt_util, slugify
 
 from .const import (
     API_URL,

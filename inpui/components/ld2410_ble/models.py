@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 from ld2410_ble import LD2410BLE
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 from .coordinator import LD2410BLECoordinator
 

@@ -13,18 +13,18 @@ from gcal_sync.exceptions import ApiException, AuthException
 import voluptuous as vol
 import yaml
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_ENTITIES,
     CONF_NAME,
     CONF_OFFSET,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity import generate_entity_id
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_entry_oauth2_flow, config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity import generate_entity_id
 
 from .api import ApiAuthImpl, get_feature_access
 from .const import DOMAIN

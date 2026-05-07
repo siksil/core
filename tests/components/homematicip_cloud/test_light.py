@@ -2,7 +2,7 @@
 
 from homematicip.base.enums import OpticalSignalBehaviour, RGBColorState
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_NAME,
@@ -12,8 +12,8 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_SUPPORTED_FEATURES, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

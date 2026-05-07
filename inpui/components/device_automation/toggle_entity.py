@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.homeassistant.triggers import state as state_trigger
-from homeassistant.const import (
+from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_CONDITION,
     CONF_ENTITY_ID,
@@ -14,14 +14,14 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, Context, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import CALLBACK_TYPE, Context, HomeAssistant, callback
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DEVICE_TRIGGER_BASE_SCHEMA, entity
 from .const import (

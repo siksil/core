@@ -8,13 +8,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import binary_sensor
-from homeassistant.components.binary_sensor import (
+from inpui.components import binary_sensor
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_FORCE_UPDATE,
     CONF_NAME,
@@ -25,13 +25,13 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, event as evt
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, event as evt
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from . import subscription
 from .config import MQTT_RO_SCHEMA

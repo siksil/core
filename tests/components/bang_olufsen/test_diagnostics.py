@@ -4,8 +4,8 @@ from mozart_api.models import BatteryState
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from .conftest import mock_websocket_connection
 from .const import TEST_BUTTON_EVENT_ENTITY_ID, TEST_REMOTE_KEY_EVENT_ENTITY_ID

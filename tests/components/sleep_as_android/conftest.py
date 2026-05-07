@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.sleep_as_android.const import DOMAIN
-from homeassistant.const import CONF_WEBHOOK_ID
+from inpui.components.sleep_as_android.const import DOMAIN
+from inpui.const import CONF_WEBHOOK_ID
 
 from tests.common import MockConfigEntry
 

@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.sensor import SensorDeviceClass, significant_change
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, significant_change
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfTemperature,

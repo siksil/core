@@ -3,8 +3,8 @@
 from aiostreammagic import StreamMagicClient
 from aiostreammagic.models import Preset
 
-from homeassistant.components.media_player import BrowseMedia, MediaClass
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import BrowseMedia, MediaClass
+from inpui.core import HomeAssistant
 
 
 async def async_browse_media(

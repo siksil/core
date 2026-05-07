@@ -9,15 +9,15 @@ from nacl.encoding import Base64Encoder
 from nacl.secret import SecretBox
 import pytest
 
-from homeassistant.components.mobile_app.const import (
+from inpui.components.mobile_app.const import (
     CONF_CLOUDHOOK_URL,
     CONF_REMOTE_UI_URL,
     CONF_SECRET,
     DOMAIN,
 )
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import REGISTER, REGISTER_CLEARTEXT, RENDER_TEMPLATE
 

@@ -4,26 +4,26 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.playstation_network.config_flow import (
+from inpui.components.playstation_network.config_flow import (
     PSNAWPAuthenticationError,
     PSNAWPError,
     PSNAWPInvalidTokenError,
     PSNAWPNotFoundError,
 )
-from homeassistant.components.playstation_network.const import (
+from inpui.components.playstation_network.const import (
     CONF_ACCOUNT_ID,
     CONF_NPSSO,
     DOMAIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntryDisabler,
     ConfigEntryState,
     ConfigSubentry,
     ConfigSubentryData,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import NPSSO_TOKEN, NPSSO_TOKEN_INVALID_JSON, PSN_ID
 

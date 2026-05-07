@@ -5,10 +5,10 @@ from unittest.mock import patch
 from pyfireservicerota import InvalidAuthError
 
 from homeassistant import config_entries
-from homeassistant.components.fireservicerota.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.fireservicerota.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

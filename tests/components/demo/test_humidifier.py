@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_ACTION,
     ATTR_CURRENT_HUMIDITY,
     ATTR_HUMIDITY,
@@ -16,7 +16,7 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     SERVICE_SET_MODE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     SERVICE_TOGGLE,
@@ -26,8 +26,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_DEHUMIDIFIER = "humidifier.dehumidifier"
 ENTITY_HYGROSTAT = "humidifier.hygrostat"

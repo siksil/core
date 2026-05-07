@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from Tami4EdgeAPI import Tami4EdgeAPI, exceptions
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
 
 from .const import API, CONF_REFRESH_TOKEN, COORDINATOR, DOMAIN
 from .coordinator import Tami4EdgeCoordinator

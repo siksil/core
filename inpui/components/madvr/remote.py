@@ -6,9 +6,9 @@ from collections.abc import Iterable
 import logging
 from typing import Any
 
-from homeassistant.components.remote import RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import MadVRConfigEntry, MadVRCoordinator
 from .entity import MadVREntity

@@ -13,12 +13,12 @@ from aiotedee.exceptions import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.tedee.const import CONF_LOCAL_ACCESS_TOKEN, DOMAIN
-from homeassistant.components.webhook import async_generate_url
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_WEBHOOK_ID, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.tedee.const import CONF_LOCAL_ACCESS_TOKEN, DOMAIN
+from inpui.components.webhook import async_generate_url
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_WEBHOOK_ID, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .conftest import WEBHOOK_ID
@@ -71,7 +71,7 @@ async def test_cleanup_on_shutdown(
 
     assert mock_config_entry.state is ConfigEntryState.LOADED
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_tedee.delete_webhook.assert_called_once()
 
@@ -89,7 +89,7 @@ async def test_webhook_cleanup_errors(
 
     mock_tedee.delete_webhook.side_effect = TedeeWebhookException("")
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_tedee.delete_webhook.assert_called_once()
     assert "Failed to unregister Tedee webhook from bridge" in caplog.text

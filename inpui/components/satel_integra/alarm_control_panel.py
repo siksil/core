@@ -7,15 +7,15 @@ import logging
 
 from satel_integra import AlarmState
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_ARM_HOME_MODE, CONF_PARTITION_NUMBER, SUBENTRY_TYPE_PARTITION
 from .coordinator import SatelConfigEntry, SatelIntegraPartitionsCoordinator

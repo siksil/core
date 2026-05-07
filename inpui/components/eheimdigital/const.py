@@ -4,8 +4,8 @@ from logging import Logger, getLogger
 
 from eheimdigital.types import HeaterMode, LightMode
 
-from homeassistant.components.climate import PRESET_NONE
-from homeassistant.components.light import EFFECT_OFF
+from inpui.components.climate import PRESET_NONE
+from inpui.components.light import EFFECT_OFF
 
 LOGGER: Logger = getLogger(__package__)
 DOMAIN = "eheimdigital"

@@ -8,14 +8,14 @@ from datetime import datetime, timedelta
 
 from teslemetry_stream import TeslemetryStream, TeslemetryStreamVehicle
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     DEGREE,
     PERCENTAGE,
     EntityCategory,
@@ -29,11 +29,11 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.variance import ignore_variance
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
+from inpui.util.variance import ignore_variance
 
 from . import TeslemetryConfigEntry
 from .const import ENERGY_HISTORY_FIELDS

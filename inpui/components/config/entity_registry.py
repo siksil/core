@@ -8,15 +8,15 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ERR_NOT_FOUND, require_admin
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ERR_NOT_FOUND, require_admin
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.json import json_dumps
+from inpui.helpers.json import json_dumps
 
 _LOGGER = logging.getLogger(__name__)
 

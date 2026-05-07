@@ -2,11 +2,11 @@
 
 from fing_agent_api.models import Device
 
-from homeassistant.components.device_tracker import ScannerEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.device_tracker import ScannerEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import FingConfigEntry
 from .coordinator import FingDataUpdateCoordinator

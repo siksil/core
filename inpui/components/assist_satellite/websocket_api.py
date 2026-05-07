@@ -6,11 +6,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util import uuid as uuid_util
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.util import uuid as uuid_util
 
 from .connection_test import CONNECTION_TEST_URL_BASE
 from .const import (

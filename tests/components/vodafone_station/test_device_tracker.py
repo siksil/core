@@ -6,11 +6,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.vodafone_station.const import SCAN_INTERVAL
-from homeassistant.components.vodafone_station.coordinator import CONSIDER_HOME_SECONDS
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.vodafone_station.const import SCAN_INTERVAL
+from inpui.components.vodafone_station.coordinator import CONSIDER_HOME_SECONDS
+from inpui.const import STATE_HOME, STATE_NOT_HOME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .const import DEVICE_1_HOST, DEVICE_1_MAC

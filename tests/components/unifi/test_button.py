@@ -9,19 +9,19 @@ from aiounifi.models.message import MessageKey
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN
-from homeassistant.components.unifi.const import CONF_SITE_ID
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN
+from inpui.components.unifi.const import CONF_SITE_ID
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     CONF_HOST,
     CONTENT_TYPE_JSON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.util import dt as dt_util
 
 from .conftest import (
     ConfigEntryFactoryType,

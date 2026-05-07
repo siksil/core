@@ -16,17 +16,17 @@ from xiaomi_ble import (
 )
 from xiaomi_ble.parser import EncryptionScheme
 
-from homeassistant.components import onboarding
-from homeassistant.components.bluetooth import (
+from inpui.components import onboarding
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfo,
     async_discovered_service_info,
     async_process_advertisements,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS, CONF_PASSWORD, CONF_USERNAME
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

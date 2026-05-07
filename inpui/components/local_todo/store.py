@@ -3,7 +3,7 @@
 import asyncio
 from pathlib import Path
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 class LocalTodoListStore:

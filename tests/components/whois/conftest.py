@@ -9,10 +9,10 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.whois.const import DOMAIN
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.whois.const import DOMAIN
+from inpui.const import CONF_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

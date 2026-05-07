@@ -1,10 +1,10 @@
 """Provides conditions for switches."""
 
-from homeassistant.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import Condition, make_entity_state_condition
+from inpui.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import Condition, make_entity_state_condition
 
 from .const import DOMAIN
 

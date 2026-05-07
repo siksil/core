@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ENQUEUE,
     BrowseMedia,
     MediaPlayerEnqueue,
@@ -16,9 +16,9 @@ from homeassistant.components.media_player import (
     SearchMedia,
     SearchMediaQuery,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import parse_datetime
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import parse_datetime
 
 from .browse_media import build_item_response, build_root_response, search_items
 from .client_wrapper import get_artwork_url

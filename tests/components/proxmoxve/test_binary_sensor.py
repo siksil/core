@@ -10,11 +10,11 @@ import requests
 from requests.exceptions import ConnectTimeout, SSLError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.proxmoxve.coordinator import DEFAULT_UPDATE_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.components.proxmoxve.coordinator import DEFAULT_UPDATE_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration
 

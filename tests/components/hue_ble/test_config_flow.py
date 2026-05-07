@@ -6,17 +6,17 @@ from habluetooth import BluetoothServiceInfoBleak
 from HueBLE import ConnectionError, HueBleError, PairingError
 import pytest
 
-from homeassistant.components.hue_ble.config_flow import Error
-from homeassistant.components.hue_ble.const import (
+from inpui.components.hue_ble.config_flow import Error
+from inpui.components.hue_ble.const import (
     DOMAIN,
     URL_FACTORY_RESET,
     URL_PAIRING_MODE,
 )
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
-from homeassistant.const import CONF_MAC, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
+from inpui.const import CONF_MAC, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
 
 from . import (
     HUE_BLE_SERVICE_INFO,

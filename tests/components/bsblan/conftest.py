@@ -15,8 +15,8 @@ from bsblan import (
 )
 import pytest
 
-from homeassistant.components.bsblan.const import CONF_PASSKEY, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.components.bsblan.const import CONF_PASSKEY, DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_fixture
 

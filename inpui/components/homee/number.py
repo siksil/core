@@ -6,14 +6,14 @@ from dataclasses import dataclass
 from pyHomee.const import AttributeType
 from pyHomee.model import HomeeAttribute, HomeeNode
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import EntityCategory, UnitOfSpeed
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfSpeed
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeeConfigEntry
 from .const import HOMEE_UNIT_TO_HA_UNIT

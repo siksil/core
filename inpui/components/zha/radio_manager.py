@@ -27,13 +27,13 @@ from zigpy.config import (
 from zigpy.exceptions import NetworkNotFormed
 
 from homeassistant import config_entries
-from homeassistant.components import usb
-from homeassistant.components.homeassistant_hardware.firmware_config_flow import (
+from inpui.components import usb
+from inpui.components.homeassistant_hardware.firmware_config_flow import (
     ZigbeeFlowStrategy,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from . import repairs
 from .const import (

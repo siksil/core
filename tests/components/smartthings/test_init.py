@@ -15,31 +15,31 @@ from pysmartthings import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN, HVACMode
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.smartthings import EVENT_BUTTON, OLD_DATA
-from homeassistant.components.smartthings.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN, HVACMode
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.smartthings import EVENT_BUTTON, OLD_DATA
+from inpui.components.smartthings.const import (
     CONF_INSTALLED_APP_ID,
     CONF_LOCATION_ID,
     CONF_SUBSCRIPTION_ID,
     DOMAIN,
     SCOPES,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import (
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 
@@ -312,7 +312,7 @@ async def test_shutdown(
     """Test shutting down Home Assistant."""
     await setup_integration(hass, mock_config_entry)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     devices.delete_subscription.assert_called_once_with(
         "f5768ce8-c9e5-4507-9020-912c0c60e0ab"
     )

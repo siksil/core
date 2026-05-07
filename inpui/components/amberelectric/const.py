@@ -3,7 +3,7 @@
 import logging
 from typing import Final
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN: Final = "amberelectric"
 CONF_SITE_NAME = "site_name"

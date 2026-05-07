@@ -10,22 +10,22 @@ from typing import Any
 
 from jsonpath import jsonpath
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND,
     CONF_NAME,
     CONF_SCAN_INTERVAL,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.template import Template
+from inpui.helpers.trigger_template_entity import (
     ManualTriggerSensorEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_COMMAND_TIMEOUT,

@@ -9,12 +9,12 @@ from typing import Any
 import telnetlib  # pylint: disable=deprecated-module
 import voluptuous as vol
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     ENTITY_ID_FORMAT,
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND_OFF,
     CONF_COMMAND_ON,
     CONF_COMMAND_STATE,
@@ -25,11 +25,11 @@ from homeassistant.const import (
     CONF_TIMEOUT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

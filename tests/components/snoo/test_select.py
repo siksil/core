@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock
 import pytest
 from python_snoo.containers import SnooDevice, SnooLevels, SnooStates
 
-from homeassistant.components.select import SERVICE_SELECT_OPTION
-from homeassistant.components.snoo.select import SnooCommandException
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.select import SERVICE_SELECT_OPTION
+from inpui.components.snoo.select import SnooCommandException
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import async_init_integration, find_update_callback
 from .const import MOCK_SNOO_DATA

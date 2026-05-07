@@ -4,13 +4,13 @@ from unittest.mock import MagicMock
 
 from pyegps.exceptions import UsbError
 
-from homeassistant.components.energenie_power_sockets.const import (
+from inpui.components.energenie_power_sockets.const import (
     CONF_DEVICE_API_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

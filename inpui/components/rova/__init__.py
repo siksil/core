@@ -5,11 +5,11 @@ from __future__ import annotations
 from requests.exceptions import ConnectTimeout, HTTPError
 from rova.rova import Rova
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import CONF_HOUSE_NUMBER, CONF_HOUSE_NUMBER_SUFFIX, CONF_ZIP_CODE, DOMAIN
 from .coordinator import RovaCoordinator

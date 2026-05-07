@@ -2,9 +2,9 @@
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_HOST
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, PLATFORMS, TTN_API_HOST
 from .coordinator import TTNCoordinator

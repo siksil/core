@@ -25,11 +25,11 @@ from propcache.api import cached_property
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_AUTHENTICATED, HomeAssistantView
-from homeassistant.components.websocket_api import ERR_NOT_SUPPORTED, ERR_UNKNOWN_ERROR
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (  # noqa: F401
+from inpui.components import websocket_api
+from inpui.components.http import KEY_AUTHENTICATED, HomeAssistantView
+from inpui.components.websocket_api import ERR_NOT_SUPPORTED, ERR_UNKNOWN_ERROR
+from inpui.config_entries import ConfigEntry
+from inpui.const import (  # noqa: F401
     ATTR_ENTITY_PICTURE,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
@@ -52,15 +52,15 @@ from homeassistant.const import (  # noqa: F401
     STATE_PLAYING,
     STATE_STANDBY,
 )
-from homeassistant.core import HomeAssistant, SupportsResponse
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, SupportsResponse
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.network import get_url
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
 
 from .browse_media import (  # noqa: F401
     BrowseMedia,
@@ -655,7 +655,7 @@ class MediaPlayerEntity(Entity, cached_properties=CACHED_PROPERTIES_WITH_ATTR_):
     def media_position_updated_at(self) -> dt.datetime | None:
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
         return self._attr_media_position_updated_at
 

@@ -8,9 +8,9 @@ from elkm1_lib.elements import Element
 from elkm1_lib.elk import Elk
 from elkm1_lib.lights import Light
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElkM1ConfigEntry
 from .entity import ElkEntity, create_elk_entities

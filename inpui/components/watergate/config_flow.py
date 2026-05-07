@@ -8,10 +8,10 @@ from watergate_local_api.watergate_api import (
     WatergateLocalApiClient,
 )
 
-from homeassistant.components.webhook import async_generate_id as webhook_generate_id
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.webhook import async_generate_id as webhook_generate_id
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS, CONF_WEBHOOK_ID
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 

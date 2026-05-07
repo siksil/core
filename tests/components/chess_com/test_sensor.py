@@ -6,10 +6,10 @@ from chess_com_api import PlayerStats
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.chess_com.const import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.chess_com.const import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

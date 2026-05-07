@@ -6,15 +6,15 @@ from unittest.mock import AsyncMock
 import pytest
 from python_homeassistant_analytics import HomeassistantAnalyticsConnectionError
 
-from homeassistant.components.analytics_insights.const import (
+from inpui.components.analytics_insights.const import (
     CONF_TRACKED_APPS,
     CONF_TRACKED_CUSTOM_INTEGRATIONS,
     CONF_TRACKED_INTEGRATIONS,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 

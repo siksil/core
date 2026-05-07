@@ -8,10 +8,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.util.uuid import random_uuid_hex
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import callback
+from inpui.util.uuid import random_uuid_hex
 
 from .client_wrapper import CannotConnect, InvalidAuth, create_client, validate_input
 from .const import CONF_CLIENT_DEVICE_ID, DOMAIN, SUPPORTED_AUDIO_CODECS

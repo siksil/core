@@ -2,9 +2,9 @@
 
 from unittest.mock import MagicMock, patch
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 MOCK_CONFIG = {
     "sensor": {

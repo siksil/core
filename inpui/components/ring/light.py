@@ -7,10 +7,10 @@ from typing import Any
 
 from ring_doorbell import RingStickUpCam
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.light import ColorMode, LightEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import RingConfigEntry
 from .coordinator import RingDataCoordinator

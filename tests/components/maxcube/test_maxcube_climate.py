@@ -13,7 +13,7 @@ from maxcube.thermostat import MaxThermostat
 from maxcube.wallthermostat import MaxWallThermostat
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODE,
@@ -37,23 +37,23 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.maxcube.climate import (
+from inpui.components.maxcube.climate import (
     MAX_TEMPERATURE,
     MIN_TEMPERATURE,
     OFF_TEMPERATURE,
     ON_TEMPERATURE,
     PRESET_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.util import utcnow
 
 from tests.common import async_fire_time_changed
 

@@ -2,9 +2,9 @@
 
 import requests_mock
 
-from homeassistant.components import youless
-from homeassistant.const import CONF_DEVICE, CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components import youless
+from inpui.const import CONF_DEVICE, CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import (
     MockConfigEntry,

@@ -13,10 +13,10 @@ from aiounifi.models.message import MessageKey
 import orjson
 import pytest
 
-from homeassistant.components.unifi import STORAGE_KEY, STORAGE_VERSION
-from homeassistant.components.unifi.const import CONF_SITE_ID, DOMAIN
-from homeassistant.components.unifi.hub.websocket import RETRY_TIMER
-from homeassistant.const import (
+from inpui.components.unifi import STORAGE_KEY, STORAGE_VERSION
+from inpui.components.unifi.const import CONF_SITE_ID, DOMAIN
+from inpui.components.unifi.hub.websocket import RETRY_TIMER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     CONTENT_TYPE_JSON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

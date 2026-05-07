@@ -7,10 +7,10 @@ import pytest
 from sharkiq import AylaApi, SharkIqAuthError, SharkIqError
 
 from homeassistant import config_entries
-from homeassistant.components.sharkiq.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.sharkiq.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from .const import (
     CONFIG,

@@ -5,16 +5,16 @@ from unittest.mock import AsyncMock
 from pyituran.exceptions import IturanApiError, IturanAuthError
 import pytest
 
-from homeassistant.components.ituran.const import (
+from inpui.components.ituran.const import (
     CONF_ID_OR_PASSPORT,
     CONF_MOBILE_ID,
     CONF_OTP,
     CONF_PHONE_NUMBER,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigFlowResult
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER, ConfigFlowResult
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 from .const import MOCK_CONFIG_DATA

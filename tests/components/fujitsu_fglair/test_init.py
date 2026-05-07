@@ -7,8 +7,8 @@ from ayla_iot_unofficial.fujitsu_consts import FGLAIR_APP_CREDENTIALS
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.fujitsu_fglair.const import (
+from inpui.components.climate import HVACMode
+from inpui.components.fujitsu_fglair.const import (
     API_REFRESH,
     API_TIMEOUT,
     CONF_EUROPE,
@@ -17,10 +17,10 @@ from homeassistant.components.fujitsu_fglair.const import (
     REGION_DEFAULT,
     REGION_EU,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from . import entity_id, setup_integration
 from .conftest import TEST_PASSWORD, TEST_USERNAME

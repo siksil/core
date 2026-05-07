@@ -11,9 +11,9 @@ from aioesphomeapi import (
     NumberState,
 )
 
-from homeassistant.components.number import NumberDeviceClass, NumberEntity, NumberMode
-from homeassistant.core import callback
-from homeassistant.util.enum import try_parse_enum
+from inpui.components.number import NumberDeviceClass, NumberEntity, NumberMode
+from inpui.core import callback
+from inpui.util.enum import try_parse_enum
 
 from .entity import (
     EsphomeEntity,

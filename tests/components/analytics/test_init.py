@@ -6,19 +6,19 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.analytics import LABS_SNAPSHOT_FEATURE
-from homeassistant.components.analytics.const import (
+from inpui.components.analytics import LABS_SNAPSHOT_FEATURE
+from inpui.components.analytics.const import (
     BASIC_ENDPOINT_URL,
     DOMAIN,
     SNAPSHOT_DEFAULT_URL,
     SNAPSHOT_URL_PATH,
     STORAGE_KEY,
 )
-from homeassistant.components.labs import async_update_preview_feature
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.labs import async_update_preview_feature
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker
@@ -49,7 +49,7 @@ async def test_labs_feature_toggle(
     assert await async_setup_component(hass, "labs", {})
     assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     async_fire_time_changed(hass, dt_util.utcnow() + timedelta(hours=25))

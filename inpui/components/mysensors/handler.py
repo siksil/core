@@ -7,10 +7,10 @@ from collections.abc import Callable
 from mysensors import Message
 from mysensors.const import SYSTEM_CHILD_ID
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util import decorator
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util import decorator
 
 from .const import CHILD_CALLBACK, NODE_CALLBACK, DevId, GatewayId
 from .entity import get_mysensors_devices

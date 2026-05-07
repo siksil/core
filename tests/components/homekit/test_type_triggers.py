@@ -2,17 +2,17 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.homekit.const import (
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.homekit.const import (
     CHAR_CONFIGURED_NAME,
     CHAR_PROGRAMMABLE_SWITCH_EVENT,
     SERV_STATELESS_PROGRAMMABLE_SWITCH,
 )
-from homeassistant.components.homekit.type_triggers import DeviceTriggerAccessory
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.homekit.type_triggers import DeviceTriggerAccessory
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_get_device_automations
 

@@ -8,17 +8,17 @@ from typing import Any
 from lunatone_rest_api_client import DALIBroadcast
 from lunatone_rest_api_client.models import LineStatus
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ColorMode,
     LightEntity,
     brightness_supported,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.color import brightness_to_value, value_to_brightness
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.color import brightness_to_value, value_to_brightness
 
 from .const import DOMAIN
 from .coordinator import (

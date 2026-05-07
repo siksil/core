@@ -10,16 +10,16 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from yarl import URL
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import (
+from inpui.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import ConfigEntryFactoryType, RtspEventMock
 from .const import DEFAULT_HOST, NAME

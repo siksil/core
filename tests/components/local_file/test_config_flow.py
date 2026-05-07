@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.local_file.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import CONF_FILE_PATH, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.local_file.const import DEFAULT_NAME, DOMAIN
+from inpui.const import CONF_FILE_PATH, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "ukraine_alarm"
 ATTRIBUTION = "Data provided by Ukraine Alarm"

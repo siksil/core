@@ -2,7 +2,7 @@
 
 from elevenlabs.types import LanguageResponse, Model, Voice
 
-from homeassistant.components.elevenlabs.const import DEFAULT_TTS_MODEL
+from inpui.components.elevenlabs.const import DEFAULT_TTS_MODEL
 
 MOCK_VOICES = [
     Voice(

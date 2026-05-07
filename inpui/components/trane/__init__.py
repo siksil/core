@@ -8,10 +8,10 @@ from steamloop import (
     ThermostatConnection,
 )
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_SECRET_KEY, DOMAIN, MANUFACTURER
 from .types import TraneConfigEntry

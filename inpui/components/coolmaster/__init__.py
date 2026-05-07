@@ -2,10 +2,10 @@
 
 from pycoolmasternet_async import CoolMasterNet
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_SEND_WAKEUP_PROMPT, CONF_SWING_SUPPORT, DOMAIN
 from .coordinator import CoolmasterConfigEntry, CoolmasterDataUpdateCoordinator

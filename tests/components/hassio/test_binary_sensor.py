@@ -18,11 +18,11 @@ from aiohasupervisor.models.mounts import (
 )
 import pytest
 
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.hassio import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import MOCK_REPOSITORIES, MOCK_STORE_ADDONS
 

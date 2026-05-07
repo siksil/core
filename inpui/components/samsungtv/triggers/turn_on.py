@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
@@ -12,14 +12,14 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.trigger import (
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.trigger import (
     PluggableAction,
     TriggerActionType,
     TriggerInfo,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from ..const import DOMAIN
 from ..helpers import (

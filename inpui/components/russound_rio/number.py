@@ -5,10 +5,10 @@ from dataclasses import dataclass
 
 from aiorussound.rio import Controller, ZoneControlSurface
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RussoundConfigEntry
 from .entity import RussoundBaseEntity, command

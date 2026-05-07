@@ -16,14 +16,14 @@ from yolink.const import (
 from yolink.device import YoLinkDevice
 from yolink.outlet_request_builder import OutletRequestBuilder
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DEV_MODEL_MULTI_OUTLET_YS6801, DOMAIN
 from .coordinator import YoLinkCoordinator

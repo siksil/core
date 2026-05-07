@@ -8,11 +8,11 @@ from uuid import UUID
 
 from habiticalib import Avatar, ContentData, extract_avatar
 
-from homeassistant.components.image import Image, ImageEntity, ImageEntityDescription
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import Image, ImageEntity, ImageEntityDescription
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import HABITICA_KEY
 from .const import ASSETS_URL

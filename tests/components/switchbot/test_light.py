@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.light import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -17,9 +17,9 @@ from homeassistant.components.light import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     BULB_SERVICE_INFO,

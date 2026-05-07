@@ -16,9 +16,9 @@ from peblar import (
 )
 import pytest
 
-from homeassistant.components.peblar.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.peblar.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

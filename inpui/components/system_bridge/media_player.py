@@ -7,7 +7,7 @@ from typing import Final
 
 from systembridgeconnector.models.media_control import MediaAction, MediaControl
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityDescription,
@@ -15,10 +15,10 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     RepeatMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SystemBridgeDataUpdateCoordinator

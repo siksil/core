@@ -9,21 +9,21 @@ from typing import Any, Literal
 from hassil.recognize import RecognizeResult
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, intent
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, intent
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 from .agent_manager import (
     AgentInfo,

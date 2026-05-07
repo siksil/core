@@ -6,8 +6,8 @@ import pytest
 from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import async_capture_events
 

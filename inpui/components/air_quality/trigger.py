@@ -1,20 +1,20 @@
 """Provides triggers for air quality."""
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_BILLION,
     CONCENTRATION_PARTS_PER_MILLION,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     EntityTargetStateTriggerBase,
     Trigger,
     make_entity_numerical_state_changed_trigger,
@@ -23,7 +23,7 @@ from homeassistant.helpers.trigger import (
     make_entity_numerical_state_crossed_threshold_with_unit_trigger,
     make_entity_target_state_trigger,
 )
-from homeassistant.util.unit_conversion import (
+from inpui.util.unit_conversion import (
     CarbonMonoxideConcentrationConverter,
     MassVolumeConcentrationConverter,
     NitrogenDioxideConcentrationConverter,

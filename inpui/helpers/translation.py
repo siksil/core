@@ -11,19 +11,19 @@ import pathlib
 import string
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     EVENT_CORE_CONFIG_UPDATE,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, HomeAssistant, async_get_hass, callback
-from homeassistant.loader import (
+from inpui.core import Event, HomeAssistant, async_get_hass, callback
+from inpui.loader import (
     Integration,
     async_get_config_flows,
     async_get_integrations,
     bind_hass,
 )
-from homeassistant.util.json import load_json
+from inpui.util.json import load_json
 
 from . import singleton
 

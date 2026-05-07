@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pymta import Arrival
 import pytest
 
-from homeassistant.components.mta.const import (
+from inpui.components.mta.const import (
     CONF_LINE,
     CONF_ROUTE,
     CONF_STOP_ID,
@@ -17,8 +17,8 @@ from homeassistant.components.mta.const import (
     SUBENTRY_TYPE_BUS,
     SUBENTRY_TYPE_SUBWAY,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_API_KEY
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_API_KEY
 
 from tests.common import MockConfigEntry
 

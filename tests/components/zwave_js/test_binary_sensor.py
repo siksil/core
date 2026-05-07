@@ -9,14 +9,14 @@ import pytest
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components import automation
-from homeassistant.components.binary_sensor import (
+from inpui.components import automation
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.zwave_js.const import DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.components.zwave_js.const import DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     STATE_OFF,
     STATE_ON,
@@ -24,11 +24,11 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     DISABLED_LEGACY_BINARY_SENSOR,

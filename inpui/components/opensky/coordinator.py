@@ -6,16 +6,16 @@ from datetime import timedelta
 
 from python_opensky import OpenSky, OpenSkyError, StateVector
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     ATTR_ALTITUDE,

@@ -8,17 +8,17 @@ import logging
 from bthome_ble import BTHomeBluetoothDeviceData, SensorUpdate
 from bthome_ble.parser import EncryptionScheme
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN as BLUETOOTH_DOMAIN,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceRegistry
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.signal_type import SignalType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceRegistry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.signal_type import SignalType
 
 from .const import (
     BTHOME_BLE_EVENT,

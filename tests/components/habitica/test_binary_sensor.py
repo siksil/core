@@ -7,11 +7,11 @@ from habiticalib import HabiticaUserResponse
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.habitica.const import ASSETS_URL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.habitica.const import ASSETS_URL, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_load_fixture, snapshot_platform
 

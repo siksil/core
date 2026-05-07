@@ -8,12 +8,12 @@ from azure.kusto.data.exceptions import KustoAuthenticationError, KustoServiceEr
 from azure.kusto.ingest import StreamDescriptor
 import pytest
 
-from homeassistant.components import azure_data_explorer
-from homeassistant.components.azure_data_explorer.const import CONF_SEND_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components import azure_data_explorer
+from inpui.components.azure_data_explorer.const import CONF_SEND_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from . import FilterTest
 from .const import AZURE_DATA_EXPLORER_PATH, BASE_CONFIG_FULL, BASIC_OPTIONS

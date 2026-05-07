@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.conversation import ConversationResult, async_converse
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers.intent import IntentResponse
+from inpui.components.conversation import ConversationResult, async_converse
+from inpui.core import Context, HomeAssistant
+from inpui.helpers.intent import IntentResponse
 
 
 async def test_async_converse(hass: HomeAssistant, init_components) -> None:

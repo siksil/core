@@ -8,10 +8,10 @@ from typing import Any
 
 from peblar import Peblar, PeblarUserConfiguration, SmartChargingMode
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PeblarConfigEntry, PeblarUserConfigurationDataUpdateCoordinator
 from .entity import PeblarEntity

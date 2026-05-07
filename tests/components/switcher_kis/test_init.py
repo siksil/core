@@ -5,13 +5,13 @@ from datetime import timedelta
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.switcher_kis.const import DOMAIN, MAX_UPDATE_INTERVAL_SEC
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, slugify
+from inpui.components.switcher_kis.const import DOMAIN, MAX_UPDATE_INTERVAL_SEC
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, slugify
 
 from . import init_integration
 from .consts import (

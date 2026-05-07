@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -22,9 +22,9 @@ from homeassistant.components.fan import (
     SERVICE_TURN_ON,
     FanEntityFeature,
 )
-from homeassistant.components.group import SERVICE_RELOAD
-from homeassistant.components.group.fan import DEFAULT_NAME
-from homeassistant.const import (
+from inpui.components.group import SERVICE_RELOAD
+from inpui.components.group.fan import DEFAULT_NAME
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -36,9 +36,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, get_fixture_path
 

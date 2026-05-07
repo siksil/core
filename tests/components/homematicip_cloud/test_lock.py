@@ -5,10 +5,10 @@ from unittest.mock import patch
 from homematicip.base.enums import LockState as HomematicLockState, MotorState
 import pytest
 
-from homeassistant.components.lock import LockEntityFeature, LockState
-from homeassistant.const import ATTR_SUPPORTED_FEATURES
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.lock import LockEntityFeature, LockState
+from inpui.const import ATTR_SUPPORTED_FEATURES
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

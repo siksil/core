@@ -2,7 +2,7 @@
 
 from typing import Final
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_BINARY_SENSORS,
     CONF_LIGHTS,
     CONF_SENSORS,

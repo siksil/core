@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.const import PERCENTAGE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.const import PERCENTAGE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import (
     Trigger,
     make_entity_numerical_state_changed_trigger,
     make_entity_numerical_state_crossed_threshold_trigger,

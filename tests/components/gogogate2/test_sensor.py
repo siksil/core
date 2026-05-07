@@ -17,10 +17,10 @@ from ismartgate.common import (
     Wifi,
 )
 
-from homeassistant.components.gogogate2.const import DEVICE_TYPE_ISMARTGATE, DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.gogogate2.const import DEVICE_TYPE_ISMARTGATE, DOMAIN
+from inpui.components.sensor import SensorDeviceClass
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_DEVICE,
@@ -30,8 +30,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

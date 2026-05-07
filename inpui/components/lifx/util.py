@@ -12,7 +12,7 @@ from aiolifx.aiolifx import Light
 from aiolifx.message import Message
 from awesomeversion import AwesomeVersion
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_NAME,
@@ -21,9 +21,9 @@ from homeassistant.components.light import (
     ATTR_RGB_COLOR,
     ATTR_XY_COLOR,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.util import color as color_util
 
 from .const import (
     _LOGGER,

@@ -6,10 +6,10 @@ import pytest
 from switchbot_api import Device
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     CONTACT_SENSOR_INFO,

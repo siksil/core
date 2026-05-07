@@ -4,8 +4,8 @@ from datetime import timedelta
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.seventeentrack.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
+from inpui.components.seventeentrack.const import DEFAULT_SCAN_INTERVAL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

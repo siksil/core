@@ -7,10 +7,10 @@ from typing import Any
 from pycoolmasternet_async import CoolMasterNet
 import voluptuous as vol
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import callback
+from inpui.components.climate import HVACMode
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import callback
 
 from .const import (
     CONF_SEND_WAKEUP_PROMPT,

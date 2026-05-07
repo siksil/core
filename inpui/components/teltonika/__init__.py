@@ -6,16 +6,16 @@ import logging
 
 from teltasync import Teltasync
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import TeltonikaDataUpdateCoordinator
 from .util import normalize_url

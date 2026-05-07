@@ -10,9 +10,9 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.config_entries import ConfigFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
+from inpui.config_entries import ConfigFlow
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
 
 from .common import (
     DEFAULT_LANG,

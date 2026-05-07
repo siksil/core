@@ -10,8 +10,8 @@ import pytest
 from reolink_aio.enums import SubType
 from reolink_aio.exceptions import NotSupportedError, ReolinkError, SubscriptionError
 
-from homeassistant.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
-from homeassistant.components.reolink.host import (
+from inpui.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
+from inpui.components.reolink.host import (
     FIRST_ONVIF_LONG_POLL_TIMEOUT,
     FIRST_ONVIF_TIMEOUT,
     FIRST_TCP_PUSH_TIMEOUT,
@@ -19,14 +19,14 @@ from homeassistant.components.reolink.host import (
     LONG_POLL_ERROR_COOLDOWN,
     POLL_INTERVAL_NO_PUSH,
 )
-from homeassistant.components.webhook import async_handle_webhook
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.network import NoURLAvailableError
-from homeassistant.util.aiohttp import MockRequest
+from inpui.components.webhook import async_handle_webhook
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.network import NoURLAvailableError
+from inpui.util.aiohttp import MockRequest
 
 from .conftest import TEST_CAM_NAME
 

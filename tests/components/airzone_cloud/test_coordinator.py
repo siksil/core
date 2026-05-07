@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 from aioairzone_cloud.exceptions import AirzoneCloudError
 
-from homeassistant.components.airzone_cloud.const import DOMAIN
-from homeassistant.components.airzone_cloud.coordinator import SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components.airzone_cloud.const import DOMAIN
+from inpui.components.airzone_cloud.coordinator import SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from .util import (
     CONFIG,

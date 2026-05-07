@@ -15,17 +15,17 @@ from azure.servicebus.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 CONF_CONNECTION_STRING = "connection_string"
 CONF_QUEUE_NAME = "queue"

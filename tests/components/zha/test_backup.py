@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 from zigpy.application import ControllerApplication
 
-from homeassistant.components.zha.backup import async_post_backup, async_pre_backup
-from homeassistant.core import HomeAssistant
+from inpui.components.zha.backup import async_post_backup, async_pre_backup
+from inpui.core import HomeAssistant
 
 
 async def test_pre_backup(

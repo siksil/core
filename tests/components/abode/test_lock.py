@@ -6,16 +6,16 @@ from unittest.mock import patch
 from jaraco.abode.helpers import urls as URL
 from requests_mock import Mocker
 
-from homeassistant.components.abode import ATTR_DEVICE_ID
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.const import (
+from inpui.components.abode import ATTR_DEVICE_ID
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

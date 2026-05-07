@@ -10,18 +10,18 @@ import logging
 from types import ModuleType
 from typing import Any
 
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import Event, HassJob, HomeAssistant, callback
-from homeassistant.loader import (
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import Event, HassJob, HomeAssistant, callback
+from inpui.loader import (
     Integration,
     async_get_integrations,
     async_get_loaded_integration,
     async_register_preload_platform,
     bind_hass,
 )
-from homeassistant.setup import ATTR_COMPONENT, EventComponentLoaded
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.logging import catch_log_exception
+from inpui.setup import ATTR_COMPONENT, EventComponentLoaded
+from inpui.util.hass_dict import HassKey
+from inpui.util.logging import catch_log_exception
 
 _LOGGER = logging.getLogger(__name__)
 DATA_INTEGRATION_PLATFORMS: HassKey[list[IntegrationPlatform]] = HassKey(

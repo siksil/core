@@ -8,10 +8,10 @@ from typing import Any
 
 from epicstore_api import EpicGamesStoreAPI
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN, CalendarType
 from .helper import format_game_data

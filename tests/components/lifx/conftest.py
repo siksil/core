@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.lifx import config_flow, coordinator, util
+from inpui.components.lifx import config_flow, coordinator, util
 
 from . import _patch_discovery
 

@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 from freezegun.api import FrozenDateTimeFactory
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.teslemetry.coordinator import VEHICLE_INTERVAL
-from homeassistant.core import HomeAssistant
+from inpui.components.teslemetry.coordinator import VEHICLE_INTERVAL
+from inpui.core import HomeAssistant
 
 from . import setup_platform
 

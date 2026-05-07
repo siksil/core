@@ -7,19 +7,19 @@ import logging
 import greeneye
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PORT,
     CONF_SENSORS,
     CONF_TEMPERATURE_UNIT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
     UnitOfTime,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_CHANNELS,
@@ -128,7 +128,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Close the Monitors object."""
         await monitors.close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, close_monitors)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, close_monitors)
 
     num_sensors = 0
     for monitor_config in config[DOMAIN][CONF_MONITORS]:

@@ -11,10 +11,10 @@ from matter_server.common.helpers.util import dataclass_from_dict
 from matter_server.common.models import ServerDiagnostics
 import pytest
 
-from homeassistant.components.matter.const import DOMAIN
-from homeassistant.components.matter.diagnostics import redact_matter_attributes
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.matter.const import DOMAIN
+from inpui.components.matter.diagnostics import redact_matter_attributes
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.components.diagnostics import (

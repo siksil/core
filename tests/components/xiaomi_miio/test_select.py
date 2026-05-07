@@ -9,19 +9,19 @@ from miio.integrations.airpurifier.dmaker.airfresh_t2017 import (
 )
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.xiaomi_miio import UPDATE_INTERVAL
-from homeassistant.components.xiaomi_miio.const import (
+from inpui.components.xiaomi_miio import UPDATE_INTERVAL
+from inpui.components.xiaomi_miio.const import (
     CONF_FLOW_TYPE,
     DOMAIN,
     MODEL_AIRFRESH_T2017,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE,
     CONF_HOST,
@@ -30,8 +30,8 @@ from homeassistant.const import (
     CONF_TOKEN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from . import TEST_MAC
 

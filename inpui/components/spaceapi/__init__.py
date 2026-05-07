@@ -8,8 +8,8 @@ from aiohttp import web
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.const import (
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ICON,
     ATTR_LOCATION,
@@ -24,10 +24,10 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_URL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 ATTR_ADDRESS = "address"
 ATTR_SPACEFED = "spacefed"

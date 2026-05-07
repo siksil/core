@@ -11,7 +11,7 @@ from plexapi.client import PlexClient
 import plexapi.exceptions
 import requests.exceptions
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MP_DOMAIN,
     BrowseMedia,
     MediaPlayerEntity,
@@ -19,17 +19,17 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.network import is_internal_request
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.network import is_internal_request
 
 from .const import (
     COMMON_PLAYERS,

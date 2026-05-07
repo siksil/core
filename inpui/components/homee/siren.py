@@ -5,9 +5,9 @@ from typing import Any
 from pyHomee.const import AttributeType
 from pyHomee.model import HomeeNode
 
-from homeassistant.components.siren import SirenEntity, SirenEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.siren import SirenEntity, SirenEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeeConfigEntry
 from .entity import HomeeEntity

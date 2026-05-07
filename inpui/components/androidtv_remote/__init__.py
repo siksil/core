@@ -7,9 +7,9 @@ import logging
 
 from androidtvremote2 import CannotConnect, ConnectionClosed, InvalidAuth
 
-from homeassistant.const import CONF_HOST, CONF_NAME, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_NAME, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .helpers import AndroidTVRemoteConfigEntry, create_api, get_enable_ime
 
@@ -66,7 +66,7 @@ async def async_setup_entry(
         api.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, on_hass_stop)
     )
     entry.async_on_unload(api.disconnect)
 

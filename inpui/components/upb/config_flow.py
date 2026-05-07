@@ -9,9 +9,9 @@ from urllib.parse import urlparse
 import upb_lib
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS, CONF_FILE_PATH, CONF_HOST, CONF_PROTOCOL
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS, CONF_FILE_PATH, CONF_HOST, CONF_PROTOCOL
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 

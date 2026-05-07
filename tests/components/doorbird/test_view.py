@@ -2,7 +2,7 @@
 
 from http import HTTPStatus
 
-from homeassistant.components.doorbird.const import API_URL
+from inpui.components.doorbird.const import API_URL
 
 from .conftest import DoorbirdMockerType
 

@@ -7,9 +7,9 @@ from aiohttp import ClientConnectionError
 import faadelays
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ID
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ID
+from inpui.helpers import aiohttp_client
 
 from .const import DOMAIN
 

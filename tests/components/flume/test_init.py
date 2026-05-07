@@ -7,9 +7,9 @@ import pytest
 from requests_mock.mocker import Mocker
 
 from homeassistant import config_entries
-from homeassistant.components.flume.const import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.flume.const import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .conftest import USER_ID
 

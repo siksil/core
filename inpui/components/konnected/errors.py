@@ -1,6 +1,6 @@
 """Errors for the Konnected component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class KonnectedException(HomeAssistantError):

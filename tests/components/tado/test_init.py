@@ -7,9 +7,9 @@ from unittest.mock import patch
 
 from PyTado.http import Http
 
-from homeassistant.components.tado import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.tado import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

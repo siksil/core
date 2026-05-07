@@ -18,16 +18,16 @@ from hass_nabucasa.voice import Voice
 import jwt
 import pytest
 
-from homeassistant.components.cloud.client import CloudClient
-from homeassistant.components.cloud.const import DATA_CLOUD
-from homeassistant.components.cloud.prefs import (
+from inpui.components.cloud.client import CloudClient
+from inpui.components.cloud.const import DATA_CLOUD
+from inpui.components.cloud.prefs import (
     PREF_ALEXA_DEFAULT_EXPOSE,
     PREF_GOOGLE_DEFAULT_EXPOSE,
     CloudPreferences,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import mock_cloud, mock_cloud_prefs
 

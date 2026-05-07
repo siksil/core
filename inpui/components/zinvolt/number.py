@@ -5,14 +5,14 @@ from dataclasses import dataclass
 
 from zinvolt import ZinvoltClient
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfPower, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfPower, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import ZinvoltConfigEntry, ZinvoltData, ZinvoltDeviceCoordinator
 from .entity import ZinvoltEntity

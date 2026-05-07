@@ -6,13 +6,13 @@ from unittest.mock import AsyncMock
 from hole.exceptions import HoleConnectionError, HoleError
 import pytest
 
-import homeassistant
-from homeassistant.components import pi_hole
-from homeassistant.components.pi_hole.const import VERSION_6_RESPONSE_TO_5_ERROR
-from homeassistant.const import CONF_API_VERSION, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
+import inpui
+from inpui.components import pi_hole
+from inpui.components.pi_hole.const import VERSION_6_RESPONSE_TO_5_ERROR
+from inpui.const import CONF_API_VERSION, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
 
 from . import CONFIG_DATA_DEFAULTS, ZERO_DATA, _create_mocked_hole, _patch_init_hole
 

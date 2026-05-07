@@ -6,10 +6,10 @@ from typing import Any
 
 from tessie_api import lock, open_unlock_charge_port, unlock
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TessieConfigEntry
 from .const import DOMAIN, TessieChargeCableLockStates

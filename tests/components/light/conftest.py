@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.light import Profiles
-from homeassistant.core import HomeAssistant
+from inpui.components.light import Profiles
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(autouse=True)

@@ -14,14 +14,14 @@ from uiprotect.exceptions import ClientError, NotAuthorized
 from unifi_discovery import async_console_is_alive
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigEntryState,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_ID,
@@ -30,18 +30,18 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import (
     async_create_clientsession,
     async_get_clientsession,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.loader import async_get_integration
-from homeassistant.util.network import is_ip_address
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.loader import async_get_integration
+from inpui.util.network import is_ip_address
 
 from .const import (
     CONF_ALL_UPDATES,

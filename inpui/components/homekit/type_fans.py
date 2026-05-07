@@ -6,7 +6,7 @@ from typing import Any
 from pyhap.const import CATEGORY_FAN
 from pyhap.service import Service
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -22,7 +22,7 @@ from homeassistant.components.fan import (
     SERVICE_SET_PRESET_MODE,
     FanEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
@@ -30,7 +30,7 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import State, callback
+from inpui.core import State, callback
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

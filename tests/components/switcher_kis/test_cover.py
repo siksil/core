@@ -6,7 +6,7 @@ from aioswitcher.api.messages import SwitcherBaseResponse
 from aioswitcher.device import ShutterDirection
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
@@ -16,10 +16,10 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER,
     CoverState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import slugify
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import slugify
 
 from . import init_integration
 from .consts import (

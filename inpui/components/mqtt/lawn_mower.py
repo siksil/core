@@ -8,21 +8,21 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import lawn_mower
-from homeassistant.components.lawn_mower import (
+from inpui.components import lawn_mower
+from inpui.components.lawn_mower import (
     ENTITY_ID_FORMAT,
     LawnMowerActivity,
     LawnMowerEntity,
     LawnMowerEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_OPTIMISTIC
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_OPTIMISTIC
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import ConfigType, VolSchemaType
 
 from . import subscription
 from .config import MQTT_BASE_SCHEMA

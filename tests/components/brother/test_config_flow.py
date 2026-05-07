@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock
 from brother import SnmpError, UnsupportedModelError
 import pytest
 
-from homeassistant.components.brother.const import (
+from inpui.components.brother.const import (
     CONF_COMMUNITY,
     DOMAIN,
     SECTION_ADVANCED_SETTINGS,
 )
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import init_integration
 

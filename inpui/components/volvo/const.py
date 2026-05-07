@@ -1,6 +1,6 @@
 """Constants for the Volvo integration."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "volvo"
 PLATFORMS: list[Platform] = [

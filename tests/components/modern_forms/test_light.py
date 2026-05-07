@@ -5,14 +5,14 @@ from unittest.mock import patch
 from aiomodernforms import ModernFormsConnectionError
 import pytest
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.modern_forms.const import (
+from inpui.components.light import ATTR_BRIGHTNESS, DOMAIN as LIGHT_DOMAIN
+from inpui.components.modern_forms.const import (
     ATTR_SLEEP_TIME,
     DOMAIN,
     SERVICE_CLEAR_LIGHT_SLEEP_TIMER,
     SERVICE_SET_LIGHT_SLEEP_TIMER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     SERVICE_TURN_OFF,
@@ -20,8 +20,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

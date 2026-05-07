@@ -10,10 +10,10 @@ from typing import Any
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components import blueprint
-from homeassistant.components.trace import TRACE_CONFIG_SCHEMA
-from homeassistant.config import config_per_platform, config_without_domain
-from homeassistant.const import (
+from inpui.components import blueprint
+from inpui.components.trace import TRACE_CONFIG_SCHEMA
+from inpui.config import config_per_platform, config_without_domain
+from inpui.const import (
     CONF_ACTION,
     CONF_ACTIONS,
     CONF_ALIAS,
@@ -25,13 +25,13 @@ from homeassistant.const import (
     CONF_TRIGGERS,
     CONF_VARIABLES,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, script
-from homeassistant.helpers.condition import async_validate_conditions_config
-from homeassistant.helpers.trigger import async_validate_trigger_config
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.yaml.input import UndefinedSubstitution
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, script
+from inpui.helpers.condition import async_validate_conditions_config
+from inpui.helpers.trigger import async_validate_trigger_config
+from inpui.helpers.typing import ConfigType
+from inpui.util.yaml.input import UndefinedSubstitution
 
 from .const import (
     CONF_HIDE_ENTITY,

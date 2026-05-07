@@ -7,14 +7,14 @@ from unittest.mock import patch
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.mqtt import _LOGGER, DOMAIN, debug_info
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.trigger import async_initialize_triggers
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.mqtt import _LOGGER, DOMAIN, debug_info
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.trigger import async_initialize_triggers
+from inpui.setup import async_setup_component
 
 from .common import help_test_unload_config_entry
 

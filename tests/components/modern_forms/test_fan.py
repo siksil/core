@@ -5,7 +5,7 @@ from unittest.mock import patch
 from aiomodernforms import ModernFormsConnectionError
 import pytest
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_PERCENTAGE,
     DIRECTION_FORWARD,
@@ -14,21 +14,21 @@ from homeassistant.components.fan import (
     SERVICE_SET_DIRECTION,
     SERVICE_SET_PERCENTAGE,
 )
-from homeassistant.components.modern_forms.const import (
+from inpui.components.modern_forms.const import (
     ATTR_SLEEP_TIME,
     DOMAIN,
     SERVICE_CLEAR_FAN_SLEEP_TIMER,
     SERVICE_SET_FAN_SLEEP_TIMER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

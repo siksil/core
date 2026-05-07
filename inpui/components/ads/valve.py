@@ -5,18 +5,18 @@ from __future__ import annotations
 import pyads
 import voluptuous as vol
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     DEVICE_CLASSES_SCHEMA as VALVE_DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA as VALVE_PLATFORM_SCHEMA,
     ValveDeviceClass,
     ValveEntity,
     ValveEntityFeature,
 )
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_DEVICE_CLASS, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_ADS_VAR, DATA_ADS
 from .entity import AdsEntity

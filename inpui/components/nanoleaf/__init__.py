@@ -8,17 +8,17 @@ import logging
 
 from aionanoleaf2 import EffectsEvent, Nanoleaf, StateEvent, TouchEvent
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_HOST,
     CONF_TOKEN,
     CONF_TYPE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import DOMAIN, NANOLEAF_EVENT, TOUCH_GESTURE_TRIGGER_MAP, TOUCH_MODELS
 from .coordinator import NanoleafConfigEntry, NanoleafCoordinator

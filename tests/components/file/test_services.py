@@ -5,14 +5,14 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.file import DOMAIN
-from homeassistant.components.file.services import (
+from inpui.components.file import DOMAIN
+from inpui.components.file.services import (
     ATTR_FILE_ENCODING,
     ATTR_FILE_NAME,
     SERVICE_READ_FILE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 
 @pytest.mark.parametrize(

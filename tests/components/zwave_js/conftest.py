@@ -15,12 +15,12 @@ from zwave_js_server.model.node import Node
 from zwave_js_server.model.node.data_model import NodeDataType
 from zwave_js_server.version import VersionInfo
 
-from homeassistant.components.zwave_js import PLATFORMS
-from homeassistant.components.zwave_js.const import DOMAIN
-from homeassistant.components.zwave_js.helpers import SERVER_VERSION_TIMEOUT
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.components.zwave_js import PLATFORMS
+from inpui.components.zwave_js.const import DOMAIN
+from inpui.components.zwave_js.helpers import SERVER_VERSION_TIMEOUT
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from tests.common import (
     MockConfigEntry,

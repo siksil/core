@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_FORECAST_CLOUD_COVERAGE,
     ATTR_FORECAST_HUMIDITY,
     ATTR_FORECAST_IS_DAYTIME,
@@ -24,7 +24,7 @@ from homeassistant.components.weather import (
     Forecast,
     WeatherEntity,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockEntity
 

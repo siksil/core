@@ -14,11 +14,11 @@ from aiontfy.exceptions import (
     NtfyTimeoutError,
 )
 
-from homeassistant.components.event import EventEntity, EventEntityDescription
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity, EventEntityDescription
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_MESSAGE,

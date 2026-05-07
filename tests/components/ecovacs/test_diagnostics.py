@@ -4,8 +4,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import VALID_ENTRY_DATA_CLOUD, VALID_ENTRY_DATA_SELF_HOSTED
 

@@ -8,12 +8,12 @@ from typing import Any
 import voluptuous as vol
 from zwave_js_server.const import CommandClass
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.homeassistant.triggers import event, state
-from homeassistant.const import (
+from inpui.components.homeassistant.triggers import event, state
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
@@ -21,15 +21,15 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, Context, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import CALLBACK_TYPE, Context, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .config_validation import VALUE_SCHEMA
 from .const import (

@@ -3,7 +3,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 
 @dataclass

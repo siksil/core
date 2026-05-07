@@ -1,10 +1,10 @@
 """Tests for the mfa setup flow."""
 
-from homeassistant.auth import auth_manager_from_config
-from homeassistant.components.auth import mfa_setup_flow
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.auth import auth_manager_from_config
+from inpui.components.auth import mfa_setup_flow
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.common import CLIENT_ID, MockUser, ensure_auth_manager_loaded
 from tests.typing import WebSocketGenerator

@@ -23,13 +23,13 @@ from demetriek import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_DEVICE, CONF_HOST, CONF_MAC
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_DEVICE, CONF_HOST, CONF_MAC
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
@@ -38,13 +38,13 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.util.network import is_link_local
+from inpui.util.network import is_link_local
 
 from .const import DOMAIN, LOGGER
 

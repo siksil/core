@@ -8,18 +8,18 @@ from typing import cast
 
 from xiaomi_ble import EncryptionScheme, SensorUpdate, XiaomiBluetoothDeviceData
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN as BLUETOOTH_DOMAIN,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceRegistry
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceRegistry
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     CONF_DISCOVERED_EVENT_CLASSES,

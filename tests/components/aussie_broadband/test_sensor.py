@@ -1,8 +1,8 @@
 """Aussie Broadband sensor platform tests."""
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 

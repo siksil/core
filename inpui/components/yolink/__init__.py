@@ -13,21 +13,21 @@ from yolink.exception import YoLinkAuthFailError, YoLinkClientError
 from yolink.home_manager import YoLinkHome
 from yolink.message_listener import MessageListener
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
 )
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from . import api
 from .const import ATTR_LORA_INFO, DOMAIN, SUPPORTED_REMOTERS, YOLINK_EVENT
@@ -198,7 +198,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await yolink_home.async_unload()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_yolink_unload)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_yolink_unload)
     )
 
     return True

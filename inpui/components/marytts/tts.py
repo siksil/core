@@ -7,14 +7,14 @@ from typing import Any
 from speak2mary import MaryTTS
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     CONF_LANG,
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.const import CONF_EFFECT, CONF_HOST, CONF_PORT
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_EFFECT, CONF_HOST, CONF_PORT
+from inpui.helpers import config_validation as cv
 
 CONF_VOICE = "voice"
 CONF_CODEC = "codec"

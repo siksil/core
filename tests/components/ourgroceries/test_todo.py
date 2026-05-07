@@ -6,17 +6,17 @@ from aiohttp import ClientError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.ourgroceries.coordinator import SCAN_INTERVAL
-from homeassistant.components.todo import (
+from inpui.components.ourgroceries.coordinator import SCAN_INTERVAL
+from inpui.components.todo import (
     ATTR_ITEM,
     ATTR_RENAME,
     ATTR_STATUS,
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
 
 from . import items_to_shopping_list
 

@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.fan import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.fan import (
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
@@ -16,9 +16,9 @@ from homeassistant.components.fan import (
     SERVICE_SET_PERCENTAGE,
     SERVICE_SET_PRESET_MODE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     AIR_PURIFIER_PM25_SERVICE_INFO,

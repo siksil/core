@@ -5,8 +5,8 @@ from contextlib import AbstractContextManager, nullcontext as does_not_raise
 
 import pytest
 
-from homeassistant.components.config import view
-from homeassistant.core import HomeAssistant
+from inpui.components.config import view
+from inpui.core import HomeAssistant
 
 
 async def _mock_validator(hass: HomeAssistant, key: str, data: dict) -> dict:

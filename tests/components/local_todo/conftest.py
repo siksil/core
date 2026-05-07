@@ -7,13 +7,13 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.local_todo import LocalTodoListStore
-from homeassistant.components.local_todo.const import (
+from inpui.components.local_todo import LocalTodoListStore
+from inpui.components.local_todo.const import (
     CONF_STORAGE_KEY,
     CONF_TODO_LIST_NAME,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

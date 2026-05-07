@@ -8,14 +8,14 @@ from typing import Any
 from homematicip.base.functionalChannels import NotificationMp3SoundChannel
 from homematicip.device import CombinationSignallingDevice
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     SirenEntity,
     SirenEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry, HomematicipHAP

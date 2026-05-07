@@ -2,12 +2,12 @@
 
 import pytest
 
-from homeassistant.components.geonetnz_quakes import (
+from inpui.components.geonetnz_quakes import (
     CONF_MINIMUM_MAGNITUDE,
     CONF_MMI,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,

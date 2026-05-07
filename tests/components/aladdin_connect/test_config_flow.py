@@ -5,16 +5,16 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.aladdin_connect.const import (
+from inpui.components.aladdin_connect.const import (
     DOMAIN,
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import CLIENT_ID, USER_ID
 

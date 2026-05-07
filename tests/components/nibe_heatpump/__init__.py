@@ -8,9 +8,9 @@ from nibe.connection import Connection
 from nibe.exceptions import ReadException
 from nibe.heatpump import HeatPump, Model
 
-from homeassistant.components.nibe_heatpump import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nibe_heatpump import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

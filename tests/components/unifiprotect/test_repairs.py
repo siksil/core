@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock
 
 from uiprotect.data import Camera, CloudAccount, Version
 
-from homeassistant.components.unifiprotect.const import CONF_DISABLE_RTSP, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.unifiprotect.const import CONF_DISABLE_RTSP, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from .utils import MockUFPFixture, init_entry
 

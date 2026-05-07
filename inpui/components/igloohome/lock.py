@@ -13,10 +13,10 @@ from igloohome_api import (
     GetDeviceInfoResponse,
 )
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityFeature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import IgloohomeConfigEntry
 from .entity import IgloohomeBaseEntity

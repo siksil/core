@@ -7,10 +7,10 @@ from nexia.const import BRAND_ASAIR, BRAND_NEXIA
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.nexia.const import CONF_BRAND, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nexia.const import CONF_BRAND, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.mark.parametrize("brand", [BRAND_ASAIR, BRAND_NEXIA])

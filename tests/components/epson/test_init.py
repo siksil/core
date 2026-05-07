@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.epson.const import CONF_CONNECTION_TYPE, DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.epson.const import CONF_CONNECTION_TYPE, DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

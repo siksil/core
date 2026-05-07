@@ -7,10 +7,10 @@ from typing import TYPE_CHECKING
 
 from zha.application.const import ZHA_EVENT
 
-from homeassistant.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
-from homeassistant.const import ATTR_COMMAND, ATTR_DEVICE_ID
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
+from inpui.const import ATTR_COMMAND, ATTR_DEVICE_ID
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .helpers import async_get_zha_device_proxy

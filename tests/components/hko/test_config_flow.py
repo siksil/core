@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 from hko import HKOError
 
-from homeassistant.components.hko.const import DEFAULT_LOCATION, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_LOCATION
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.hko.const import DEFAULT_LOCATION, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_LOCATION
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_config_flow_default(hass: HomeAssistant) -> None:

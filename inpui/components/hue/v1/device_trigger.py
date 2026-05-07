@@ -6,12 +6,12 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.homeassistant.triggers import event as event_trigger
-from homeassistant.const import (
+from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_EVENT,
@@ -19,10 +19,10 @@ from homeassistant.const import (
     CONF_TYPE,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from ..const import ATTR_HUE_EVENT, CONF_SUBTYPE, DOMAIN
 

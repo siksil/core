@@ -9,13 +9,13 @@ from typing import TYPE_CHECKING
 from python_qube_heatpump import QubeClient
 from python_qube_heatpump.models import QubeState
 
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN
 
 if TYPE_CHECKING:
-    from homeassistant.config_entries import ConfigEntry
-    from homeassistant.core import HomeAssistant
+    from inpui.config_entries import ConfigEntry
+    from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

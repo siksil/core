@@ -8,14 +8,14 @@ from typing import Any
 
 from aio_geojson_geonetnz_quakes.feed_entry import GeonetnzQuakesFeedEntry
 
-from homeassistant.components.geo_location import GeolocationEvent
-from homeassistant.const import ATTR_TIME, UnitOfLength
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_conversion import DistanceConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components.geo_location import GeolocationEvent
+from inpui.const import ATTR_TIME, UnitOfLength
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_conversion import DistanceConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import GeonetnzQuakesConfigEntry, GeonetnzQuakesFeedEntityManager
 

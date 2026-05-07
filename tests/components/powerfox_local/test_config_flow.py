@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock
 from powerfox import LocalResponse, PowerfoxAuthenticationError, PowerfoxConnectionError
 import pytest
 
-from homeassistant.components.powerfox_local.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_API_KEY, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.powerfox_local.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_API_KEY, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import MOCK_API_KEY, MOCK_DEVICE_ID, MOCK_HOST
 

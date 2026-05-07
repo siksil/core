@@ -4,14 +4,14 @@ from unittest.mock import MagicMock, PropertyMock, patch
 
 from canary.model import SensorType
 
-from homeassistant.components.canary.const import (
+from inpui.components.canary.const import (
     CONF_FFMPEG_ARGUMENTS,
     DEFAULT_FFMPEG_ARGUMENTS,
     DEFAULT_TIMEOUT,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_TIMEOUT, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_TIMEOUT, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

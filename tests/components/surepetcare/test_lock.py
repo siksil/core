@@ -3,8 +3,8 @@
 import pytest
 from surepy.exceptions import SurePetcareError
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import HOUSEHOLD_ID, MOCK_CAT_FLAP, MOCK_PET_FLAP
 

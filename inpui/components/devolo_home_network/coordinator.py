@@ -16,11 +16,11 @@ from devolo_plc_api.device_api import (
 from devolo_plc_api.exceptions.device import DevicePasswordProtected, DeviceUnavailable
 from devolo_plc_api.plcnet_api import LogicalNetwork
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     CONNECTED_PLC_DEVICES,

@@ -5,17 +5,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.lg_netcast import DOMAIN, device_trigger
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.lg_netcast import DOMAIN, device_trigger
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import ENTITY_ID, UNIQUE_ID, setup_lgnetcast
 

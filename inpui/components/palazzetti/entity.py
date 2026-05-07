@@ -1,7 +1,7 @@
 """Base class for Palazzetti entities."""
 
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers import device_registry as dr
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import PALAZZETTI
 from .coordinator import PalazzettiDataUpdateCoordinator

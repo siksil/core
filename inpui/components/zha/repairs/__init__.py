@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any, cast
 
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from ..const import DOMAIN
 from .network_settings_inconsistent import (

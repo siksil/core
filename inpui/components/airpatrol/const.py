@@ -5,7 +5,7 @@ import logging
 
 from airpatrol.api import AirPatrolAuthenticationError, AirPatrolError
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "airpatrol"
 

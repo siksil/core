@@ -16,8 +16,8 @@ from synology_dsm.exceptions import (
     SynologyDSMRequestException,
 )
 
-from homeassistant.const import Platform
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import Platform
+from inpui.util.hass_dict import HassKey
 
 DOMAIN = "synology_dsm"
 DATA_BACKUP_AGENT_LISTENERS: HassKey[list[Callable[[], None]]] = HassKey(

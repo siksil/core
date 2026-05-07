@@ -7,9 +7,9 @@ from kaleidescape import Dispatcher
 from kaleidescape.device import Automation, Movie, Power, System
 import pytest
 
-from homeassistant.components.kaleidescape.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.kaleidescape.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from . import MOCK_HOST, MOCK_SERIAL
 

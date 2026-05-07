@@ -11,15 +11,15 @@ from aioautomower.utils import mower_list_to_dictionary_dataclass
 from aiohttp import ClientWebSocketResponse
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.husqvarna_automower.const import DOMAIN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.husqvarna_automower.const import DOMAIN
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .const import CLIENT_ID, CLIENT_SECRET, USER_ID
 

@@ -11,26 +11,26 @@ import pytest
 from sqlalchemy.exc import SQLAlchemyError
 
 from homeassistant import config_entries
-from homeassistant.components.recorder import CONF_DB_URL, Recorder
-from homeassistant.components.sensor import (
+from inpui.components.recorder import CONF_DB_URL, Recorder
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.sql.const import (
+from inpui.components.sql.const import (
     CONF_ADVANCED_OPTIONS,
     CONF_COLUMN_NAME,
     CONF_QUERY,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_NAME,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType, InvalidData
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType, InvalidData
 
 from . import (
     ENTRY_CONFIG,

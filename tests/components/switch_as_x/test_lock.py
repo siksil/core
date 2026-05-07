@@ -1,14 +1,14 @@
 """Tests for the Switch as X Lock platform."""
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
-from homeassistant.components.switch_as_x.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
+from inpui.components.switch_as_x.const import (
     CONF_INVERT,
     CONF_TARGET_DOMAIN,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_TOGGLE,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

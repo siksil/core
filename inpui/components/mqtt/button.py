@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components import button
-from homeassistant.components.button import DEVICE_CLASSES_SCHEMA, ButtonEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import button
+from inpui.components.button import DEVICE_CLASSES_SCHEMA, ButtonEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .config import DEFAULT_RETAIN, MQTT_BASE_SCHEMA
 from .const import (

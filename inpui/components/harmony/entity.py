@@ -6,9 +6,9 @@ from collections.abc import Callable
 from datetime import datetime
 import logging
 
-from homeassistant.core import callback
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import async_call_later
+from inpui.core import callback
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import async_call_later
 
 from .data import HarmonyData
 

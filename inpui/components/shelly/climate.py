@@ -10,7 +10,7 @@ from aioshelly.block_device import Block
 from aioshelly.const import BLU_TRV_IDENTIFIER, RPC_GENERATIONS
 from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
     PRESET_NONE,
     ClimateEntity,
@@ -19,16 +19,16 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
-from homeassistant.helpers.restore_state import ExtraStoredData, RestoreEntity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
+from inpui.helpers.restore_state import ExtraStoredData, RestoreEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (
     BLU_TRV_TEMPERATURE_SETTINGS,

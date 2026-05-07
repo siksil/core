@@ -2,10 +2,10 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, ButtonDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, ButtonDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MAC, setup_onvif_integration
 

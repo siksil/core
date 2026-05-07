@@ -15,7 +15,7 @@ from fritzconnection.core.exceptions import (
 )
 from requests.exceptions import ConnectionError
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 
 class MeshRoles(StrEnum):

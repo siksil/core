@@ -9,20 +9,20 @@ from typing import TYPE_CHECKING, Any
 
 from asusrouter import AsusRouterError
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
     DOMAIN as TRACKER_DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util import dt as dt_util, slugify
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo, format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util import dt as dt_util, slugify
 
 from .bridge import AsusWrtBridge, WrtDevice
 from .const import (

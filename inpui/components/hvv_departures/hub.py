@@ -2,7 +2,7 @@
 
 from pygti.gti import GTI, Auth
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type HVVConfigEntry = ConfigEntry[GTIHub]
 

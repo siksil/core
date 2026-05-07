@@ -7,8 +7,8 @@ from unittest.mock import MagicMock, patch
 from irm_kmi_api import IrmKmiApiError
 import pytest
 
-from homeassistant.components.irm_kmi.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.irm_kmi.const import DOMAIN
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_LOCATION,

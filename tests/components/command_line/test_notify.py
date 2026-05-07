@@ -11,9 +11,9 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.command_line import DOMAIN
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.command_line import DOMAIN
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.core import HomeAssistant
 
 
 async def test_setup_platform_yaml(hass: HomeAssistant) -> None:

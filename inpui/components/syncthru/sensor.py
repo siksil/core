@@ -8,10 +8,10 @@ from typing import Any, cast
 
 from pysyncthru import SyncThru, SyncthruState
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.const import PERCENTAGE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.const import PERCENTAGE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SyncThruConfigEntry
 from .entity import SyncthruEntity

@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.ambient_station.const import CONF_APP_KEY, DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType, JsonObjectType
+from inpui.components.ambient_station.const import CONF_APP_KEY, DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType, JsonObjectType
 
 from tests.common import (
     MockConfigEntry,

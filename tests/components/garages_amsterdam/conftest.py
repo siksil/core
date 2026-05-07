@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, patch
 from odp_amsterdam import Garage, GarageCategory, VehicleType
 import pytest
 
-from homeassistant.components.garages_amsterdam.const import DOMAIN
+from inpui.components.garages_amsterdam.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

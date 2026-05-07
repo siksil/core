@@ -12,32 +12,32 @@ import aiohttp
 import pytest
 from universal_silabs_flasher.flasher import DeviceSpecificFlasher, Zbt1Flasher
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.homeassistant_hardware import DOMAIN
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant_hardware import DOMAIN
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_notify_firmware_info,
     async_register_firmware_info_provider,
 )
-from homeassistant.components.homeassistant_hardware.update import (
+from inpui.components.homeassistant_hardware.update import (
     BaseFirmwareUpdateEntity,
     FirmwareUpdateEntityDescription,
     FirmwareUpdateExtraStoredData,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningIntegration,
 )
-from homeassistant.components.update import UpdateDeviceClass
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import EVENT_STATE_CHANGED, EntityCategory, Platform
-from homeassistant.core import (
+from inpui.components.update import UpdateDeviceClass
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import EVENT_STATE_CHANGED, EntityCategory, Platform
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
@@ -45,11 +45,11 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from .common import TEST_DOMAIN, TEST_FIRMWARE_RELEASES_URL, TEST_MANIFEST
 

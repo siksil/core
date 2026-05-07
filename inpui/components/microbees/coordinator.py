@@ -12,9 +12,9 @@ from typing import TYPE_CHECKING
 import aiohttp
 from microBeesPy import Actuator, Bee, MicroBees, MicroBeesException, Sensor
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import MicroBeesConfigEntry

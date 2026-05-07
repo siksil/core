@@ -1,12 +1,12 @@
 """The tests for Switch as X platforms."""
 
-from homeassistant.components.cover import CoverEntityFeature
-from homeassistant.components.fan import FanEntityFeature
-from homeassistant.components.light import ATTR_SUPPORTED_COLOR_MODES, ColorMode
-from homeassistant.components.lock import LockState
-from homeassistant.components.siren import SirenEntityFeature
-from homeassistant.components.valve import ValveEntityFeature
-from homeassistant.const import STATE_CLOSED, STATE_OFF, STATE_ON, STATE_OPEN, Platform
+from inpui.components.cover import CoverEntityFeature
+from inpui.components.fan import FanEntityFeature
+from inpui.components.light import ATTR_SUPPORTED_COLOR_MODES, ColorMode
+from inpui.components.lock import LockState
+from inpui.components.siren import SirenEntityFeature
+from inpui.components.valve import ValveEntityFeature
+from inpui.const import STATE_CLOSED, STATE_OFF, STATE_ON, STATE_OPEN, Platform
 
 PLATFORMS_TO_TEST = (
     Platform.COVER,

@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from python_qube_heatpump.models import QubeState
 
-from homeassistant.components.hr_energy_qube.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.components.hr_energy_qube.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
 
 from tests.common import MockConfigEntry
 

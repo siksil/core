@@ -8,14 +8,14 @@ from typing import TYPE_CHECKING
 from synology_dsm.api.core.security import SynoCoreSecurity
 from synology_dsm.api.storage.storage import SynoStorage
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import CONF_DISKS, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import CONF_DISKS, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SynoApi
 from .coordinator import SynologyDSMCentralUpdateCoordinator, SynologyDSMConfigEntry

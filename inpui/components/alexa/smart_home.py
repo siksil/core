@@ -7,16 +7,16 @@ from aiohttp import web
 from yarl import URL
 
 from homeassistant import core
-from homeassistant.auth.models import User
-from homeassistant.components.http import (
+from inpui.auth.models import User
+from inpui.components.http import (
     KEY_HASS,
     HomeAssistantRequest,
     HomeAssistantView,
 )
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import ConfigType
 
 from .auth import Auth
 from .config import AbstractConfig

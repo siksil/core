@@ -19,11 +19,11 @@ from aiolookin import (
 )
 from aiolookin.models import UDPCommandType, UDPEvent
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     DOMAIN,

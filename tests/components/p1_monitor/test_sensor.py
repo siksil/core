@@ -5,13 +5,13 @@ from unittest.mock import MagicMock
 from p1monitor import P1MonitorNoDataError
 import pytest
 
-from homeassistant.components.p1_monitor.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.p1_monitor.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

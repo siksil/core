@@ -4,15 +4,15 @@ from typing import Any
 
 from microBeesPy import Actuator
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from . import MicroBeesConfigEntry
 from .entity import MicroBeesEntity

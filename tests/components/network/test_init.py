@@ -9,8 +9,8 @@ from unittest.mock import MagicMock, Mock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import network
-from homeassistant.components.network.const import (
+from inpui.components import network
+from inpui.components.network.const import (
     ATTR_ADAPTERS,
     ATTR_CONFIGURED_ADAPTERS,
     DOMAIN,
@@ -18,10 +18,10 @@ from homeassistant.components.network.const import (
     STORAGE_KEY,
     STORAGE_VERSION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import LOOPBACK_IPADDR, NO_LOOPBACK_IPADDR
 

@@ -6,8 +6,8 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import async_ as hasync
+from inpui.core import HomeAssistant
+from inpui.util import async_ as hasync
 
 from tests.common import extract_stack_to_frame
 

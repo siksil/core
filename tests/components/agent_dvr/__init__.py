@@ -1,8 +1,8 @@
 """Tests for the agent_dvr component."""
 
-from homeassistant.components.agent_dvr.const import DOMAIN, SERVER_URL
-from homeassistant.const import CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
+from inpui.components.agent_dvr.const import DOMAIN, SERVER_URL
+from inpui.const import CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

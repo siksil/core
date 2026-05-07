@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock
 import botocore.exceptions
 import pytest
 
-from homeassistant.components.gentex_homelink.const import DOMAIN, OAUTH2_TOKEN_URL
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.gentex_homelink.const import DOMAIN, OAUTH2_TOKEN_URL
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     INVALID_TEST_ACCESS_JWT,

@@ -6,11 +6,11 @@ from collections.abc import Callable
 import datetime
 from typing import TYPE_CHECKING, Any, cast
 
-from homeassistant.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.loader import bind_hass
-from homeassistant.util import dt as dt_util
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
+from inpui.core import HomeAssistant, callback
+from inpui.loader import bind_hass
+from inpui.util import dt as dt_util
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     import astral

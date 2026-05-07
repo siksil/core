@@ -14,7 +14,7 @@ from lunatone_rest_api_client.models import (
 from lunatone_rest_api_client.models.common import Status
 from lunatone_rest_api_client.models.devices import DeviceStatus
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

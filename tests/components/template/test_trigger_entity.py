@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.template import DOMAIN, trigger_entity
-from homeassistant.components.template.coordinator import TriggerUpdateCoordinator
-from homeassistant.const import CONF_ICON, CONF_NAME, CONF_STATE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import template
-from homeassistant.helpers.trigger_template_entity import CONF_PICTURE
-from homeassistant.setup import async_setup_component
+from inpui.components.template import DOMAIN, trigger_entity
+from inpui.components.template.coordinator import TriggerUpdateCoordinator
+from inpui.const import CONF_ICON, CONF_NAME, CONF_STATE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import template
+from inpui.helpers.trigger_template_entity import CONF_PICTURE
+from inpui.setup import async_setup_component
 
 from .conftest import async_trigger
 

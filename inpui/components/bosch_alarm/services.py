@@ -8,11 +8,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, service
+from inpui.util import dt as dt_util
 
 from .const import ATTR_DATETIME, DOMAIN, SERVICE_SET_DATE_TIME
 from .types import BoschAlarmConfigEntry

@@ -12,11 +12,11 @@ from PyViCare.PyViCareUtils import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_CLIENT_ID, CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN, VICARE_NAME, VIESSMANN_DEVELOPER_PORTAL
 from .utils import login

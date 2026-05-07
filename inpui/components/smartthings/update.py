@@ -7,13 +7,13 @@ from typing import Any
 from awesomeversion import AwesomeVersion
 from pysmartthings import Attribute, Capability, Command
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SmartThingsConfigEntry
 from .const import MAIN

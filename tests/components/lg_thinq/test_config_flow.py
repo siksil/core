@@ -2,13 +2,13 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.lg_thinq.const import CONF_CONNECT_CLIENT_ID, DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_COUNTRY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.lg_thinq.const import CONF_CONNECT_CLIENT_ID, DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_COUNTRY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import MOCK_CONNECT_CLIENT_ID, MOCK_COUNTRY, MOCK_PAT
 

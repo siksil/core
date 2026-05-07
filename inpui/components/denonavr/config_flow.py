@@ -10,15 +10,15 @@ import denonavr
 from denonavr.exceptions import AvrNetworkError, AvrTimoutError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_HOST, CONF_MODEL, CONF_TYPE
-from homeassistant.core import callback
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_HOST, CONF_MODEL, CONF_TYPE
+from inpui.core import callback
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_MODEL_NAME,

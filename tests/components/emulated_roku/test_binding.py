@@ -3,7 +3,7 @@
 from unittest.mock import AsyncMock, Mock, patch
 from uuid import uuid4
 
-from homeassistant.components.emulated_roku.binding import (
+from inpui.components.emulated_roku.binding import (
     ATTR_APP_ID,
     ATTR_COMMAND_TYPE,
     ATTR_KEY,
@@ -15,7 +15,7 @@ from homeassistant.components.emulated_roku.binding import (
     ROKU_COMMAND_LAUNCH,
     EmulatedRoku,
 )
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.core import Event, HomeAssistant, callback
 
 
 async def test_events_fired_properly(hass: HomeAssistant) -> None:

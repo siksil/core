@@ -6,12 +6,12 @@ from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from typing import Final, cast
 
-from homeassistant.components.stream import Orientation
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.stream import Orientation
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .const import DATA_CAMERA_PREFS, DOMAIN, PREF_ORIENTATION, PREF_PRELOAD_STREAM
 

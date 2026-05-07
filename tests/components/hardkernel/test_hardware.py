@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.hardkernel.const import DOMAIN
-from homeassistant.components.hassio import DOMAIN as HASSIO_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.hardkernel.const import DOMAIN
+from inpui.components.hassio import DOMAIN as HASSIO_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 from tests.typing import WebSocketGenerator

@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.github import CONF_REPOSITORIES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er, icon
+from inpui.components.github import CONF_REPOSITORIES
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er, icon
 
 from . import setup_integration
 

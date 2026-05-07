@@ -10,15 +10,15 @@ from opendata_transport.exceptions import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.swiss_public_transport.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.swiss_public_transport.const import (
     DEFAULT_UPDATE_TIME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

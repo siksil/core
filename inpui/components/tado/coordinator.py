@@ -9,11 +9,11 @@ from typing import Any
 from PyTado.interface import Tado
 from requests import RequestException
 
-from homeassistant.components.climate import PRESET_AWAY, PRESET_HOME
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.climate import PRESET_AWAY, PRESET_HOME
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
     CONF_FALLBACK,

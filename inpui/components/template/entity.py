@@ -5,13 +5,13 @@ from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.const import CONF_DEVICE_ID, CONF_OPTIMISTIC
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity import Entity, async_generate_entity_id
-from homeassistant.helpers.script import Script, _VarsType
-from homeassistant.helpers.template import Template, TemplateStateFromEntityId
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DEVICE_ID, CONF_OPTIMISTIC
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity import Entity, async_generate_entity_id
+from inpui.helpers.script import Script, _VarsType
+from inpui.helpers.template import Template, TemplateStateFromEntityId
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_DEFAULT_ENTITY_ID
 

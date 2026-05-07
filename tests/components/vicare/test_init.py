@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.vicare.const import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.vicare.const import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import ENTRY_CONFIG, MODULE
 from .conftest import Fixture, MockPyViCare

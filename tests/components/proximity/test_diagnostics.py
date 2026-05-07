@@ -5,15 +5,15 @@ from __future__ import annotations
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.proximity.const import (
+from inpui.components.proximity.const import (
     CONF_IGNORED_ZONES,
     CONF_TOLERANCE,
     CONF_TRACKED_ENTITIES,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ZONE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ZONE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

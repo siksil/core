@@ -2,16 +2,16 @@
 
 from unittest.mock import Mock
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_EFFECT,
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.util import color as color_util
-from homeassistant.util.json import JsonArrayType
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.util import color as color_util
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_platform
 from .const import FAKE_DEVICE, FAKE_LIGHT, FAKE_ZIGBEE_CONNECTIVITY

@@ -6,9 +6,9 @@ from typing import Final
 
 from pdunehd import DuneHDPlayer
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 PLATFORMS: Final[list[Platform]] = [Platform.MEDIA_PLAYER]
 

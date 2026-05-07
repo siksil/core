@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 
 from tesla_powerwall import GridStatus, MeterType
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PowerwallConfigEntry
 from .entity import PowerWallEntity

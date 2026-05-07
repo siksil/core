@@ -6,8 +6,8 @@ import asyncio
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import Context, HomeAssistant, State
 
 from .const import (
     ATTR_FAN_MODE,

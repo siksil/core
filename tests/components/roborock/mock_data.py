@@ -28,8 +28,8 @@ from vacuum_map_parser_base.config.image_config import ImageConfig
 from vacuum_map_parser_base.map_data import ImageData
 from vacuum_map_parser_roborock.map_data_parser import MapData
 
-from homeassistant.components.roborock import CONF_BASE_URL, CONF_USER_DATA
-from homeassistant.const import CONF_USERNAME
+from inpui.components.roborock import CONF_BASE_URL, CONF_USER_DATA
+from inpui.const import CONF_USERNAME
 
 # All data is based on a U.S. customer with a Roborock S7 MaxV Ultra
 USER_EMAIL = "user@domain.com"

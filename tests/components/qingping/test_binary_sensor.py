@@ -3,13 +3,13 @@
 from datetime import timedelta
 import time
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
 )
-from homeassistant.components.qingping.const import DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.qingping.const import DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import LIGHT_AND_SIGNAL_SERVICE_INFO, NO_DATA_SERVICE_INFO
 

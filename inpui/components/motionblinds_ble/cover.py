@@ -8,7 +8,7 @@ from typing import Any
 
 from motionblindsble.const import MotionBlindType, MotionRunningType
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverDeviceClass,
@@ -16,8 +16,8 @@ from homeassistant.components.cover import (
     CoverEntityDescription,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MotionConfigEntry
 from .const import CONF_BLIND_TYPE, CONF_MAC_CODE, ICON_VERTICAL_BLIND

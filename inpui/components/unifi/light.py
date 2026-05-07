@@ -11,7 +11,7 @@ from aiounifi.interfaces.devices import Devices
 from aiounifi.models.api import ApiItem
 from aiounifi.models.device import Device, DeviceSetLedStatus
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_RGB_COLOR,
     ColorMode,
@@ -19,10 +19,10 @@ from homeassistant.components.light import (
     LightEntityDescription,
     LightEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import rgb_hex_to_rgb_list
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import rgb_hex_to_rgb_list
 
 from . import UnifiConfigEntry
 from .entity import (

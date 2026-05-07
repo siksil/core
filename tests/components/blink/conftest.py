@@ -6,8 +6,8 @@ from uuid import uuid4
 import blinkpy
 import pytest
 
-from homeassistant.components.blink.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.blink.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry
 

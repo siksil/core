@@ -3,17 +3,17 @@
 from pysmappee import Smappee, helper, mqtt
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_IP_ADDRESS,
     CONF_PLATFORM,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow, config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import Throttle
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow, config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import Throttle
 
 from . import api, config_flow
 from .const import (

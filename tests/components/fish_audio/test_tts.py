@@ -10,18 +10,18 @@ from fishaudio import RateLimitError
 from fishaudio.exceptions import ServerError
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.components.fish_audio.const import CONF_BACKEND
-from homeassistant.components.media_player import (
+from inpui.components import tts
+from inpui.components.fish_audio.const import CONF_BACKEND
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.core_config import async_process_ha_core_config
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from tests.common import MockConfigEntry, async_mock_service
 from tests.components.tts.common import retrieve_media

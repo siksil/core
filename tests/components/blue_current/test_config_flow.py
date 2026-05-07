@@ -5,15 +5,15 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.blue_current import DOMAIN
-from homeassistant.components.blue_current.config_flow import (
+from inpui.components.blue_current import DOMAIN
+from inpui.components.blue_current.config_flow import (
     AlreadyConnected,
     InvalidApiToken,
     RequestLimitReached,
     WebsocketError,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

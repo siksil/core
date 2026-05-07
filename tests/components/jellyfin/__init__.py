@@ -3,7 +3,7 @@
 import json
 from typing import Any
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import load_fixture
 

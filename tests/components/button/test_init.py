@@ -7,25 +7,25 @@ from unittest.mock import MagicMock
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     DOMAIN,
     SERVICE_PRESS,
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_PLATFORM,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .const import TEST_DOMAIN
 

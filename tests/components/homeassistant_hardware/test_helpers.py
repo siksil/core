@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, Mock, call, patch
 
 import pytest
 
-from homeassistant.components.homeassistant_hardware.const import DATA_COMPONENT, DOMAIN
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.const import DATA_COMPONENT, DOMAIN
+from inpui.components.homeassistant_hardware.helpers import (
     async_firmware_update_context,
     async_is_firmware_update_in_progress,
     async_notify_firmware_info,
@@ -16,14 +16,14 @@ from homeassistant.components.homeassistant_hardware.helpers import (
     async_register_firmware_update_in_progress,
     async_unregister_firmware_update_in_progress,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.usb import DOMAIN as USB_DOMAIN, USBDevice
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.usb import DOMAIN as USB_DOMAIN, USBDevice
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

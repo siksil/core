@@ -5,19 +5,19 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
-from homeassistant.const import CONF_VARIABLES
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.template import (
+from inpui.const import CONF_VARIABLES
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import TemplateError
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.template import (
     _SENTINEL,
     render_complex as template_render_complex,
 )
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.helpers.trigger_template_entity import (
     TriggerBaseEntity,
     log_triggered_template_error,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import TriggerUpdateCoordinator
 from .entity import AbstractTemplateEntity

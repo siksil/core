@@ -1,10 +1,10 @@
 """Test the init file of Twilio."""
 
 from homeassistant import config_entries
-from homeassistant.components import twilio
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components import twilio
+from inpui.core import HomeAssistant, callback
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
 
 from tests.typing import ClientSessionGenerator
 

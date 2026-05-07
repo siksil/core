@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

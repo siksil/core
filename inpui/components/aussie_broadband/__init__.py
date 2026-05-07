@@ -7,10 +7,10 @@ from aussiebb.asyncio import AussieBB
 from aussiebb.const import FETCH_TYPES
 from aussiebb.exceptions import AuthenticationException
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import (
     AussieBroadbandConfigEntry,

@@ -9,7 +9,7 @@ import pypck
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import (
+from inpui.const import (
     CONF_BASE,
     CONF_DEVICES,
     CONF_ENTITIES,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from . import PchkConnectionManager
 from .const import CONF_ACKNOWLEDGE, CONF_DIM_MODE, CONF_SK_NUM_TRIES, DIM_MODES, DOMAIN

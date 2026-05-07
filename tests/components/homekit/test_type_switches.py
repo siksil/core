@@ -5,7 +5,7 @@ from datetime import timedelta
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     CHAR_CONFIGURED_NAME,
     SERV_OUTLET,
@@ -14,7 +14,7 @@ from homeassistant.components.homekit.const import (
     TYPE_SPRINKLER,
     TYPE_VALVE,
 )
-from homeassistant.components.homekit.type_switches import (
+from inpui.components.homekit.type_switches import (
     LawnMower,
     Outlet,
     SelectSwitch,
@@ -23,20 +23,20 @@ from homeassistant.components.homekit.type_switches import (
     Valve,
     ValveSwitch,
 )
-from homeassistant.components.input_number import (
+from inpui.components.input_number import (
     DOMAIN as INPUT_NUMBER_DOMAIN,
     SERVICE_SET_VALUE as INPUT_NUMBER_SERVICE_SET_VALUE,
 )
-from homeassistant.components.lawn_mower import (
+from inpui.components.lawn_mower import (
     DOMAIN as LAWN_MOWER_DOMAIN,
     SERVICE_DOCK,
     SERVICE_START_MOWING,
     LawnMowerActivity,
     LawnMowerEntityFeature,
 )
-from homeassistant.components.select import ATTR_OPTIONS
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.vacuum import (
+from inpui.components.select import ATTR_OPTIONS
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_RETURN_TO_BASE,
     SERVICE_START,
@@ -45,7 +45,7 @@ from homeassistant.components.vacuum import (
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     CONF_TYPE,
@@ -57,8 +57,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_OPEN,
 )
-from homeassistant.core import Event, HomeAssistant, split_entity_id
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, HomeAssistant, split_entity_id
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_mock_service
 

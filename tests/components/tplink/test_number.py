@@ -3,17 +3,17 @@
 from kasa import Feature
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.components.tplink.entity import EXCLUDED_FEATURES
-from homeassistant.components.tplink.number import NUMBER_DESCRIPTIONS
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.tplink.const import DOMAIN
+from inpui.components.tplink.entity import EXCLUDED_FEATURES
+from inpui.components.tplink.number import NUMBER_DESCRIPTIONS
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     _mocked_device,

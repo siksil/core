@@ -1,6 +1,6 @@
 """Test system policies."""
 
-from homeassistant.auth.permissions import (
+from inpui.auth.permissions import (
     POLICY_SCHEMA,
     PolicyPermissions,
     system_policies,

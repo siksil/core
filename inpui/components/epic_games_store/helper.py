@@ -3,7 +3,7 @@
 import contextlib
 from typing import Any
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 
 def format_game_data(raw_game_data: dict[str, Any], language: str) -> dict[str, Any]:

@@ -7,12 +7,12 @@ from datetime import timedelta
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.schedule.const import ATTR_NEXT_EVENT, DOMAIN
-from homeassistant.const import ATTR_EDITABLE, ATTR_FRIENDLY_NAME, ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.schedule.const import ATTR_NEXT_EVENT, DOMAIN
+from inpui.const import ATTR_EDITABLE, ATTR_FRIENDLY_NAME, ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

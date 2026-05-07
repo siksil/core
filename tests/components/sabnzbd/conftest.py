@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.sabnzbd.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.sabnzbd.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

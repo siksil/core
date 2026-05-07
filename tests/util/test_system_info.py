@@ -2,7 +2,7 @@
 
 from unittest.mock import patch
 
-from homeassistant.util.system_info import is_official_image
+from inpui.util.system_info import is_official_image
 
 
 async def test_is_official_image() -> None:

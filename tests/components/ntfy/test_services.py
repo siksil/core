@@ -12,10 +12,10 @@ import pytest
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components import camera, image, media_source
-from homeassistant.components.notify import ATTR_MESSAGE, ATTR_TITLE
-from homeassistant.components.ntfy.const import DOMAIN
-from homeassistant.components.ntfy.services import (
+from inpui.components import camera, image, media_source
+from inpui.components.notify import ATTR_MESSAGE, ATTR_TITLE
+from inpui.components.ntfy.const import DOMAIN
+from inpui.components.ntfy.services import (
     ATTR_ACTIONS,
     ATTR_ATTACH,
     ATTR_ATTACH_FILE,
@@ -33,11 +33,11 @@ from homeassistant.components.ntfy.services import (
     SERVICE_DELETE,
     SERVICE_PUBLISH,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.common import AsyncMock, MockConfigEntry, patch
 

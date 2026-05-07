@@ -2,9 +2,9 @@
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
 
 from .const import (
     ATTR_SPEED,

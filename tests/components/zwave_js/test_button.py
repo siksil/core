@@ -6,14 +6,14 @@ from unittest.mock import MagicMock
 import pytest
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
-from homeassistant.components.zwave_js.helpers import get_valueless_base_unique_id
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import ATTR_ENTITY_ID, EntityCategory, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.zwave_js.const import DOMAIN, SERVICE_REFRESH_VALUE
+from inpui.components.zwave_js.helpers import get_valueless_base_unique_id
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import ATTR_ENTITY_ID, EntityCategory, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

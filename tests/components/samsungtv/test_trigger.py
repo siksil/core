@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.samsungtv.const import DOMAIN
-from homeassistant.const import SERVICE_RELOAD, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.samsungtv.const import DOMAIN
+from inpui.const import SERVICE_RELOAD, SERVICE_TURN_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_samsungtv_entry
 from .const import ENTRYDATA_ENCRYPTED_WEBSOCKET

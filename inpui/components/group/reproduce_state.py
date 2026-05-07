@@ -5,8 +5,8 @@ from __future__ import annotations
 from collections.abc import Iterable
 from typing import Any
 
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.core import Context, HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from . import get_entity_ids
 

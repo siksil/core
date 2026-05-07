@@ -7,19 +7,19 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.workday.binary_sensor import SERVICE_CHECK_DATE
-from homeassistant.components.workday.const import (
+from inpui.components.workday.binary_sensor import SERVICE_CHECK_DATE
+from inpui.components.workday.const import (
     DEFAULT_EXCLUDES,
     DEFAULT_NAME,
     DEFAULT_OFFSET,
     DEFAULT_WORKDAYS,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.dt import UTC
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.dt import UTC
 
 from . import (
     TEST_CONFIG_ADD_REMOVE_DATE_RANGE,

@@ -1,8 +1,8 @@
 """Tests for init module."""
 
-from homeassistant.components.nws.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nws.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .const import NWS_CONFIG
 

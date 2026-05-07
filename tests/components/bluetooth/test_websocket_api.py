@@ -10,9 +10,9 @@ from freezegun import freeze_time
 from habluetooth import BluetoothScanningMode
 import pytest
 
-from homeassistant.components.bluetooth import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components.bluetooth import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from . import (
     HCI0_SOURCE_ADDRESS,

@@ -5,10 +5,10 @@ from __future__ import annotations
 import asyncio
 from typing import Any
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature, LockState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityFeature, LockState
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 LOCK_UNLOCK_DELAY = 2  # Used to give a realistic lock/unlock experience in frontend
 

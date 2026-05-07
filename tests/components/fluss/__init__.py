@@ -12,11 +12,11 @@ from fluss_api import (
 )
 import pytest
 
-from homeassistant.components.fluss import PLATFORMS
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.components.fluss import PLATFORMS
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from tests.common import MockConfigEntry
 

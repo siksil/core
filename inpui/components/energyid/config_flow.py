@@ -9,16 +9,16 @@ from aiohttp import ClientError, ClientResponseError
 from energyid_webhooks.client_v2 import WebhookClient
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     ConfigSubentryFlow,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.instance_id import async_get as async_get_instance_id
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+import inpui.helpers.config_validation as cv
+from inpui.helpers.instance_id import async_get as async_get_instance_id
 
 from .const import (
     CONF_DEVICE_ID,

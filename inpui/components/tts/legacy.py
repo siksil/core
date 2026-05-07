@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Any, final
 
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -19,23 +19,23 @@ from homeassistant.components.media_player import (
     SERVICE_PLAY_MEDIA,
     MediaType,
 )
-from homeassistant.config import config_per_platform
-from homeassistant.const import (
+from inpui.config import config_per_platform
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DESCRIPTION,
     CONF_NAME,
     CONF_PLATFORM,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.service import async_set_service_schema
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import (
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.service import async_set_service_schema
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import (
     SetupPhases,
     async_prepare_setup_platform,
     async_start_setup,
 )
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.util.yaml import load_yaml_dict
 
 from .const import (
     ATTR_CACHE,

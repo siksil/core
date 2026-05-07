@@ -7,14 +7,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.ecobee.switch import DATE_FORMAT
-from homeassistant.components.switch import (
+from inpui.components.ecobee.switch import DATE_FORMAT
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from . import GENERIC_THERMOSTAT_INFO_WITH_HEATPUMP
 from .common import setup_platform

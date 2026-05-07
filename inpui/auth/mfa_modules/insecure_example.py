@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     MULTI_FACTOR_AUTH_MODULE_SCHEMA,

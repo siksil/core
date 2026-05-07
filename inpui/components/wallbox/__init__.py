@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from wallbox import Wallbox
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
 
 from .const import (
     CHARGER_JWT_REFRESH_TOKEN,

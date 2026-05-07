@@ -10,7 +10,7 @@ from hass_nabucasa.voice import MAP_VOICE, AudioOutput, Gender, VoiceError
 from hass_nabucasa.voice_data import TTS_VOICES
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     ATTR_AUDIO_OUTPUT,
     ATTR_VOICE,
     CONF_LANG,
@@ -22,14 +22,14 @@ from homeassistant.components.tts import (
     TtsAudioType,
     Voice,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PLATFORM, Platform
-from homeassistant.core import HomeAssistant, async_get_hass, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_when_setup
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PLATFORM, Platform
+from inpui.core import HomeAssistant, async_get_hass, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_when_setup
 
 from .assist_pipeline import async_migrate_cloud_pipeline_engine
 from .client import CloudClient

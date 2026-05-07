@@ -17,13 +17,13 @@ from PIL import Image
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import ai_task, conversation
-from homeassistant.components.cloud.ai_task import (
+from inpui.components import ai_task, conversation
+from inpui.components.cloud.ai_task import (
     CloudAITaskEntity,
     async_prepare_image_generation_attachments,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 

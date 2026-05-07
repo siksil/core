@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.anthemav.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_MODEL, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.anthemav.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC, CONF_MODEL, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

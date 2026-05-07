@@ -7,10 +7,10 @@ import aiohttp
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.environment_canada.const import CONF_STATION, DOMAIN
-from homeassistant.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.environment_canada.const import CONF_STATION, DOMAIN
+from inpui.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

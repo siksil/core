@@ -10,8 +10,8 @@ from pysmarlaapi.federwiege.services.classes import Property, Service
 from pysmarlaapi.federwiege.services.types import SpringStatus, UpdateStatus
 import pytest
 
-from homeassistant.components.smarla.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
+from inpui.components.smarla.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
 
 from .const import MOCK_ACCESS_TOKEN_JSON, MOCK_USER_INPUT
 

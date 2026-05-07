@@ -9,14 +9,14 @@ import socket
 
 import pycfdns
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_TOKEN, CONF_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.location import async_detect_location_info
-from homeassistant.util.network import is_ipv4_address
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_TOKEN, CONF_ZONE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.location import async_detect_location_info
+from inpui.util.network import is_ipv4_address
 
 from .const import CONF_RECORDS, DEFAULT_UPDATE_INTERVAL
 

@@ -6,21 +6,21 @@ from async_upnp_client.exceptions import UpnpError
 from didl_lite import didl_lite
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.dlna_dms.const import DOMAIN
-from homeassistant.components.dlna_dms.dms import DidlPlayMedia
-from homeassistant.components.dlna_dms.media_source import (
+from inpui.components import media_source
+from inpui.components.dlna_dms.const import DOMAIN
+from inpui.components.dlna_dms.dms import DidlPlayMedia
+from inpui.components.dlna_dms.media_source import (
     DmsMediaSource,
     async_get_media_source,
 )
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSourceItem,
     Unresolvable,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_DEVICE_ID, CONF_URL
+from inpui.core import HomeAssistant
 
 from .conftest import (
     MOCK_DEVICE_BASE_URL,

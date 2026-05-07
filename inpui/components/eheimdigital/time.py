@@ -11,10 +11,10 @@ from eheimdigital.filter import EheimDigitalFilter
 from eheimdigital.heater import EheimDigitalHeater
 from eheimdigital.reeflex import EheimDigitalReeflexUV
 
-from homeassistant.components.time import TimeEntity, TimeEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.time import TimeEntity, TimeEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import EheimDigitalConfigEntry, EheimDigitalUpdateCoordinator
 from .entity import EheimDigitalEntity, exception_handler

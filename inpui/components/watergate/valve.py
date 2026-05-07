@@ -1,14 +1,14 @@
 """Support for Watergate Valve."""
 
-from homeassistant.components.sensor import Any, HomeAssistant
-from homeassistant.components.valve import (
+from inpui.components.sensor import Any, HomeAssistant
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityFeature,
     ValveState,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import WatergateConfigEntry, WatergateDataCoordinator
 from .entity import WatergateEntity

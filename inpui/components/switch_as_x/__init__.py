@@ -6,12 +6,12 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.homeassistant import exposed_entities
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.helper_integration import (
+from inpui.components.homeassistant import exposed_entities
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ENTITY_ID
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.helper_integration import (
     async_handle_source_entity_changes,
     async_remove_helper_config_entry_from_source_device,
 )

@@ -22,15 +22,15 @@ from pyinsteon.managers.x10_manager import (
 )
 from pyinsteon.x10_address import create as create_x10_address
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_ENTITY_ID,
     CONF_PLATFORM,
     ENTITY_MATCH_ALL,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
     dispatcher_send,

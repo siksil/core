@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from . import reload_satellite
 

@@ -6,10 +6,10 @@ from typing import Any
 
 from pyheos import HeosError
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import ATTR_PASSWORD, ATTR_USERNAME, DOMAIN
 from .coordinator import HeosConfigEntry

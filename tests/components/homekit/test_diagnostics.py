@@ -4,16 +4,16 @@ from unittest.mock import ANY, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     CONF_DEVICES,
     CONF_HOMEKIT_MODE,
     DOMAIN,
     HOMEKIT_MODE_ACCESSORY,
 )
-from homeassistant.const import CONF_NAME, CONF_PORT, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_NAME, CONF_PORT, EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .util import async_init_integration
 
@@ -54,7 +54,7 @@ async def test_config_entry_running(
     )
     entry.add_to_hass(hass)
     assert await hass.config_entries.async_setup(entry.entry_id)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     diag = await get_diagnostics_for_config_entry(hass, hass_client, entry)
     assert diag == {
@@ -179,7 +179,7 @@ async def test_config_entry_accessory(
     )
     entry.add_to_hass(hass)
     assert await hass.config_entries.async_setup(entry.entry_id)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     diag = await get_diagnostics_for_config_entry(hass, hass_client, entry)
     assert diag == {
@@ -354,7 +354,7 @@ async def test_config_entry_with_trigger_accessory(
     )
     entry.add_to_hass(hass)
     assert await hass.config_entries.async_setup(entry.entry_id)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     diag = await get_diagnostics_for_config_entry(hass, hass_client, entry)
     diag.pop("iid_storage")

@@ -13,19 +13,19 @@ from typing import Any
 from mysensors import BaseAsyncGateway, Message, Sensor, get_const, mysensors
 import voluptuous as vol
 
-from homeassistant.components.mqtt import (
+from inpui.components.mqtt import (
     DOMAIN as MQTT_DOMAIN,
     ReceiveMessage as MQTTReceiveMessage,
     async_publish,
     async_subscribe,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import (
     CONF_BAUD_RATE,
@@ -293,7 +293,7 @@ async def _gw_start(
         await gw_stop(hass, entry, gateway)
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_this_gw),
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_this_gw),
     )
 
     if entry.data[CONF_DEVICE] == MQTT_COMPONENT:

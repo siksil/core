@@ -12,10 +12,10 @@ from dsmr_parser.obis_references import (
 from dsmr_parser.objects import CosemObject, MBusObject, Telegram
 import pytest
 
-from homeassistant.components.dsmr.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.dsmr.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

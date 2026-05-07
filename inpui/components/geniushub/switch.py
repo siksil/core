@@ -7,11 +7,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
 
 from . import ATTR_DURATION, GeniusHubConfigEntry
 from .entity import GeniusZone

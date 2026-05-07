@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .test_common import get_device_discovery_payload, send_discovery_message
 

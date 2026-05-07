@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock
 from pyprosegur.exceptions import ProsegurException
 import pytest
 
-from homeassistant.components import camera
-from homeassistant.components.camera import Image
-from homeassistant.components.prosegur.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import camera
+from inpui.components.camera import Image
+from inpui.components.prosegur.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 async def test_camera(hass: HomeAssistant, init_integration) -> None:

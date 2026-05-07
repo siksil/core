@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.madvr.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.madvr.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import MOCK_CONFIG, MOCK_MAC, MOCK_MAC_NEW
 

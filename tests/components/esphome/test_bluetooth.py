@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components import bluetooth
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components import bluetooth
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import MockESPHomeDevice
 

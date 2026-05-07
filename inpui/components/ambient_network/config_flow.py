@@ -7,8 +7,8 @@ from typing import Any
 from aioambient import OpenAPI
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
@@ -16,14 +16,14 @@ from homeassistant.const import (
     CONF_RADIUS,
     UnitOfLength,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     LocationSelector,
     LocationSelectorConfig,
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
 )
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.util.unit_conversion import DistanceConverter
 
 from .const import API_STATION_INDOOR, API_STATION_INFO, API_STATION_MAC_ADDRESS, DOMAIN
 from .helper import get_station_name

@@ -11,21 +11,21 @@ from matter_server.common.errors import UpdateCheckError, UpdateError
 from matter_server.common.models import MatterSoftwareVersion, UpdateSource
 import pytest
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.matter.update import SCAN_INTERVAL
-from homeassistant.components.update import (
+from inpui.components.matter.update import SCAN_INTERVAL
+from inpui.components.update import (
     ATTR_VERSION,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
 
 from .common import (
     set_node_attribute,

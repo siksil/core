@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.decora_wifi.const import DOMAIN
+from inpui.components.decora_wifi.const import DOMAIN
 
 from .const import TEST_USER_ID, TEST_USERNAME, USER_INPUT
 

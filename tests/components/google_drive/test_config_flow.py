@@ -6,11 +6,11 @@ from google_drive_api.exceptions import GoogleDriveApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.google_drive.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.google_drive.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .conftest import CLIENT_ID, TEST_USER_EMAIL
 

@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from thermopro_ble import ThermoProDevice
 
-from homeassistant.components.thermopro.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import now
+from inpui.components.thermopro.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.util.dt import now
 
 from tests.common import MockConfigEntry
 

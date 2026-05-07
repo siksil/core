@@ -16,17 +16,17 @@ import evohomeasync as ec1
 import evohomeasync2 as ec2
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_LOCATION_IDX,

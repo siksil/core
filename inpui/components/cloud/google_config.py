@@ -10,12 +10,12 @@ from typing import TYPE_CHECKING, Any
 from hass_nabucasa import Cloud
 from hass_nabucasa.google_report_state import ErrorResponse
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.google_assistant import DOMAIN as GOOGLE_DOMAIN
-from homeassistant.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.google_assistant import DOMAIN as GOOGLE_DOMAIN
+from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
     AbstractConfig,
 )
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.homeassistant.exposed_entities import (
     async_expose_entity,
     async_get_assistant_settings,
     async_get_entity_settings,
@@ -23,9 +23,9 @@ from homeassistant.components.homeassistant.exposed_entities import (
     async_set_assistant_option,
     async_should_expose,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import (
     CoreState,
     Event,
     HomeAssistant,
@@ -33,11 +33,11 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er, start
-from homeassistant.helpers.entity import get_device_class
-from homeassistant.helpers.entityfilter import EntityFilter
-from homeassistant.setup import async_setup_component
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er, start
+from inpui.helpers.entity import get_device_class
+from inpui.helpers.entityfilter import EntityFilter
+from inpui.setup import async_setup_component
 
 from .const import (
     CONF_ENTITY_CONFIG,

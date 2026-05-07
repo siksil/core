@@ -1,7 +1,7 @@
 """The Meater Temperature Probe integration."""
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import MEATER_DATA
 from .coordinator import MeaterConfigEntry, MeaterCoordinator

@@ -6,16 +6,16 @@ from pathlib import Path
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.components.tts import ATTR_MESSAGE, DOMAIN, Provider
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
+from inpui.components.tts import ATTR_MESSAGE, DOMAIN, Provider
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
 
 from .common import SUPPORT_LANGUAGES, MockTTS, MockTTSProvider
 

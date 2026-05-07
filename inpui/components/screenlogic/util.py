@@ -4,7 +4,7 @@ import logging
 
 from screenlogicpy.const.data import SHARED_VALUES
 
-from homeassistant.helpers import entity_registry as er
+from inpui.helpers import entity_registry as er
 
 from .const import DOMAIN, SL_UNIT_TO_HA_UNIT, ScreenLogicDataPath
 from .coordinator import ScreenlogicDataUpdateCoordinator

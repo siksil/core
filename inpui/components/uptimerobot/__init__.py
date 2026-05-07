@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pyuptimerobot import UptimeRobot
 
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import PLATFORMS
 from .coordinator import UptimeRobotConfigEntry, UptimeRobotDataUpdateCoordinator

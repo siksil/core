@@ -12,19 +12,19 @@ from canary.model import Device, Location
 from haffmpeg.camera import CameraMjpeg
 import voluptuous as vol
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.camera import (
+from inpui.components import ffmpeg
+from inpui.components.camera import (
     PLATFORM_SCHEMA as CAMERA_PLATFORM_SCHEMA,
     Camera,
 )
-from homeassistant.components.ffmpeg import FFmpegManager, get_ffmpeg_manager
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.components.ffmpeg import FFmpegManager, get_ffmpeg_manager
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .const import CONF_FFMPEG_ARGUMENTS, DEFAULT_FFMPEG_ARGUMENTS, DOMAIN, MANUFACTURER
 from .coordinator import CanaryConfigEntry, CanaryDataUpdateCoordinator

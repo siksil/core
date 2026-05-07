@@ -5,10 +5,10 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
-from homeassistant.components.samsungtv.const import DOMAIN, METHOD_LEGACY
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_METHOD
-from homeassistant.core import HomeAssistant
+from inpui.components.samsungtv.const import DOMAIN, METHOD_LEGACY
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_METHOD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

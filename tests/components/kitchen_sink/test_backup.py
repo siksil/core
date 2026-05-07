@@ -6,16 +6,16 @@ from unittest.mock import ANY, patch
 
 import pytest
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN as BACKUP_DOMAIN,
     AddonInfo,
     AgentBackup,
     Folder,
 )
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import instance_id
-from homeassistant.setup import async_setup_component
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import instance_id
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator, WebSocketGenerator
 

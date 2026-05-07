@@ -13,15 +13,15 @@ from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
 from homeassistant import const, core as ha
-from homeassistant.auth.models import Credentials
-from homeassistant.bootstrap import DATA_LOGGING
-from homeassistant.components.group import DOMAIN as GROUP_DOMAIN
-from homeassistant.components.logger import DOMAIN as LOGGER_DOMAIN
-from homeassistant.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import Integration
-from homeassistant.setup import async_setup_component
-from homeassistant.util.yaml.loader import JSON_TYPE
+from inpui.auth.models import Credentials
+from inpui.bootstrap import DATA_LOGGING
+from inpui.components.group import DOMAIN as GROUP_DOMAIN
+from inpui.components.logger import DOMAIN as LOGGER_DOMAIN
+from inpui.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.loader import Integration
+from inpui.setup import async_setup_component
+from inpui.util.yaml.loader import JSON_TYPE
 
 from tests.common import CLIENT_ID, MockUser, async_mock_service
 from tests.typing import ClientSessionGenerator

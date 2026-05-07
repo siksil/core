@@ -3,7 +3,7 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.ws66i.const import (
+from inpui.components.ws66i.const import (
     CONF_SOURCE_1,
     CONF_SOURCE_2,
     CONF_SOURCE_3,
@@ -14,9 +14,9 @@ from homeassistant.components.ws66i.const import (
     DOMAIN,
     INIT_OPTIONS_DEFAULT,
 )
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .test_media_player import AttrDict
 

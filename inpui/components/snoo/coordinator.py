@@ -5,9 +5,9 @@ import logging
 from python_snoo.containers import SnooData, SnooDevice
 from python_snoo.snoo import Snoo
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 type SnooConfigEntry = ConfigEntry[dict[str, SnooCoordinator]]
 

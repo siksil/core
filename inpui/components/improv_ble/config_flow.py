@@ -21,17 +21,17 @@ from improv_ble_client import (
 )
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import (
+from inpui.components import bluetooth
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     FlowType,
 )
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.device_registry import format_mac
+from inpui.const import CONF_ADDRESS
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.device_registry import format_mac
 
 from . import async_get_provisioning_futures
 from .const import DOMAIN, PROVISIONING_TIMEOUT

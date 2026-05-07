@@ -8,14 +8,14 @@ from pooldose.request_status import RequestStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNAVAILABLE,
     Platform,
     UnitOfElectricPotential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

@@ -11,19 +11,19 @@ from enum import StrEnum
 import logging
 from typing import TYPE_CHECKING, Any, TypedDict
 
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_NAME, Platform
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.exceptions import ServiceValidationError, TemplateError
-from homeassistant.helpers import template
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import (
+from inpui.const import ATTR_ENTITY_ID, ATTR_NAME, Platform
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.exceptions import ServiceValidationError, TemplateError
+from inpui.helpers import template
+from inpui.helpers.entity import Entity
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import (
     ConfigType,
     DiscoveryInfoType,
     TemplateVarsType,
     VolSchemaType,
 )
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from paho.mqtt.client import MQTTMessage

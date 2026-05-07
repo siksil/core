@@ -3,14 +3,14 @@
 from typing import Any
 from uuid import UUID
 
-from homeassistant.components.homekit.const import DOMAIN
-from homeassistant.components.homekit.iidmanager import (
+from inpui.components.homekit.const import DOMAIN
+from inpui.components.homekit.iidmanager import (
     AccessoryIIDStorage,
     get_iid_storage_filename_for_entry_id,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import json_loads
-from homeassistant.util.uuid import random_uuid_hex
+from inpui.core import HomeAssistant
+from inpui.util.json import json_loads
+from inpui.util.uuid import random_uuid_hex
 
 from tests.common import MockConfigEntry, async_load_fixture
 

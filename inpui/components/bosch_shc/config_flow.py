@@ -16,11 +16,11 @@ from boschshcpy.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     CONF_HOSTNAME,

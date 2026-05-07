@@ -4,16 +4,16 @@ import logging
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.venstar.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.venstar.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PIN,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import VenstarColorTouchMock
 

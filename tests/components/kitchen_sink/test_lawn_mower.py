@@ -5,17 +5,17 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.components.lawn_mower import (
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.components.lawn_mower import (
     DOMAIN as LAWN_MOWER_DOMAIN,
     SERVICE_DOCK,
     SERVICE_PAUSE,
     SERVICE_START_MOWING,
     LawnMowerActivity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, EVENT_STATE_CHANGED, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, EVENT_STATE_CHANGED, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_capture_events, async_mock_service
 

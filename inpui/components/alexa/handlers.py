@@ -9,7 +9,7 @@ import math
 from typing import Any
 
 from homeassistant import core as ha
-from homeassistant.components import (
+from inpui.components import (
     alarm_control_panel,
     button,
     camera,
@@ -29,7 +29,7 @@ from homeassistant.components import (
     valve,
     water_heater,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_SUPPORTED_FEATURES,
@@ -55,10 +55,10 @@ from homeassistant.const import (
     SERVICE_VOLUME_UP,
     UnitOfTemperature,
 )
-from homeassistant.helpers import network
-from homeassistant.util import color as color_util, dt as dt_util
-from homeassistant.util.decorator import Registry
-from homeassistant.util.unit_conversion import (
+from inpui.helpers import network
+from inpui.util import color as color_util, dt as dt_util
+from inpui.util.decorator import Registry
+from inpui.util.unit_conversion import (
     TemperatureConverter,
     TemperatureDeltaConverter,
 )

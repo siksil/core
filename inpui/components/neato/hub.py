@@ -6,9 +6,9 @@ import logging
 from pybotvac import Account
 from urllib3.response import HTTPResponse
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.util import Throttle
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.util import Throttle
 
 from .const import NEATO_MAP_DATA, NEATO_PERSISTENT_MAPS, NEATO_ROBOTS
 

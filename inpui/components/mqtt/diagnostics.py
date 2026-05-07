@@ -4,18 +4,18 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import device_tracker
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import device_tracker
+from inpui.components.diagnostics import async_redact_data
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from . import debug_info, is_connected
 

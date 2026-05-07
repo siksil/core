@@ -12,13 +12,13 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import camera, conversation, image, media_source
-from homeassistant.components.http.auth import async_sign_path
-from homeassistant.core import HomeAssistant, ServiceResponse, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import llm
-from homeassistant.helpers.chat_session import ChatSession, async_get_chat_session
-from homeassistant.util import RE_SANITIZE_FILENAME, slugify
+from inpui.components import camera, conversation, image, media_source
+from inpui.components.http.auth import async_sign_path
+from inpui.core import HomeAssistant, ServiceResponse, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import llm
+from inpui.helpers.chat_session import ChatSession, async_get_chat_session
+from inpui.util import RE_SANITIZE_FILENAME, slugify
 
 from .const import (
     DATA_COMPONENT,

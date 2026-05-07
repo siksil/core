@@ -7,19 +7,19 @@ from bring_api import BringItemOperation, BringItemsResponse, BringRequestExcept
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.components.todo import (
+from inpui.components.bring.const import DOMAIN
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_ITEM,
     ATTR_RENAME,
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_load_fixture, snapshot_platform
 

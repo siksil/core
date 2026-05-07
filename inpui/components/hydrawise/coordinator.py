@@ -8,12 +8,12 @@ from dataclasses import dataclass, field
 from pydrawise import HydrawiseBase
 from pydrawise.schema import Controller, ControllerWaterUseSummary, Sensor, User, Zone
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.dt import now
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.dt import now
 
 from .const import (
     DOMAIN,

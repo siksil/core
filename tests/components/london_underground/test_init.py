@@ -1,6 +1,6 @@
 """Test the London Underground init."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_reload_entry(

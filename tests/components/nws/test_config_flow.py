@@ -5,9 +5,9 @@ from unittest.mock import patch
 import aiohttp
 
 from homeassistant import config_entries
-from homeassistant.components.nws.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nws.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form(hass: HomeAssistant, mock_simple_nws_config) -> None:

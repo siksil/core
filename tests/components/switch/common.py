@@ -6,8 +6,8 @@ components. Instead call the service directly.
 
 from typing import Any
 
-from homeassistant.components.switch import DOMAIN, SwitchDeviceClass, SwitchEntity
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN, SwitchDeviceClass, SwitchEntity
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
@@ -15,8 +15,8 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant
+from inpui.loader import bind_hass
 
 
 @bind_hass

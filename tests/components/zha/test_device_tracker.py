@@ -13,16 +13,16 @@ from zigpy.device import Device
 from zigpy.profiles import zha
 from zigpy.zcl.clusters import general
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.zha.helpers import (
+from inpui.components.device_tracker import SourceType
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_HOME, STATE_NOT_HOME, Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import find_entity_id, send_attributes_report
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

@@ -6,23 +6,23 @@ from unittest.mock import call, patch
 from androidtv.constants import KEYS
 import pytest
 
-from homeassistant.components.androidtv.const import (
+from inpui.components.androidtv.const import (
     CONF_TURN_OFF_COMMAND,
     CONF_TURN_ON_COMMAND,
 )
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_NUM_REPEATS,
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from . import patchers
 from .common import (

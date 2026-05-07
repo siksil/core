@@ -10,11 +10,11 @@ import os
 from google.cloud.pubsub_v1 import PublisherClient
 import voluptuous as vol
 
-from homeassistant.const import EVENT_STATE_CHANGED, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import FILTER_SCHEMA
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import EVENT_STATE_CHANGED, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import Event, EventStateChangedData, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import FILTER_SCHEMA
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

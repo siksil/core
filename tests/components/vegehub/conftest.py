@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_HOST,
     CONF_IP_ADDRESS,
     CONF_MAC,
     CONF_WEBHOOK_ID,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

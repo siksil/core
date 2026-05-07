@@ -6,8 +6,8 @@ from typing import Any
 
 from hanna_cloud import HannaCloudClient
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import HannaConfigEntry, HannaDataCoordinator
 

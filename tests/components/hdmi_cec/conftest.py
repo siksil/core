@@ -6,10 +6,10 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.hdmi_cec import DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.hdmi_cec import DOMAIN
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 type CecEntityCreator = Callable[..., Coroutine[Any, Any, None]]
 type HDMINetworkCreator = Callable[..., Coroutine[Any, Any, MagicMock]]
@@ -49,7 +49,7 @@ def create_hdmi_network(
 
         mock_hdmi_network_instance = mock_hdmi_network.return_value
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         return mock_hdmi_network_instance
 

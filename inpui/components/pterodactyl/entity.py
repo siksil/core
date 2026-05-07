@@ -2,10 +2,10 @@
 
 from yarl import URL
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_URL
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_URL
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .api import PterodactylData
 from .const import DOMAIN

@@ -5,11 +5,11 @@ from unittest.mock import patch
 import pytest
 from xknx.telegram.apci import GroupValueResponse, GroupValueWrite
 
-from homeassistant.components.knx import async_unload_entry as knx_async_unload_entry
-from homeassistant.components.knx.const import DOMAIN
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.knx import async_unload_entry as knx_async_unload_entry
+from inpui.components.knx.const import DOMAIN
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import KNXTestKit
 

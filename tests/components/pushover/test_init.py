@@ -7,9 +7,9 @@ import pytest
 import requests_mock
 from urllib3.exceptions import MaxRetryError
 
-from homeassistant.components.pushover.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.pushover.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import MOCK_CONFIG
 

@@ -3,8 +3,8 @@
 import pytest
 from Tami4EdgeAPI import exceptions
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import create_config_entry
 

@@ -10,7 +10,7 @@ from xmlrpc.client import Fault
 from aiohttp.client_exceptions import ClientConnectionError, ClientResponseError
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers import selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.helpers import selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,

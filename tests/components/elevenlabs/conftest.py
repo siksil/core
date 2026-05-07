@@ -9,7 +9,7 @@ from elevenlabs.types import GetVoicesResponse
 from httpx import ConnectError
 import pytest
 
-from homeassistant.components.elevenlabs.const import (
+from inpui.components.elevenlabs.const import (
     CONF_MODEL,
     CONF_STT_AUTO_LANGUAGE,
     CONF_STT_MODEL,
@@ -17,8 +17,8 @@ from homeassistant.components.elevenlabs.const import (
     DEFAULT_SIMILARITY,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
 
 from .const import MOCK_MODELS, MOCK_VOICES
 

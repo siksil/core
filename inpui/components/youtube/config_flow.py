@@ -10,17 +10,17 @@ import voluptuous as vol
 from youtubeaio.types import AuthScope, ForbiddenError
 from youtubeaio.youtube import YouTube
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import callback
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import callback
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

@@ -3,16 +3,16 @@
 from unittest import mock
 from unittest.mock import patch
 
-from homeassistant.components.datadog.const import (
+from inpui.components.datadog.const import (
     DEFAULT_HOST,
     DEFAULT_PORT,
     DEFAULT_PREFIX,
     DEFAULT_RATE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_LOGBOOK_ENTRY, STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_LOGBOOK_ENTRY, STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .common import MOCK_DATA, MOCK_OPTIONS, create_mock_state
 

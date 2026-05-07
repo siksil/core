@@ -21,17 +21,17 @@ from uiprotect.data import (
 )
 from uiprotect.exceptions import ClientError, NotAuthorized
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import (
     CONF_ALL_UPDATES,

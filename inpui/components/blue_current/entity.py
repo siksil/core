@@ -1,10 +1,10 @@
 """Entity representing a Blue Current charge point."""
 
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_NAME
+from inpui.core import callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from . import Connector
 from .const import DOMAIN, MODEL_TYPE

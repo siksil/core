@@ -11,7 +11,7 @@ from typing import Any, Concatenate, TypeGuard
 from homematicip.base.enums import FunctionalChannelType
 from homematicip.device import Device
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .entity import HomematicipGenericEntity
 

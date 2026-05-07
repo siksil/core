@@ -7,12 +7,12 @@ from typing import Any
 
 import numpy as np
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     CONF_STATE_CLASS,
     SensorEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ATTRIBUTE,
@@ -26,16 +26,16 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CONF_COMPENSATION,

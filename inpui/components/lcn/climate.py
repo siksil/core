@@ -7,13 +7,13 @@ from typing import Any, cast
 
 import pypck
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_DOMAIN,
     CONF_ENTITIES,
@@ -21,9 +21,9 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_DOMAIN_DATA,

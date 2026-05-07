@@ -20,8 +20,8 @@ from habluetooth import (
 )
 from home_assistant_bluetooth import BluetoothServiceInfoBleak
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
-from homeassistant.helpers.singleton import singleton
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback as hass_callback
+from inpui.helpers.singleton import singleton
 
 from .const import DATA_MANAGER
 from .manager import HomeAssistantBluetoothManager

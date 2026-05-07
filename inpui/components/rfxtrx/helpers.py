@@ -2,8 +2,8 @@
 
 from RFXtrx import RFXtrxDevice, get_device
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from . import get_device_tuple_from_identifiers
 

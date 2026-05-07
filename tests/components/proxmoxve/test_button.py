@@ -10,11 +10,11 @@ import pytest
 from requests.exceptions import ConnectTimeout, SSLError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import SERVICE_PRESS
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.button import SERVICE_PRESS
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import AUDIT_PERMISSIONS, setup_integration
 

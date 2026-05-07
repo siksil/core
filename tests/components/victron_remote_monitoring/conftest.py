@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from victron_vrm.models.aggregations import ForecastAggregations
 
-from homeassistant.components.victron_remote_monitoring.const import (
+from inpui.components.victron_remote_monitoring.const import (
     CONF_API_TOKEN,
     CONF_SITE_ID,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

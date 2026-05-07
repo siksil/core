@@ -8,10 +8,10 @@ from typing import Any
 from chip.clusters import Objects
 from matter_server.common.helpers.util import dataclass_to_dict, parse_attribute_path
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.diagnostics import REDACTED
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .helpers import get_matter, get_node_from_device_entry
 

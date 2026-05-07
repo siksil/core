@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.eafm.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.eafm.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

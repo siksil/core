@@ -6,17 +6,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import switch_as_x
-from homeassistant.components.homeassistant import exposed_entities
-from homeassistant.components.lock import LockState
-from homeassistant.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
-from homeassistant.components.switch_as_x.const import (
+from inpui.components import switch_as_x
+from inpui.components.homeassistant import exposed_entities
+from inpui.components.lock import LockState
+from inpui.components.switch_as_x.config_flow import SwitchAsXConfigFlowHandler
+from inpui.components.switch_as_x.const import (
     CONF_INVERT,
     CONF_TARGET_DOMAIN,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_ENTITY_ID,
     STATE_CLOSED,
     STATE_OFF,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.setup import async_setup_component
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.setup import async_setup_component
 
 from . import CAPABILITY_MAP, PLATFORMS_TO_TEST, SUPPORTED_FEATURE_MAP
 

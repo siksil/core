@@ -7,15 +7,15 @@ from dataclasses import dataclass
 
 from hyponcloud import OverviewData, PlantData
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfEnergy, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfEnergy, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import HypontechConfigEntry, HypontechDataCoordinator
 from .entity import HypontechEntity, HypontechPlantEntity

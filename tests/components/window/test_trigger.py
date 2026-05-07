@@ -4,10 +4,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.cover import ATTR_IS_CLOSED, CoverDeviceClass, CoverState
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.cover import ATTR_IS_CLOSED, CoverDeviceClass, CoverState
+from inpui.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

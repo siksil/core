@@ -2,11 +2,11 @@
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_EVENT, CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_EVENT, CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from ..const import DOMAIN
 

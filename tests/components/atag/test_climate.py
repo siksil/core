@@ -2,9 +2,9 @@
 
 from unittest.mock import PropertyMock, patch
 
-from homeassistant.components.atag import DOMAIN
-from homeassistant.components.atag.climate import PRESET_MAP
-from homeassistant.components.climate import (
+from inpui.components.atag import DOMAIN
+from inpui.components.atag.climate import PRESET_MAP
+from inpui.components.climate import (
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
@@ -16,16 +16,16 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.homeassistant import DOMAIN as HA_DOMAIN
-from homeassistant.const import (
+from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import UID, init_integration
 

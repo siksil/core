@@ -7,8 +7,8 @@ from unittest.mock import MagicMock, PropertyMock, patch
 from pyrisco.cloud.event import Event
 import pytest
 
-from homeassistant.components.risco.const import DOMAIN, TYPE_LOCAL
-from homeassistant.const import (
+from inpui.components.risco.const import DOMAIN, TYPE_LOCAL
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PIN,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     CONF_TYPE,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .util import TEST_SITE_NAME, TEST_SITE_UUID, system_mock, zone_mock
 

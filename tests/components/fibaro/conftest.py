@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, Mock, patch
 from pyfibaro.fibaro_device import SceneEvent
 import pytest
 
-from homeassistant.components.fibaro import CONF_IMPORT_PLUGINS, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.fibaro import CONF_IMPORT_PLUGINS, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

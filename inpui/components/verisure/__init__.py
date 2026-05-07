@@ -6,13 +6,13 @@ from contextlib import suppress
 import os
 from pathlib import Path
 
-from homeassistant.components.lock import CONF_DEFAULT_CODE, DOMAIN as LOCK_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.components.lock import CONF_DEFAULT_CODE, DOMAIN as LOCK_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EMAIL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import CONF_LOCK_DEFAULT_CODE, DOMAIN, LOGGER
 from .coordinator import VerisureDataUpdateCoordinator

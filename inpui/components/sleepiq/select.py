@@ -12,10 +12,10 @@ from asyncsleepiq import (
     SleepIQPreset,
 )
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CORE_CLIMATE, DOMAIN, FOOT_WARMER
 from .coordinator import SleepIQData, SleepIQDataUpdateCoordinator

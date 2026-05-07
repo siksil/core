@@ -13,17 +13,17 @@ import pytest
 import requests
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CALLBACK_TYPE, CoreState, HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CALLBACK_TYPE, CoreState, HomeAssistant, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
 )
-from homeassistant.helpers import frame, update_coordinator
-from homeassistant.util.dt import utcnow
+from inpui.helpers import frame, update_coordinator
+from inpui.util.dt import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 
@@ -219,7 +219,7 @@ async def test_shutdown_on_hass_stop(
     assert crd._unsub_refresh is not None
     assert not crd._shutdown_requested
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert crd._shutdown_requested
@@ -683,7 +683,7 @@ async def test_stop_refresh_on_ha_stop(
     assert crd.data == 1
 
     # Fire Home Assistant stop event
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     hass.set_state(CoreState.stopping)
     await hass.async_block_till_done()
 

@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.upb.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.upb.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

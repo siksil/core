@@ -4,15 +4,15 @@ from unittest.mock import Mock
 
 from pyschlage.lock import AUTO_LOCK_TIMES
 
-from homeassistant.components.schlage.const import DOMAIN
-from homeassistant.components.select import (
+from inpui.components.schlage.const import DOMAIN
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.translation import LOCALE_EN, async_get_translations
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.translation import LOCALE_EN, async_get_translations
 
 from . import MockSchlageConfigEntry
 

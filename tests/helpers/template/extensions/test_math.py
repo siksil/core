@@ -6,9 +6,9 @@ import math
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.template.extensions import MathExtension
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers.template.extensions import MathExtension
 
 from tests.helpers.template.helpers import render
 

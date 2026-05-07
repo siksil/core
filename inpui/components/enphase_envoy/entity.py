@@ -9,9 +9,9 @@ from aiohttp import ClientError
 from pyenphase import EnvoyData
 from pyenphase.exceptions import EnvoyError
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import EnphaseUpdateCoordinator

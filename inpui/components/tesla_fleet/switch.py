@@ -9,14 +9,14 @@ from typing import Any
 
 from tesla_fleet_api.const import AutoSeat, Scope, Seat
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import TeslaFleetConfigEntry
 from .entity import TeslaFleetEnergyInfoEntity, TeslaFleetVehicleEntity

@@ -6,11 +6,11 @@ from aioswitcher.api.messages import SwitcherBaseResponse
 from aioswitcher.device import DeviceState, ThermostatSwing
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import slugify
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util import slugify
 
 from . import init_integration
 from .consts import DUMMY_THERMOSTAT_DEVICE as DEVICE

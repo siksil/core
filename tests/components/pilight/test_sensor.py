@@ -5,9 +5,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import pilight, sensor
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import pilight, sensor
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, mock_component
 

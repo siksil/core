@@ -10,14 +10,14 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from homeassistant import config_entries, data_entry_flow, setup
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.network import NoURLAvailableError
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.network import NoURLAvailableError
 
 from tests.common import MockConfigEntry, MockModule, mock_integration, mock_platform
 from tests.test_util.aiohttp import AiohttpClientMocker

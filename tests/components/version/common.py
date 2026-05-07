@@ -8,16 +8,16 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 
 from homeassistant import config_entries
-from homeassistant.components.version.const import (
+from inpui.components.version.const import (
     DEFAULT_CONFIGURATION,
     DEFAULT_NAME_CURRENT,
     DOMAIN,
     UPDATE_COORDINATOR_UPDATE_INTERVAL,
     VERSION_SOURCE_LOCAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

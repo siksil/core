@@ -5,17 +5,17 @@ import logging
 from lightwave.lightwave import LWLink
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_LIGHTS,
     CONF_NAME,
     CONF_SWITCHES,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 CONF_SERIAL = "serial"
 CONF_PROXY_IP = "proxy_ip"

@@ -8,11 +8,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Protocol
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.lock import LockState
-from homeassistant.components.vacuum import VacuumActivity
-from homeassistant.components.water_heater import (
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.climate import HVACMode
+from inpui.components.lock import LockState
+from inpui.components.vacuum import VacuumActivity
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_ELECTRIC,
     STATE_GAS,
@@ -20,7 +20,7 @@ from homeassistant.components.water_heater import (
     STATE_HIGH_DEMAND,
     STATE_PERFORMANCE,
 )
-from homeassistant.const import (
+from inpui.const import (
     STATE_CLOSED,
     STATE_HOME,
     STATE_IDLE,
@@ -34,8 +34,8 @@ from homeassistant.const import (
     STATE_PROBLEM,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.integration_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
 

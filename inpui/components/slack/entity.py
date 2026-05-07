@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from slack_sdk.web.async_client import AsyncWebClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from .const import ATTR_URL, ATTR_USER_ID, DATA_CLIENT, DEFAULT_NAME, DOMAIN
 

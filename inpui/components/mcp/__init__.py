@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import cast
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow, llm
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow, llm
 
 from .application_credentials import authorization_server_context
 from .const import CONF_ACCESS_TOKEN, CONF_AUTHORIZATION_URL, CONF_TOKEN_URL, DOMAIN

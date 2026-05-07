@@ -2,10 +2,10 @@
 
 from unittest.mock import PropertyMock, patch
 
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN, SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 CROSSOVER_ENTITY = "number.zone_a_sub_crossover_frequency"
 

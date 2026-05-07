@@ -7,10 +7,10 @@ from screenlogicpy import ScreenLogicError
 from screenlogicpy.device_const.system import EQUIPMENT_FLAG
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import selector
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import selector
 
 from .const import (
     ATTR_COLOR_MODE,

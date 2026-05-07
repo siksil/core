@@ -7,10 +7,10 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.wake_on_lan import DOMAIN, SERVICE_SEND_MAGIC_PACKET
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.wake_on_lan import DOMAIN, SERVICE_SEND_MAGIC_PACKET
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

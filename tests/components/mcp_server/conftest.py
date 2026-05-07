@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.mcp_server.const import DOMAIN
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
+from inpui.components.mcp_server.const import DOMAIN
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
 
 from tests.common import MockConfigEntry
 

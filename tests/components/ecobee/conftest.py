@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 from requests_mock import Mocker
 
-from homeassistant.components.ecobee import ECOBEE_API_KEY, ECOBEE_REFRESH_TOKEN
+from inpui.components.ecobee import ECOBEE_API_KEY, ECOBEE_REFRESH_TOKEN
 
 from tests.common import load_fixture, load_json_object_fixture
 

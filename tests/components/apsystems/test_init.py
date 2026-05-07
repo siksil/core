@@ -7,9 +7,9 @@ from APsystemsEZ1 import InverterReturnedError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.apsystems.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.apsystems.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

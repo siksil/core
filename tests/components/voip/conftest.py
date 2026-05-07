@@ -8,11 +8,11 @@ import pytest
 from voip_utils import CallInfo
 from voip_utils.sip import get_sip_endpoint
 
-from homeassistant.components.voip import DOMAIN
-from homeassistant.components.voip.devices import VoIPDevice, VoIPDevices
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.voip import DOMAIN
+from inpui.components.voip.devices import VoIPDevice, VoIPDevices
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.tts.conftest import (

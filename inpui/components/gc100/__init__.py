@@ -5,11 +5,11 @@ from __future__ import annotations
 import gc100
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 CONF_PORTS = "ports"
 
@@ -43,7 +43,7 @@ def setup(hass: HomeAssistant, base_config: ConfigType) -> bool:
         """Stuff to do before stopping."""
         gc_device.quit()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, cleanup_gc100)
+    hass.bus.listen_once(EVENT_INPUI_STOP, cleanup_gc100)
 
     hass.data[DATA_GC100] = GC100Device(hass, gc_device)
 

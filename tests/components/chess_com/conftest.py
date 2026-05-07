@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from chess_com_api import Player, PlayerStats
 import pytest
 
-from homeassistant.components.chess_com.const import DOMAIN
-from homeassistant.const import CONF_USERNAME
+from inpui.components.chess_com.const import DOMAIN
+from inpui.const import CONF_USERNAME
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

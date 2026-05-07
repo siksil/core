@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from aiolifx_themes.themes import ThemeLibrary
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_THEME, INFRARED_BRIGHTNESS, INFRARED_BRIGHTNESS_VALUES_MAP
 from .coordinator import LIFXConfigEntry, LIFXUpdateCoordinator

@@ -5,11 +5,11 @@ from typing import cast
 from aiohttp import ClientError
 from myuplink import DevicePoint
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import MyUplinkConfigEntry, MyUplinkDataCoordinator

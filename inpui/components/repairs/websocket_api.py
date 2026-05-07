@@ -9,13 +9,13 @@ from aiohttp import web
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.auth.permissions.const import POLICY_EDIT
-from homeassistant.components import websocket_api
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.http.decorators import require_admin
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.data_entry_flow import (
+from inpui.auth.permissions.const import POLICY_EDIT
+from inpui.components import websocket_api
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.http.decorators import require_admin
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.data_entry_flow import (
     FlowManagerIndexView,
     FlowManagerResourceView,
 )

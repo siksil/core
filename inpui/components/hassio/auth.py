@@ -9,12 +9,12 @@ from aiohttp import web
 from aiohttp.web_exceptions import HTTPNotFound, HTTPUnauthorized
 import voluptuous as vol
 
-from homeassistant.auth.models import User
-from homeassistant.auth.providers import homeassistant as auth_ha
-from homeassistant.components.http import KEY_HASS, KEY_HASS_USER, HomeAssistantView
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
+from inpui.auth.models import User
+from inpui.auth.providers import homeassistant as auth_ha
+from inpui.components.http import KEY_HASS, KEY_HASS_USER, HomeAssistantView
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
 
 from .const import ATTR_ADDON, ATTR_PASSWORD, ATTR_USERNAME
 

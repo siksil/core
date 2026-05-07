@@ -7,12 +7,12 @@ from typing import TYPE_CHECKING
 from eq3btsmart import Thermostat
 from eq3btsmart.exceptions import Eq3Exception
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import SIGNAL_THERMOSTAT_CONNECTED, SIGNAL_THERMOSTAT_DISCONNECTED
 from .models import Eq3Config, Eq3ConfigEntryData

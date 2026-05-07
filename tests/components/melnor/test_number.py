@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import (
     mock_config_entry,

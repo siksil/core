@@ -7,20 +7,20 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     floor_registry as fr,
     label_registry as lr,
 )
-from homeassistant.util.dt import utcnow
+from inpui.util.dt import utcnow
 
 from tests.common import ANY, async_capture_events, flush_store
 

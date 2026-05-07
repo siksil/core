@@ -12,7 +12,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.matchers import path_type
 
-from homeassistant.components.analytics.analytics import (
+from inpui.components.analytics.analytics import (
     Analytics,
     AnalyticsInput,
     AnalyticsModifications,
@@ -20,7 +20,7 @@ from homeassistant.components.analytics.analytics import (
     EntityAnalyticsModifications,
     async_devices_payload,
 )
-from homeassistant.components.analytics.const import (
+from inpui.components.analytics.const import (
     ATTR_BASE,
     ATTR_DIAGNOSTICS,
     ATTR_SNAPSHOTS,
@@ -31,16 +31,16 @@ from homeassistant.components.analytics.const import (
     SNAPSHOT_DEFAULT_URL,
     SNAPSHOT_URL_PATH,
 )
-from homeassistant.components.number import NumberDeviceClass
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import ATTR_ASSUMED_STATE, EntityCategory
-from homeassistant.core import HomeAssistant, ReleaseChannel
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.loader import IntegrationNotFound
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.number import NumberDeviceClass
+from inpui.components.sensor import SensorDeviceClass
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import ATTR_ASSUMED_STATE, EntityCategory
+from inpui.core import HomeAssistant, ReleaseChannel
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.loader import IntegrationNotFound
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

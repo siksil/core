@@ -4,15 +4,15 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components.easyenergy.const import DOMAIN
-from homeassistant.components.easyenergy.services import (
+from inpui.components.easyenergy.const import DOMAIN
+from inpui.components.easyenergy.services import (
     ATTR_CONFIG_ENTRY,
     ENERGY_RETURN_SERVICE_NAME,
     ENERGY_USAGE_SERVICE_NAME,
     GAS_SERVICE_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry
 

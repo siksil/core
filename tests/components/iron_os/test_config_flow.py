@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, MagicMock
 from pynecil import CommunicationError
 import pytest
 
-from homeassistant.components.iron_os import DOMAIN
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.iron_os import DOMAIN
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import DEFAULT_NAME, PINECIL_SERVICE_INFO, USER_INPUT
 

@@ -11,14 +11,14 @@ from pyenphase.models.meters import CtType
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.enphase_envoy.const import Platform
-from homeassistant.components.enphase_envoy.coordinator import SCAN_INTERVAL
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import STATE_UNKNOWN, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.components.enphase_envoy.const import Platform
+from inpui.components.enphase_envoy.coordinator import SCAN_INTERVAL
+from inpui.components.sensor import SensorStateClass
+from inpui.const import STATE_UNKNOWN, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import TemperatureConverter
 
 from . import setup_integration
 

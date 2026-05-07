@@ -9,8 +9,8 @@ from aiohttp import ClientResponseError
 import voluptuous as vol
 from weatherflow4py.api import WeatherFlowRestAPI
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN
 
 from .const import DOMAIN
 

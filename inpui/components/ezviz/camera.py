@@ -6,15 +6,15 @@ import logging
 
 from pyezvizapi.exceptions import HTTPError, InvalidHost, PyEzvizError
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.components.ffmpeg import get_ffmpeg_manager
-from homeassistant.components.stream import CONF_USE_WALLCLOCK_AS_TIMESTAMPS
-from homeassistant.config_entries import SOURCE_IGNORE, SOURCE_INTEGRATION_DISCOVERY
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.entity_platform import (
+from inpui.components import ffmpeg
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.components.ffmpeg import get_ffmpeg_manager
+from inpui.components.stream import CONF_USE_WALLCLOCK_AS_TIMESTAMPS
+from inpui.config_entries import SOURCE_IGNORE, SOURCE_INTEGRATION_DISCOVERY
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import discovery_flow
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )

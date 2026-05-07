@@ -4,14 +4,14 @@ from unittest.mock import Mock, call
 
 from panasonic_viera import Keys, SOAPError
 
-from homeassistant.components.panasonic_viera.const import ATTR_UDN, DOMAIN
-from homeassistant.components.remote import (
+from inpui.components.panasonic_viera.const import ATTR_UDN, DOMAIN
+from inpui.components.remote import (
     ATTR_COMMAND,
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_ON
+from inpui.core import HomeAssistant
 
 from .conftest import MOCK_CONFIG_DATA, MOCK_DEVICE_INFO, MOCK_ENCRYPTION_DATA
 

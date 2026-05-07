@@ -7,16 +7,16 @@ from typing import Any
 
 from numato_gpio import NumatoGpioError
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import (
+from inpui.components.switch import SwitchEntity
+from inpui.const import (
     CONF_DEVICES,
     CONF_ID,
     CONF_SWITCHES,
     DEVICE_DEFAULT_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import CONF_INVERT_LOGIC, CONF_PORTS, DATA_API, DOMAIN
 

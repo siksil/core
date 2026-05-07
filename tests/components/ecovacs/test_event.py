@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .util import notify_and_wait
 

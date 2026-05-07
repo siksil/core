@@ -6,9 +6,9 @@ from typing import Any
 
 from aio_georss_client.status_update import StatusUpdate
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from . import GdacsConfigEntry
 

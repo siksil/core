@@ -10,15 +10,15 @@ from aiohasupervisor import SupervisorError
 from aiohasupervisor.models import AddonsOptions
 import pytest
 
-from homeassistant.components.hassio import AddonError, AddonInfo, AddonState, HassIO
-from homeassistant.components.homeassistant_hardware import silabs_multiprotocol_addon
-from homeassistant.components.zha import DOMAIN as ZHA_DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import ATTR_COMPONENT
+from inpui.components.hassio import AddonError, AddonInfo, AddonState, HassIO
+from inpui.components.homeassistant_hardware import silabs_multiprotocol_addon
+from inpui.components.zha import DOMAIN as ZHA_DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResult, FlowResultType
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import ATTR_COMPONENT
 
 from tests.common import (
     MockConfigEntry,

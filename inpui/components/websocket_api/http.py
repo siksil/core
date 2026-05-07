@@ -13,14 +13,14 @@ from typing import TYPE_CHECKING, Any, Final
 from aiohttp import WSMsgType, web
 from aiohttp.http_websocket import WebSocketWriter
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.http.const import is_supervisor_unix_socket_request
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, EVENT_LOGGING_CHANGED
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.json import json_loads
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.http.const import is_supervisor_unix_socket_request
+from inpui.const import EVENT_INPUI_STOP, EVENT_LOGGING_CHANGED
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.util.async_ import create_eager_task
+from inpui.util.json import json_loads
 
 from .auth import AUTH_REQUIRED_MESSAGE, AuthPhase
 from .const import (
@@ -331,7 +331,7 @@ class WebSocketHandler:
         self._handle_task = asyncio.current_task()
 
         unsub_stop = hass.bus.async_listen(
-            EVENT_HOMEASSISTANT_STOP, self._async_handle_hass_stop
+            EVENT_INPUI_STOP, self._async_handle_hass_stop
         )
         cancel_logging_listener = hass.bus.async_listen(
             EVENT_LOGGING_CHANGED, self._async_logging_changed

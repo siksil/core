@@ -22,43 +22,43 @@ from propcache.api import cached_property, under_cached_property
 import voluptuous as vol
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_AUTHENTICATED, HomeAssistantView
-from homeassistant.components.media_player import (
+from inpui.components import websocket_api
+from inpui.components.http import KEY_AUTHENTICATED, HomeAssistantView
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.components.stream import (
+from inpui.components.stream import (
     FORMAT_CONTENT_TYPE,
     OUTPUT_FORMATS,
     Orientation,
     Stream,
     create_stream,
 )
-from homeassistant.components.web_rtc import async_get_ice_servers
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.web_rtc import async_get_ice_servers
+from inpui.components.websocket_api import ActiveConnection
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_FILENAME,
     CONTENT_TYPE_MULTIPART,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import bind_hass
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.network import get_url
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import bind_hass
 
 from .const import (
     CAMERA_IMAGE_TIMEOUT,
@@ -359,7 +359,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             stream.add_provider("hls")
             await stream.start()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, preload_stream)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, preload_stream)
 
     @callback
     def update_tokens(t: datetime) -> None:
@@ -377,7 +377,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Unsubscribe track time interval timer."""
         unsub()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, unsub_track_time_interval)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, unsub_track_time_interval)
 
     component.async_register_entity_service(
         SERVICE_ENABLE_MOTION, None, "async_enable_motion_detection"

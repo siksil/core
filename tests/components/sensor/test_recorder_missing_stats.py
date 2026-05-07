@@ -7,17 +7,17 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.history import get_significant_states
+from inpui.components.recorder.statistics import (
     get_latest_short_term_statistics_with_session,
     statistics_during_period,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import CoreState
-from homeassistant.helpers import recorder as recorder_helper
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.util import session_scope
+from inpui.core import CoreState
+from inpui.helpers import recorder as recorder_helper
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_test_home_assistant
 from tests.components.recorder.common import (

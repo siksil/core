@@ -4,11 +4,11 @@ from typing import Final
 
 from lunatone_rest_api_client import Auth, DALIBroadcast, Devices, Info
 
-from homeassistant.const import CONF_URL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_URL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import (

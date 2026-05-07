@@ -28,9 +28,9 @@ from pyenphase.models.meters import EnvoyMeterData
 from pyenphase.models.tariff import EnvoyStorageSettings, EnvoyTariff
 import pytest
 
-from homeassistant.components.enphase_envoy import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.enphase_envoy import DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

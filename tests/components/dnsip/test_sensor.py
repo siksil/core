@@ -8,7 +8,7 @@ from unittest.mock import patch
 from aiodns.error import DNSError
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.dnsip.const import (
+from inpui.components.dnsip.const import (
     CONF_HOSTNAME,
     CONF_IPV4,
     CONF_IPV6,
@@ -17,10 +17,10 @@ from homeassistant.components.dnsip.const import (
     CONF_RESOLVER_IPV6,
     DOMAIN,
 )
-from homeassistant.components.dnsip.sensor import SCAN_INTERVAL
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_NAME, CONF_PORT, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.dnsip.sensor import SCAN_INTERVAL
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_NAME, CONF_PORT, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import RetrieveDNS
 

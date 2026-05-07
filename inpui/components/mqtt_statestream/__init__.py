@@ -5,18 +5,18 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import valid_publish_topic
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, EVENT_STATE_CHANGED
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import (
+from inpui.components import mqtt
+from inpui.components.mqtt import valid_publish_topic
+from inpui.const import EVENT_INPUI_STOP, EVENT_STATE_CHANGED
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.start import async_at_start
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.start import async_at_start
+from inpui.helpers.typing import ConfigType
 
 CONF_BASE_TOPIC = "base_topic"
 CONF_PUBLISH_ATTRIBUTES = "publish_attributes"
@@ -108,7 +108,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         def _ha_stopping(_: Event) -> None:
             callback_handler()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _ha_stopping)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _ha_stopping)
 
     async_at_start(hass, _ha_started)
 

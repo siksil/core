@@ -7,10 +7,10 @@ from unittest.mock import ANY, Mock, patch
 
 import pytest
 
-from homeassistant.components import labs, script
-from homeassistant.components.script import DOMAIN, EVENT_SCRIPT_STARTED, ScriptEntity
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components import labs, script
+from inpui.components.script import DOMAIN, EVENT_SCRIPT_STARTED, ScriptEntity
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_NAME,
     SERVICE_RELOAD,
@@ -20,7 +20,7 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     CoreState,
     HomeAssistant,
@@ -29,10 +29,10 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.exceptions import ServiceNotFound, TemplateError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_state_change
-from homeassistant.helpers.script import (
+from inpui.exceptions import ServiceNotFound, TemplateError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_state_change
+from inpui.helpers.script import (
     SCRIPT_MODE_CHOICES,
     SCRIPT_MODE_PARALLEL,
     SCRIPT_MODE_QUEUED,
@@ -40,9 +40,9 @@ from homeassistant.helpers.script import (
     SCRIPT_MODE_SINGLE,
     _async_stop_scripts_at_shutdown,
 )
-from homeassistant.helpers.service import async_get_all_descriptions
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, yaml as yaml_util
+from inpui.helpers.service import async_get_all_descriptions
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, yaml as yaml_util
 
 from tests.common import (
     MockConfigEntry,
@@ -1481,7 +1481,7 @@ async def test_recursive_script_turn_on(
 
         # Trigger 1st stage script shutdown
         hass.set_state(CoreState.stopping)
-        hass.bus.async_fire("homeassistant_stop")
+        hass.bus.async_fire("inpui_stop")
         await asyncio.wait_for(stop_scripts_at_shutdown_called.wait(), 1)
 
         # Trigger 2nd stage script shutdown

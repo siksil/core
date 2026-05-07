@@ -8,7 +8,7 @@ from typing import Any
 from flux_led.aiodevice import AIOWifiLedBulb
 
 from homeassistant import config_entries
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_HW_VERSION,
     ATTR_IDENTIFIERS,
@@ -19,12 +19,12 @@ from homeassistant.const import (
     CONF_MODEL,
     CONF_NAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_MINOR_VERSION, DOMAIN, SIGNAL_STATE_UPDATED
 from .coordinator import FluxLedUpdateCoordinator

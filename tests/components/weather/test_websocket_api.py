@@ -1,10 +1,10 @@
 """Test the weather websocket API."""
 
-from homeassistant.components.weather import Forecast, WeatherEntityFeature
-from homeassistant.components.weather.const import DOMAIN
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.weather import Forecast, WeatherEntityFeature
+from inpui.components.weather.const import DOMAIN
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MockWeatherTest, create_entity
 

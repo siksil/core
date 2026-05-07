@@ -5,7 +5,7 @@ from unittest.mock import patch
 import adax_local
 
 from homeassistant import config_entries
-from homeassistant.components.adax.const import (
+from inpui.components.adax.const import (
     ACCOUNT_ID,
     CLOUD,
     CONNECTION_TYPE,
@@ -14,9 +14,9 @@ from homeassistant.components.adax.const import (
     WIFI_PSWD,
     WIFI_SSID,
 )
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

@@ -13,7 +13,7 @@ from bleak.backends.scanner import AdvertisementData, BLEDevice
 from bluetooth_adapters import DEFAULT_ADDRESS
 from habluetooth import BaseHaScanner, get_manager
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN,
     MONOTONIC_TIME,
     SOURCE_LOCAL,
@@ -22,9 +22,9 @@ from homeassistant.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_get_advertisement_callback,
 )
-from homeassistant.components.bluetooth.manager import HomeAssistantBluetoothManager
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.bluetooth.manager import HomeAssistantBluetoothManager
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

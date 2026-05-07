@@ -1,7 +1,7 @@
 """The lock tests for the august platform."""
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import HVACMode
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

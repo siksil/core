@@ -10,7 +10,7 @@ from screenlogicpy.const.msg import CODE
 from screenlogicpy.device_const.heat import HEAT_MODE
 from screenlogicpy.device_const.system import EQUIPMENT_FLAG
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_PRESET_MODE,
     ClimateEntity,
     ClimateEntityDescription,
@@ -18,11 +18,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .entity import ScreenLogicPushEntity, ScreenLogicPushEntityDescription
 from .types import ScreenLogicConfigEntry

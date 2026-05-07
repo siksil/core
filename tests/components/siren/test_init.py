@@ -4,13 +4,13 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     SirenEntity,
     SirenEntityDescription,
     process_turn_on_params,
 )
-from homeassistant.components.siren.const import SirenEntityFeature
-from homeassistant.core import HomeAssistant
+from inpui.components.siren.const import SirenEntityFeature
+from inpui.core import HomeAssistant
 
 
 class MockSirenEntity(SirenEntity):

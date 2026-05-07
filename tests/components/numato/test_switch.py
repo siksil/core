@@ -2,16 +2,16 @@
 
 import pytest
 
-from homeassistant.components import switch
-from homeassistant.const import (
+from inpui.components import switch
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import discovery
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import discovery
+from inpui.setup import async_setup_component
 
 from .common import NUMATO_CFG, mockup_raise
 

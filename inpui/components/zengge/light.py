@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.light import PLATFORM_SCHEMA as LIGHT_PLATFORM_SCHEMA
-from homeassistant.const import CONF_DEVICES, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.light import PLATFORM_SCHEMA as LIGHT_PLATFORM_SCHEMA
+from inpui.const import CONF_DEVICES, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 DEVICE_SCHEMA = vol.Schema({vol.Optional(CONF_NAME): cv.string})
 DOMAIN = "zengge"

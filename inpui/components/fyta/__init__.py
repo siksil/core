@@ -7,15 +7,15 @@ import logging
 
 from fyta_cli.fyta_connector import FytaConnector
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util.dt import async_get_time_zone
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util.dt import async_get_time_zone
 
 from .const import CONF_EXPIRATION
 from .coordinator import FytaConfigEntry, FytaCoordinator

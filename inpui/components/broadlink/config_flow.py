@@ -15,16 +15,16 @@ from broadlink.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_IMPORT,
     SOURCE_REAUTH,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_TIMEOUT, CONF_TYPE
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_TIMEOUT, CONF_TYPE
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DEFAULT_PORT, DEFAULT_TIMEOUT, DEVICE_TYPES, DOMAIN
 from .helpers import format_mac

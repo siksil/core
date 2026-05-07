@@ -3,9 +3,9 @@
 from numato_gpio import NumatoGpioError
 import pytest
 
-from homeassistant.components import numato
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import numato
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import NUMATO_CFG, mockup_raise, mockup_return
 

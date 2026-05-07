@@ -1,7 +1,7 @@
 """Tests for the influxdb component."""
 
-from homeassistant.components import influxdb
-from homeassistant.components.influxdb import (
+from inpui.components import influxdb
+from inpui.components.influxdb import (
     CONF_API_VERSION,
     CONF_BUCKET,
     CONF_COMPONENT_CONFIG,
@@ -16,7 +16,7 @@ from homeassistant.components.influxdb import (
     CONF_TAGS,
     CONF_TAGS_ATTRIBUTES,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_EXCLUDE,
     CONF_HOST,
     CONF_INCLUDE,
@@ -29,7 +29,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers.entityfilter import (
+from inpui.helpers.entityfilter import (
     CONF_DOMAINS,
     CONF_ENTITIES,
     CONF_ENTITY_GLOBS,

@@ -7,9 +7,9 @@ from typing import cast
 from mozart_api.models import PairedRemote
 from mozart_api.mozart_client import MozartClient
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import (
     BEO_REMOTE_CONTROL_KEYS,

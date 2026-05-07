@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.device_registry as dr
+from inpui.core import HomeAssistant
+import inpui.helpers.device_registry as dr
 
 from . import setup_integration
 

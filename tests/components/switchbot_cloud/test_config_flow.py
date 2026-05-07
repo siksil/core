@@ -5,14 +5,14 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.switchbot_cloud.config_flow import (
+from inpui.components.switchbot_cloud.config_flow import (
     SwitchBotAuthenticationError,
     SwitchBotConnectionError,
 )
-from homeassistant.components.switchbot_cloud.const import DOMAIN, ENTRY_TITLE
-from homeassistant.const import CONF_API_KEY, CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.switchbot_cloud.const import DOMAIN, ENTRY_TITLE
+from inpui.const import CONF_API_KEY, CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def _fill_out_form_and_assert_entry_created(

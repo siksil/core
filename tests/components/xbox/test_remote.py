@@ -9,22 +9,22 @@ import pytest
 from pythonxbox.api.provider.smartglass.models import InputKeyType
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_DELAY_SECS,
     DOMAIN as REMOTE_DOMAIN,
     SERVICE_SEND_COMMAND,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import Mock, MockConfigEntry, snapshot_platform
 

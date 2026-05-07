@@ -5,10 +5,10 @@ from typing import Any
 from pypck.lcn_addr import LcnAddr
 import pytest
 
-from homeassistant.components.lcn import AddressType
-from homeassistant.components.lcn.const import CONF_DOMAIN_DATA
-from homeassistant.components.lcn.helpers import get_device_config
-from homeassistant.const import (
+from inpui.components.lcn import AddressType
+from inpui.components.lcn.const import CONF_DOMAIN_DATA
+from inpui.components.lcn.helpers import get_device_config
+from inpui.const import (
     CONF_ADDRESS,
     CONF_DEVICES,
     CONF_DOMAIN,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import MockConfigEntry, init_integration
 

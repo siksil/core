@@ -5,13 +5,13 @@ from unittest.mock import Mock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.freebox import SCAN_INTERVAL
-from homeassistant.const import (
+from inpui.components.freebox import SCAN_INTERVAL
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_HOME,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     SERVICE_ALARM_TRIGGER,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 from .const import DATA_HOME_ALARM_GET_VALUE, DATA_HOME_GET_NODES

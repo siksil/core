@@ -9,13 +9,13 @@ import logging
 
 from gps3.agps3threaded import AGPS3mechanism
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     ATTR_MODE,
@@ -24,11 +24,11 @@ from homeassistant.const import (
     UnitOfLength,
     UnitOfSpeed,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util import dt as dt_util
 
 from . import GPSDConfigEntry
 from .const import DOMAIN

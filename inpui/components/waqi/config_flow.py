@@ -13,22 +13,22 @@ from aiowaqi import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import LocationSelector
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import LocationSelector
 
 from .const import CONF_STATION_NUMBER, DOMAIN, SUBENTRY_TYPE_STATION
 

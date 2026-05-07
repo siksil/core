@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN, EVENT_HDMI_CEC_UNAVAILABLE
 

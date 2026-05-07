@@ -4,10 +4,10 @@ from collections.abc import Mapping
 import logging
 from typing import Any
 
-from homeassistant.components.webhook import async_generate_id
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN, CONF_WEBHOOK_ID
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.components.webhook import async_generate_id
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_TOKEN, CONF_WEBHOOK_ID
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
 
 from .const import DOMAIN
 

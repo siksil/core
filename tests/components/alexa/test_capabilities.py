@@ -5,31 +5,31 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.components.alexa import smart_home
-from homeassistant.components.climate import (
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.alexa import smart_home
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.components.lock import LockState
-from homeassistant.components.media_player import MediaPlayerEntityFeature
-from homeassistant.components.valve import ValveEntityFeature
-from homeassistant.components.water_heater import (
+from inpui.components.lock import LockState
+from inpui.components.media_player import MediaPlayerEntityFeature
+from inpui.components.valve import ValveEntityFeature
+from inpui.components.water_heater import (
     ATTR_OPERATION_LIST,
     ATTR_OPERATION_MODE,
     STATE_ECO,
     STATE_GAS,
     STATE_HEAT_PUMP,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_OFF,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_common import (
     assert_request_calls_service,

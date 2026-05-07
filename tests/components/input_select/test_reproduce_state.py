@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.state import async_reproduce_state
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.state import async_reproduce_state
+from inpui.setup import async_setup_component
 
 VALID_OPTION1 = "Option A"
 VALID_OPTION2 = "Option B"

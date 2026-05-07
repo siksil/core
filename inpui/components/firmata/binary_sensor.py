@@ -2,10 +2,10 @@
 
 import logging
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.const import CONF_NAME, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.const import CONF_NAME, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FirmataConfigEntry
 from .const import CONF_NEGATE_STATE, CONF_PIN_MODE

@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.evil_genius_labs import PLATFORMS
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.evil_genius_labs import PLATFORMS
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize("platforms", [PLATFORMS])

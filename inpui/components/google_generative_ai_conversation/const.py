@@ -2,8 +2,8 @@
 
 import logging
 
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.helpers import llm
+from inpui.const import CONF_LLM_HASS_API
+from inpui.helpers import llm
 
 LOGGER = logging.getLogger(__package__)
 

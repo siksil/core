@@ -5,16 +5,16 @@ from __future__ import annotations
 from datetime import UTC, date, datetime
 from typing import Any, cast
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     TodoItem,
     TodoItemStatus,
     TodoListEntity,
     TodoListEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import dt as dt_util
 
 from .coordinator import GoogleTasksConfigEntry, TaskUpdateCoordinator
 

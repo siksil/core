@@ -8,18 +8,18 @@ import pytest
 from reolink_aio.exceptions import ReolinkError
 from reolink_aio.typings import VOD_trigger
 
-from homeassistant.components.media_source import (
+from inpui.components.media_source import (
     DOMAIN as MEDIA_SOURCE_DOMAIN,
     URI_SCHEME,
     Unresolvable,
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.components.reolink.config_flow import DEFAULT_PROTOCOL
-from homeassistant.components.reolink.const import CONF_BC_PORT, CONF_USE_HTTPS, DOMAIN
-from homeassistant.components.reolink.media_source import VOD_SPLIT_TIME
-from homeassistant.components.stream import DOMAIN as MEDIA_STREAM_DOMAIN
-from homeassistant.const import (
+from inpui.components.reolink.config_flow import DEFAULT_PROTOCOL
+from inpui.components.reolink.const import CONF_BC_PORT, CONF_USE_HTTPS, DOMAIN
+from inpui.components.reolink.media_source import VOD_SPLIT_TIME
+from inpui.components.stream import DOMAIN as MEDIA_STREAM_DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -27,10 +27,10 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import format_mac
+from inpui.setup import async_setup_component
 
 from .conftest import (
     TEST_BC_PORT,

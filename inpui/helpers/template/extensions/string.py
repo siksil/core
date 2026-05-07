@@ -5,12 +5,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 from urllib.parse import urlencode as urllib_urlencode
 
-from homeassistant.util import slugify as slugify_util
+from inpui.util import slugify as slugify_util
 
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class StringExtension(BaseTemplateExtension):

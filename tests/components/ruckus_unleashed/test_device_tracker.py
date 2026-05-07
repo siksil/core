@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock
 from aioruckus.const import ERROR_CONNECT_EOF, ERROR_LOGIN_INCORRECT
 from aioruckus.exceptions import AuthenticationError
 
-from homeassistant.components.ruckus_unleashed import DOMAIN
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import utcnow
+from inpui.components.ruckus_unleashed import DOMAIN
+from inpui.const import STATE_HOME, STATE_NOT_HOME, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import utcnow
 
 from . import (
     DEFAULT_UNIQUEID,

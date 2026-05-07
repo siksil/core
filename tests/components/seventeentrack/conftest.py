@@ -6,13 +6,13 @@ from unittest.mock import AsyncMock, patch
 from pyseventeentrack.package import Package
 import pytest
 
-from homeassistant.components.seventeentrack.const import (
+from inpui.components.seventeentrack.const import (
     CONF_SHOW_ARCHIVED,
     CONF_SHOW_DELIVERED,
     DEFAULT_SHOW_ARCHIVED,
     DEFAULT_SHOW_DELIVERED,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry
 

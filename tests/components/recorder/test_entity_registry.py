@@ -6,14 +6,14 @@ import pytest
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import Recorder, history
-from homeassistant.components.recorder.db_schema import StatesMeta
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import recorder
+from inpui.components.recorder import Recorder, history
+from inpui.components.recorder.db_schema import StatesMeta
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     ForceReturnConnectionToPool,

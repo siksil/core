@@ -6,13 +6,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, number
-from homeassistant.components.mqtt.number import (
+from inpui.components import mqtt, number
+from inpui.components.mqtt.number import (
     CONF_MAX,
     CONF_MIN,
     MQTT_NUMBER_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_STEP,
@@ -20,7 +20,7 @@ from homeassistant.components.number import (
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
@@ -29,8 +29,8 @@ from homeassistant.const import (
     UnitOfElectricPotential,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, State
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .common import (
     help_custom_config,

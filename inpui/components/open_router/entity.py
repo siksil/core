@@ -27,14 +27,14 @@ from openai.types.shared_params.response_format_json_schema import JSONSchema
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, llm
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.json import json_dumps
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, llm
+from inpui.helpers.entity import Entity
+from inpui.helpers.json import json_dumps
 
 from . import OpenRouterConfigEntry
 from .const import DOMAIN, LOGGER

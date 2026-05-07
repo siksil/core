@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_MAC, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_MAC, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import CONF_USE_BLUETOOTH
 from .coordinator import LaMarzoccoConfigEntry

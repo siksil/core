@@ -5,11 +5,11 @@ from __future__ import annotations
 from enum import IntFlag
 from typing import TYPE_CHECKING, Final
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
-    from homeassistant.components.media_source import local_source
-    from homeassistant.helpers.entity_component import EntityComponent
+    from inpui.components.media_source import local_source
+    from inpui.helpers.entity_component import EntityComponent
 
     from . import AITaskPreferences
     from .entity import AITaskEntity

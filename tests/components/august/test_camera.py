@@ -6,8 +6,8 @@ from unittest.mock import patch
 from yalexs.const import Brand
 from yalexs.doorbell import ContentTokenExpired
 
-from homeassistant.components.camera import CameraState
-from homeassistant.core import HomeAssistant
+from inpui.components.camera import CameraState
+from inpui.core import HomeAssistant
 
 from .mocks import _create_august_with_devices, _mock_doorbell_from_fixture
 

@@ -5,7 +5,7 @@ import logging
 from anova_wifi import AnovaApi
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import async_init_integration
 

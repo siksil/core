@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.components.climate import ClimateEntityFeature
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_controller, setup_integration
 from .conftest import create_mock_controller, create_mock_zone

@@ -7,9 +7,9 @@ from typing import Any
 from stookwijzer import Stookwijzer
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
-from homeassistant.helpers.selector import LocationSelector
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_LATITUDE, CONF_LOCATION, CONF_LONGITUDE
+from inpui.helpers.selector import LocationSelector
 
 from .const import DOMAIN
 

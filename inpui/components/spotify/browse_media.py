@@ -17,14 +17,14 @@ from spotifyaio import (
 from spotifyaio.models import Episode, ItemType, SimplifiedEpisode
 import yarl
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .const import (
     DOMAIN,

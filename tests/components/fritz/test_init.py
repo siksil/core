@@ -7,18 +7,18 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 
 from homeassistant import core
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.components.fritz.const import (
+from inpui.components.fritz.const import (
     DOMAIN,
     FRITZ_AUTH_EXCEPTIONS,
     FRITZ_EXCEPTIONS,
     SCAN_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .const import MOCK_USER_DATA
 

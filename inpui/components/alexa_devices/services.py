@@ -4,11 +4,11 @@ from aioamazondevices.const.metadata import ALEXA_INFO_SKILLS
 from aioamazondevices.const.sounds import SOUNDS_LIST
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import DOMAIN, INFO_SKILLS_MAPPING
 from .coordinator import AmazonConfigEntry

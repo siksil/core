@@ -13,8 +13,8 @@ from pyportainer.models.portainer import Endpoint, PortainerSystemStatus
 from pyportainer.models.stacks import Stack
 import pytest
 
-from homeassistant.components.portainer.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, CONF_URL, CONF_VERIFY_SSL
+from inpui.components.portainer.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, CONF_URL, CONF_VERIFY_SSL
 
 from tests.common import (
     MockConfigEntry,

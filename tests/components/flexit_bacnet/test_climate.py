@@ -11,7 +11,7 @@ from flexit_bacnet import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_ACTION,
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
@@ -24,11 +24,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.flexit_bacnet.const import PRESET_TO_VENTILATION_MODE_MAP
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_component, entity_registry as er
+from inpui.components.flexit_bacnet.const import PRESET_TO_VENTILATION_MODE_MAP
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_component, entity_registry as er
 
 from . import setup_with_selected_platforms
 

@@ -5,18 +5,18 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.smartthings import OLD_DATA
-from homeassistant.components.smartthings.const import (
+from inpui.components.smartthings import OLD_DATA
+from inpui.components.smartthings.const import (
     CONF_LOCATION_ID,
     CONF_SUBSCRIPTION_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

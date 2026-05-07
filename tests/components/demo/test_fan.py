@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import fan
-from homeassistant.components.demo.fan import (
+from inpui.components import fan
+from inpui.components.demo.fan import (
     PRESET_MODE_AUTO,
     PRESET_MODE_ON,
     PRESET_MODE_SLEEP,
     PRESET_MODE_SMART,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
@@ -20,8 +20,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 FULL_FAN_ENTITY_IDS = ["fan.living_room_fan", "fan.percentage_full_fan"]
 FANS_WITH_PRESET_MODE_ONLY = ["fan.preset_only_limited_fan"]

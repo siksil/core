@@ -12,14 +12,14 @@ import pytest
 from pytest_unordered import unordered
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     DOMAIN as DEVICE_AUTOMATION_DOMAIN,
 )
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.sun import DOMAIN as SUN_DOMAIN
-from homeassistant.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
-from homeassistant.const import (
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.sun import DOMAIN as SUN_DOMAIN
+from inpui.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_CONDITION,
@@ -32,19 +32,19 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ConditionError, HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ConditionError, HomeAssistantError
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
     trace,
 )
-from homeassistant.helpers.automation import (
+from inpui.helpers.automation import (
     DomainSpec,
     move_top_level_schema_fields_to_options,
 )
-from homeassistant.helpers.condition import (
+from inpui.helpers.condition import (
     ATTR_BEHAVIOR,
     BEHAVIOR_ALL,
     BEHAVIOR_ANY,
@@ -57,13 +57,13 @@ from homeassistant.helpers.condition import (
     make_entity_numerical_condition,
     make_entity_numerical_condition_with_unit,
 )
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import UNDEFINED, ConfigType, UndefinedType
-from homeassistant.loader import Integration, async_get_integration
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.yaml.loader import parse_yaml
+from inpui.helpers.template import Template
+from inpui.helpers.typing import UNDEFINED, ConfigType, UndefinedType
+from inpui.loader import Integration, async_get_integration
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.yaml.loader import parse_yaml
 
 from tests.common import MockModule, MockPlatform, mock_integration, mock_platform
 from tests.typing import WebSocketGenerator

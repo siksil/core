@@ -6,11 +6,11 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 from pyfronius import FroniusError
 
-from homeassistant.components.fronius.const import DOMAIN, SOLAR_NET_RESCAN_TIMER
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.fronius.const import DOMAIN, SOLAR_NET_RESCAN_TIMER
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import mock_responses, setup_fronius_integration
 

@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.vacuum import DOMAIN as VACUUM_DOMAIN
-from homeassistant.const import ATTR_MODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, service
+from inpui.components.vacuum import DOMAIN as VACUUM_DOMAIN
+from inpui.const import ATTR_MODE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

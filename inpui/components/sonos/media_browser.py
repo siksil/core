@@ -13,15 +13,15 @@ from soco.data_structures import DidlContainer, DidlObject
 from soco.ms_data_structures import MusicServiceItem
 from soco.music_library import MusicLibrary
 
-from homeassistant.components import media_source, plex, spotify
-from homeassistant.components.media_player import (
+from inpui.components import media_source, plex, spotify
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import is_internal_request
+from inpui.core import HomeAssistant
+from inpui.helpers.network import is_internal_request
 
 from .const import (
     DOMAIN,

@@ -7,8 +7,8 @@ from pysmartthings.models import HealthStatus
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smartthings import MAIN
-from homeassistant.components.water_heater import (
+from inpui.components.smartthings import MAIN
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_OPERATION_LIST,
@@ -25,7 +25,7 @@ from homeassistant.components.water_heater import (
     STATE_PERFORMANCE,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
@@ -36,8 +36,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     setup_integration,

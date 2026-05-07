@@ -1,13 +1,13 @@
 """The tests for the PG LAB Electronics cover."""
 
-from homeassistant.components import cover
-from homeassistant.components.cover import (
+from inpui.components import cover
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
     SERVICE_STOP_COVER,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     STATE_CLOSED,
     STATE_CLOSING,
@@ -15,7 +15,7 @@ from homeassistant.const import (
     STATE_OPENING,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_common import get_device_discovery_payload, send_discovery_message
 

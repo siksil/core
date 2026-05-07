@@ -3,7 +3,7 @@
 from ha_silabs_firmware_client import FirmwareManifest, FirmwareMetadata
 from yarl import URL
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 TEST_DOMAIN = "test"
 TEST_FIRMWARE_RELEASES_URL = "https://example.org/firmware"

@@ -8,7 +8,7 @@ from unittest import mock
 
 import orjson
 
-from homeassistant.helpers import json as json_helper
+from inpui.helpers import json as json_helper
 
 real_json_encoder_default = json_helper.json_encoder_default
 

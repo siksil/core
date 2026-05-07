@@ -8,8 +8,8 @@ from unittest.mock import MagicMock, PropertyMock, patch
 import pytest
 from zoneminder.monitor import MonitorState, TimePeriod
 
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PATH,

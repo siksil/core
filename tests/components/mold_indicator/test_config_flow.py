@@ -8,7 +8,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components.mold_indicator.const import (
+from inpui.components.mold_indicator.const import (
     CONF_CALIBRATION_FACTOR,
     CONF_INDOOR_HUMIDITY,
     CONF_INDOOR_TEMP,
@@ -16,10 +16,10 @@ from homeassistant.components.mold_indicator.const import (
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_NAME, CONF_UNIT_OF_MEASUREMENT, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_NAME, CONF_UNIT_OF_MEASUREMENT, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

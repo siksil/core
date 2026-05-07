@@ -4,9 +4,9 @@ from typing import Any
 
 from zeversolar import ZeverSolarData
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .coordinator import ZeversolarCoordinator

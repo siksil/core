@@ -17,15 +17,15 @@ import PIL.Image
 import voluptuous as vol
 import yarl
 
-from homeassistant.components import websocket_api
-from homeassistant.components.camera import (
+from inpui.components import websocket_api
+from inpui.components.camera import (
     CAMERA_IMAGE_TIMEOUT,
     DOMAIN as CAMERA_DOMAIN,
     DynamicStreamSettings,
     _async_get_image,
 )
-from homeassistant.components.http.view import HomeAssistantView
-from homeassistant.components.stream import (
+from inpui.components.http.view import HomeAssistantView
+from inpui.components.stream import (
     CONF_RTSP_TRANSPORT,
     CONF_USE_WALLCLOCK_AS_TIMESTAMPS,
     HLS_PROVIDER,
@@ -34,13 +34,13 @@ from homeassistant.components.stream import (
     Stream,
     create_stream,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_NAME,
     CONF_PASSWORD,
@@ -49,20 +49,20 @@ from homeassistant.const import (
     HTTP_BASIC_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import section
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.helpers import config_validation as cv, template as template_helper
-from homeassistant.helpers.entity_platform import PlatformData
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.network import get_url
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import section
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.helpers import config_validation as cv, template as template_helper
+from inpui.helpers.entity_platform import PlatformData
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.network import get_url
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 from .camera import GenericCamera, generate_auth
 from .const import (

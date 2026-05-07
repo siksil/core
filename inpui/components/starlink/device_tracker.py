@@ -4,12 +4,12 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     TrackerEntity,
     TrackerEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_ALTITUDE
 from .coordinator import StarlinkConfigEntry, StarlinkData

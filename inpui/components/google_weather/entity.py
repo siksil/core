@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.config_entries import ConfigSubentry
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .coordinator import GoogleWeatherConfigEntry

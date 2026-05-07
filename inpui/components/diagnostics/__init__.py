@@ -12,30 +12,30 @@ from typing import Any, Protocol
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import http, websocket_api
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components import http, websocket_api
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     integration_platform,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.json import (
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.json import (
     ExtendedJSONEncoder,
     find_paths_unserializable_data,
 )
-from homeassistant.helpers.system_info import async_get_system_info
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import (
+from inpui.helpers.system_info import async_get_system_info
+from inpui.helpers.typing import ConfigType
+from inpui.loader import (
     Manifest,
     async_get_custom_components,
     async_get_integration,
 )
-from homeassistant.setup import async_get_domain_setup_times
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import format_unserializable_data
+from inpui.setup import async_get_domain_setup_times
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import format_unserializable_data
 
 from .const import DOMAIN, REDACTED, DiagnosticsSubType, DiagnosticsType
 from .util import async_redact_data, entity_entry_as_dict

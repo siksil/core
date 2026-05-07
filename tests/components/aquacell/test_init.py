@@ -8,13 +8,13 @@ from unittest.mock import AsyncMock, patch
 from aioaquacell import AquacellApiException, AuthenticationFailed
 import pytest
 
-from homeassistant.components.aquacell.const import (
+from inpui.components.aquacell.const import (
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_CREATION_TIME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

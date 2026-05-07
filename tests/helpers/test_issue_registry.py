@@ -5,8 +5,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import async_capture_events, flush_store
 

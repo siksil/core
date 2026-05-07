@@ -16,9 +16,9 @@ from async_upnp_client.profiles.igd import IgdDevice, IgdStateItem
 from async_upnp_client.utils import async_get_local_ip
 from getmac import get_mac_address
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import (
     BYTES_RECEIVED,

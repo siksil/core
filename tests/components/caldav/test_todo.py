@@ -8,7 +8,7 @@ from caldav.lib.error import DAVError, NotFoundError
 from caldav.objects import Todo
 import pytest
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_DUE_DATETIME,
@@ -18,9 +18,9 @@ from homeassistant.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

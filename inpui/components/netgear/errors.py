@@ -1,6 +1,6 @@
 """Errors for the Netgear component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class NetgearException(HomeAssistantError):

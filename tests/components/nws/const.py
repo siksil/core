@@ -1,7 +1,7 @@
 """Helpers for interacting with pynws."""
 
-from homeassistant.components.nws.const import CONF_STATION
-from homeassistant.components.weather import (
+from inpui.components.nws.const import CONF_STATION
+from inpui.components.weather import (
     ATTR_CONDITION_LIGHTNING_RAINY,
     ATTR_FORECAST_CONDITION,
     ATTR_FORECAST_DEW_POINT,
@@ -18,7 +18,7 @@ from homeassistant.components.weather import (
     ATTR_WEATHER_WIND_BEARING,
     ATTR_WEATHER_WIND_SPEED,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LONGITUDE,
@@ -27,7 +27,7 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.util.unit_conversion import (
+from inpui.util.unit_conversion import (
     DistanceConverter,
     PressureConverter,
     SpeedConverter,

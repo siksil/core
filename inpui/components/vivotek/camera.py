@@ -8,13 +8,13 @@ from typing import TYPE_CHECKING
 from libpyvivotek.vivotek import VivotekCamera
 import voluptuous as vol
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     PLATFORM_SCHEMA as CAMERA_PLATFORM_SCHEMA,
     Camera,
     CameraEntityFeature,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_IP_ADDRESS,
     CONF_NAME,
@@ -25,14 +25,14 @@ from homeassistant.const import (
     HTTP_BASIC_AUTHENTICATION,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity_platform import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import VivotekConfigEntry
 from .const import (

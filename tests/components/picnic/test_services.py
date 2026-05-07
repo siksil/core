@@ -4,11 +4,11 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.picnic import CONF_COUNTRY_CODE, DOMAIN
-from homeassistant.components.picnic.const import SERVICE_ADD_PRODUCT_TO_CART
-from homeassistant.components.picnic.services import PicnicServiceException
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.picnic import CONF_COUNTRY_CODE, DOMAIN
+from inpui.components.picnic.const import SERVICE_ADD_PRODUCT_TO_CART
+from inpui.components.picnic.services import PicnicServiceException
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

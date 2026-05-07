@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from airos.exceptions import AirOSException
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import DOMAIN, AirOSConfigEntry, AirOSDataUpdateCoordinator
 from .entity import AirOSEntity

@@ -8,12 +8,12 @@ from typing import TYPE_CHECKING
 
 from amcrest import AmcrestError
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.const import CONF_NAME, CONF_SENSORS, PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.const import CONF_NAME, CONF_SENSORS, PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DATA_AMCREST, DEVICES, SENSOR_SCAN_INTERVAL_SECS, SERVICE_UPDATE
 from .helpers import log_update_error, service_signal

@@ -10,15 +10,15 @@ from typing import Any, Final
 from aiohttp import ClientResponseError
 from pymiele import MieleEnum
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     StateVacuumEntity,
     StateVacuumEntityDescription,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, PROCESS_ACTION, PROGRAM_ID, MieleActions, MieleAppliance
 from .coordinator import MieleConfigEntry

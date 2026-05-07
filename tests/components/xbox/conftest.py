@@ -16,15 +16,15 @@ from pythonxbox.api.provider.smartglass.models import (
 )
 from pythonxbox.api.provider.titlehub.models import TitleHubResponse
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.xbox.const import DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.xbox.const import DOMAIN
+from inpui.config_entries import ConfigSubentryData
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

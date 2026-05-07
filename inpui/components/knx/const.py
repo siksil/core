@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING, Final, TypedDict
 from xknx.dpt.dpt_20 import HVACControllerMode
 from xknx.telegram import Telegram
 
-from homeassistant.components.climate import FAN_AUTO, FAN_OFF, HVACAction, HVACMode
-from homeassistant.const import Platform
-from homeassistant.util.hass_dict import HassKey
+from inpui.components.climate import FAN_AUTO, FAN_OFF, HVACAction, HVACMode
+from inpui.const import Platform
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
     from .knx_module import KNXModule

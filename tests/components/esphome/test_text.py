@@ -4,13 +4,13 @@ from unittest.mock import call
 
 from aioesphomeapi import APIClient, TextInfo, TextMode as ESPHomeTextMode, TextState
 
-from homeassistant.components.text import (
+from inpui.components.text import (
     ATTR_VALUE,
     DOMAIN as TEXT_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .conftest import MockGenericDeviceEntryType
 

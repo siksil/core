@@ -6,11 +6,11 @@ from ipaddress import ip_address
 
 from aiohttp.web import Request
 
-from homeassistant.auth.models import User
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.http import current_request
-from homeassistant.helpers.network import is_cloud_connection
-from homeassistant.util.network import is_local
+from inpui.auth.models import User
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.http import current_request
+from inpui.helpers.network import is_cloud_connection
+from inpui.util.network import is_local
 
 
 @callback

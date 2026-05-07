@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from streamlabswater.streamlabswater import StreamlabsClient
 
-from homeassistant.components.streamlabswater import DOMAIN
-from homeassistant.const import CONF_API_KEY
+from inpui.components.streamlabswater import DOMAIN
+from inpui.const import CONF_API_KEY
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

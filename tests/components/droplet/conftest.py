@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.droplet.const import DOMAIN
-from homeassistant.const import CONF_CODE, CONF_IP_ADDRESS, CONF_PORT
+from inpui.components.droplet.const import DOMAIN
+from inpui.const import CONF_CODE, CONF_IP_ADDRESS, CONF_PORT
 
 from tests.common import MockConfigEntry
 

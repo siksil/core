@@ -5,13 +5,13 @@ from typing import Any
 
 from aioharmony.const import SendCommandDevice
 
-from homeassistant.components.harmony.const import (
+from inpui.components.harmony.const import (
     DOMAIN,
     SERVICE_CHANGE_CHANNEL,
     SERVICE_SYNC,
 )
-from homeassistant.components.harmony.remote import ATTR_CHANNEL, ATTR_DELAY_SECS
-from homeassistant.components.remote import (
+from inpui.components.harmony.remote import ATTR_CHANNEL, ATTR_DELAY_SECS
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_COMMAND,
     ATTR_DEVICE,
@@ -23,7 +23,7 @@ from homeassistant.components.remote import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     CONF_NAME,
@@ -31,8 +31,8 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import utcnow
+from inpui.core import HomeAssistant
+from inpui.util import utcnow
 
 from .conftest import ACTIVITIES_TO_IDS, TV_DEVICE_ID, TV_DEVICE_NAME
 from .const import ENTITY_REMOTE, HUB_NAME

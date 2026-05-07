@@ -74,15 +74,15 @@ from anthropic.types.text_editor_code_execution_tool_result_block_param import (
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, llm
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util import slugify
-from homeassistant.util.json import JsonObjectType
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, llm
+from inpui.helpers.entity import Entity
+from inpui.helpers.json import json_dumps
+from inpui.util import slugify
+from inpui.util.json import JsonObjectType
 
 from . import AnthropicConfigEntry
 from .const import (

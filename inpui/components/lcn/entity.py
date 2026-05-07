@@ -4,10 +4,10 @@ from collections.abc import Callable
 
 from pypck.device import DeviceConnection
 
-from homeassistant.const import CONF_ADDRESS, CONF_DOMAIN, CONF_NAME
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_ADDRESS, CONF_DOMAIN, CONF_NAME
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_DOMAIN_DATA, DOMAIN
 from .helpers import (

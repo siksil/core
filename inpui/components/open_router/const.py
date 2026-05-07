@@ -2,8 +2,8 @@
 
 import logging
 
-from homeassistant.const import CONF_LLM_HASS_API, CONF_PROMPT
-from homeassistant.helpers import llm
+from inpui.const import CONF_LLM_HASS_API, CONF_PROMPT
+from inpui.helpers import llm
 
 DOMAIN = "open_router"
 LOGGER = logging.getLogger(__package__)

@@ -5,12 +5,12 @@ from unittest.mock import ANY, AsyncMock, MagicMock, patch
 
 from aiohttp import ClientError, ClientResponseError
 
-from homeassistant.components.energyid import (
+from inpui.components.energyid import (
     DOMAIN,
     _async_handle_state_change,
     async_unload_entry,
 )
-from homeassistant.components.energyid.const import (
+from inpui.components.energyid.const import (
     CONF_DEVICE_ID,
     CONF_DEVICE_NAME,
     CONF_ENERGYID_KEY,
@@ -18,12 +18,12 @@ from homeassistant.components.energyid.const import (
     CONF_PROVISIONING_KEY,
     CONF_PROVISIONING_SECRET,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import Event, EventStateChangedData, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

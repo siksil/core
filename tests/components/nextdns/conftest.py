@@ -15,8 +15,8 @@ from nextdns import (
 )
 import pytest
 
-from homeassistant.components.nextdns.const import CONF_PROFILE_ID, DOMAIN
-from homeassistant.const import CONF_API_KEY
+from inpui.components.nextdns.const import CONF_PROFILE_ID, DOMAIN
+from inpui.const import CONF_API_KEY
 
 from tests.common import (
     MockConfigEntry,

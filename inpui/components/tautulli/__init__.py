@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pytautulli import PyTautulli, PyTautulliHostConfiguration
 
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import TautulliConfigEntry, TautulliDataUpdateCoordinator
 

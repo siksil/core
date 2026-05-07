@@ -6,10 +6,10 @@ from pysuez.exception import PySuezError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.suez_water.const import CONF_COUNTER_ID, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.recorder import Recorder
+from inpui.components.suez_water.const import CONF_COUNTER_ID, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import MOCK_DATA
 

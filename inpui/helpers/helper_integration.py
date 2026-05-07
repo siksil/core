@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable, Coroutine
 from typing import Any
 
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, valid_entity_id
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, valid_entity_id
 
 from . import device_registry as dr, entity_registry as er
 from .event import async_track_entity_registry_updated_event

@@ -8,10 +8,10 @@ from unittest.mock import patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.cert_expiry.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components.cert_expiry.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import CoreState, HomeAssistant
+from inpui.util.dt import utcnow
 
 from .const import HOST, PORT
 from .helpers import future_timestamp, static_datetime

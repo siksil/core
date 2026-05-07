@@ -14,17 +14,17 @@ from azure.eventhub.aio import EventHubProducerClient
 from azure.eventhub.exceptions import EventHubError
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import Event, HomeAssistant, State
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import utcnow
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import Event, HomeAssistant, State
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
+from inpui.helpers.event import async_call_later
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import utcnow
+from inpui.util.hass_dict import HassKey
 
 from .client import AzureEventHubClient
 from .const import (

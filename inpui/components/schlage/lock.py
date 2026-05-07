@@ -7,10 +7,10 @@ from typing import Any
 from pyschlage.code import AccessCode
 from pyschlage.exceptions import Error as SchlageError
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant, ServiceResponse, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant, ServiceResponse, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import LockData, SchlageConfigEntry, SchlageDataUpdateCoordinator

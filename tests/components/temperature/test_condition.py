@@ -4,10 +4,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.weather import ATTR_WEATHER_TEMPERATURE_UNIT
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import HVACMode
+from inpui.components.weather import ATTR_WEATHER_TEMPERATURE_UNIT
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

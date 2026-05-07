@@ -6,8 +6,8 @@ from aioairzone.const import RAW_HVAC, RAW_VERSION, RAW_WEBSERVER
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.airzone.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.airzone.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .util import (
     HVAC_MOCK,

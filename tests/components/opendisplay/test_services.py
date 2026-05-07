@@ -12,10 +12,10 @@ from PIL import Image as PILImage
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.opendisplay.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.components.opendisplay.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

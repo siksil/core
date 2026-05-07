@@ -6,7 +6,7 @@ from typing import Any
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     ATTR_EVENT_TYPE,
     ATTR_EVENT_TYPES,
     DOMAIN,
@@ -14,13 +14,13 @@ from homeassistant.components.event import (
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import CONF_PLATFORM, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import CONF_PLATFORM, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .const import TEST_DOMAIN
 

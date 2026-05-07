@@ -6,11 +6,11 @@ from aiohttp import ClientConnectionError
 import faadelays
 
 from homeassistant import config_entries
-from homeassistant.components.faa_delays.const import DOMAIN
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.faa_delays.const import DOMAIN
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 

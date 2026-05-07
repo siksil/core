@@ -12,7 +12,7 @@ from pyhap.const import (
 from pyhap.service import Service
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -21,7 +21,7 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_CLOSE_COVER,
@@ -31,14 +31,14 @@ from homeassistant.const import (
     SERVICE_STOP_COVER,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HassJobType,
     State,
     callback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.helpers.event import async_track_state_change_event
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

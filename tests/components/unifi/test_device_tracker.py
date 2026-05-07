@@ -11,8 +11,8 @@ from freezegun.api import FrozenDateTimeFactory, freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.device_tracker import DOMAIN as TRACKER_DOMAIN
-from homeassistant.components.unifi.const import (
+from inpui.components.device_tracker import DOMAIN as TRACKER_DOMAIN
+from inpui.components.unifi.const import (
     CONF_BLOCK_CLIENT,
     CONF_CLIENT_SOURCE,
     CONF_IGNORE_WIRED_BUG,
@@ -23,10 +23,10 @@ from homeassistant.components.unifi.const import (
     DEFAULT_DETECTION_TIME,
     DOMAIN,
 )
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_HOME, STATE_NOT_HOME, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .conftest import (
     ConfigEntryFactoryType,

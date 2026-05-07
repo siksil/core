@@ -6,7 +6,7 @@ from contextlib import suppress
 import io
 import wave
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import LOGGER
 

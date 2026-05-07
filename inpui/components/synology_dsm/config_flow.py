@@ -20,13 +20,13 @@ from synology_dsm.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DISKS,
     CONF_HOST,
     CONF_MAC,
@@ -37,24 +37,24 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERIAL,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.helpers.typing import DiscoveryInfoType, VolDictType
-from homeassistant.util import slugify
-from homeassistant.util.network import is_ip_address as is_ip
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.typing import DiscoveryInfoType, VolDictType
+from inpui.util import slugify
+from inpui.util.network import is_ip_address as is_ip
 
 from .const import (
     CONF_BACKUP_PATH,

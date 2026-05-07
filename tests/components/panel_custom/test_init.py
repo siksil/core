@@ -1,8 +1,8 @@
 """The tests for the panel_custom component."""
 
 from homeassistant import setup
-from homeassistant.components import frontend, panel_custom
-from homeassistant.core import HomeAssistant
+from inpui.components import frontend, panel_custom
+from inpui.core import HomeAssistant
 
 
 async def test_webcomponent_custom_path_not_found(hass: HomeAssistant) -> None:

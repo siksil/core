@@ -5,9 +5,9 @@ from unittest.mock import patch
 from pynzbgetapi import NZBGetAPIException
 import pytest
 
-from homeassistant.components.nzbget.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nzbget.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG, _patch_version, init_integration
 

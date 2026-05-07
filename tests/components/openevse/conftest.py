@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.openevse.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.openevse.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry
 

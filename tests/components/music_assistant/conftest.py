@@ -11,8 +11,8 @@ from music_assistant_models.api import ServerInfoMessage
 from music_assistant_models.config_entries import PlayerConfig
 import pytest
 
-from homeassistant.components.music_assistant.config_flow import CONF_URL
-from homeassistant.components.music_assistant.const import DOMAIN
+from inpui.components.music_assistant.config_flow import CONF_URL
+from inpui.components.music_assistant.const import DOMAIN
 
 from tests.common import AsyncMock, MockConfigEntry, load_fixture
 

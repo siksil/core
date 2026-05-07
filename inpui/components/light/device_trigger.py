@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import toggle_entity
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.device_automation import toggle_entity
+from inpui.const import CONF_DOMAIN
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 

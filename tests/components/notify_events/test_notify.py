@@ -1,16 +1,16 @@
 """The tests for notify_events."""
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.components.notify_events.notify import (
+from inpui.components.notify_events.notify import (
     ATTR_LEVEL,
     ATTR_PRIORITY,
     ATTR_TOKEN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import async_mock_service
 

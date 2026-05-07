@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components.doorbird.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.doorbird.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import mock_not_found_exception
 from .conftest import DoorbirdMockerType

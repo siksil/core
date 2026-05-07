@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.openhome.const import DOMAIN
-from homeassistant.components.update import (
+from inpui.components.openhome.const import DOMAIN
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     ATTR_RELEASE_SUMMARY,
@@ -14,7 +14,7 @@ from homeassistant.components.update import (
     SERVICE_INSTALL,
     UpdateDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     CONF_HOST,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import MockConfigEntry
 

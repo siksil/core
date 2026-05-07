@@ -10,9 +10,9 @@ from typing import Any
 from nice_go import AuthFailedError, NiceGOApi
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_EMAIL, CONF_NAME, CONF_PASSWORD
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_EMAIL, CONF_NAME, CONF_PASSWORD
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_REFRESH_TOKEN, CONF_REFRESH_TOKEN_CREATION_TIME, DOMAIN
 

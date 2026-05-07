@@ -7,10 +7,10 @@ from pyairnow.errors import AirNowError, EmptyResponseError, InvalidKeyError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.airnow.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.airnow.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

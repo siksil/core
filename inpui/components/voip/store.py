@@ -3,8 +3,8 @@
 from dataclasses import dataclass
 import logging
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import Store
 
 from .const import STORAGE_VER
 

@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pooldose.request_status import RequestStatus
 import pytest
 
-from homeassistant.components.pooldose.const import DOMAIN
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.pooldose.const import DOMAIN
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import (
     MockConfigEntry,

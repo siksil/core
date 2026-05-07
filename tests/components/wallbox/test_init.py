@@ -5,12 +5,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.input_number import ATTR_VALUE, SERVICE_SET_VALUE
-from homeassistant.components.wallbox.const import CHARGER_JWT_TTL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.components.input_number import ATTR_VALUE, SERVICE_SET_VALUE
+from inpui.components.wallbox.const import CHARGER_JWT_TTL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
 
 from .conftest import http_403_error, http_429_error, setup_integration
 from .const import (

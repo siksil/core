@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, patch
 from london_tube_status import parse_api_response
 import pytest
 
-from homeassistant.components.london_underground.const import CONF_LINE, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.london_underground.const import CONF_LINE, DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.conftest import AiohttpClientMocker

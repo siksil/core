@@ -8,12 +8,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import wake_word
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.components import wake_word
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import EntityCategory, Platform
+from inpui.core import HomeAssistant, State
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from .common import mock_wake_word_entity_platform
 

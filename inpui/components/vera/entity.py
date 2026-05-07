@@ -7,15 +7,15 @@ from typing import Any
 
 import pyvera as veraApi
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ARMED,
     ATTR_BATTERY_LEVEL,
     ATTR_LAST_TRIP_TIME,
     ATTR_TRIPPED,
 )
-from homeassistant.helpers.entity import Entity
-from homeassistant.util import slugify
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.helpers.entity import Entity
+from inpui.util import slugify
+from inpui.util.dt import utc_from_timestamp
 
 from .common import ControllerData
 from .const import CONF_LEGACY_UNIQUE_ID, VERA_ID_FORMAT

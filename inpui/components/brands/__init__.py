@@ -13,14 +13,14 @@ from typing import Any, Final
 from aiohttp import ClientError, hdrs, web
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_AUTHENTICATED, HomeAssistantView
-from homeassistant.core import HomeAssistant, callback, valid_domain
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_custom_components
+from inpui.components import websocket_api
+from inpui.components.http import KEY_AUTHENTICATED, HomeAssistantView
+from inpui.core import HomeAssistant, callback, valid_domain
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_custom_components
 
 from .const import (
     ALLOWED_IMAGES,

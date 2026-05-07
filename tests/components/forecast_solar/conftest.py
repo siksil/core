@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from forecast_solar import models
 import pytest
 
-from homeassistant.components.forecast_solar.const import (
+from inpui.components.forecast_solar.const import (
     CONF_AZIMUTH,
     CONF_DAMPING_EVENING,
     CONF_DAMPING_MORNING,
@@ -16,9 +16,9 @@ from homeassistant.components.forecast_solar.const import (
     CONF_MODULES_POWER,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

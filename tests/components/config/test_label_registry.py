@@ -5,9 +5,9 @@ from datetime import datetime
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.config import label_registry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import label_registry as lr
+from inpui.components.config import label_registry
+from inpui.core import HomeAssistant
+from inpui.helpers import label_registry as lr
 
 from tests.typing import MockHAClientWebSocket, WebSocketGenerator
 

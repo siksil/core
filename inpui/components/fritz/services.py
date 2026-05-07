@@ -11,9 +11,9 @@ from fritzconnection.core.exceptions import (
 from fritzconnection.lib.fritzwlan import DEFAULT_PASSWORD_LENGTH
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.service import async_extract_config_entry_ids
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.service import async_extract_config_entry_ids
 
 from .const import DOMAIN
 from .coordinator import FritzConfigEntry

@@ -8,14 +8,14 @@ from typing import Any
 
 from jellyfin_apiclient_python import JellyfinClient
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
     SearchMediaQuery,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .client_wrapper import get_artwork_url
 from .const import (

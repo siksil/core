@@ -7,7 +7,7 @@ from typing import Any, Self
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     CONF_ICON,
     CONF_ID,
@@ -18,15 +18,15 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import collection, config_validation as cv
-from homeassistant.helpers.entity import ToggleEntity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-import homeassistant.helpers.service
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import collection, config_validation as cv
+from inpui.helpers.entity import ToggleEntity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+import inpui.helpers.service
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import bind_hass
 
 DOMAIN = "input_boolean"
 

@@ -7,8 +7,8 @@ from typing import Any
 from xknx.devices import BinarySensor as XknxBinarySensor
 
 from homeassistant import config_entries
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
@@ -17,13 +17,13 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     ATTR_COUNTER,

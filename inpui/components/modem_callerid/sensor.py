@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from phone_modem import PhoneModem
 
-from homeassistant.components.sensor import RestoreSensor
-from homeassistant.const import STATE_IDLE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import RestoreSensor
+from inpui.const import STATE_IDLE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ModemCallerIdConfigEntry
 from .const import CID, DOMAIN

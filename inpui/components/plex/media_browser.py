@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from yarl import URL
 
-from homeassistant.components.media_player import BrowseError, BrowseMedia, MediaClass
+from inpui.components.media_player import BrowseError, BrowseMedia, MediaClass
 
 from .const import DOMAIN, SERVERS
 from .errors import MediaNotFound

@@ -14,19 +14,19 @@ from typing import Any
 
 from sqlalchemy.orm.session import Session
 
-from homeassistant.components.recorder import (
+from inpui.components.recorder import (
     DOMAIN as RECORDER_DOMAIN,
     get_instance,
     history,
     statistics,
 )
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
     StatisticResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     REVOLUTIONS_PER_MINUTE,
@@ -34,17 +34,17 @@ from homeassistant.const import (
     UnitOfSoundPressure,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant, State, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.entity import entity_sources
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.loader import async_suggest_report_issue
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.unit_conversion import BaseUnitConverter
+from inpui.core import HomeAssistant, State, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.entity import entity_sources
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.loader import async_suggest_report_issue
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.enum import try_parse_enum
+from inpui.util.hass_dict import HassKey
+from inpui.util.unit_conversion import BaseUnitConverter
 
 from .const import (
     AMBIGUOUS_UNITS,

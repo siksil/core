@@ -1,6 +1,6 @@
 """Adds constants for Trafikverket Train integration."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "trafikverket_train"
 PLATFORMS = [Platform.SENSOR]

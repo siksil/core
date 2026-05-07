@@ -9,14 +9,14 @@ from pypck.lcn_defs import RelayStateModifier
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lcn.helpers import get_device_connection
-from homeassistant.components.lcn.light import SCAN_INTERVAL
-from homeassistant.components.light import (
+from inpui.components.lcn.helpers import get_device_connection
+from inpui.components.lcn.light import SCAN_INTERVAL
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_TRANSITION,
     DOMAIN as LIGHT_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockConfigEntry, MockDeviceConnection, init_integration
 

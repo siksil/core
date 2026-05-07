@@ -10,14 +10,14 @@ from typing import Any
 from jellyfin_apiclient_python.api import jellyfin_url
 from jellyfin_apiclient_python.client import JellyfinClient
 
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import (
     COLLECTION_TYPE_MOVIES,

@@ -4,12 +4,12 @@ from functools import partial
 
 import pytest
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.util.signal_type import SignalType, SignalTypeFormat
+from inpui.util.signal_type import SignalType, SignalTypeFormat
 
 
 async def test_simple_function(hass: HomeAssistant) -> None:

@@ -15,10 +15,10 @@ from pyhap.camera import (
 from pyhap.const import CATEGORY_CAMERA
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.components import camera
-from homeassistant.components.ffmpeg import get_ffmpeg_manager
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import (
+from inpui.components import camera
+from inpui.components.ffmpeg import get_ffmpeg_manager
+from inpui.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import (
     Event,
     EventStateChangedData,
     HassJobType,
@@ -26,11 +26,11 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_state_change_event,
     async_track_time_interval,
 )
-from homeassistant.util.async_ import create_eager_task
+from inpui.util.async_ import create_eager_task
 
 from .accessories import TYPES, HomeDriver
 from .const import (

@@ -4,7 +4,7 @@ from typing import Any, cast
 
 from pyoverkiz.enums import OverkizCommand, OverkizCommandParam, OverkizState
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_ELECTRIC,
     STATE_OFF,
@@ -12,8 +12,8 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.util import dt as dt_util
 
 from .. import OverkizDataUpdateCoordinator
 from ..entity import OverkizEntity

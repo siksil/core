@@ -7,10 +7,10 @@ from deebot_client.device import Device
 from deebot_client.events.map import CachedMapInfoEvent, MapChangedEvent
 from deebot_client.map import Map
 
-from homeassistant.components.image import ImageEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.image import ImageEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcovacsConfigEntry
 from .entity import EcovacsEntity

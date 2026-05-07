@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import HomeAssistant, callback
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_PASSWORD
+from inpui.core import HomeAssistant, callback
 
 from .coordinator import InComfortConfigEntry
 

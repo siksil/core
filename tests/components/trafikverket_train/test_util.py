@@ -6,9 +6,9 @@ from datetime import datetime
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.trafikverket_train.util import next_departuredate
-from homeassistant.const import WEEKDAYS
-from homeassistant.util import dt as dt_util
+from inpui.components.trafikverket_train.util import next_departuredate
+from inpui.const import WEEKDAYS
+from inpui.util import dt as dt_util
 
 
 async def test_sensor_next(

@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from homeassistant.components import geonetnz_quakes
-from homeassistant.components.geonetnz_quakes import DEFAULT_SCAN_INTERVAL
-from homeassistant.components.geonetnz_quakes.sensor import (
+from inpui.components import geonetnz_quakes
+from inpui.components.geonetnz_quakes import DEFAULT_SCAN_INTERVAL
+from inpui.components.geonetnz_quakes.sensor import (
     ATTR_CREATED,
     ATTR_LAST_UPDATE,
     ATTR_LAST_UPDATE_SUCCESSFUL,
@@ -15,15 +15,15 @@ from homeassistant.components.geonetnz_quakes.sensor import (
     ATTR_STATUS,
     ATTR_UPDATED,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ICON,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_RADIUS,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import _generate_mock_feed_entry
 
@@ -65,7 +65,7 @@ async def test_setup(hass: HomeAssistant) -> None:
         mock_feed_update.return_value = "OK", [mock_entry_1, mock_entry_2, mock_entry_3]
         assert await async_setup_component(hass, geonetnz_quakes.DOMAIN, CONFIG)
         # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         # 3 geolocation and 1 sensor entities

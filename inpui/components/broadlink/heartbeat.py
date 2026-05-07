@@ -5,9 +5,9 @@ import logging
 
 import broadlink as blk
 
-from homeassistant.const import CONF_HOST
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import event
+from inpui.const import CONF_HOST
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import event
 
 from .const import DOMAIN
 

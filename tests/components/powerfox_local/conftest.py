@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, patch
 from powerfox import LocalResponse
 import pytest
 
-from homeassistant.components.powerfox_local.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_HOST
+from inpui.components.powerfox_local.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_HOST
 
 from . import MOCK_API_KEY, MOCK_DEVICE_ID, MOCK_HOST
 

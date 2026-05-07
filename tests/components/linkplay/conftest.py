@@ -10,9 +10,9 @@ from aiohttp import ClientSession
 from linkplay.bridge import LinkPlayBridge, LinkPlayDevice
 import pytest
 
-from homeassistant.components.linkplay.const import DOMAIN
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_CLOSE
-from homeassistant.core import HomeAssistant
+from inpui.components.linkplay.const import DOMAIN
+from inpui.const import CONF_HOST, EVENT_INPUI_CLOSE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.conftest import AiohttpClientMocker
@@ -97,7 +97,7 @@ def mock_lp_aiohttp_client() -> Iterator[AiohttpClientMocker]:
             """Close session."""
             await session.close()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, close_session)
+        hass.bus.async_listen_once(EVENT_INPUI_CLOSE, close_session)
 
         return session
 

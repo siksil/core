@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .exceptions import EntityNotFoundError
 

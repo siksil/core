@@ -5,8 +5,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.climate import (
+from inpui.components import conversation
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     DOMAIN,
     ClimateEntity,
@@ -14,17 +14,17 @@ from homeassistant.components.climate import (
     HVACMode,
     intent as climate_intent,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     entity_registry as er,
     floor_registry as fr,
     intent,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

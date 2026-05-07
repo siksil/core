@@ -11,14 +11,14 @@ from typing import Any
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components.image_processing import (
+from inpui.components.image_processing import (
     ATTR_CONFIDENCE,
     CONF_CONFIDENCE,
     PLATFORM_SCHEMA as IMAGE_PROCESSING_PLATFORM_SCHEMA,
     ImageProcessingDeviceClass,
     ImageProcessingEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_API_KEY,
     CONF_ENTITY_ID,
@@ -26,12 +26,12 @@ from homeassistant.const import (
     CONF_REGION,
     CONF_SOURCE,
 )
-from homeassistant.core import HomeAssistant, callback, split_entity_id
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.async_ import run_callback_threadsafe
+from inpui.core import HomeAssistant, callback, split_entity_id
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.async_ import run_callback_threadsafe
 
 _LOGGER = logging.getLogger(__name__)
 

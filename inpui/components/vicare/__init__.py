@@ -12,11 +12,11 @@ from PyViCare.PyViCareUtils import (
     PyViCareInvalidCredentialsError,
 )
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import (
     DEFAULT_CACHE_DURATION,

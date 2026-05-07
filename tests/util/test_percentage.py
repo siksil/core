@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from homeassistant.util.percentage import (
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
     percentage_to_ranged_value,

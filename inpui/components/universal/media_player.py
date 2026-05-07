@@ -7,7 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_APP_ID,
     ATTR_APP_NAME,
     ATTR_INPUT_SOURCE,
@@ -48,7 +48,7 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
@@ -58,7 +58,7 @@ from homeassistant.const import (
     CONF_STATE,
     CONF_STATE_TEMPLATE,
     CONF_UNIQUE_ID,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
     SERVICE_MEDIA_PLAY,
@@ -79,20 +79,20 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.exceptions import TemplateError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import (
     TrackTemplate,
     TrackTemplateResult,
     async_track_state_change_event,
     async_track_template_result,
 )
-from homeassistant.helpers.reload import async_setup_reload_service
-from homeassistant.helpers.service import async_call_from_config
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.reload import async_setup_reload_service
+from inpui.helpers.service import async_call_from_config
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 ATTR_ACTIVE_CHILD = "active_child"
 
@@ -230,7 +230,7 @@ class UniversalMediaPlayer(MediaPlayerEntity):
                 _async_on_template_update,
             )
             self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_START, callback(lambda _: result.async_refresh())
+                EVENT_INPUI_START, callback(lambda _: result.async_refresh())
             )
 
             self.async_on_remove(result.async_remove)

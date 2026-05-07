@@ -7,12 +7,12 @@ import logging
 from math import cos, pi, radians, sin
 import random
 
-from homeassistant.components.geo_location import GeolocationEvent
-from homeassistant.const import UnitOfLength
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import track_time_interval
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.geo_location import GeolocationEvent
+from inpui.const import UnitOfLength
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import track_time_interval
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

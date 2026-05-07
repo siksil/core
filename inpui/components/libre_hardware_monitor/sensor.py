@@ -8,11 +8,11 @@ from typing import Any
 from librehardwaremonitor_api.model import DeviceId, LibreHardwareMonitorSensorData
 from librehardwaremonitor_api.sensor_type import SensorType
 
-from homeassistant.components.sensor import SensorEntity, SensorStateClass
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.sensor import SensorEntity, SensorStateClass
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import LibreHardwareMonitorConfigEntry, LibreHardwareMonitorCoordinator
 from .const import DOMAIN

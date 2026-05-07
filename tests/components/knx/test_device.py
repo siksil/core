@@ -2,13 +2,13 @@
 
 from typing import Any
 
-from homeassistant.components.knx.const import DOMAIN
-from homeassistant.components.knx.storage.config_store import (
+from inpui.components.knx.const import DOMAIN
+from inpui.components.knx.storage.config_store import (
     STORAGE_KEY as KNX_CONFIG_STORAGE_KEY,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import KNXTestKit
 

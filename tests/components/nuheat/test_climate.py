@@ -3,10 +3,10 @@
 from datetime import timedelta
 from unittest.mock import patch
 
-from homeassistant.components.nuheat.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.nuheat.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .mocks import (
     MOCK_CONFIG_ENTRY,

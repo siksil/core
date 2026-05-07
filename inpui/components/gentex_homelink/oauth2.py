@@ -9,9 +9,9 @@ from aiohttp import ClientError, ClientSession
 from homelink.auth.abstract_auth import AbstractAuth
 from homelink.settings import COGNITO_CLIENT_ID
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import OAUTH2_TOKEN_URL
 

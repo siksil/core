@@ -18,14 +18,14 @@ from zwave_js_server.exceptions import FailedCommand
 from zwave_js_server.model.driver import Driver
 from zwave_js_server.version import VersionInfo
 
-from homeassistant.components import usb
-from homeassistant.components.hassio import (
+from inpui.components import usb
+from inpui.components.hassio import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_ESPHOME,
     SOURCE_USB,
     ConfigEntry,
@@ -33,16 +33,16 @@ from homeassistant.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_NAME, CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import selector
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_NAME, CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import selector
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .addon import get_addon_manager
 from .const import (

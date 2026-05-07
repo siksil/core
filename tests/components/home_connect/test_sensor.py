@@ -18,7 +18,7 @@ from aiohomeconnect.model.error import HomeConnectApiError, TooManyRequestsError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.home_connect.const import (
+from inpui.components.home_connect.const import (
     BSH_DOOR_STATE_CLOSED,
     BSH_DOOR_STATE_LOCKED,
     BSH_DOOR_STATE_OPEN,
@@ -27,11 +27,11 @@ from homeassistant.components.home_connect.const import (
     BSH_EVENT_PRESENT_STATE_PRESENT,
     DOMAIN,
 )
-from homeassistant.components.home_connect.coordinator import HomeConnectError
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.home_connect.coordinator import HomeConnectError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

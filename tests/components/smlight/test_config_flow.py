@@ -7,13 +7,13 @@ from pysmlight import Info
 from pysmlight.exceptions import SmlightAuthError, SmlightConnectionError
 import pytest
 
-from homeassistant.components.smlight.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.smlight.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .conftest import (
     MOCK_DEVICE_NAME,

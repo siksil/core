@@ -10,15 +10,15 @@ from fyta_cli.fyta_exceptions import (
 )
 import pytest
 
-from homeassistant.components.fyta.const import CONF_EXPIRATION, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.fyta.const import CONF_EXPIRATION, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import setup_platform
 from .const import ACCESS_TOKEN, EXPIRATION, EXPIRATION_OLD, PASSWORD, USERNAME

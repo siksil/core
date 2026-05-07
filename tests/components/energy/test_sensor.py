@@ -8,25 +8,25 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.energy import async_get_manager, data
-from homeassistant.components.energy.sensor import (
+from inpui.components.energy import async_get_manager, data
+from inpui.components.energy.sensor import (
     EnergyCostSensor,
     EnergyPowerSensor,
     SensorManager,
     SourceAdapter,
 )
-from homeassistant.components.recorder.core import Recorder
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.components.sensor import (
+from inpui.components.recorder.core import Recorder
+from inpui.components.recorder.util import session_scope
+from inpui.components.sensor import (
     ATTR_LAST_RESET,
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
     compile_statistics,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNKNOWN,
@@ -34,12 +34,12 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfVolume,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import _WH_TO_CAL, _WH_TO_J
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import _WH_TO_CAL, _WH_TO_J
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from tests.common import MockConfigEntry
 from tests.components.recorder.common import async_wait_recording_done

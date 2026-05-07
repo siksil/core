@@ -3,7 +3,7 @@
 from copy import deepcopy
 from typing import Any
 
-from homeassistant.components.nina.const import (
+from inpui.components.nina.const import (
     CONF_AREA_FILTER,
     CONF_FILTERS,
     CONF_HEADLINE_FILTER,

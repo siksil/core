@@ -11,9 +11,9 @@ from matter_server.common.errors import MatterError
 from matter_server.common.helpers.util import dataclass_to_dict
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant, callback
 
 from .adapter import MatterAdapter
 from .helpers import MissingNode, get_matter, node_from_ha_device_id

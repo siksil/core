@@ -10,20 +10,20 @@ import boto3
 import botocore
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.const import ATTR_CREDENTIALS, CONF_PROFILE_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.generated.amazon_polly import (
+from inpui.const import ATTR_CREDENTIALS, CONF_PROFILE_NAME
+from inpui.core import HomeAssistant
+from inpui.generated.amazon_polly import (
     SUPPORTED_ENGINES,
     SUPPORTED_REGIONS,
     SUPPORTED_VOICES,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     AWS_CONF_CONNECT_TIMEOUT,

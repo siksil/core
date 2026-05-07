@@ -4,22 +4,22 @@ from collections.abc import Callable, Mapping
 import logging
 from typing import TYPE_CHECKING, Any, cast
 
-from homeassistant.components.blueprint import CONF_USE_BLUEPRINT
-from homeassistant.const import (
+from inpui.components.blueprint import CONF_USE_BLUEPRINT
+from inpui.const import (
     CONF_ACTIONS,
     CONF_CONDITIONS,
     CONF_PATH,
     CONF_TRIGGERS,
     CONF_VARIABLES,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
 )
-from homeassistant.core import Context, CoreState, Event, HomeAssistant, callback
-from homeassistant.helpers import condition, discovery, trigger as trigger_helper
-from homeassistant.helpers.script import Script
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.trace import trace_get
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import Context, CoreState, Event, HomeAssistant, callback
+from inpui.helpers import condition, discovery, trigger as trigger_helper
+from inpui.helpers.script import Script
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.trace import trace_get
+from inpui.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN, PLATFORMS
 
@@ -73,7 +73,7 @@ class TriggerUpdateCoordinator(DataUpdateCoordinator):
             await self._attach_triggers()
         else:
             self._unsub_start = self.hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_START, self._attach_triggers
+                EVENT_INPUI_START, self._attach_triggers
             )
 
         for platform_domain in PLATFORMS:

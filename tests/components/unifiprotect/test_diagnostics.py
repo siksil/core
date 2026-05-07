@@ -6,7 +6,7 @@ from typing import Any
 from syrupy.assertion import SnapshotAssertion
 from uiprotect.data import Light
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .utils import MockUFPFixture, init_entry
 

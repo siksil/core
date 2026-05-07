@@ -8,12 +8,12 @@ from haffmpeg.core import HAFFmpeg
 import haffmpeg.sensor as ffmpeg_sensor
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.components.ffmpeg import (
+from inpui.components.ffmpeg import (
     CONF_EXTRA_ARGUMENTS,
     CONF_INITIAL_STATE,
     CONF_INPUT,
@@ -21,11 +21,11 @@ from homeassistant.components.ffmpeg import (
     FFmpegManager,
     get_ffmpeg_manager,
 )
-from homeassistant.const import CONF_NAME, CONF_REPEAT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_NAME, CONF_REPEAT
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 CONF_RESET = "reset"
 CONF_CHANGES = "changes"

@@ -1,12 +1,12 @@
 """Tests for DSMR Reader sensor."""
 
-from homeassistant.components.dsmr_reader.const import DOMAIN
-from homeassistant.components.dsmr_reader.definitions import (
+from inpui.components.dsmr_reader.const import DOMAIN
+from inpui.components.dsmr_reader.definitions import (
     DSMRReaderSensorEntityDescription,
 )
-from homeassistant.components.dsmr_reader.sensor import DSMRSensor
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.dsmr_reader.sensor import DSMRSensor
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_mqtt_message
 from tests.typing import MqttMockHAClient

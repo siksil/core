@@ -9,13 +9,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import lifx
-from homeassistant.components.lifx import DOMAIN, discovery
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import lifx
+from inpui.components.lifx import DOMAIN, discovery
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     IP_ADDRESS,
@@ -62,7 +62,7 @@ async def test_configuring_lifx_causes_discovery(hass: HomeAssistant) -> None:
         await hass.async_block_till_done()
         assert start_calls == 0
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert start_calls == 1
 

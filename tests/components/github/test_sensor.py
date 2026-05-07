@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.github.const import FALLBACK_UPDATE_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.github.const import FALLBACK_UPDATE_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

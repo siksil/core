@@ -2,12 +2,12 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components import number
-from homeassistant.components.fully_kiosk.const import DOMAIN, UPDATE_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, ServiceResponse
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components import number
+from inpui.components.fully_kiosk.const import DOMAIN, UPDATE_INTERVAL
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant, ServiceResponse
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

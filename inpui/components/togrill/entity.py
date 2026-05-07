@@ -7,8 +7,8 @@ from togrill_bluetooth.client import Client
 from togrill_bluetooth.exceptions import BaseError
 from togrill_bluetooth.packets import PacketWrite
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import LOGGER, ToGrillCoordinator

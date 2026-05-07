@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.satel_integra.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.satel_integra.const import (
     CONF_ARM_HOME_MODE,
     CONF_OUTPUT_NUMBER,
     CONF_PARTITION_NUMBER,
@@ -16,10 +16,10 @@ from homeassistant.components.satel_integra.const import (
     DEFAULT_PORT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_RECONFIGURE, SOURCE_USER, ConfigSubentry
-from homeassistant.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_RECONFIGURE, SOURCE_USER, ConfigSubentry
+from inpui.const import CONF_CODE, CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     MOCK_CONFIG_DATA,

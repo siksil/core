@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.gardena_bluetooth.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.components.gardena_bluetooth.const import DOMAIN
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 from tests.common import MockConfigEntry
 from tests.components.bluetooth import inject_bluetooth_service_info

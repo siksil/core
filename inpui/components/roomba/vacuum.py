@@ -6,17 +6,17 @@ import asyncio
 import logging
 from typing import Any
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_STATUS,
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from . import roomba_reported_state
 from .const import DOMAIN

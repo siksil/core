@@ -6,13 +6,13 @@ from typing import Any
 
 from tesla_fleet_api.const import Scope, SunRoofCommand, Trunk, WindowCommand
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TeslaFleetConfigEntry
 from .entity import TeslaFleetVehicleEntity

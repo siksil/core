@@ -4,11 +4,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, label_registry as lr
-from homeassistant.helpers.label_registry import LabelEntry
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, label_registry as lr
+from inpui.helpers.label_registry import LabelEntry
 
 SUPPORTED_LABEL_THEME_COLORS = {
     "primary",

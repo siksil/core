@@ -7,10 +7,10 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.izone.const import DISPATCH_CONTROLLER_DISCOVERED, IZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.izone.const import DISPATCH_CONTROLLER_DISCOVERED, IZONE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 
 @pytest.fixture

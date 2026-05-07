@@ -6,21 +6,21 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA as BINARY_SENSOR_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DEVICE_CLASSES_SCHEMA as COVER_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA as SENSOR_DEVICE_CLASSES_SCHEMA,
     STATE_CLASSES_SCHEMA as SENSOR_STATE_CLASSES_SCHEMA,
 )
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DEVICE_CLASSES_SCHEMA as SWITCH_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_BINARY_SENSORS,
     CONF_COMMAND_OFF,
@@ -47,12 +47,12 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     SERVICE_RELOAD,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import async_get_platforms
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import async_get_platforms
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CALL_TYPE_COIL,

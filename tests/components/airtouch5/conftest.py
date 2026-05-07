@@ -14,8 +14,8 @@ from airtouch5py.packets.zone_status import (
 )
 import pytest
 
-from homeassistant.components.airtouch5.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.airtouch5.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry
 

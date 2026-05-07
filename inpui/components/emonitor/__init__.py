@@ -8,11 +8,11 @@ import logging
 from aioemonitor import Emonitor
 from aioemonitor.monitor import EmonitorStatus
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 type EmonitorConfigEntry = ConfigEntry[DataUpdateCoordinator[EmonitorStatus]]
 

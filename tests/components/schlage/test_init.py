@@ -9,11 +9,11 @@ from pyschlage.exceptions import Error, NotAuthorizedError
 from pyschlage.lock import Lock
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.schlage.const import DOMAIN, UPDATE_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.components.schlage.const import DOMAIN, UPDATE_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceRegistry
 
 from . import MockSchlageConfigEntry
 

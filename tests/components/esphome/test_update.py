@@ -7,27 +7,27 @@ from unittest.mock import patch
 from aioesphomeapi import APIClient, UpdateCommand, UpdateInfo, UpdateState
 import pytest
 
-from homeassistant.components.esphome.dashboard import async_get_dashboard
-from homeassistant.components.homeassistant import (
+from inpui.components.esphome.dashboard import async_get_dashboard
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_UPDATE_PERCENTAGE,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
     UpdateEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType
 

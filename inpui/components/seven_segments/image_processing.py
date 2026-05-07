@@ -10,16 +10,16 @@ import subprocess
 from PIL import Image
 import voluptuous as vol
 
-from homeassistant.components.image_processing import (
+from inpui.components.image_processing import (
     PLATFORM_SCHEMA as IMAGE_PROCESSING_PLATFORM_SCHEMA,
     ImageProcessingDeviceClass,
     ImageProcessingEntity,
 )
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_ENTITY_ID, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 

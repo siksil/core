@@ -10,16 +10,16 @@ from typing import Final
 from easyenergy import Electricity, Gas, VatOption
 import voluptuous as vol
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import selector, service
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import selector, service
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import EasyEnergyConfigEntry, EasyEnergyDataUpdateCoordinator

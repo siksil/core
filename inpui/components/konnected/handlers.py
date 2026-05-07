@@ -2,10 +2,10 @@
 
 import logging
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_STATE
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util import decorator
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import ATTR_ENTITY_ID, ATTR_STATE
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util import decorator
 
 from .const import CONF_INVERSE, SIGNAL_DS18B20_NEW
 

@@ -24,9 +24,9 @@ from pynecil import (
 )
 import pytest
 
-from homeassistant.components.iron_os import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import CONF_ADDRESS
+from inpui.components.iron_os import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import CONF_ADDRESS
 
 from tests.common import MockConfigEntry
 from tests.components.bluetooth import generate_advertisement_data, generate_ble_device

@@ -52,13 +52,13 @@ from aioesphomeapi.model import ButtonInfo
 from bleak_esphome.backend.device import ESPHomeBluetoothDevice
 
 from homeassistant import config_entries
-from homeassistant.components.assist_satellite import AssistSatelliteConfiguration
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import discovery_flow, entity_registry as er
-from homeassistant.helpers.service_info.esphome import ESPHomeServiceInfo
-from homeassistant.helpers.storage import Store
+from inpui.components.assist_satellite import AssistSatelliteConfiguration
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import discovery_flow, entity_registry as er
+from inpui.helpers.service_info.esphome import ESPHomeServiceInfo
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 from .dashboard import async_get_dashboard

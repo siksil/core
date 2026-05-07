@@ -16,7 +16,7 @@ from aiopyarr import (
 )
 import pytest
 
-from homeassistant.components.sonarr.const import (
+from inpui.components.sonarr.const import (
     CONF_BASE_PATH,
     CONF_UPCOMING_DAYS,
     CONF_WANTED_MAX_ITEMS,
@@ -24,14 +24,14 @@ from homeassistant.components.sonarr.const import (
     DEFAULT_WANTED_MAX_ITEMS,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

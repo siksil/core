@@ -8,18 +8,18 @@ from aiohttp.web import HTTPNotFound, Request, Response, StreamResponse
 from aioimmich.assets.models import ImmichAsset
 from aioimmich.exceptions import ImmichError
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components.http import HomeAssistantView
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import ChunkAsyncStreamIterator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import ChunkAsyncStreamIterator
 
 from .const import DOMAIN
 from .coordinator import ImmichConfigEntry

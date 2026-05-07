@@ -6,10 +6,10 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.components.vizio import DATA_APPS
-from homeassistant.components.vizio.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.components.vizio import DATA_APPS
+from inpui.components.vizio.const import DOMAIN
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_DEVICE_CLASS,
     CONF_HOST,
@@ -17,8 +17,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import (
     APP_LIST,

@@ -2,7 +2,7 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.const import CONF_HOST, CONF_NAME
+from inpui.const import CONF_HOST, CONF_NAME
 
 HOST = "1.2.3.4"
 NAME = "Android TV / Fire TV"

@@ -6,16 +6,16 @@ from dataclasses import dataclass
 import logging
 import os.path
 
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.usb import USBDevice, async_register_port_event_callback
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.usb import USBDevice, async_register_port_event_callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import DEVICE, DOMAIN, NABU_CASA_FIRMWARE_RELEASES_URL
 

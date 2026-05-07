@@ -5,8 +5,8 @@ from typing import cast
 import aiohttp
 from google_photos_library_api import api
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class AsyncConfigEntryAuth(api.AbstractAuth):

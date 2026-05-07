@@ -3,7 +3,7 @@
 from unittest.mock import Mock, patch
 
 from homeassistant import config_entries
-from homeassistant.components.wallbox.const import (
+from inpui.components.wallbox.const import (
     CHARGER_ADDED_ENERGY_KEY,
     CHARGER_ADDED_RANGE_KEY,
     CHARGER_CHARGING_POWER_KEY,
@@ -16,10 +16,10 @@ from homeassistant.components.wallbox.const import (
     CONF_STATION,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import http_403_error, http_404_error, setup_integration
 from .const import WALLBOX_AUTHORISATION_RESPONSE_UNAUTHORISED

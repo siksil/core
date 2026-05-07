@@ -14,15 +14,15 @@ from freezegun import freeze_time
 from google_nest_sdm.event import EventMessage
 import pytest
 
-from homeassistant.components import camera
-from homeassistant.components.camera import CameraState, StreamType
-from homeassistant.components.nest.const import DOMAIN
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components import camera
+from inpui.components.camera import CameraState, StreamType
+from inpui.components.nest.const import DOMAIN
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .common import DEVICE_ID, CreateDevice, PlatformSetup
 from .conftest import FakeAuth

@@ -5,10 +5,10 @@ from typing import Any
 
 from pypoint import Device, PointSession
 
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.dt import as_local
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.dt import as_local
 
 from .const import DOMAIN
 from .coordinator import PointDataUpdateCoordinator

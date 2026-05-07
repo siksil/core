@@ -1,6 +1,6 @@
 """Test the HTTP API for AI Task integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.typing import WebSocketGenerator
 

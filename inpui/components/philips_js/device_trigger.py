@@ -4,16 +4,16 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.const import CONF_DEVICE_ID, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.trigger import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.const import CONF_DEVICE_ID, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.trigger import (
     PluggableAction,
     TriggerActionType,
     TriggerInfo,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, TRIGGER_TYPE_TURN_ON
 from .helpers import async_get_turn_on_trigger

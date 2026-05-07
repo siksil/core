@@ -13,16 +13,16 @@ from aiontfy.exceptions import (
     NtfyUnauthorizedAuthenticationError,
 )
 
-from homeassistant.components import camera, image
-from homeassistant.components.media_source import async_resolve_media
-from homeassistant.components.notify import (
+from inpui.components import camera, image
+from inpui.components.media_source import async_resolve_media
+from inpui.components.notify import (
     NotifyEntity,
     NotifyEntityDescription,
     NotifyEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import NtfyConfigEntry

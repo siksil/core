@@ -12,17 +12,17 @@ from pytest_unordered import unordered
 import voluptuous as vol
 
 from homeassistant import config_entries as core_ce, data_entry_flow, loader
-from homeassistant.components.config import config_entries
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_flow, config_validation as cv
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.loader import IntegrationNotFound
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.config import config_entries
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_flow, config_validation as cv
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.loader import IntegrationNotFound
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import (
     MockConfigEntry,

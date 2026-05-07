@@ -13,10 +13,10 @@ from pytrafikverket import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.trafikverket_camera.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_ID, CONF_LOCATION
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.trafikverket_camera.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_ID, CONF_LOCATION
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

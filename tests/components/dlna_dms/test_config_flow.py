@@ -12,11 +12,11 @@ from async_upnp_client.exceptions import UpnpError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.dlna_dms.const import CONF_SOURCE_ID, DOMAIN
-from homeassistant.const import CONF_DEVICE_ID, CONF_HOST, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.dlna_dms.const import CONF_SOURCE_ID, DOMAIN
+from inpui.const import CONF_DEVICE_ID, CONF_HOST, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERVICE_LIST,

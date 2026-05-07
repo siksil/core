@@ -3,7 +3,7 @@
 import asyncio
 from unittest.mock import ANY, AsyncMock, Mock, patch
 
-from homeassistant.core import EVENT_HOMEASSISTANT_STARTED, HomeAssistant
+from inpui.core import EVENT_INPUI_STARTED, HomeAssistant
 
 from . import _ssdp_headers, init_ssdp_component
 
@@ -35,7 +35,7 @@ async def test_subscribe_discovery(
     """,
     )
     ssdp_listener = await init_ssdp_component(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     mock_ssdp_search_response = _ssdp_headers(

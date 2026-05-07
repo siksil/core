@@ -39,8 +39,8 @@ from simplipy.websocket import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CODE,
     ATTR_DEVICE_ID,
     CONF_CODE,
@@ -48,23 +48,23 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import CoreState, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import (
+from inpui.core import CoreState, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.service import (
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.service import (
     async_register_admin_service,
     verify_domain_control,
 )
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import (
     ATTR_ALARM_DURATION,

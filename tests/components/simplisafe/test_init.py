@@ -12,13 +12,13 @@ from simplipy.errors import (
 )
 from simplipy.websocket import WebsocketEvent
 
-from homeassistant.components.simplisafe import DOMAIN
-from homeassistant.components.simplisafe.coordinator import DEFAULT_SCAN_INTERVAL
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.simplisafe import DOMAIN
+from inpui.components.simplisafe.coordinator import DEFAULT_SCAN_INTERVAL
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

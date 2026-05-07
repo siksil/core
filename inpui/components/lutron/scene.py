@@ -6,9 +6,9 @@ from typing import Any
 
 from pylutron import Button, Keypad, Lutron
 
-from homeassistant.components.scene import Scene
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.scene import Scene
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LutronConfigEntry
 from .entity import LutronKeypad

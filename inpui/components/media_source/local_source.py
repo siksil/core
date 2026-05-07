@@ -13,12 +13,12 @@ from aiohttp import web
 from aiohttp.web_request import FileField
 import voluptuous as vol
 
-from homeassistant.components import http, websocket_api
-from homeassistant.components.http import require_admin
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import raise_if_invalid_filename, raise_if_invalid_path
+from inpui.components import http, websocket_api
+from inpui.components.http import require_admin
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.util import raise_if_invalid_filename, raise_if_invalid_path
 
 from .const import DOMAIN, MEDIA_CLASS_MAP, MEDIA_MIME_TYPES, MEDIA_SOURCE_DATA
 from .error import Unresolvable

@@ -5,7 +5,7 @@ import asyncio
 import os
 
 from homeassistant import config as config_util
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 # mypy: allow-untyped-calls, allow-untyped-defs
 

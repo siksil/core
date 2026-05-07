@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from wled import WLEDConnectionError, WLEDUnsupportedVersionError
 
-from homeassistant.components.wled.const import CONF_KEEP_MAIN_LIGHT, DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.wled.const import CONF_KEEP_MAIN_LIGHT, DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

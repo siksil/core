@@ -16,29 +16,29 @@ from openai.types.responses import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
     selector,
 )
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_CHAT_MODEL,

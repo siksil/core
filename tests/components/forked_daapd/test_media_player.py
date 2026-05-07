@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.forked_daapd.browse_media import create_media_content_id
-from homeassistant.components.forked_daapd.const import (
+from inpui.components.forked_daapd.browse_media import create_media_content_id
+from inpui.components.forked_daapd.const import (
     CONF_LIBRESPOT_JAVA_PORT,
     CONF_MAX_PLAYLISTS,
     CONF_TTS_PAUSE_TIME,
@@ -19,7 +19,7 @@ from homeassistant.components.forked_daapd.const import (
     SUPPORTED_FEATURES,
     SUPPORTED_FEATURES_ZONE,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ALBUM_ARTIST,
     ATTR_MEDIA_ALBUM_NAME,
@@ -55,8 +55,8 @@ from homeassistant.components.media_player import (
     MediaPlayerEnqueue,
     MediaType,
 )
-from homeassistant.components.media_source import PlayMedia
-from homeassistant.const import (
+from inpui.components.media_source import PlayMedia
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -64,7 +64,7 @@ from homeassistant.const import (
     STATE_PAUSED,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, ServiceResponse
+from inpui.core import HomeAssistant, ServiceResponse
 
 from tests.common import MockConfigEntry, async_mock_signal
 

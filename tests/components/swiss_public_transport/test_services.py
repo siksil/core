@@ -11,7 +11,7 @@ from opendata_transport.exceptions import (
 import pytest
 from voluptuous import error as vol_er
 
-from homeassistant.components.swiss_public_transport.const import (
+from inpui.components.swiss_public_transport.const import (
     ATTR_LIMIT,
     CONF_DESTINATION,
     CONF_START,
@@ -20,10 +20,10 @@ from homeassistant.components.swiss_public_transport.const import (
     DOMAIN,
     SERVICE_FETCH_CONNECTIONS,
 )
-from homeassistant.components.swiss_public_transport.helper import unique_id_from_config
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.swiss_public_transport.helper import unique_id_from_config
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 

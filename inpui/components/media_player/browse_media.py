@@ -11,10 +11,10 @@ from urllib.parse import quote
 
 import yarl
 
-from homeassistant.components.http.auth import async_sign_path
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.network import (
+from inpui.components.http.auth import async_sign_path
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.network import (
     NoURLAvailableError,
     get_supervisor_network_url,
     get_url,

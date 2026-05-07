@@ -8,16 +8,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import alarm_control_panel, mqtt
-from homeassistant.components.alarm_control_panel import (
+from inpui.components import alarm_control_panel, mqtt
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.mqtt.alarm_control_panel import (
+from inpui.components.mqtt.alarm_control_panel import (
     MQTT_ALARM_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.components.mqtt.models import PublishPayloadType
-from homeassistant.const import (
+from inpui.components.mqtt.models import PublishPayloadType
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -30,8 +30,8 @@ from homeassistant.const import (
     SERVICE_RELOAD,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from .common import (
     help_custom_config,

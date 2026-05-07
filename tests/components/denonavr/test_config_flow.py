@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.denonavr.config_flow import (
+from inpui.components.denonavr.config_flow import (
     CONF_MANUFACTURER,
     CONF_SERIAL_NUMBER,
     CONF_SHOW_ALL_SOURCES,
@@ -17,10 +17,10 @@ from homeassistant.components.denonavr.config_flow import (
     DOMAIN,
     AvrTimoutError,
 )
-from homeassistant.const import CONF_HOST, CONF_MODEL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_HOST, CONF_MODEL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_SERIAL,

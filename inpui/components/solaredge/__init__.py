@@ -7,10 +7,10 @@ import socket
 from aiohttp import ClientError
 from aiosolaredge import SolarEdge
 
-from homeassistant.const import CONF_API_KEY, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_SITE_ID, DATA_API_CLIENT, DATA_MODULES_COORDINATOR, LOGGER
 from .coordinator import SolarEdgeModulesCoordinator

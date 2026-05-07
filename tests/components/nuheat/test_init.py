@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.nuheat.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.nuheat.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .mocks import MOCK_CONFIG_ENTRY, _get_mock_nuheat
 

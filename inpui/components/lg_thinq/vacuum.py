@@ -9,14 +9,14 @@ from typing import Any
 from thinqconnect import DeviceType
 from thinqconnect.integration import ExtendedProperty
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     StateVacuumEntity,
     StateVacuumEntityDescription,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ThinqConfigEntry
 from .entity import ThinQEntity

@@ -31,10 +31,10 @@ from deebot_client.events import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ecovacs.const import DOMAIN
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.ecovacs.const import DOMAIN
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -42,8 +42,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .util import block_till_done
 

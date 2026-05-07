@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.const import (
+from inpui.const import (
     PRECISION_HALVES,
     PRECISION_TENTHS,
     PRECISION_WHOLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.temperature import display_temp
+from inpui.core import HomeAssistant
+from inpui.helpers.temperature import display_temp
 
 TEMP = 24.636626
 

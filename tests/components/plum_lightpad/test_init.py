@@ -1,9 +1,9 @@
 """Tests for the Plum Lightpad config flow."""
 
-from homeassistant.components.plum_lightpad import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.plum_lightpad import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

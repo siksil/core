@@ -6,10 +6,10 @@ from unittest.mock import patch
 import voluptuous_serialize
 
 from homeassistant import data_entry_flow
-from homeassistant.auth import auth_manager_from_config, models as auth_models
-from homeassistant.auth.mfa_modules import auth_mfa_module_from_config
-from homeassistant.components.notify import NOTIFY_SERVICE_SCHEMA
-from homeassistant.core import HomeAssistant
+from inpui.auth import auth_manager_from_config, models as auth_models
+from inpui.auth.mfa_modules import auth_mfa_module_from_config
+from inpui.components.notify import NOTIFY_SERVICE_SCHEMA
+from inpui.core import HomeAssistant
 
 from tests.common import MockUser, async_mock_service
 

@@ -9,13 +9,13 @@ from typing import Any, cast
 from soco.alarms import Alarm
 from soco.exceptions import SoCoSlaveException, SoCoUPnPException
 
-from homeassistant.components.switch import ENTITY_ID_FORMAT, SwitchEntity
-from homeassistant.const import ATTR_TIME, EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_change
+from inpui.components.switch import ENTITY_ID_FORMAT, SwitchEntity
+from inpui.const import ATTR_TIME, EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_change
 
 from .alarms import SonosAlarms
 from .const import (

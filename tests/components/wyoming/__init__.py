@@ -22,9 +22,9 @@ from wyoming.info import (
     WakeProgram,
 )
 
-from homeassistant.components.wyoming import DOMAIN
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.core import HomeAssistant
+from inpui.components.wyoming import DOMAIN
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.core import HomeAssistant
 
 TEST_ATTR = Attribution(name="Test", url="http://www.test.com")
 STT_INFO = Info(

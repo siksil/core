@@ -9,7 +9,7 @@ from xknx import XKNX
 from xknx.devices.light import ColorTemperatureType, Light as XknxLight, XYYColor
 
 from homeassistant import config_entries
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_HS_COLOR,
@@ -19,14 +19,14 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntity,
 )
-from homeassistant.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import color as color_util
+from inpui.helpers.typing import ConfigType
+from inpui.util import color as color_util
 
 from .const import CONF_SYNC_STATE, DOMAIN, KNX_ADDRESS, KNX_MODULE_KEY, ColorTempModes
 from .entity import KnxUiEntity, KnxUiEntityPlatformController, KnxYamlEntity

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from moehlenhoff_alpha2 import Alpha2Base
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import Alpha2BaseCoordinator, Alpha2ConfigEntry
 

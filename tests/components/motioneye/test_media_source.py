@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, Mock, call
 from motioneye_client.client import MotionEyeClientPathError
 import pytest
 
-from homeassistant.components.media_source import (
+from inpui.components.media_source import (
     URI_SCHEME,
     MediaSourceError,
     PlayMedia,
@@ -14,10 +14,10 @@ from homeassistant.components.media_source import (
     async_browse_media,
     async_resolve_media,
 )
-from homeassistant.components.motioneye.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.motioneye.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import (
     TEST_CAMERA_DEVICE_IDENTIFIER,

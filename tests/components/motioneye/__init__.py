@@ -7,13 +7,13 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from motioneye_client.const import DEFAULT_PORT
 
-from homeassistant.components.motioneye.const import DOMAIN
-from homeassistant.components.motioneye.entity import get_motioneye_entity_unique_id
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import entity_registry as er
+from inpui.components.motioneye.const import DOMAIN
+from inpui.components.motioneye.entity import get_motioneye_entity_unique_id
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

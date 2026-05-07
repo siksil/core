@@ -1,10 +1,10 @@
 """Test Lidarr config flow."""
 
-from homeassistant.components.lidarr.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.lidarr.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import CONF_DATA, MOCK_INPUT, ComponentSetup
 

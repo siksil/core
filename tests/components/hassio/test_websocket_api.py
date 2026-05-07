@@ -10,12 +10,12 @@ from aiohasupervisor.models import HomeAssistantUpdateOptions, StoreAddonUpdate
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import BackupManagerError, ManagerBackup
+from inpui.components.backup import BackupManagerError, ManagerBackup
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.backup.manager import AgentBackupStatus
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.components.hassio.const import (
+from inpui.components.backup.manager import AgentBackupStatus
+from inpui.components.hassio import DOMAIN
+from inpui.components.hassio.const import (
     ATTR_DATA,
     ATTR_ENDPOINT,
     ATTR_METHOD,
@@ -27,10 +27,10 @@ from homeassistant.components.hassio.const import (
     WS_TYPE_API,
     WS_TYPE_SUBSCRIBE,
 )
-from homeassistant.const import __version__ as HAVERSION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.setup import async_setup_component
+from inpui.const import __version__ as HAVERSION
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockUser, async_mock_signal
 from tests.test_util.aiohttp import AiohttpClientMocker

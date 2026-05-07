@@ -5,19 +5,19 @@ import time
 
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
 )
-from homeassistant.components.ibeacon.const import (
+from inpui.components.ibeacon.const import (
     ATTR_SOURCE,
     CONF_ALLOW_NAMELESS_UUIDS,
     DOMAIN,
     UPDATE_INTERVAL,
 )
-from homeassistant.const import STATE_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_HOME
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.util import dt as dt_util
 
 from . import (
     BLUECHARM_BEACON_SERVICE_INFO,

@@ -11,7 +11,7 @@ from aiohue.v2.models.device import Device
 from aiohue.v2.models.resource import ResourceTypes
 from aiohue.v2.models.service_group import ServiceGroup
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     ATTR_MANUFACTURER,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     ATTR_SW_VERSION,
     ATTR_VIA_DEVICE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr
+from inpui.core import callback
+from inpui.helpers import device_registry as dr
 
 from ..const import DOMAIN
 

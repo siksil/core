@@ -6,15 +6,15 @@ from unittest.mock import Mock, mock_open, patch
 
 import pytest
 
-from homeassistant.components.local_file.const import (
+from inpui.components.local_file.const import (
     DEFAULT_NAME,
     DOMAIN,
     SERVICE_UPDATE_FILE_PATH,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import ATTR_ENTITY_ID, CONF_FILE_PATH
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.config_entries import SOURCE_USER
+from inpui.const import ATTR_ENTITY_ID, CONF_FILE_PATH
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

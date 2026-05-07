@@ -12,18 +12,18 @@ from synology_dsm.exceptions import (
     SynologyDSMRequestException,
 )
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN as BACKUP_DOMAIN,
     AddonInfo,
     AgentBackup,
     Folder,
 )
-from homeassistant.components.synology_dsm.const import (
+from inpui.components.synology_dsm.const import (
     CONF_BACKUP_PATH,
     CONF_BACKUP_SHARE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -31,9 +31,9 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.aiohttp import MockStreamReader, MockStreamReaderChunked
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.aiohttp import MockStreamReader, MockStreamReaderChunked
 
 from .common import mock_dsm_information
 from .consts import HOST, MACS, PASSWORD, PORT, USE_SSL, USERNAME

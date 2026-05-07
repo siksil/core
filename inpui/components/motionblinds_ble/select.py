@@ -7,10 +7,10 @@ import logging
 from motionblindsble.const import MotionBlindType, MotionSpeedLevel
 from motionblindsble.device import MotionDevice
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MotionConfigEntry
 from .const import ATTR_SPEED, CONF_MAC_CODE

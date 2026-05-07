@@ -11,16 +11,16 @@ from screenlogicpy.device_const.chemistry import DOSE_STATE
 from screenlogicpy.device_const.pump import PUMP_TYPE
 from screenlogicpy.device_const.system import CONTROLLER_STATE, EQUIPMENT_FLAG
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import ScreenlogicDataUpdateCoordinator
 from .entity import (

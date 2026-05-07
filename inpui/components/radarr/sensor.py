@@ -9,15 +9,15 @@ from typing import Any, Generic
 
 from aiopyarr import Diskspace, RootFolder, SystemStatus
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import RadarrConfigEntry, RadarrDataUpdateCoordinator, T
 from .entity import RadarrEntity

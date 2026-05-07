@@ -15,13 +15,13 @@ from haphilipsjs import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_VERSION,
     CONF_HOST,
     CONF_NAME,
@@ -29,13 +29,13 @@ from homeassistant.const import (
     CONF_PIN,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import callback
+from inpui.helpers import selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import LOGGER
 from .const import CONF_ALLOW_NOTIFY, CONF_SYSTEM, CONST_APP_ID, CONST_APP_NAME, DOMAIN

@@ -10,9 +10,9 @@ import httpx
 import pytest
 import respx
 
-from homeassistant.components import image, mqtt
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components import image, mqtt
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

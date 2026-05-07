@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from typing import Required, Self, TypedDict
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from .const import DOMAIN
 

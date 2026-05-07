@@ -4,18 +4,18 @@ from unittest.mock import AsyncMock, MagicMock
 from uuid import uuid4
 
 from homeassistant import config_entries
-from homeassistant.components import tts
-from homeassistant.components.google_cloud.config_flow import UPLOADED_KEY_FILE
-from homeassistant.components.google_cloud.const import (
+from inpui.components import tts
+from inpui.components.google_cloud.config_flow import UPLOADED_KEY_FILE
+from inpui.components.google_cloud.const import (
     CONF_KEY_FILE,
     CONF_SERVICE_ACCOUNT_INFO,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from .conftest import VALID_SERVICE_ACCOUNT_INFO
 

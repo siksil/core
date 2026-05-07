@@ -11,11 +11,11 @@ import pytest
 from requests.exceptions import RequestException
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fritz.const import DOMAIN, SCAN_INTERVAL, UPTIME_DEVIATION
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.fritz.const import DOMAIN, SCAN_INTERVAL, UPTIME_DEVIATION
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import MOCK_FB_SERVICES, MOCK_USER_DATA
 

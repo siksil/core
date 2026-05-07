@@ -7,18 +7,18 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from PyTado.http import DeviceActivationStatus
 import pytest
 
-from homeassistant.components.tado.config_flow import TadoException
-from homeassistant.components.tado.const import (
+from inpui.components.tado.config_flow import TadoException
+from inpui.components.tado.const import (
     CONF_FALLBACK,
     CONF_REFRESH_TOKEN,
     CONST_OVERLAY_TADO_DEFAULT,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_HOMEKIT, SOURCE_USER
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.config_entries import SOURCE_HOMEKIT, SOURCE_USER
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

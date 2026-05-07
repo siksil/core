@@ -9,11 +9,11 @@ from typing import Any
 import pyaprilaire.client
 from pyaprilaire.const import MODELS, Attribute, FunctionalDomain
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import BaseDataUpdateCoordinatorProtocol
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import BaseDataUpdateCoordinatorProtocol
 
 from .const import DOMAIN
 

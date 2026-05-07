@@ -5,10 +5,10 @@ from __future__ import annotations
 from jaraco.abode.exceptions import Exception as AbodeException
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import DOMAIN, DOMAIN_DATA, LOGGER
 

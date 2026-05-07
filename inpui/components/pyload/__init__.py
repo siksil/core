@@ -8,7 +8,7 @@ from aiohttp import CookieJar
 from pyloadapi import PyLoadAPI
 from yarl import URL
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .coordinator import PyLoadConfigEntry, PyLoadCoordinator
 

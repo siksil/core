@@ -23,17 +23,17 @@ from pyoverkiz.obfuscate import obfuscate_id
 from pyoverkiz.utils import generate_local_server, is_overkiz_gateway
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import CONF_API_TYPE, CONF_HUB, DEFAULT_SERVER, DOMAIN, LOGGER
 

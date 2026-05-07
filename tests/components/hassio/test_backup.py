@@ -35,7 +35,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN as BACKUP_DOMAIN,
     AddonInfo,
     AgentBackup,
@@ -45,11 +45,11 @@ from homeassistant.components.backup import (
     Folder,
     store as backup_store,
 )
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.components.hassio.backup import RESTORE_JOB_ID_ENV
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.hassio import DOMAIN
+from inpui.components.hassio.backup import RESTORE_JOB_ID_ENV
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .test_init import MOCK_ENVIRON
 

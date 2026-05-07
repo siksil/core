@@ -1,6 +1,6 @@
 """Backup platform for the NEW_NAME integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def async_pre_backup(hass: HomeAssistant) -> None:

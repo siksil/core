@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from opendisplay import BLEConnectionError, BLETimeoutError, OpenDisplayError
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

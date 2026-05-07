@@ -10,7 +10,7 @@ from telegram import Bot, ChatFullInfo
 from telegram.error import BadRequest, InvalidToken, TelegramError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntryState,
     ConfigFlow,
@@ -19,12 +19,12 @@ from homeassistant.config_entries import (
     OptionsFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import section
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_PLATFORM, CONF_URL
+from inpui.core import callback
+from inpui.data_entry_flow import section
+from inpui.helpers import config_validation as cv
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     TextSelector,

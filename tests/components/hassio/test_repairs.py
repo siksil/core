@@ -16,9 +16,9 @@ from aiohasupervisor.models import (
 )
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .test_init import MOCK_ENVIRON
 from .test_issues import mock_resolution_info

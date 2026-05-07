@@ -22,11 +22,11 @@ from here_transit import (
 )
 import pytest
 
-from homeassistant.components.here_travel_time.config_flow import (
+from inpui.components.here_travel_time.config_flow import (
     DEFAULT_OPTIONS,
     HERETravelTimeConfigFlow,
 )
-from homeassistant.components.here_travel_time.const import (
+from inpui.components.here_travel_time.const import (
     CONF_ARRIVAL_TIME,
     CONF_DEPARTURE_TIME,
     CONF_DESTINATION_ENTITY_ID,
@@ -50,13 +50,13 @@ from homeassistant.components.here_travel_time.const import (
     TRAVEL_MODE_PUBLIC,
     TRAVEL_MODE_TRUCK,
 )
-from homeassistant.components.here_travel_time.coordinator import BACKOFF_MULTIPLIER
-from homeassistant.components.sensor import (
+from inpui.components.here_travel_time.coordinator import BACKOFF_MULTIPLIER
+from inpui.components.sensor import (
     ATTR_LAST_RESET,
     ATTR_STATE_CLASS,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ICON,
     ATTR_LATITUDE,
@@ -65,12 +65,12 @@ from homeassistant.const import (
     CONF_API_KEY,
     CONF_MODE,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     UnitOfLength,
     UnitOfTime,
 )
-from homeassistant.core import CoreState, HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from .conftest import RESPONSE, TRANSIT_RESPONSE
 from .const import (
@@ -157,7 +157,7 @@ async def test_sensor(
     entry.add_to_hass(hass)
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     duration = hass.states.get("sensor.test_duration")
@@ -217,7 +217,7 @@ async def test_circular_ref(
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert "No coordinates found for test.first" in caplog.text
@@ -252,7 +252,7 @@ async def test_public_transport(hass: HomeAssistant) -> None:
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert (
@@ -285,7 +285,7 @@ async def test_no_attribution_response(hass: HomeAssistant) -> None:
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert (
@@ -334,7 +334,7 @@ async def test_entity_ids(hass: HomeAssistant, valid_response: MagicMock) -> Non
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert hass.states.get("sensor.test_distance").state == "13.682"
@@ -376,7 +376,7 @@ async def test_destination_entity_not_found(
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert "Could not find entity device_tracker.test" in caplog.text
@@ -406,7 +406,7 @@ async def test_origin_entity_not_found(
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert "Could not find entity device_tracker.test" in caplog.text
@@ -440,7 +440,7 @@ async def test_invalid_destination_entity_state(
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert (
@@ -476,7 +476,7 @@ async def test_invalid_origin_entity_state(
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     assert (
@@ -513,7 +513,7 @@ async def test_route_not_found(
         entry.add_to_hass(hass)
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert "Route calculation failed: Couldn't find a route." in caplog.text
@@ -700,7 +700,7 @@ async def test_transit_errors(
         entry.add_to_hass(hass)
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert expected_message in caplog.text
@@ -728,7 +728,7 @@ async def test_routing_rate_limit(
         entry.add_to_hass(hass)
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert hass.states.get("sensor.test_distance").state == "13.682"
@@ -787,7 +787,7 @@ async def test_transit_rate_limit(
         entry.add_to_hass(hass)
         await hass.config_entries.async_setup(entry.entry_id)
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert hass.states.get("sensor.test_distance").state == "1.883"
@@ -841,7 +841,7 @@ async def test_multiple_sections(
     entry.add_to_hass(hass)
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     duration = hass.states.get("sensor.test_duration")

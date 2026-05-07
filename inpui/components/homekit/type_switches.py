@@ -14,8 +14,8 @@ from pyhap.const import (
     CATEGORY_SWITCH,
 )
 
-from homeassistant.components import button, input_button
-from homeassistant.components.input_number import (
+from inpui.components import button, input_button
+from inpui.components.input_number import (
     ATTR_VALUE as INPUT_NUMBER_ATTR_VALUE,
     CONF_MAX as INPUT_NUMBER_CONF_MAX,
     CONF_MIN as INPUT_NUMBER_CONF_MIN,
@@ -23,22 +23,22 @@ from homeassistant.components.input_number import (
     DOMAIN as INPUT_NUMBER_DOMAIN,
     SERVICE_SET_VALUE as INPUT_NUMBER_SERVICE_SET_VALUE,
 )
-from homeassistant.components.input_select import ATTR_OPTIONS, SERVICE_SELECT_OPTION
-from homeassistant.components.lawn_mower import (
+from inpui.components.input_select import ATTR_OPTIONS, SERVICE_SELECT_OPTION
+from inpui.components.lawn_mower import (
     DOMAIN as LAWN_MOWER_DOMAIN,
     SERVICE_DOCK,
     SERVICE_START_MOWING,
     LawnMowerActivity,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.vacuum import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_RETURN_TO_BASE,
     SERVICE_START,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     CONF_TYPE,
@@ -51,9 +51,9 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_OPENING,
 )
-from homeassistant.core import HomeAssistant, State, callback, split_entity_id
-from homeassistant.helpers.event import async_call_later
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State, callback, split_entity_id
+from inpui.helpers.event import async_call_later
+from inpui.util import dt as dt_util
 
 from .accessories import TYPES, HomeAccessory, HomeDriver
 from .const import (

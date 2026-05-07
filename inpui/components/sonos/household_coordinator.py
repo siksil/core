@@ -9,8 +9,8 @@ from typing import TYPE_CHECKING, Any
 
 from soco import SoCo
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.debounce import Debouncer
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.debounce import Debouncer
 
 from .exception import SonosUpdateError
 

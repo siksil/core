@@ -7,8 +7,8 @@ import dataclasses
 from dataclasses import dataclass
 from typing import TypedDict
 
-from homeassistant.loader import DHCPMatcher
-from homeassistant.util.hass_dict import HassKey
+from inpui.loader import DHCPMatcher
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 

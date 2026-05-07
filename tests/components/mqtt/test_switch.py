@@ -6,15 +6,15 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, switch
-from homeassistant.const import (
+from inpui.components import mqtt, switch
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_DEVICE_CLASS,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State
+from inpui.core import HomeAssistant, State
 
 from .common import (
     help_custom_config,

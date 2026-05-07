@@ -8,8 +8,8 @@ from typing import Any
 
 from pywemo.exceptions import ActionException
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import DeviceCoordinator
 

@@ -5,14 +5,14 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.rympro.config_flow import (
+from inpui.components.rympro.config_flow import (
     CannotConnectError,
     UnauthorizedError,
 )
-from homeassistant.components.rympro.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN, CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.rympro.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN, CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

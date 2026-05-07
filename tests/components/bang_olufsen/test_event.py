@@ -6,15 +6,15 @@ from mozart_api.models import BeoRemoteButton, ButtonEvent, PairedRemoteResponse
 from pytest_unordered import unordered
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bang_olufsen.const import (
+from inpui.components.bang_olufsen.const import (
     BEO_REMOTE_KEY_EVENTS,
     DEVICE_BUTTON_EVENTS,
     EVENT_TRANSLATION_MAP,
 )
-from homeassistant.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from .conftest import mock_websocket_connection
 from .const import (

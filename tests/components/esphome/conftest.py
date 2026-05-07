@@ -27,8 +27,8 @@ from aioesphomeapi import (
 import pytest
 from zeroconf import Zeroconf
 
-from homeassistant.components.esphome import dashboard
-from homeassistant.components.esphome.const import (
+from inpui.components.esphome import dashboard
+from inpui.components.esphome.const import (
     CONF_ALLOW_SERVICE_CALLS,
     CONF_BLUETOOTH_MAC_ADDRESS,
     CONF_DEVICE_NAME,
@@ -36,9 +36,9 @@ from homeassistant.components.esphome.const import (
     DEFAULT_NEW_CONFIG_ALLOW_ALLOW_SERVICE_CALLS,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import DASHBOARD_HOST, DASHBOARD_PORT, DASHBOARD_SLUG
 

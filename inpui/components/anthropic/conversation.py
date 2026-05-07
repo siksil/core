@@ -2,11 +2,11 @@
 
 from typing import Literal
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import CONF_LLM_HASS_API, MATCH_ALL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.const import CONF_LLM_HASS_API, MATCH_ALL
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AnthropicConfigEntry
 from .const import CONF_PROMPT, DOMAIN

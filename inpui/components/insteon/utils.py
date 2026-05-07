@@ -13,12 +13,12 @@ from pyinsteon.device_types.device_base import Device
 from pyinsteon.events import OFF_EVENT, OFF_FAST_EVENT, ON_EVENT, ON_FAST_EVENT, Event
 from serial.tools import list_ports
 
-from homeassistant.components import usb
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import usb
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     DOMAIN,

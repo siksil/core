@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.ukraine_alarm.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.ukraine_alarm.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from . import REGIONS
 

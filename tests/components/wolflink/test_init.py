@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from httpx import RequestError
 
-from homeassistant.components.wolflink.const import DEVICE_ID, DOMAIN, MANUFACTURER
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.wolflink.const import DEVICE_ID, DOMAIN, MANUFACTURER
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import CONFIG
 

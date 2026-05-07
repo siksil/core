@@ -5,12 +5,12 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from homeassistant.components.anthropic.const import CONF_CHAT_MODEL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState, ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.anthropic.const import CONF_CHAT_MODEL, DOMAIN
+from inpui.config_entries import ConfigEntryState, ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.repairs import (

@@ -6,7 +6,7 @@ from kasa import Device, Module
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_BATTERY_LEVEL,
     ATTR_FAN_SPEED,
     DOMAIN as VACUUM_DOMAIN,
@@ -17,9 +17,9 @@ from homeassistant.components.vacuum import (
     SERVICE_START,
     VacuumActivity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     translation,

@@ -7,11 +7,11 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.trigger import TriggerActionType, TriggerData, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.trigger import TriggerActionType, TriggerData, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import Notification, UpdateType, async_register_callback
 

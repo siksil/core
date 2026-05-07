@@ -6,7 +6,7 @@ from typing import Any
 
 from pysmartthings import Attribute, Capability, Command, SmartThings
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     DEFAULT_MAX_TEMP,
     DEFAULT_MIN_TEMP,
     STATE_ECO,
@@ -16,10 +16,10 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_conversion import TemperatureConverter
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN, UNIT_MAP

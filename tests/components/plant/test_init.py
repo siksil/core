@@ -2,9 +2,9 @@
 
 from datetime import datetime, timedelta
 
-from homeassistant.components import plant
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import (
+from inpui.components import plant
+from inpui.components.recorder import Recorder
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     LIGHT_LUX,
     STATE_OK,
@@ -12,8 +12,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     UnitOfConductivity,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from tests.components.recorder.common import async_wait_recording_done
 

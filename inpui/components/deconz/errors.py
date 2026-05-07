@@ -1,6 +1,6 @@
 """Errors for the deCONZ component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class DeconzException(HomeAssistantError):

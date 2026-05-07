@@ -7,8 +7,8 @@ from typing import Protocol
 
 import psutil_home_assistant as ha_psutil
 
-from homeassistant.components import websocket_api
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.components import websocket_api
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
 
 
 @dataclass

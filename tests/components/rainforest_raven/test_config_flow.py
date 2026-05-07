@@ -7,11 +7,11 @@ from aioraven.device import RAVEnConnectionError
 import pytest
 from serial.tools.list_ports_common import ListPortInfo
 
-from homeassistant.components.rainforest_raven.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USB, SOURCE_USER
-from homeassistant.const import CONF_DEVICE, CONF_MAC, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.rainforest_raven.const import DOMAIN
+from inpui.config_entries import SOURCE_USB, SOURCE_USER
+from inpui.const import CONF_DEVICE, CONF_MAC, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import create_mock_device
 from .const import DEVICE_NAME, DISCOVERY_INFO, METER_LIST

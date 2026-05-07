@@ -6,10 +6,10 @@ from dataclasses import dataclass
 
 from fullykiosk import FullyKioskError
 
-from homeassistant.components.notify import NotifyEntity, NotifyEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.notify import NotifyEntity, NotifyEntityDescription
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullyKioskConfigEntry
 from .coordinator import FullyKioskDataUpdateCoordinator

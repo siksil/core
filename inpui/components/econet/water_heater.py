@@ -7,7 +7,7 @@ from typing import Any
 from pyeconet.equipment import EquipmentType
 from pyeconet.equipment.water_heater import WaterHeater, WaterHeaterOperationMode
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_ELECTRIC,
     STATE_GAS,
@@ -17,9 +17,9 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, STATE_OFF, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EconetConfigEntry
 from .entity import EcoNetEntity

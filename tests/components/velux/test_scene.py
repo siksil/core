@@ -3,11 +3,11 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
-from homeassistant.components.velux import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
+from inpui.components.velux import DOMAIN
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import AsyncMock, MockConfigEntry, snapshot_platform
 

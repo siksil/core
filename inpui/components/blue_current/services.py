@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import BCU_APP, CHARGING_CARD_ID, DOMAIN, SERVICE_START_CHARGE_SESSION
 

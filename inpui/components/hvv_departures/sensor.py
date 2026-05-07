@@ -7,14 +7,14 @@ from typing import Any
 from aiohttp import ClientConnectorError
 from pygti.exceptions import InvalidAuth
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import ATTR_ID, CONF_OFFSET
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import Throttle
-from homeassistant.util.dt import get_time_zone, utcnow
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import ATTR_ID, CONF_OFFSET
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import Throttle
+from inpui.util.dt import get_time_zone, utcnow
 
 from .const import ATTRIBUTION, CONF_REAL_TIME, CONF_STATION, DOMAIN, MANUFACTURER
 from .hub import HVVConfigEntry

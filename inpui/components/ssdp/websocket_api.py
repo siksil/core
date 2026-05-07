@@ -7,10 +7,10 @@ from typing import Any, Final
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HassJob, HomeAssistant, callback
-from homeassistant.helpers.json import json_bytes
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components import websocket_api
+from inpui.core import HassJob, HomeAssistant, callback
+from inpui.helpers.json import json_bytes
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     SsdpServiceInfo,
 )

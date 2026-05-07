@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from unittest.mock import Mock
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.components.fritzbox.diagnostics import TO_REDACT
-from homeassistant.const import CONF_DEVICES
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.components.fritzbox.diagnostics import TO_REDACT
+from inpui.const import CONF_DEVICES
+from inpui.core import HomeAssistant
 
 from . import setup_config_entry
 from .const import MOCK_CONFIG

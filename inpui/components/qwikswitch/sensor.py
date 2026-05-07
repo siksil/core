@@ -7,10 +7,10 @@ from typing import Any
 
 from pyqwikswitch.qwikswitch import SENSORS
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.sensor import SensorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DATA_QUIKSWITCH, DOMAIN
 from .entity import QSEntity

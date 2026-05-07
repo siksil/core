@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 
 from async_upnp_client.profiles.igd import IgdDevice, IgdState
 
-from homeassistant.components.upnp.const import DEFAULT_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.upnp.const import DEFAULT_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

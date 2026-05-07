@@ -1,6 +1,6 @@
 """Init tests for the Telegram Bot integration."""
 
-from homeassistant.components.telegram_bot.const import (
+from inpui.components.telegram_bot.const import (
     ATTR_PARSER,
     CONF_API_ENDPOINT,
     DEFAULT_API_ENDPOINT,
@@ -8,9 +8,9 @@ from homeassistant.components.telegram_bot.const import (
     PARSER_MD,
     PLATFORM_BROADCAST,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_PLATFORM
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_PLATFORM
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

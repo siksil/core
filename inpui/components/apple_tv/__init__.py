@@ -13,9 +13,9 @@ from pyatv.const import DeviceModel, Protocol
 from pyatv.convert import model_str
 from pyatv.interface import AppleTV as AppleTVInterface, DeviceListener
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,
     ATTR_MANUFACTURER,
@@ -25,14 +25,14 @@ from homeassistant.const import (
     ATTR_SW_VERSION,
     CONF_ADDRESS,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     CONF_CREDENTIALS,
@@ -105,7 +105,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: AppleTvConfigEntry) -> b
         await manager.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, on_hass_stop)
     )
     entry.async_on_unload(manager.disconnect)
 

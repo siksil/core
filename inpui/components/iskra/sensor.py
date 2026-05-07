@@ -8,13 +8,13 @@ from dataclasses import dataclass, replace
 from pyiskra.devices import Device
 from pyiskra.helper import Counter, CounterType
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfApparentPower,
     UnitOfElectricCurrent,
     UnitOfElectricPotential,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfReactivePower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ATTR_FREQUENCY,

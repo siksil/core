@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pytest
 from turbojpeg import TurboJPEG
 
-from homeassistant.components.camera import Image
-from homeassistant.components.camera.img_util import (
+from inpui.components.camera import Image
+from inpui.components.camera.img_util import (
     TurboJPEGSingleton,
     find_supported_scaling_factor,
     scale_jpeg_camera_image,

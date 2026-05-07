@@ -15,17 +15,17 @@ from xknx.telegram import AddressFilter, Telegram
 from xknx.telegram.address import DeviceGroupAddress, GroupAddress, InternalGroupAddress
 from xknx.telegram.apci import GroupValueResponse, GroupValueWrite
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_EVENT,
     CONF_HOST,
     CONF_PORT,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_KNX_CONNECTION_TYPE,
@@ -117,7 +117,7 @@ class KNXModule:
 
         self.entry.async_on_unload(data_secure_group_key_issue_dispatcher(self))
         self.entry.async_on_unload(
-            self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.stop)
+            self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self.stop)
         )
 
     async def start(self) -> None:

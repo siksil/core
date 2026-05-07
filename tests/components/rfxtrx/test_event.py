@@ -7,10 +7,10 @@ import pytest
 from RFXtrx import ControlEvent
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.rfxtrx import get_rfx_object
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.rfxtrx import get_rfx_object
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import setup_rfx_test_cfg
 

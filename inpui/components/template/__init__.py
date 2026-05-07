@@ -8,36 +8,36 @@ import logging
 from typing import Any
 
 from homeassistant import config as conf_util
-from homeassistant.components.automation import (
+from inpui.components.automation import (
     DOMAIN as AUTOMATION_DOMAIN,
     NEW_TRIGGERS_CONDITIONS_FEATURE_FLAG,
 )
-from homeassistant.components.labs import (
+from inpui.components.labs import (
     EventLabsUpdatedData,
     async_subscribe_preview_feature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_NAME,
     CONF_TRIGGERS,
     CONF_UNIQUE_ID,
     SERVICE_RELOAD,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.exceptions import ConfigEntryError, HomeAssistantError
-from homeassistant.helpers import discovery, issue_registry as ir
-from homeassistant.helpers.device import (
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.exceptions import ConfigEntryError, HomeAssistantError
+from inpui.helpers import discovery, issue_registry as ir
+from inpui.helpers.device import (
     async_remove_stale_devices_links_keep_current_device,
 )
-from homeassistant.helpers.helper_integration import (
+from inpui.helpers.helper_integration import (
     async_remove_helper_config_entry_from_source_device,
 )
-from homeassistant.helpers.reload import async_reload_integration_platforms
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_integration
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.reload import async_reload_integration_platforms
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_integration
+from inpui.util.hass_dict import HassKey
 
 from .const import CONF_MAX, CONF_MIN, CONF_STEP, DOMAIN, PLATFORMS
 from .coordinator import TriggerUpdateCoordinator

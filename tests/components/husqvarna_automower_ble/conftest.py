@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from automower_ble.protocol import ResponseResult
 import pytest
 
-from homeassistant.components.husqvarna_automower_ble.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
+from inpui.components.husqvarna_automower_ble.const import DOMAIN
+from inpui.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
 
 from . import AUTOMOWER_SERVICE_INFO_SERIAL
 

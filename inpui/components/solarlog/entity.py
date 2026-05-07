@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import SensorEntityDescription
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util import slugify
+from inpui.components.sensor import SensorEntityDescription
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util import slugify
 
 from .const import DOMAIN
 from .coordinator import (

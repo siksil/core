@@ -6,12 +6,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import STATE_ON
-from homeassistant.components.fritz.const import DOMAIN, SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.binary_sensor import STATE_ON
+from inpui.components.fritz.const import DOMAIN, SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import MOCK_USER_DATA
 

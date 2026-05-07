@@ -9,17 +9,17 @@ from universal_silabs_flasher.common import Version as FlasherVersion
 from universal_silabs_flasher.const import ApplicationType as FlasherApplicationType
 from universal_silabs_flasher.firmware import GBLImage
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
 )
-from homeassistant.components.homeassistant_hardware import DOMAIN
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware import DOMAIN
+from inpui.components.homeassistant_hardware.helpers import (
     async_register_firmware_info_provider,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningAddon,
@@ -31,10 +31,10 @@ from homeassistant.components.homeassistant_hardware.util import (
     probe_silabs_firmware_info,
     probe_silabs_firmware_type,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from .test_config_flow import create_mock_owner
 

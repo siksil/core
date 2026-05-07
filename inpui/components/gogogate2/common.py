@@ -16,15 +16,15 @@ from ismartgate import (
 )
 from ismartgate.common import AbstractDoor
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import DEVICE_TYPE_ISMARTGATE
 from .coordinator import DeviceDataUpdateCoordinator, GogoGateConfigEntry

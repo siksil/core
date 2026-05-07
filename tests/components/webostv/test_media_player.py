@@ -9,8 +9,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components import automation
-from homeassistant.components.media_player import (
+from inpui.components import automation
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_CONTENT_ID,
@@ -25,25 +25,25 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.components.webostv.const import (
+from inpui.components.webostv.const import (
     ATTR_PAYLOAD,
     ATTR_SOUND_OUTPUT,
     DOMAIN,
     LIVE_TV_APP_ID,
     WebOsTvCommandError,
 )
-from homeassistant.components.webostv.media_player import (
+from inpui.components.webostv.media_player import (
     SUPPORT_WEBOSTV,
     SUPPORT_WEBOSTV_VOLUME,
 )
-from homeassistant.components.webostv.services import (
+from inpui.components.webostv.services import (
     ATTR_BUTTON,
     SERVICE_BUTTON,
     SERVICE_COMMAND,
     SERVICE_SELECT_SOUND_OUTPUT,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -63,10 +63,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import setup_webostv
 from .const import CHANNEL_2, ENTITY_ID, TV_NAME

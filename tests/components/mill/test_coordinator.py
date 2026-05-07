@@ -4,12 +4,12 @@ from unittest.mock import AsyncMock
 
 from mill import Heater, Mill, Sensor
 
-from homeassistant.components.mill.const import DOMAIN
-from homeassistant.components.mill.coordinator import MillHistoricDataUpdateCoordinator
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.statistics import statistics_during_period
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.mill.const import DOMAIN
+from inpui.components.mill.coordinator import MillHistoricDataUpdateCoordinator
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.statistics import statistics_during_period
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.components.recorder.common import async_wait_recording_done

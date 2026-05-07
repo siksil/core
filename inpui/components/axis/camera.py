@@ -2,12 +2,12 @@
 
 from urllib.parse import urlencode
 
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.mjpeg import MjpegCamera, filter_urllib3_logging
-from homeassistant.const import HTTP_DIGEST_AUTHENTICATION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.mjpeg import MjpegCamera, filter_urllib3_logging
+from inpui.const import HTTP_DIGEST_AUTHENTICATION
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AxisConfigEntry
 from .const import DEFAULT_STREAM_PROFILE, DEFAULT_VIDEO_SOURCE

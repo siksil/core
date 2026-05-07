@@ -2,7 +2,7 @@
 
 from pyhap.const import HAP_REPR_AID, HAP_REPR_CHARS, HAP_REPR_IID, HAP_REPR_VALUE
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_OSCILLATING,
     ATTR_PERCENTAGE,
@@ -14,24 +14,24 @@ from homeassistant.components.fan import (
     DOMAIN as FAN_DOMAIN,
     FanEntityFeature,
 )
-from homeassistant.components.homekit.accessories import HomeDriver
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.accessories import HomeDriver
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     CHAR_CONFIGURED_NAME,
     PROP_MIN_STEP,
     SERV_SWITCH,
 )
-from homeassistant.components.homekit.type_fans import Fan
-from homeassistant.const import (
+from inpui.components.homekit.type_fans import Fan
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import CoreState, Event, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import async_mock_service
 
@@ -590,7 +590,7 @@ async def test_fan_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = Fan(hass, hk_driver, "Fan", "fan.simple", 2, None)

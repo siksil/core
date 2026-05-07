@@ -7,8 +7,8 @@ from typing import Any, NamedTuple
 
 import voluptuous as vol
 
-from homeassistant.components import sensor
-from homeassistant.const import (
+from inpui.components import sensor
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     CONF_AT,
     CONF_ENTITY_ID,
@@ -18,7 +18,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     WEEKDAYS,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -27,16 +27,16 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, template
-from homeassistant.helpers.event import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, template
+from inpui.helpers.event import (
     async_track_point_in_time,
     async_track_state_change_event,
     async_track_time_change,
 )
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 CONF_WEEKDAY = "weekday"
 

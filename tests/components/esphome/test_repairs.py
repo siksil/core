@@ -8,13 +8,13 @@ from unittest.mock import AsyncMock
 from aioesphomeapi import APIClient, BinarySensorInfo, BinarySensorState, DeviceInfo
 import pytest
 
-from homeassistant.components.esphome import repairs
-from homeassistant.components.esphome.const import DOMAIN
-from homeassistant.components.esphome.manager import DEVICE_CONFLICT_ISSUE_FORMAT
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import (
+from inpui.components.esphome import repairs
+from inpui.components.esphome.const import DOMAIN
+from inpui.components.esphome.manager import DEVICE_CONFLICT_ISSUE_FORMAT
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,

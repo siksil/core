@@ -7,9 +7,9 @@ from datetime import datetime as dt
 
 from sqlalchemy.sql.lambdas import StatementLambdaElement
 
-from homeassistant.components.recorder.filters import Filters
-from homeassistant.components.recorder.models import ulid_to_bytes_or_none
-from homeassistant.helpers.json import json_dumps
+from inpui.components.recorder.filters import Filters
+from inpui.components.recorder.models import ulid_to_bytes_or_none
+from inpui.helpers.json import json_dumps
 
 from .all import all_stmt
 from .devices import devices_stmt

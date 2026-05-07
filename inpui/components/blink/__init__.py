@@ -7,12 +7,12 @@ from typing import Any
 from blinkpy.auth import Auth
 from blinkpy.blinkpy import Blink
 
-from homeassistant.components import persistent_notification
-from homeassistant.const import CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import persistent_notification
+from inpui.const import CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN, PLATFORMS
 from .coordinator import BlinkConfigEntry, BlinkUpdateCoordinator

@@ -1,8 +1,8 @@
 """Test Met weather entity."""
 
 from homeassistant import config_entries
-from homeassistant.components.met import DOMAIN
-from homeassistant.components.weather import (
+from inpui.components.met import DOMAIN
+from inpui.components.weather import (
     ATTR_CONDITION_CLOUDY,
     ATTR_WEATHER_DEW_POINT,
     ATTR_WEATHER_HUMIDITY,
@@ -13,8 +13,8 @@ from homeassistant.components.weather import (
     ATTR_WEATHER_WIND_SPEED,
     DOMAIN as WEATHER_DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 

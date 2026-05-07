@@ -9,16 +9,16 @@ import pytest
 import respx
 
 from homeassistant import config_entries
-from homeassistant.components.mcp.const import (
+from inpui.components.mcp.const import (
     CONF_AUTHORIZATION_URL,
     CONF_SCOPE,
     CONF_TOKEN_URL,
     DOMAIN,
 )
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .conftest import (
     AUTH_DOMAIN,

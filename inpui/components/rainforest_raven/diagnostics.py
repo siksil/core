@@ -5,9 +5,9 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_MAC
-from homeassistant.core import HomeAssistant, callback
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_MAC
+from inpui.core import HomeAssistant, callback
 
 from .coordinator import RAVEnConfigEntry
 

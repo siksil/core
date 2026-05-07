@@ -16,21 +16,21 @@ import zigpy.zcl
 from zigpy.zcl.clusters import general, security
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_DURATION,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     DOMAIN as SIREN_DOMAIN,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .common import find_entity_id
 

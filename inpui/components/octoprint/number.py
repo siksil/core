@@ -6,13 +6,13 @@ import logging
 
 from pyoctoprintapi import OctoprintClient
 
-from homeassistant.components.number import NumberDeviceClass, NumberEntity, NumberMode
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.number import NumberDeviceClass, NumberEntity, NumberMode
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import OctoprintDataUpdateCoordinator
 from .const import DOMAIN

@@ -7,29 +7,29 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.recorder import CONF_DB_URL, Recorder
-from homeassistant.components.sensor import (
+from inpui.components.recorder import CONF_DB_URL, Recorder
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.sql.const import (
+from inpui.components.sql.const import (
     CONF_ADVANCED_OPTIONS,
     CONF_COLUMN_NAME,
     CONF_QUERY,
     DOMAIN,
 )
-from homeassistant.components.sql.util import validate_sql_select
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.sql.util import validate_sql_select
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_NAME,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.template import Template
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.template import Template
+from inpui.setup import async_setup_component
 
 from . import YAML_CONFIG_INVALID, YAML_CONFIG_NO_DB, init_integration
 

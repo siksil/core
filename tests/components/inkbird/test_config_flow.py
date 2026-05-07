@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.inkbird.const import CONF_DEVICE_TYPE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.inkbird.const import CONF_DEVICE_TYPE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import IBBQ_SERVICE_INFO, NOT_INKBIRD_SERVICE_INFO, SPS_SERVICE_INFO
 

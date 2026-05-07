@@ -13,18 +13,18 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     CREATE_EVENT_SERVICE,
     DOMAIN,
     SERVICE_GET_EVENTS,
     CalendarEntity,
     CalendarEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceNotSupported
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceNotSupported
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import UNDEFINED
+from inpui.util import dt as dt_util
 
 from .conftest import MockCalendarEntity, MockConfigEntry
 

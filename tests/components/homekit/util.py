@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.homekit.const import DOMAIN
-from homeassistant.const import CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.homekit.const import DOMAIN
+from inpui.const import CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

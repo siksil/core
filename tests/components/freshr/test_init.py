@@ -4,9 +4,9 @@ from aiohttp import ClientError
 from pyfreshr.exceptions import ApiResponseError, LoginError
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MagicMock, MockConfigEntry
 

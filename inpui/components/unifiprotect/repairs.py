@@ -9,9 +9,9 @@ from uiprotect.data import Bootstrap, Camera
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
 
 from .data import UFPConfigEntry, async_get_data_for_entry_id
 from .utils import async_create_api_client

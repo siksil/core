@@ -7,9 +7,9 @@ import pytest
 from requests.exceptions import ConnectionError as RequestsConnectionError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration
 

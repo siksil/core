@@ -5,15 +5,15 @@ from unittest.mock import MagicMock, patch
 import pytest
 from reolink_aio.exceptions import ReolinkError
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     CameraState,
     async_get_image,
     async_get_stream_source,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import TEST_CAM_NAME, TEST_DUO_MODEL
 

@@ -13,8 +13,8 @@ from axis.rtsp import Signal, State
 import pytest
 from yarl import URL
 
-from homeassistant.components.axis.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.axis.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_MODEL,
     CONF_NAME,
@@ -22,7 +22,7 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import (
     API_DISCOVERY_RESPONSE,

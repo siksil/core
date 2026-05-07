@@ -1,10 +1,10 @@
 """Test the Home Assistant Connect ZBT-2 hardware platform."""
 
-from homeassistant.components.homeassistant_connect_zbt2.const import DOMAIN
-from homeassistant.components.usb import DOMAIN as USB_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant_connect_zbt2.const import DOMAIN
+from inpui.components.usb import DOMAIN as USB_DOMAIN
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator
@@ -26,7 +26,7 @@ async def test_hardware_info(
 ) -> None:
     """Test we can get the board info."""
     assert await async_setup_component(hass, USB_DOMAIN, {})
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
 
     # Setup the config entry
     config_entry = MockConfigEntry(

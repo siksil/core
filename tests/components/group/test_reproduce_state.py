@@ -3,8 +3,8 @@
 from asyncio import Future
 from unittest.mock import ANY, patch
 
-from homeassistant.components.group.reproduce_state import async_reproduce_states
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.components.group.reproduce_state import async_reproduce_states
+from inpui.core import Context, HomeAssistant, State
 
 
 async def test_reproduce_group(hass: HomeAssistant) -> None:

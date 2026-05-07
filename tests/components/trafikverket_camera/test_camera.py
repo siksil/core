@@ -9,10 +9,10 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytrafikverket import CameraInfoModel
 
-from homeassistant.components.camera import async_get_image
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.camera import async_get_image
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

@@ -7,7 +7,7 @@ import asyncio
 from wyoming.client import AsyncTcpClient
 from wyoming.info import Describe, Info
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 from .error import WyomingError
 

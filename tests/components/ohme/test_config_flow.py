@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, MagicMock
 from ohme import ApiException, AuthException
 import pytest
 
-from homeassistant.components.ohme.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ohme.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

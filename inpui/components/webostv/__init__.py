@@ -6,20 +6,20 @@ from contextlib import suppress
 
 from aiowebostv import WebOsClient, WebOsTvPairError
 
-from homeassistant.components import notify as hass_notify
-from homeassistant.const import (
+from inpui.components import notify as hass_notify
+from inpui.const import (
     ATTR_CONFIG_ENTRY_ID,
     CONF_CLIENT_SECRET,
     CONF_HOST,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import DATA_HASS_CONFIG, DOMAIN, PLATFORMS, WEBOSTV_EXCEPTIONS
 from .helpers import WebOsTvConfigEntry, update_client_key
@@ -79,7 +79,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: WebOsTvConfigEntry) -> b
         await client.disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_on_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_on_stop)
     )
     return True
 

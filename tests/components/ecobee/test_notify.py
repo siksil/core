@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     DOMAIN as NOTIFY_DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 

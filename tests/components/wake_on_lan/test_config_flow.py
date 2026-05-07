@@ -5,10 +5,10 @@ from __future__ import annotations
 from unittest.mock import AsyncMock
 
 from homeassistant import config_entries
-from homeassistant.components.wake_on_lan.const import DOMAIN
-from homeassistant.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.wake_on_lan.const import DOMAIN
+from inpui.const import CONF_BROADCAST_ADDRESS, CONF_BROADCAST_PORT, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import DEFAULT_MAC
 

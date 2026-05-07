@@ -13,11 +13,11 @@ from screenlogicpy.const.common import (
 )
 from screenlogicpy.device_const.system import EQUIPMENT_FLAG
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT, CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT, CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .config_flow import async_discover_gateways_by_unique_id, name_for_mac
 from .const import DEFAULT_SCAN_INTERVAL, DOMAIN

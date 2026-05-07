@@ -9,14 +9,14 @@ from typing import Any
 from intellifire4py.control import IntelliFireController
 from intellifire4py.model import IntelliFirePollData
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ColorMode,
     LightEntity,
     LightEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import LOGGER
 from .coordinator import IntellifireConfigEntry

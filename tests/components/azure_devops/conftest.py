@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.azure_devops.const import DOMAIN
+from inpui.components.azure_devops.const import DOMAIN
 
 from . import (
     DEVOPS_BUILD,

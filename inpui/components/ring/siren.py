@@ -13,16 +13,16 @@ from ring_doorbell import (
     RingStickUpCam,
 )
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_TONE,
     SirenEntity,
     SirenEntityDescription,
     SirenEntityFeature,
     SirenTurnOnServiceParameters,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RingConfigEntry
 from .coordinator import RingDataCoordinator

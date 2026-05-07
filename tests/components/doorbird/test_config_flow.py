@@ -8,16 +8,16 @@ from doorbirdpy import DoorBird
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.doorbird.const import (
+from inpui.components.doorbird.const import (
     CONF_EVENTS,
     DEFAULT_DOORBELL_EVENT,
     DEFAULT_MOTION_EVENT,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import (
     VALID_CONFIG,

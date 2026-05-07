@@ -6,10 +6,10 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from homeassistant import config_entries, setup
-from homeassistant.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
-from homeassistant.const import CONF_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
+from inpui.const import CONF_STOP
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.fixture

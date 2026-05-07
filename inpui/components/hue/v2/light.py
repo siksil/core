@@ -11,7 +11,7 @@ from aiohue.v2.controllers.lights import LightsController
 from aiohue.v2.models.feature import EffectStatus, TimedEffectStatus
 from aiohue.v2.models.light import Light
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -26,10 +26,10 @@ from homeassistant.components.light import (
     LightEntityFeature,
     filter_supported_color_modes,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.util import color as color_util
 
 from ..bridge import HueBridge, HueConfigEntry
 from ..const import DOMAIN

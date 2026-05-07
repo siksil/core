@@ -8,8 +8,8 @@ from unittest.mock import MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.deprecation import (
+from inpui.core import HomeAssistant
+from inpui.helpers.deprecation import (
     DeprecatedAlias,
     DeprecatedConstant,
     DeprecatedConstantEnum,
@@ -22,7 +22,7 @@ from homeassistant.helpers.deprecation import (
     dir_with_deprecated_constants,
     get_deprecated,
 )
-from homeassistant.helpers.frame import MissingIntegrationFrame
+from inpui.helpers.frame import MissingIntegrationFrame
 
 from tests.common import MockModule, extract_stack_to_frame, mock_integration
 

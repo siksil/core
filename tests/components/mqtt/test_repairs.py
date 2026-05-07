@@ -7,13 +7,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt
-from homeassistant.config_entries import ConfigSubentry, ConfigSubentryData
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.util.yaml import parse_yaml
+from inpui.components import mqtt
+from inpui.config_entries import ConfigSubentry, ConfigSubentryData
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.util.yaml import parse_yaml
 
 from .common import MOCK_NOTIFY_SUBENTRY_DATA_MULTI, async_fire_mqtt_message
 

@@ -8,8 +8,8 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DOMAIN
 from .coordinator import async_last_service_info

@@ -10,9 +10,9 @@ import wave
 
 from openai import OpenAIError
 
-from homeassistant.components import stt
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import stt
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_CHAT_MODEL,

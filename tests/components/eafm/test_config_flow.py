@@ -6,9 +6,9 @@ import pytest
 from voluptuous.error import Invalid
 
 from homeassistant import config_entries
-from homeassistant.components.eafm import const
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.eafm import const
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_flow_no_discovered_stations(

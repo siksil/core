@@ -8,15 +8,15 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from yarl import URL
 
-from homeassistant.components.unifi.const import CONF_SITE_ID
-from homeassistant.components.update import (
+from inpui.components.unifi.const import CONF_SITE_ID
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     STATE_OFF,
@@ -24,8 +24,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import (
     ConfigEntryFactoryType,

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from zwave_js_server.model.value import ConfigurationValue
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 

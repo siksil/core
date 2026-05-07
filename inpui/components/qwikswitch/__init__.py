@@ -8,21 +8,21 @@ from pyqwikswitch.async_ import QSUsb
 from pyqwikswitch.qwikswitch import CMD_BUTTONS, QS_CMD, QS_ID, SENSORS, QSType
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DEVICE_CLASSES_SCHEMA
-from homeassistant.const import (
+from inpui.components.binary_sensor import DEVICE_CLASSES_SCHEMA
+from inpui.const import (
     CONF_SENSORS,
     CONF_SWITCHES,
     CONF_URL,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.discovery import load_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.discovery import load_platform
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import DATA_QUIKSWITCH, DOMAIN
 
@@ -163,13 +163,13 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Start listening."""
         qsusb.listen(callback_qs_listen)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, async_start)
+    hass.bus.async_listen_once(EVENT_INPUI_START, async_start)
 
     @callback
     def async_stop(_):
         """Stop the listener."""
         hass.data[DATA_QUIKSWITCH].stop()
 
-    hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, async_stop)
+    hass.bus.async_listen(EVENT_INPUI_STOP, async_stop)
 
     return True

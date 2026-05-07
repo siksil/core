@@ -7,10 +7,10 @@ from typing import Any
 from surepy.entities import SurepyEntity
 from surepy.enums import EntityType, LockState as SurepyLockState
 
-from homeassistant.components.lock import LockEntity, LockState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockState
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SurePetcareDataCoordinator

@@ -3,16 +3,16 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.lutron_caseta import (
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.lutron_caseta import (
     ATTR_ACTION,
     ATTR_AREA_NAME,
     ATTR_DEVICE_NAME,
     ATTR_SERIAL,
     ATTR_TYPE,
 )
-from homeassistant.components.lutron_caseta.const import (
+from inpui.components.lutron_caseta.const import (
     ATTR_BUTTON_TYPE,
     ATTR_LEAP_BUTTON_NUMBER,
     CONF_CA_CERTS,
@@ -21,9 +21,9 @@ from homeassistant.components.lutron_caseta.const import (
     DOMAIN,
     LUTRON_CASETA_BUTTON_EVENT,
 )
-from homeassistant.components.lutron_caseta.device_trigger import CONF_SUBTYPE
-from homeassistant.components.lutron_caseta.models import LutronCasetaData
-from homeassistant.const import (
+from inpui.components.lutron_caseta.device_trigger import CONF_SUBTYPE
+from inpui.components.lutron_caseta.models import LutronCasetaData
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -31,9 +31,9 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import MockBridge, async_setup_integration
 

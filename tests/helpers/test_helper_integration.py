@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.helpers.helper_integration import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.helpers.helper_integration import (
     async_handle_source_entity_changes,
     async_remove_helper_config_entry_from_source_device,
 )

@@ -11,14 +11,14 @@ from pyvizio import VizioAsync, async_guess_device_type
 from pyvizio.const import APP_HOME, APPS
 import voluptuous as vol
 
-from homeassistant.components.media_player import MediaPlayerDeviceClass
-from homeassistant.config_entries import (
+from inpui.components.media_player import MediaPlayerDeviceClass
+from inpui.config_entries import (
     SOURCE_ZEROCONF,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_DEVICE_CLASS,
     CONF_EXCLUDE,
@@ -27,11 +27,11 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PIN,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.network import is_ip_address
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.network import is_ip_address
 
 from . import DATA_APPS
 from .const import (

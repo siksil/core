@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from subarulink.const import LATITUDE, LONGITUDE, TIMESTAMP, VEHICLE_STATUS
 
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .api_responses import EXPECTED_STATE_EV_IMPERIAL, VEHICLE_STATUS_EV
 from .conftest import MOCK_API_FETCH, MOCK_API_GET_DATA, advance_time_to_next_fetch

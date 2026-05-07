@@ -8,9 +8,9 @@ from unittest.mock import MagicMock, call, patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components import notify
-from homeassistant.components.group import DOMAIN, SERVICE_RELOAD
-from homeassistant.components.notify import (
+from inpui.components import notify
+from inpui.components.group import DOMAIN, SERVICE_RELOAD
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
@@ -18,16 +18,16 @@ from homeassistant.components.notify import (
     NotifyEntity,
     NotifyEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

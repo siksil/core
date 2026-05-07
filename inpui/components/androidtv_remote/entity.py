@@ -6,11 +6,11 @@ from typing import Any
 
 from androidtvremote2 import AndroidTVRemote, ConnectionClosed
 
-from homeassistant.const import CONF_MAC, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import CONF_MAC, CONF_NAME
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import CONF_APPS, DOMAIN
 from .helpers import AndroidTVRemoteConfigEntry

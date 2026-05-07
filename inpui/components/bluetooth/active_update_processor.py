@@ -12,8 +12,8 @@ from typing import Any
 from bleak import BleakError
 from bluetooth_data_tools import monotonic_time_coarse
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.debounce import Debouncer
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.debounce import Debouncer
 
 from . import BluetoothChange, BluetoothScanningMode, BluetoothServiceInfoBleak
 from .passive_update_processor import PassiveBluetoothProcessorCoordinator

@@ -18,8 +18,8 @@ from broadlink.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.remote import (
+from inpui.components import persistent_notification
+from inpui.components.remote import (
     ATTR_ALTERNATIVE,
     ATTR_COMMAND_TYPE,
     ATTR_DELAY_SECS,
@@ -33,14 +33,14 @@ from homeassistant.components.remote import (
     RemoteEntity,
     RemoteEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_COMMAND, STATE_OFF
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.storage import Store
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_COMMAND, STATE_OFF
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.storage import Store
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .entity import BroadlinkEntity

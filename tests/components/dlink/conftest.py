@@ -6,12 +6,12 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.dlink.const import CONF_USE_LEGACY_PROTOCOL, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components.dlink.const import CONF_USE_LEGACY_PROTOCOL, DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

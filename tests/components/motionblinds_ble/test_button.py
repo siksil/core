@@ -4,14 +4,14 @@ from unittest.mock import Mock
 
 import pytest
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.motionblinds_ble.const import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.motionblinds_ble.const import (
     ATTR_CONNECT,
     ATTR_DISCONNECT,
     ATTR_FAVORITE,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

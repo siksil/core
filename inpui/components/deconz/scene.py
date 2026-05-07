@@ -6,9 +6,9 @@ from typing import Any
 
 from pydeconz.models.event import EventType
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, Scene
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, Scene
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .entity import DeconzSceneMixin

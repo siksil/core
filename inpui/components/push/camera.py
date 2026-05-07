@@ -11,20 +11,20 @@ from typing import Any, cast
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.components.camera import (
+from inpui.components import webhook
+from inpui.components.camera import (
     DOMAIN as CAMERA_DOMAIN,
     PLATFORM_SCHEMA as CAMERA_PLATFORM_SCHEMA,
     Camera,
     CameraState,
 )
-from homeassistant.const import CONF_NAME, CONF_TIMEOUT, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_NAME, CONF_TIMEOUT, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 

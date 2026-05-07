@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.setup import async_setup_component
+from inpui.components.demo import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSONEncoder
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

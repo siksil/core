@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.asuswrt.helpers import clean_dict, translate_to_legacy
+from inpui.components.asuswrt.helpers import clean_dict, translate_to_legacy
 
 DICT_TO_CLEAN = {
     "key1": "value1",

@@ -11,12 +11,12 @@ from idasen_ha import Desk
 from idasen_ha.errors import AuthFailedError
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
 
 from .const import DOMAIN, EXPECTED_SERVICE_UUID
 

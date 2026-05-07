@@ -7,15 +7,15 @@ from typing import Any
 from srpenergy.client import SrpEnergyClient
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ID, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import CONF_ID, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import CONF_IS_TOU, DOMAIN, LOGGER
 

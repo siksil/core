@@ -11,18 +11,18 @@ from aiovodafone.api import VodafoneStationDevice
 from aiovodafone.models import init_device_class
 from yarl import URL
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DEFAULT_CONSIDER_HOME,
     DOMAIN as DEVICE_TRACKER_DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import (
     _LOGGER,

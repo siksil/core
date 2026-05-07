@@ -9,11 +9,11 @@ from deebot_client.models import CleanMode, Room
 from deebot_client.rs.map import RotationAngle  # pylint: disable=no-name-in-module
 import pytest
 
-from homeassistant.components import vacuum
-from homeassistant.components.ecovacs.controller import EcovacsController
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
+from inpui.components import vacuum
+from inpui.components.ecovacs.controller import EcovacsController
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
 
 from .util import notify_and_wait
 

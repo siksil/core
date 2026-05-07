@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, Mock, patch
 from pizone import Controller, Zone
 import pytest
 
-from homeassistant.components.izone.const import IZONE
+from inpui.components.izone.const import IZONE
 
 from tests.common import MockConfigEntry
 

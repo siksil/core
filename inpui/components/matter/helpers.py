@@ -6,9 +6,9 @@ import asyncio
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, ID_TYPE_DEVICE_ID
 

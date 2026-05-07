@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pycasperglow import CasperGlow
 
-from homeassistant.components import bluetooth
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import bluetooth
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import CasperGlowConfigEntry, CasperGlowCoordinator
 

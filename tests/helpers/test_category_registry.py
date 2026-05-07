@@ -8,9 +8,9 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import category_registry as cr
-from homeassistant.util.dt import UTC
+from inpui.core import HomeAssistant
+from inpui.helpers import category_registry as cr
+from inpui.util.dt import UTC
 
 from tests.common import async_capture_events, flush_store
 

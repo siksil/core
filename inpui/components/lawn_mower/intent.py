@@ -1,7 +1,7 @@
 """Intents for the lawn mower integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 from . import DOMAIN, SERVICE_DOCK, SERVICE_START_MOWING, LawnMowerEntityFeature
 

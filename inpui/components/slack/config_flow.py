@@ -8,9 +8,9 @@ from slack_sdk.errors import SlackApiError
 from slack_sdk.web.async_client import AsyncSlackResponse, AsyncWebClient
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_ICON, CONF_NAME, CONF_USERNAME
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_ICON, CONF_NAME, CONF_USERNAME
+from inpui.helpers import aiohttp_client
 
 from .const import CONF_DEFAULT_CHANNEL, DOMAIN
 

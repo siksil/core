@@ -3,14 +3,14 @@
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import CONF_NAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import CONF_NAME, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_ACCESSPOINT,
@@ -89,7 +89,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HomematicIPConfigEntry) 
 
     # Register on HA stop event to gracefully shutdown HomematicIP Cloud connection
     hap.reset_connection_listener = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP, hap.shutdown
+        EVENT_INPUI_STOP, hap.shutdown
     )
 
     # Register hap as device in registry.

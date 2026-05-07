@@ -5,7 +5,7 @@ from typing import Any
 
 from xknx.typing import DPTMainSubDict
 
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_DPT, CONF_GA_PASSIVE, CONF_GA_STATE, CONF_GA_WRITE
 

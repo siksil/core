@@ -9,11 +9,11 @@ import voluptuous as vol
 import voluptuous_serialize
 
 from homeassistant import data_entry_flow
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowContext
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowContext
+from inpui.helpers import config_validation as cv
+from inpui.util.hass_dict import HassKey
 
 WS_TYPE_SETUP_MFA = "auth/setup_mfa"
 SCHEMA_WS_SETUP_MFA = vol.All(

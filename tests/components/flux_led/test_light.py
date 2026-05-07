@@ -18,8 +18,8 @@ from flux_led.const import (
 from flux_led.protocol import MusicMode
 import pytest
 
-from homeassistant.components import flux_led
-from homeassistant.components.flux_led.const import (
+from inpui.components import flux_led
+from inpui.components.flux_led.const import (
     CONF_COLORS,
     CONF_CUSTOM_EFFECT_COLORS,
     CONF_CUSTOM_EFFECT_SPEED_PCT,
@@ -32,13 +32,13 @@ from homeassistant.components.flux_led.const import (
     MIN_RGB_BRIGHTNESS,
     TRANSITION_JUMP,
 )
-from homeassistant.components.flux_led.light import (
+from inpui.components.flux_led.light import (
     ATTR_BACKGROUND_COLOR,
     ATTR_FOREGROUND_COLOR,
     ATTR_LIGHT_SCREEN,
     ATTR_SENSITIVITY,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -53,7 +53,7 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_EFFECT,
     CONF_HOST,
@@ -63,10 +63,10 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import (
     DEFAULT_ENTRY_TITLE,

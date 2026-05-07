@@ -8,8 +8,8 @@ from typing import TYPE_CHECKING, Any, cast
 from music_assistant_models.enums import MediaType as MASSMediaType
 from music_assistant_models.media_items import MediaItemType, SearchResults
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
@@ -18,7 +18,7 @@ from homeassistant.components.media_player import (
     SearchMedia,
     SearchMediaQuery,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DEFAULT_NAME, DOMAIN
 

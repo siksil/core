@@ -17,21 +17,21 @@ from music_assistant_models.api import ServerInfoMessage
 from music_assistant_models.errors import AuthenticationFailed, InvalidToken
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntryState,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.config_entry_oauth2_flow import (
     _encode_jwt,
     async_get_redirect_uri,
 )
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     AUTH_SCHEMA_VERSION,

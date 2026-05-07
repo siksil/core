@@ -2,7 +2,7 @@
 
 from visionpluspython.models import SwitchDevice, ThermostatDevice, ThermostatMode
 
-from homeassistant.components.climate import HVACMode
+from inpui.components.climate import HVACMode
 
 DOMAIN = "watts"
 

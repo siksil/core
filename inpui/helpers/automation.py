@@ -7,8 +7,8 @@ from typing import Any, Final, Self
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_OPTIONS
-from homeassistant.core import HomeAssistant, split_entity_id
+from inpui.const import CONF_OPTIONS
+from inpui.core import HomeAssistant, split_entity_id
 
 from .entity import get_device_class_or_undefined
 from .typing import UNDEFINED, ConfigType, UndefinedType

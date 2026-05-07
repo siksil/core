@@ -12,14 +12,14 @@ from amberelectric.models.tariff_information import TariffInformation
 from dateutil import parser
 import pytest
 
-from homeassistant.components.amberelectric.const import (
+from inpui.components.amberelectric.const import (
     CONF_SITE_ID,
     CONF_SITE_NAME,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .helpers import GENERAL_CHANNEL, GENERAL_ONLY_SITE_ID, generate_current_interval
 

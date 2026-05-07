@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import asyncio
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.template import Template
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers.template import Template
 
 from .const import LOGGER
 

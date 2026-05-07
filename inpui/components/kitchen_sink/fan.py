@@ -6,14 +6,14 @@ from typing import Any
 
 import infrared_protocols
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.components.infrared import async_send_command
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.components.infrared import async_send_command
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_state_change_event
 
 from .const import CONF_INFRARED_ENTITY_ID, DOMAIN
 

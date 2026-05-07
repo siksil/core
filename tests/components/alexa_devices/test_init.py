@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.alexa_devices.const import (
+from inpui.components.alexa_devices.const import (
     CONF_LOGIN_DATA,
     CONF_SITE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_COUNTRY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_COUNTRY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .const import TEST_DEVICE_1_SN, TEST_PASSWORD, TEST_USERNAME

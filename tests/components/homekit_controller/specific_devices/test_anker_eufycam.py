@@ -1,6 +1,6 @@
 """Test against characteristics captured from a eufycam."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

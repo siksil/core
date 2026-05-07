@@ -17,21 +17,21 @@ import wave
 from voip_utils import SIP_PORT, RtpDatagramProtocol
 from voip_utils.sip import SipDatagramProtocol, SipEndpoint, get_sip_endpoint
 
-from homeassistant.components import intent, tts
-from homeassistant.components.assist_pipeline import PipelineEvent, PipelineEventType
-from homeassistant.components.assist_satellite import (
+from inpui.components import intent, tts
+from inpui.components.assist_pipeline import PipelineEvent, PipelineEventType
+from inpui.components.assist_satellite import (
     AssistSatelliteAnnouncement,
     AssistSatelliteConfiguration,
     AssistSatelliteEntity,
     AssistSatelliteEntityDescription,
     AssistSatelliteEntityFeature,
 )
-from homeassistant.components.intent import TimerEventType, TimerInfo
-from homeassistant.components.network import async_get_source_ip
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.intent import TimerEventType, TimerInfo
+from inpui.components.network import async_get_source_ip
+from inpui.config_entries import ConfigEntry
+from inpui.core import Context, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CHANNELS,

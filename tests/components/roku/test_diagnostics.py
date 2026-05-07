@@ -3,8 +3,8 @@
 from rokuecp import Device as RokuDevice
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

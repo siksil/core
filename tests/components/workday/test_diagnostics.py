@@ -5,7 +5,7 @@ from __future__ import annotations
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import TEST_CONFIG_ADD_REMOVE_DATE_RANGE, init_integration
 

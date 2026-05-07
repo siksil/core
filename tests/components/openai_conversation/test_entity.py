@@ -2,10 +2,10 @@
 
 import voluptuous as vol
 
-from homeassistant.components.openai_conversation.entity import (
+from inpui.components.openai_conversation.entity import (
     _format_structured_output,
 )
-from homeassistant.helpers import selector
+from inpui.helpers import selector
 
 
 async def test_format_structured_output() -> None:

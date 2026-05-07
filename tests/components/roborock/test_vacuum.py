@@ -10,17 +10,17 @@ from roborock.roborock_typing import RoborockCommand
 from syrupy.assertion import SnapshotAssertion
 from vacuum_map_parser_base.map_data import Point
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.roborock import DOMAIN
-from homeassistant.components.roborock.services import (
+from inpui.components.roborock import DOMAIN
+from inpui.components.roborock.services import (
     GET_MAPS_SERVICE_NAME,
     GET_VACUUM_CURRENT_POSITION_SERVICE_NAME,
     SET_VACUUM_GOTO_POSITION_SERVICE_NAME,
 )
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_CLEAN_AREA,
     SERVICE_CLEAN_SPOT,
@@ -32,19 +32,19 @@ from homeassistant.components.vacuum import (
     SERVICE_START,
     SERVICE_STOP,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotSupported,
     ServiceValidationError,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from .conftest import FakeDevice, set_trait_attributes
 from .mock_data import STATUS

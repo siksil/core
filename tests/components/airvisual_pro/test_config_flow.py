@@ -9,11 +9,11 @@ from pyairvisual.node import (
 )
 import pytest
 
-from homeassistant.components.airvisual_pro.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.airvisual_pro.const import DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

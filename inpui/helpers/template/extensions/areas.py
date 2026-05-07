@@ -7,17 +7,17 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.template.helpers import resolve_area_id
+from inpui.helpers.template.helpers import resolve_area_id
 
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 
 class AreaExtension(BaseTemplateExtension):
@@ -90,7 +90,7 @@ class AreaExtension(BaseTemplateExtension):
         dev_reg = dr.async_get(self.hass)
         ent_reg = er.async_get(self.hass)
         # Import here, not at top-level to avoid circular import
-        from homeassistant.helpers import config_validation as cv  # noqa: PLC0415
+        from inpui.helpers import config_validation as cv  # noqa: PLC0415
 
         try:
             cv.entity_id(lookup_value)

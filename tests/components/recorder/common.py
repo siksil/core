@@ -21,15 +21,15 @@ from sqlalchemy import create_engine, event as sqlalchemy_event
 from sqlalchemy.orm.session import Session
 
 from homeassistant import core as ha
-from homeassistant.components import recorder
-from homeassistant.components.recorder import (
+from inpui.components import recorder
+from inpui.components.recorder import (
     Recorder,
     core,
     get_instance,
     migration,
     statistics,
 )
-from homeassistant.components.recorder.db_schema import (
+from inpui.components.recorder.db_schema import (
     EventData,
     Events,
     EventTypes,
@@ -38,17 +38,17 @@ from homeassistant.components.recorder.db_schema import (
     States,
     StatesMeta,
 )
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder.models import (
     bytes_to_ulid_or_none,
     bytes_to_uuid_hex_or_none,
 )
-from homeassistant.components.recorder.tasks import RecorderTask, StatisticsTask
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import DEGREE, UnitOfTemperature
-from homeassistant.core import Event, HomeAssistant, State
-from homeassistant.helpers import recorder as recorder_helper
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import json_loads, json_loads_object
+from inpui.components.recorder.tasks import RecorderTask, StatisticsTask
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import DEGREE, UnitOfTemperature
+from inpui.core import Event, HomeAssistant, State
+from inpui.helpers import recorder as recorder_helper
+from inpui.util import dt as dt_util
+from inpui.util.json import json_loads, json_loads_object
 
 from . import db_schema_0
 

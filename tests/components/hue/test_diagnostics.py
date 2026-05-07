@@ -2,8 +2,8 @@
 
 from unittest.mock import Mock
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_platform
 

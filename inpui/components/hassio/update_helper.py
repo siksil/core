@@ -9,8 +9,8 @@ from aiohasupervisor.models import (
     StoreAddonUpdate,
 )
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .handler import get_supervisor_client
 

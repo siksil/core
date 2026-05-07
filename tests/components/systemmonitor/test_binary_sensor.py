@@ -7,13 +7,13 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.systemmonitor.binary_sensor import get_cpu_icon
-from homeassistant.components.systemmonitor.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.systemmonitor.binary_sensor import get_cpu_icon
+from inpui.components.systemmonitor.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockProcess
 

@@ -8,7 +8,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_TRANSITION,
     PLATFORM_SCHEMA as LIGHT_PLATFORM_SCHEMA,
@@ -16,17 +16,17 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import Throttle
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import Throttle
 
 from . import DecoraWifiConfigEntry
 from .const import DOMAIN, INTEGRATION_TITLE

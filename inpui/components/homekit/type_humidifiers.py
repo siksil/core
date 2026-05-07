@@ -6,7 +6,7 @@ from typing import Any
 from pyhap.const import CATEGORY_HUMIDIFIER
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_HUMIDITY,
     ATTR_MAX_HUMIDITY,
@@ -17,7 +17,7 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     HumidifierDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     PERCENTAGE,
@@ -25,14 +25,14 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HassJobType,
     State,
     callback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.helpers.event import async_track_state_change_event
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

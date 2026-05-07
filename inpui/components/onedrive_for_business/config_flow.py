@@ -11,14 +11,14 @@ from onedrive_personal_sdk.exceptions import OneDriveException
 from onedrive_personal_sdk.models.items import Drive
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
 
 from .application_credentials import tenant_id_context
 from .const import (

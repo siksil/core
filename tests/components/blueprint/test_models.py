@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.blueprint import BLUEPRINT_SCHEMA, errors, models
-from homeassistant.core import HomeAssistant
-from homeassistant.util.yaml import Input
+from inpui.components.blueprint import BLUEPRINT_SCHEMA, errors, models
+from inpui.core import HomeAssistant
+from inpui.util.yaml import Input
 
 
 @pytest.fixture

@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
+from inpui.components.repairs import RepairsFlow
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
 
 from .config_flow import async_request_token
 

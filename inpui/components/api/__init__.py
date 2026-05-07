@@ -12,17 +12,17 @@ from aiohttp.web_exceptions import HTTPBadRequest
 import voluptuous as vol
 
 from homeassistant import core as ha
-from homeassistant.auth.models import User
-from homeassistant.auth.permissions.const import POLICY_READ
-from homeassistant.components.http import (
+from inpui.auth.models import User
+from inpui.auth.permissions.const import POLICY_READ
+from inpui.components.http import (
     KEY_HASS,
     KEY_HASS_USER,
     HomeAssistantView,
     require_admin,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONTENT_TYPE_JSON,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
     KEY_DATA_LOGGING as DATA_LOGGING,
     MATCH_ALL,
@@ -37,20 +37,20 @@ from homeassistant.const import (
     URL_API_STREAM,
     URL_API_TEMPLATE,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant
+from inpui.exceptions import (
     InvalidEntityFormatError,
     InvalidStateError,
     ServiceNotFound,
     TemplateError,
     Unauthorized,
 )
-from homeassistant.helpers import config_validation as cv, recorder, template
-from homeassistant.helpers.json import json_dumps, json_fragment
-from homeassistant.helpers.service import async_get_all_descriptions
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.event_type import EventType
-from homeassistant.util.json import json_loads
+from inpui.helpers import config_validation as cv, recorder, template
+from inpui.helpers.json import json_dumps, json_fragment
+from inpui.helpers.service import async_get_all_descriptions
+from inpui.helpers.typing import ConfigType
+from inpui.util.event_type import EventType
+from inpui.util.json import json_loads
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -140,7 +140,7 @@ class APIEventStream(HomeAssistantView):
 
         restrict: list[EventType[Any] | str] | None = None
         if restrict_str := request.query.get("restrict"):
-            restrict = [*restrict_str.split(","), EVENT_HOMEASSISTANT_STOP]
+            restrict = [*restrict_str.split(","), EVENT_INPUI_STOP]
 
         async def forward_events(event: Event) -> None:
             """Forward events to the open request."""
@@ -149,7 +149,7 @@ class APIEventStream(HomeAssistantView):
 
             _LOGGER.debug("STREAM %s FORWARDING %s", id(stop_obj), event)
 
-            if event.event_type == EVENT_HOMEASSISTANT_STOP:
+            if event.event_type == EVENT_INPUI_STOP:
                 data = stop_obj
             else:
                 data = json_dumps(event)

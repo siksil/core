@@ -4,19 +4,19 @@ from unittest.mock import Mock
 
 import pytest
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.motionblinds_ble.const import (
+from inpui.components.motionblinds_ble.const import (
     ATTR_CONNECT,
     ATTR_DISCONNECT,
     ATTR_FAVORITE,
     ATTR_SPEED,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 

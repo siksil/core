@@ -12,14 +12,14 @@ import hass_nabucasa
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import assist_pipeline, conversation, stt
-from homeassistant.components.assist_pipeline.const import (
+from inpui.components import assist_pipeline, conversation, stt
+from inpui.components.assist_pipeline.const import (
     BYTES_PER_CHUNK,
     CONF_DEBUG_RECORDING_DIR,
     DOMAIN,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import process_events
 from .conftest import (

@@ -3,9 +3,9 @@
 from iaqualink.exception import AqualinkServiceException
 import pytest
 
-from homeassistant.components.iaqualink.utils import await_or_reraise
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.iaqualink.utils import await_or_reraise
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import async_raises, async_returns
 

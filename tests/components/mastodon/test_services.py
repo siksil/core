@@ -7,7 +7,7 @@ from mastodon.Mastodon import MastodonAPIError, MastodonNotFoundError, MediaAtta
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.mastodon.const import (
+from inpui.components.mastodon.const import (
     ATTR_ACCOUNT_NAME,
     ATTR_CONTENT_WARNING,
     ATTR_DURATION,
@@ -20,15 +20,15 @@ from homeassistant.components.mastodon.const import (
     ATTR_VISIBILITY,
     DOMAIN,
 )
-from homeassistant.components.mastodon.services import (
+from inpui.components.mastodon.services import (
     SERVICE_GET_ACCOUNT,
     SERVICE_MUTE_ACCOUNT,
     SERVICE_POST,
     SERVICE_UNMUTE_ACCOUNT,
 )
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 

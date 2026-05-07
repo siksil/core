@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components import sensor
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import sensor
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, load_fixture
 

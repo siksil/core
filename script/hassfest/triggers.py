@@ -11,10 +11,10 @@ from typing import Any
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.const import CONF_SELECTOR
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, selector, trigger
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.const import CONF_SELECTOR
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, selector, trigger
+from inpui.util.yaml import load_yaml_dict
 
 from .model import Config, Integration
 

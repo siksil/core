@@ -9,10 +9,10 @@ from pysnooz.commands import SnoozCommandData
 from pysnooz.device import DisconnectionReason, SnoozConnectionStatus
 from pysnooz.testing import MockSnoozDevice as ParentMockSnoozDevice
 
-from homeassistant.components.snooz.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.components.snooz.const import DOMAIN
+from inpui.const import CONF_ADDRESS, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 from tests.common import MockConfigEntry
 from tests.components.bluetooth import generate_ble_device

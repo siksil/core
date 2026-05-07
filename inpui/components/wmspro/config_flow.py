@@ -10,11 +10,11 @@ import aiohttp
 import voluptuous as vol
 from wmspro.webcontrol import WebControlPro
 
-from homeassistant.config_entries import SOURCE_DHCP, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import SOURCE_DHCP, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN, SUGGESTED_HOST
 

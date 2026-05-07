@@ -8,7 +8,7 @@ import logging
 from hass_nabucasa import Cloud
 from hass_nabucasa.voice import STT_LANGUAGES, VoiceError
 
-from homeassistant.components.stt import (
+from inpui.components.stt import (
     AudioBitRates,
     AudioChannels,
     AudioCodecs,
@@ -19,11 +19,11 @@ from homeassistant.components.stt import (
     SpeechResultState,
     SpeechToTextEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_when_setup
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_when_setup
 
 from .assist_pipeline import async_migrate_cloud_pipeline_engine
 from .client import CloudClient

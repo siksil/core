@@ -15,20 +15,20 @@ from jaraco.abode.exceptions import (
 from jaraco.abode.helpers.timeline import Groups as GROUPS
 from requests.exceptions import ConnectTimeout, HTTPError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DATE,
     ATTR_DEVICE_ID,
     ATTR_TIME,
     CONF_PASSWORD,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_POLLING, DOMAIN, DOMAIN_DATA, LOGGER
 from .services import async_setup_services
@@ -138,7 +138,7 @@ async def setup_hass_events(hass: HomeAssistant) -> None:
         await hass.async_add_executor_job(hass.data[DOMAIN_DATA].abode.events.start)
 
     hass.data[DOMAIN_DATA].logout_listener = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP, logout
+        EVENT_INPUI_STOP, logout
     )
 
 

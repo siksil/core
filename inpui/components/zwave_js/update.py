@@ -20,20 +20,20 @@ from zwave_js_server.model.firmware import (
 from zwave_js_server.model.node import Node as ZwaveNode
 from zwave_js_server.model.node.firmware import NodeFirmwareUpdateInfo
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_LATEST_VERSION,
     UpdateDeviceClass,
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.restore_state import ExtraStoredData
+from inpui.const import EntityCategory
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
+from inpui.helpers.restore_state import ExtraStoredData
 
 from .const import API_KEY_FIRMWARE_UPDATE_SERVICE, DOMAIN, LOGGER
 from .helpers import get_device_info, get_valueless_base_unique_id

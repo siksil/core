@@ -1,8 +1,8 @@
 """Platform for the Escea fireplace."""
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .discovery import async_start_discovery_service, async_stop_discovery_service
 

@@ -2,7 +2,7 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import init_integration, mock_config_entry, mock_diffuser
 

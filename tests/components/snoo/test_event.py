@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import async_init_integration, find_update_callback
 from .const import MOCK_SNOO_DATA

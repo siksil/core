@@ -4,10 +4,10 @@ from datetime import timedelta
 
 from freebox_api.exceptions import HttpRequestError
 
-from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.const import CONF_HOST, CONF_PORT, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.event import async_track_time_interval
 
 from .const import PLATFORMS
 from .router import FreeboxConfigEntry, FreeboxRouter, get_api
@@ -40,7 +40,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: FreeboxConfigEntry) -> b
         await router.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_close_connection)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_close_connection)
     )
     entry.async_on_unload(router.close)
 

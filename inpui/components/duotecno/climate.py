@@ -6,14 +6,14 @@ from typing import Any, Final
 
 from duotecno.unit import SensUnit
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DuotecnoConfigEntry
 from .entity import DuotecnoEntity, api_call

@@ -1,9 +1,9 @@
 """Base entity for the Minecraft Server integration."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TYPE
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TYPE
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .api import MinecraftServerType
 from .const import DOMAIN

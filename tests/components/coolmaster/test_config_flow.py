@@ -3,10 +3,10 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.coolmaster.config_flow import AVAILABLE_MODES
-from homeassistant.components.coolmaster.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.coolmaster.config_flow import AVAILABLE_MODES
+from inpui.components.coolmaster.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 def _flow_data(advanced=False):

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant, callback
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant, callback
 
 
 @callback

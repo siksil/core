@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, Any
 
 import axis
 
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from ..const import ATTR_MANUFACTURER, DOMAIN
 from .config import AxisConfig

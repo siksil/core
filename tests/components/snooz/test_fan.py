@@ -10,14 +10,14 @@ from pysnooz.commands import SnoozCommandResult, SnoozCommandResultStatus
 from pysnooz.testing import MockSnoozDevice
 import pytest
 
-from homeassistant.components import fan
-from homeassistant.components.snooz.const import (
+from inpui.components import fan
+from inpui.components.snooz.const import (
     ATTR_DURATION,
     DOMAIN,
     SERVICE_TRANSITION_OFF,
     SERVICE_TRANSITION_ON,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     STATE_OFF,
@@ -26,9 +26,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import SnoozFixture, create_mock_snooz, create_mock_snooz_config_entry
 

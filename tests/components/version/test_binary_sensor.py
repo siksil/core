@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.components.version.const import DEFAULT_CONFIGURATION
-from homeassistant.core import HomeAssistant
+from inpui.components.version.const import DEFAULT_CONFIGURATION
+from inpui.core import HomeAssistant
 
 from .common import setup_version_integration
 

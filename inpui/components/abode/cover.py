@@ -4,10 +4,10 @@ from typing import Any
 
 from jaraco.abode.devices.cover import Cover
 
-from homeassistant.components.cover import CoverEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import CoverEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN_DATA
 from .entity import AbodeDevice

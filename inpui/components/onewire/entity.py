@@ -8,8 +8,8 @@ from typing import Any
 from aio_ownet.exceptions import OWServerError
 from aio_ownet.proxy import OWServerStatelessProxy
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 _LOGGER = logging.getLogger(__name__)
 

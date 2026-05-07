@@ -23,21 +23,21 @@ from androidtv.setup_async import (
     setup as async_androidtv_setup,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_ADB_SERVER_IP,
@@ -224,7 +224,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: AndroidTVConfigEntry) ->
         await aftv.adb_close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_close_connection)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_close_connection)
     )
     entry.async_on_unload(entry.add_update_listener(update_listener))
 

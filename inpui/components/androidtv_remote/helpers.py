@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from androidtvremote2 import AndroidTVRemote
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import STORAGE_DIR
 
 from .const import CONF_ENABLE_IME, CONF_ENABLE_IME_DEFAULT_VALUE
 

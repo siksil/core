@@ -8,10 +8,10 @@ from lojack_api import ApiError, AuthenticationError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lojack.const import DEFAULT_UPDATE_INTERVAL, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.lojack.const import DEFAULT_UPDATE_INTERVAL, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .const import TEST_DEVICE_ID

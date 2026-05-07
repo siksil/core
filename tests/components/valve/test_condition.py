@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.valve import ATTR_IS_CLOSED
-from homeassistant.components.valve.const import ValveState
-from homeassistant.core import HomeAssistant
+from inpui.components.valve import ATTR_IS_CLOSED
+from inpui.components.valve.const import ValveState
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

@@ -4,12 +4,12 @@ from unittest.mock import MagicMock
 
 from pyotgw.vars import OTGW, OTGW_ABOUT
 
-from homeassistant.components.opentherm_gw.const import (
+from inpui.components.opentherm_gw.const import (
     DOMAIN,
     OpenThermDeviceIdentifier,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import MOCK_GATEWAY_ID, VERSION_TEST
 

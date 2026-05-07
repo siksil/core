@@ -7,11 +7,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from apyosoenergyapi.waterheater import OSOEnergyWaterHeaterData
 import pytest
 
-from homeassistant.components.osoenergy.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonObjectType
+from inpui.components.osoenergy.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

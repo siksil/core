@@ -6,10 +6,10 @@ from typing import Any
 
 from lektricowifi import Device
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import ATTR_SERIAL_NUMBER, CONF_TYPE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import ATTR_SERIAL_NUMBER, CONF_TYPE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LektricoConfigEntry, LektricoDeviceDataUpdateCoordinator
 from .entity import LektricoEntity

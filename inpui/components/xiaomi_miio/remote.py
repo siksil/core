@@ -11,27 +11,27 @@ from typing import Any
 from miio import ChuangmiIr, DeviceException
 import voluptuous as vol
 
-from homeassistant.components import persistent_notification
-from homeassistant.components.remote import (
+from inpui.components import persistent_notification
+from inpui.components.remote import (
     ATTR_DELAY_SECS,
     ATTR_NUM_REPEATS,
     DEFAULT_DELAY_SECS,
     PLATFORM_SCHEMA as REMOTE_PLATFORM_SCHEMA,
     RemoteEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_COMMAND,
     CONF_HOST,
     CONF_NAME,
     CONF_TIMEOUT,
     CONF_TOKEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util.dt import utcnow
 
 from .const import SERVICE_LEARN, SERVICE_SET_REMOTE_LED_OFF, SERVICE_SET_REMOTE_LED_ON
 

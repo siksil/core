@@ -7,8 +7,8 @@ from unittest.mock import patch
 from aiohttp import ClientError
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .test_init import MOCK_ENVIRON
 

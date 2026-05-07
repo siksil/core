@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, intent
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, intent
 
 from . import DOMAIN, EVENT_SHOPPING_LIST_UPDATED, NoMatchingShoppingListItem
 

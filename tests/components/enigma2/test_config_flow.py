@@ -7,11 +7,11 @@ from aiohttp.client_exceptions import ClientError
 from openwebif.error import InvalidAuthError
 import pytest
 
-from homeassistant.components.enigma2.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.enigma2.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_FULL, TEST_REQUIRED
 

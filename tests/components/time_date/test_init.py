@@ -1,6 +1,6 @@
 """The tests for the Time & Date component."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import load_int
 

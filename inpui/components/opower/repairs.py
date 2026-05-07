@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
 
 
 class UnsupportedUtilityFixFlow(RepairsFlow):

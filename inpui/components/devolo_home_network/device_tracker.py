@@ -5,15 +5,15 @@ from __future__ import annotations
 from devolo_plc_api.device import Device
 from devolo_plc_api.device_api import ConnectedStationInfo
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     ScannerEntity,
 )
-from homeassistant.const import STATE_UNKNOWN, UnitOfFrequency
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import STATE_UNKNOWN, UnitOfFrequency
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONNECTED_WIFI_CLIENTS, DOMAIN, WIFI_APTYPE, WIFI_BANDS
 from .coordinator import DevoloDataUpdateCoordinator, DevoloHomeNetworkConfigEntry

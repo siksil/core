@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.powerwall.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.powerwall.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .mocks import _mock_powerwall_with_fixtures
 

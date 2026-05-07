@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DEFAULT_NAME, DOMAIN
 

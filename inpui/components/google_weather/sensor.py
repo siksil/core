@@ -7,14 +7,14 @@ from dataclasses import dataclass
 
 from google_weather_api import CurrentConditionsResponse
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import (
+from inpui.config_entries import ConfigSubentry
+from inpui.const import (
     DEGREE,
     PERCENTAGE,
     UV_INDEX,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfVolumetricFlux,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import (
     GoogleWeatherConfigEntry,

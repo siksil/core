@@ -2,14 +2,14 @@
 
 from aiounifi.models.client import Client
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, PLATFORMS, UNIFI_WIRELESS_CLIENTS
 from .errors import AuthenticationRequired, CannotConnect
@@ -58,7 +58,7 @@ async def async_setup_entry(
     hub.websocket.start()
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, hub.shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, hub.shutdown)
     )
     return True
 

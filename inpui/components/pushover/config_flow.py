@@ -8,9 +8,9 @@ from typing import Any
 from pushover_complete import BadAPIRequestError, PushoverAPI
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import HomeAssistant
 
 from .const import CONF_USER_KEY, DEFAULT_NAME, DOMAIN
 

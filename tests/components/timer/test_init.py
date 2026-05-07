@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.timer import (
+from inpui.components.timer import (
     ATTR_DURATION,
     ATTR_FINISHES_AT,
     ATTR_REMAINING,
@@ -35,7 +35,7 @@ from homeassistant.components.timer import (
     Timer,
     _format_timedelta,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -46,12 +46,12 @@ from homeassistant.const import (
     EVENT_STATE_CHANGED,
     SERVICE_RELOAD,
 )
-from homeassistant.core import Context, CoreState, Event, HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.restore_state import StoredState, async_get
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import Context, CoreState, Event, HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.restore_state import StoredState, async_get
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import MockUser, async_capture_events, async_fire_time_changed
 from tests.typing import WebSocketGenerator

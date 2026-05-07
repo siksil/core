@@ -8,26 +8,26 @@ from pynws import NwsNoDataError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import nws
-from homeassistant.components.homeassistant import (
+from inpui.components import nws
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.nws.const import (
+from inpui.components.nws.const import (
     DEFAULT_SCAN_INTERVAL,
     OBSERVATION_VALID_TIME,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_CONDITION_SUNNY,
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .const import (
     CLEAR_NIGHT_OBSERVATION,

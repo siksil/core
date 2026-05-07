@@ -5,10 +5,10 @@ from unittest.mock import MagicMock
 import pytest
 from zamg.exceptions import ZamgApiError
 
-from homeassistant.components.zamg.const import CONF_STATION_ID, DOMAIN, LOGGER
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.zamg.const import CONF_STATION_ID, DOMAIN, LOGGER
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_STATION_ID
 

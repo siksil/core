@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from trmnl.models import DevicesResponse, UserResponse
 
-from homeassistant.components.trmnl.const import DOMAIN
-from homeassistant.const import CONF_API_KEY
+from inpui.components.trmnl.const import DOMAIN
+from inpui.const import CONF_API_KEY
 
 from tests.common import MockConfigEntry, load_fixture
 

@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.foscam.const import DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.foscam.const import DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import setup_mock_foscam_camera
 from .const import ENTRY_ID, VALID_CONFIG

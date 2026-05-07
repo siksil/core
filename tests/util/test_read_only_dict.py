@@ -5,7 +5,7 @@ import json
 
 import pytest
 
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.util.read_only_dict import ReadOnlyDict
 
 
 def test_read_only_dict() -> None:

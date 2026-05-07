@@ -12,14 +12,14 @@ from pydeconz.models.event import EventType
 from pydeconz.models.sensor import SensorBase as PydeconzSensorBase
 from pydeconz.models.sensor.presence import Presence
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DOMAIN as NUMBER_DOMAIN,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .entity import DeconzDevice

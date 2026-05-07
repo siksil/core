@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.entity_registry as er
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration, update_callback
 

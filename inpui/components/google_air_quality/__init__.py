@@ -5,9 +5,9 @@ import asyncio
 from google_air_quality_api.api import GoogleAirQualityApi
 from google_air_quality_api.auth import Auth
 
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import CONF_REFERRER
 from .coordinator import (

@@ -8,12 +8,12 @@ from aiohttp import ClientConnectionError, ClientResponseError
 from hass_splunk import SplunkPayloadError
 import pytest
 
-from homeassistant.components.splunk.const import CONF_FILTER, DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_SSL, CONF_TOKEN
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.splunk.const import CONF_FILTER, DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntryState
+from inpui.const import CONF_HOST, CONF_PORT, CONF_SSL, CONF_TOKEN
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

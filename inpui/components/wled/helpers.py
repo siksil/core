@@ -7,7 +7,7 @@ from typing import Any, Concatenate
 
 from wled import WLEDConnectionError, WLEDError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 from .entity import WLEDEntity

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CONF_PLACE_CODE, PLATFORMS
 from .coordinator import MeteoLtConfigEntry, MeteoLtUpdateCoordinator

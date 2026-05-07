@@ -2,11 +2,11 @@
 
 import logging
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device import async_entity_id_to_device_id
-from homeassistant.helpers.helper_integration import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.device import async_entity_id_to_device_id
+from inpui.helpers.helper_integration import (
     async_handle_source_entity_changes,
     async_remove_helper_config_entry_from_source_device,
 )

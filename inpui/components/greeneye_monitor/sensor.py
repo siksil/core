@@ -6,8 +6,8 @@ from typing import Any
 
 import greeneye
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import (
     CONF_NAME,
     CONF_SENSORS,
     CONF_TEMPERATURE_UNIT,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     UnitOfPower,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     CONF_CHANNELS,

@@ -6,22 +6,22 @@ from unittest.mock import AsyncMock, MagicMock
 from androidtvremote2 import CannotConnect, ConnectionClosed, InvalidAuth
 
 from homeassistant import config_entries
-from homeassistant.components.androidtv_remote.config_flow import (
+from inpui.components.androidtv_remote.config_flow import (
     APPS_NEW_ID,
     CONF_APP_DELETE,
     CONF_APP_ID,
 )
-from homeassistant.components.androidtv_remote.const import (
+from inpui.components.androidtv_remote.const import (
     CONF_APP_ICON,
     CONF_APP_NAME,
     CONF_APPS,
     CONF_ENABLE_IME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

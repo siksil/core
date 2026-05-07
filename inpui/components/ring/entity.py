@@ -13,16 +13,16 @@ from ring_doorbell import (
     RingTimeout,
 )
 
-from homeassistant.components.automation import automations_with_entity
-from homeassistant.components.script import scripts_with_entity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.update_coordinator import (
+from inpui.components.automation import automations_with_entity
+from inpui.components.script import scripts_with_entity
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.update_coordinator import (
     BaseCoordinatorEntity,
     CoordinatorEntity,
 )

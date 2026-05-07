@@ -5,15 +5,15 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo import DOMAIN
-from homeassistant.components.switch import (
+from inpui.components.demo import DOMAIN
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 SWITCH_ENTITY_IDS = ["switch.decorative_lights", "switch.ac"]
 

@@ -9,7 +9,7 @@ from unittest.mock import patch
 from pykoplenti import ExtendedApiClient, MeData, SettingsData, VersionData
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

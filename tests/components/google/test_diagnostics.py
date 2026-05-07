@@ -7,7 +7,7 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import TEST_EVENT, ApiResult, ComponentSetup
 

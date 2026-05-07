@@ -4,6 +4,6 @@ from __future__ import annotations
 
 from fishaudio import AsyncFishAudio
 
-from homeassistant.config_entries import ConfigEntry
+from inpui.config_entries import ConfigEntry
 
 type FishAudioConfigEntry = ConfigEntry[AsyncFishAudio]

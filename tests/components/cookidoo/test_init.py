@@ -5,17 +5,17 @@ from unittest.mock import AsyncMock
 from cookidoo_api import CookidooAuthException, CookidooRequestException
 import pytest
 
-from homeassistant.components.cookidoo.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.cookidoo.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_COUNTRY,
     CONF_EMAIL,
     CONF_LANGUAGE,
     CONF_PASSWORD,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import setup_integration
 from .conftest import COUNTRY, EMAIL, LANGUAGE, PASSWORD, TEST_UUID

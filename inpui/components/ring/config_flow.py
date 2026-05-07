@@ -8,24 +8,24 @@ import uuid
 from ring_doorbell import Auth, AuthenticationError, Requires2FAError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import get_auth_user_agent
 from .const import CONF_2FA, CONF_CONFIG_ENTRY_MINOR_VERSION, DOMAIN

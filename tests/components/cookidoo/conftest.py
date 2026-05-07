@@ -14,8 +14,8 @@ from cookidoo_api import (
 from cookidoo_api.types import CookidooCalendarDay, CookidooCalendarDayRecipe
 import pytest
 
-from homeassistant.components.cookidoo.const import DOMAIN
-from homeassistant.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
+from inpui.components.cookidoo.const import DOMAIN
+from inpui.const import CONF_COUNTRY, CONF_EMAIL, CONF_LANGUAGE, CONF_PASSWORD
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

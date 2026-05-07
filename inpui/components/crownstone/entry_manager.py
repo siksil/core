@@ -14,13 +14,13 @@ from crownstone_sse import CrownstoneSSEAsync
 from crownstone_uart import CrownstoneUart, UartEventBus
 from crownstone_uart.Exceptions import UartException
 
-from homeassistant.components import persistent_notification
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import persistent_notification
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     CONF_USB_PATH,

@@ -7,13 +7,13 @@ from aiovodafone.const import WIFI_DATA
 import pytest
 from yarl import URL
 
-from homeassistant.components.vodafone_station.const import (
+from inpui.components.vodafone_station.const import (
     CONF_DEVICE_DETAILS,
     DEVICE_TYPE,
     DEVICE_URL,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 
 from .const import (
     DEVICE_1_HOST,

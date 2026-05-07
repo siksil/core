@@ -9,12 +9,12 @@ from bleak import BleakError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import format_mac
-import homeassistant.util.dt as dt_util
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import format_mac
+import inpui.util.dt as dt_util
 
 from . import CASPER_GLOW_DISCOVERY_INFO, setup_integration
 

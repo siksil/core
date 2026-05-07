@@ -8,21 +8,21 @@ from typing import Any
 
 from astral.location import Elevation, Location
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     EVENT_CORE_CONFIG_UPDATE,
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.helpers import event
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.sun import (
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.helpers import event
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.entity import Entity
+from inpui.helpers.sun import (
     get_astral_location,
     get_location_astral_event_next,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import (
     SIGNAL_EVENTS_CHANGED,

@@ -7,16 +7,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.squeezebox.const import PLAYER_UPDATE_INTERVAL
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.squeezebox.const import PLAYER_UPDATE_INTERVAL
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     CONF_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from .conftest import TEST_ALARM_ID
 

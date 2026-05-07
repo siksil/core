@@ -4,7 +4,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ID,
     CONF_NAME,
     CONF_PROTOCOL,
@@ -12,10 +12,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
 
 from . import DOMAIN, EVENT, SERVICE_NAME
 from .const import (

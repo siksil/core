@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock
 
 from aiohttp import ClientError
 
-from homeassistant.components.accuweather.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.accuweather.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import init_integration
 

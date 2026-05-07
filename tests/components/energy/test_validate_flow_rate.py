@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.energy import validate
-from homeassistant.components.energy.data import EnergyManager
-from homeassistant.const import UnitOfVolumeFlowRate
-from homeassistant.core import HomeAssistant
+from inpui.components.energy import validate
+from inpui.components.energy.data import EnergyManager
+from inpui.const import UnitOfVolumeFlowRate
+from inpui.core import HomeAssistant
 
 FLOW_RATE_UNITS_STRING = ", ".join(tuple(UnitOfVolumeFlowRate))
 

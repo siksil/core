@@ -13,10 +13,10 @@ from hatasmota.utils import (
 )
 import pytest
 
-from homeassistant.components import cover
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX
-from homeassistant.const import ATTR_ASSUMED_STATE, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components import cover
+from inpui.components.tasmota.const import DEFAULT_PREFIX
+from inpui.const import ATTR_ASSUMED_STATE, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
 
 from .test_common import (
     DEFAULT_CONFIG,

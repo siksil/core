@@ -7,7 +7,7 @@ from typing import Any
 from velbusaio.channels import Channel as VelbusChannel
 from velbusaio.module import Module as VelbusModule
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import VelbusConfigEntry
 

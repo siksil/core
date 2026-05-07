@@ -12,10 +12,10 @@ from nrgkick_api import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nrgkick.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.nrgkick.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

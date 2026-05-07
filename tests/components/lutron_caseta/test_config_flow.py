@@ -10,21 +10,21 @@ from pylutron_caseta.smartbridge import Smartbridge
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.lutron_caseta import (
+from inpui.components.lutron_caseta import (
     DOMAIN,
     config_flow as CasetaConfigFlow,
 )
-from homeassistant.components.lutron_caseta.const import (
+from inpui.components.lutron_caseta.const import (
     CONF_CA_CERTS,
     CONF_CERTFILE,
     CONF_KEYFILE,
     ERROR_CANNOT_CONNECT,
     STEP_IMPORT_FAILED,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from . import ENTRY_MOCK_DATA, MockBridge
 

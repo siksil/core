@@ -7,7 +7,7 @@ from collections.abc import Callable, Hashable
 import logging
 import time
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 _LOGGER = logging.getLogger(__name__)
 

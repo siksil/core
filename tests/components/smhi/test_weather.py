@@ -13,12 +13,12 @@ from pysmhi import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smhi.const import DOMAIN
-from homeassistant.components.smhi.weather import (
+from inpui.components.smhi.const import DOMAIN
+from inpui.components.smhi.weather import (
     ATTR_SMHI_THUNDER_PROBABILITY,
     CONDITION_CLASSES,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_FORECAST_CONDITION,
     ATTR_WEATHER_WIND_GUST_SPEED,
@@ -26,16 +26,16 @@ from homeassistant.components.weather import (
     DOMAIN as WEATHER_DOMAIN,
     SERVICE_GET_FORECASTS,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
     UnitOfSpeed,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import ENTITY_ID, TEST_CONFIG
 

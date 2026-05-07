@@ -8,8 +8,8 @@ import pytest
 from uiprotect.data import Camera, Light, Permission, RecordingMode, VideoMode
 from uiprotect.exceptions import ClientError, NotAuthorized
 
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.components.unifiprotect.switch import (
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.components.unifiprotect.switch import (
     ATTR_PREV_MIC,
     ATTR_PREV_RECORD,
     CAMERA_SWITCHES,
@@ -17,10 +17,10 @@ from homeassistant.components.unifiprotect.switch import (
     PRIVACY_MODE_SWITCH,
     ProtectSwitchEntityDescription,
 )
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, STATE_OFF, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, STATE_OFF, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import patch_ufp_method
 from .utils import (

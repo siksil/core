@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import reload_satellite
 

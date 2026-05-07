@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import ios
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import ios
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import mock_component
 

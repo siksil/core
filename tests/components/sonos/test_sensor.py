@@ -8,26 +8,26 @@ from unittest.mock import PropertyMock, patch
 import pytest
 from soco.exceptions import NotSupportedException
 
-from homeassistant.components.sensor import SCAN_INTERVAL
-from homeassistant.components.sonos import DOMAIN
-from homeassistant.components.sonos.binary_sensor import ATTR_BATTERY_POWER_SOURCE
-from homeassistant.components.sonos.sensor import (
+from inpui.components.sensor import SCAN_INTERVAL
+from inpui.components.sonos import DOMAIN
+from inpui.components.sonos.binary_sensor import ATTR_BATTERY_POWER_SOURCE
+from inpui.components.sonos.sensor import (
     HA_POWER_SOURCE_BATTERY,
     HA_POWER_SOURCE_CHARGING_BASE,
     HA_POWER_SOURCE_USB,
     SensorDeviceClass,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import (
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import (
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, translation
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, translation
+from inpui.util import dt as dt_util
 
 from .conftest import MockSoCo, SonosMockEvent
 

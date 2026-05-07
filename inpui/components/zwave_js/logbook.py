@@ -6,10 +6,10 @@ from collections.abc import Callable
 
 from zwave_js_server.const import CommandClass
 
-from homeassistant.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
+from inpui.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr
 
 from .const import (
     ATTR_COMMAND_CLASS,

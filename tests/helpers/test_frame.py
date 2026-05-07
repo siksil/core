@@ -7,9 +7,9 @@ from unittest.mock import ANY, Mock, patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import frame
-from homeassistant.loader import async_get_integration
+from inpui.core import HomeAssistant
+from inpui.helpers import frame
+from inpui.loader import async_get_integration
 
 from tests.common import MockModule, extract_stack_to_frame, mock_integration
 

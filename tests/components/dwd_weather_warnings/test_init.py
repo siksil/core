@@ -3,7 +3,7 @@
 from datetime import UTC, datetime, timedelta
 from unittest.mock import MagicMock
 
-from homeassistant.components.dwd_weather_warnings.const import (
+from inpui.components.dwd_weather_warnings.const import (
     API_ATTR_WARNING_COLOR,
     API_ATTR_WARNING_DESCRIPTION,
     API_ATTR_WARNING_END,
@@ -20,14 +20,14 @@ from homeassistant.components.dwd_weather_warnings.const import (
     CURRENT_WARNING_SENSOR,
     DOMAIN,
 )
-from homeassistant.components.dwd_weather_warnings.coordinator import (
+from inpui.components.dwd_weather_warnings.coordinator import (
     DwdWeatherWarningsCoordinator,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryType
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, STATE_HOME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryType
 
 from . import init_integration
 

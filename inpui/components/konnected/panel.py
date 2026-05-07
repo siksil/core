@@ -5,7 +5,7 @@ import logging
 
 import konnected
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_STATE,
     CONF_ACCESS_TOKEN,
@@ -23,11 +23,11 @@ from homeassistant.const import (
     CONF_TYPE,
     CONF_ZONE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client, device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.network import get_url
+from inpui.core import callback
+from inpui.helpers import aiohttp_client, device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.network import get_url
 
 from .const import (
     CONF_ACTIVATION,

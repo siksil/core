@@ -5,16 +5,16 @@ from unittest.mock import MagicMock, patch
 import pytest
 from tesla_powerwall import GridStatus, PowerwallError
 
-from homeassistant.components.powerwall.const import DOMAIN
-from homeassistant.components.switch import (
+from inpui.components.powerwall.const import DOMAIN
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_IP_ADDRESS, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, CONF_IP_ADDRESS, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .mocks import _mock_powerwall_with_fixtures
 

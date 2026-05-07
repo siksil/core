@@ -12,10 +12,10 @@ import defusedxml.ElementTree as ET
 import pytest
 
 from homeassistant import setup
-from homeassistant.components import emulated_hue
-from homeassistant.components.emulated_hue import upnp
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
+from inpui.components import emulated_hue
+from inpui.components.emulated_hue import upnp
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
 
 from tests.common import get_test_instance_port
 from tests.typing import ClientSessionGenerator

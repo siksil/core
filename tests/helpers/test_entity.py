@@ -16,8 +16,8 @@ from pytest_unordered import unordered
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigSubentryData
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigSubentryData
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
@@ -25,18 +25,18 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     HassJobType,
     HomeAssistant,
     ReleaseChannel,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, NoEntitySpecifiedError
-from homeassistant.helpers import device_registry as dr, entity, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.exceptions import HomeAssistantError, NoEntitySpecifiedError
+from inpui.helpers import device_registry as dr, entity, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 from tests.common import (
     MockConfigEntry,

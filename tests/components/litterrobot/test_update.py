@@ -6,8 +6,8 @@ from pylitterbot import LitterRobot4
 from pylitterbot.exceptions import InvalidCommandException
 import pytest
 
-from homeassistant.components.litterrobot.update import RELEASE_URL
-from homeassistant.components.update import (
+from inpui.components.litterrobot.update import RELEASE_URL
+from inpui.components.update import (
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
     ATTR_RELEASE_URL,
@@ -15,15 +15,15 @@ from homeassistant.components.update import (
     SERVICE_INSTALL,
     UpdateDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import setup_integration
 

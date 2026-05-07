@@ -5,11 +5,11 @@ import logging
 import voluptuous as vol
 from voluptuous import All, Range
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import DOMAIN
 from .helpers import handle_command, handle_vehicle_command

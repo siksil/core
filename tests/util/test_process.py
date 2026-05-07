@@ -6,8 +6,8 @@ import subprocess
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import process
+from inpui.core import HomeAssistant
+from inpui.util import process
 
 
 async def test_kill_process(hass: HomeAssistant) -> None:

@@ -4,10 +4,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.cover import CoverEntityFeature, CoverState
-from homeassistant.components.knx.schema import CoverSchema
-from homeassistant.const import CONF_NAME, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.cover import CoverEntityFeature, CoverState
+from inpui.components.knx.schema import CoverSchema
+from inpui.const import CONF_NAME, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

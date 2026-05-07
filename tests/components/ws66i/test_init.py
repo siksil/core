@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.ws66i.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.ws66i.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .test_media_player import (
     MOCK_CONFIG,

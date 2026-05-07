@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 from . import GoogleConfigEntry
 from .const import CONF_SECURE_DEVICES_PIN, CONF_SERVICE_ACCOUNT, DATA_CONFIG, DOMAIN

@@ -8,14 +8,14 @@ from typing import Any, cast
 from aioshelly.block_device import Block
 from aioshelly.const import MODEL_GAS, RPC_GENERATIONS
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ValveDeviceClass,
     ValveEntity,
     ValveEntityDescription,
     ValveEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     MODEL_FRANKEVER_IRRIGATION_CONTROLLER,

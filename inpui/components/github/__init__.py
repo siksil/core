@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from aiogithubapi import GitHubAPI
 
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import (
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import (
     SERVER_SOFTWARE,
     async_get_clientsession,
 )

@@ -2,11 +2,11 @@
 
 import pytest
 
-from homeassistant.components.agent_dvr.const import DOMAIN, SERVER_URL
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.agent_dvr.const import DOMAIN, SERVER_URL
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PORT, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import init_integration
 

@@ -5,8 +5,8 @@ from unittest.mock import patch
 from pykrakenapi.pykrakenapi import CallRateLimitError, KrakenAPIError
 import pytest
 
-from homeassistant.components.kraken.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.kraken.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import TICKER_INFORMATION_RESPONSE, TRADEABLE_ASSET_PAIR_RESPONSE
 

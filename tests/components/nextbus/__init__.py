@@ -1,9 +1,9 @@
 """The tests for the nexbus component."""
 
-from homeassistant.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_STOP
-from homeassistant.core import HomeAssistant
+from inpui.components.nextbus.const import CONF_AGENCY, CONF_ROUTE, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_STOP
+from inpui.core import HomeAssistant
 
 from .const import VALID_AGENCY_TITLE, VALID_ROUTE_TITLE, VALID_STOP_TITLE
 

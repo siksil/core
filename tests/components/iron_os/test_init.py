@@ -7,11 +7,11 @@ from freezegun.api import FrozenDateTimeFactory
 from pynecil import CommunicationError, DeviceInfoResponse
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-import homeassistant.helpers.device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+import inpui.helpers.device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH
 
 from .conftest import DEFAULT_NAME
 

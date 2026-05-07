@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, patch
 from home_assistant_bluetooth import BluetoothServiceInfo
 import pytest
 
-from homeassistant.components.victron_ble.const import DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_ADDRESS
-from homeassistant.core import HomeAssistant
+from inpui.components.victron_ble.const import DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_ADDRESS
+from inpui.core import HomeAssistant
 
 from .fixtures import VICTRON_VEBUS_SERVICE_INFO, VICTRON_VEBUS_TOKEN
 

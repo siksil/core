@@ -15,15 +15,15 @@ from onedrive_personal_sdk.models.items import AppRoot, Drive, File, Folder
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.onedrive.const import (
+from inpui.components.onedrive.const import (
     CONF_FOLDER_ID,
     CONF_FOLDER_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

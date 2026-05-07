@@ -15,14 +15,14 @@ from bleak.exc import BleakError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.homekit_controller import config_flow
-from homeassistant.components.homekit_controller.const import KNOWN_DEVICES
-from homeassistant.components.homekit_controller.storage import async_get_entity_storage
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.helpers.service_info.zeroconf import (
+from inpui.components.homekit_controller import config_flow
+from inpui.components.homekit_controller.const import KNOWN_DEVICES
+from inpui.components.homekit_controller.storage import async_get_entity_storage
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.helpers.service_info.zeroconf import (
     ATTR_PROPERTIES_ID,
     ZeroconfServiceInfo,
 )

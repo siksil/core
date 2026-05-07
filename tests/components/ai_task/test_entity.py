@@ -3,10 +3,10 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.ai_task import async_generate_data
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import selector
+from inpui.components.ai_task import async_generate_data
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import selector
 
 from .conftest import TEST_ENTITY_ID, MockAITaskEntity
 

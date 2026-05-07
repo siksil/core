@@ -4,7 +4,7 @@ from pydeconz.websocket import State
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import WebsocketStateType
 

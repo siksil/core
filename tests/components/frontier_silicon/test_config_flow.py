@@ -6,15 +6,15 @@ from afsapi import ConnectionError, InvalidPinException, NotImplementedException
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.frontier_silicon.const import (
+from inpui.components.frontier_silicon.const import (
     CONF_WEBFSAPI_URL,
     DEFAULT_PIN,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from tests.common import MockConfigEntry
 

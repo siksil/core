@@ -8,9 +8,9 @@ from pydeconz.models.event import EventType
 from pydeconz.models.light.lock import Lock
 from pydeconz.models.sensor.door_lock import DoorLock
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .entity import DeconzDevice

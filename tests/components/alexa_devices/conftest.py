@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.alexa_devices.const import (
+from inpui.components.alexa_devices.const import (
     CONF_LOGIN_DATA,
     CONF_SITE,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import TEST_DEVICE_1, TEST_DEVICE_1_SN, TEST_PASSWORD, TEST_USERNAME
 

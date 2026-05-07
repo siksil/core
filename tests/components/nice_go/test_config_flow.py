@@ -6,15 +6,15 @@ from freezegun.api import FrozenDateTimeFactory
 from nice_go import AuthFailedError
 import pytest
 
-from homeassistant.components.nice_go.const import (
+from inpui.components.nice_go.const import (
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_CREATION_TIME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import setup_integration
 

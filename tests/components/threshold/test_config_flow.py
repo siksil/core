@@ -6,10 +6,10 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components.threshold.const import DOMAIN
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.threshold.const import DOMAIN
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 from tests.typing import WebSocketGenerator

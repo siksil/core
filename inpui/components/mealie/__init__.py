@@ -4,17 +4,17 @@ from __future__ import annotations
 
 from aiomealie import MealieAuthenticationError, MealieClient, MealieError
 
-from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceEntryType
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceEntryType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, LOGGER, MIN_REQUIRED_MEALIE_VERSION
 from .coordinator import (

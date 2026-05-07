@@ -7,15 +7,15 @@ from typing import Any
 from brother import Brother, SnmpError, UnsupportedModelError
 import voluptuous as vol
 
-from homeassistant.components.snmp import async_get_snmp_engine
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import section
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.selector import SelectSelector, SelectSelectorConfig
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.network import is_host_valid
+from inpui.components.snmp import async_get_snmp_engine
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import section
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.selector import SelectSelector, SelectSelectorConfig
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.network import is_host_valid
 
 from .const import (
     CONF_COMMUNITY,

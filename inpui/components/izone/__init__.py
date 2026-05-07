@@ -3,11 +3,11 @@
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EXCLUDE, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EXCLUDE, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DATA_CONFIG, IZONE
 from .discovery import async_start_discovery_service, async_stop_discovery_service
@@ -48,7 +48,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     async def shutdown_event(event):
         await async_stop_discovery_service(hass)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown_event)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown_event)
 
     return True
 

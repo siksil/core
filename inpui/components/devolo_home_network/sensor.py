@@ -11,16 +11,16 @@ from typing import Any
 from devolo_plc_api.device_api import ConnectedStationInfo, NeighborAPInfo
 from devolo_plc_api.plcnet_api import REMOTE, DataRate, LogicalNetwork
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfDataRate
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utcnow
+from inpui.const import EntityCategory, UnitOfDataRate
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utcnow
 
 from .const import (
     CONNECTED_PLC_DEVICES,

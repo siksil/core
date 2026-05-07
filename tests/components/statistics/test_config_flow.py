@@ -8,9 +8,9 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import config_entries
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.statistics import DOMAIN
-from homeassistant.components.statistics.sensor import (
+from inpui.components.recorder import Recorder
+from inpui.components.statistics import DOMAIN
+from inpui.components.statistics.sensor import (
     CONF_KEEP_LAST_SAMPLE,
     CONF_MAX_AGE,
     CONF_PERCENTILE,
@@ -22,9 +22,9 @@ from homeassistant.components.statistics.sensor import (
     STAT_COUNT,
     STAT_VALUE_MAX,
 )
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_ENTITY_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

@@ -24,7 +24,7 @@ from aiohasupervisor.models import (
 )
 from aiohasupervisor.models.backups import LOCATION_CLOUD_BACKUP, LOCATION_LOCAL_STORAGE
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DATA_MANAGER,
     AddonErrorData,
     AddonInfo,
@@ -53,12 +53,12 @@ from homeassistant.components.backup import (
     suggested_filename as suggested_backup_filename,
     suggested_filename_from_name_date,
 )
-from homeassistant.const import __version__ as HAVERSION
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.util import dt as dt_util
-from homeassistant.util.enum import try_parse_enum
+from inpui.const import __version__ as HAVERSION
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.util import dt as dt_util
+from inpui.util.enum import try_parse_enum
 
 from .const import DATA_CONFIG_STORE, DOMAIN, EVENT_SUPERVISOR_EVENT
 from .handler import get_supervisor_client

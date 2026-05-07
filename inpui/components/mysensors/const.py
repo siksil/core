@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Final, Literal, TypedDict
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 ATTR_DEVICES: Final = "devices"
 ATTR_GATEWAY_ID: Final = "gateway_id"

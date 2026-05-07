@@ -7,20 +7,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import update
-from homeassistant.components.update import (
+from inpui.components import update
+from inpui.components.update import (
     DEVICE_CLASSES_SCHEMA,
     UpdateEntity,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_NAME, CONF_VALUE_TEMPLATE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_CLASS, CONF_NAME, CONF_VALUE_TEMPLATE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads
 
 from . import subscription
 from .config import DEFAULT_RETAIN, MQTT_RO_SCHEMA

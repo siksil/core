@@ -6,10 +6,10 @@ import threading
 import pychromecast.discovery
 import pychromecast.models
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import (
     CAST_BROWSER_KEY,
@@ -93,7 +93,7 @@ def setup_internal_discovery(hass: HomeAssistant, config_entry: ConfigEntry) -> 
         browser.stop_discovery()
         hass.data[INTERNAL_DISCOVERY_RUNNING_KEY].release()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, stop_discovery)
+    hass.bus.listen_once(EVENT_INPUI_STOP, stop_discovery)
 
     config_entry.add_update_listener(config_entry_updated)
 

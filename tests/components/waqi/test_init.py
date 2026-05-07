@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, patch
 from aiowaqi import WAQIError
 import pytest
 
-from homeassistant.components.waqi import DOMAIN
-from homeassistant.components.waqi.const import CONF_STATION_NUMBER
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
+from inpui.components.waqi import DOMAIN
+from inpui.components.waqi.const import CONF_STATION_NUMBER
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_registry import RegistryEntryDisabler
 
 from . import setup_integration
 

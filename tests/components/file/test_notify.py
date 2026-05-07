@@ -7,12 +7,12 @@ from unittest.mock import MagicMock, call, mock_open, patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import notify
-from homeassistant.components.file import DOMAIN
-from homeassistant.components.notify import ATTR_TITLE_DEFAULT
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.util import dt as dt_util
+from inpui.components import notify
+from inpui.components.file import DOMAIN
+from inpui.components.notify import ATTR_TITLE_DEFAULT
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

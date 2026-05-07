@@ -8,10 +8,10 @@ from typing import Any
 from sqlalchemy import Column, Text, cast, not_, or_
 from sqlalchemy.sql.elements import ColumnElement
 
-from homeassistant.const import CONF_DOMAINS, CONF_ENTITIES, CONF_EXCLUDE, CONF_INCLUDE
-from homeassistant.helpers.entityfilter import CONF_ENTITY_GLOBS
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DOMAINS, CONF_ENTITIES, CONF_EXCLUDE, CONF_INCLUDE
+from inpui.helpers.entityfilter import CONF_ENTITY_GLOBS
+from inpui.helpers.json import json_dumps
+from inpui.helpers.typing import ConfigType
 
 from .db_schema import ENTITY_ID_IN_EVENT, OLD_ENTITY_ID_IN_EVENT, States, StatesMeta
 

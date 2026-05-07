@@ -16,10 +16,10 @@ from velbusaio.channels import (
 from velbusaio.module import Module
 from velbusaio.properties import LightValue, SelectedProgram
 
-from homeassistant.components.velbus import VelbusConfigEntry
-from homeassistant.components.velbus.const import DOMAIN
-from homeassistant.const import CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.velbus import VelbusConfigEntry
+from inpui.components.velbus.const import DOMAIN
+from inpui.const import CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .const import PORT_TCP
 

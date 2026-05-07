@@ -7,7 +7,7 @@ from typing import Any, NamedTuple
 from pytouchline_extended import PyTouchline
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PLATFORM_SCHEMA as CLIMATE_PLATFORM_SCHEMA,
     PRESET_AWAY,
     PRESET_NONE,
@@ -16,18 +16,18 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import ATTR_TEMPERATURE, CONF_HOST, UnitOfTemperature
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import ATTR_TEMPERATURE, CONF_HOST, UnitOfTemperature
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN
 from .data import TouchlineConfigEntry

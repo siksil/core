@@ -9,10 +9,10 @@ from epicstore_api import EpicGamesStoreAPI
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.selector import (
     CountrySelector,
     LanguageSelector,
     LanguageSelectorConfig,

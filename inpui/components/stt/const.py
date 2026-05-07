@@ -5,10 +5,10 @@ from __future__ import annotations
 from enum import Enum, StrEnum
 from typing import TYPE_CHECKING
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.entity_component import EntityComponent
+    from inpui.helpers.entity_component import EntityComponent
 
     from . import SpeechToTextEntity
     from .legacy import Provider

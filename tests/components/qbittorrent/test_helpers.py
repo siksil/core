@@ -1,13 +1,13 @@
 """Test the qBittorrent helpers."""
 
-from homeassistant.components.qbittorrent.helpers import (
+from inpui.components.qbittorrent.helpers import (
     format_progress,
     format_torrent,
     format_torrents,
     format_unix_timestamp,
     seconds_to_hhmmss,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_seconds_to_hhmmss(

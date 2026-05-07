@@ -2,9 +2,9 @@
 
 from unittest.mock import AsyncMock, Mock, patch
 
-from homeassistant.components import emulated_roku
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import emulated_roku
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_config_required_fields(hass: HomeAssistant) -> None:

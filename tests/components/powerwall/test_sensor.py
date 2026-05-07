@@ -7,9 +7,9 @@ import pytest
 from tesla_powerwall import MetersAggregatesResponse
 from tesla_powerwall.error import MissingAttributeError
 
-from homeassistant.components.powerwall.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.powerwall.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -17,9 +17,9 @@ from homeassistant.const import (
     PERCENTAGE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from .mocks import MOCK_GATEWAY_DIN, _mock_powerwall_with_fixtures
 

@@ -8,16 +8,16 @@ from typing import TYPE_CHECKING, Any
 from aioguardian.errors import GuardianError
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_ID,
     CONF_DEVICE_ID,
     CONF_FILENAME,
     CONF_PORT,
     CONF_URL,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import CONF_UID, DOMAIN
 

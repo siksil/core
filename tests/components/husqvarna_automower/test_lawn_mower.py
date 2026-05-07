@@ -9,11 +9,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components.husqvarna_automower.const import DOMAIN
-from homeassistant.components.husqvarna_automower.coordinator import SCAN_INTERVAL
-from homeassistant.components.lawn_mower import LawnMowerActivity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.husqvarna_automower.const import DOMAIN
+from inpui.components.husqvarna_automower.coordinator import SCAN_INTERVAL
+from inpui.components.lawn_mower import LawnMowerActivity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 from .const import TEST_MOWER_ID

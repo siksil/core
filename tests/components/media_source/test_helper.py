@@ -4,11 +4,11 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import const, models
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import const, models
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_async_browse_media(hass: HomeAssistant) -> None:

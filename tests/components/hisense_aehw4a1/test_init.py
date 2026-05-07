@@ -5,10 +5,10 @@ from unittest.mock import patch
 from pyaehw4a1 import exceptions
 
 from homeassistant import config_entries
-from homeassistant.components import hisense_aehw4a1
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components import hisense_aehw4a1
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 
 async def test_creating_entry_sets_up_climate_discovery(hass: HomeAssistant) -> None:

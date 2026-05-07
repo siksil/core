@@ -6,11 +6,11 @@ import datetime
 import logging
 from typing import Any, cast
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import Throttle, dt as dt_util
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import Throttle, dt as dt_util
 
 from . import EbusdData
 from .const import EBUSD_DATA, SensorSpecs

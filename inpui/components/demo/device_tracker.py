@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import random
 
-from homeassistant.components.device_tracker import SeeCallback
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.device_tracker import SeeCallback
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN, SERVICE_RANDOMIZE_DEVICE_TRACKER_DATA
 

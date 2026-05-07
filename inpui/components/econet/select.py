@@ -5,9 +5,9 @@ from __future__ import annotations
 from pyeconet.equipment import EquipmentType
 from pyeconet.equipment.thermostat import Thermostat, ThermostatFanMode
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EconetConfigEntry
 from .entity import EcoNetEntity

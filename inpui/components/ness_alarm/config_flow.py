@@ -10,8 +10,8 @@ from typing import Any
 from nessclient import Client
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.config_entries import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
@@ -20,9 +20,9 @@ from homeassistant.config_entries import (
     OptionsFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TYPE
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.const import CONF_HOST, CONF_PORT, CONF_TYPE
+from inpui.core import callback
+from inpui.helpers import config_validation as cv, selector
 
 from .const import (
     CONF_INFER_ARMING_STATE,

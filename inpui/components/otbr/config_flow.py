@@ -13,20 +13,20 @@ from python_otbr_api.tlv_parser import MeshcopTLVType
 import voluptuous as vol
 import yarl
 
-from homeassistant.components.hassio import AddonError, AddonManager
-from homeassistant.components.homeassistant_yellow import hardware as yellow_hardware
-from homeassistant.components.thread import async_get_preferred_dataset
-from homeassistant.config_entries import (
+from inpui.components.hassio import AddonError, AddonManager
+from inpui.components.homeassistant_yellow import hardware as yellow_hardware
+from inpui.components.thread import async_get_preferred_dataset
+from inpui.config_entries import (
     SOURCE_HASSIO,
     ConfigEntryState,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from .const import DEFAULT_CHANNEL, DOMAIN
 from .util import (

@@ -6,9 +6,9 @@ from typing import Any, Concatenate
 from linkplay.bridge import LinkPlayBridge
 from linkplay.manufacturers import MANUFACTURER_GENERIC, get_info_from_project
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity import Entity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity import Entity
 
 from . import DOMAIN, LinkPlayRequestException
 

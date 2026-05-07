@@ -4,15 +4,15 @@ from unittest.mock import patch
 
 from requests.models import HTTPError
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfEnergy,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

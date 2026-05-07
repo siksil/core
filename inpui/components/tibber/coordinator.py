@@ -12,22 +12,22 @@ from aiohttp.client_exceptions import ClientError
 import tibber
 from tibber.data_api import TibberDevice
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.const import UnitOfEnergy
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import EnergyConverter
+from inpui.const import UnitOfEnergy
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import EnergyConverter
 
 from .const import DOMAIN
 

@@ -14,19 +14,19 @@ from datetime import datetime
 import functools as ft
 from typing import Any
 
-from homeassistant.const import ATTR_ENTITY_PICTURE, ATTR_FRIENDLY_NAME
-from homeassistant.core import (
+from inpui.const import ATTR_ENTITY_PICTURE, ATTR_FRIENDLY_NAME
+from inpui.core import (
     HassJob,
     HomeAssistant,
     ServiceCall,
     callback as async_callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import async_generate_entity_id
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.async_ import run_callback_threadsafe
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import async_generate_entity_id
+from inpui.helpers.event import async_call_later
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.async_ import run_callback_threadsafe
 
 _KEY_INSTANCE = "configurator"
 

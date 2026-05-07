@@ -17,19 +17,19 @@ from aioesphomeapi import (
 )
 import pytest
 
-from homeassistant.components.esphome import DOMAIN
-from homeassistant.const import (
+from inpui.components.esphome import DOMAIN
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_RESTORED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_state_change_event
 
 from .conftest import (
     MockESPHomeDevice,
@@ -428,7 +428,7 @@ async def test_deep_sleep_device(
     state = hass.states.get("binary_sensor.test_my_binary_sensor")
     assert state is not None
     assert state.state == STATE_ON
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     # Verify we do not dispatch any more state updates or
     # availability updates after the stop event is fired

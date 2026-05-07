@@ -9,13 +9,13 @@ import aiohttp
 from sn2.device import Device
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_MODEL,
     ATTR_SW_VERSION,
     CONF_DEVICE_ID,
@@ -23,9 +23,9 @@ from homeassistant.const import (
     CONF_MODEL,
     CONF_NAME,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.util.network import is_ip_address
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.util.network import is_ip_address
 
 from . import DOMAIN
 

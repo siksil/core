@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from pybalboa import EVENT_UPDATE, SpaClient
 
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

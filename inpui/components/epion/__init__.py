@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from epion import Epion
 
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import EpionConfigEntry, EpionCoordinator
 

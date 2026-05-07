@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.geo_location import DOMAIN as GEO_LOCATION_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.geo_location import DOMAIN as GEO_LOCATION_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import _generate_mock_feed_entry
 

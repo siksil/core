@@ -6,8 +6,8 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import media_player
-from homeassistant.components.media_player import (
+from inpui.components import media_player
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_FILTER_CLASSES,
@@ -19,14 +19,14 @@ from homeassistant.components.media_player import (
     SearchMedia,
     SearchMediaQuery,
 )
-from homeassistant.components.media_player.const import (
+from inpui.components.media_player.const import (
     SERVICE_BROWSE_MEDIA,
     SERVICE_SEARCH_MEDIA,
 )
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform
 from tests.test_util.aiohttp import AiohttpClientMocker

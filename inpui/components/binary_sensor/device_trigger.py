@@ -2,18 +2,18 @@
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     CONF_TURNED_OFF,
     CONF_TURNED_ON,
     DEVICE_TRIGGER_BASE_SCHEMA,
 )
-from homeassistant.components.homeassistant.triggers import state as state_trigger
-from homeassistant.const import CONF_ENTITY_ID, CONF_FOR, CONF_TYPE
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import get_device_class
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.const import CONF_ENTITY_ID, CONF_FOR, CONF_TYPE
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import get_device_class
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import DOMAIN, BinarySensorDeviceClass
 

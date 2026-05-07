@@ -6,8 +6,8 @@ from typing import Any
 
 from pylaunches.types import Event, Launch
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 from .coordinator import LaunchLibraryCoordinator

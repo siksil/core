@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.qnap_qsw.const import ATTR_MESSAGE
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.qnap_qsw.const import ATTR_MESSAGE
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .util import async_init_integration
 

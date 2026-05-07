@@ -12,20 +12,20 @@ from nacl.encoding import Base64Encoder
 from nacl.secret import SecretBox
 import pytest
 
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.mobile_app.const import CONF_SECRET, DATA_DEVICES, DOMAIN
-from homeassistant.components.tag import EVENT_TAG_SCANNED
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.const import (
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.mobile_app.const import CONF_SECRET, DATA_DEVICES, DOMAIN
+from inpui.components.tag import EVENT_TAG_SCANNED
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.const import (
     CONF_WEBHOOK_ID,
     STATE_HOME,
     STATE_NOT_HOME,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .const import CALL_SERVICE, FIRE_EVENT, REGISTER_CLEARTEXT, RENDER_TEMPLATE, UPDATE
 

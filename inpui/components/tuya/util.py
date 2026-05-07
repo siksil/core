@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from tuya_sharing import CustomerDevice
 
-from homeassistant.exceptions import ServiceValidationError
+from inpui.exceptions import ServiceValidationError
 
 from .const import DOMAIN, DPCode
 

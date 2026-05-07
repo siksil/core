@@ -8,13 +8,13 @@ from typing import Any
 from pysmartthings import Attribute, Command, SmartThings
 from pysmartthings.capability import Capability
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN

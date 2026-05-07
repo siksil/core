@@ -16,8 +16,8 @@ from habiticalib import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.habitica.const import DOMAIN
-from homeassistant.components.todo import (
+from inpui.components.habitica.const import DOMAIN
+from inpui.components.todo import (
     ATTR_DESCRIPTION,
     ATTR_DUE_DATE,
     ATTR_ITEM,
@@ -26,11 +26,11 @@ from homeassistant.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .conftest import ERROR_NOT_FOUND, ERROR_TOO_MANY_REQUESTS
 

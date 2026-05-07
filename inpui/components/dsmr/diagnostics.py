@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import json_loads
+from inpui.core import HomeAssistant
+from inpui.util.json import json_loads
 
 from . import DsmrConfigEntry
 

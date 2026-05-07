@@ -1,7 +1,7 @@
 """Issues for InfluxDB integration."""
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import DOMAIN
 

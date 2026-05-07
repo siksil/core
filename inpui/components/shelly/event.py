@@ -10,14 +10,14 @@ from aioshelly.ble.const import BLE_SCRIPT_NAME
 from aioshelly.block_device import Block
 from aioshelly.const import MODEL_I3, RPC_GENERATIONS
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     DOMAIN as EVENT_DOMAIN,
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     BASIC_INPUTS_EVENTS_TYPES,

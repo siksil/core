@@ -8,8 +8,8 @@ import logging
 from miio.gateway.devices import SubDevice
 from miio.gateway.gateway import GatewayException
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .typing import XiaomiMiioConfigEntry
 

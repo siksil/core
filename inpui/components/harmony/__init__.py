@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.remote import ATTR_ACTIVITY, ATTR_DELAY_SECS
-from homeassistant.const import CONF_HOST, CONF_NAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.remote import ATTR_ACTIVITY, ATTR_DELAY_SECS
+from inpui.const import CONF_HOST, CONF_NAME, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import HARMONY_OPTIONS_UPDATE, PLATFORMS
 from .data import HarmonyConfigEntry, HarmonyData
@@ -37,7 +37,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HarmonyConfigEntry) -> b
         await data.shutdown()
 
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, _async_on_stop)
+        hass.bus.async_listen(EVENT_INPUI_STOP, _async_on_stop)
     )
 
     entry.runtime_data = data

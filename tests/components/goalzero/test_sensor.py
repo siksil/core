@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.goalzero.const import DEFAULT_NAME
-from homeassistant.components.sensor import (
+from inpui.components.goalzero.const import DEFAULT_NAME
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
@@ -20,7 +20,7 @@ from homeassistant.const import (
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import async_init_integration
 

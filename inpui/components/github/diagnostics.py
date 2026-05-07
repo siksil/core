@@ -6,9 +6,9 @@ from typing import Any
 
 from aiogithubapi import GitHubAPI, GitHubException
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import (
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import (
     SERVER_SOFTWARE,
     async_get_clientsession,
 )

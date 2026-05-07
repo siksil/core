@@ -5,13 +5,13 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
-from homeassistant.components.airly.const import DOMAIN
-from homeassistant.components.airly.coordinator import set_update_interval
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
+from inpui.components.airly.const import DOMAIN
+from inpui.components.airly.coordinator import set_update_interval
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import API_POINT_URL, init_integration
 

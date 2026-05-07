@@ -9,33 +9,33 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components import camera
-from homeassistant.components.camera import (
+from inpui.components import camera
+from inpui.components.camera import (
     Camera,
     CameraWebRTCProvider,
     WebRTCAnswer,
     WebRTCSendMessage,
     async_register_webrtc_provider,
 )
-from homeassistant.components.camera.const import (
+from inpui.components.camera.const import (
     DOMAIN,
     PREF_ORIENTATION,
     PREF_PRELOAD_STREAM,
     StreamType,
 )
-from homeassistant.components.camera.helper import get_camera_from_entity_id
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.const import (
+from inpui.components.camera.helper import get_camera_from_entity_id
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.const import (
     ATTR_ENTITY_ID,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.core_config import async_process_ha_core_config
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import EMPTY_8_6_JPEG, STREAM_SOURCE, mock_turbo_jpeg
 
@@ -543,7 +543,7 @@ async def test_no_preload_stream(hass: HomeAssistant, mock_create_stream: Mock) 
     ):
         mock_stream_source.return_value = io.BytesIO()
         await async_setup_component(hass, "camera", {DOMAIN: {"platform": "demo"}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert not mock_create_stream.endpoint_url.called
 
@@ -566,7 +566,7 @@ async def test_preload_stream(hass: HomeAssistant, mock_create_stream: Mock) -> 
             hass, "camera", {DOMAIN: {"platform": "demo"}}
         )
         await hass.async_block_till_done()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert mock_create_stream.start.called
 

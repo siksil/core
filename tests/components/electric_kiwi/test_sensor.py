@@ -7,18 +7,18 @@ import zoneinfo
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.electric_kiwi.const import ATTRIBUTION
-from homeassistant.components.electric_kiwi.sensor import _check_and_move_time
-from homeassistant.components.sensor import (
+from inpui.components.electric_kiwi.const import ATTRIBUTION
+from inpui.components.electric_kiwi.sensor import _check_and_move_time
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ATTRIBUTION, ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.util import dt as dt_util
 
 from . import init_integration
 

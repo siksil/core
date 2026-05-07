@@ -6,11 +6,11 @@ import logging
 from vilfo import Client as VilfoClient
 from vilfo.exceptions import VilfoException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.util import Throttle
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.util import Throttle
 
 from .const import ATTR_BOOT_TIME, ATTR_LOAD, DOMAIN, ROUTER_DEFAULT_HOST
 

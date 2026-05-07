@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components.google_generative_ai_conversation.const import (
     CONF_USE_GOOGLE_SEARCH_TOOL,
     DEFAULT_AI_TASK_NAME,
     DEFAULT_CONVERSATION_NAME,
@@ -16,11 +16,11 @@ from homeassistant.components.google_generative_ai_conversation.const import (
     RECOMMENDED_STT_OPTIONS,
     RECOMMENDED_TTS_OPTIONS,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

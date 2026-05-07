@@ -9,8 +9,8 @@ from typing import Any
 from libsoundtouch.device import SoundTouchDevice
 from libsoundtouch.utils import Source
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
@@ -19,15 +19,15 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
     format_mac,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 
@@ -228,7 +228,7 @@ class SoundTouchMediaPlayer(MediaPlayerEntity):
             self.async_schedule_update_ha_state(True)
 
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_START, async_update_on_start
+            EVENT_INPUI_START, async_update_on_start
         )
 
     async def async_play_media(

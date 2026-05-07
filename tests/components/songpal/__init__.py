@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from songpal import SongpalException
 from songpal.containers import Sysinfo
 
-from homeassistant.components.songpal.const import CONF_ENDPOINT
-from homeassistant.const import CONF_NAME
+from inpui.components.songpal.const import CONF_ENDPOINT
+from inpui.const import CONF_NAME
 
 FRIENDLY_NAME = "name"
 ENTITY_ID = f"media_player.{FRIENDLY_NAME}"

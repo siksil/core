@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import camera, microsoft_face as mf
-from homeassistant.components.microsoft_face import (
+from inpui.components import camera, microsoft_face as mf
+from inpui.components.microsoft_face import (
     ATTR_CAMERA_ENTITY,
     ATTR_GROUP,
     ATTR_PERSON,
@@ -17,9 +17,9 @@ from homeassistant.components.microsoft_face import (
     SERVICE_FACE_PERSON,
     SERVICE_TRAIN_GROUP,
 )
-from homeassistant.const import ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

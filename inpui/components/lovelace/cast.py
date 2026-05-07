@@ -7,23 +7,23 @@ from typing import Any
 from pychromecast import Chromecast
 from pychromecast.const import CAST_TYPE_CHROMECAST
 
-from homeassistant.components.cast import DOMAIN as CAST_DOMAIN
-from homeassistant.components.cast.home_assistant_cast import (  # pylint: disable=hass-component-root-import
+from inpui.components.cast import DOMAIN as CAST_DOMAIN
+from inpui.components.cast.home_assistant_cast import (  # pylint: disable=hass-component-root-import
     ATTR_URL_PATH,
     ATTR_VIEW_PATH,
     NO_URL_AVAILABLE_ERROR,
     SERVICE_SHOW_VIEW,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
     MediaType,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.network import NoURLAvailableError, get_url
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.network import NoURLAvailableError, get_url
 
 from .const import DOMAIN, LOVELACE_DATA, ConfigNotFound
 

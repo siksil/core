@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.google_generative_ai_conversation.helpers import (
+from inpui.components.google_generative_ai_conversation.helpers import (
     _parse_audio_mime_type,
 )
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 def test_parse_audio_mime_type_uppercase() -> None:

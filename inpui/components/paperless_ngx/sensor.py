@@ -8,17 +8,17 @@ from dataclasses import dataclass
 from pypaperless.models import Statistic, Status
 from pypaperless.models.common import StatusType
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import EntityCategory, UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.unit_conversion import InformationConverter
+from inpui.const import EntityCategory, UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.unit_conversion import InformationConverter
 
 from .coordinator import (
     PaperlessConfigEntry,

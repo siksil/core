@@ -2,13 +2,13 @@
 
 from pywilight.const import DOMAIN
 
-from homeassistant.components.wilight.config_flow import (
+from inpui.components.wilight.config_flow import (
     CONF_MODEL_NAME,
     CONF_SERIAL_NUMBER,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER,
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_MODEL_NUMBER,

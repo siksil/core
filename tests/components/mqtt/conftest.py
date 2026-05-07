@@ -9,11 +9,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt.models import MessageCallbackType, ReceiveMessage
-from homeassistant.components.mqtt.util import EnsureJobAfterCooldown
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import mqtt
+from inpui.components.mqtt.models import MessageCallbackType, ReceiveMessage
+from inpui.components.mqtt.util import EnsureJobAfterCooldown
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant, callback
 
 from tests.common import MockConfigEntry
 from tests.typing import MqttMockPahoClient
@@ -106,7 +106,7 @@ async def setup_with_birth_msg_client_mock(
         entry.add_to_hass(hass)
         hass.config.components.add(mqtt.DOMAIN)
         assert await hass.config_entries.async_setup(entry.entry_id)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
 
         @callback
         def wait_birth(msg: ReceiveMessage) -> None:

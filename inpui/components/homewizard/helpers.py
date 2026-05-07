@@ -7,7 +7,7 @@ from typing import Any, Concatenate
 
 from homewizard_energy.errors import DisabledError, RequestError, UnauthorizedError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 from .entity import HomeWizardEntity

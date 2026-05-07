@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import NotRequired, TypedDict
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import MeshRoles
 

@@ -11,8 +11,8 @@ from gardena_bluetooth.exceptions import CharacteristicNotFound
 from gardena_bluetooth.parse import Characteristic, Service
 import pytest
 
-from homeassistant.components.gardena_bluetooth.coordinator import SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
+from inpui.components.gardena_bluetooth.coordinator import SCAN_INTERVAL
+from inpui.core import HomeAssistant
 
 from . import WATER_TIMER_SERVICE_INFO, get_config_entry
 

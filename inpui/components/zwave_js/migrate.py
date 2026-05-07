@@ -10,9 +10,9 @@ from zwave_js_server.model.driver import Driver
 from zwave_js_server.model.node import Node
 from zwave_js_server.model.value import Value as ZwaveValue
 
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import DOMAIN
 from .helpers import get_unique_id, get_valueless_base_unique_id

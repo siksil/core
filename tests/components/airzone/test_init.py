@@ -5,11 +5,11 @@ from unittest.mock import patch
 from aioairzone.const import DEFAULT_SYSTEM_ID
 from aioairzone.exceptions import HotWaterNotAvailable, InvalidMethod, SystemOutOfRange
 
-from homeassistant.components.airzone.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.airzone.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .util import CONFIG, HVAC_MOCK, HVAC_VERSION_MOCK, HVAC_WEBSERVER_MOCK, USER_INPUT
 

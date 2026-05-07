@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.abode import DOMAIN
-from homeassistant.components.abode.const import CONF_POLLING
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.abode import DOMAIN
+from inpui.components.abode.const import CONF_POLLING
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

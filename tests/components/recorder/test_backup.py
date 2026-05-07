@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.recorder.backup import async_post_backup, async_pre_backup
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.recorder.backup import async_post_backup, async_pre_backup
+from inpui.core import CoreState, HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 
 @pytest.mark.usefixtures("recorder_mock")

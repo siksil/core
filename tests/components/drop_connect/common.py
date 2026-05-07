@@ -2,7 +2,7 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.drop_connect.const import (
+from inpui.components.drop_connect.const import (
     CONF_COMMAND_TOPIC,
     CONF_DATA_TOPIC,
     CONF_DEVICE_DESC,
@@ -13,10 +13,10 @@ from homeassistant.components.drop_connect.const import (
     CONF_HUB_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

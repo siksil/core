@@ -12,10 +12,10 @@ from typing import Any, Protocol, cast
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.components import labs, websocket_api
-from homeassistant.components.blueprint import CONF_USE_BLUEPRINT
-from homeassistant.components.labs import async_subscribe_preview_feature
-from homeassistant.const import (
+from inpui.components import labs, websocket_api
+from inpui.components.blueprint import CONF_USE_BLUEPRINT
+from inpui.components.labs import async_subscribe_preview_feature
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_ENTITY_ID,
     ATTR_FLOOR_ID,
@@ -30,14 +30,14 @@ from homeassistant.const import (
     CONF_PATH,
     CONF_TRIGGERS,
     CONF_VARIABLES,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     SERVICE_RELOAD,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     CoreState,
@@ -47,21 +47,21 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceNotFound, TemplateError
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, ServiceNotFound, TemplateError
+from inpui.helpers import (
     condition as condition_helper,
     config_validation as cv,
     trigger as trigger_helper,
 )
-from homeassistant.helpers.entity import ToggleEntity
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.issue_registry import (
+from inpui.helpers.entity import ToggleEntity
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.issue_registry import (
     IssueSeverity,
     async_create_issue,
     async_delete_issue,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.script import (
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.script import (
     ATTR_CUR,
     ATTR_MAX,
     CONF_MAX,
@@ -70,22 +70,22 @@ from homeassistant.helpers.script import (
     ScriptRunResult,
     script_stack_cv,
 )
-from homeassistant.helpers.script_variables import ScriptVariables
-from homeassistant.helpers.service import (
+from inpui.helpers.script_variables import ScriptVariables
+from inpui.helpers.service import (
     ReloadServiceHelper,
     async_register_admin_service,
 )
-from homeassistant.helpers.trace import (
+from inpui.helpers.trace import (
     TraceElement,
     script_execution_set,
     trace_append_element,
     trace_get,
     trace_path,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.util.dt import parse_datetime
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.util.dt import parse_datetime
+from inpui.util.hass_dict import HassKey
 
 from .config import AutomationConfig, ValidationStatus
 from .const import (
@@ -928,7 +928,7 @@ class AutomationEntity(BaseAutomationEntity, RestoreEntity):
             return
 
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STARTED,
+            EVENT_INPUI_STARTED,
             self._async_enable_automation,
         )
 

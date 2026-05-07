@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from pytomorrowio import TomorrowioV4
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.weather import DOMAIN as WEATHER_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.weather import DOMAIN as WEATHER_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN
 from .coordinator import TomorrowioDataUpdateCoordinator

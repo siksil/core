@@ -4,16 +4,16 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     LIGHT_LUX,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

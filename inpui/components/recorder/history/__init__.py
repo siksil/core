@@ -23,11 +23,11 @@ from sqlalchemy import (
 from sqlalchemy.engine.row import Row
 from sqlalchemy.orm.session import Session
 
-from homeassistant.const import COMPRESSED_STATE_LAST_UPDATED, COMPRESSED_STATE_STATE
-from homeassistant.core import HomeAssistant, State, split_entity_id
-from homeassistant.helpers.recorder import get_instance
-from homeassistant.util import dt as dt_util
-from homeassistant.util.collection import chunked_or_all
+from inpui.const import COMPRESSED_STATE_LAST_UPDATED, COMPRESSED_STATE_STATE
+from inpui.core import HomeAssistant, State, split_entity_id
+from inpui.helpers.recorder import get_instance
+from inpui.util import dt as dt_util
+from inpui.util.collection import chunked_or_all
 
 from ..const import MAX_IDS_FOR_INDEXED_GROUP_BY
 from ..db_schema import (

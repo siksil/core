@@ -7,11 +7,11 @@ from sfrbox_api.exceptions import SFRBoxAuthenticationError, SFRBoxError
 from sfrbox_api.models import SystemInfo
 
 from homeassistant import config_entries
-from homeassistant.components.sfr_box.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.sfr_box.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import async_load_json_object_fixture
 

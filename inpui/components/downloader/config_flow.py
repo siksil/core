@@ -8,8 +8,8 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers import config_validation as cv
 
 from .const import _LOGGER, CONF_DOWNLOAD_DIR, DEFAULT_NAME, DOMAIN
 

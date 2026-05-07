@@ -1,6 +1,6 @@
 """The roomba constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "roomba"
 PLATFORMS = [Platform.BINARY_SENSOR, Platform.SENSOR, Platform.VACUUM]

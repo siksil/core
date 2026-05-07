@@ -11,7 +11,7 @@ from aiohue.v2.controllers.groups import GroupedLight, Room, Zone
 from aiohue.v2.models.feature import DynamicStatus
 from aiohue.v2.models.resource import ResourceTypes
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_FLASH,
@@ -23,11 +23,11 @@ from homeassistant.components.light import (
     LightEntityDescription,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import color as color_util
 
 from ..bridge import HueBridge, HueConfigEntry
 from ..const import DOMAIN

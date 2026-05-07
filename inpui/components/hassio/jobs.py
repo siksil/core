@@ -9,13 +9,13 @@ from uuid import UUID
 
 from aiohasupervisor.models import Job
 
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     HomeAssistant,
     callback,
     is_callback_check_partial,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .const import (
     ATTR_DATA,

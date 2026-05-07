@@ -10,7 +10,7 @@ from soco import SoCo
 from soco.alarms import Alarm, Alarms
 from soco.events_base import Event as SonosEvent
 
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import SONOS_ALARMS_UPDATED, SONOS_CREATE_ALARM
 from .helpers import soco_error

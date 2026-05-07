@@ -9,17 +9,17 @@ from bthome_ble.const import (
     ExtendedSensorDeviceClass as BTHomeExtendedSensorDeviceClass,
 )
 
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataUpdate,
     PassiveBluetoothProcessorEntity,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION,
     DEGREE,
@@ -42,9 +42,9 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .coordinator import BTHomePassiveBluetoothDataProcessor
 from .device import device_key_to_bluetooth_entity_key

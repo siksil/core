@@ -8,20 +8,20 @@ from pytest_unordered import unordered
 import voluptuous as vol
 
 from homeassistant import loader
-from homeassistant.components import automation, device_automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation, device_automation
+from inpui.components.device_automation import (
     InvalidDeviceAutomationConfig,
     toggle_entity,
 )
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import IntegrationNotFound
-from homeassistant.requirements import RequirementsNotFound
-from homeassistant.setup import async_setup_component
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.typing import ConfigType
+from inpui.loader import IntegrationNotFound
+from inpui.requirements import RequirementsNotFound
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration, mock_platform
 from tests.typing import WebSocketGenerator

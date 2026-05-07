@@ -6,9 +6,9 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.components.homeassistant.triggers import state as state_trigger
-from homeassistant.const import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
@@ -16,11 +16,11 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TYPE,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import get_supported_features
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import get_supported_features
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import DOMAIN, AlarmControlPanelState
 from .const import AlarmControlPanelEntityFeature

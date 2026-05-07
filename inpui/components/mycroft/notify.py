@@ -7,9 +7,9 @@ from typing import Any
 
 from mycroftapi import MycroftAPI
 
-from homeassistant.components.notify import BaseNotificationService
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.notify import BaseNotificationService
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN
 

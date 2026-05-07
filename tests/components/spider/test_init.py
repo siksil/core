@@ -1,13 +1,13 @@
 """Tests for the Spider integration."""
 
-from homeassistant.components.spider import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.spider import DOMAIN
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigEntryDisabler,
     ConfigEntryState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from tests.common import MockConfigEntry
 

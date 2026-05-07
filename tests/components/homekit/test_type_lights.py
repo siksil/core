@@ -6,16 +6,16 @@ import sys
 from pyhap.const import HAP_REPR_AID, HAP_REPR_CHARS, HAP_REPR_IID, HAP_REPR_VALUE
 import pytest
 
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     PROP_MAX_VALUE,
     PROP_MIN_VALUE,
 )
-from homeassistant.components.homekit.type_lights import (
+from inpui.components.homekit.type_lights import (
     CHANGE_COALESCE_TIME_WINDOW,
     Light,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_COLOR_MODE,
@@ -31,18 +31,18 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     PERCENTAGE,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import CoreState, Event, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_mock_service
 
@@ -1033,7 +1033,7 @@ async def test_light_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = Light(hass, hk_driver, "Light", "light.simple", 1, None)

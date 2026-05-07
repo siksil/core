@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import CONF_SHOW_ON_MAP
-from homeassistant.core import callback
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import CONF_SHOW_ON_MAP
+from inpui.core import callback
 
 from .const import DEFAULT_NAME, DOMAIN
 from .coordinator import IssConfigEntry

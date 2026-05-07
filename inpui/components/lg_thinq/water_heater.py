@@ -8,7 +8,7 @@ from typing import Any
 from thinqconnect import DeviceType
 from thinqconnect.integration import ExtendedProperty
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_OPERATION_MODE,
     STATE_ECO,
     STATE_HEAT_PUMP,
@@ -18,9 +18,9 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntityDescription,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ThinqConfigEntry
 from .coordinator import DeviceDataUpdateCoordinator

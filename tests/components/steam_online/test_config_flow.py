@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 import steam
 
-from homeassistant.components.steam_online.const import CONF_ACCOUNTS, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
+from inpui.components.steam_online.const import CONF_ACCOUNTS, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
 
 from . import (
     ACCOUNT_1,

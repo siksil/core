@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.system_bridge.config_flow import SystemBridgeConfigFlow
-from homeassistant.components.system_bridge.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_PORT, CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.system_bridge.config_flow import SystemBridgeConfigFlow
+from inpui.components.system_bridge.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_PORT, CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from . import FIXTURE_USER_INPUT, FIXTURE_UUID
 

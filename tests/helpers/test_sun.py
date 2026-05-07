@@ -7,10 +7,10 @@ import astral.sun
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import sun
-from homeassistant.util import dt as dt_util
+from inpui.const import SUN_EVENT_SUNRISE, SUN_EVENT_SUNSET
+from inpui.core import HomeAssistant
+from inpui.helpers import sun
+from inpui.util import dt as dt_util
 
 
 def test_next_events(hass: HomeAssistant) -> None:

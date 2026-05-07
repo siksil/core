@@ -1,10 +1,10 @@
 """Test Connect ZBT-2 utilities."""
 
-from homeassistant.components.homeassistant_connect_zbt2.const import DOMAIN
-from homeassistant.components.homeassistant_connect_zbt2.util import (
+from inpui.components.homeassistant_connect_zbt2.const import DOMAIN
+from inpui.components.homeassistant_connect_zbt2.util import (
     get_usb_service_info,
 )
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from tests.common import MockConfigEntry
 

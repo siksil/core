@@ -1,10 +1,10 @@
 """Support for Alpha2 heat control valve opening sensors."""
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.sensor import SensorEntity
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import Alpha2BaseCoordinator, Alpha2ConfigEntry
 

@@ -8,12 +8,12 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from hyperion import const
 
-from homeassistant.components.hyperion import get_hyperion_unique_id
-from homeassistant.components.hyperion.const import CONF_PRIORITY, DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.hyperion import get_hyperion_unique_id
+from inpui.components.hyperion.const import CONF_PRIORITY, DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

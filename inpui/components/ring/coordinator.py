@@ -18,10 +18,10 @@ from ring_doorbell import (
 )
 from ring_doorbell.listen import RingEventListener
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import (
     BaseDataUpdateCoordinatorProtocol,
     DataUpdateCoordinator,
     UpdateFailed,

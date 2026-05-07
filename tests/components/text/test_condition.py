@@ -4,15 +4,15 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.text.condition import CONF_VALUE
-from homeassistant.const import (
+from inpui.components.text.condition import CONF_VALUE
+from inpui.const import (
     CONF_CONDITION,
     CONF_ENTITY_ID,
     CONF_OPTIONS,
     CONF_TARGET,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import (
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import (
     async_from_config as async_condition_from_config,
 )
 

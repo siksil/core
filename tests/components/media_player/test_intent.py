@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     DOMAIN,
     SERVICE_MEDIA_NEXT_TRACK,
     SERVICE_MEDIA_PAUSE,
@@ -22,27 +22,27 @@ from homeassistant.components.media_player import (
     SearchMedia,
     intent as media_player_intent,
 )
-from homeassistant.components.media_player.const import (
+from inpui.components.media_player.const import (
     MediaPlayerEntityFeature,
     MediaPlayerState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
     STATE_IDLE,
     STATE_PAUSED,
     STATE_PLAYING,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     entity_registry as er,
     floor_registry as fr,
     intent,
 )
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity_component import EntityComponent
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform, async_mock_service
 

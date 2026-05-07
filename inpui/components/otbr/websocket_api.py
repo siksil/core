@@ -9,13 +9,13 @@ from python_otbr_api import PENDING_DATASET_DELAY_TIMER, tlv_parser
 from python_otbr_api.tlv_parser import MeshcopTLVType
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components import websocket_api
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
-from homeassistant.components.thread import async_add_dataset, async_get_dataset
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.thread import async_add_dataset, async_get_dataset
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
 
 from .const import DEFAULT_CHANNEL, DOMAIN
 from .util import (

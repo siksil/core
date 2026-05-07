@@ -6,7 +6,7 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_CONDITION,
     CONF_DEVICE_ID,
@@ -14,15 +14,15 @@ from homeassistant.const import (
     CONF_ENTITY_ID,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
-from homeassistant.helpers.entity import get_supported_features
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
+from inpui.helpers.entity import get_supported_features
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DOMAIN, AlarmControlPanelState
 from .const import (

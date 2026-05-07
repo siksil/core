@@ -10,13 +10,13 @@ from async_upnp_client.profiles.dlna import ContentDirectoryErrorCode, DmsDevice
 from didl_lite import didl_lite
 import pytest
 
-from homeassistant.components import media_source, ssdp
-from homeassistant.components.dlna_dms.const import DLNA_SORT_CRITERIA, DOMAIN
-from homeassistant.components.dlna_dms.dms import DidlPlayMedia
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import BrowseMediaSource, Unresolvable
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.components import media_source, ssdp
+from inpui.components.dlna_dms.const import DLNA_SORT_CRITERIA, DOMAIN
+from inpui.components.dlna_dms.dms import DidlPlayMedia
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import BrowseMediaSource, Unresolvable
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .conftest import (
     MOCK_DEVICE_BASE_URL,

@@ -9,16 +9,16 @@ from unittest.mock import MagicMock, Mock, patch
 from onedrive_personal_sdk.exceptions import OneDriveException
 import pytest
 
-from homeassistant.components.onedrive.const import DOMAIN
-from homeassistant.components.onedrive.services import (
+from inpui.components.onedrive.const import DOMAIN
+from inpui.components.onedrive.services import (
     CONF_CONFIG_ENTRY_ID,
     CONF_DESTINATION_FOLDER,
     UPLOAD_SERVICE,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_FILENAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_FILENAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 

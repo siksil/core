@@ -2,9 +2,9 @@
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "tplink_lte"
 

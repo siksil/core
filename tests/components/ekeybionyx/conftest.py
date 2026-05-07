@@ -6,9 +6,9 @@ from unittest.mock import patch
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.ekeybionyx.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.ekeybionyx.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

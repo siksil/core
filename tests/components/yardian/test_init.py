@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock
 import pytest
 from pyyardian import NetworkException, NotAuthorizedException
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

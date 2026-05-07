@@ -6,9 +6,9 @@ from pyrail import iRail
 from pyrail.models import StationDetails
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import (
     BooleanSelector,
     SelectOptionDict,
     SelectSelector,

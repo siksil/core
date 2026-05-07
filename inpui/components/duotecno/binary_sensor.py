@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from duotecno.unit import ControlUnit, VirtualUnit
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DuotecnoConfigEntry
 from .entity import DuotecnoEntity

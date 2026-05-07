@@ -9,8 +9,8 @@ import pytest
 import requests
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.growatt_server import async_migrate_entry
-from homeassistant.components.growatt_server.const import (
+from inpui.components.growatt_server import async_migrate_entry
+from inpui.components.growatt_server.const import (
     AUTH_API_TOKEN,
     AUTH_PASSWORD,
     CACHED_API_KEY,
@@ -22,8 +22,8 @@ from homeassistant.components.growatt_server.const import (
     V1_API_ERROR_NO_PRIVILEGE,
     V1_API_ERROR_RATE_LIMITED,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_NAME,
     CONF_PASSWORD,
     CONF_TOKEN,
@@ -31,8 +31,8 @@ from homeassistant.const import (
     CONF_USERNAME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

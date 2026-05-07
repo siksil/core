@@ -19,8 +19,8 @@ from samsungtvws.event import ED_INSTALLED_APP_EVENT
 from samsungtvws.exceptions import ResponseError
 from samsungtvws.remote import ChannelEmitCommand
 
-from homeassistant.components.samsungtv.const import DOMAIN, WEBSOCKET_SSL_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.samsungtv.const import DOMAIN, WEBSOCKET_SSL_PORT
+from inpui.core import HomeAssistant
 
 from .const import SAMPLE_DEVICE_INFO_WIFI
 

@@ -10,15 +10,15 @@ from zigpy.zcl import Cluster
 from zigpy.zcl.clusters import closures, general
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.components.zha.helpers import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .common import find_entity_id, send_attributes_report
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

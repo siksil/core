@@ -7,16 +7,16 @@ from typing import Any
 from zwave_js_server.const.command_class.sound_switch import ToneID
 from zwave_js_server.model.driver import Driver
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     DOMAIN as SIREN_DOMAIN,
     SirenEntity,
     SirenEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .discovery import ZwaveDiscoveryInfo

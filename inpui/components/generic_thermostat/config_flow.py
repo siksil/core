@@ -8,11 +8,11 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import fan, switch
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.const import CONF_NAME, DEGREE
-from homeassistant.helpers import selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import fan, switch
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.const import CONF_NAME, DEGREE
+from inpui.helpers import selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,

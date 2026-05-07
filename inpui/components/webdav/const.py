@@ -2,7 +2,7 @@
 
 from collections.abc import Callable
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN = "webdav"
 

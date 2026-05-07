@@ -7,15 +7,15 @@ from typing import Any
 
 from simplepush import BadRequest, UnknownError, send
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TITLE,
     ATTR_TITLE_DEFAULT,
     BaseNotificationService,
 )
-from homeassistant.const import CONF_EVENT, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_EVENT, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import ATTR_ATTACHMENTS, ATTR_EVENT, CONF_DEVICE_KEY, CONF_SALT
 

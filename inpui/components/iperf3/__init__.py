@@ -8,13 +8,13 @@ import logging
 import iperf3
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_HOSTS,
     CONF_MONITORED_CONDITIONS,
@@ -23,12 +23,12 @@ from homeassistant.const import (
     CONF_SCAN_INTERVAL,
     UnitOfDataRate,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "iperf3"
 DATA_UPDATED = f"{DOMAIN}_data_updated"

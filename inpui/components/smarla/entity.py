@@ -6,8 +6,8 @@ from typing import Any
 
 from pysmarlaapi import Federwiege
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from .const import DEVICE_MODEL_NAME, DOMAIN, MANUFACTURER_NAME
 

@@ -6,10 +6,10 @@ from typing import cast
 
 import voluptuous as vol
 
-from homeassistant.components.assist_satellite import DOMAIN as ASSIST_SATELLITE_DOMAIN
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.helpers import entity_registry as er
+from inpui.components.assist_satellite import DOMAIN as ASSIST_SATELLITE_DOMAIN
+from inpui.components.repairs import RepairsFlow
+from inpui.data_entry_flow import FlowResult
+from inpui.helpers import entity_registry as er
 
 REQUIRED_KEYS = ("entity_id", "entity_uuid", "integration_name")
 

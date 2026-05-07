@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
-from homeassistant.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.components.logbook import LOGBOOK_ENTRY_MESSAGE, LOGBOOK_ENTRY_NAME
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import Event, HomeAssistant, callback
 
 from .const import (
     ATTR_ACTION,

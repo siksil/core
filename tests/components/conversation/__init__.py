@@ -9,17 +9,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.conversation.models import (
+from inpui.components import conversation
+from inpui.components.conversation.models import (
     ConversationInput,
     ConversationResult,
 )
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.homeassistant.exposed_entities import (
     DATA_EXPOSED_ENTITIES,
     async_expose_entity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import chat_session, intent
+from inpui.core import HomeAssistant
+from inpui.helpers import chat_session, intent
 
 
 class MockAgent(conversation.AbstractConversationAgent):

@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 
@@ -94,7 +94,7 @@ async def test_homeassistant_stop_disconnects_websocket(
 
     assert mock_config_entry.state is ConfigEntryState.LOADED
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     mock_pyaxenco_client.disconnect_websocket.assert_awaited_once()
@@ -120,7 +120,7 @@ async def test_homeassistant_stop_logs_on_disconnect_error(
 
     caplog.set_level("ERROR")
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert "Error while disconnecting WebSocket" in caplog.text

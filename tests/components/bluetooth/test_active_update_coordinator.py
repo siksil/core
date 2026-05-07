@@ -11,19 +11,19 @@ from unittest.mock import MagicMock
 from bleak.exc import BleakError
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN,
     BluetoothChange,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.active_update_coordinator import (
+from inpui.components.bluetooth.active_update_coordinator import (
     ActiveBluetoothDataUpdateCoordinator,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.setup import async_setup_component
 
 from . import inject_bluetooth_service_info
 

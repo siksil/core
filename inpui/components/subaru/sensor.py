@@ -7,20 +7,20 @@ from typing import Any
 
 import subarulink.const as sc
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import PERCENTAGE, UnitOfLength, UnitOfPressure, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.unit_conversion import DistanceConverter, VolumeConverter
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.config_entries import ConfigEntry
+from inpui.const import PERCENTAGE, UnitOfLength, UnitOfPressure, UnitOfVolume
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.unit_conversion import DistanceConverter, VolumeConverter
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from . import get_device_info
 from .const import (

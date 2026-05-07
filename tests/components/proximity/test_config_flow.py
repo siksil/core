@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.proximity.const import (
+from inpui.components.proximity.const import (
     CONF_IGNORED_ZONES,
     CONF_TOLERANCE,
     CONF_TRACKED_ENTITIES,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ZONE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

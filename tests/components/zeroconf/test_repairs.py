@@ -6,15 +6,15 @@ import pytest
 from zeroconf import ServiceStateChange
 from zeroconf.asyncio import AsyncServiceInfo
 
-from homeassistant.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.components.zeroconf import DOMAIN, discovery, repairs
-from homeassistant.components.zeroconf.discovery import ZEROCONF_TYPE
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import instance_id, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.components.zeroconf import DOMAIN, discovery, repairs
+from inpui.components.zeroconf.discovery import ZEROCONF_TYPE
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import instance_id, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .test_init import service_update_mock
 
@@ -82,7 +82,7 @@ async def test_instance_id_conflict_creates_repair_issue_remove(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         issue = issue_registry.async_get_issue(
@@ -128,7 +128,7 @@ async def test_instance_id_conflict_creates_repair_issue_changing_id(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         issue = issue_registry.async_get_issue(
@@ -185,7 +185,7 @@ async def test_instance_id_no_repair_issue_own_ip(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert (
@@ -212,7 +212,7 @@ async def test_instance_id_no_conflict_no_repair_issue(
         patch("homeassistant.helpers.issue_registry.async_create_issue"),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         assert (
@@ -256,7 +256,7 @@ async def test_duplicate_repair_issue_repair_flow(
         patch("homeassistant.core.HomeAssistant.async_stop", return_value=None),
     ):
         assert await async_setup_component(hass, DOMAIN, {DOMAIN: {}})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
         issue = issue_registry.async_get_issue(

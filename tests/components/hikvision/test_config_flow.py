@@ -4,17 +4,17 @@ from unittest.mock import AsyncMock, MagicMock
 
 import requests
 
-from homeassistant.components.hikvision.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import (
+from inpui.components.hikvision.const import DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     TEST_DEVICE_ID,

@@ -4,17 +4,17 @@ import copy
 import dataclasses
 from unittest.mock import patch
 
-from homeassistant.components.songpal.const import CONF_ENDPOINT, DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.songpal.const import CONF_ENDPOINT, DOMAIN
+from inpui.config_entries import (
     SOURCE_IMPORT,
     SOURCE_SSDP,
     SOURCE_USER,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

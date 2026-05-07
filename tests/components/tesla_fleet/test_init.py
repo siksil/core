@@ -19,8 +19,8 @@ from tesla_fleet_api.exceptions import (
     VehicleOffline,
 )
 
-from homeassistant.components.tesla_fleet.const import DOMAIN, SCOPES
-from homeassistant.components.tesla_fleet.coordinator import (
+from inpui.components.tesla_fleet.const import DOMAIN, SCOPES
+from inpui.components.tesla_fleet.coordinator import (
     ENERGY_HISTORY_INTERVAL,
     ENERGY_INTERVAL,
     ENERGY_INTERVAL_SECONDS,
@@ -29,17 +29,17 @@ from homeassistant.components.tesla_fleet.coordinator import (
     VEHICLE_WAIT,
     _invalidate_access_token,
 )
-from homeassistant.components.tesla_fleet.models import TeslaFleetData
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import (
+from inpui.components.tesla_fleet.models import TeslaFleetData
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import (
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

@@ -12,20 +12,20 @@ from typing import Any
 from pilight import pilight
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_WHITELIST,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import track_point_in_utc_time
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import track_point_in_utc_time
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -83,13 +83,13 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         """Run when Home Assistant starts."""
         pilight_client.start()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, start_pilight_client)
+    hass.bus.listen_once(EVENT_INPUI_START, start_pilight_client)
 
     def stop_pilight_client(_):
         """Run once when Home Assistant stops."""
         pilight_client.stop()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, stop_pilight_client)
+    hass.bus.listen_once(EVENT_INPUI_STOP, stop_pilight_client)
 
     @send_throttler.limited
     def send_code(call: ServiceCall) -> None:

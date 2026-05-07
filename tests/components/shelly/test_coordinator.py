@@ -8,10 +8,10 @@ from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.shelly import MacAddressMismatchError
-from homeassistant.components.shelly.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.shelly import MacAddressMismatchError
+from inpui.components.shelly.const import (
     ATTR_CHANNEL,
     ATTR_CLICK_TYPE,
     ATTR_DEVICE,
@@ -24,12 +24,12 @@ from homeassistant.components.shelly.const import (
     UPDATE_PERIOD_MULTIPLIER,
     BLEScannerMode,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_DEVICE_ID, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import Event, HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_DEVICE_ID, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import Event, HomeAssistant, State
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import (
     MOCK_MAC,

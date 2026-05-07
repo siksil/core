@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 
 from aioruckus import AjaxSession, RuckusAjaxApi
 
-from homeassistant.components.ruckus_unleashed.const import (
+from inpui.components.ruckus_unleashed.const import (
     API_AP_DEVNAME,
     API_AP_MAC,
     API_AP_MODEL,
@@ -26,9 +26,9 @@ from homeassistant.components.ruckus_unleashed.const import (
     API_SYS_UNLEASHEDNETWORK_TOKEN,
     DOMAIN,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

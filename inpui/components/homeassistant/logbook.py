@@ -5,21 +5,21 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
-from homeassistant.components.logbook import (
+from inpui.components.logbook import (
     LOGBOOK_ENTRY_ICON,
     LOGBOOK_ENTRY_MESSAGE,
     LOGBOOK_ENTRY_NAME,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.typing import NoEventData
-from homeassistant.util.event_type import EventType
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.typing import NoEventData
+from inpui.util.event_type import EventType
 
 from .const import DOMAIN
 
 EVENT_TO_NAME: dict[EventType[Any] | str, str] = {
-    EVENT_HOMEASSISTANT_STOP: "stopped",
-    EVENT_HOMEASSISTANT_START: "started",
+    EVENT_INPUI_STOP: "stopped",
+    EVENT_INPUI_START: "started",
 }
 
 
@@ -41,5 +41,5 @@ def async_describe_events(
             LOGBOOK_ENTRY_ICON: "mdi:home-assistant",
         }
 
-    async_describe_event(DOMAIN, EVENT_HOMEASSISTANT_STOP, async_describe_hass_event)
-    async_describe_event(DOMAIN, EVENT_HOMEASSISTANT_START, async_describe_hass_event)
+    async_describe_event(DOMAIN, EVENT_INPUI_STOP, async_describe_hass_event)
+    async_describe_event(DOMAIN, EVENT_INPUI_START, async_describe_hass_event)

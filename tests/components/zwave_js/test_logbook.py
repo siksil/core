@@ -2,14 +2,14 @@
 
 from zwave_js_server.const import CommandClass
 
-from homeassistant.components.zwave_js.const import (
+from inpui.components.zwave_js.const import (
     ZWAVE_JS_NOTIFICATION_EVENT,
     ZWAVE_JS_VALUE_NOTIFICATION_EVENT,
 )
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.components.logbook.common import MockRow, mock_humanify
 

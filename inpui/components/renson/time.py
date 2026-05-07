@@ -9,11 +9,11 @@ from datetime import datetime, time
 from renson_endura_delta.field_enum import DAYTIME_FIELD, NIGHTTIME_FIELD, FieldEnum
 from renson_endura_delta.renson import RensonVentilation
 
-from homeassistant.components.time import TimeEntity, TimeEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.time import TimeEntity, TimeEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import RensonData
 from .const import DOMAIN

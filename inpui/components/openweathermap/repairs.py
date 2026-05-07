@@ -5,10 +5,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, cast
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.const import CONF_API_KEY, CONF_MODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import RepairsFlow
+from inpui.const import CONF_API_KEY, CONF_MODE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
 
 if TYPE_CHECKING:
     from . import OpenweathermapConfigEntry

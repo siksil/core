@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.suez_water.const import DATA_REFRESH_INTERVAL
-from homeassistant.components.suez_water.coordinator import PySuezError
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.suez_water.const import DATA_REFRESH_INTERVAL
+from inpui.components.suez_water.coordinator import PySuezError
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

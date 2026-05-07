@@ -6,9 +6,9 @@ from duotecno.exceptions import InvalidPassword
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.duotecno.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.duotecno.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

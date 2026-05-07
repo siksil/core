@@ -1,9 +1,9 @@
 """Provide a mock image processing."""
 
-from homeassistant.components.image_processing import ImageProcessingEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.image_processing import ImageProcessingEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 
 async def async_setup_platform(

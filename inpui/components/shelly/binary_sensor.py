@@ -7,17 +7,17 @@ from typing import Final, cast
 
 from aioshelly.const import MODEL_FLOOD_G4, RPC_GENERATIONS
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.const import STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.entity_registry import RegistryEntry
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import STATE_ON, EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_registry import RegistryEntry
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import CONF_SLEEP_PERIOD, MODEL_FRANKEVER_WATER_VALVE, ROLE_GENERIC
 from .coordinator import ShellyConfigEntry, ShellyRpcCoordinator

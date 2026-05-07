@@ -7,8 +7,8 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import CONF_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.sensor import CONF_STATE_CLASS
+from inpui.const import (
     CONF_ATTRIBUTE,
     CONF_DEVICE_CLASS,
     CONF_ICON,
@@ -17,15 +17,15 @@ from homeassistant.const import (
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.template import _SENTINEL, Template
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.helpers.template import _SENTINEL, Template
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     CONF_PICTURE,
     TEMPLATE_SENSOR_BASE_SCHEMA,
@@ -33,8 +33,8 @@ from homeassistant.helpers.trigger_template_entity import (
     ManualTriggerSensorEntity,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import ScrapeConfigEntry
 from .const import CONF_INDEX, CONF_SELECT, DOMAIN

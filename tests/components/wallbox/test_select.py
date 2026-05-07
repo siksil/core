@@ -4,14 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.wallbox.const import EcoSmartMode
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, HomeAssistantError
+from inpui.components.wallbox.const import EcoSmartMode
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, HomeAssistantError
 
 from .conftest import http_404_error, http_429_error, setup_integration
 from .const import (

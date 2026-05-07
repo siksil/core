@@ -10,17 +10,17 @@ from typing import Any, Final, cast
 from aiohttp import ClientResponseError
 from pymiele import MieleDevice, MieleTemperature
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityDescription,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.const import ATTR_TEMPERATURE, PRECISION_WHOLE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import DEVICE_TYPE_TAGS, DISABLED_TEMP_ENTITIES, DOMAIN, MieleAppliance
 from .coordinator import MieleConfigEntry, MieleDataUpdateCoordinator

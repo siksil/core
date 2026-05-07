@@ -11,7 +11,7 @@ import jwt
 import pytest
 from tesla_fleet_api.const import Scope
 
-from homeassistant.components.tesla_fleet.const import DOMAIN, SCOPES
+from inpui.components.tesla_fleet.const import DOMAIN, SCOPES
 
 from .const import (
     COMMAND_OK,

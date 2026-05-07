@@ -1,13 +1,13 @@
 """Tests for HomematicIP Cloud siren."""
 
-from homeassistant.components.siren import (
+from inpui.components.siren import (
     ATTR_AVAILABLE_TONES,
     ATTR_TONE,
     ATTR_VOLUME_LEVEL,
     SirenEntityFeature,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, STATE_OFF
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_SUPPORTED_FEATURES, STATE_OFF
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, async_manipulate_test_data, get_and_check_entity_basics
 

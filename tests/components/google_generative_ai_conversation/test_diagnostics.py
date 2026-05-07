@@ -2,7 +2,7 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components.google_generative_ai_conversation.const import (
     CONF_CHAT_MODEL,
     CONF_DANGEROUS_BLOCK_THRESHOLD,
     CONF_HARASSMENT_BLOCK_THRESHOLD,
@@ -21,7 +21,7 @@ from homeassistant.components.google_generative_ai_conversation.const import (
     RECOMMENDED_TOP_K,
     RECOMMENDED_TOP_P,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

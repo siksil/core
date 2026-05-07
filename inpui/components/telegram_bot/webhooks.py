@@ -11,10 +11,10 @@ from telegram import Bot, Update
 from telegram.error import NetworkError, TelegramError
 from telegram.ext import Application, ApplicationBuilder, TypeHandler
 
-from homeassistant.components.http import HomeAssistantRequest, HomeAssistantView
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import get_url
+from inpui.components.http import HomeAssistantRequest, HomeAssistantView
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers.network import get_url
 
 from .bot import BaseTelegramBot, TelegramBotConfigEntry
 from .const import CONF_TRUSTED_NETWORKS

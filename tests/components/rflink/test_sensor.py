@@ -7,15 +7,15 @@ automatic sensor creation.
 
 import pytest
 
-from homeassistant.components.rflink import (
+from inpui.components.rflink import (
     CONF_RECONNECT_INTERVAL,
     DATA_ENTITY_LOOKUP,
     EVENT_KEY_COMMAND,
     EVENT_KEY_SENSOR,
     TMP_ENTITY,
 )
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import (
     ATTR_ICON,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
@@ -23,7 +23,7 @@ from homeassistant.const import (
     UnitOfPrecipitationDepth,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_init import mock_rflink
 

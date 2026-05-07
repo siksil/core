@@ -79,30 +79,30 @@ import voluptuous as vol
 import voluptuous_serialize
 
 from homeassistant import data_entry_flow
-from homeassistant.auth import AuthManagerFlowManager, InvalidAuthError
-from homeassistant.auth.models import AuthFlowContext, AuthFlowResult, Credentials
-from homeassistant.components import onboarding
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.http.auth import async_user_not_allowed_do_auth
-from homeassistant.components.http.ban import (
+from inpui.auth import AuthManagerFlowManager, InvalidAuthError
+from inpui.auth.models import AuthFlowContext, AuthFlowResult, Credentials
+from inpui.components import onboarding
+from inpui.components.http import KEY_HASS
+from inpui.components.http.auth import async_user_not_allowed_do_auth
+from inpui.components.http.ban import (
     log_invalid_auth,
     process_success_login,
     process_wrong_login,
 )
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.components.http.view import HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.network import (
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.components.http.view import HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.network import (
     NoURLAvailableError,
     get_url,
     is_cloud_connection,
 )
-from homeassistant.util.network import is_local
+from inpui.util.network import is_local
 
 from . import indieauth
 
 if TYPE_CHECKING:
-    from homeassistant.auth.providers.trusted_networks import (
+    from inpui.auth.providers.trusted_networks import (
         TrustedNetworksAuthProvider,
     )
 

@@ -19,10 +19,10 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.network import is_cloud_connection
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.network import is_cloud_connection
 
 from .. import InvalidAuthError
 from ..models import (

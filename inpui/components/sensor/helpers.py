@@ -5,8 +5,8 @@ from __future__ import annotations
 from datetime import date, datetime
 import logging
 
-from homeassistant.core import callback
-from homeassistant.util import dt as dt_util
+from inpui.core import callback
+from inpui.util import dt as dt_util
 
 from . import SensorDeviceClass
 

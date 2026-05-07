@@ -6,10 +6,10 @@ from wiim.controller import WiimController
 from wiim.discovery import async_create_wiim_device
 from wiim.exceptions import WiimDeviceException, WiimRequestException
 
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DATA_WIIM, DOMAIN, LOGGER, PLATFORMS, UPNP_PORT, WiimConfigEntry
 from .models import WiimData
@@ -89,7 +89,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: WiimConfigEntry) -> bool
 
     entry.async_on_unload(
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, _async_shutdown_event_handler
+            EVENT_INPUI_STOP, _async_shutdown_event_handler
         )
     )
 

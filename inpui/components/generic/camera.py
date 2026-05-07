@@ -12,13 +12,13 @@ import httpx
 import voluptuous as vol
 import yarl
 
-from homeassistant.components.camera import Camera, CameraEntityFeature
-from homeassistant.components.stream import (
+from inpui.components.camera import Camera, CameraEntityFeature
+from inpui.components.stream import (
     CONF_RTSP_TRANSPORT,
     CONF_USE_WALLCLOCK_AS_TIMESTAMPS,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_NAME,
     CONF_PASSWORD,
@@ -26,12 +26,12 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     HTTP_DIGEST_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.template import Template
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.template import Template
 
 from . import DOMAIN
 from .const import (

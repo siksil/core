@@ -6,10 +6,10 @@ import logging
 from pprint import pformat
 from typing import Any
 
-from homeassistant.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.cover import ATTR_POSITION, CoverDeviceClass, CoverEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import DOMAIN, SUPLA_COORDINATORS, SUPLA_SERVERS
 from .entity import SuplaEntity

@@ -6,12 +6,12 @@ import logging
 from sisyphus_control import Table
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, CONF_NAME, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_HOST, CONF_NAME, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -69,7 +69,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         if tasks:
             await asyncio.wait(tasks)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, close_tables)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, close_tables)
 
     return True
 

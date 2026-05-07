@@ -5,10 +5,10 @@ import copy
 import pytest
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.zwave_js.const import DOMAIN
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.zwave_js.const import DOMAIN
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .common import AIR_TEMPERATURE_SENSOR, NOTIFICATION_MOTION_BINARY_SENSOR
 

@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import thread
-from homeassistant.core import HomeAssistant
+from inpui.components import thread
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

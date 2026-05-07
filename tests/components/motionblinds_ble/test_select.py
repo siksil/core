@@ -9,13 +9,13 @@ from motionblindsble.const import MotionSpeedLevel
 from motionblindsble.device import MotionDevice
 import pytest
 
-from homeassistant.components.motionblinds_ble.const import ATTR_SPEED
-from homeassistant.components.select import (
+from inpui.components.motionblinds_ble.const import ATTR_SPEED
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

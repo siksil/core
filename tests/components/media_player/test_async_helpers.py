@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components import media_player as mp
-from homeassistant.const import (
+from inpui.components import media_player as mp
+from inpui.const import (
     STATE_IDLE,
     STATE_OFF,
     STATE_ON,
@@ -11,7 +11,7 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_STANDBY,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 class SimpleMediaPlayer(mp.MediaPlayerEntity):

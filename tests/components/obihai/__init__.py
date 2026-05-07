@@ -1,7 +1,7 @@
 """Tests for the Obihai Integration."""
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 USER_INPUT = {
     CONF_HOST: "10.10.10.30",

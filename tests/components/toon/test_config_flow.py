@@ -6,14 +6,14 @@ from unittest.mock import patch
 import pytest
 from toonapi import Agreement, ToonError
 
-from homeassistant.components.toon.const import CONF_AGREEMENT, DOMAIN
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
+from inpui.components.toon.const import CONF_AGREEMENT, DOMAIN
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

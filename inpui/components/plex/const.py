@@ -3,7 +3,7 @@
 from datetime import timedelta
 from typing import Final
 
-from homeassistant.const import Platform, __version__
+from inpui.const import Platform, __version__
 
 DOMAIN = "plex"
 NAME_FORMAT = "Plex ({})"

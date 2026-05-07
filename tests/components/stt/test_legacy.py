@@ -6,10 +6,10 @@ from pathlib import Path
 
 import pytest
 
-from homeassistant.components.stt import Provider
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.stt import Provider
+from inpui.core import HomeAssistant
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .common import mock_stt_platform
 

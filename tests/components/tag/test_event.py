@@ -5,11 +5,11 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.tag import DOMAIN, EVENT_TAG_SCANNED, async_scan_tag
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.tag import DOMAIN, EVENT_TAG_SCANNED, async_scan_tag
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import TEST_DEVICE_ID, TEST_TAG_ID, TEST_TAG_NAME
 

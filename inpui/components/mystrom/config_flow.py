@@ -9,8 +9,8 @@ import pymystrom
 from pymystrom.exceptions import MyStromConnectionError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME
 
 from .const import DOMAIN
 

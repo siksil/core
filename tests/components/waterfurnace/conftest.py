@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from waterfurnace.waterfurnace import WaterFurnace, WFGateway, WFReading
 
-from homeassistant.components.waterfurnace.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.waterfurnace.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

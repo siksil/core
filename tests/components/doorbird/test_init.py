@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.doorbird.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.doorbird.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import mock_not_found_exception, mock_unauthorized_exception
 from .conftest import DoorbirdMockerType

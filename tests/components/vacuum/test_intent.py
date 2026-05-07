@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     DOMAIN,
     SERVICE_CLEAN_AREA,
     SERVICE_RETURN_TO_BASE,
@@ -12,9 +12,9 @@ from homeassistant.components.vacuum import (
     VacuumEntityFeature,
     intent as vacuum_intent,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, STATE_IDLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, intent
+from inpui.const import ATTR_SUPPORTED_FEATURES, STATE_IDLE
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, intent
 
 from tests.common import async_mock_service
 

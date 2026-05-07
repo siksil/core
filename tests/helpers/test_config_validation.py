@@ -17,16 +17,16 @@ import py
 import pytest
 import voluptuous as vol
 
-import homeassistant
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+import inpui
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     issue_registry as ir,
     selector,
     template,
 )
-from homeassistant.helpers.config_validation import TRIGGER_SCHEMA
+from inpui.helpers.config_validation import TRIGGER_SCHEMA
 
 
 def test_boolean() -> None:

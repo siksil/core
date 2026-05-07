@@ -7,8 +7,8 @@ from linkplay.consts import API_ENDPOINT
 from linkplay.endpoint import LinkPlayApiEndpoint
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.linkplay.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.linkplay.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .conftest import HOST, mock_lp_aiohttp_client

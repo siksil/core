@@ -7,10 +7,10 @@ from typing import cast
 
 from holidays import DateLike, HolidayBase
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_COUNTRY, CONF_LANGUAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_ADD_HOLIDAYS,

@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from homeassistant.components.otp.const import CONF_NEW_TOKEN, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_CODE, CONF_NAME, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.otp.const import CONF_NEW_TOKEN, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_CODE, CONF_NAME, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 TEST_DATA = {
     CONF_NAME: "OTP Sensor",

@@ -4,7 +4,7 @@ from typing import Any
 
 from pyenvisalink import EnvisalinkAlarmPanel
 
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 
 class EnvisalinkEntity(Entity):

@@ -13,27 +13,27 @@ from xknx.dpt import DPTBase, DPTNumeric
 from xknx.dpt.dpt_20 import HVACControllerMode, HVACOperationMode
 from xknx.exceptions import ConversionError, CouldNotParseTelegram
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA as BINARY_SENSOR_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.components.climate import FAN_OFF, HVACMode
-from homeassistant.components.cover import (
+from inpui.components.climate import FAN_OFF, HVACMode
+from inpui.components.cover import (
     DEVICE_CLASSES_SCHEMA as COVER_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEVICE_CLASSES_SCHEMA as NUMBER_DEVICE_CLASSES_SCHEMA,
     NumberMode,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS as CONF_SENSOR_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA as SENSOR_DEVICE_CLASSES_SCHEMA,
     STATE_CLASSES_SCHEMA,
 )
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DEVICE_CLASSES_SCHEMA as SWITCH_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.components.text import TextMode
-from homeassistant.const import (
+from inpui.components.text import TextMode
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_ENTITY_ID,
@@ -46,8 +46,8 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     Platform,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import ENTITY_CATEGORIES_SCHEMA
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import ENTITY_CATEGORIES_SCHEMA
 
 from .const import (
     CONF_CONTEXT_TIMEOUT,

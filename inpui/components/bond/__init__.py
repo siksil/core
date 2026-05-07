@@ -7,19 +7,19 @@ from typing import Any
 from aiohttp import ClientError, ClientResponseError, ClientTimeout
 from bond_async import Bond, BPUPSubscriptions, RequestorUUID, start_bpup
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_HOST,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity import SLOW_UPDATE_WARNING
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity import SLOW_UPDATE_WARNING
+from inpui.helpers.typing import ConfigType
 
 from .const import BRIDGE_MAKE, DOMAIN
 from .models import BondData
@@ -80,7 +80,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: BondConfigEntry) -> bool
 
     entry.async_on_unload(_async_stop_event)
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, _async_stop_event)
+        hass.bus.async_listen(EVENT_INPUI_STOP, _async_stop_event)
     )
     entry.runtime_data = BondData(hub, bpup_subs)
 

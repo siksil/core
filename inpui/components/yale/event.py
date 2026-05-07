@@ -10,13 +10,13 @@ from yalexs.activity import Activity
 from yalexs.doorbell import DoorbellDetail
 from yalexs.lock import LockDetail
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YaleConfigEntry, YaleData
 from .entity import YaleDescriptionEntity

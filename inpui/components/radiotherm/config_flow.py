@@ -9,11 +9,11 @@ from urllib.error import URLError
 from radiotherm.validate import RadiothermTstatError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN
 from .data import RadioThermInitData, async_get_init_data

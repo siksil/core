@@ -2,11 +2,11 @@
 
 from laundrify_aio import exceptions
 
-from homeassistant.components.laundrify.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CODE, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.laundrify.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CODE, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import VALID_ACCESS_TOKEN, VALID_AUTH_CODE, VALID_USER_INPUT
 

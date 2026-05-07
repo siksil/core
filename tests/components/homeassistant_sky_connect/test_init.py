@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.homeassistant_sky_connect.const import (
+from inpui.components.homeassistant_sky_connect.const import (
     DESCRIPTION,
     DOMAIN,
     MANUFACTURER,
@@ -18,12 +18,12 @@ from homeassistant.components.homeassistant_sky_connect.const import (
     SERIAL_NUMBER,
     VID,
 )
-from homeassistant.components.usb import DOMAIN as USB_DOMAIN, USBDevice
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.usb import DOMAIN as USB_DOMAIN, USBDevice
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.components.usb import (
@@ -129,7 +129,7 @@ async def test_usb_device_reactivity(hass: HomeAssistant) -> None:
     assert await async_setup_component(hass, USB_DOMAIN, {"usb": {}})
 
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     config_entry = MockConfigEntry(

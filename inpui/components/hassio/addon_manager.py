@@ -23,8 +23,8 @@ from aiohasupervisor.models import (
     StoreAddonUpdate,
 )
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
 
 from .handler import HassioAPIError, get_supervisor_client
 

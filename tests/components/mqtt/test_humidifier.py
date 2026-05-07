@@ -7,8 +7,8 @@ from unittest.mock import patch
 import pytest
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components import humidifier, mqtt
-from homeassistant.components.humidifier import (
+from inpui.components import humidifier, mqtt
+from inpui.components.humidifier import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_HUMIDITY,
     ATTR_MODE,
@@ -16,14 +16,14 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_MODE,
     HumidifierAction,
 )
-from homeassistant.components.mqtt.const import CONF_CURRENT_HUMIDITY_TOPIC
-from homeassistant.components.mqtt.humidifier import (
+from inpui.components.mqtt.const import CONF_CURRENT_HUMIDITY_TOPIC
+from inpui.components.mqtt.humidifier import (
     CONF_MODE_COMMAND_TOPIC,
     CONF_MODE_STATE_TOPIC,
     CONF_TARGET_HUMIDITY_STATE_TOPIC,
     MQTT_HUMIDIFIER_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -34,7 +34,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

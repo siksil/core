@@ -15,14 +15,14 @@ from homematicip.device import Device
 from homematicip.group import Group
 from homematicip.home import Home
 
-from homeassistant.components.homematicip_cloud import DOMAIN
-from homeassistant.components.homematicip_cloud.entity import (
+from inpui.components.homematicip_cloud import DOMAIN
+from inpui.components.homematicip_cloud.entity import (
     ATTR_IS_GROUP,
     ATTR_MODEL_TYPE,
 )
-from homeassistant.components.homematicip_cloud.hap import HomematicipHAP
-from homeassistant.core import HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.components.homematicip_cloud.hap import HomematicipHAP
+from inpui.core import HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture
 

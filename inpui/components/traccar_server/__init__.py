@@ -7,8 +7,8 @@ from datetime import timedelta
 from aiohttp import CookieJar
 from pytraccar import ApiClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_TOKEN,
     CONF_HOST,
     CONF_PASSWORD,
@@ -18,10 +18,10 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.event import async_track_time_interval
 
 from .const import CONF_EVENTS, DOMAIN
 from .coordinator import TraccarServerConfigEntry, TraccarServerCoordinator

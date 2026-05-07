@@ -1,6 +1,6 @@
 """Errors for the Wyoming integration."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class WyomingError(HomeAssistantError):

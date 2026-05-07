@@ -7,8 +7,8 @@ from typing import Any, cast, overload
 
 import attr
 
-from homeassistant.core import callback
-from homeassistant.helpers.entity_registry import RegistryEntry
+from inpui.core import callback
+from inpui.helpers.entity_registry import RegistryEntry
 
 from .const import REDACTED
 

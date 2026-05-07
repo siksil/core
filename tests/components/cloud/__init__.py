@@ -3,7 +3,7 @@
 from typing import Any
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.cloud.const import (
+from inpui.components.cloud.const import (
     DATA_CLOUD,
     DOMAIN,
     PREF_ALEXA_SETTINGS_VERSION,
@@ -12,13 +12,13 @@ from homeassistant.components.cloud.const import (
     PREF_GOOGLE_SECURE_DEVICES_PIN,
     PREF_GOOGLE_SETTINGS_VERSION,
 )
-from homeassistant.components.cloud.prefs import (
+from inpui.components.cloud.prefs import (
     ALEXA_SETTINGS_VERSION,
     GOOGLE_SETTINGS_VERSION,
     CloudPreferences,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 PIPELINE_DATA = {
     "items": [

@@ -6,7 +6,7 @@ from collections.abc import Callable
 from functools import lru_cache
 from math import floor, log10
 
-from homeassistant.const import (
+from inpui.const import (
     CONCENTRATION_GRAMS_PER_CUBIC_METER,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_MILLIGRAMS_PER_CUBIC_METER,
@@ -37,8 +37,8 @@ from homeassistant.const import (
     UnitOfVolumeFlowRate,
     UnitOfVolumetricFlux,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.deprecation import deprecated_function
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.deprecation import deprecated_function
 
 # Distance conversion constants
 _MM_TO_M = 0.001  # 1 mm = 0.001 m

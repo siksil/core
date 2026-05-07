@@ -5,9 +5,9 @@ from __future__ import annotations
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import CONF_TOPIC
 

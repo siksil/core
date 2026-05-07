@@ -28,7 +28,7 @@ from uuid import UUID
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -95,7 +95,7 @@ from homeassistant.const import (
     WEEKDAYS,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     HomeAssistant,
     async_get_hass,
@@ -103,16 +103,16 @@ from homeassistant.core import (
     split_entity_id,
     valid_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.generated import currencies
-from homeassistant.generated.countries import COUNTRIES
-from homeassistant.generated.languages import LANGUAGES
-from homeassistant.util import (
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.generated import currencies
+from inpui.generated.countries import COUNTRIES
+from inpui.generated.languages import LANGUAGES
+from inpui.util import (
     dt as dt_util,
     raise_if_invalid_path,
     slugify as util_slugify,
 )
-from homeassistant.util.yaml.objects import NodeStrClass
+from inpui.util.yaml.objects import NodeStrClass
 
 from . import script_variables as script_variables_helper, template as template_helper
 from .frame import get_integration_logger

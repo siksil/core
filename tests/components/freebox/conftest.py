@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from freebox_api.exceptions import HttpRequestError
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import (
     DATA_CALL_GET_CALLS_LOG,

@@ -2,8 +2,8 @@
 
 import logging
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import BRouteConfigEntry, BRouteUpdateCoordinator
 

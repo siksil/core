@@ -7,17 +7,17 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components.config import entity_registry
-from homeassistant.const import ATTR_ICON, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_registry import (
+from inpui.components.config import entity_registry
+from inpui.const import ATTR_ICON, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_registry import (
     RegistryEntryDisabler,
     RegistryEntryHider,
 )
-from homeassistant.util.dt import utcnow
+from inpui.util.dt import utcnow
 
 from tests.common import (
     ANY,

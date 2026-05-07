@@ -61,9 +61,9 @@ from aioairzone.const import (
     DEFAULT_SYSTEM_ID,
 )
 
-from homeassistant.components.airzone.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_ID, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.airzone.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_ID, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

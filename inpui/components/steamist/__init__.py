@@ -7,13 +7,13 @@ from typing import Any
 
 from aiosteamist import Steamist
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 from .const import DISCOVER_SCAN_TIMEOUT, DISCOVERY, DOMAIN
 from .coordinator import SteamistDataUpdateCoordinator

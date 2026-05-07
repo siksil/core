@@ -5,26 +5,26 @@ from dataclasses import dataclass
 import logging
 from typing import cast
 
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     ATTR_NAME,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_ZONE,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.location import distance
+from inpui.helpers import entity_registry as er
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.location import distance
 
 from .const import (
     ATTR_DIR_OF_TRAVEL,

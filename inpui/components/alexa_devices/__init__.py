@@ -1,9 +1,9 @@
 """Alexa Devices integration."""
 
-from homeassistant.const import CONF_COUNTRY, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_COUNTRY, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import _LOGGER, CONF_LOGIN_DATA, CONF_SITE, COUNTRY_DOMAINS, DOMAIN
 from .coordinator import AmazonConfigEntry, AmazonDevicesCoordinator

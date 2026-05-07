@@ -6,9 +6,9 @@ from zigpy.device import Device
 from zigpy.profiles import zha
 from zigpy.zcl.clusters import general
 
-from homeassistant.components.zha.helpers import get_zha_gateway
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.zha.helpers import get_zha_gateway
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE
 

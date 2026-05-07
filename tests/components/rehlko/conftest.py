@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.rehlko import CONF_REFRESH_TOKEN, DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.rehlko import CONF_REFRESH_TOKEN, DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_value_fixture
 

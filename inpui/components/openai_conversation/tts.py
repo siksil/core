@@ -9,17 +9,17 @@ from typing import TYPE_CHECKING, Any
 from openai import OpenAIError
 from propcache.api import cached_property
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     ATTR_PREFERRED_FORMAT,
     ATTR_VOICE,
     TextToSpeechEntity,
     TtsAudioType,
     Voice,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import CONF_CHAT_MODEL, CONF_PROMPT, CONF_TTS_SPEED, RECOMMENDED_TTS_SPEED
 from .entity import OpenAIBaseLLMEntity

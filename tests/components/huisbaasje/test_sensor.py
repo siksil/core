@@ -2,13 +2,13 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.huisbaasje.const import DOMAIN
-from homeassistant.components.sensor import (
+from inpui.components.huisbaasje.const import DOMAIN
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ID,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_data import MOCK_CURRENT_MEASUREMENTS, MOCK_LIMITED_CURRENT_MEASUREMENTS
 

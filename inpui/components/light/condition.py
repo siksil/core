@@ -2,10 +2,10 @@
 
 from typing import Any
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, State
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     Condition,
     EntityNumericalConditionBase,
     make_entity_state_condition,

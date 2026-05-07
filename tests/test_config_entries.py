@@ -18,44 +18,44 @@ from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
 from homeassistant import config_entries, data_entry_flow, loader
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_NAME,
     EVENT_COMPONENT_LOADED,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
     HomeAssistant,
     callback,
 )
-from homeassistant.data_entry_flow import (
+from inpui.data_entry_flow import (
     BaseServiceInfo,
     FlowResult,
     FlowResultType,
     UnknownFlow,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers import entity_registry as er, frame, issue_registry as ir
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.setup import async_set_domains_to_be_loaded, async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.json import json_loads
+from inpui.helpers import entity_registry as er, frame, issue_registry as ir
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.json import json_dumps
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.typing import ConfigType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.setup import async_set_domains_to_be_loaded, async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.async_ import create_eager_task
+from inpui.util.json import json_loads
 
 from .common import (
     MockConfigEntry,
@@ -1761,7 +1761,7 @@ async def test_setup_retrying_during_unload_before_started(
     entry = MockConfigEntry(domain="test")
     entry.add_to_hass(hass)
     hass.set_state(CoreState.starting)
-    initial_listeners = hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED]
+    initial_listeners = hass.bus.async_listeners()[EVENT_INPUI_STARTED]
 
     mock_setup_entry = AsyncMock(side_effect=ConfigEntryNotReady)
     mock_integration(hass, MockModule("test", async_setup_entry=mock_setup_entry))
@@ -1772,7 +1772,7 @@ async def test_setup_retrying_during_unload_before_started(
 
     assert entry.state is config_entries.ConfigEntryState.SETUP_RETRY
     assert (
-        hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED] == initial_listeners + 1
+        hass.bus.async_listeners()[EVENT_INPUI_STARTED] == initial_listeners + 1
     )
 
     await manager.async_unload(entry.entry_id)
@@ -1780,7 +1780,7 @@ async def test_setup_retrying_during_unload_before_started(
 
     assert entry.state is config_entries.ConfigEntryState.NOT_LOADED
     assert (
-        hass.bus.async_listeners()[EVENT_HOMEASSISTANT_STARTED] == initial_listeners + 0
+        hass.bus.async_listeners()[EVENT_INPUI_STARTED] == initial_listeners + 0
     )
 
 
@@ -5368,7 +5368,7 @@ async def test_initialize_and_shutdown(hass: HomeAssistant) -> None:
 
     with patch.object(manager, "_async_shutdown") as mock_async_shutdown:
         await manager.async_initialize()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert mock_async_shutdown.called
@@ -5391,7 +5391,7 @@ async def test_setup_retrying_during_shutdown(
     assert entry.state is config_entries.ConfigEntryState.SETUP_RETRY
     assert len(mock_call.return_value.mock_calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert len(mock_call.return_value.mock_calls) == 0
@@ -9928,7 +9928,7 @@ async def test_orphaned_ignored_entries_existing_integration(
     )
     entry.add_to_hass(hass)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
 
     # No issue should be made this time
@@ -9995,7 +9995,7 @@ async def test_orphaned_ignored_entries_safe_recovery_mode(
         "homeassistant.loader.async_get_integration", new=AsyncMock(side_effect=_raise)
     ):
         await hass.config_entries.async_initialize()
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     # No issue should be created at this point

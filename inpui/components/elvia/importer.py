@@ -7,27 +7,27 @@ from typing import TYPE_CHECKING, cast
 
 from elvia import Elvia, error as ElviaError
 
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.components.recorder.util import get_instance
-from homeassistant.const import UnitOfEnergy
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import EnergyConverter
+from inpui.components.recorder.util import get_instance
+from inpui.const import UnitOfEnergy
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import EnergyConverter
 
 from .const import DOMAIN, LOGGER
 
 if TYPE_CHECKING:
     from elvia.types.meter_value_types import MeterValueTimeSeries
 
-    from homeassistant.core import HomeAssistant
+    from inpui.core import HomeAssistant
 
 
 class ElviaImporter:

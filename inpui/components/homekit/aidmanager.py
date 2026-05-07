@@ -16,9 +16,9 @@ import random
 
 from fnv_hash_fast import fnv1a_32
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.storage import Store
 
 from .util import get_aid_storage_filename_for_entry_id
 

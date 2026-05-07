@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pypck
 import pytest
 
-from homeassistant.components.lcn import DOMAIN
-from homeassistant.components.lcn.const import (
+from inpui.components.lcn import DOMAIN
+from inpui.components.lcn.const import (
     CONF_KEYS,
     CONF_LED,
     CONF_OUTPUT,
@@ -22,16 +22,16 @@ from homeassistant.components.lcn.const import (
     CONF_VALUE,
     CONF_VARIABLE,
 )
-from homeassistant.components.lcn.services import LcnService
-from homeassistant.const import (
+from inpui.components.lcn.services import LcnService
+from inpui.const import (
     CONF_BRIGHTNESS,
     CONF_DEVICE_ID,
     CONF_STATE,
     CONF_UNIT_OF_MEASUREMENT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.setup import async_setup_component
 
 from .conftest import (
     MockConfigEntry,

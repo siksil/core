@@ -5,8 +5,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import singleton
+from inpui.core import HomeAssistant
+from inpui.helpers import singleton
 
 
 @pytest.fixture

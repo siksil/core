@@ -2,12 +2,12 @@
 
 from unittest.mock import Mock
 
-from homeassistant.components import media_player
-from homeassistant.components.dlna_dmr.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.setup import async_setup_component
+from inpui.components import media_player
+from inpui.components.dlna_dmr.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

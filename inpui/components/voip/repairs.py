@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from homeassistant.components.assist_pipeline.repair_flows import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.repair_flows import (  # pylint: disable=hass-component-root-import
     AssistInProgressDeprecatedRepairFlow,
 )
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant
 
 
 async def async_create_fix_flow(

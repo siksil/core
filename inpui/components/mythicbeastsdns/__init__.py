@@ -5,17 +5,17 @@ from datetime import timedelta
 import mbddns
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DOMAIN,
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "mythicbeastsdns"
 

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from yalesmartalarmclient import YaleLock, YaleLockVolume
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import YaleConfigEntry
 from .coordinator import YaleDataUpdateCoordinator

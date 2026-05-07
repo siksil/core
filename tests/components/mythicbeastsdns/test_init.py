@@ -3,9 +3,9 @@
 import logging
 from unittest.mock import patch
 
-from homeassistant.components import mythicbeastsdns
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import mythicbeastsdns
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 _LOGGER = logging.getLogger(__name__)
 

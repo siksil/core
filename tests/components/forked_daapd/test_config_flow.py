@@ -5,18 +5,18 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.forked_daapd.const import (
+from inpui.components.forked_daapd.const import (
     CONF_LIBRESPOT_JAVA_PORT,
     CONF_MAX_PLAYLISTS,
     CONF_TTS_PAUSE_TIME,
     CONF_TTS_VOLUME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF, ConfigEntryState
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

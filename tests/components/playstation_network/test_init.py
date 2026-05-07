@@ -13,12 +13,12 @@ from psnawp_api.core import (
 )
 import pytest
 
-from homeassistant.components.playstation_network.const import DOMAIN
-from homeassistant.components.playstation_network.coordinator import (
+from inpui.components.playstation_network.const import DOMAIN
+from inpui.components.playstation_network.coordinator import (
     PlaystationNetworkRuntimeData,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

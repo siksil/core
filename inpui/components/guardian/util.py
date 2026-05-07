@@ -10,9 +10,9 @@ from typing import TYPE_CHECKING, Any, Concatenate
 
 from aioguardian.errors import GuardianError
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .const import LOGGER
 

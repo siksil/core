@@ -1,6 +1,6 @@
 """Tests for the Airtouch 5 integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

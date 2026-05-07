@@ -5,14 +5,14 @@ from typing import Any, Final
 
 from sn2.device import OnOffSetting
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SwitchDeviceClass,
     SwitchEntity,
     SwitchEntityDescription,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SystemNexa2ConfigEntry, SystemNexa2DataUpdateCoordinator
 from .entity import SystemNexa2Entity

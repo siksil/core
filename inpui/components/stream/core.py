@@ -14,10 +14,10 @@ from typing import TYPE_CHECKING, Any, cast
 from aiohttp import web
 import numpy as np
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.event import async_call_later
-from homeassistant.util.decorator import Registry
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.event import async_call_later
+from inpui.util.decorator import Registry
 
 from .const import (
     ATTR_STREAMS,
@@ -29,7 +29,7 @@ from .const import (
 if TYPE_CHECKING:
     from av import Packet, VideoCodecContext
 
-    from homeassistant.components.camera import DynamicStreamSettings
+    from inpui.components.camera import DynamicStreamSettings
 
     from . import Stream
 
@@ -441,7 +441,7 @@ class KeyFrameConverter:
 
         # Keep import here so that we can import stream integration
         # without installing reqs
-        from homeassistant.components.camera import TurboJPEGSingleton  # noqa: PLC0415
+        from inpui.components.camera import TurboJPEGSingleton  # noqa: PLC0415
 
         self._packet: Packet | None = None
         self._event: asyncio.Event = asyncio.Event()

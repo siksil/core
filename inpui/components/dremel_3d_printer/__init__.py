@@ -5,9 +5,9 @@ from __future__ import annotations
 from dremel3dpy import Dremel3DPrinter
 from requests.exceptions import ConnectTimeout, HTTPError
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import CAMERA_MODEL
 from .coordinator import Dremel3DPrinterDataUpdateCoordinator, DremelConfigEntry

@@ -6,8 +6,8 @@ from unittest.mock import PropertyMock
 import blebox_uniapi
 import pytest
 
-from homeassistant.const import ATTR_ICON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ICON
+from inpui.core import HomeAssistant
 
 from .conftest import async_setup_entity, mock_feature
 

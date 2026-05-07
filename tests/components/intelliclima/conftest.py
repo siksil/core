@@ -12,8 +12,8 @@ from pyintelliclima.intelliclima_types import (
 )
 import pytest
 
-from homeassistant.components.intelliclima.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.intelliclima.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from tests.common import MockConfigEntry
 

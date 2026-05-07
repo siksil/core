@@ -2,11 +2,11 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.statistics import statistics_during_period
-from homeassistant.components.tibber.coordinator import TibberDataCoordinator
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.statistics import statistics_during_period
+from inpui.components.tibber.coordinator import TibberDataCoordinator
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .test_common import CONSUMPTION_DATA_1, PRODUCTION_DATA_1, mock_get_homes
 

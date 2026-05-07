@@ -1,6 +1,6 @@
 """The test for the Melissa Climate component."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

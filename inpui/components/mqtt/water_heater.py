@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components import water_heater
-from homeassistant.components.water_heater import (
+from inpui.components import water_heater
+from inpui.components.water_heater import (
     ATTR_OPERATION_MODE,
     DEFAULT_MIN_TEMP,
     STATE_ECO,
@@ -20,8 +20,8 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_NAME,
     CONF_OPTIMISTIC,
     CONF_PAYLOAD_OFF,
@@ -34,12 +34,12 @@ from homeassistant.const import (
     STATE_OFF,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .climate import MqttTemperatureControlEntity
 from .config import DEFAULT_RETAIN, MQTT_BASE_SCHEMA

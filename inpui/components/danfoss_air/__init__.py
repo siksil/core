@@ -7,11 +7,11 @@ from pydanfossair.commands import ReadCommand
 from pydanfossair.danfossclient import DanfossClient
 import voluptuous as vol
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import Throttle
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
+from inpui.util import Throttle
 
 _LOGGER = logging.getLogger(__name__)
 

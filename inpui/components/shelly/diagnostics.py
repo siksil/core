@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.bluetooth import async_scanner_by_source
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import (
+from inpui.components.bluetooth import async_scanner_by_source
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import (
     ATTR_MODEL,
     ATTR_NAME,
     ATTR_SW_VERSION,
     CONF_PASSWORD,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import ShellyConfigEntry
 from .utils import get_rpc_ws_url

@@ -146,7 +146,7 @@ def deprecated_hass_argument[**_P, _T](
     def _decorator(func: Callable[_P, _T]) -> Callable[_P, _T]:
         @functools.wraps(func)
         def _inner(*args: _P.args, **kwargs: _P.kwargs) -> _T:
-            from homeassistant.core import HomeAssistant  # noqa: PLC0415
+            from inpui.core import HomeAssistant  # noqa: PLC0415
 
             in_arg = len(args) > 0 and isinstance(args[0], HomeAssistant)
             in_kwarg = "hass" in kwargs and isinstance(kwargs["hass"], HomeAssistant)
@@ -225,8 +225,8 @@ def _print_deprecation_warning_internal_impl(
     *,
     log_when_no_integration_is_found: bool,
 ) -> None:
-    from homeassistant.core import async_get_hass_or_none  # noqa: PLC0415
-    from homeassistant.loader import async_suggest_report_issue  # noqa: PLC0415
+    from inpui.core import async_get_hass_or_none  # noqa: PLC0415
+    from inpui.loader import async_suggest_report_issue  # noqa: PLC0415
 
     from .frame import MissingIntegrationFrame, get_integration_frame  # noqa: PLC0415
 

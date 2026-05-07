@@ -5,8 +5,8 @@ from __future__ import annotations
 from ipaddress import IPv4Address, IPv6Address
 from typing import cast
 
-from homeassistant.components import network
-from homeassistant.core import HomeAssistant
+from inpui.components import network
+from inpui.core import HomeAssistant
 
 
 async def async_build_source_set(hass: HomeAssistant) -> set[IPv4Address | IPv6Address]:

@@ -6,19 +6,19 @@ from asyncsleepiq import (
     SleepIQTimeoutException,
 )
 
-from homeassistant.components.sleepiq.const import (
+from inpui.components.sleepiq.const import (
     DOMAIN,
     IS_IN_BED,
     PRESSURE,
     SLEEP_NUMBER,
 )
-from homeassistant.components.sleepiq.coordinator import UPDATE_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components.sleepiq.coordinator import UPDATE_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .conftest import (
     BED_ID,

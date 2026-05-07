@@ -12,12 +12,12 @@ from nettigo_air_monitor import (
     NettigoAirMonitor,
 )
 
-from homeassistant.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.components.air_quality import DOMAIN as AIR_QUALITY_DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import ATTR_SDS011, ATTR_SPS30, DOMAIN
 from .coordinator import NAMConfigEntry, NAMDataUpdateCoordinator

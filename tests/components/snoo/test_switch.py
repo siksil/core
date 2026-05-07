@@ -7,14 +7,14 @@ import pytest
 from python_snoo.containers import SnooDevice
 from python_snoo.exceptions import SnooCommandException
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import async_init_integration, find_update_callback
 from .const import MOCK_SNOO_DATA

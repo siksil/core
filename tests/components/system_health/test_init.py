@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from aiohttp.client_exceptions import ClientError
 
-from homeassistant.components import system_health
-from homeassistant.components.system_health import async_register_info
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import system_health
+from inpui.components.system_health import async_register_info
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info, mock_platform
 from tests.test_util.aiohttp import AiohttpClientMocker

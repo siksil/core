@@ -7,9 +7,9 @@ from hlk_sw16 import create_hlk_sw16_connection
 from hlk_sw16.protocol import SW16Client
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .const import (
     CONNECTION_TIMEOUT,

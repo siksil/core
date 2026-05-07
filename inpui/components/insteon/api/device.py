@@ -7,10 +7,10 @@ from pyinsteon.address import Address
 from pyinsteon.constants import DeviceAction
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from ..const import (
     DEVICE_ADDRESS,

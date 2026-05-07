@@ -2,9 +2,9 @@
 
 from unittest.mock import mock_open, patch
 
-from homeassistant.components.device_tracker import legacy
-from homeassistant.core import HomeAssistant
-from homeassistant.util.yaml import dump
+from inpui.components.device_tracker import legacy
+from inpui.core import HomeAssistant
+from inpui.util.yaml import dump
 
 from tests.common import patch_yaml_files
 

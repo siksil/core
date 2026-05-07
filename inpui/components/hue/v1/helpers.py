@@ -1,6 +1,6 @@
 """Helper functions for Philips Hue."""
 
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from ..const import DOMAIN
 

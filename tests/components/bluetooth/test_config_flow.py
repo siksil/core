@@ -6,8 +6,8 @@ from bluetooth_adapters import DEFAULT_ADDRESS, AdapterDetails
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import HaBluetoothConnector
-from homeassistant.components.bluetooth.const import (
+from inpui.components.bluetooth import HaBluetoothConnector
+from inpui.components.bluetooth.const import (
     CONF_ADAPTER,
     CONF_DETAILS,
     CONF_PASSIVE,
@@ -18,10 +18,10 @@ from homeassistant.components.bluetooth.const import (
     CONF_SOURCE_MODEL,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import area_registry as ar, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import area_registry as ar, device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import FakeRemoteScanner, MockBleakClient, _get_manager
 

@@ -13,13 +13,13 @@ import httpx
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_TOKEN, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_entry_oauth2_flow import (
     AbstractOAuth2FlowHandler,
     async_get_implementations,
 )

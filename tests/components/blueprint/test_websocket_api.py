@@ -7,9 +7,9 @@ from unittest.mock import Mock, patch
 import pytest
 import yaml
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.yaml import UndefinedSubstitution, parse_yaml
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.yaml import UndefinedSubstitution, parse_yaml
 
 from tests.common import MockUser
 from tests.test_util.aiohttp import AiohttpClientMocker

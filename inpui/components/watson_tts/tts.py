@@ -7,12 +7,12 @@ from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_watson import TextToSpeechV1
 import voluptuous as vol
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     PLATFORM_SCHEMA as TTS_PLATFORM_SCHEMA,
     Provider,
     TtsAudioType,
 )
-from homeassistant.helpers import config_validation as cv
+from inpui.helpers import config_validation as cv
 
 _LOGGER = logging.getLogger(__name__)
 

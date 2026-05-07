@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, patch
 import pytest
 import python_otbr_api
 
-from homeassistant.components import otbr, thread
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import otbr, thread
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     BASE_URL,

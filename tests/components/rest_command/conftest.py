@@ -5,9 +5,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.rest_command import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.rest_command import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 

@@ -2,8 +2,8 @@
 
 from tesla_wall_connector.exceptions import WallConnectorConnectionError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import create_wall_connector_entry, get_lifetime_mock, get_vitals_mock
 

@@ -6,22 +6,22 @@ from aiohttp import ClientError
 from pybotvac import Account
 from pybotvac.exceptions import NeatoException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from . import api
 from .const import DOMAIN, NEATO_LOGIN

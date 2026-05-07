@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 from pymystrom.exceptions import MyStromConnectionError
 import pytest
 
-from homeassistant.components.mystrom.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.mystrom.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import (
     MyStromBulbMock,

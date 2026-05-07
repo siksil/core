@@ -11,15 +11,15 @@ from ha_silabs_firmware_client import FirmwareManifest, FirmwareMetadata
 from universal_silabs_flasher.flasher import DeviceSpecificFlasher
 from yarl import URL
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, callback
-from homeassistant.helpers.restore_state import ExtraStoredData
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, callback
+from inpui.helpers.restore_state import ExtraStoredData
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import FirmwareUpdateCoordinator
 from .helpers import async_register_firmware_info_callback

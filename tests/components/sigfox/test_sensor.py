@@ -5,13 +5,13 @@ import re
 
 import requests_mock
 
-from homeassistant.components.sigfox.sensor import (
+from inpui.components.sigfox.sensor import (
     API_URL,
     CONF_API_LOGIN,
     CONF_API_PASSWORD,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 TEST_API_LOGIN = "foo"
 TEST_API_PASSWORD = "ebcd1234"

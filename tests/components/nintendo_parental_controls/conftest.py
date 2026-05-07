@@ -9,7 +9,7 @@ from pynintendoparental.device import Device
 from pynintendoparental.enum import DeviceTimerMode
 import pytest
 
-from homeassistant.components.nintendo_parental_controls.const import DOMAIN
+from inpui.components.nintendo_parental_controls.const import DOMAIN
 
 from .const import ACCOUNT_ID, API_TOKEN, LOGIN_URL
 

@@ -8,9 +8,9 @@ from async_upnp_client.ssdp import udn_from_headers
 from async_upnp_client.ssdp_listener import SsdpListener
 from async_upnp_client.utils import CaseInsensitiveDict
 
-from homeassistant.components import ssdp
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import ssdp
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def init_ssdp_component(hass: HomeAssistant) -> SsdpListener:

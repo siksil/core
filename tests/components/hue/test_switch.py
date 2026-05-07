@@ -2,9 +2,9 @@
 
 from unittest.mock import Mock
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_platform
 from .const import FAKE_BINARY_SENSOR, FAKE_DEVICE, FAKE_ZIGBEE_CONNECTIVITY

@@ -7,15 +7,15 @@ import threading
 
 import pytest
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder.db_schema import StatisticsMeta
-from homeassistant.components.recorder.models import (
+from inpui.components import recorder
+from inpui.components.recorder.db_schema import StatisticsMeta
+from inpui.components.recorder.models import (
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import DEGREE
-from homeassistant.core import HomeAssistant
+from inpui.components.recorder.util import session_scope
+from inpui.const import DEGREE
+from inpui.core import HomeAssistant
 
 from tests.typing import RecorderInstanceGenerator
 

@@ -4,12 +4,12 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
 
 # The sensor platform is pre-imported here to ensure
 # it gets loaded when the base component is loaded

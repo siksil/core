@@ -1,7 +1,7 @@
 """The FAA Delays integration."""
 
-from homeassistant.const import CONF_ID, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_ID, Platform
+from inpui.core import HomeAssistant
 
 from .coordinator import FAAConfigEntry, FAADataUpdateCoordinator
 

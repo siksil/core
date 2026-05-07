@@ -6,14 +6,14 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components import group
-from homeassistant.components.group import ATTR_AUTO, ATTR_ENTITY_ID, ATTR_ORDER
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_ON
-from homeassistant.core import HomeAssistant, split_entity_id
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import group
+from inpui.components.group import ATTR_AUTO, ATTR_ENTITY_ID, ATTR_ORDER
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_ON
+from inpui.core import HomeAssistant, split_entity_id
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

@@ -4,9 +4,9 @@ import logging
 
 from israelrailapi import TrainSchedule
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import CONF_DESTINATION, CONF_START, DOMAIN
 from .coordinator import IsraelRailConfigEntry, IsraelRailDataUpdateCoordinator

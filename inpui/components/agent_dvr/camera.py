@@ -5,11 +5,11 @@ import logging
 
 from agent import AgentError
 
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.mjpeg import MjpegCamera, filter_urllib3_logging
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.mjpeg import MjpegCamera, filter_urllib3_logging
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AgentDVRConfigEntry
 from .const import ATTRIBUTION, CAMERA_SCAN_INTERVAL_SECS, DOMAIN

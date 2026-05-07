@@ -9,9 +9,9 @@ from typing import Any
 from gcal_sync.api import GoogleCalendarService
 from gcal_sync.store import CalendarStore
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.storage import Store
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 

@@ -9,19 +9,19 @@ from govee_ble import (
 from govee_ble.parser import ERROR
 
 from homeassistant import config_entries
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothDataUpdate,
     PassiveBluetoothProcessorEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .coordinator import GoveeBLEPassiveBluetoothDataProcessor
 from .device import device_key_to_bluetooth_entity_key

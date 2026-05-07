@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from vallox_websocket_api import ValloxApiException, ValloxWebsocketException
 
-from homeassistant.components.vallox.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.vallox.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import create_mock_entry, do_setup_vallox_entry
 

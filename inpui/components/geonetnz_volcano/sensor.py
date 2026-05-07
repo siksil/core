@@ -5,13 +5,13 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, UnitOfLength
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.components.sensor import SensorEntity
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, UnitOfLength
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import DistanceConverter
 
 from . import GeonetnzVolcanoConfigEntry
 from .const import (

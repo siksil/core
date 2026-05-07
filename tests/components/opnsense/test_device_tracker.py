@@ -4,12 +4,12 @@ from unittest import mock
 
 import pytest
 
-from homeassistant.components import opnsense
-from homeassistant.components.device_tracker import legacy
-from homeassistant.components.opnsense import CONF_API_SECRET, DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import opnsense
+from inpui.components.device_tracker import legacy
+from inpui.components.opnsense import CONF_API_SECRET, DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(name="mocked_opnsense")

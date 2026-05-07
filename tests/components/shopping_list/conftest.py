@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.shopping_list import PERSISTENCE, intent as sl_intent
-from homeassistant.core import HomeAssistant
+from inpui.components.shopping_list import PERSISTENCE, intent as sl_intent
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

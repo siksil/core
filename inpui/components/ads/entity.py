@@ -5,7 +5,7 @@ from asyncio import timeout
 import logging
 from typing import Any
 
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 from .const import STATE_KEY_STATE
 from .hub import AdsHub

@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pytest
 from yalexs.manager.ratelimit import _RateLimitChecker
 
-from homeassistant.components.yale.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.yale.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .mocks import mock_client_credentials, mock_config_entry
 

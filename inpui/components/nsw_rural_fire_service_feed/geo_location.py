@@ -13,29 +13,29 @@ from aio_geojson_nsw_rfs_incidents.feed_entry import (
 )
 import voluptuous as vol
 
-from homeassistant.components.geo_location import (
+from inpui.components.geo_location import (
     PLATFORM_SCHEMA as GEO_LOCATION_PLATFORM_SCHEMA,
     GeolocationEvent,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_LOCATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     UnitOfLength,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.dispatcher import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -101,8 +101,8 @@ async def async_setup_platform(
         """Stop feed manager."""
         await manager.async_stop()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, start_feed_manager)
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_feed_manager)
+    hass.bus.async_listen_once(EVENT_INPUI_START, start_feed_manager)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_feed_manager)
     hass.async_create_task(manager.async_update())
 
 

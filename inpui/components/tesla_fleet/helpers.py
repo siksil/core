@@ -6,7 +6,7 @@ from typing import Any
 
 from tesla_fleet_api.exceptions import TeslaFleetError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN, LOGGER, TeslaFleetState
 from .models import TeslaFleetVehicleData

@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.met.const import CONF_TRACK_HOME, DOMAIN
-from homeassistant.const import CONF_ELEVATION, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.met.const import CONF_TRACK_HOME, DOMAIN
+from inpui.const import CONF_ELEVATION, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

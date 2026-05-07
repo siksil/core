@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.util.location import LocationInfo
+from inpui.util.location import LocationInfo
 
 from . import get_mock_client
 

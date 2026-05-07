@@ -10,13 +10,13 @@ from pytest_unordered import unordered
 from sqlalchemy import create_engine, inspect
 from sqlalchemy.orm import Session
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import core, migration, statistics
-from homeassistant.components.recorder.const import UNIT_CLASS_SCHEMA_VERSION
-from homeassistant.components.recorder.db_schema import StatisticsMeta
-from homeassistant.components.recorder.models import StatisticMeanType
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant
+from inpui.components import recorder
+from inpui.components.recorder import core, migration, statistics
+from inpui.components.recorder.const import UNIT_CLASS_SCHEMA_VERSION
+from inpui.components.recorder.db_schema import StatisticsMeta
+from inpui.components.recorder.models import StatisticMeanType
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant
 
 from .common import (
     async_recorder_block_till_done,

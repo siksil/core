@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 from aiohttp.client_exceptions import ClientError
 
-from homeassistant.components.pegel_online.const import CONF_STATION, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.pegel_online.const import CONF_STATION, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
     CONF_RADIUS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import PegelOnlineMock
 from .const import MOCK_CONFIG_ENTRY_DATA_DRESDEN, MOCK_NEARBY_STATIONS

@@ -7,14 +7,14 @@ from unittest.mock import AsyncMock, patch
 from pycync import Cync, CyncHome
 import pytest
 
-from homeassistant.components.cync.const import (
+from inpui.components.cync.const import (
     CONF_AUTHORIZE_STRING,
     CONF_EXPIRES_AT,
     CONF_REFRESH_TOKEN,
     CONF_USER_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN
+from inpui.const import CONF_ACCESS_TOKEN
 
 from .const import MOCKED_EMAIL, MOCKED_USER
 

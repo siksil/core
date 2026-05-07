@@ -3,10 +3,10 @@
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.google_assistant_sdk.application_credentials import (
+from inpui.components.google_assistant_sdk.application_credentials import (
     async_get_description_placeholders,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize(

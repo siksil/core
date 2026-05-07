@@ -3,10 +3,10 @@
 from youtubeaio.types import AuthScope
 from youtubeaio.youtube import YouTube
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 
 class AsyncConfigEntryAuth:

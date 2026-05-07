@@ -12,9 +12,9 @@ from deebot_client.events import AvailabilityEvent
 from deebot_client.events.base import Event
 from sucks import EventListener, VacBot
 
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from .const import DOMAIN
 

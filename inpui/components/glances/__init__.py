@@ -10,7 +10,7 @@ from glances_api.exceptions import (
     GlancesApiNoDataAvailable,
 )
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -19,14 +19,14 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
     HomeAssistantError,
 )
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.helpers.httpx_client import get_async_client
 
 from .coordinator import GlancesConfigEntry, GlancesDataUpdateCoordinator
 

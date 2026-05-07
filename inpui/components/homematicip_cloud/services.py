@@ -11,12 +11,12 @@ from homematicip.device import SwitchMeasuring
 from homematicip.group import HeatingGroup
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_validation import comp_entity_ids
-from homeassistant.helpers.service import (
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_validation import comp_entity_ids
+from inpui.helpers.service import (
     async_register_admin_service,
     verify_domain_control,
 )

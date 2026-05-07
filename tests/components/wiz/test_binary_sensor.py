@@ -1,12 +1,12 @@
 """Tests for WiZ binary_sensor platform."""
 
-from homeassistant.components import wiz
-from homeassistant.components.wiz.binary_sensor import OCCUPANCY_UNIQUE_ID
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, STATE_OFF, STATE_ON, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components import wiz
+from inpui.components.wiz.binary_sensor import OCCUPANCY_UNIQUE_ID
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, STATE_OFF, STATE_ON, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import (
     FAKE_IP,

@@ -4,17 +4,17 @@ import pytest
 from requests.exceptions import RequestException
 import requests_mock
 
-from homeassistant.components.qbittorrent.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.qbittorrent.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_PASSWORD,
     CONF_SOURCE,
     CONF_URL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

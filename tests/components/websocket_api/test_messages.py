@@ -2,14 +2,14 @@
 
 import pytest
 
-from homeassistant.components.websocket_api.messages import (
+from inpui.components.websocket_api.messages import (
     _partial_cached_event_message as lru_event_cache,
     _state_diff_event,
     cached_event_message,
     message_to_json_bytes,
 )
-from homeassistant.const import EVENT_STATE_CHANGED
-from homeassistant.core import Context, Event, HomeAssistant, State, callback
+from inpui.const import EVENT_STATE_CHANGED
+from inpui.core import Context, Event, HomeAssistant, State, callback
 
 from tests.common import async_capture_events
 

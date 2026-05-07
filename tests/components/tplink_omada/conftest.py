@@ -20,10 +20,10 @@ from tplink_omada_client.devices import (
     OmadaSwitchPortDetails,
 )
 
-from homeassistant.components.tplink_omada.config_flow import CONF_SITE
-from homeassistant.components.tplink_omada.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
+from inpui.components.tplink_omada.config_flow import CONF_SITE
+from inpui.components.tplink_omada.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
 
 from tests.common import (
     MockConfigEntry,

@@ -6,7 +6,7 @@ from requests.exceptions import ConnectionError as RequestsConnectionError
 import voluptuous as vol
 from zoneminder.zm import ZoneMinder
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PATH,
@@ -15,10 +15,10 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .services import async_setup_services

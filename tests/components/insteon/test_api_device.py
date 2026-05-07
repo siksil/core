@@ -8,24 +8,24 @@ from pyinsteon.topics import DEVICE_LIST_CHANGED
 from pyinsteon.utils import publish_topic
 import pytest
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon.api import async_load_api
-from homeassistant.components.insteon.api.device import (
+from inpui.components import insteon
+from inpui.components.insteon.api import async_load_api
+from inpui.components.insteon.api.device import (
     DEVICE_ID,
     HA_DEVICE_NOT_FOUND,
     ID,
     INSTEON_DEVICE_NOT_FOUND,
     TYPE,
 )
-from homeassistant.components.insteon.const import (
+from inpui.components.insteon.const import (
     CONF_OVERRIDE,
     CONF_X10,
     DOMAIN,
     MULTIPLE,
 )
-from homeassistant.components.insteon.utils import async_device_name
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.insteon.utils import async_device_name
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import MOCK_USER_INPUT_PLM
 from .mock_devices import MockDevices

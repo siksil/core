@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock
 
 from pynina import ApiError
 
-from homeassistant.components.nina.const import (
+from inpui.components.nina.const import (
     CONF_AREA_FILTER,
     CONF_FILTER_CORONA,
     CONF_FILTERS,
@@ -14,8 +14,8 @@ from homeassistant.components.nina.const import (
     CONF_REGIONS,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_platform
 

@@ -2,9 +2,9 @@
 
 from pyforked_daapd import ForkedDaapdAPI
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import ForkedDaapdConfigEntry, ForkedDaapdUpdater
 

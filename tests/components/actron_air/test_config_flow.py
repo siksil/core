@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock
 from actron_neo_api import ActronAirAuthError
 
 from homeassistant import config_entries
-from homeassistant.components.actron_air.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.actron_air.const import DOMAIN
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

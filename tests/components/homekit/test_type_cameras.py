@@ -7,12 +7,12 @@ from uuid import UUID
 
 import pytest
 
-from homeassistant.components import camera, ffmpeg
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.camera import TurboJPEGSingleton
-from homeassistant.components.event import EventDeviceClass
-from homeassistant.components.homekit.accessories import HomeBridge
-from homeassistant.components.homekit.const import (
+from inpui.components import camera, ffmpeg
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.camera import TurboJPEGSingleton
+from inpui.components.event import EventDeviceClass
+from inpui.components.homekit.accessories import HomeBridge
+from inpui.components.homekit.const import (
     AUDIO_CODEC_COPY,
     CHAR_MOTION_DETECTED,
     CHAR_PROGRAMMABLE_SWITCH_EVENT,
@@ -30,19 +30,19 @@ from homeassistant.components.homekit.const import (
     VIDEO_CODEC_H264_OMX,
     VIDEO_CODEC_H264_V4L2M2M,
 )
-from homeassistant.components.homekit.type_cameras import Camera
-from homeassistant.components.homekit.type_switches import Switch
-from homeassistant.const import (
+from inpui.components.homekit.type_cameras import Camera
+from inpui.components.homekit.type_switches import Switch
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.components.camera.common import mock_turbo_jpeg
 

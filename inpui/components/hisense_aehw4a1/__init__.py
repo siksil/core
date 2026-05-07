@@ -8,12 +8,12 @@ import pyaehw4a1.exceptions
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 

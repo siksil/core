@@ -10,18 +10,18 @@ from aiohttp.web_request import Request
 from aiohttp.web_response import Response
 from python_overseerr import OverseerrConnectionError
 
-from homeassistant.components import cloud
-from homeassistant.components.webhook import (
+from inpui.components import cloud
+from inpui.components.webhook import (
     async_generate_url,
     async_register,
     async_unregister,
 )
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.http import HomeAssistantView
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.http import HomeAssistantView
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, EVENT_KEY, JSON_PAYLOAD, LOGGER, REGISTERED_NOTIFICATIONS
 from .coordinator import OverseerrConfigEntry, OverseerrCoordinator

@@ -7,14 +7,14 @@ from ohme import ChargeSlot
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ohme.const import DOMAIN
-from homeassistant.components.ohme.services import (
+from inpui.components.ohme.const import DOMAIN
+from inpui.components.ohme.services import (
     ATTR_CONFIG_ENTRY,
     ATTR_PRICE_CAP,
     SERVICE_LIST_CHARGE_SLOTS,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from . import setup_integration
 

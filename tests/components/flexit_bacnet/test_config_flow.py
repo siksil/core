@@ -5,9 +5,9 @@ import asyncio.exceptions
 from flexit_bacnet import DecodingError
 import pytest
 
-from homeassistant.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_DEVICE_ID, CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form(

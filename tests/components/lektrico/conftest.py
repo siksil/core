@@ -7,14 +7,14 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.lektrico.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.lektrico.const import DOMAIN
+from inpui.const import (
     ATTR_HW_VERSION,
     ATTR_SERIAL_NUMBER,
     CONF_HOST,
     CONF_TYPE,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry, load_fixture
 

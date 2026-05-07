@@ -12,19 +12,19 @@ from roborock.data.b01_q10.b01_q10_code_mappings import (
 from roborock.exceptions import RoborockException
 from roborock.roborock_typing import RoborockCommand
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     Segment,
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.core import HomeAssistant, ServiceResponse, callback
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant, ServiceResponse, callback
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotSupported,
     ServiceValidationError,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import (

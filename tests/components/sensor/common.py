@@ -1,12 +1,12 @@
 """Common test utilities for sensor entity component tests."""
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
 )
-from homeassistant.components.sensor.const import DEVICE_CLASS_STATE_CLASSES
-from homeassistant.const import (
+from inpui.components.sensor.const import DEVICE_CLASS_STATE_CLASSES
+from inpui.const import (
     CONCENTRATION_GRAMS_PER_CUBIC_METER,
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION,

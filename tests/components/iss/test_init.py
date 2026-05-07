@@ -4,11 +4,11 @@ from unittest.mock import MagicMock
 
 from requests.exceptions import ConnectionError as RequestsConnectionError, HTTPError
 
-from homeassistant.components.iss.const import MAX_CONSECUTIVE_FAILURES
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.components.iss.const import MAX_CONSECUTIVE_FAILURES
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_LATITUDE, ATTR_LONGITUDE, CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from tests.common import MockConfigEntry
 

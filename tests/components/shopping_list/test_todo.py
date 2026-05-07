@@ -5,16 +5,16 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     ATTR_ITEM,
     ATTR_RENAME,
     ATTR_STATUS,
     DOMAIN as TODO_DOMAIN,
     TodoServices,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.typing import WebSocketGenerator
 

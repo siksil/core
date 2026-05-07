@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.moon.sensor import (
+from inpui.components.moon.sensor import (
     STATE_FIRST_QUARTER,
     STATE_FULL_MOON,
     STATE_LAST_QUARTER,
@@ -16,10 +16,10 @@ from homeassistant.components.moon.sensor import (
     STATE_WAXING_CRESCENT,
     STATE_WAXING_GIBBOUS,
 )
-from homeassistant.components.sensor import ATTR_OPTIONS, SensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.sensor import ATTR_OPTIONS, SensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

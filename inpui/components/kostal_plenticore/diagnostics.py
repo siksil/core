@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.const import ATTR_IDENTIFIERS, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.const import ATTR_IDENTIFIERS, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from .coordinator import PlenticoreConfigEntry
 

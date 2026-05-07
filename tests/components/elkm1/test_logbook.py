@@ -1,6 +1,6 @@
 """The tests for elkm1 logbook."""
 
-from homeassistant.components.elkm1.const import (
+from inpui.components.elkm1.const import (
     ATTR_KEY,
     ATTR_KEY_NAME,
     ATTR_KEYPAD_ID,
@@ -8,9 +8,9 @@ from homeassistant.components.elkm1.const import (
     DOMAIN,
     EVENT_ELKM1_KEYPAD_KEY_PRESSED,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import _patch_discovery, _patch_elk
 

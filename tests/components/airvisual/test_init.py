@@ -2,7 +2,7 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.airvisual import (
+from inpui.components.airvisual import (
     CONF_CITY,
     CONF_GEOGRAPHIES,
     CONF_INTEGRATION_TYPE,
@@ -13,8 +13,8 @@ from homeassistant.components.airvisual import (
 )
 
 # pylint: disable-next=hass-component-root-import
-from homeassistant.components.airvisual_pro.const import DOMAIN as AIRVISUAL_PRO_DOMAIN
-from homeassistant.const import (
+from inpui.components.airvisual_pro.const import DOMAIN as AIRVISUAL_PRO_DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_COUNTRY,
     CONF_IP_ADDRESS,
@@ -23,8 +23,8 @@ from homeassistant.const import (
     CONF_PASSWORD,
     CONF_STATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, issue_registry as ir
 
 from .conftest import (
     COORDS_CONFIG,

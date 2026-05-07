@@ -6,11 +6,11 @@ from collections.abc import Iterable
 import logging
 from typing import Any
 
-from homeassistant.components import remote
-from homeassistant.const import CONF_DEVICE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components import remote
+from inpui.const import CONF_DEVICE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import CONF_REMOTE, DOMAIN
 

@@ -7,8 +7,8 @@ from pyps4_2ndscreen.credential import get_ddp_message
 from pyps4_2ndscreen.ddp import DEFAULT_UDP_PORT
 from pyps4_2ndscreen.media_art import TYPE_APP as PS_TYPE_APP
 
-from homeassistant.components import ps4
-from homeassistant.components.media_player import (
+from inpui.components import ps4
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_CONTENT_ID,
@@ -16,7 +16,7 @@ from homeassistant.components.media_player import (
     ATTR_MEDIA_TITLE,
     MediaType,
 )
-from homeassistant.components.ps4.const import (
+from inpui.components.ps4.const import (
     ATTR_MEDIA_IMAGE_URL,
     CONFIG_ENTRY_VERSION as VERSION,
     DEFAULT_REGION,
@@ -24,7 +24,7 @@ from homeassistant.components.ps4.const import (
     GAMES_FILE,
     PS4_DATA,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_COMMAND,
     ATTR_ENTITY_ID,
     ATTR_LOCKED,
@@ -37,9 +37,9 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

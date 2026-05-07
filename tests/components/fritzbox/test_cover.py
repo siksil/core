@@ -5,10 +5,10 @@ from unittest.mock import Mock, call, patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import ATTR_POSITION, DOMAIN as COVER_DOMAIN
-from homeassistant.components.fritzbox.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.cover import ATTR_POSITION, DOMAIN as COVER_DOMAIN
+from inpui.components.fritzbox.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICES,
     SERVICE_CLOSE_COVER,
@@ -18,9 +18,9 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import (
     FritzDeviceCoverMock,

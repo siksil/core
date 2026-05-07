@@ -10,17 +10,17 @@ from pyatmo.const import ALL_SCOPES
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import cloud
-from homeassistant.components.netatmo import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components import cloud
+from inpui.components.netatmo import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .common import (
     FAKE_WEBHOOK_ACTIVATION,

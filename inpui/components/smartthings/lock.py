@@ -6,9 +6,9 @@ from typing import Any
 
 from pysmartthings import Attribute, Capability, Command
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SmartThingsConfigEntry
 from .const import MAIN

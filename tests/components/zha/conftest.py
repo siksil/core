@@ -26,9 +26,9 @@ from zigpy.zcl.clusters.general import Basic, Groups
 from zigpy.zcl.foundation import Status
 import zigpy.zdo.types as zdo_t
 
-from homeassistant.components.zha import const as zha_const
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zha import const as zha_const
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import patch_cluster as common_patch_cluster
 

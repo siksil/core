@@ -32,18 +32,18 @@ from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.lambdas import StatementLambdaElement
 import voluptuous as vol
 
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant, callback, valid_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.frame import report_usage
-from homeassistant.helpers.recorder import DATA_RECORDER
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.collection import chunked_or_all
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.unit_conversion import (
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant, callback, valid_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.frame import report_usage
+from inpui.helpers.recorder import DATA_RECORDER
+from inpui.helpers.singleton import singleton
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.collection import chunked_or_all
+from inpui.util.enum import try_parse_enum
+from inpui.util.unit_conversion import (
     ApparentPowerConverter,
     AreaConverter,
     BaseUnitConverter,

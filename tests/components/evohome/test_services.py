@@ -10,16 +10,16 @@ from evohomeasync2 import EvohomeClient
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.evohome.const import (
+from inpui.components.evohome.const import (
     ATTR_DURATION,
     ATTR_PERIOD,
     ATTR_SETPOINT,
     DOMAIN,
     EvoService,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_MODE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.const import ATTR_ENTITY_ID, ATTR_MODE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .const import TEST_INSTALLS
 

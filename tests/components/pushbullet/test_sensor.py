@@ -4,13 +4,13 @@ from unittest.mock import Mock
 
 import pytest
 
-from homeassistant.components.pushbullet.const import DOMAIN
-from homeassistant.components.pushbullet.sensor import (
+from inpui.components.pushbullet.const import DOMAIN
+from inpui.components.pushbullet.sensor import (
     SENSOR_TYPES,
     PushBulletNotificationSensor,
 )
-from homeassistant.const import MAX_LENGTH_STATE_STATE
-from homeassistant.core import HomeAssistant
+from inpui.const import MAX_LENGTH_STATE_STATE
+from inpui.core import HomeAssistant
 
 from . import MOCK_CONFIG
 

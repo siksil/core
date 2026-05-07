@@ -6,13 +6,13 @@ from airthings_ble import AirthingsDeviceType
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.airthings_ble.const import (
+from inpui.components.airthings_ble.const import (
     DEFAULT_SCAN_INTERVAL,
     DEVICE_MODEL,
     DEVICE_SPECIFIC_SCAN_INTERVAL,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     CORENTIUM_HOME_2_DEVICE_INFO,

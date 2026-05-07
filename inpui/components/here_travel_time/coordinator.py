@@ -26,14 +26,14 @@ from here_transit import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_MODE, UnitOfLength
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.location import find_coordinates
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_MODE, UnitOfLength
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.location import find_coordinates
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import DistanceConverter
 
 from .const import (
     CONF_ARRIVAL_TIME,

@@ -13,12 +13,12 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.shelly import (
+from inpui.components.shelly import (
     BLOCK_SLEEPING_PLATFORMS,
     PLATFORMS,
     RPC_SLEEPING_PLATFORMS,
 )
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     CONF_GEN,
     CONF_SLEEP_PERIOD,
     DOMAIN,
@@ -26,11 +26,11 @@ from homeassistant.components.shelly.const import (
     REST_SENSORS_UPDATE_INTERVAL,
     RPC_SENSORS_POLLING_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_MODEL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_MODEL, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import (
     CONNECTION_NETWORK_MAC,
     DeviceEntry,
     DeviceRegistry,

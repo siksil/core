@@ -10,17 +10,17 @@ from yalexs.exceptions import AugustApiAIOHTTPError
 from yalexs.manager.exceptions import CannotConnect, InvalidAuth, RequireValidation
 from yalexs.manager.gateway import Config as YaleXSConfig
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
 )
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
@@ -87,7 +87,7 @@ async def async_setup_august(
     await august_gateway.async_refresh_access_token_if_needed()
     data = entry.runtime_data = AugustData(hass, august_gateway)
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, data.async_stop)
+        hass.bus.async_listen(EVENT_INPUI_STOP, data.async_stop)
     )
     entry.async_on_unload(data.async_stop)
     await data.async_setup()

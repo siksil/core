@@ -9,8 +9,8 @@ from typing import Any
 
 from pylibrespot_java import LibrespotJavaAPI
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_ANNOUNCE,
     ATTR_MEDIA_ENQUEUE,
     BrowseMedia,
@@ -21,21 +21,21 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.components.spotify import (
+from inpui.components.spotify import (
     async_browse_media as spotify_async_browse_media,
     is_spotify_media_type,
     resolve_spotify_media_type,
     spotify_uri_from_media_browser_url,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.dispatcher import (
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.dt import utcnow
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.dt import utcnow
 
 from .browse_media import (
     convert_to_owntone_uri,

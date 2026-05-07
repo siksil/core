@@ -12,9 +12,9 @@ from aiohttp import web
 from uiprotect.data import Camera, Event
 from uiprotect.exceptions import ClientError
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.http import HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .data import ProtectData, async_get_data_for_entry_id, async_get_data_for_nvr_id
 

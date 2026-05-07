@@ -13,8 +13,8 @@ from crownstone_cloud.exceptions import (
 import pytest
 from serial.tools.list_ports_common import ListPortInfo
 
-from homeassistant.components import usb
-from homeassistant.components.crownstone.const import (
+from inpui.components import usb
+from inpui.components.crownstone.const import (
     CONF_USB_MANUAL_PATH,
     CONF_USB_PATH,
     CONF_USB_SPHERE,
@@ -24,9 +24,9 @@ from homeassistant.components.crownstone.const import (
     DONT_USE_USB,
     MANUAL_PATH,
 )
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

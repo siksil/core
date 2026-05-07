@@ -10,13 +10,13 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     callback,
     is_callback,
     is_callback_check_partial,
 )
-from homeassistant.util import logging as logging_util
+from inpui.util import logging as logging_util
 
 
 async def empty_log_queue() -> None:

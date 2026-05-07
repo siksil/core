@@ -3,9 +3,9 @@
 import datetime
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .store import GoogleConfigEntry
 

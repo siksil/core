@@ -5,16 +5,16 @@ from typing import Any
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import event, template
-from homeassistant.const import (
+from inpui.components import event, template
+from inpui.const import (
     ATTR_ENTITY_PICTURE,
     ATTR_ICON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import ConfigurationStyle, async_get_flow_preview_state
 

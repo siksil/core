@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.awair.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.components.awair.const import DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

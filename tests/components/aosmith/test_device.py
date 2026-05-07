@@ -2,9 +2,9 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.aosmith.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.aosmith.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

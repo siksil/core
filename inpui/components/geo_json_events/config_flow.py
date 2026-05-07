@@ -7,8 +7,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
@@ -16,8 +16,8 @@ from homeassistant.const import (
     CONF_URL,
     UnitOfLength,
 )
-from homeassistant.helpers import config_validation as cv, selector
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.helpers import config_validation as cv, selector
+from inpui.util.unit_conversion import DistanceConverter
 
 from .const import DEFAULT_RADIUS_IN_M, DOMAIN
 

@@ -6,18 +6,18 @@ from datetime import timedelta
 import logging
 from typing import Any
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.start import async_at_start
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.exceptions import TemplateError
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.start import async_at_start
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .data import HistoryStats, HistoryStatsState
 

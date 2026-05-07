@@ -9,25 +9,25 @@ from unittest.mock import AsyncMock, Mock, patch
 from botocore.exceptions import BotoCoreError, ConnectTimeoutError
 import pytest
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DATA_MANAGER,
     DOMAIN as BACKUP_DOMAIN,
     AgentBackup,
     UploadBackupEvent,
 )
-from homeassistant.components.cloudflare_r2.backup import (
+from inpui.components.cloudflare_r2.backup import (
     MULTIPART_MIN_PART_SIZE_BYTES,
     R2BackupAgent,
     async_register_backup_agents_listener,
     suggested_filenames,
 )
-from homeassistant.components.cloudflare_r2.const import (
+from inpui.components.cloudflare_r2.const import (
     CONF_ENDPOINT_URL,
     DATA_BACKUP_AGENT_LISTENERS,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .const import USER_INPUT

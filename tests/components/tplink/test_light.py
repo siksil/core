@@ -19,13 +19,13 @@ from kasa.interfaces import LightEffect
 from kasa.iot import IotDevice
 import pytest
 
-from homeassistant.components import tplink
-from homeassistant.components.homeassistant.scene import (
+from inpui.components import tplink
+from inpui.components.homeassistant.scene import (
     CONF_SCENE_ID,
     CONF_SNAPSHOT,
     SERVICE_CREATE,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -43,25 +43,25 @@ from homeassistant.components.light import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.components.tplink.light import (
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN
+from inpui.components.tplink.const import DOMAIN
+from inpui.components.tplink.light import (
     SERVICE_RANDOM_EFFECT,
     SERVICE_SEQUENCE_EFFECT,
 )
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     _mocked_device,

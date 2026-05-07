@@ -6,7 +6,7 @@ from typing import Any
 
 from pysmlight.const import Actions
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .coordinator import SmConfigEntry
 

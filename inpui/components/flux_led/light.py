@@ -11,7 +11,7 @@ from flux_led.protocol import MusicMode
 from flux_led.utils import rgbcw_brightness, rgbcw_to_rgbwc, rgbw_brightness
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
@@ -23,12 +23,12 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.const import CONF_EFFECT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import VolDictType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_EFFECT
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import VolDictType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     CONF_COLORS,

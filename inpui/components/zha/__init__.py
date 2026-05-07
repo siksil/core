@@ -12,24 +12,24 @@ from zha.zigbee.device import get_device_automation_triggers
 from zigpy.config import CONF_DATABASE, CONF_DEVICE, CONF_DEVICE_PATH
 from zigpy.exceptions import NetworkSettingsInconsistent, TransientConnectionError
 
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_is_firmware_update_in_progress,
     async_notify_firmware_info,
     async_register_firmware_info_provider,
 )
-from homeassistant.components.usb import usb_device_from_path
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.usb import usb_device_from_path
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_TYPE,
     EVENT_CORE_CONFIG_UPDATE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from . import homeassistant_hardware, repairs, websocket_api
 from .const import (
@@ -246,7 +246,7 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
         await ha_zha_data.gateway_proxy.shutdown()
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_shutdown)
     )
 
     @callback

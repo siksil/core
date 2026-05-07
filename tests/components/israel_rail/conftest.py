@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 from israelrailapi.api import TrainRoute
 import pytest
 
-from homeassistant.components.israel_rail import CONF_DESTINATION, CONF_START, DOMAIN
+from inpui.components.israel_rail import CONF_DESTINATION, CONF_START, DOMAIN
 
 from tests.common import MockConfigEntry
 

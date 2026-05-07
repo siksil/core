@@ -4,10 +4,10 @@ from unittest.mock import ANY
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
-from homeassistant.core import HassJobType, HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
+from inpui.core import HassJobType, HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_mqtt_message, mock_component
 from tests.typing import MqttMockHAClient, MqttMockHAClientGenerator

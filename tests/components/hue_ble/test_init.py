@@ -6,10 +6,10 @@ from bleak.backends.device import BLEDevice
 from HueBLE import ConnectionError, HueBleError
 import pytest
 
-from homeassistant.components.hue_ble.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.hue_ble.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import TEST_DEVICE_MAC, TEST_DEVICE_NAME
 

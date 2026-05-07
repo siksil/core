@@ -9,15 +9,15 @@ from urllib.parse import urlencode
 
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     PLATFORM_SCHEMA as NOTIFY_PLATFORM_SCHEMA,
     BaseNotificationService,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 DOMAIN = "lannouncer"
 

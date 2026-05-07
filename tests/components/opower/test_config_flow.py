@@ -7,11 +7,11 @@ from opower import CannotConnect, InvalidAuth, MfaChallenge
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.components.recorder import Recorder
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.opower.const import DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 

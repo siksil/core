@@ -9,7 +9,7 @@ import logging
 from logging import Logger
 from typing import Any, TypeGuard
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -17,14 +17,14 @@ from homeassistant.const import (
     ATTR_LABEL_ID,
     ENTITY_MATCH_NONE,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     area_registry as ar,

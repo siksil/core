@@ -6,9 +6,9 @@ from lacrosse_view import Location, LoginError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.lacrosse_view.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.lacrosse_view.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

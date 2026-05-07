@@ -6,13 +6,13 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import ExtendedJSONEncoder
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import ExtendedJSONEncoder
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
 
 from . import websocket_api
 from .const import (
@@ -68,6 +68,6 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             _LOGGER.error("Error storing traces", exc_info=exc)
 
     # Store traces when stopping hass
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_store_traces_at_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_store_traces_at_stop)
 
     return True

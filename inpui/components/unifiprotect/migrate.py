@@ -9,12 +9,12 @@ from typing import TypedDict
 from uiprotect import ProtectApiClient
 from uiprotect.data import Bootstrap
 
-from homeassistant.components.automation import automations_with_entity
-from homeassistant.components.script import scripts_with_entity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.helpers.issue_registry import IssueSeverity
+from inpui.components.automation import automations_with_entity
+from inpui.components.script import scripts_with_entity
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.helpers.issue_registry import IssueSeverity
 
 from .const import DOMAIN
 from .data import UFPConfigEntry

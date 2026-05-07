@@ -2,16 +2,16 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components.panasonic_viera.const import (
+from inpui.components.panasonic_viera.const import (
     ATTR_DEVICE_INFO,
     ATTR_UDN,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import (
     MOCK_CONFIG_DATA,

@@ -6,21 +6,21 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     is_on as device_tracker_is_on,
 )
-from homeassistant.components.group import get_entity_ids as group_get_entity_ids
-from homeassistant.components.light import (
+from inpui.components.group import get_entity_ids as group_get_entity_ids
+from inpui.components.light import (
     ATTR_PROFILE,
     ATTR_TRANSITION,
     DOMAIN as LIGHT_DOMAIN,
     is_on as light_is_on,
 )
-from homeassistant.components.person import DOMAIN as PERSON_DOMAIN
-from homeassistant.const import (
+from inpui.components.person import DOMAIN as PERSON_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_HOME,
@@ -28,15 +28,15 @@ from homeassistant.const import (
     SUN_EVENT_SUNRISE,
     SUN_EVENT_SUNSET,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import (
     async_track_point_in_utc_time,
     async_track_state_change_event,
 )
-from homeassistant.helpers.sun import get_astral_event_next, is_up
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.sun import get_astral_event_next, is_up
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 DOMAIN = "device_sun_light_trigger"
 CONF_DEVICE_GROUP = "device_group"
@@ -85,7 +85,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     if hass.is_running:
         await activate_on_start(None)
     else:
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, activate_on_start)
+        hass.bus.async_listen_once(EVENT_INPUI_START, activate_on_start)
 
     return True
 

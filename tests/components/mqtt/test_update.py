@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import mqtt, update
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components import mqtt, update
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

@@ -9,17 +9,17 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from yalesmartalarmclient import UnknownError, YaleDoorManAPI, YaleSmartAlarmData
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_UNLOCK,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

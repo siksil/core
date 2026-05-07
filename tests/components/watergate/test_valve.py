@@ -4,9 +4,9 @@ from collections.abc import Generator
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.valve import DOMAIN as VALVE_DOMAIN, ValveState
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_CLOSE_VALVE, SERVICE_OPEN_VALVE
-from homeassistant.core import HomeAssistant
+from inpui.components.valve import DOMAIN as VALVE_DOMAIN, ValveState
+from inpui.const import ATTR_ENTITY_ID, SERVICE_CLOSE_VALVE, SERVICE_OPEN_VALVE
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

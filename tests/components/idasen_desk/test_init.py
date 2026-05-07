@@ -7,10 +7,10 @@ from bleak.exc import BleakError
 from idasen_ha.errors import AuthFailedError
 import pytest
 
-from homeassistant.components.idasen_desk.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.components.idasen_desk.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from . import init_integration
 
@@ -26,7 +26,7 @@ async def test_setup_and_shutdown(
     mock_desk_api.connect.assert_called_once()
     mock_desk_api.is_connected = True
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_desk_api.disconnect.assert_called_once()
 

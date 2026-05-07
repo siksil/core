@@ -1,8 +1,8 @@
 """Base entity for VegeHub."""
 
-from homeassistant.const import CONF_HOST, CONF_MAC
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_HOST, CONF_MAC
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import MANUFACTURER, MODEL
 from .coordinator import VegeHubCoordinator

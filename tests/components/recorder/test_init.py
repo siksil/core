@@ -16,9 +16,9 @@ import pytest
 from sqlalchemy.exc import DatabaseError, OperationalError, SQLAlchemyError
 from sqlalchemy.pool import QueuePool
 
-from homeassistant.components import recorder
-from homeassistant.components.lock import LockState
-from homeassistant.components.recorder import (
+from inpui.components import recorder
+from inpui.components.lock import LockState
+from inpui.components.recorder import (
     CONF_AUTO_PURGE,
     CONF_AUTO_REPACK,
     CONF_COMMIT_INTERVAL,
@@ -33,13 +33,13 @@ from homeassistant.components.recorder import (
     migration,
     statistics,
 )
-from homeassistant.components.recorder.const import (
+from inpui.components.recorder.const import (
     EVENT_RECORDER_5MIN_STATISTICS_GENERATED,
     EVENT_RECORDER_HOURLY_STATISTICS_GENERATED,
     KEEPALIVE_TIME,
     SupportedDialect,
 )
-from homeassistant.components.recorder.db_schema import (
+from inpui.components.recorder.db_schema import (
     SCHEMA_VERSION,
     EventData,
     Events,
@@ -50,38 +50,38 @@ from homeassistant.components.recorder.db_schema import (
     StatesMeta,
     StatisticsRuns,
 )
-from homeassistant.components.recorder.models import process_timestamp
-from homeassistant.components.recorder.queries import select_event_type_ids
-from homeassistant.components.recorder.services import (
+from inpui.components.recorder.models import process_timestamp
+from inpui.components.recorder.queries import select_event_type_ids
+from inpui.components.recorder.services import (
     SERVICE_DISABLE,
     SERVICE_ENABLE,
     SERVICE_PURGE,
     SERVICE_PURGE_ENTITIES,
 )
-from homeassistant.components.recorder.table_managers import (
+from inpui.components.recorder.table_managers import (
     state_attributes as state_attributes_table_manager,
     states_meta as states_meta_table_manager,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import (
+from inpui.components.recorder.util import session_scope
+from inpui.const import (
     EVENT_COMPONENT_LOADED,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     MATCH_ALL,
 )
-from homeassistant.core import Context, CoreState, Event, HomeAssistant, State, callback
-from homeassistant.helpers import (
+from inpui.core import Context, CoreState, Event, HomeAssistant, State, callback
+from inpui.helpers import (
     entity_registry as er,
     issue_registry as ir,
     recorder as recorder_helper,
 )
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import json_loads
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.json import json_loads
 
 from .common import (
     async_block_recorder,
@@ -167,7 +167,7 @@ async def test_shutdown_before_startup_finishes(
     session = await instance.async_add_executor_job(instance.get_session)
 
     with patch.object(instance, "engine"):
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
+        hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
         await hass.async_block_till_done()
         await hass.async_stop()
 
@@ -229,7 +229,7 @@ async def test_shutdown_closes_connections(
     await instance.async_add_executor_job(_ensure_connected)
 
     with patch.object(pool, "dispose", wraps=pool.dispose) as dispose:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
+        hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
         await hass.async_block_till_done()
 
     assert len(dispose.mock_calls) == 1
@@ -254,7 +254,7 @@ async def test_state_gets_saved_when_set_before_start_event(
 
     hass.states.async_set(entity_id, state, attributes)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
 
     await async_wait_recording_done(hass)
 
@@ -503,8 +503,8 @@ async def test_force_shutdown_with_queue_of_writes_that_generate_exceptions(
             hass.states.async_set(entity_id, "on", attributes)
             hass.states.async_set(entity_id, "off", attributes)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+        hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
+        hass.bus.async_fire(EVENT_INPUI_CLOSE)
         await hass.async_block_till_done()
 
     assert "Error executing query" in caplog.text
@@ -680,10 +680,10 @@ async def test_saving_event_exclude_event_type(
         "exclude": {
             "event_types": [
                 "service_registered",
-                "homeassistant_start",
+                "inpui_start",
                 "component_loaded",
                 "core_config_updated",
-                "homeassistant_started",
+                "inpui_started",
                 "test",
             ]
         }
@@ -1757,7 +1757,7 @@ async def test_database_corruption_while_running(
     new_start_time = instance.recorder_runs_manager.recording_start
     assert original_start_time < new_start_time
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     hass.stop()
 
@@ -2046,7 +2046,7 @@ async def test_database_lock_timeout(
     This test is specific for SQLite: Locking is not implemented for other engines.
     """
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
 
     instance = get_instance(hass)
 
@@ -2071,7 +2071,7 @@ async def test_database_lock_without_instance(
     hass: HomeAssistant, setup_recorder: None
 ) -> None:
     """Test database lock doesn't fail if instance is not initialized."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
 
     instance = get_instance(hass)
     with patch.object(instance, "engine"):
@@ -2102,7 +2102,7 @@ async def test_database_connection_keep_alive(
     instance = await async_setup_recorder_instance(hass)
     # We have to mock this since we don't have a mock
     # MySQL server available in tests.
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await instance.async_recorder_ready.wait()
 
     async_fire_time_changed(
@@ -2126,7 +2126,7 @@ async def test_database_connection_keep_alive_disabled_on_sqlite(
     """
 
     instance = await async_setup_recorder_instance(hass)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await instance.async_recorder_ready.wait()
 
     async_fire_time_changed(
@@ -2673,7 +2673,7 @@ async def test_events_are_recorded_until_final_write(
     """Test that events are recorded until the final write."""
     instance = await async_setup_recorder_instance(hass, {})
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     hass.bus.async_fire("fake_event")
     await async_wait_recording_done(hass)
@@ -2706,7 +2706,7 @@ async def test_events_are_recorded_until_final_write(
     db_event = events[0]
     assert db_event.event_type == "fake_event"
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
+    hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
     await hass.async_block_till_done()
 
     assert not instance.engine

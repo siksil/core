@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.sensor import ATTR_STATE_CLASS, async_rounded_state
-from homeassistant.components.tilt_ble.const import DOMAIN
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import ATTR_STATE_CLASS, async_rounded_state
+from inpui.components.tilt_ble.const import DOMAIN
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
 
 from . import TILT_GREEN_SERVICE_INFO
 

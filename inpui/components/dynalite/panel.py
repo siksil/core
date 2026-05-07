@@ -3,11 +3,11 @@
 from dynalite_panel import get_build_id, locate_dir
 import voluptuous as vol
 
-from homeassistant.components import panel_custom, websocket_api
-from homeassistant.components.cover import DEVICE_CLASSES
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.const import CONF_DEFAULT, CONF_HOST, CONF_NAME, CONF_PORT
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import panel_custom, websocket_api
+from inpui.components.cover import DEVICE_CLASSES
+from inpui.components.http import StaticPathConfig
+from inpui.const import CONF_DEFAULT, CONF_HOST, CONF_NAME, CONF_PORT
+from inpui.core import HomeAssistant, callback
 
 from .const import (
     CONF_ACTIVE,

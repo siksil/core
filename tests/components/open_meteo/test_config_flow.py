@@ -2,12 +2,12 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.open_meteo.const import DOMAIN
-from homeassistant.components.zone import ENTITY_ID_HOME
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.open_meteo.const import DOMAIN
+from inpui.components.zone import ENTITY_ID_HOME
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ZONE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_full_user_flow(

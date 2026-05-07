@@ -8,14 +8,14 @@ from hdfury import HDFuryError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-import homeassistant.helpers.entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+import inpui.helpers.entity_registry as er
 
 from . import setup_integration
 

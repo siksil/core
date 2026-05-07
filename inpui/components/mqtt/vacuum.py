@@ -7,21 +7,21 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import vacuum
-from homeassistant.components.vacuum import (
+from inpui.components import vacuum
+from inpui.components.vacuum import (
     ENTITY_ID_FORMAT,
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, VolSchemaType
-from homeassistant.util.json import json_loads_object
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_SUPPORTED_FEATURES, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.json import json_dumps
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, VolSchemaType
+from inpui.util.json import json_loads_object
 
 from . import subscription
 from .config import MQTT_BASE_SCHEMA

@@ -2,8 +2,8 @@
 
 from ipaddress import ip_address
 
-from homeassistant.components.kodi.const import DEFAULT_SSL
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.kodi.const import DEFAULT_SSL
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 TEST_HOST = {
     "host": "1.1.1.1",

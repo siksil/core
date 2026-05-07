@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from nibe.coil import Coil, CoilData
 
-from homeassistant.helpers.entity import async_generate_entity_id
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.entity import async_generate_entity_id
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import CoilCoordinator
 

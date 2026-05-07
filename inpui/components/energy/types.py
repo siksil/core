@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Awaitable, Callable
 from typing import Protocol, TypedDict
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 class SolarForecastType(TypedDict):

@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import notify
-from homeassistant.components.demo import DOMAIN, notify as demo
-from homeassistant.const import Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import notify
+from inpui.components.demo import DOMAIN, notify as demo
+from inpui.const import Platform
+from inpui.core import Event, HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_capture_events
 

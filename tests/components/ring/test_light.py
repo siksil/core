@@ -6,11 +6,11 @@ import pytest
 import ring_doorbell
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .common import MockConfigEntry, setup_platform
 

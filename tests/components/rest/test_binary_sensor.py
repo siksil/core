@@ -8,12 +8,12 @@ import aiohttp
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.rest import DOMAIN
-from homeassistant.const import (
+from inpui.components.rest import DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     CONTENT_TYPE_JSON,
@@ -22,9 +22,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import get_fixture_path
 from tests.test_util.aiohttp import AiohttpClientMocker

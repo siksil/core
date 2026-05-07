@@ -7,14 +7,14 @@ import pytest
 from telegram import Chat, Message
 from telegram.constants import ChatType, ParseMode
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN as NOTIFY_DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import Context, HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import Context, HomeAssistant
 
 from tests.common import async_capture_events
 

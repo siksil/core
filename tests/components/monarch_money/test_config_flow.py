@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock
 
 from monarchmoney import LoginFailedException, RequireMFAException
 
-from homeassistant.components.monarch_money.const import CONF_MFA_CODE, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.monarch_money.const import CONF_MFA_CODE, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form_simple(

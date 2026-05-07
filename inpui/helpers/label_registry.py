@@ -8,10 +8,10 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Literal, TypedDict
 
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.util.dt import utc_from_timestamp, utcnow
-from homeassistant.util.event_type import EventType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import Event, HomeAssistant, callback
+from inpui.util.dt import utc_from_timestamp, utcnow
+from inpui.util.event_type import EventType
+from inpui.util.hass_dict import HassKey
 
 from .normalized_name_base_registry import (
     NormalizedNameBaseRegistryEntry,

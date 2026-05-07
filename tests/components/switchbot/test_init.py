@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.switchbot.const import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.switchbot.const import (
     CONF_CURTAIN_SPEED,
     CONF_RETRY_COUNT,
     DEFAULT_CURTAIN_SPEED,
@@ -15,9 +15,9 @@ from homeassistant.components.switchbot.const import (
     DEPRECATED_SENSOR_TYPE_AIR_PURIFIER_TABLE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ADDRESS, CONF_NAME, CONF_SENSOR_TYPE
+from inpui.core import HomeAssistant
 
 from . import (
     AIR_PURIFIER_PM25_SERVICE_INFO,

@@ -10,11 +10,11 @@ from urllib.parse import urlparse
 from async_upnp_client.profiles.dlna import DmsDevice
 import voluptuous as vol
 
-from homeassistant.components import ssdp
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE_ID, CONF_HOST, CONF_URL
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components import ssdp
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE_ID, CONF_HOST, CONF_URL
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_SERVICE_LIST,
     SsdpServiceInfo,

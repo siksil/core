@@ -7,7 +7,7 @@ from apyosoenergyapi import OSOEnergy
 from apyosoenergyapi.helper.const import OSOEnergyWaterHeaterData
 import voluptuous as vol
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_ELECTRIC,
     STATE_HIGH_DEMAND,
@@ -15,13 +15,13 @@ from homeassistant.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant, ServiceResponse, SupportsResponse
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonValueType
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant, ServiceResponse, SupportsResponse
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonValueType
 
 from .const import DOMAIN
 from .entity import OSOEnergyEntity

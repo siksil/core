@@ -1,6 +1,6 @@
 """Constants for the Motionblinds component."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "motion_blinds"
 MANUFACTURER = "Motionblinds, Coulisse B.V."

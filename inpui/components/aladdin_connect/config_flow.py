@@ -8,8 +8,8 @@ from genie_partner_sdk.client import AladdinConnectClient
 import jwt
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from .api import AsyncConfigFlowAuth
 from .const import CONFIG_FLOW_MINOR_VERSION, CONFIG_FLOW_VERSION, DOMAIN

@@ -6,18 +6,18 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components.input_number import (
+from inpui.components.input_number import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_MODE,
     ATTR_STEP,
     DOMAIN,
 )
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.const import ATTR_EDITABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.history import get_significant_states
+from inpui.const import ATTR_EDITABLE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.components.prowl.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.components.prowl.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

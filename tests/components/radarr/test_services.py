@@ -6,14 +6,14 @@ from aiopyarr import ArrAuthenticationException, ArrConnectionException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.radarr.const import DOMAIN
-from homeassistant.components.radarr.services import (
+from inpui.components.radarr.const import DOMAIN
+from inpui.components.radarr.services import (
     ATTR_ENTRY_ID,
     SERVICE_GET_MOVIES,
     SERVICE_GET_QUEUE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import create_entry, setup_integration
 

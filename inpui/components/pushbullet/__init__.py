@@ -6,17 +6,17 @@ import logging
 
 from pushbullet import InvalidKeyError, PushBullet, PushbulletError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.typing import ConfigType
 
 from .api import PushBulletNotificationProvider
 from .const import DATA_HASS_CONFIG, DOMAIN
@@ -56,7 +56,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         _LOGGER.debug("Starting listener for pushbullet")
         pb_provider.start()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, start_listener)
+    hass.bus.async_listen_once(EVENT_INPUI_START, start_listener)
 
     hass.async_create_task(
         discovery.async_load_platform(

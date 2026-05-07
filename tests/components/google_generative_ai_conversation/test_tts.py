@@ -12,8 +12,8 @@ from google.genai import types
 from google.genai.errors import APIError
 import pytest
 
-from homeassistant.components import tts
-from homeassistant.components.google_generative_ai_conversation.const import (
+from inpui.components import tts
+from inpui.components.google_generative_ai_conversation.const import (
     CONF_CHAT_MODEL,
     DOMAIN,
     RECOMMENDED_HARM_BLOCK_THRESHOLD,
@@ -22,16 +22,16 @@ from homeassistant.components.google_generative_ai_conversation.const import (
     RECOMMENDED_TOP_K,
     RECOMMENDED_TOP_P,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     SERVICE_PLAY_MEDIA,
 )
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import ATTR_ENTITY_ID, CONF_API_KEY
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigSubentry
+from inpui.const import ATTR_ENTITY_ID, CONF_API_KEY
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, async_mock_service
 from tests.components.tts.common import retrieve_media

@@ -8,9 +8,9 @@ from datetime import timedelta
 from requests import RequestException
 from venstarcolortouch import VenstarColorTouch
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import update_coordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import update_coordinator
 
 from .const import _LOGGER, DOMAIN, VENSTAR_SLEEP
 

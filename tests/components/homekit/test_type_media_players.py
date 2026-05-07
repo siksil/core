@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.homekit.accessories import HomeDriver
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.accessories import HomeDriver
+from inpui.components.homekit.const import (
     ATTR_KEY_NAME,
     ATTR_VALUE,
     CHAR_CONFIGURED_NAME,
@@ -17,12 +17,12 @@ from homeassistant.components.homekit.const import (
     KEY_ARROW_RIGHT,
     SERV_SWITCH,
 )
-from homeassistant.components.homekit.type_media_players import (
+from inpui.components.homekit.type_media_players import (
     MediaPlayer,
     ReceiverMediaPlayer,
     TelevisionMediaPlayer,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -30,11 +30,11 @@ from homeassistant.components.media_player import (
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     MediaPlayerDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_IDLE,
     STATE_OFF,
     STATE_ON,
@@ -42,8 +42,8 @@ from homeassistant.const import (
     STATE_PLAYING,
     STATE_STANDBY,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import CoreState, Event, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import async_mock_service
 
@@ -466,7 +466,7 @@ async def test_tv_restore(
         original_device_class=MediaPlayerDeviceClass.TV,
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = TelevisionMediaPlayer(

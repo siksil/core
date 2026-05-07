@@ -11,7 +11,7 @@ from uiprotect.exceptions import NvrError
 from uiprotect.websocket import WebsocketState
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     CameraCapabilities,
     CameraEntityFeature,
     CameraState,
@@ -23,11 +23,11 @@ from homeassistant.components.camera import (
     async_register_webrtc_provider,
     get_camera_from_entity_id,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     ATTR_BITRATE,
     ATTR_CHANNEL_ID,
     ATTR_FPS,
@@ -36,21 +36,21 @@ from homeassistant.components.unifiprotect.const import (
     DEFAULT_ATTRIBUTION,
     DOMAIN,
 )
-from homeassistant.components.unifiprotect.utils import get_camera_base_name
-from homeassistant.const import (
+from inpui.components.unifiprotect.utils import get_camera_base_name
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import patch_ufp_method
 from .utils import (

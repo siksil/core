@@ -6,18 +6,18 @@ from typing import Any
 
 from bsblan import BSBLANError, HotWaterState, SetHotWaterParam
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_OFF,
     STATE_PERFORMANCE,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BSBLanConfigEntry, BSBLanData
 from .const import DOMAIN

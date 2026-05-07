@@ -2,9 +2,9 @@
 
 from aioesphomeapi import APIClient, CameraInfo, CameraState as ESPHomeCameraState
 
-from homeassistant.components.camera import CameraState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.camera import CameraState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .conftest import MockESPHomeDeviceType
 

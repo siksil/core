@@ -1,6 +1,6 @@
 """Exceptions raised by Intergas InComfort integration."""
 
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
 
 from .const import DOMAIN
 

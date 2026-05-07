@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
     ATTR_TEMPERATURE,
@@ -16,11 +16,11 @@ from homeassistant.components.climate import (
     SERVICE_TURN_OFF,
     HVACMode,
 )
-from homeassistant.components.tessie.const import TessieClimateKeeper
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.tessie.const import TessieClimateKeeper
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .common import (
     ERROR_CONNECTION,

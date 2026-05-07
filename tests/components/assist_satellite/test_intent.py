@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_DOMAIN, MockAssistSatellite
 

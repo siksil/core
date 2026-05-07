@@ -1,9 +1,9 @@
 """Support for Elgato Lights."""
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .coordinator import ElgatoConfigEntry, ElgatoDataUpdateCoordinator

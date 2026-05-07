@@ -13,27 +13,27 @@ from uiprotect.data import Camera, Chime
 from uiprotect.exceptions import ClientError
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_NAME, Platform
-from homeassistant.core import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import ATTR_DEVICE_ID, ATTR_NAME, Platform
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.target import (
+from inpui.helpers.target import (
     TargetSelection,
     async_extract_referenced_entity_ids,
 )
-from homeassistant.util.json import JsonValueType
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.util.json import JsonValueType
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from .const import (
     ATTR_MESSAGE,

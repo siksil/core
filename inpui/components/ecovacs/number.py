@@ -11,14 +11,14 @@ from deebot_client.events import CleanCountEvent, CutDirectionEvent, VolumeEvent
 from deebot_client.events.base import Event
 from deebot_client.events.water_info import WaterCustomAmountEvent
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import DEGREE, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import DEGREE, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcovacsConfigEntry
 from .entity import (

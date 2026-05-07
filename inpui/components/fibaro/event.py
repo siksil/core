@@ -5,14 +5,14 @@ from __future__ import annotations
 from pyfibaro.fibaro_device import DeviceModel, SceneEvent
 from pyfibaro.fibaro_state_resolver import FibaroEvent
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     ENTITY_ID_FORMAT,
     EventDeviceClass,
     EventEntity,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FibaroConfigEntry
 from .entity import FibaroEntity

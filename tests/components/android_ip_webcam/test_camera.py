@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.android_ip_webcam.const import DOMAIN
-from homeassistant.components.camera import async_get_stream_source
-from homeassistant.core import HomeAssistant
+from inpui.components.android_ip_webcam.const import DOMAIN
+from inpui.components.camera import async_get_stream_source
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

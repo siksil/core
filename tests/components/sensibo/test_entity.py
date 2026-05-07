@@ -7,17 +7,17 @@ from unittest.mock import MagicMock
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_FAN_MODE,
 )
-from homeassistant.components.sensibo.const import SENSIBO_ERRORS
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.components.sensibo.const import SENSIBO_ERRORS
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 
 async def test_device(

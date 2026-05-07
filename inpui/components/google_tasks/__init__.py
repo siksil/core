@@ -6,10 +6,10 @@ import asyncio
 
 from aiohttp import ClientError, ClientResponseError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import api
 from .const import DOMAIN

@@ -6,25 +6,25 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.compensation.const import CONF_PRECISION, DOMAIN
-from homeassistant.components.compensation.sensor import ATTR_COEFFICIENTS
-from homeassistant.components.sensor import (
+from inpui.components.compensation.const import CONF_PRECISION, DOMAIN
+from inpui.components.compensation.sensor import ATTR_COEFFICIENTS
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     EVENT_STATE_CHANGED,
     SERVICE_RELOAD,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, get_fixture_path
 
@@ -95,7 +95,7 @@ async def caplog_setup_text(caplog: pytest.LogCaptureFixture) -> str:
 @pytest.mark.usefixtures("setup_compensation")
 async def test_linear_state(hass: HomeAssistant, config: dict[str, Any]) -> None:
     """Test compensation sensor state."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.states.async_set(TEST_SOURCE, 4, {})
     await hass.async_block_till_done()
 
@@ -122,7 +122,7 @@ async def test_linear_state(hass: HomeAssistant, config: dict[str, Any]) -> None
 @pytest.mark.usefixtures("setup_compensation")
 async def test_attributes_come_from_source(hass: HomeAssistant) -> None:
     """Test compensation sensor state."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.states.async_set(
         TEST_SOURCE,
         4,
@@ -148,7 +148,7 @@ async def test_linear_state_from_attribute(
     hass: HomeAssistant, config: dict[str, Any]
 ) -> None:
     """Test compensation sensor state that pulls from attribute."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
 
     hass.states.async_set(TEST_SOURCE, 3, {"value": 4})
     await hass.async_block_till_done()
@@ -328,7 +328,7 @@ async def test_non_numerical_states_from_source_entity(
     hass: HomeAssistant, config: dict[str, Any], source_state: str, expected: str
 ) -> None:
     """Test non-numerical states from source entity."""
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     hass.states.async_set(TEST_SOURCE, source_state)
     await hass.async_block_till_done()
 

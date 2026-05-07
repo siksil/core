@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, MagicMock, PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.risco import CannotConnectError, UnauthorizedError
-from homeassistant.components.risco.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.risco import CannotConnectError, UnauthorizedError
+from inpui.components.risco.const import DOMAIN
+from inpui.const import (
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_CUSTOM_BYPASS,
     SERVICE_ALARM_ARM_HOME,
@@ -21,10 +21,10 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from .util import TEST_SITE_UUID
 

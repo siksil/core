@@ -7,8 +7,8 @@ from typing import Any
 from pyhap.accessory_driver import AccessoryDriver
 from pyhap.state import State
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.core import HomeAssistant
 
 from .accessories import HomeAccessory, HomeBridge
 from .models import HomeKitConfigEntry

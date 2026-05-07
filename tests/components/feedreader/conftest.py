@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.feedreader.const import DOMAIN
-from homeassistant.components.feedreader.coordinator import EVENT_FEEDREADER
-from homeassistant.core import Event, HomeAssistant
+from inpui.components.feedreader.const import DOMAIN
+from inpui.components.feedreader.coordinator import EVENT_FEEDREADER
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_capture_events, load_fixture_bytes
 

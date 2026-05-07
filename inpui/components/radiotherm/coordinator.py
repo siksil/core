@@ -8,9 +8,9 @@ from urllib.error import URLError
 
 from radiotherm.validate import RadiothermTstatError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .data import RadioThermInitData, RadioThermUpdate, async_get_data
 

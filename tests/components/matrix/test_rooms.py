@@ -2,12 +2,12 @@
 
 import pytest
 
-from homeassistant.components.matrix import MatrixBot
-from homeassistant.components.matrix.const import DOMAIN
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.matrix import MatrixBot
+from inpui.components.matrix.const import DOMAIN
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_CONFIG_DATA, TEST_BAD_ROOM, TEST_JOINABLE_ROOMS
 
@@ -22,7 +22,7 @@ async def test_join(
     """Test joining configured rooms."""
     assert await async_setup_component(hass, DOMAIN, MOCK_CONFIG_DATA)
     assert await async_setup_component(hass, NOTIFY_DOMAIN, MOCK_CONFIG_DATA)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done(wait_background_tasks=True)
 
     # Accessing hass.data in tests is not desirable, but all the tests here

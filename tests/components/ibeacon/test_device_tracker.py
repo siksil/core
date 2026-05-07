@@ -6,25 +6,25 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
     async_last_service_info,
 )
-from homeassistant.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
-from homeassistant.components.ibeacon.const import (
+from inpui.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
+from inpui.components.ibeacon.const import (
     DOMAIN,
     UNAVAILABLE_TIMEOUT,
     UPDATE_INTERVAL,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     STATE_HOME,
     STATE_NOT_HOME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import (
     BEACON_RANDOM_ADDRESS_SERVICE_INFO,

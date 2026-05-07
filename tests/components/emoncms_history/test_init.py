@@ -8,9 +8,9 @@ import aiohttp
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.const import CONF_API_KEY, CONF_URL, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_API_KEY, CONF_URL, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup_valid_config(hass: HomeAssistant) -> None:

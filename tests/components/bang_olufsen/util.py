@@ -2,7 +2,7 @@
 
 from inflection import underscore
 
-from homeassistant.components.bang_olufsen.const import (
+from inpui.components.bang_olufsen.const import (
     BEO_REMOTE_CONTROL_KEYS,
     BEO_REMOTE_KEYS,
     BEO_REMOTE_SUBMENU_CONTROL,

@@ -13,19 +13,19 @@ import aiooui
 from getmac import get_mac_address
 from nmap import PortScanner, PortScannerError
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     CONF_SCAN_INTERVAL,
     DEFAULT_CONSIDER_HOME,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EXCLUDE, CONF_HOSTS, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_EXCLUDE, CONF_HOSTS, EVENT_INPUI_STARTED
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.util import dt as dt_util
 
 from .const import (
     CONF_HOME_INTERVAL,
@@ -213,7 +213,7 @@ class NmapDeviceScanner:
 
         self._entry.async_on_unload(
             self._hass.bus.async_listen(
-                EVENT_HOMEASSISTANT_STARTED, self._async_start_scanner
+                EVENT_INPUI_STARTED, self._async_start_scanner
             )
         )
         registry = er.async_get(self._hass)

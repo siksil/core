@@ -6,19 +6,19 @@ from aiohttp.client_exceptions import ClientConnectorError
 from fullykiosk import FullyKioskError
 import pytest
 
-from homeassistant.components.fully_kiosk.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_MQTT, SOURCE_USER
-from homeassistant.const import (
+from inpui.components.fully_kiosk.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_MQTT, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
 
 from tests.common import MockConfigEntry, async_load_fixture
 

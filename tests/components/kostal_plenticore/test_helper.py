@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pykoplenti import ApiClient, ExtendedApiClient, SettingsData
 import pytest
 
-from homeassistant.components.kostal_plenticore.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.components.kostal_plenticore.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
 
 from tests.common import MockConfigEntry
 

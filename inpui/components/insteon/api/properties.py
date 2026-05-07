@@ -20,9 +20,9 @@ from pyinsteon.device_types.device_base import Device
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
 
 from ..const import (
     DEVICE_ADDRESS,

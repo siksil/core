@@ -10,16 +10,16 @@ from pylamarzocco.exceptions import BluetoothConnectionFailed, RequestNotSuccess
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lamarzocco.const import CONF_OFFLINE_MODE, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components.lamarzocco.const import CONF_OFFLINE_MODE, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
+    EVENT_INPUI_STOP,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import async_init_integration, get_bluetooth_service_info
 
@@ -424,7 +424,7 @@ async def test_disconnect_on_stop(
 
     assert mock_config_entry_bluetooth.state is ConfigEntryState.LOADED
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     mock_bluetooth_client.disconnect.assert_awaited_once()

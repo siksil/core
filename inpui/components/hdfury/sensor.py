@@ -1,9 +1,9 @@
 """Sensor platform for HDFury Integration."""
 
-from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorEntity, SensorEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import HDFuryConfigEntry
 from .entity import HDFuryEntity

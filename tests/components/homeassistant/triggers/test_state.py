@@ -6,18 +6,18 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.homeassistant.triggers import state as state_trigger
-from homeassistant.const import (
+from inpui.components import automation
+from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_OFF,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Context, HomeAssistant, ServiceCall
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, HomeAssistant, ServiceCall
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed, mock_component
 

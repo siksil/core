@@ -10,11 +10,11 @@ from aioairzone.exceptions import (
 )
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.airzone.const import DOMAIN
-from homeassistant.components.airzone.coordinator import SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.components.airzone.const import DOMAIN
+from inpui.components.airzone.coordinator import SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from .util import CONFIG, HVAC_MOCK, HVAC_MOCK_NEW_ZONES, HVAC_VERSION_MOCK
 

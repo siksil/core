@@ -1,14 +1,14 @@
 """The tests for the litejet component."""
 
-from homeassistant.components import scene
-from homeassistant.const import (
+from inpui.components import scene
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import async_init_integration
 

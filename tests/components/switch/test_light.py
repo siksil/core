@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import common as switch_common
 

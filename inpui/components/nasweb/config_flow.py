@@ -10,12 +10,12 @@ from webio_api import WebioAPI
 from webio_api.api_client import AuthError
 
 from homeassistant import config_entries
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_UNIQUE_ID, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.network import NoURLAvailableError
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_UNIQUE_ID, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.network import NoURLAvailableError
 
 from .const import DOMAIN
 from .coordinator import NASwebCoordinator

@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -13,9 +13,9 @@ from homeassistant.components.cover import (
     CoverState,
     intent as cover_intent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service
 

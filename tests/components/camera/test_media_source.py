@@ -4,12 +4,12 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.camera import CameraCapabilities
-from homeassistant.components.camera.const import StreamType
-from homeassistant.components.stream import FORMAT_CONTENT_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source
+from inpui.components.camera import CameraCapabilities
+from inpui.components.camera.const import StreamType
+from inpui.components.stream import FORMAT_CONTENT_TYPE
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

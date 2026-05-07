@@ -7,7 +7,7 @@ from unittest.mock import patch
 from androidtv.adb_manager.adb_manager_async import DeviceAsync
 from androidtv.constants import CMD_DEVICE_PROPERTIES, CMD_MAC_ETH0, CMD_MAC_WLAN0
 
-from homeassistant.components.androidtv.const import (
+from inpui.components.androidtv.const import (
     DEFAULT_ADB_SERVER_PORT,
     DEVICE_ANDROIDTV,
     DEVICE_FIRETV,

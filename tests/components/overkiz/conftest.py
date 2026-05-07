@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.overkiz.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.overkiz.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import load_setup_fixture
 from .test_config_flow import TEST_EMAIL, TEST_GATEWAY_ID, TEST_PASSWORD, TEST_SERVER

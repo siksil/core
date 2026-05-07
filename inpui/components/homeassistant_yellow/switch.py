@@ -4,15 +4,15 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.homeassistant_hardware.switch import (
+from inpui.components.homeassistant_hardware.switch import (
     BaseBetaFirmwareSwitch,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeAssistantYellowConfigEntry
 from .const import DOMAIN, MANUFACTURER, MODEL

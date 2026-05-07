@@ -3,12 +3,12 @@
 from collections.abc import Callable
 from typing import Any
 
-from homeassistant.components.logbook import (
+from inpui.components.logbook import (
     LOGBOOK_ENTRY_ENTITY_ID,
     LOGBOOK_ENTRY_MESSAGE,
     LOGBOOK_ENTRY_NAME,
 )
-from homeassistant.core import Event, HomeAssistant, callback
+from inpui.core import Event, HomeAssistant, callback
 
 from .const import DOMAIN, EVENT_ALEXA_SMART_HOME
 

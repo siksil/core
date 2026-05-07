@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from ibeacon_ble import iBeaconAdvertisement
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import BaseTrackerEntity
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.device_tracker import SourceType
+from inpui.components.device_tracker.config_entry import BaseTrackerEntity
+from inpui.const import STATE_HOME, STATE_NOT_HOME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import IBeaconConfigEntry
 from .const import SIGNAL_IBEACON_DEVICE_NEW

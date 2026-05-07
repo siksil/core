@@ -6,17 +6,17 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.backup import AddonInfo, AgentBackup
-from homeassistant.components.google_drive.const import DOMAIN
-from homeassistant.const import UnitOfInformation
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_conversion import InformationConverter
+from inpui.components.backup import AddonInfo, AgentBackup
+from inpui.components.google_drive.const import DOMAIN
+from inpui.const import UnitOfInformation
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.unit_conversion import InformationConverter
 
 from tests.common import MockConfigEntry
 

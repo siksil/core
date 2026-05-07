@@ -11,15 +11,15 @@ from aiohttp import CookieJar
 import aiounifi
 from aiounifi.models.configuration import Configuration
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from ..const import CONF_SITE_ID, LOGGER
 from ..errors import AuthenticationRequired, CannotConnect

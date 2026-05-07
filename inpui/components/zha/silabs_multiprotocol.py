@@ -5,10 +5,10 @@ from __future__ import annotations
 import asyncio
 import contextlib
 
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import api
 

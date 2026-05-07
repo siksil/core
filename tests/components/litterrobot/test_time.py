@@ -8,10 +8,10 @@ from unittest.mock import MagicMock
 from pylitterbot import LitterRobot3
 import pytest
 
-from homeassistant.components.time import DOMAIN as TIME_DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TIME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.time import DOMAIN as TIME_DOMAIN, SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID, ATTR_TIME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import setup_integration
 

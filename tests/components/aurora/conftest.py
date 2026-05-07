@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.aurora.const import CONF_THRESHOLD, DOMAIN
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE
+from inpui.components.aurora.const import CONF_THRESHOLD, DOMAIN
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE
 
 from tests.common import MockConfigEntry
 

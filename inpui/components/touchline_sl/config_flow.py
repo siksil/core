@@ -9,8 +9,8 @@ from pytouchlinesl import TouchlineSL
 from pytouchlinesl.client import RothAPIError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import DOMAIN
 

@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from homeassistant.components import frontend
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import EventComponentLoaded
+from inpui.components import frontend
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.setup import EventComponentLoaded
 
 from . import (
     area_registry,

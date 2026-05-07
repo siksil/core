@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.history_stats.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.components.history_stats.const import DEFAULT_NAME, DOMAIN
+from inpui.const import CONF_ENTITY_ID, CONF_NAME
+from inpui.core import HomeAssistant
 
 from tests.components.diagnostics import get_diagnostics_for_config_entry
 from tests.typing import ClientSessionGenerator

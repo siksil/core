@@ -7,8 +7,8 @@ import aiohttp
 from doorbirdpy import DoorBird, DoorBirdScheduleEntry
 
 from homeassistant import config_entries
-from homeassistant.components.doorbird.const import API_URL
-from homeassistant.const import (
+from inpui.components.doorbird.const import API_URL
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,

@@ -5,21 +5,21 @@ from unittest.mock import MagicMock, patch
 import pytest
 from zigpy.application import ControllerApplication
 
-from homeassistant.components.homeassistant_hardware import (
+from inpui.components.homeassistant_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_register_firmware_info_callback,
 )
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
     OwningIntegration,
 )
-from homeassistant.components.zha.homeassistant_hardware import get_firmware_info
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zha.homeassistant_hardware import get_firmware_info
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

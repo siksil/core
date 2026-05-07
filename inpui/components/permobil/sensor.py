@@ -24,15 +24,15 @@ from mypermobil import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, UnitOfEnergy, UnitOfLength, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, UnitOfEnergy, UnitOfLength, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import BATTERY_ASSUMED_VOLTAGE, DOMAIN, KM, MILES
 from .coordinator import MyPermobilCoordinator

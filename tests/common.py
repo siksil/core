@@ -36,33 +36,33 @@ from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
 from homeassistant import auth, bootstrap, config_entries, loader
-from homeassistant.auth import (
+from inpui.auth import (
     auth_store,
     models as auth_models,
     permissions as auth_permissions,
     providers as auth_providers,
 )
-from homeassistant.auth.permissions import system_policies
-from homeassistant.components import device_automation, persistent_notification as pn
-from homeassistant.components.device_automation import (
+from inpui.auth.permissions import system_policies
+from inpui.components import device_automation, persistent_notification as pn
+from inpui.components.device_automation import (
     _async_get_device_automation_capabilities as async_get_device_automation_capabilities,
 )
-from homeassistant.components.logger import (
+from inpui.components.logger import (
     DOMAIN as LOGGER_DOMAIN,
     SERVICE_SET_LEVEL,
     _clear_logger_overwrites,
 )
-from homeassistant.config import IntegrationConfigInfo, async_process_component_config
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config import IntegrationConfigInfo, async_process_component_config
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     DEVICE_DEFAULT_NAME,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import (
+from inpui.core import (
     CoreState,
     Event,
     HomeAssistant,
@@ -72,7 +72,7 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     category_registry as cr,
     condition,
@@ -90,25 +90,25 @@ from homeassistant.helpers import (
     translation,
     trigger,
 )
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.json import JSONEncoder, _orjson_default_encoder, json_dumps
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util, ulid as ulid_util, uuid as uuid_util
-from homeassistant.util.async_ import (
+from inpui.helpers.json import JSONEncoder, _orjson_default_encoder, json_dumps
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util, ulid as ulid_util, uuid as uuid_util
+from inpui.util.async_ import (
     _SHUTDOWN_RUN_CALLBACK_THREADSAFE,
     get_scheduled_timer_handles,
     run_callback_threadsafe,
 )
-from homeassistant.util.event_type import EventType
-from homeassistant.util.json import (
+from inpui.util.event_type import EventType
+from inpui.util.json import (
     JsonArrayType,
     JsonObjectType,
     JsonValueType,
@@ -116,8 +116,8 @@ from homeassistant.util.json import (
     json_loads_array,
     json_loads_object,
 )
-from homeassistant.util.signal_type import SignalType
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.util.signal_type import SignalType
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .testing_config.custom_components.test_constant_deprecation import (
     import_deprecated_constant,
@@ -290,7 +290,7 @@ async def async_test_home_assistant(
         },
     )
     hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP,
+        EVENT_INPUI_STOP,
         hass.config_entries._async_shutdown,
     )
 
@@ -355,7 +355,7 @@ async def async_test_home_assistant(
         # Give aiohttp one loop iteration to close
         hass.loop.call_soon(INSTANCES.remove, hass)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, clear_instance)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, clear_instance)
 
     try:
         yield hass
@@ -460,7 +460,7 @@ def async_fire_mqtt_message(
 
     from paho.mqtt.client import MQTTMessage  # noqa: PLC0415
 
-    from homeassistant.components.mqtt import MqttData  # noqa: PLC0415
+    from inpui.components.mqtt import MqttData  # noqa: PLC0415
 
     if isinstance(payload, str):
         payload = payload.encode("utf-8")
@@ -1033,7 +1033,7 @@ class MockEntityPlatform(entity_platform.EntityPlatform):
         def _async_on_stop(_: Event) -> None:
             self.async_shutdown()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_on_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_on_stop)
 
 
 class MockToggleEntity(entity.ToggleEntity):
@@ -1757,7 +1757,7 @@ def async_get_persistent_notifications(
 
 def async_mock_cloud_connection_status(hass: HomeAssistant, connected: bool) -> None:
     """Mock a signal the cloud disconnected."""
-    from homeassistant.components.cloud import (  # noqa: PLC0415
+    from inpui.components.cloud import (  # noqa: PLC0415
         SIGNAL_CLOUD_CONNECTION_STATE,
         CloudConnectionState,
     )

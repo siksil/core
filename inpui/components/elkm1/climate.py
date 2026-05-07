@@ -8,7 +8,7 @@ from elkm1_lib.const import ThermostatFan, ThermostatMode, ThermostatSetting
 from elkm1_lib.elements import Element
 from elkm1_lib.thermostats import Thermostat
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
     FAN_AUTO,
@@ -17,9 +17,9 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import PRECISION_WHOLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PRECISION_WHOLE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElkM1ConfigEntry
 from .entity import ElkEntity, create_elk_entities

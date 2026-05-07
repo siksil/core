@@ -2,14 +2,14 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components import hue
-from homeassistant.components.hue import bridge
-from homeassistant.components.hue.const import (
+from inpui.components import hue
+from inpui.components.hue import bridge
+from inpui.components.hue.const import (
     CONF_ALLOW_HUE_GROUPS,
     CONF_ALLOW_UNREACHABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonArrayType
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_bridge, setup_component
 

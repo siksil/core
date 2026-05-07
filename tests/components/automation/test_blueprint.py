@@ -11,13 +11,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.components.blueprint import models
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, yaml as yaml_util
+from inpui.components import automation
+from inpui.components.blueprint import models
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, yaml as yaml_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed, async_mock_service
 

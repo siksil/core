@@ -5,17 +5,17 @@ from unittest.mock import call
 from aiowebostv import WebOsTvCommandError
 import pytest
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.components.webostv import DOMAIN
-from homeassistant.const import ATTR_ICON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import slugify
+from inpui.components.webostv import DOMAIN
+from inpui.const import ATTR_ICON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import slugify
 
 from . import setup_webostv
 from .const import TV_NAME

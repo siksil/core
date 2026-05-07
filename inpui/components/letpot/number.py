@@ -7,14 +7,14 @@ from typing import Any
 from letpot.deviceclient import LetPotDeviceClient
 from letpot.models import DeviceFeature
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import PRECISION_WHOLE, EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PRECISION_WHOLE, EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LetPotConfigEntry, LetPotDeviceCoordinator
 from .entity import LetPotEntity, LetPotEntityDescription, exception_handler

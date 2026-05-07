@@ -10,10 +10,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import apache_kafka
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import apache_kafka
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 APACHE_KAFKA_PATH = "homeassistant.components.apache_kafka"
 PRODUCER_PATH = f"{APACHE_KAFKA_PATH}.AIOKafkaProducer"

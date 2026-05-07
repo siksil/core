@@ -4,13 +4,13 @@ from kasa import Feature
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
-from homeassistant.components.tplink.button import BUTTON_DESCRIPTIONS
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.components.tplink.entity import EXCLUDED_FEATURES
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.button import DOMAIN as BUTTON_DOMAIN, SERVICE_PRESS
+from inpui.components.tplink.button import BUTTON_DESCRIPTIONS
+from inpui.components.tplink.const import DOMAIN
+from inpui.components.tplink.entity import EXCLUDED_FEATURES
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,

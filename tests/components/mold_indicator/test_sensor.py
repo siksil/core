@@ -2,20 +2,20 @@
 
 import pytest
 
-from homeassistant.components import sensor
-from homeassistant.components.mold_indicator.sensor import (
+from inpui.components import sensor
+from inpui.components.mold_indicator.sensor import (
     ATTR_CRITICAL_TEMP,
     ATTR_DEWPOINT,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

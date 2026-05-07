@@ -2,10 +2,10 @@
 
 from pathlib import Path
 
-from homeassistant.components.filesize.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_FILE_PATH
-from homeassistant.core import HomeAssistant
+from inpui.components.filesize.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_FILE_PATH
+from inpui.core import HomeAssistant
 
 from . import async_create_file
 

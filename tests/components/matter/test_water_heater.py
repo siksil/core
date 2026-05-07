@@ -8,21 +8,21 @@ from matter_server.common.helpers.util import create_attribute_path_from_attribu
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.matter.services import (
+from inpui.components.matter.services import (
     ATTR_DURATION,
     ATTR_EMERGENCY_BOOST,
     ATTR_TEMPORARY_SETPOINT,
     SERVICE_WATER_HEATER_BOOST,
 )
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_HIGH_DEMAND,
     STATE_OFF,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     set_node_attribute,

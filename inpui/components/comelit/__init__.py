@@ -2,8 +2,8 @@
 
 from aiocomelit.const import BRIDGE
 
-from homeassistant.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PIN, CONF_PORT, CONF_TYPE, Platform
+from inpui.core import HomeAssistant
 
 from .const import CONF_VEDO_PIN, DEFAULT_PORT
 from .coordinator import (

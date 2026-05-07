@@ -7,20 +7,20 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.recorder.statistics import statistics_during_period
-from homeassistant.components.suez_water.const import (
+from inpui.components.recorder.statistics import statistics_during_period
+from inpui.components.suez_water.const import (
     CONF_COUNTER_ID,
     DATA_REFRESH_INTERVAL,
     DOMAIN,
 )
-from homeassistant.components.suez_water.coordinator import (
+from inpui.components.suez_water.coordinator import (
     PySuezError,
     TelemetryMeasure,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
-import homeassistant.util.dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
+import inpui.util.dt as dt_util
 
 from . import setup_integration
 from .conftest import MOCK_DATA

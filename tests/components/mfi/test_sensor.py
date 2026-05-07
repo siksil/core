@@ -7,12 +7,12 @@ from mficlient.client import FailedToLogin
 import pytest
 import requests
 
-from homeassistant.components import sensor as sensor_component
-from homeassistant.components.mfi import sensor as mfi
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import sensor as sensor_component
+from inpui.components.mfi import sensor as mfi
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 PLATFORM = mfi
 COMPONENT = sensor_component

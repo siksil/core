@@ -14,7 +14,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.mealie.const import (
+from inpui.components.mealie.const import (
     ATTR_END_DATE,
     ATTR_ENTRY_TYPE,
     ATTR_INCLUDE_TAGS,
@@ -27,7 +27,7 @@ from homeassistant.components.mealie.const import (
     ATTR_URL,
     DOMAIN,
 )
-from homeassistant.components.mealie.services import (
+from inpui.components.mealie.services import (
     SERVICE_GET_MEALPLAN,
     SERVICE_GET_RECIPE,
     SERVICE_GET_RECIPES,
@@ -36,9 +36,9 @@ from homeassistant.components.mealie.services import (
     SERVICE_SET_MEALPLAN,
     SERVICE_SET_RANDOM_MEALPLAN,
 )
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID, ATTR_DATE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.const import ATTR_CONFIG_ENTRY_ID, ATTR_DATE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 

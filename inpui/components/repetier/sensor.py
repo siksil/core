@@ -5,12 +5,12 @@ from __future__ import annotations
 import logging
 import time
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import UNDEFINED, ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import UNDEFINED, ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from . import REPETIER_API, SENSOR_TYPES, UPDATE_SIGNAL, RepetierSensorEntityDescription
 

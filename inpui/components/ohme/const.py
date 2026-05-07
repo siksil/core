@@ -1,6 +1,6 @@
 """Component constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "ohme"
 PLATFORMS = [

@@ -9,16 +9,16 @@ from syrupy.assertion import SnapshotAssertion
 from total_connect_client import ArmingState, ArmType
 from total_connect_client.exceptions import BadResultCodeError, UsercodeInvalid
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.components.totalconnect.alarm_control_panel import (
+from inpui.components.totalconnect.alarm_control_panel import (
     SERVICE_ALARM_ARM_AWAY_INSTANT,
     SERVICE_ALARM_ARM_HOME_INSTANT,
 )
-from homeassistant.components.totalconnect.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.totalconnect.const import DOMAIN
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -27,9 +27,9 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 from .const import CODE

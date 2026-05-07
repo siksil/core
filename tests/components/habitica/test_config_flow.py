@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 from habiticalib import HabiticaUserResponse
 import pytest
 
-from homeassistant.components.habitica.const import (
+from inpui.components.habitica.const import (
     CONF_API_USER,
     CONF_PARTY_MEMBER,
     DEFAULT_URL,
@@ -15,20 +15,20 @@ from homeassistant.components.habitica.const import (
     SECTION_REAUTH_API_KEY,
     SECTION_REAUTH_LOGIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntryDisabler,
     ConfigSubentry,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_PASSWORD,
     CONF_URL,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import ERROR_BAD_REQUEST, ERROR_NOT_AUTHORIZED
 

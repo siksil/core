@@ -11,12 +11,12 @@ from volvocarsapi.scopes import ALL_SCOPES
 from yarl import URL
 
 from homeassistant import config_entries
-from homeassistant.components.volvo.const import CONF_VIN, DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_API_KEY, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.volvo.const import CONF_VIN, DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_API_KEY, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import async_load_fixture_as_json, configure_mock
 from .const import (

@@ -2,14 +2,14 @@
 
 from unittest.mock import Mock, mock_open, patch
 
-from homeassistant.components.fail2ban.sensor import (
+from inpui.components.fail2ban.sensor import (
     STATE_ALL_BANS,
     STATE_CURRENT_BANS,
     BanLogParser,
     BanSensor,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 

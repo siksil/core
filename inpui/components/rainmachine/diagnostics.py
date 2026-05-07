@@ -6,15 +6,15 @@ from typing import Any
 
 from regenmaschine.errors import RainMachineError
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import (
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import (
     CONF_ELEVATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_PASSWORD,
     CONF_UNIQUE_ID,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import RainMachineConfigEntry
 from .const import LOGGER

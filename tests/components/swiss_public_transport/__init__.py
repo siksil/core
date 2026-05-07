@@ -1,6 +1,6 @@
 """Tests for the swiss_public_transport integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

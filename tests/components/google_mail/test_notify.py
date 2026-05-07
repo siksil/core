@@ -5,9 +5,9 @@ from unittest.mock import patch
 import pytest
 from voluptuous.error import Invalid
 
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from .conftest import BUILD, ComponentSetup
 

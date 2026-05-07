@@ -5,14 +5,14 @@ from __future__ import annotations
 from datetime import datetime
 from enum import StrEnum
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import SleepAsAndroidConfigEntry
 from .const import ALARM_LABEL_DEFAULT, ATTR_EVENT, ATTR_VALUE1, ATTR_VALUE2

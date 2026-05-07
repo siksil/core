@@ -1,14 +1,14 @@
 """Test KNX date."""
 
-from homeassistant.components.date import (
+from inpui.components.date import (
     ATTR_DATE,
     DOMAIN as DATE_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
-from homeassistant.components.knx.schema import DateSchema
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, State
+from inpui.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
+from inpui.components.knx.schema import DateSchema
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant, State
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

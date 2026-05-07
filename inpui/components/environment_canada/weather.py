@@ -6,7 +6,7 @@ from typing import Any
 
 from env_canada import ECWeather
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_CONDITION_CLOUDY,
     ATTR_CONDITION_FOG,
@@ -29,20 +29,20 @@ from homeassistant.components.weather import (
     SingleCoordinatorWeatherEntity,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     UnitOfLength,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import entity_platform, entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers import entity_platform, entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, SERVICE_ENVIRONMENT_CANADA_FORECASTS
 from .coordinator import ECConfigEntry, ECDataUpdateCoordinator

@@ -10,14 +10,14 @@ from botocore.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.aws_s3.const import (
+from inpui.components.aws_s3.const import (
     CONF_BUCKET,
     CONF_ENDPOINT_URL,
     CONF_PREFIX,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import CONFIG_ENTRY_DATA, USER_INPUT
 

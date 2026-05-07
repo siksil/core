@@ -4,13 +4,13 @@ from unittest.mock import call
 
 from aioesphomeapi import APIClient, SubDeviceInfo, SwitchInfo, SwitchState
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType
 

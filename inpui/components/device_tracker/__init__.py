@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.const import ATTR_GPS_ACCURACY, STATE_HOME  # noqa: F401
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.const import ATTR_GPS_ACCURACY, STATE_HOME  # noqa: F401
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 from .config_entry import (  # noqa: F401
     ScannerEntity,

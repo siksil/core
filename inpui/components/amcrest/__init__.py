@@ -16,7 +16,7 @@ from amcrest import AmcrestError, ApiWrapper, LoginError
 import httpx
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_BINARY_SENSORS,
     CONF_HOST,
@@ -30,11 +30,11 @@ from homeassistant.const import (
     HTTP_BASIC_AUTHENTICATION,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.dispatcher import async_dispatcher_send, dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.dispatcher import async_dispatcher_send, dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.typing import ConfigType
 
 from .binary_sensor import BINARY_SENSOR_KEYS, BINARY_SENSORS, check_binary_sensors
 from .camera import STREAM_SOURCE_LIST

@@ -1,6 +1,6 @@
 """Errors for the Plex component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class PlexException(HomeAssistantError):

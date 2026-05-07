@@ -6,10 +6,10 @@ from unittest.mock import MagicMock, patch
 from pycasperglow import GlowState
 import pytest
 
-from homeassistant.components.casper_glow.const import DOMAIN
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import format_mac
+from inpui.components.casper_glow.const import DOMAIN
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import format_mac
 
 from . import CASPER_GLOW_DISCOVERY_INFO, setup_integration
 

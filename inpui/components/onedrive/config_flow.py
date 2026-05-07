@@ -11,18 +11,18 @@ from onedrive_personal_sdk.exceptions import OneDriveException
 from onedrive_personal_sdk.models.items import AppRoot, ItemUpdate
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_TOKEN
-from homeassistant.core import callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
-from homeassistant.helpers.instance_id import async_get as async_get_instance_id
+from inpui.const import CONF_ACCESS_TOKEN, CONF_TOKEN
+from inpui.core import callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import AbstractOAuth2FlowHandler
+from inpui.helpers.instance_id import async_get as async_get_instance_id
 
 from .const import (
     CONF_DELETE_PERMANENTLY,

@@ -2,10 +2,10 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.balboa.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.balboa.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from . import TEST_HOST
 

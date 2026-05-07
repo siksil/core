@@ -9,16 +9,16 @@ from pymonoprice import get_monoprice
 from serial import SerialException
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_PORT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.typing import VolDictType
+from inpui.const import CONF_PORT
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_SOURCE_1,

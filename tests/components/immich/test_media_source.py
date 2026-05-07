@@ -8,17 +8,17 @@ from aiohttp import web
 from aioimmich.exceptions import ImmichError
 import pytest
 
-from homeassistant.components.immich.const import DOMAIN
-from homeassistant.components.immich.media_source import (
+from inpui.components.immich.const import DOMAIN
+from inpui.components.immich.media_source import (
     ImmichMediaSource,
     ImmichMediaView,
     async_get_media_source,
 )
-from homeassistant.components.media_player import BrowseError, BrowseMedia, MediaClass
-from homeassistant.components.media_source import MediaSourceItem, Unresolvable
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.aiohttp import MockRequest, MockStreamReaderChunked
+from inpui.components.media_player import BrowseError, BrowseMedia, MediaClass
+from inpui.components.media_source import MediaSourceItem, Unresolvable
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.aiohttp import MockRequest, MockStreamReaderChunked
 
 from . import setup_integration
 

@@ -4,21 +4,21 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_CONDITION,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
     CONF_ENTITY_ID,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.helpers.config_validation import DEVICE_CONDITION_BASE_SCHEMA
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DOMAIN, VacuumActivity
 

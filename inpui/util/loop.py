@@ -11,13 +11,13 @@ import threading
 import traceback
 from typing import Any
 
-from homeassistant.core import async_get_hass_or_none
-from homeassistant.helpers.frame import (
+from inpui.core import async_get_hass_or_none
+from inpui.helpers.frame import (
     MissingIntegrationFrame,
     get_current_frame,
     get_integration_frame,
 )
-from homeassistant.loader import async_suggest_report_issue
+from inpui.loader import async_suggest_report_issue
 
 _LOGGER = logging.getLogger(__name__)
 

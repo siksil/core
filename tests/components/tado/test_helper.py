@@ -5,18 +5,18 @@ from unittest.mock import MagicMock, patch
 from PyTado.interface import Tado
 import pytest
 
-from homeassistant.components.tado import CONF_REFRESH_TOKEN, TadoDataUpdateCoordinator
-from homeassistant.components.tado.const import (
+from inpui.components.tado import CONF_REFRESH_TOKEN, TadoDataUpdateCoordinator
+from inpui.components.tado.const import (
     CONST_OVERLAY_MANUAL,
     CONST_OVERLAY_TADO_DEFAULT,
     CONST_OVERLAY_TADO_MODE,
     CONST_OVERLAY_TIMER,
     DOMAIN,
 )
-from homeassistant.components.tado.helper import decide_duration, decide_overlay_mode
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.tado.helper import decide_duration, decide_overlay_mode
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

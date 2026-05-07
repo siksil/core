@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 
 from meteoclimatic import Condition
 
-from homeassistant.components.weather import WeatherEntity
-from homeassistant.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.weather import WeatherEntity
+from inpui.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ATTRIBUTION, CONDITION_MAP, DOMAIN, MANUFACTURER, MODEL
 from .coordinator import MeteoclimaticConfigEntry, MeteoclimaticUpdateCoordinator

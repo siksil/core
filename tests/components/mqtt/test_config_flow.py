@@ -15,25 +15,25 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components import mqtt
-from homeassistant.components.hassio import AddonError
-from homeassistant.components.mqtt.config_flow import (
+from inpui.components import mqtt
+from inpui.components.hassio import AddonError
+from inpui.components.mqtt.config_flow import (
     PWD_NOT_CHANGED,
     TRANSLATION_DESCRIPTION_PLACEHOLDERS,
 )
-from homeassistant.components.mqtt.util import learn_more_url
-from homeassistant.config_entries import ConfigSubentry, ConfigSubentryData
-from homeassistant.const import (
+from inpui.components.mqtt.util import learn_more_url
+from inpui.config_entries import ConfigSubentry, ConfigSubentryData
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from .common import (
     MOCK_ALARM_CONTROL_PANEL_LOCAL_CODE_SUBENTRY_DATA,

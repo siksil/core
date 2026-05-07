@@ -5,11 +5,11 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import person
-from homeassistant.components.person import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import collection
-from homeassistant.setup import async_setup_component
+from inpui.components import person
+from inpui.components.person import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import collection
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser
 

@@ -8,16 +8,16 @@ from growattServer import GrowattV1ApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.growatt_server.coordinator import SCAN_INTERVAL
-from homeassistant.components.number import (
+from inpui.components.growatt_server.coordinator import SCAN_INTERVAL
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

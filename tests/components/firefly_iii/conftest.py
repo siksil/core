@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from pyfirefly.models import About, Account, Bill, Budget, Category, Currency
 import pytest
 
-from homeassistant.components.firefly_iii.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
+from inpui.components.firefly_iii.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL
 
 from tests.common import (
     MockConfigEntry,

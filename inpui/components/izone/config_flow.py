@@ -4,9 +4,9 @@ import asyncio
 from contextlib import suppress
 import logging
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_entry_flow
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_entry_flow
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .const import DISPATCH_CONTROLLER_DISCOVERED, IZONE, TIMEOUT_DISCOVERY
 from .discovery import async_start_discovery_service, async_stop_discovery_service

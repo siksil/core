@@ -7,9 +7,9 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from homeassistant.components.recorder.const import DB_WORKER_PREFIX
-from homeassistant.components.recorder.pool import RecorderPool
-from homeassistant.core import HomeAssistant
+from inpui.components.recorder.const import DB_WORKER_PREFIX
+from inpui.components.recorder.pool import RecorderPool
+from inpui.core import HomeAssistant
 
 
 async def test_recorder_pool_called_from_event_loop() -> None:

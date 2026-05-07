@@ -2,8 +2,8 @@
 
 from pyblu.errors import PlayerUnreachableError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import PlayerMocks
 

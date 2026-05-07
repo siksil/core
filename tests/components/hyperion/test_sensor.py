@@ -11,15 +11,15 @@ from hyperion.const import (
     KEY_VISIBLE,
 )
 
-from homeassistant.components.hyperion import get_hyperion_device_id
-from homeassistant.components.hyperion.const import (
+from inpui.components.hyperion import get_hyperion_device_id
+from inpui.components.hyperion.const import (
     DOMAIN,
     HYPERION_MANUFACTURER_NAME,
     HYPERION_MODEL_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import slugify
 
 from . import (
     TEST_CONFIG_ENTRY_ID,

@@ -9,9 +9,9 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components import websocket_api
+from inpui.components.websocket_api.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockUser
 

@@ -47,19 +47,19 @@ from home_assistant_intents import (
 )
 import yaml
 
-from homeassistant.components.homeassistant.exposed_entities import (
+from inpui.components.homeassistant.exposed_entities import (
     async_listen_entity_updates,
     async_should_expose,
 )
-from homeassistant.const import EVENT_STATE_CHANGED, MATCH_ALL
-from homeassistant.core import (
+from inpui.const import EVENT_STATE_CHANGED, MATCH_ALL
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
@@ -71,10 +71,10 @@ from homeassistant.helpers import (
     template,
     translation,
 )
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.event import async_track_state_added_domain
-from homeassistant.util import language as language_util
-from homeassistant.util.json import JsonObjectType, json_loads_object
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.event import async_track_state_added_domain
+from inpui.util import language as language_util
+from inpui.util.json import JsonObjectType, json_loads_object
 
 from .agent_manager import IntentSourceConfig, get_agent_manager
 from .chat_log import AssistantContent, ChatLog, ToolResultContent

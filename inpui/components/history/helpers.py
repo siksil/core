@@ -5,8 +5,8 @@ from __future__ import annotations
 from collections.abc import Iterable
 from datetime import datetime as dt
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.core import HomeAssistant
+from inpui.components.recorder import get_instance
+from inpui.core import HomeAssistant
 
 
 def entities_may_have_state_changes_after(

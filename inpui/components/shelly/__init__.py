@@ -18,25 +18,25 @@ from aioshelly.exceptions import (
 from aioshelly.rpc_device import RpcDevice, bluetooth_mac_from_primary_mac
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import async_remove_scanner
-from homeassistant.const import (
+from inpui.components.bluetooth import async_remove_scanner
+from inpui.const import (
     CONF_HOST,
     CONF_MODEL,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     BLOCK_EXPECTED_SLEEP_PERIOD,

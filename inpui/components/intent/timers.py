@@ -13,15 +13,15 @@ from typing import Any
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_ID, ATTR_NAME
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.const import ATTR_DEVICE_ID, ATTR_ID, ATTR_NAME
+from inpui.core import Context, HomeAssistant, callback
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
     intent,
 )
-from homeassistant.util import ulid as ulid_util
+from inpui.util import ulid as ulid_util
 
 from .const import TIMER_DATA
 
@@ -456,7 +456,7 @@ class TimerManager:
         timer.finish()
 
         if timer.conversation_command:
-            from homeassistant.components.conversation import (  # noqa: PLC0415
+            from inpui.components.conversation import (  # noqa: PLC0415
                 async_converse,
             )
 
@@ -887,7 +887,7 @@ class StartTimerIntentHandler(intent.IntentHandler):
         self, intent_obj: intent.Intent, conversation_command: str
     ) -> bool:
         """Validate that a conversation command can be executed."""
-        from homeassistant.components.conversation import (  # noqa: PLC0415
+        from inpui.components.conversation import (  # noqa: PLC0415
             ConversationInput,
             async_get_agent,
             default_agent,

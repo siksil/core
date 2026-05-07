@@ -2,17 +2,17 @@
 
 import pytest
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     ATTR_OPTION,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.vesync.const import HUMIDIFIER_NIGHT_LIGHT_LEVEL_DIM
-from homeassistant.components.vesync.select import (
+from inpui.components.vesync.const import HUMIDIFIER_NIGHT_LIGHT_LEVEL_DIM
+from inpui.components.vesync.select import (
     HA_TO_VS_HUMIDIFIER_NIGHT_LIGHT_LEVEL_MAP,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .common import ENTITY_HUMIDIFIER_300S_NIGHT_LIGHT_SELECT
 

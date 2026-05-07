@@ -8,14 +8,14 @@ from unittest.mock import MagicMock, patch
 import pytest
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.tuya.const import (
+from inpui.components.tuya.const import (
     CONF_ENDPOINT,
     CONF_TERMINAL_ID,
     CONF_TOKEN_INFO,
     CONF_USER_CODE,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     DEVICE_MOCKS,

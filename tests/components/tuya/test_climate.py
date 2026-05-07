@@ -10,7 +10,7 @@ from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 from tuya_sharing import CustomerDevice, Manager
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_HUMIDITY,
@@ -32,11 +32,11 @@ from homeassistant.components.climate import (
     SERVICE_TURN_ON,
     HVACMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceNotSupported
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceNotSupported
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import initialize_entry
 

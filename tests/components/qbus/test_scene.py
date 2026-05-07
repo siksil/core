@@ -1,8 +1,8 @@
 """Test Qbus scene entities."""
 
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.common import async_fire_mqtt_message
 from tests.typing import MqttMockHAClient

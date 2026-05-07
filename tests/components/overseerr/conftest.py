@@ -7,9 +7,9 @@ import pytest
 from python_overseerr import IssueCount, MovieDetails, RequestCount, RequestResponse
 from python_overseerr.models import TVDetails, WebhookNotificationConfig
 
-from homeassistant.components.overseerr import CONF_CLOUDHOOK_URL
-from homeassistant.components.overseerr.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.overseerr import CONF_CLOUDHOOK_URL
+from inpui.components.overseerr.const import DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,

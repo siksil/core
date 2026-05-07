@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, Mock, create_autospec, patch
 from pyschlage.lock import Lock
 import pytest
 
-from homeassistant.components.schlage.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.schlage.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from . import MockSchlageConfigEntry
 

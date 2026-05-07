@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 from essent_dynamic_pricing import EssentPrices
 import pytest
 
-from homeassistant.components.essent.const import DOMAIN
+from inpui.components.essent.const import DOMAIN
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

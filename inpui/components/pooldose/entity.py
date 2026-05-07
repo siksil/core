@@ -7,11 +7,11 @@ from typing import Any, Literal
 
 from pooldose.type_definitions import DeviceInfoDict, ValueDict
 
-from homeassistant.const import CONF_MAC
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_MAC
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import PooldoseCoordinator

@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.energy.helpers import (
+from inpui.components.energy.helpers import (
     generate_power_sensor_entity_id,
     generate_power_sensor_unique_id,
 )

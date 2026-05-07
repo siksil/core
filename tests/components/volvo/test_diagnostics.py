@@ -5,8 +5,8 @@ from collections.abc import Awaitable, Callable
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

@@ -21,23 +21,23 @@ from pyhap.service import Service
 import voluptuous as vol
 from zeroconf.asyncio import AsyncZeroconf
 
-from homeassistant.components import device_automation, network, zeroconf
-from homeassistant.components.binary_sensor import (
+from inpui.components import device_automation, network, zeroconf
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN
-from homeassistant.components.device_automation.trigger import (  # pylint: disable=hass-component-root-import
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
+from inpui.components.device_automation.trigger import (  # pylint: disable=hass-component-root-import
     async_validate_trigger_config,
 )
-from homeassistant.components.event import DOMAIN as EVENT_DOMAIN, EventDeviceClass
-from homeassistant.components.fan import DOMAIN as FAN_DOMAIN
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.components.humidifier import DOMAIN as HUMIDIFIER_DOMAIN
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.components.event import DOMAIN as EVENT_DOMAIN, EventDeviceClass
+from inpui.components.fan import DOMAIN as FAN_DOMAIN
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.components.humidifier import DOMAIN as HUMIDIFIER_DOMAIN
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     ATTR_BATTERY_CHARGING,
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_ID,
@@ -51,39 +51,39 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PORT,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     SERVICE_RELOAD,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     HomeAssistant,
     ServiceCall,
     State,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     instance_id,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entityfilter import (
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entityfilter import (
     BASE_FILTER_SCHEMA,
     FILTER_SCHEMA,
     EntityFilter,
 )
-from homeassistant.helpers.reload import async_integration_yaml_config
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.target import (
+from inpui.helpers.reload import async_integration_yaml_config
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.start import async_at_started
+from inpui.helpers.target import (
     TargetSelection,
     async_extract_referenced_entity_ids,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import IntegrationNotFound, async_get_integration
-from homeassistant.util.async_ import create_eager_task
+from inpui.helpers.typing import ConfigType
+from inpui.loader import IntegrationNotFound, async_get_integration
+from inpui.util.async_ import create_eager_task
 
 from . import (  # noqa: F401
     type_air_purifiers,
@@ -383,7 +383,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: HomeKitConfigEntry) -> b
 
     entry.async_on_unload(entry.add_update_listener(_async_update_listener))
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, homekit.async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, homekit.async_stop)
     )
 
     entry_data = HomeKitEntryData(

@@ -6,16 +6,16 @@ import xml.etree.ElementTree as ET
 from pylgnetcast import AccessTokenError, LgNetCastClient, SessionIdError
 import requests
 
-from homeassistant.components.lg_netcast import DOMAIN
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.const import (
+from inpui.components.lg_netcast import DOMAIN
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_HOST,
     CONF_ID,
     CONF_MODEL,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

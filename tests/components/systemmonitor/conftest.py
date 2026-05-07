@@ -19,9 +19,9 @@ from psutil._ntuples import (
 )
 import pytest
 
-from homeassistant.components.systemmonitor.const import DOMAIN
-from homeassistant.components.systemmonitor.coordinator import VirtualMemory
-from homeassistant.core import HomeAssistant
+from inpui.components.systemmonitor.const import DOMAIN
+from inpui.components.systemmonitor.coordinator import VirtualMemory
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

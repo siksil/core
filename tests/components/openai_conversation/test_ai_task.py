@@ -8,11 +8,11 @@ from openai import PermissionDeniedError
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import ai_task, media_source
-from homeassistant.components.openai_conversation import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir, selector
+from inpui.components import ai_task, media_source
+from inpui.components.openai_conversation import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, issue_registry as ir, selector
 
 from . import create_image_gen_call_item, create_message_item, create_reasoning_item
 

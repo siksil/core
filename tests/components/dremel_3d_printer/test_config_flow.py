@@ -4,11 +4,11 @@ from unittest.mock import patch
 
 from requests.exceptions import ConnectTimeout
 
-from homeassistant.components.dremel_3d_printer.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.dremel_3d_printer.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import CONF_DATA, patch_async_setup_entry
 

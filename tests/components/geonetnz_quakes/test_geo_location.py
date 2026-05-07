@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.geo_location import ATTR_SOURCE
-from homeassistant.components.geonetnz_quakes import DEFAULT_SCAN_INTERVAL, DOMAIN
-from homeassistant.components.geonetnz_quakes.geo_location import (
+from inpui.components.geo_location import ATTR_SOURCE
+from inpui.components.geonetnz_quakes import DEFAULT_SCAN_INTERVAL, DOMAIN
+from inpui.components.geonetnz_quakes.geo_location import (
     ATTR_DEPTH,
     ATTR_EXTERNAL_ID,
     ATTR_LOCALITY,
@@ -15,7 +15,7 @@ from homeassistant.components.geonetnz_quakes.geo_location import (
     ATTR_MMI,
     ATTR_QUALITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -24,14 +24,14 @@ from homeassistant.const import (
     ATTR_TIME,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_RADIUS,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import _generate_mock_feed_entry
 
@@ -76,7 +76,7 @@ async def test_setup(
         assert await async_setup_component(hass, DOMAIN, CONFIG)
         await hass.async_block_till_done()
         # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         # 3 geolocation and 1 sensor entities
@@ -190,7 +190,7 @@ async def test_setup_imperial(
         assert await async_setup_component(hass, DOMAIN, CONFIG)
         await hass.async_block_till_done()
         # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         assert (

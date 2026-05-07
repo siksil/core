@@ -16,7 +16,7 @@ from pymodbus.framer import FramerType
 from pymodbus.pdu import ModbusPDU
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_STATE,
     CONF_DELAY,
     CONF_HOST,
@@ -25,14 +25,14 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_TIMEOUT,
     CONF_TYPE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import Event, HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     _LOGGER,
@@ -167,7 +167,7 @@ async def async_modbus_setup(
         for client in hub_collect.values():
             await client.async_close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_stop_modbus)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, async_stop_modbus)
 
     def _get_service_call_details(
         service: ServiceCall,

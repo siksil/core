@@ -5,8 +5,8 @@ import importlib
 from pathlib import Path
 import pkgutil
 
-from homeassistant.config import _identify_config_schema
-from homeassistant.scripts.check_config import color
+from inpui.config import _identify_config_schema
+from inpui.scripts.check_config import color
 
 
 def explore_module(package):

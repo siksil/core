@@ -1,19 +1,19 @@
 """Tests for the Abode binary sensor device."""
 
-from homeassistant.components.abode import ATTR_DEVICE_ID
-from homeassistant.components.abode.const import ATTRIBUTION
-from homeassistant.components.binary_sensor import (
+from inpui.components.abode import ATTR_DEVICE_ID
+from inpui.components.abode.const import ATTRIBUTION
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ATTRIBUTION,
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     STATE_OFF,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

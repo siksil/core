@@ -8,8 +8,8 @@ from pyps4_2ndscreen.helpers import Helper
 from pyps4_2ndscreen.media_art import COUNTRIES
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_CODE,
     CONF_HOST,
     CONF_IP_ADDRESS,
@@ -17,8 +17,8 @@ from homeassistant.const import (
     CONF_REGION,
     CONF_TOKEN,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util import location as location_util
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util import location as location_util
 
 from .const import (
     CONFIG_ENTRY_VERSION,

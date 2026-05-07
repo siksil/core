@@ -8,17 +8,17 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     DOMAIN,
     CalendarEntity,
     CalendarEntityDescription,
     CalendarEvent,
 )
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

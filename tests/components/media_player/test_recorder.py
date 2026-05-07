@@ -7,20 +7,20 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import media_player
-from homeassistant.components.media_player import (
+from inpui.components import media_player
+from inpui.components.media_player import (
     ATTR_ENTITY_PICTURE_LOCAL,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_POSITION,
     ATTR_MEDIA_POSITION_UPDATED_AT,
     ATTR_SOUND_MODE_LIST,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.history import get_significant_states
-from homeassistant.const import ATTR_ENTITY_PICTURE, ATTR_FRIENDLY_NAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.history import get_significant_states
+from inpui.const import ATTR_ENTITY_PICTURE, ATTR_FRIENDLY_NAME, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.components.recorder.common import async_wait_recording_done

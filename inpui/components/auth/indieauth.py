@@ -10,8 +10,8 @@ from urllib.parse import ParseResult, urljoin, urlparse
 import aiohttp
 import aiohttp.client_exceptions
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.network import is_local
+from inpui.core import HomeAssistant
+from inpui.util.network import is_local
 
 _LOGGER = logging.getLogger(__name__)
 

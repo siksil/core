@@ -12,21 +12,21 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from sqlalchemy.exc import SQLAlchemyError
 
-from homeassistant.components.recorder import CONF_DB_URL, Recorder
-from homeassistant.components.sensor import (
+from inpui.components.recorder import CONF_DB_URL, Recorder
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.sql.const import (
+from inpui.components.sql.const import (
     CONF_ADVANCED_OPTIONS,
     CONF_COLUMN_NAME,
     CONF_QUERY,
     DOMAIN,
 )
-from homeassistant.components.sql.util import generate_lambda_stmt
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import (
+from inpui.components.sql.util import generate_lambda_stmt
+from inpui.config_entries import SOURCE_USER
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ICON,
     CONF_NAME,
@@ -37,10 +37,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfInformation,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     YAML_CONFIG,

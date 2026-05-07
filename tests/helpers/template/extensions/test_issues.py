@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
 
 from tests.helpers.template.helpers import assert_result_info, render_to_info
 

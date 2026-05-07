@@ -16,7 +16,7 @@ import re
 from awesomeversion import AwesomeVersion
 import pytest
 
-from homeassistant.components.go2rtc.const import RECOMMENDED_VERSION
+from inpui.components.go2rtc.const import RECOMMENDED_VERSION
 from script.hassfest.docker import _GO2RTC_SHA as DOCKER_SHA
 
 

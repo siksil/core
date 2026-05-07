@@ -5,13 +5,13 @@ from typing import cast
 
 from aiohomeconnect.model import EventKey, OptionKey
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     FanEntity,
     FanEntityDescription,
     FanEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import setup_home_connect_entry
 from .coordinator import HomeConnectApplianceCoordinator, HomeConnectConfigEntry

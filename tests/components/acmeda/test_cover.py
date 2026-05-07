@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.acmeda.const import DOMAIN
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.acmeda.const import DOMAIN
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

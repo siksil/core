@@ -5,7 +5,7 @@ from typing import Any, Concatenate
 
 from plugwise.exceptions import PlugwiseException
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 from .entity import PlugwiseEntity

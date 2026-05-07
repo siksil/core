@@ -10,17 +10,17 @@ from aiovodafone.exceptions import (
 )
 import pytest
 
-from homeassistant.components.device_tracker import CONF_CONSIDER_HOME
-from homeassistant.components.vodafone_station.const import (
+from inpui.components.device_tracker import CONF_CONSIDER_HOME
+from inpui.components.vodafone_station.const import (
     CONF_DEVICE_DETAILS,
     DEVICE_TYPE,
     DEVICE_URL,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import TEST_HOST, TEST_PASSWORD, TEST_TYPE, TEST_URL, TEST_USERNAME
 

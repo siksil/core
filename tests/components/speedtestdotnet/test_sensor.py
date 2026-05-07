@@ -2,9 +2,9 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.speedtestdotnet.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.speedtestdotnet.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MOCK_RESULTS, MOCK_SERVERS, MOCK_STATES
 

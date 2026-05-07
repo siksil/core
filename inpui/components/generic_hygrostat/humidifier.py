@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 import logging
 from typing import TYPE_CHECKING, Any, cast
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     MODE_AWAY,
     MODE_NORMAL,
@@ -18,13 +18,13 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     CONF_NAME,
     CONF_UNIQUE_ID,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
@@ -32,7 +32,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     Event,
     EventStateChangedData,
@@ -41,19 +41,19 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import condition, config_validation as cv
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.entity_platform import (
+from inpui.helpers import condition, config_validation as cv
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_state_change_event,
     async_track_state_report_event,
     async_track_time_interval,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import (
     CONF_AWAY_FIXED,
@@ -264,7 +264,7 @@ class GenericHygrostat(HumidifierEntity, RestoreEntity):
 
             await self._async_sensor_update(sensor_state)
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, _async_startup)
+        self.hass.bus.async_listen_once(EVENT_INPUI_START, _async_startup)
 
         if (old_state := await self.async_get_last_state()) is not None:
             if old_state.attributes.get(ATTR_MODE) == MODE_AWAY:

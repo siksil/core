@@ -5,7 +5,7 @@ import logging
 
 from wled import LightCapability
 
-from homeassistant.components.light import ColorMode
+from inpui.components.light import ColorMode
 
 # Integration domain
 DOMAIN = "wled"

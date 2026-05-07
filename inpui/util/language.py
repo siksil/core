@@ -8,7 +8,7 @@ import math
 import operator
 import re
 
-from homeassistant.const import MATCH_ALL
+from inpui.const import MATCH_ALL
 
 SEPARATOR_RE = re.compile(r"[-_]")
 SAME_LANGUAGES = (

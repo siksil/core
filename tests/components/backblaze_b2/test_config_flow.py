@@ -5,19 +5,19 @@ from unittest.mock import patch
 from b2sdk.v2 import exception
 import pytest
 
-from homeassistant.components.backblaze_b2.const import (
+from inpui.components.backblaze_b2.const import (
     CONF_APPLICATION_KEY,
     CONF_KEY_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlowResult,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import BackblazeFixture
 from .const import USER_INPUT

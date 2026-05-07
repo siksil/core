@@ -6,17 +6,17 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from aiohttp import web
 
-from homeassistant.components.emulated_hue.config import (
+from inpui.components.emulated_hue.config import (
     DATA_KEY,
     DATA_VERSION,
     SAVE_DELAY,
     Config,
 )
-from homeassistant.components.emulated_hue.upnp import UPNPResponderProtocol
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import utcnow
+from inpui.components.emulated_hue.upnp import UPNPResponderProtocol
+from inpui.const import EVENT_INPUI_STARTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import utcnow
 
 from tests.common import async_fire_time_changed
 
@@ -148,7 +148,7 @@ async def test_setup_works(hass: HomeAssistant) -> None:
             spec=UPNPResponderProtocol
         )
         assert await async_setup_component(hass, "emulated_hue", {})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_create_upnp_datagram_endpoint.mock_calls) == 1

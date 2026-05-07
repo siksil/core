@@ -7,12 +7,12 @@ import logging
 
 from requests.exceptions import RequestException
 
-from homeassistant.components.image import ImageEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util, slugify
+from inpui.components.image import ImageEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util, slugify
 
 from .const import DOMAIN, Platform
 from .coordinator import AvmWrapper, FritzConfigEntry

@@ -9,10 +9,10 @@ import pywilight
 from pywilight.wilight_device import PyWiLightDevice
 import requests
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -75,7 +75,7 @@ class WiLightParent:
 
             # handle shutdown of WiLight asyncio transport
             hass.bus.async_listen_once(
-                EVENT_HOMEASSISTANT_STOP, lambda x: client.stop()
+                EVENT_INPUI_STOP, lambda x: client.stop()
             )
 
             _LOGGER.debug("Connected to WiLight device: %s", api_device.device_id)

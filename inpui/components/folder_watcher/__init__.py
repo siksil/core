@@ -22,11 +22,11 @@ from watchdog.events import (
 )
 from watchdog.observers import Observer
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
 
 from .const import CONF_FOLDER, CONF_PATTERNS, DOMAIN, PLATFORMS
 
@@ -138,10 +138,10 @@ class Watcher:
             create_event_handler(patterns, hass, entry_id), path, recursive=True
         )
         if not hass.is_running:
-            hass.bus.listen_once(EVENT_HOMEASSISTANT_START, self.startup)
+            hass.bus.listen_once(EVENT_INPUI_START, self.startup)
         else:
             self.startup(None)
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, self.shutdown)
+        hass.bus.listen_once(EVENT_INPUI_STOP, self.shutdown)
 
     def startup(self, event: Event | None) -> None:
         """Start the watcher."""

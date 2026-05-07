@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_ECO,
     STATE_ELECTRIC,
     STATE_GAS,
@@ -12,14 +12,14 @@ from homeassistant.components.water_heater import (
     STATE_HIGH_DEMAND,
     STATE_PERFORMANCE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_TEMPERATURE,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_OFF,
     STATE_ON,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

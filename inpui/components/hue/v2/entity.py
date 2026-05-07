@@ -9,10 +9,10 @@ from aiohue.v2.controllers.events import EventType
 from aiohue.v2.models.resource import ResourceTypes
 from aiohue.v2.models.zigbee_connectivity import ConnectivityServiceStatus
 
-from homeassistant.core import callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from ..bridge import HueBridge
 from ..const import CONF_IGNORE_AVAILABILITY, DOMAIN

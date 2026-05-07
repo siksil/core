@@ -6,17 +6,17 @@ from collections.abc import Callable
 
 from google_drive_api.exceptions import GoogleDriveApiError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import instance_id
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import instance_id
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 from .api import AsyncConfigEntryAuth, DriveClient
 from .const import DOMAIN

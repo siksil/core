@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 import aioonkyo
 from aioonkyo import Instruction, Receiver, ReceiverInfo, Status, connect, query
 
-from homeassistant.components import network
-from homeassistant.core import HomeAssistant
+from inpui.components import network
+from inpui.core import HomeAssistant
 
 from .const import DEVICE_DISCOVERY_TIMEOUT, DEVICE_INTERVIEW_TIMEOUT, ZONES
 

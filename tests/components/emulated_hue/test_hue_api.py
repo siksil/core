@@ -15,7 +15,7 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import const, setup
-from homeassistant.components import (
+from inpui.components import (
     climate,
     cover,
     emulated_hue,
@@ -26,8 +26,8 @@ from homeassistant.components import (
     media_player,
     script,
 )
-from homeassistant.components.emulated_hue import Config, hue_api
-from homeassistant.components.emulated_hue.hue_api import (
+from inpui.components.emulated_hue import Config, hue_api
+from inpui.components.emulated_hue.hue_api import (
     HUE_API_STATE_BRI,
     HUE_API_STATE_BRI_MAX,
     HUE_API_STATE_CT,
@@ -47,7 +47,7 @@ from homeassistant.components.emulated_hue.hue_api import (
     HueUsernameView,
     _remote_is_allowed,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     CONTENT_TYPE_JSON,
@@ -56,10 +56,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonObjectType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonObjectType
 
 from tests.common import (
     async_fire_time_changed,

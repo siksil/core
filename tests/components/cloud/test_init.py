@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.cloud import (
+from inpui.components.cloud import (
     CloudConnectionState,
     CloudNotAvailable,
     CloudNotConnected,
@@ -15,17 +15,17 @@ from homeassistant.components.cloud import (
     async_listen_connection_change,
     async_remote_ui_url,
 )
-from homeassistant.components.cloud.const import (
+from inpui.components.cloud.const import (
     DATA_CLOUD,
     DOMAIN,
     MODE_DEV,
     PREF_CLOUDHOOKS,
 )
-from homeassistant.components.cloud.prefs import STORAGE_KEY
-from homeassistant.const import CONF_MODE, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import Unauthorized
-from homeassistant.setup import async_setup_component
+from inpui.components.cloud.prefs import STORAGE_KEY
+from inpui.const import CONF_MODE, EVENT_INPUI_STOP
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import Unauthorized
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockUser
 
@@ -123,7 +123,7 @@ async def test_remote_services(
 async def test_shutdown_event(hass: HomeAssistant) -> None:
     """Test if the cloud will stop on shutdown event."""
     with patch("hass_nabucasa.Cloud.stop") as mock_stop:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert mock_stop.called

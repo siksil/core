@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.lock import DOMAIN, LockState
-from homeassistant.core import HomeAssistant
+from inpui.components.lock import DOMAIN, LockState
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

@@ -9,10 +9,10 @@ import pytest
 from renault_api.kamereon import exceptions, models, schemas
 from renault_api.renault_account import RenaultAccount
 
-from homeassistant.components.renault.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.components.renault.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .const import MOCK_ACCOUNT_ID, MOCK_CONFIG, MOCK_VEHICLES
 

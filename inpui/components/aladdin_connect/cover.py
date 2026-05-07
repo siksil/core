@@ -6,10 +6,10 @@ from typing import Any
 
 import aiohttp
 
-from homeassistant.components.cover import CoverDeviceClass, CoverEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.cover import CoverDeviceClass, CoverEntity
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, SUPPORTED_FEATURES
 from .coordinator import AladdinConnectConfigEntry, AladdinConnectCoordinator

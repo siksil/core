@@ -12,9 +12,9 @@ from elmax_api.model.panel import PanelEntry, PanelStatus
 import httpx
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .common import (
     build_direct_ssl_context,

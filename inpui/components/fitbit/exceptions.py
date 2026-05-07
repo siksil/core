@@ -3,7 +3,7 @@
 These exceptions exist to provide common exceptions for the async and sync client libraries.
 """
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class FitbitApiException(HomeAssistantError):

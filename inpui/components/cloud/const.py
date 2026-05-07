@@ -5,8 +5,8 @@ from __future__ import annotations
 import asyncio
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.signal_type import SignalType
+from inpui.util.hass_dict import HassKey
+from inpui.util.signal_type import SignalType
 
 if TYPE_CHECKING:
     from hass_nabucasa import Cloud

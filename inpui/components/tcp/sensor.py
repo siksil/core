@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Final
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorEntity,
 )
-from homeassistant.const import CONF_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.const import CONF_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
 
 from .common import TCP_PLATFORM_SCHEMA
 from .entity import TcpEntity

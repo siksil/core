@@ -10,8 +10,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import climate
-from homeassistant.components.climate import (
+from inpui.components import climate
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_TARGET_TEMP_HIGH,
     ATTR_TARGET_TEMP_LOW,
@@ -29,8 +29,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_TEMPERATURE,
     CONF_NAME,
     CONF_OPTIMISTIC,
@@ -43,13 +43,13 @@ from homeassistant.const import (
     PRECISION_WHOLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.template import Template
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util.unit_conversion import TemperatureConverter
 
 from . import subscription
 from .config import DEFAULT_RETAIN, MQTT_BASE_SCHEMA

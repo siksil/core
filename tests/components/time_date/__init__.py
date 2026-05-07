@@ -1,9 +1,9 @@
 """Tests for the time_date component."""
 
-from homeassistant.components.time_date.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_DISPLAY_OPTIONS
-from homeassistant.core import HomeAssistant
+from inpui.components.time_date.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_DISPLAY_OPTIONS
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

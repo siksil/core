@@ -6,12 +6,12 @@ from pycognito.exceptions import WarrantException
 import pyschlage
 import voluptuous as vol
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant, SupportsResponse
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant, SupportsResponse
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, SERVICE_ADD_CODE, SERVICE_DELETE_CODE, SERVICE_GET_CODES
 from .coordinator import SchlageConfigEntry, SchlageDataUpdateCoordinator

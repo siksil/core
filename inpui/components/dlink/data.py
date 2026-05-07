@@ -8,7 +8,7 @@ import urllib.error
 
 from pyW215.pyW215 import SmartPlug
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 

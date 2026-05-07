@@ -8,9 +8,9 @@ import pytest
 from python_otbr_api.tlv_parser import TLVError
 from zeroconf.asyncio import AsyncServiceInfo
 
-from homeassistant.components.thread import dataset_store, discovery
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.thread import dataset_store, discovery
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     DATASET_1,

@@ -2,10 +2,10 @@
 
 from phone_modem import PhoneModem
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE, EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import EXCEPTIONS
 
@@ -32,7 +32,7 @@ async def async_setup_entry(
         api.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_on_hass_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_on_hass_stop)
     )
 
     entry.runtime_data = api

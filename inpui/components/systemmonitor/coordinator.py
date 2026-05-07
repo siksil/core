@@ -12,11 +12,11 @@ from psutil import Process
 from psutil._ntuples import sbattery, sdiskusage, shwtemp, snetio, snicaddr, sswap
 import psutil_home_assistant as ha_psutil
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import DEFAULT_SCAN_INTERVAL
-from homeassistant.helpers.update_coordinator import TimestampDataUpdateCoordinator
-from homeassistant.util import dt as dt_util
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import DEFAULT_SCAN_INTERVAL
+from inpui.helpers.update_coordinator import TimestampDataUpdateCoordinator
+from inpui.util import dt as dt_util
 
 from .const import CONF_PROCESS, PROCESS_ERRORS
 from .util import get_all_pressure_info

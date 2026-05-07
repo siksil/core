@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.color_extractor.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.color_extractor.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

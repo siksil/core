@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -33,20 +33,20 @@ from homeassistant.components.light import (
     brightness_supported,
     valid_supported_color_modes,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_BRIGHTNESS,
     CONF_EFFECT,
     CONF_NAME,
     CONF_OPTIMISTIC,
     STATE_ON,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, VolSchemaType
-from homeassistant.util import color as color_util
-from homeassistant.util.json import json_loads_object
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import json_dumps
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, VolSchemaType
+from inpui.util import color as color_util
+from inpui.util.json import json_loads_object
 
 from .. import subscription
 from ..config import DEFAULT_QOS, DEFAULT_RETAIN, MQTT_RW_SCHEMA

@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from b2sdk.v2 import exception
 import pytest
 
-from homeassistant.components.backblaze_b2.const import CONF_APPLICATION_KEY
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.backblaze_b2.const import CONF_APPLICATION_KEY
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

@@ -13,13 +13,13 @@ from aiohttp.client_exceptions import (
 from mozart_api.exceptions import ApiException
 from mozart_api.mozart_client import MozartClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_MODEL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.ssl import get_default_context
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_MODEL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
+from inpui.util.ssl import get_default_context
 
 from .const import DOMAIN
 from .services import async_setup_services

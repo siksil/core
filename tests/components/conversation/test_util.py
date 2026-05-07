@@ -1,8 +1,8 @@
 """Tests for conversation utility functions."""
 
-from homeassistant.components import conversation
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import chat_session, intent, llm
+from inpui.components import conversation
+from inpui.core import HomeAssistant
+from inpui.helpers import chat_session, intent, llm
 
 
 async def test_async_get_result_from_chat_log(

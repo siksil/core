@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_FAN_MODES,
     ATTR_HVAC_ACTION,
@@ -35,8 +35,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.homeassistant import SERVICE_UPDATE_ENTITY
-from homeassistant.components.modbus.const import (
+from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.modbus.const import (
     CONF_CLIMATES,
     CONF_CURRENT_TEMP_OFFSET,
     CONF_CURRENT_TEMP_SCALE,
@@ -92,7 +92,7 @@ from homeassistant.components.modbus.const import (
     DOMAIN,
     DataType,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     CONF_ADDRESS,
@@ -104,8 +104,8 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_ENTITY_NAME, ReadResult
 

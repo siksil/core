@@ -1,8 +1,8 @@
 """Tests for the diagnostics data provided by the Nut integration."""
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.components.nut.diagnostics import TO_REDACT
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.components.nut.diagnostics import TO_REDACT
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

@@ -8,12 +8,12 @@ import logging
 from pyprobeplus import ProbePlusDevice
 from pyprobeplus.exceptions import ProbePlusDeviceNotFound, ProbePlusError
 
-from homeassistant.components import bluetooth
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.components import bluetooth
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 

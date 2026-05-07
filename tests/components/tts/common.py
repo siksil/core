@@ -11,8 +11,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import media_source
-from homeassistant.components.tts import (
+from inpui.components import media_source
+from inpui.components.tts import (
     CONF_LANG,
     DATA_TTS_MANAGER,
     DOMAIN,
@@ -24,12 +24,12 @@ from homeassistant.components.tts import (
     Voice,
     _get_cache_files,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

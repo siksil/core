@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import NordPoolConfigEntry
 

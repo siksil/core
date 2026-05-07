@@ -11,8 +11,8 @@ import openai
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components.zone import ENTITY_ID_HOME
-from homeassistant.config_entries import (
+from inpui.components.zone import ENTITY_ID_HOME
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigEntryState,
@@ -21,17 +21,17 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_API_KEY,
     CONF_LLM_HASS_API,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import llm
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import llm
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     SelectOptionDict,
@@ -43,7 +43,7 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_CHAT_MODEL,

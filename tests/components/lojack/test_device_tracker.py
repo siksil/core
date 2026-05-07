@@ -7,9 +7,9 @@ from freezegun.api import FrozenDateTimeFactory
 from lojack_api import ApiError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lojack.const import DEFAULT_UPDATE_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.lojack.const import DEFAULT_UPDATE_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

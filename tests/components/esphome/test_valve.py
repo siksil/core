@@ -9,7 +9,7 @@ from aioesphomeapi import (
     ValveState as ESPHomeValveState,
 )
 
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as VALVE_DOMAIN,
@@ -19,8 +19,8 @@ from homeassistant.components.valve import (
     SERVICE_STOP_VALVE,
     ValveState,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
 
 from .conftest import MockESPHomeDeviceType
 

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.components.zoneminder.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.zoneminder.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_SSL
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import MOCK_HOST
 

@@ -4,17 +4,17 @@ from __future__ import annotations
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components import switch
-from homeassistant.const import (
+from inpui.components import switch
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import async_mock_service
 

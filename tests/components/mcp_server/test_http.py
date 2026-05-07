@@ -16,26 +16,26 @@ import mcp.client.streamable_http
 from mcp.shared.exceptions import McpError
 import pytest
 
-from homeassistant.components.conversation import DOMAIN as CONVERSATION_DOMAIN
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.mcp_server.const import STATELESS_LLM_API
-from homeassistant.components.mcp_server.http import (
+from inpui.components.conversation import DOMAIN as CONVERSATION_DOMAIN
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.mcp_server.const import STATELESS_LLM_API
+from inpui.components.mcp_server.http import (
     MESSAGES_API,
     SSE_API,
     STREAMABLE_API,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_LLM_HASS_API, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_LLM_HASS_API, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     llm,
 )
-from homeassistant.helpers.httpx_client import create_async_httpx_client
-from homeassistant.setup import async_setup_component
+from inpui.helpers.httpx_client import create_async_httpx_client
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, setup_test_component_platform
 from tests.components.light.common import MockLight

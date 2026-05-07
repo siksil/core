@@ -7,11 +7,11 @@ import logging
 from aioruuvigateway.api import get_gateway_history_data
 from aioruuvigateway.models import TagData
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import SCAN_INTERVAL
 

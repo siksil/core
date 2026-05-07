@@ -7,9 +7,9 @@ from unittest.mock import AsyncMock, patch
 from govee_local_api import GoveeDevice
 
 from homeassistant import config_entries
-from homeassistant.components.govee_light_local.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.govee_light_local.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import DEFAULT_CAPABILITIES
 

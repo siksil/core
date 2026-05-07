@@ -3,7 +3,7 @@
 from collections.abc import Mapping
 from typing import Any
 
-from homeassistant.const import CONF_USERNAME
+from inpui.const import CONF_USERNAME
 
 from .const import AUTH_OTHER, CONF_AUTH_METHOD, CONF_REALM
 

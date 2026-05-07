@@ -8,14 +8,14 @@ from typing import Any
 
 from notify_events import Message
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TITLE,
     BaseNotificationService,
 )
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN
 

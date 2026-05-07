@@ -19,16 +19,16 @@ from uuid import uuid4
 
 import certifi
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_CLIENT_ID,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     HassJob,
@@ -37,18 +37,18 @@ from homeassistant.core import (
     callback,
     get_hassjob_callable_job_type,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util.collection import chunked_or_all
-from homeassistant.util.logging import catch_log_exception, log_exception
+from inpui.helpers.importlib import async_import_module
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util.collection import chunked_or_all
+from inpui.util.logging import catch_log_exception, log_exception
 
 from .const import (
     CONF_BIRTH_MESSAGE,
@@ -461,7 +461,7 @@ class MQTT:
         self._cleanup_on_unload.extend(
             (
                 async_at_started(hass, self._async_ha_started),
-                hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, self._async_ha_stop),
+                hass.bus.async_listen(EVENT_INPUI_STOP, self._async_ha_stop),
             )
         )
         self._socket_buffersize: int | None = None

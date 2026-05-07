@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, Mock, patch
 from airtouch4pyapi.airtouch import AirTouch, AirTouchAc, AirTouchGroup, AirTouchStatus
 
 from homeassistant import config_entries
-from homeassistant.components.airtouch4.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.airtouch4.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_form(hass: HomeAssistant) -> None:

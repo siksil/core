@@ -7,14 +7,14 @@ from typing import Any
 
 from asyncssh.sftp import SFTPError
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
     BackupNotFound,
     OnProgressCallback,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from . import SFTPConfigEntry
 from .client import BackupAgentClient

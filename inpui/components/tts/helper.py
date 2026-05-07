@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import DATA_COMPONENT, DATA_TTS_MANAGER
 

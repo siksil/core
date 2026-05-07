@@ -2,7 +2,7 @@
 
 import re
 
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.util.yaml import load_yaml_dict
 
 from .model import Config, Integration
 

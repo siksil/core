@@ -5,17 +5,17 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import data_entry_flow
-from homeassistant.components.tellduslive import (
+from inpui.components.tellduslive import (
     APPLICATION_NAME,
     DOMAIN,
     KEY_SCAN_INTERVAL,
     SCAN_INTERVAL,
     config_flow,
 )
-from homeassistant.config_entries import SOURCE_DISCOVERY
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_DISCOVERY
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

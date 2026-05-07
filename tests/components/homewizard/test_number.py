@@ -7,14 +7,14 @@ from homewizard_energy.models import CombinedModels, Measurement, State, System
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import number
-from homeassistant.components.homewizard.const import UPDATE_INTERVAL
-from homeassistant.components.number import ATTR_VALUE, SERVICE_SET_VALUE
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components import number
+from inpui.components.homewizard.const import UPDATE_INTERVAL
+from inpui.components.number import ATTR_VALUE, SERVICE_SET_VALUE
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

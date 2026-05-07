@@ -1,6 +1,6 @@
 """The tests for lutron caseta logbook."""
 
-from homeassistant.components.lutron_caseta.const import (
+from inpui.components.lutron_caseta.const import (
     ATTR_ACTION,
     ATTR_AREA_NAME,
     ATTR_BUTTON_NUMBER,
@@ -14,11 +14,11 @@ from homeassistant.components.lutron_caseta.const import (
     DOMAIN,
     LUTRON_CASETA_BUTTON_EVENT,
 )
-from homeassistant.components.lutron_caseta.models import LutronCasetaData
-from homeassistant.const import ATTR_DEVICE_ID, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.lutron_caseta.models import LutronCasetaData
+from inpui.const import ATTR_DEVICE_ID, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import MockBridge, async_setup_integration
 

@@ -22,7 +22,7 @@ from habiticalib import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.habitica.const import (
+from inpui.components.habitica.const import (
     ATTR_ADD_CHECKLIST_ITEM,
     ATTR_ALIAS,
     ATTR_CLEAR_DATE,
@@ -76,11 +76,11 @@ from homeassistant.components.habitica.const import (
     SERVICE_UPDATE_REWARD,
     SERVICE_UPDATE_TODO,
 )
-from homeassistant.components.todo import ATTR_RENAME
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_DATE, ATTR_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.todo import ATTR_RENAME
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_DATE, ATTR_NAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from .conftest import (
     ERROR_BAD_REQUEST,

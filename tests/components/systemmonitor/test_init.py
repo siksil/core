@@ -7,11 +7,11 @@ from unittest.mock import Mock
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.systemmonitor.const import CONF_PROCESS, DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.systemmonitor.const import CONF_PROCESS, DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

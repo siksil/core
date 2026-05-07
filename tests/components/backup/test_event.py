@@ -4,12 +4,12 @@ from unittest.mock import AsyncMock, patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup.const import DOMAIN
-from homeassistant.components.backup.event import ATTR_BACKUP_STAGE, ATTR_FAILED_REASON
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.backup.const import DOMAIN
+from inpui.components.backup.event import ATTR_BACKUP_STAGE, ATTR_FAILED_REASON
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_backup_integration
 

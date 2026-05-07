@@ -1,11 +1,11 @@
 """Tests for the Openhome config flow module."""
 
-from homeassistant.components.openhome.const import DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.openhome.const import DOMAIN
+from inpui.config_entries import SOURCE_SSDP
+from inpui.const import CONF_HOST, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

@@ -1,6 +1,6 @@
 """Constants for the iCloud tests."""
 
-from homeassistant.components.icloud.const import (
+from inpui.components.icloud.const import (
     CONF_GPS_ACCURACY_THRESHOLD,
     CONF_MAX_INTERVAL,
     CONF_WITH_FAMILY,
@@ -8,7 +8,7 @@ from homeassistant.components.icloud.const import (
     DEFAULT_MAX_INTERVAL,
     DEFAULT_WITH_FAMILY,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 FIRST_NAME = "user"
 LAST_NAME = "name"

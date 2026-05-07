@@ -9,16 +9,16 @@ from syrupy.assertion import SnapshotAssertion
 from tplink_omada_client.devices import OmadaListDevice
 from tplink_omada_client.exceptions import OmadaClientException, RequestFailed
 
-from homeassistant.components.tplink_omada.coordinator import POLL_DEVICES
-from homeassistant.components.update import (
+from inpui.components.tplink_omada.coordinator import POLL_DEVICES
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     DOMAIN as UPDATE_DOMAIN,
     SERVICE_INSTALL,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

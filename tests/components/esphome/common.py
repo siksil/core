@@ -2,16 +2,16 @@
 
 from datetime import datetime
 
-from homeassistant.components import assist_satellite
-from homeassistant.components.assist_satellite import AssistSatelliteEntity
-from homeassistant.components.esphome import DOMAIN
-from homeassistant.components.esphome.assist_satellite import EsphomeAssistSatellite
-from homeassistant.components.esphome.coordinator import REFRESH_INTERVAL
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.util import dt as dt_util
+from inpui.components import assist_satellite
+from inpui.components.assist_satellite import AssistSatelliteEntity
+from inpui.components.esphome import DOMAIN
+from inpui.components.esphome.assist_satellite import EsphomeAssistSatellite
+from inpui.components.esphome.coordinator import REFRESH_INTERVAL
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import EntityComponent
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

@@ -2,9 +2,9 @@
 
 from insteon_frontend import get_build_id, locate_dir
 
-from homeassistant.components import panel_custom, websocket_api
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import panel_custom, websocket_api
+from inpui.components.http import StaticPathConfig
+from inpui.core import HomeAssistant, callback
 
 from ..const import CONF_DEV_PATH, DOMAIN
 from .aldb import (

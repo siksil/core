@@ -2,11 +2,11 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.niko_home_control.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.components.niko_home_control.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

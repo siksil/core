@@ -5,7 +5,7 @@ import re
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_VERSION,
     CONF_HOST,
     CONF_PASSWORD,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers import config_validation as cv
+from inpui.helpers import config_validation as cv
 
 CONF_DB_NAME = "database"
 CONF_BUCKET = "bucket"

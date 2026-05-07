@@ -11,33 +11,33 @@ from typing import Any, Protocol
 import voluptuous as vol
 import yarl
 
-from homeassistant.components.hassio import (
+from inpui.components.hassio import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
     hostname_from_addon_slug,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlowResult,
     OptionsFlow,
     OptionsFlowManager,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.integration_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
 
 from .const import LOGGER, SILABS_FLASHER_ADDON_SLUG, SILABS_MULTIPROTOCOL_ADDON_SLUG
 
@@ -310,7 +310,7 @@ class OptionsFlowHandler(OptionsFlow, ABC):
     def __init__(self, config_entry: ConfigEntry) -> None:
         """Set up the options flow."""
         # pylint: disable=hass-component-root-import
-        from homeassistant.components.zha.radio_manager import (  # noqa: PLC0415
+        from inpui.components.zha.radio_manager import (  # noqa: PLC0415
             ZhaMultiPANMigrationHelper,
         )
 
@@ -452,11 +452,11 @@ class OptionsFlowHandler(OptionsFlow, ABC):
     ) -> ConfigFlowResult:
         """Configure the Silicon Labs Multiprotocol add-on."""
         # pylint: disable=hass-component-root-import
-        from homeassistant.components.zha import DOMAIN as ZHA_DOMAIN  # noqa: PLC0415
-        from homeassistant.components.zha.radio_manager import (  # noqa: PLC0415
+        from inpui.components.zha import DOMAIN as ZHA_DOMAIN  # noqa: PLC0415
+        from inpui.components.zha.radio_manager import (  # noqa: PLC0415
             ZhaMultiPANMigrationHelper,
         )
-        from homeassistant.components.zha.silabs_multiprotocol import (  # noqa: PLC0415
+        from inpui.components.zha.silabs_multiprotocol import (  # noqa: PLC0415
             async_get_channel as async_get_zha_channel,
         )
 
@@ -744,8 +744,8 @@ class OptionsFlowHandler(OptionsFlow, ABC):
     ) -> ConfigFlowResult:
         """Perform initial backup and reconfigure ZHA."""
         # pylint: disable=hass-component-root-import
-        from homeassistant.components.zha import DOMAIN as ZHA_DOMAIN  # noqa: PLC0415
-        from homeassistant.components.zha.radio_manager import (  # noqa: PLC0415
+        from inpui.components.zha import DOMAIN as ZHA_DOMAIN  # noqa: PLC0415
+        from inpui.components.zha.radio_manager import (  # noqa: PLC0415
             ZhaMultiPANMigrationHelper,
         )
 

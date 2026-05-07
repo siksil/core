@@ -17,8 +17,8 @@ from zeroconf import (
 )
 from zeroconf.asyncio import AsyncServiceInfo, AsyncZeroconf
 
-from homeassistant.components import zeroconf
-from homeassistant.core import HomeAssistant
+from inpui.components import zeroconf
+from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

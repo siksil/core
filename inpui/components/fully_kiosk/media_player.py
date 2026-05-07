@@ -4,17 +4,17 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerEntity,
     MediaPlayerState,
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullyKioskConfigEntry
 from .const import AUDIOMANAGER_STREAM_MUSIC, MEDIA_SUPPORT_FULLYKIOSK

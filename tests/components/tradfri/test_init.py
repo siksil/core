@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 from pytradfri.const import ATTR_FIRMWARE_VERSION, ATTR_GATEWAY_ID
 from pytradfri.gateway import Gateway
 
-from homeassistant.components import tradfri
-from homeassistant.components.tradfri.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import tradfri
+from inpui.components.tradfri.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import GATEWAY_ID, GATEWAY_ID1, GATEWAY_ID2
 from .common import CommandStore

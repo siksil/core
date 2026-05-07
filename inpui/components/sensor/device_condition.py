@@ -4,30 +4,30 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import (
+from inpui.components.device_automation import (
     InvalidDeviceAutomationConfig,
     async_get_entity_registry_entry_or_raise,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ABOVE,
     CONF_BELOW,
     CONF_CONDITION,
     CONF_ENTITY_ID,
     CONF_TYPE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
 )
-from homeassistant.helpers.entity import (
+from inpui.helpers.entity import (
     get_capability,
     get_device_class,
     get_unit_of_measurement,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from . import ATTR_STATE_CLASS, DOMAIN, SensorDeviceClass
 

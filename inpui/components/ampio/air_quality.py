@@ -8,17 +8,17 @@ from typing import Final
 from asmog import AmpioSmog
 import voluptuous as vol
 
-from homeassistant.components.air_quality import (
+from inpui.components.air_quality import (
     PLATFORM_SCHEMA as AIR_QUALITY_PLATFORM_SCHEMA,
     AirQualityEntity,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import Throttle
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import Throttle
 
 from .const import CONF_STATION_ID, SCAN_INTERVAL
 

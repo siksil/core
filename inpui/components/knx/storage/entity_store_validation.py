@@ -4,7 +4,7 @@ from typing import Literal, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.helpers.typing import VolSchemaType
+from inpui.helpers.typing import VolSchemaType
 
 from .entity_store_schema import ENTITY_STORE_DATA_SCHEMA
 

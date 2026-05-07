@@ -15,12 +15,12 @@ from evohomeasync2.zone import Zone
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.evohome.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util, slugify
-from homeassistant.util.json import JsonArrayType, JsonObjectType
+from inpui.components.evohome.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util, slugify
+from inpui.util.json import JsonArrayType, JsonObjectType
 
 from .const import ACCESS_TOKEN, REFRESH_TOKEN, SESSION_ID, USERNAME
 

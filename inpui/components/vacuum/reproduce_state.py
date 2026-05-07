@@ -7,14 +7,14 @@ from collections.abc import Iterable
 import logging
 from typing import Any
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.core import Context, HomeAssistant, State
 
 from . import (
     ATTR_FAN_SPEED,

@@ -3,23 +3,23 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.sensor import (
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
     device_condition,
 )
-from homeassistant.components.sensor.const import NON_NUMERIC_DEVICE_CLASSES
-from homeassistant.components.sensor.device_condition import ENTITY_CONDITIONS
-from homeassistant.const import CONF_PLATFORM, PERCENTAGE, STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryHider
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import load_json
+from inpui.components.sensor.const import NON_NUMERIC_DEVICE_CLASSES
+from inpui.components.sensor.device_condition import ENTITY_CONDITIONS
+from inpui.const import CONF_PLATFORM, PERCENTAGE, STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryHider
+from inpui.setup import async_setup_component
+from inpui.util.json import load_json
 
 from .common import UNITS_OF_MEASUREMENT, MockSensor
 

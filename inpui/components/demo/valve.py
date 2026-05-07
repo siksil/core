@@ -6,12 +6,12 @@ import asyncio
 from datetime import datetime
 from typing import Any
 
-from homeassistant.components.valve import ValveEntity, ValveEntityFeature, ValveState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_utc_time_change
+from inpui.components.valve import ValveEntity, ValveEntityFeature, ValveState
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_utc_time_change
 
 from . import DOMAIN
 

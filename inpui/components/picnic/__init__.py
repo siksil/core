@@ -2,11 +2,11 @@
 
 from python_picnic_api2 import PicnicAPI
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_COUNTRY_CODE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ACCESS_TOKEN, CONF_COUNTRY_CODE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_API, CONF_COORDINATOR, DOMAIN
 from .coordinator import PicnicUpdateCoordinator

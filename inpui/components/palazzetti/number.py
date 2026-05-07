@@ -5,10 +5,10 @@ from __future__ import annotations
 from pypalazzetti.exceptions import CommunicationError, ValidationError
 from pypalazzetti.fan import FanType
 
-from homeassistant.components.number import NumberDeviceClass, NumberEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import NumberDeviceClass, NumberEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import PalazzettiConfigEntry, PalazzettiDataUpdateCoordinator

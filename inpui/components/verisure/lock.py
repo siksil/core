@@ -7,16 +7,16 @@ from typing import Any
 
 from verisure import Error as VerisureError
 
-from homeassistant.components.lock import LockEntity, LockState
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_CODE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.components.lock import LockEntity, LockState
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_CODE
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     CONF_GIID,

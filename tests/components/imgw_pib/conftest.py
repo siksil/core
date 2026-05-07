@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, patch
 from imgw_pib import Alert, HydrologicalData, SensorData
 import pytest
 
-from homeassistant.components.imgw_pib.const import DOMAIN
+from inpui.components.imgw_pib.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

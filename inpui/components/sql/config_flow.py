@@ -11,28 +11,28 @@ from sqlalchemy.exc import MultipleResultsFound, NoSuchColumnError, SQLAlchemyEr
 from sqlalchemy.orm import Session, scoped_session, sessionmaker
 import voluptuous as vol
 
-from homeassistant.components.recorder import CONF_DB_URL, get_instance
-from homeassistant.components.sensor import (
+from inpui.components.recorder import CONF_DB_URL, get_instance
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_NAME,
     CONF_UNIT_OF_MEASUREMENT,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import async_get_hass, callback
-from homeassistant.data_entry_flow import section
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import selector
+from inpui.core import async_get_hass, callback
+from inpui.data_entry_flow import section
+from inpui.exceptions import TemplateError
+from inpui.helpers import selector
 
 from .const import CONF_ADVANCED_OPTIONS, CONF_COLUMN_NAME, CONF_QUERY, DOMAIN
 from .util import (

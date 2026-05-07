@@ -7,8 +7,8 @@ from miio import Device as MiioDevice
 from miio.gateway.gateway import Gateway
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 if TYPE_CHECKING:
     from .coordinator import GatewayDeviceCoordinator

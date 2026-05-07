@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConditionErrorContainer,
     ConditionErrorIndex,
     ConditionErrorMessage,

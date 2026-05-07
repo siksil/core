@@ -3,10 +3,10 @@
 from unittest.mock import patch
 
 from homeassistant import setup
-from homeassistant.components import dynalite, frontend
-from homeassistant.components.cover import DEVICE_CLASSES
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components import dynalite, frontend
+from inpui.components.cover import DEVICE_CLASSES
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

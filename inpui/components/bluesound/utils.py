@@ -2,7 +2,7 @@
 
 from pyblu import PairedPlayer
 
-from homeassistant.helpers.device_registry import format_mac
+from inpui.helpers.device_registry import format_mac
 
 
 def format_unique_id(mac: str, port: int) -> str:

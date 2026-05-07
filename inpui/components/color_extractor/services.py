@@ -9,14 +9,14 @@ from colorthief import ColorThief
 from PIL import UnidentifiedImageError
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_RGB_COLOR,
     DOMAIN as LIGHT_DOMAIN,
     LIGHT_TURN_ON_SCHEMA,
 )
-from homeassistant.const import SERVICE_TURN_ON as LIGHT_SERVICE_TURN_ON
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
+from inpui.const import SERVICE_TURN_ON as LIGHT_SERVICE_TURN_ON
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.helpers import aiohttp_client, config_validation as cv
 
 from .const import ATTR_PATH, ATTR_URL, DOMAIN, SERVICE_TURN_ON
 

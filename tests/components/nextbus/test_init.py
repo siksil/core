@@ -3,9 +3,9 @@
 from unittest.mock import MagicMock
 from urllib.error import HTTPError
 
-from homeassistant.components.nextbus.coordinator import NextBusHTTPError
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.nextbus.coordinator import NextBusHTTPError
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import assert_setup_sensor
 from .const import CONFIG_BASIC

@@ -5,15 +5,15 @@ import logging
 import pyads
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_IP_ADDRESS,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_ADS_VAR, DATA_ADS, DOMAIN, AdsType
 from .hub import AdsHub
@@ -93,7 +93,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         return False
 
     hass.data[DATA_ADS] = ads
-    hass.bus.listen(EVENT_HOMEASSISTANT_STOP, ads.shutdown)
+    hass.bus.listen(EVENT_INPUI_STOP, ads.shutdown)
 
     def handle_write_data_by_name(call: ServiceCall) -> None:
         """Write a value to the connected ADS device."""

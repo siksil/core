@@ -11,14 +11,14 @@ from azure.core.pipeline.transport._aiohttp import (
 )  # need to import from private file, as it is not properly imported in the init
 from azure.storage.blob.aio import ContainerClient
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import (
     CONF_ACCOUNT_NAME,

@@ -11,8 +11,8 @@ from matter_server.common.models import EventType, MatterNodeEvent
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lock import ATTR_CHANGED_BY, LockEntityFeature, LockState
-from homeassistant.components.matter.const import (
+from inpui.components.lock import ATTR_CHANGED_BY, LockEntityFeature, LockState
+from inpui.components.matter.const import (
     ATTR_CREDENTIAL_DATA,
     ATTR_CREDENTIAL_INDEX,
     ATTR_CREDENTIAL_RULE,
@@ -24,10 +24,10 @@ from homeassistant.components.matter.const import (
     CLEAR_ALL_INDEX,
     DOMAIN,
 )
-from homeassistant.const import ATTR_CODE, ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_CODE, ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .common import (
     set_node_attribute,

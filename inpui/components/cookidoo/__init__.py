@@ -6,9 +6,9 @@ import logging
 
 from cookidoo_api import CookidooAuthException, CookidooRequestException
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import DOMAIN
 from .coordinator import CookidooConfigEntry, CookidooDataUpdateCoordinator

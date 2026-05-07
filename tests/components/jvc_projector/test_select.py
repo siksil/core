@@ -6,15 +6,15 @@ from unittest.mock import MagicMock
 from freezegun.api import FrozenDateTimeFactory
 from jvcprojector import command as cmd
 
-from homeassistant.components.jvc_projector.coordinator import INTERVAL_FAST
-from homeassistant.components.select import (
+from inpui.components.jvc_projector.coordinator import INTERVAL_FAST
+from inpui.components.select import (
     ATTR_OPTIONS,
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, ATTR_OPTION
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_FRIENDLY_NAME, ATTR_OPTION
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

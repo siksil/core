@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.homeworks.const import (
+from inpui.components.homeworks.const import (
     CONF_ADDR,
     CONF_BUTTONS,
     CONF_CONTROLLER_ID,
@@ -17,7 +17,7 @@ from homeassistant.components.homeworks.const import (
     CONF_RELEASE_DELAY,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,

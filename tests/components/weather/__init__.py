@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_SUNNY,
     ATTR_FORECAST_CLOUD_COVERAGE,
     ATTR_FORECAST_HUMIDITY,
@@ -18,10 +18,10 @@ from homeassistant.components.weather import (
     ATTR_FORECAST_WIND_BEARING,
     Forecast,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import (
     MockConfigEntry,

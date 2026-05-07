@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
 
 from .coordinator import (
     IslamicPrayerDataUpdateCoordinator,

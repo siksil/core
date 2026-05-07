@@ -9,11 +9,11 @@ from pylamarzocco.models import UpdateDetails
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.update import DOMAIN as UPDATE_DOMAIN, SERVICE_INSTALL
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import async_init_integration
 

@@ -5,12 +5,12 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.conversation import async_get_agent, default_agent
-from homeassistant.components.shopping_list import intent as sl_intent
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import conversation
+from inpui.components.conversation import async_get_agent, default_agent
+from inpui.components.shopping_list import intent as sl_intent
+from inpui.const import MATCH_ALL
+from inpui.core import Context, HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MockAgent
 

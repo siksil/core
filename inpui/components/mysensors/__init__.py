@@ -7,10 +7,10 @@ import logging
 
 from mysensors import BaseAsyncGateway
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import (
     ATTR_DEVICES,

@@ -6,15 +6,15 @@ from unittest.mock import AsyncMock, patch
 from monzopy.monzopy import UserAccount
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.monzo.api import AuthenticatedMonzoAPI
-from homeassistant.components.monzo.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.monzo.api import AuthenticatedMonzoAPI
+from inpui.components.monzo.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

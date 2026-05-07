@@ -9,15 +9,15 @@ from renault_api.kamereon import schemas
 from renault_api.renault_account import RenaultAccount
 
 from homeassistant import config_entries
-from homeassistant.components.renault.const import (
+from inpui.components.renault.const import (
     CONF_KAMEREON_ACCOUNT_ID,
     CONF_LOCALE,
     DOMAIN,
 )
-from homeassistant.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import aiohttp_client
 
 from tests.common import MockConfigEntry, async_load_fixture, get_schema_suggested_value
 

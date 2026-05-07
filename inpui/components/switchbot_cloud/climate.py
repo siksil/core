@@ -13,8 +13,8 @@ from switchbot_api import (
     SwitchBotAPI,
 )
 
-from homeassistant.components import climate as FanState
-from homeassistant.components.climate import (
+from inpui.components import climate as FanState
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_TEMPERATURE,
     PRESET_BOOST,
@@ -26,16 +26,16 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     PRECISION_TENTHS,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from . import SwitchbotCloudData, SwitchBotCoordinator
 from .const import (

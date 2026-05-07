@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from homeassistant.components.media_source import MediaSource, local_source
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.media_source import MediaSource, local_source
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .const import DATA_MEDIA_SOURCE, DOMAIN, IMAGE_DIR
 

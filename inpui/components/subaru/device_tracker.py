@@ -6,11 +6,11 @@ from typing import Any
 
 from subarulink.const import LATITUDE, LONGITUDE, TIMESTAMP
 
-from homeassistant.components.device_tracker import TrackerEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.device_tracker import TrackerEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from . import get_device_info
 from .const import (

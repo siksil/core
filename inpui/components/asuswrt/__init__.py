@@ -1,8 +1,8 @@
 """Support for ASUSWRT devices."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant
 
 from .router import AsusWrtRouter
 
@@ -24,7 +24,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: AsusWrtConfigEntry) -> b
         await router.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_close_connection)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_close_connection)
     )
 
     entry.runtime_data = router

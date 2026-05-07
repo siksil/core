@@ -5,7 +5,7 @@ from typing import Any
 
 from mullvad_api import MullvadAPI, MullvadAPIError
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DOMAIN
 

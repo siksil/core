@@ -12,17 +12,17 @@ from aiohomekit.model.characteristics.const import (
 from aiohomekit.model.services import Service, ServicesTypes
 from propcache.api import cached_property
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     DIRECTION_FORWARD,
     DIRECTION_REVERSE,
     FanEntity,
     FanEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )

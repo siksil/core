@@ -6,10 +6,10 @@ from unittest.mock import patch
 from pylast import Track, WSError
 import pytest
 
-from homeassistant.components.lastfm.const import CONF_MAIN_USER, CONF_USERS, DOMAIN
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.lastfm.const import CONF_MAIN_USER, CONF_USERS, DOMAIN
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import API_KEY, USERNAME_1, USERNAME_2, MockNetwork, MockUser
 

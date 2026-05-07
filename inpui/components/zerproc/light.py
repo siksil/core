@@ -8,19 +8,19 @@ from typing import Any
 
 import pyzerproc
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_HS_COLOR,
     ColorMode,
     LightEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util import color as color_util
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_time_interval
+from inpui.util import color as color_util
 
 from .const import DATA_ADDRESSES, DATA_DISCOVERY_SUBSCRIPTION, DOMAIN
 
@@ -99,11 +99,11 @@ class ZerprocLight(LightEntity):
     async def async_added_to_hass(self) -> None:
         """Run when entity about to be added to hass."""
         self.async_on_remove(
-            self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._hass_stop)
+            self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self._hass_stop)
         )
 
     async def _hass_stop(self, event: Event) -> None:
-        """Run on EVENT_HOMEASSISTANT_STOP."""
+        """Run on EVENT_INPUI_STOP."""
         await self.async_will_remove_from_hass()
 
     async def async_will_remove_from_hass(self) -> None:

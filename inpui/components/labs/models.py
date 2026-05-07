@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Self, TypedDict
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.storage import Store
+    from inpui.helpers.storage import Store
 
 
 class EventLabsUpdatedData(TypedDict):

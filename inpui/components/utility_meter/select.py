@@ -4,18 +4,18 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device import async_entity_id_to_device
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.entity_platform import (
+from inpui.components.select import SelectEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers.device import async_entity_id_to_device
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_METER, CONF_SOURCE_SENSOR, CONF_TARIFFS, DATA_UTILITY
 

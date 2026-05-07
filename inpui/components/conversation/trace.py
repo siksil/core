@@ -7,8 +7,8 @@ from dataclasses import asdict, dataclass, field
 import enum
 from typing import Any
 
-from homeassistant.util import dt as dt_util, ulid as ulid_util
-from homeassistant.util.limited_size_dict import LimitedSizeDict
+from inpui.util import dt as dt_util, ulid as ulid_util
+from inpui.util.limited_size_dict import LimitedSizeDict
 
 STORED_TRACES = 3
 

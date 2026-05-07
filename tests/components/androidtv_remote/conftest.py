@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.androidtv_remote.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
+from inpui.components.androidtv_remote.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
 
 from tests.common import MockConfigEntry
 

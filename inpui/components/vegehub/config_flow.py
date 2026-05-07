@@ -6,20 +6,20 @@ from typing import Any
 from vegehub import VegeHub
 import voluptuous as vol
 
-from homeassistant.components.webhook import (
+from inpui.components.webhook import (
     async_generate_id as webhook_generate_id,
     async_generate_url as webhook_generate_url,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_DEVICE,
     CONF_HOST,
     CONF_IP_ADDRESS,
     CONF_MAC,
     CONF_WEBHOOK_ID,
 )
-from homeassistant.helpers.service_info import zeroconf
-from homeassistant.util.network import is_ip_address
+from inpui.helpers.service_info import zeroconf
+from inpui.util.network import is_ip_address
 
 from .const import DOMAIN
 

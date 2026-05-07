@@ -8,17 +8,17 @@ import logging
 from httpx import HTTPStatusError, RequestError, TimeoutException
 from pythonxbox.api.client import XboxLiveClient
 
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.config_entries import ConfigSubentry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.helpers.httpx_client import get_async_client
 
 from . import api
 from .api import AsyncConfigEntryAuth

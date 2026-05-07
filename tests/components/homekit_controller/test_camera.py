@@ -7,9 +7,9 @@ from aiohomekit.model import Accessory
 from aiohomekit.model.services import ServicesTypes
 from aiohomekit.testing import FAKE_CAMERA_IMAGE
 
-from homeassistant.components import camera
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components import camera
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_test_component
 

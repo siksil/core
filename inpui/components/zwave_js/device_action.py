@@ -13,10 +13,10 @@ from zwave_js_server.const.command_class.meter import CC_SPECIFIC_METER_TYPE
 from zwave_js_server.model.value import get_value_id_str
 from zwave_js_server.util.command_class.meter import get_meter_type
 
-from homeassistant.components.device_automation import async_validate_entity_schema
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.device_automation import async_validate_entity_schema
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_DOMAIN,
     CONF_DEVICE_ID,
@@ -25,10 +25,10 @@ from homeassistant.const import (
     CONF_TYPE,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .config_validation import VALUE_SCHEMA
 from .const import (

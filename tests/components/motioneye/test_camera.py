@@ -27,9 +27,9 @@ from motioneye_client.const import (
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.camera import async_get_image, async_get_mjpeg_stream
-from homeassistant.components.motioneye import get_motioneye_device_identifier
-from homeassistant.components.motioneye.const import (
+from inpui.components.camera import async_get_image, async_get_mjpeg_stream
+from inpui.components.motioneye import get_motioneye_device_identifier
+from inpui.components.motioneye.const import (
     CONF_ACTION,
     CONF_STREAM_URL_TEMPLATE,
     CONF_SURVEILLANCE_USERNAME,
@@ -40,12 +40,12 @@ from homeassistant.components.motioneye.const import (
     SERVICE_SET_TEXT_OVERLAY,
     SERVICE_SNAPSHOT,
 )
-from homeassistant.const import ATTR_DEVICE_ID, ATTR_ENTITY_ID, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.aiohttp import MockRequest
+from inpui.const import ATTR_DEVICE_ID, ATTR_ENTITY_ID, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.aiohttp import MockRequest
 
 from . import (
     TEST_CAMERA,

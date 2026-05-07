@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from homeassistant.components import conversation
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import conversation
+from inpui.core import Context, HomeAssistant, State
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import mock_restore_cache
 

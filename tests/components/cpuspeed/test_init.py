@@ -4,9 +4,9 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.cpuspeed.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.cpuspeed.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

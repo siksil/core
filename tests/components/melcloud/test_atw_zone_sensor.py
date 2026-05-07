@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.melcloud.sensor import ATW_ZONE_SENSORS, AtwZoneSensor
+from inpui.components.melcloud.sensor import ATW_ZONE_SENSORS, AtwZoneSensor
 
 
 @pytest.fixture

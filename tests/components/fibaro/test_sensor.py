@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import init_integration
 

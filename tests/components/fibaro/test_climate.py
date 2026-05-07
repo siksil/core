@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components.climate import ClimateEntityFeature, HVACMode
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.climate import ClimateEntityFeature, HVACMode
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import init_integration
 

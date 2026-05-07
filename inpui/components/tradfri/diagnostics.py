@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any, cast
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_GATEWAY_ID, COORDINATOR, COORDINATOR_LIST, DOMAIN
 

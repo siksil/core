@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.fastdotcom.const import DEFAULT_NAME, DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MOCK_DATA
 

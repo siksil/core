@@ -3,9 +3,9 @@
 from typing import Any
 
 from homeassistant import auth
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.setup import async_setup_component
 
 from tests.common import ensure_auth_manager_loaded
 from tests.test_util import mock_real_ip

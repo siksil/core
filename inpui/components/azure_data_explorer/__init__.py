@@ -12,16 +12,16 @@ import logging
 from azure.kusto.data.exceptions import KustoAuthenticationError, KustoServiceError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import Event, HomeAssistant, State
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.json import ExtendedJSONEncoder
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import utcnow
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import Event, HomeAssistant, State
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
+from inpui.helpers.event import async_call_later
+from inpui.helpers.json import ExtendedJSONEncoder
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import utcnow
+from inpui.util.hass_dict import HassKey
 
 from .client import AzureDataExplorerClient
 from .const import (

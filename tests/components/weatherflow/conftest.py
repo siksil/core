@@ -8,7 +8,7 @@ import pytest
 from pyweatherflowudp.client import EVENT_DEVICE_DISCOVERED
 from pyweatherflowudp.device import WeatherFlowDevice
 
-from homeassistant.components.weatherflow.const import DOMAIN
+from inpui.components.weatherflow.const import DOMAIN
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

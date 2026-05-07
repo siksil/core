@@ -10,10 +10,10 @@ from glances_api.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.glances.const import DOMAIN
-from homeassistant.const import CONF_NAME, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.glances.const import DOMAIN
+from inpui.const import CONF_NAME, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import HA_SENSOR_DATA, MOCK_USER_INPUT
 

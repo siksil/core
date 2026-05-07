@@ -9,14 +9,14 @@ from deebot_client.device import Device
 from deebot_client.events import StateEvent
 from deebot_client.models import CleanAction, State
 
-from homeassistant.components.lawn_mower import (
+from inpui.components.lawn_mower import (
     LawnMowerActivity,
     LawnMowerEntity,
     LawnMowerEntityEntityDescription,
     LawnMowerEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import EcovacsConfigEntry
 from .entity import EcovacsEntity

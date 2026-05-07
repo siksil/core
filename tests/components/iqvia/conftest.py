@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.iqvia.const import CONF_ZIP_CODE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.json import JsonObjectType
+from inpui.components.iqvia.const import CONF_ZIP_CODE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

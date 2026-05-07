@@ -8,14 +8,14 @@ from hatasmota.switch import TasmotaSwitchTriggerConfig
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.tasmota import _LOGGER
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.trigger import async_initialize_triggers
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.tasmota import _LOGGER
+from inpui.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr
+from inpui.helpers.trigger import async_initialize_triggers
+from inpui.setup import async_setup_component
 
 from .test_common import DEFAULT_CONFIG, remove_device
 

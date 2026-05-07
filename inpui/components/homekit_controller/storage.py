@@ -7,8 +7,8 @@ from typing import Any
 
 from aiohomekit.characteristic_cache import Pairing, StorageLayout
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN, ENTITY_MAP
 

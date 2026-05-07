@@ -7,9 +7,9 @@ from collections.abc import Callable
 
 import aiopulse
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import ACMEDA_ENTITY_REMOVE, ACMEDA_HUB_UPDATE, LOGGER
 from .helpers import update_devices

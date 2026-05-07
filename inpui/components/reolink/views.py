@@ -10,11 +10,11 @@ from aiohttp import ClientError, ClientTimeout, web
 from reolink_aio.enums import VodRequestType
 from reolink_aio.exceptions import ReolinkError
 
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.media_source import Unresolvable
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util.ssl import SSLCipherList
+from inpui.components.http import HomeAssistantView
+from inpui.components.media_source import Unresolvable
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util.ssl import SSLCipherList
 
 from .util import get_host
 

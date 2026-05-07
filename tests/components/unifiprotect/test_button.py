@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from uiprotect.data.devices import Camera, Chime, Doorlock
 
-from homeassistant.components.unifiprotect.const import DEFAULT_ATTRIBUTION
-from homeassistant.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.unifiprotect.const import DEFAULT_ATTRIBUTION
+from inpui.const import ATTR_ATTRIBUTION, ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .utils import (
     MockUFPFixture,

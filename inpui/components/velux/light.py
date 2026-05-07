@@ -6,9 +6,9 @@ from typing import Any
 
 from pyvlx import DimmableDevice, Intensity, Light, OnOffLight
 
-from homeassistant.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_BRIGHTNESS, ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import VeluxConfigEntry
 from .entity import VeluxEntity, wrap_pyvlx_call_exceptions

@@ -1,8 +1,8 @@
 """Base entity for Streamlabs integration."""
 
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .coordinator import StreamlabsCoordinator, StreamlabsData
 

@@ -13,31 +13,31 @@ from typing import Any, cast
 from hass_nabucasa import Cloud, NabuCasaBaseError
 import voluptuous as vol
 
-from homeassistant.components import alexa, google_assistant
-from homeassistant.config_entries import SOURCE_SYSTEM, ConfigEntry
-from homeassistant.const import (
+from inpui.components import alexa, google_assistant
+from inpui.config_entries import SOURCE_SYSTEM, ConfigEntry
+from inpui.const import (
     CONF_DESCRIPTION,
     CONF_MODE,
     CONF_NAME,
     CONF_REGION,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     FORMAT_DATETIME,
     Platform,
 )
-from homeassistant.core import Event, HassJob, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entityfilter
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.discovery import async_load_platform
-from homeassistant.helpers.dispatcher import (
+from inpui.core import Event, HassJob, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entityfilter
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.discovery import async_load_platform
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_integration, bind_hass
-from homeassistant.util.signal_type import SignalType
+from inpui.helpers.event import async_call_later
+from inpui.helpers.service import async_register_admin_service
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_integration, bind_hass
+from inpui.util.signal_type import SignalType
 
 # Pre-import backup to avoid it being imported
 # later when the import executor is busy and delaying
@@ -317,7 +317,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         logging.root.removeHandler(log_handler)
         del hass.data[DATA_CLOUD_LOG_HANDLER]
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _shutdown)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _shutdown)
 
     _handle_prefs_updated(hass, cloud)
     _setup_services(hass, prefs)

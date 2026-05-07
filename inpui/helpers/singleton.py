@@ -8,9 +8,9 @@ import functools
 import inspect
 from typing import Any, Literal, assert_type, cast, overload
 
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import bind_hass
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.loader import bind_hass
+from inpui.util.hass_dict import HassKey
 
 type _FuncType[_T] = Callable[[HomeAssistant], _T]
 type _Coro[_T] = Coroutine[Any, Any, _T]

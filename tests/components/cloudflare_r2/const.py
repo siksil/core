@@ -1,6 +1,6 @@
 """Consts for Cloudflare R2 tests."""
 
-from homeassistant.components.cloudflare_r2.const import (
+from inpui.components.cloudflare_r2.const import (
     CONF_ACCESS_KEY_ID,
     CONF_BUCKET,
     CONF_ENDPOINT_URL,

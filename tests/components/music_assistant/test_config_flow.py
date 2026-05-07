@@ -14,19 +14,19 @@ from music_assistant_models.api import ServerInfoMessage
 from music_assistant_models.errors import AuthenticationFailed, InvalidToken
 import pytest
 
-from homeassistant.components.music_assistant.config_flow import (
+from inpui.components.music_assistant.config_flow import (
     CONF_URL,
     MusicAssistantConfigFlow,
     _get_server_info,
     _test_connection,
 )
-from homeassistant.components.music_assistant.const import (
+from inpui.components.music_assistant.const import (
     AUTH_SCHEMA_VERSION,
     CONF_TOKEN,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_HASSIO,
     SOURCE_IGNORE,
     SOURCE_REAUTH,
@@ -34,10 +34,10 @@ from homeassistant.config_entries import (
     SOURCE_ZEROCONF,
     ConfigEntryState,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry, async_load_fixture
 

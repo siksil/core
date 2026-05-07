@@ -5,9 +5,9 @@ import logging
 
 from roonapi import RoonApi, RoonDiscovery
 
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_PORT
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.dt import utcnow
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_PORT
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.dt import utcnow
 
 from .const import CONF_ROON_ID, ROON_APPINFO
 

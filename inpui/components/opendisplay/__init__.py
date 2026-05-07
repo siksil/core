@@ -15,13 +15,13 @@ from opendisplay import (
     OpenDisplayError,
 )
 
-from homeassistant.components.bluetooth import async_ble_device_from_address
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.bluetooth import async_ble_device_from_address
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH
+from inpui.helpers.typing import ConfigType
 
 if TYPE_CHECKING:
     from opendisplay.models import FirmwareVersion

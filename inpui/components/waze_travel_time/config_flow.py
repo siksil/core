@@ -6,16 +6,16 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_NAME, CONF_REGION
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_NAME, CONF_REGION
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.selector import (
     BooleanSelector,
     DurationSelector,
     DurationSelectorConfig,
@@ -26,7 +26,7 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (
     CONF_AVOID_FERRIES,

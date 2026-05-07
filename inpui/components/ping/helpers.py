@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 
 from icmplib import NameLookupError, async_ping
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import ICMP_TIMEOUT, PING_TIMEOUT
 

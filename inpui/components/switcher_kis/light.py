@@ -6,10 +6,10 @@ from typing import Any, cast
 
 from aioswitcher.device import DeviceCategory, DeviceState, SwitcherLight
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ColorMode, LightEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitcherConfigEntry
 from .const import SIGNAL_DEVICE_ADD

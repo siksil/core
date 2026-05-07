@@ -2,9 +2,9 @@
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .mocks import (
     _create_yale_with_devices,

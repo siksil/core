@@ -5,7 +5,7 @@ from zwave_js_server.const import CommandClass
 from zwave_js_server.const.command_class.humidity_control import HumidityControlMode
 from zwave_js_server.event import Event
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     ATTR_MAX_HUMIDITY,
     ATTR_MIN_HUMIDITY,
@@ -15,7 +15,7 @@ from homeassistant.components.humidifier import (
     SERVICE_SET_HUMIDITY,
     HumidifierDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
@@ -25,7 +25,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import DEHUMIDIFIER_ADC_T3000_ENTITY, HUMIDIFIER_ADC_T3000_ENTITY
 

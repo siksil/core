@@ -10,8 +10,8 @@ import pytest
 from reolink_aio.enums import VodRequestType
 from reolink_aio.exceptions import ReolinkError
 
-from homeassistant.components.reolink.views import async_generate_playback_proxy_url
-from homeassistant.core import HomeAssistant
+from inpui.components.reolink.views import async_generate_playback_proxy_url
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

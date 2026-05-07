@@ -9,10 +9,10 @@ from scsgate.reactor import Reactor
 from scsgate.tasks import GetStatusTask
 import voluptuous as vol
 
-from homeassistant.const import CONF_DEVICE, CONF_NAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DEVICE, CONF_NAME, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -46,7 +46,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         _LOGGER.debug("Stopping SCSGate monitor thread")
         scsgate.stop()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, stop_monitor)
+    hass.bus.listen_once(EVENT_INPUI_STOP, stop_monitor)
     hass.data[DOMAIN] = scsgate
 
     return True

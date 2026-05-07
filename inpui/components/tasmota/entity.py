@@ -12,14 +12,14 @@ from hatasmota.entity import (
 )
 from hatasmota.models import DiscoveryHashType
 
-from homeassistant.components.mqtt import (
+from inpui.components.mqtt import (
     async_subscribe_connection_status,
     is_connected as mqtt_connected,
 )
-from homeassistant.core import callback
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .discovery import (
     TASMOTA_DISCOVERY_ENTITY_UPDATED,

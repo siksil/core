@@ -8,17 +8,17 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config as hass_config, core as ha
-from homeassistant.components.history_stats.const import (
+from inpui.components.history_stats.const import (
     CONF_END,
     CONF_START,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.components.history_stats.sensor import (
+from inpui.components.history_stats.sensor import (
     PLATFORM_SCHEMA as SENSOR_SCHEMA,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import (
+from inpui.components.recorder import Recorder
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     CONF_ENTITY_ID,
     CONF_NAME,
@@ -27,11 +27,11 @@ from homeassistant.const import (
     SERVICE_RELOAD,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed, get_fixture_path
 from tests.components.recorder.common import async_wait_recording_done

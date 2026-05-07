@@ -10,13 +10,13 @@ from pyotgw import vars as gw_vars
 from serial import SerialException
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE,
     CONF_ID,
     CONF_NAME,
@@ -24,8 +24,8 @@ from homeassistant.const import (
     PRECISION_TENTHS,
     PRECISION_WHOLE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
 
 from . import DOMAIN
 from .const import (

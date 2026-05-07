@@ -7,11 +7,11 @@ from letpot.exceptions import LetPotConnectionException, LetPotException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.time import SERVICE_SET_VALUE
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.time import SERVICE_SET_VALUE
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

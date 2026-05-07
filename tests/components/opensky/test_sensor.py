@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 from python_opensky import StatesResponse
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.opensky.const import (
+from inpui.components.opensky.const import (
     DOMAIN,
     EVENT_OPENSKY_ENTRY,
     EVENT_OPENSKY_EXIT,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from . import setup_integration
 

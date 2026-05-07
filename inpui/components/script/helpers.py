@@ -1,9 +1,9 @@
 """Helpers for automation integration."""
 
-from homeassistant.components.blueprint import BLUEPRINT_SCHEMA, DomainBlueprints
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.singleton import singleton
+from inpui.components.blueprint import BLUEPRINT_SCHEMA, DomainBlueprints
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.singleton import singleton
 
 from .const import DOMAIN, LOGGER
 

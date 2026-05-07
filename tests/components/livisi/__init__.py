@@ -2,7 +2,7 @@
 
 from unittest.mock import patch
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
+from inpui.const import CONF_HOST, CONF_PASSWORD
 
 VALID_CONFIG = {
     CONF_HOST: "1.1.1.1",

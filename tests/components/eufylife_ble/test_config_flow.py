@@ -3,10 +3,10 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.eufylife_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.eufylife_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import NOT_EUFYLIFE_SERVICE_INFO, T9146_SERVICE_INFO
 

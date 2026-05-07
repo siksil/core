@@ -5,10 +5,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import icon
-from homeassistant.loader import IntegrationNotFound
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import icon
+from inpui.loader import IntegrationNotFound
+from inpui.setup import async_setup_component
 
 
 def test_battery_icon() -> None:

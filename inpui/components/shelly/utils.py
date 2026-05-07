@@ -28,30 +28,30 @@ from aioshelly.const import (
 from aioshelly.rpc_device import RpcDevice, WsServer
 from yarl import URL
 
-from homeassistant.components import network
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.components.network import async_get_source_ip
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import network
+from inpui.components.http import HomeAssistantView
+from inpui.components.network import async_get_source_ip
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_MODEL,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
     singleton,
 )
-from homeassistant.helpers.device_registry import (
+from inpui.helpers.device_registry import (
     CONNECTION_BLUETOOTH,
     CONNECTION_NETWORK_MAC,
     DeviceInfo,
 )
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.util.dt import utcnow
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.util.dt import utcnow
 
 from .const import (
     API_WS_URL,
@@ -283,7 +283,7 @@ async def get_coap_context(hass: HomeAssistant) -> COAP:
     def shutdown_listener(ev: Event) -> None:
         context.close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown_listener)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown_listener)
     return context
 
 

@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, create_autospec, patch
 from haphilipsjs import PhilipsTV
 import pytest
 
-from homeassistant.components.philips_js.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.philips_js.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import MOCK_CONFIG, MOCK_ENTITY_ID, MOCK_NAME, MOCK_SERIAL_NO, MOCK_SYSTEM
 

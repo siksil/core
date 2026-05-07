@@ -1,9 +1,9 @@
 """Test the example module auth module."""
 
 from homeassistant import auth, data_entry_flow
-from homeassistant.auth.mfa_modules import auth_mfa_module_from_config
-from homeassistant.auth.models import Credentials
-from homeassistant.core import HomeAssistant
+from inpui.auth.mfa_modules import auth_mfa_module_from_config
+from inpui.auth.models import Credentials
+from inpui.core import HomeAssistant
 
 from tests.common import MockUser
 

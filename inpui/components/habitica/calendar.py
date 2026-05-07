@@ -12,14 +12,14 @@ from uuid import UUID
 from dateutil.rrule import rrule
 from habiticalib import Frequency, TaskType
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     CalendarEntity,
     CalendarEntityDescription,
     CalendarEvent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from .coordinator import HabiticaConfigEntry, HabiticaDataUpdateCoordinator
 from .entity import HabiticaBase

@@ -2,9 +2,9 @@
 
 from pylutron import Keypad, Lutron, LutronEntity, LutronEvent
 
-from homeassistant.const import ATTR_IDENTIFIERS, ATTR_VIA_DEVICE
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_IDENTIFIERS, ATTR_VIA_DEVICE
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

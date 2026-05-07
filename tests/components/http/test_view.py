@@ -14,13 +14,13 @@ from aiohttp.web_exceptions import (
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS
-from homeassistant.components.http.view import (
+from inpui.components.http import KEY_HASS
+from inpui.components.http.view import (
     HomeAssistantView,
     request_handler_factory,
 )
-from homeassistant.exceptions import ServiceNotFound, Unauthorized
-from homeassistant.helpers.network import NoURLAvailableError
+from inpui.exceptions import ServiceNotFound, Unauthorized
+from inpui.helpers.network import NoURLAvailableError
 
 
 @pytest.fixture

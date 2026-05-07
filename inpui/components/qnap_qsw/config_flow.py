@@ -9,12 +9,12 @@ from aioqsw.exceptions import LoginError, QswError
 from aioqsw.localapi import ConnectionOptions, QnapQswApi
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers import aiohttp_client
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DOMAIN
 

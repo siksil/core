@@ -17,23 +17,23 @@ from songpal import (
 )
 from songpal.containers import Setting
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import PlatformNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import PlatformNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_ENDPOINT, DOMAIN, ERROR_REQUEST_RETRY
 
@@ -231,7 +231,7 @@ class SongpalEntity(MediaPlayerEntity):
         async def handle_stop(event):
             await self._dev.stop_listen_notifications()
 
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, handle_stop)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, handle_stop)
 
         self.hass.loop.create_task(self._dev.listen_notifications())
 

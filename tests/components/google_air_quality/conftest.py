@@ -7,11 +7,11 @@ from unittest.mock import AsyncMock, Mock, patch
 from google_air_quality_api.model import AirQualityCurrentConditionsData
 import pytest
 
-from homeassistant.components.google_air_quality import CONF_REFERRER
-from homeassistant.components.google_air_quality.const import DOMAIN
-from homeassistant.config_entries import ConfigSubentryDataWithId
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.google_air_quality import CONF_REFERRER
+from inpui.components.google_air_quality.const import DOMAIN
+from inpui.config_entries import ConfigSubentryDataWithId
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

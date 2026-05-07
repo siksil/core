@@ -5,9 +5,9 @@ from unittest.mock import patch
 
 from pylast import PyLastError, Track
 
-from homeassistant.components.lastfm.const import CONF_MAIN_USER, CONF_USERS
-from homeassistant.const import CONF_API_KEY
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.components.lastfm.const import CONF_MAIN_USER, CONF_USERS
+from inpui.const import CONF_API_KEY
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 API_KEY = "asdasdasdasdasd"
 USERNAME_1 = "testaccount1"

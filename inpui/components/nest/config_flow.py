@@ -24,14 +24,14 @@ from google_nest_sdm.exceptions import ApiException
 from google_nest_sdm.structure import Structure
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.selector import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.util import get_random_string
+from inpui.util import get_random_string
 
 from . import api
 from .const import (

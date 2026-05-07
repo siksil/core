@@ -2,8 +2,8 @@
 
 from google_nest_sdm.device import Device
 
-from homeassistant.components.nest.device_info import NestDeviceInfo
-from homeassistant.const import (
+from inpui.components.nest.device_info import NestDeviceInfo
+from inpui.const import (
     ATTR_IDENTIFIERS,
     ATTR_MANUFACTURER,
     ATTR_MODEL,

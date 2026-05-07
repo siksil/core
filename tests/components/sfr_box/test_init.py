@@ -7,10 +7,10 @@ import pytest
 from sfrbox_api.exceptions import SFRBoxAuthenticationError, SFRBoxError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sfr_box.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.sfr_box.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 
 @pytest.fixture(autouse=True)

@@ -6,13 +6,13 @@ import asyncio
 import logging
 from typing import Any
 
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.util.hass_dict import HassKey
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 from .coordinator import ESPHomeDashboardCoordinator
@@ -63,7 +63,7 @@ class ESPHomeDashboardManager:
         if not (data := self._data) or not (info := data.get("info")):
             return
         if is_hassio(self._hass):
-            from homeassistant.components.hassio import get_addons_info  # noqa: PLC0415
+            from inpui.components.hassio import get_addons_info  # noqa: PLC0415
 
             if (addons := get_addons_info(self._hass)) is not None and info[
                 "addon_slug"
@@ -110,7 +110,7 @@ class ESPHomeDashboardManager:
             await dashboard.async_shutdown()
 
         self._cancel_shutdown = hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, on_hass_stop
+            EVENT_INPUI_STOP, on_hass_stop
         )
 
         new_data = {"info": {"addon_slug": addon_slug, "host": host, "port": port}}

@@ -10,11 +10,11 @@ import threading
 import requests
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service import async_register_admin_service
-from homeassistant.util import raise_if_invalid_filename, raise_if_invalid_path
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service import async_register_admin_service
+from inpui.util import raise_if_invalid_filename, raise_if_invalid_path
 
 from .const import (
     _LOGGER,

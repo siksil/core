@@ -2,9 +2,9 @@
 
 from airtouch4pyapi import AirTouch
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import AirTouch4ConfigEntry, AirtouchDataUpdateCoordinator
 

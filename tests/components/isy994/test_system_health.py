@@ -5,11 +5,11 @@ from unittest.mock import Mock
 
 from aiohttp import ClientError
 
-from homeassistant.components.isy994.const import DOMAIN, ISY_URL_POSTFIX
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.isy994.const import DOMAIN, ISY_URL_POSTFIX
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .test_config_flow import MOCK_HOSTNAME, MOCK_UUID
 

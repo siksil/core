@@ -21,10 +21,10 @@ from pydrawise.schema import (
 )
 import pytest
 
-from homeassistant.components.hydrawise.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.hydrawise.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

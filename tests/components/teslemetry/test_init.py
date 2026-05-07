@@ -17,27 +17,27 @@ from tesla_fleet_api.exceptions import (
     TeslaFleetError,
 )
 
-from homeassistant.components.teslemetry.const import CLIENT_ID, DOMAIN
+from inpui.components.teslemetry.const import CLIENT_ID, DOMAIN
 
 # Coordinator constants
-from homeassistant.components.teslemetry.coordinator import (
+from inpui.components.teslemetry.coordinator import (
     ENERGY_HISTORY_INTERVAL,
     ENERGY_INFO_INTERVAL,
     ENERGY_LIVE_INTERVAL,
     METADATA_INTERVAL,
     VEHICLE_INTERVAL,
 )
-from homeassistant.components.teslemetry.models import TeslemetryData
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.teslemetry.models import TeslemetryData
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_platform
 from .const import (

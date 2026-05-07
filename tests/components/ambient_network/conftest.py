@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, Mock, patch
 from aioambient import OpenAPI
 import pytest
 
-from homeassistant.components.ambient_network.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.ambient_network.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import (
     MockConfigEntry,

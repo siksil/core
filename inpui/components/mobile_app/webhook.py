@@ -16,25 +16,25 @@ from nacl.exceptions import CryptoError
 from nacl.secret import SecretBox
 import voluptuous as vol
 
-from homeassistant.components import (
+from inpui.components import (
     camera,
     cloud,
     conversation,
     notify as hass_notify,
     tag,
 )
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.device_tracker import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.device_tracker import (
     ATTR_BATTERY,
     ATTR_GPS,
     ATTR_LOCATION_NAME,
 )
-from homeassistant.components.frontend import MANIFEST_JSON
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.components.zone import DOMAIN as ZONE_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.frontend import MANIFEST_JSON
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.components.zone import DOMAIN as ZONE_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_DEVICE_ID,
     ATTR_DOMAIN,
     ATTR_GPS_ACCURACY,
@@ -46,16 +46,16 @@ from homeassistant.const import (
     CONF_WEBHOOK_ID,
     EntityCategory,
 )
-from homeassistant.core import EventOrigin, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceNotFound, TemplateError
-from homeassistant.helpers import (
+from inpui.core import EventOrigin, HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceNotFound, TemplateError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     template,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.decorator import Registry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.decorator import Registry
 
 from .const import (
     ATTR_ALTITUDE,

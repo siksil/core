@@ -10,16 +10,16 @@ from eheimdigital.device import EheimDigitalDevice
 from eheimdigital.hub import EheimDigitalHub
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.helpers import selector
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST
+from inpui.helpers import selector
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN, LOGGER
 

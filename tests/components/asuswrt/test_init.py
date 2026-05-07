@@ -1,9 +1,9 @@
 """Tests for the AsusWrt integration."""
 
-from homeassistant.components.asuswrt.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.components.asuswrt.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from .common import CONFIG_DATA_TELNET, ROUTER_MAC_ADDR
 
@@ -23,7 +23,7 @@ async def test_disconnect_on_stop(hass: HomeAssistant, connect_legacy) -> None:
 
     assert config_entry.state is ConfigEntryState.LOADED
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert connect_legacy.return_value.async_disconnect.await_count == 1

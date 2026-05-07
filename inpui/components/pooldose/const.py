@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.const import UnitOfTemperature, UnitOfVolume, UnitOfVolumeFlowRate
+from inpui.const import UnitOfTemperature, UnitOfVolume, UnitOfVolumeFlowRate
 
 DOMAIN = "pooldose"
 MANUFACTURER = "SEKO"

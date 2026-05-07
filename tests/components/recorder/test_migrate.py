@@ -20,17 +20,17 @@ from sqlalchemy.exc import (
 from sqlalchemy.orm import Session, scoped_session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from homeassistant.components import persistent_notification as pn, recorder
-from homeassistant.components.recorder import db_schema, migration
-from homeassistant.components.recorder.db_schema import (
+from inpui.components import persistent_notification as pn, recorder
+from inpui.components.recorder import db_schema, migration
+from inpui.components.recorder.db_schema import (
     SCHEMA_VERSION,
     Events,
     RecorderRuns,
     States,
 )
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.core import HomeAssistant, State
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder.util import session_scope
+from inpui.core import HomeAssistant, State
+from inpui.util import dt as dt_util
 
 from .common import (
     async_wait_recorder,

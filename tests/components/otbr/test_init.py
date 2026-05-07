@@ -9,12 +9,12 @@ import pytest
 import python_otbr_api
 from zeroconf.asyncio import AsyncServiceInfo
 
-from homeassistant.components import otbr, thread
-from homeassistant.components.thread import discovery
-from homeassistant.config_entries import SOURCE_HASSIO, SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components import otbr, thread
+from inpui.components.thread import discovery
+from inpui.config_entries import SOURCE_HASSIO, SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from . import (
     BASE_URL,

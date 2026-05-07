@@ -6,24 +6,24 @@ from elgato import ElgatoError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.elgato.const import DOMAIN
-from homeassistant.components.elgato.services import SERVICE_IDENTIFY
-from homeassistant.components.light import (
+from inpui.components.elgato.const import DOMAIN
+from inpui.components.elgato.services import SERVICE_IDENTIFY
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_HS_COLOR,
     DOMAIN as LIGHT_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 pytestmark = pytest.mark.usefixtures("init_integration")
 

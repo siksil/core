@@ -7,7 +7,7 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import (
+from inpui.components import (
     alarm_control_panel,
     binary_sensor,
     button,
@@ -34,29 +34,29 @@ from homeassistant.components import (
     valve,
     water_heater,
 )
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.components.cover import CoverEntityFeature
-from homeassistant.components.fan import FanEntityFeature
-from homeassistant.components.google_assistant import const, error, helpers, trait
-from homeassistant.components.google_assistant.error import SmartHomeError
-from homeassistant.components.humidifier import HumidifierEntityFeature
-from homeassistant.components.lawn_mower import LawnMowerEntityFeature
-from homeassistant.components.light import LightEntityFeature
-from homeassistant.components.lock import LockEntityFeature
-from homeassistant.components.media_player import (
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.climate import ClimateEntityFeature
+from inpui.components.cover import CoverEntityFeature
+from inpui.components.fan import FanEntityFeature
+from inpui.components.google_assistant import const, error, helpers, trait
+from inpui.components.google_assistant.error import SmartHomeError
+from inpui.components.humidifier import HumidifierEntityFeature
+from inpui.components.lawn_mower import LawnMowerEntityFeature
+from inpui.components.light import LightEntityFeature
+from inpui.components.lock import LockEntityFeature
+from inpui.components.media_player import (
     SERVICE_PLAY_MEDIA,
     MediaPlayerEntityFeature,
     MediaType,
 )
-from homeassistant.components.vacuum import VacuumEntityFeature
-from homeassistant.components.valve import ValveEntityFeature
-from homeassistant.components.water_heater import WaterHeaterEntityFeature
-from homeassistant.const import (
+from inpui.components.vacuum import VacuumEntityFeature
+from inpui.components.valve import ValveEntityFeature
+from inpui.components.water_heater import WaterHeaterEntityFeature
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_BATTERY_LEVEL,
     ATTR_DEVICE_CLASS,
@@ -77,11 +77,11 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import TemperatureConverter
-from homeassistant.util.unit_system import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.core_config import async_process_ha_core_config
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import ConfirmRepairFlow, RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from .const import DOMAIN
 from .helpers import async_get_node_from_device_id, format_home_id_for_display

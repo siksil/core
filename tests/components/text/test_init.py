@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.text import (
+from inpui.components.text import (
     ATTR_MAX,
     ATTR_MIN,
     ATTR_MODE,
@@ -15,10 +15,10 @@ from homeassistant.components.text import (
     TextMode,
     _async_set_value,
 )
-from homeassistant.const import MAX_LENGTH_STATE_STATE
-from homeassistant.core import HomeAssistant, ServiceCall, State
-from homeassistant.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
-from homeassistant.setup import async_setup_component
+from inpui.const import MAX_LENGTH_STATE_STATE
+from inpui.core import HomeAssistant, ServiceCall, State
+from inpui.helpers.restore_state import STORAGE_KEY as RESTORE_STATE_KEY
+from inpui.setup import async_setup_component
 
 from .common import MockRestoreText, MockTextEntity
 

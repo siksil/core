@@ -2,9 +2,9 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.hassio import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_config_flow(hass: HomeAssistant) -> None:

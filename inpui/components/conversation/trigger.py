@@ -14,12 +14,12 @@ from hassil.util import (
 )
 import voluptuous as vol
 
-from homeassistant.const import CONF_COMMAND, CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.script import ScriptRunResult
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import UNDEFINED, ConfigType
+from inpui.const import CONF_COMMAND, CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.script import ScriptRunResult
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import UNDEFINED, ConfigType
 
 from .agent_manager import get_agent_manager
 from .const import DOMAIN

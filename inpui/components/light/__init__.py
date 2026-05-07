@@ -12,22 +12,22 @@ from typing import TYPE_CHECKING, Any, Self, cast, final, override
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import ToggleEntity, ToggleEntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.frame import ReportBehavior, report_usage
-from homeassistant.helpers.typing import ConfigType, VolDictType
-from homeassistant.loader import bind_hass
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import ToggleEntity, ToggleEntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.frame import ReportBehavior, report_usage
+from inpui.helpers.typing import ConfigType, VolDictType
+from inpui.loader import bind_hass
+from inpui.util import color as color_util
 
 from .const import (  # noqa: F401
     COLOR_MODES_BRIGHTNESS,

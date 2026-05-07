@@ -6,13 +6,13 @@ from unittest.mock import Mock
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.freebox import SCAN_INTERVAL
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
+from inpui.components.freebox import SCAN_INTERVAL
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
 
 from .common import setup_platform
 from .const import DATA_HOME_PIR_GET_VALUE, DATA_STORAGE_GET_RAIDS

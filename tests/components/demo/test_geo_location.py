@@ -2,20 +2,20 @@
 
 from freezegun import freeze_time
 
-from homeassistant.components import geo_location
-from homeassistant.components.demo.geo_location import (
+from inpui.components import geo_location
+from inpui.components.demo.geo_location import (
     DEFAULT_UPDATE_INTERVAL,
     NUMBER_OF_DEMO_DEVICES,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     ATTR_UNIT_OF_MEASUREMENT,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

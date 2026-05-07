@@ -12,8 +12,8 @@ from aiohttp import web
 from dateutil import parser
 import pytest
 
-from homeassistant.components.stream import create_stream
-from homeassistant.components.stream.const import (
+from inpui.components.stream import create_stream
+from inpui.components.stream.const import (
     ATTR_SETTINGS,
     CONF_LL_HLS,
     CONF_PART_DURATION,
@@ -21,9 +21,9 @@ from homeassistant.components.stream.const import (
     DOMAIN,
     HLS_PROVIDER,
 )
-from homeassistant.components.stream.core import Part
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.stream.core import Part
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import (
     FAKE_TIME,

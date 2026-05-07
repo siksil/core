@@ -6,12 +6,12 @@ import aiohttp
 import pytest
 import tibber
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.tibber.diagnostics import (
+from inpui.components.recorder import Recorder
+from inpui.components.tibber.diagnostics import (
     async_get_config_entry_diagnostics,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .conftest import create_tibber_device
 from .test_common import mock_get_homes

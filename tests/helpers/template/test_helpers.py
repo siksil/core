@@ -2,13 +2,13 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.template.helpers import raise_no_default, resolve_area_id
+from inpui.helpers.template.helpers import raise_no_default, resolve_area_id
 
 from tests.common import MockConfigEntry
 

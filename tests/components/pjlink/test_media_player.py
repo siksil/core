@@ -9,11 +9,11 @@ from pypjlink import MUTE_AUDIO
 from pypjlink.projector import ProjectorError
 import pytest
 
-from homeassistant.components import media_player
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import media_player
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

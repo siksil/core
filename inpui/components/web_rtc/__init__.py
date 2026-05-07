@@ -8,17 +8,17 @@ from typing import Any
 import voluptuous as vol
 from webrtc_models import RTCIceServer
 
-from homeassistant.components import websocket_api
-from homeassistant.const import CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.core_config import (
+from inpui.components import websocket_api
+from inpui.const import CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant, callback
+from inpui.core_config import (
     CONF_CREDENTIAL,
     CONF_ICE_SERVERS,
     validate_stun_or_turn_url,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 __all__ = [
     "async_get_ice_servers",

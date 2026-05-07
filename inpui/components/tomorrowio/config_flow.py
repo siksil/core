@@ -14,14 +14,14 @@ from pytomorrowio.exceptions import (
 from pytomorrowio.pytomorrowio import TomorrowioV4
 import voluptuous as vol
 
-from homeassistant.components.zone import async_active_zone
-from homeassistant.config_entries import (
+from inpui.components.zone import async_active_zone
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_FRIENDLY_NAME,
     CONF_LATITUDE,
@@ -29,9 +29,9 @@ from homeassistant.const import (
     CONF_LONGITUDE,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import LocationSelector, LocationSelectorConfig
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import LocationSelector, LocationSelectorConfig
 
 from .const import (
     CONF_TIMESTEP,

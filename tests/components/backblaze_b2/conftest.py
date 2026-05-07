@@ -12,13 +12,13 @@ from b2sdk._internal.raw_simulator import BucketSimulator
 from b2sdk.v2 import FileVersion, RawSimulator
 import pytest
 
-from homeassistant.components.backblaze_b2.const import (
+from inpui.components.backblaze_b2.const import (
     CONF_APPLICATION_KEY,
     CONF_BUCKET,
     CONF_KEY_ID,
     DOMAIN,
 )
-from homeassistant.components.backup import AgentBackup
+from inpui.components.backup import AgentBackup
 
 from .const import BACKUP_METADATA, TEST_BACKUP, USER_INPUT
 

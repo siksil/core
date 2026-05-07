@@ -5,17 +5,17 @@ from __future__ import annotations
 import voluptuous as vol
 from wirelesstagpy import SensorTag, constants as WT_CONSTANTS
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.const import CONF_MONITORED_CONDITIONS, STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_MONITORED_CONDITIONS, STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import WirelessTagPlatform
 from .const import SIGNAL_BINARY_EVENT_UPDATE, WIRELESSTAG_DATA

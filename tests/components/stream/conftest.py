@@ -22,8 +22,8 @@ from unittest.mock import Mock, patch
 from aiohttp import web
 import pytest
 
-from homeassistant.components.stream.core import StreamOutput
-from homeassistant.components.stream.worker import StreamState
+from inpui.components.stream.core import StreamOutput
+from inpui.components.stream.worker import StreamState
 
 from .common import generate_h264_video, stream_teardown
 

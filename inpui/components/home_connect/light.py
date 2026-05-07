@@ -7,7 +7,7 @@ from typing import Any, cast
 from aiohomeconnect.model import EventKey, SettingKey
 from aiohomeconnect.model.error import HomeConnectError
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_HS_COLOR,
     ATTR_RGB_COLOR,
@@ -15,10 +15,10 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import color as color_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import color as color_util
 
 from .common import setup_home_connect_entry
 from .const import BSH_AMBIENT_LIGHT_COLOR_CUSTOM_COLOR, DOMAIN

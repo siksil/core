@@ -1,8 +1,8 @@
 """Test cases and object for the Switcher integration tests."""
 
-from homeassistant.components.switcher_kis.const import DOMAIN
-from homeassistant.const import CONF_TOKEN, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.switcher_kis.const import DOMAIN
+from inpui.const import CONF_TOKEN, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

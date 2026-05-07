@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import insteon
-from homeassistant.components.insteon import (
+from inpui.components import insteon
+from inpui.components.insteon import (
     DOMAIN,
     entity as insteon_entity,
     utils as insteon_utils,
 )
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .const import MOCK_USER_INPUT_PLM
 from .mock_devices import MockDevices
@@ -74,7 +74,7 @@ async def test_lock_lock(
         )
         assert devices["55.55.55"].async_lock.call_count == 1
     finally:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
 
@@ -103,5 +103,5 @@ async def test_lock_unlock(
         )
         assert devices["55.55.55"].async_unlock.call_count == 1
     finally:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()

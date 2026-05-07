@@ -16,9 +16,9 @@ from zwave_js_server.model.value import (
     get_value_id_str,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory, Platform
-from homeassistant.helpers.entity import EntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory, Platform
+from inpui.helpers.entity import EntityDescription
 
 if TYPE_CHECKING:
     from _typeshed import DataclassInstance

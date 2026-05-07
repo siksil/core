@@ -10,8 +10,8 @@ import aiohttp
 from eagle100 import Eagle as Eagle100Reader
 from requests.exceptions import ConnectionError as ConnectError, HTTPError, Timeout
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import aiohttp_client
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import aiohttp_client
 
 from .const import TYPE_EAGLE_100, TYPE_EAGLE_200
 

@@ -10,17 +10,17 @@ from aiohttp import CookieJar
 from pybravia import BraviaAuthError, BraviaClient, BraviaError, BraviaNotSupported
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_CLIENT_ID, CONF_HOST, CONF_MAC, CONF_NAME, CONF_PIN
-from homeassistant.helpers import instance_id
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_CLIENT_ID, CONF_HOST, CONF_MAC, CONF_NAME, CONF_PIN
+from inpui.helpers import instance_id
+from inpui.helpers.aiohttp_client import async_create_clientsession
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,
 )
-from homeassistant.util.network import is_host_valid
+from inpui.util.network import is_host_valid
 
 from .const import (
     ATTR_CID,

@@ -7,15 +7,15 @@ from unittest.mock import MagicMock, patch
 from aiohttp import CookieJar
 from tesla_powerwall import AccessDeniedError, LoginResponse
 
-from homeassistant.components.powerwall.const import (
+from inpui.components.powerwall.const import (
     AUTH_COOKIE_KEY,
     CONFIG_ENTRY_COOKIE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.util.dt import utcnow
 
 from .mocks import MOCK_GATEWAY_DIN, _mock_powerwall_with_fixtures
 

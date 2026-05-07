@@ -16,11 +16,11 @@ from fitbit_web_api.exceptions import (
 from fitbit_web_api.models.device import Device
 from requests.exceptions import ConnectionError as RequestsConnectionError
 
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util.unit_system import METRIC_SYSTEM
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util.unit_system import METRIC_SYSTEM
 
 from .const import FitbitUnitSystem
 from .exceptions import FitbitApiException, FitbitAuthException

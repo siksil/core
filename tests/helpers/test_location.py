@@ -1,8 +1,8 @@
 """Tests Home Assistant location helpers."""
 
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_LATITUDE, ATTR_LONGITUDE
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import location
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_LATITUDE, ATTR_LONGITUDE
+from inpui.core import HomeAssistant, State
+from inpui.helpers import location
 
 
 def test_has_location_with_invalid_states() -> None:

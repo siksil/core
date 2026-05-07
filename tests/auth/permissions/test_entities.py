@@ -3,13 +3,13 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.auth.permissions.entities import (
+from inpui.auth.permissions.entities import (
     ENTITY_POLICY_SCHEMA,
     compile_entities,
 )
-from homeassistant.auth.permissions.models import PermissionLookup
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.auth.permissions.models import PermissionLookup
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from tests.common import RegistryEntryWithDefaults, mock_device_registry, mock_registry
 

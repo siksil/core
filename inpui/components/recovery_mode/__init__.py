@@ -1,9 +1,9 @@
 """The Recovery Mode integration."""
 
-from homeassistant.components import persistent_notification
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import persistent_notification
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 DOMAIN = "recovery_mode"
 

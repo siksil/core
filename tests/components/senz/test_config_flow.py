@@ -6,15 +6,15 @@ from pysenz import AUTHORIZATION_ENDPOINT, TOKEN_ENDPOINT
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.senz.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
+from inpui.components.senz.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
 
 from .const import CLIENT_ID, CLIENT_SECRET, ENTRY_UNIQUE_ID
 

@@ -9,11 +9,11 @@ import pytest
 from ring_doorbell import Ring
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.ring.binary_sensor import RingEvent
-from homeassistant.components.ring.coordinator import RingEventListener
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.ring.binary_sensor import RingEvent
+from inpui.components.ring.coordinator import RingEventListener
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import MockConfigEntry, setup_platform
 from .device_mocks import FRONT_DOOR_DEVICE_ID, INGRESS_DEVICE_ID

@@ -3,10 +3,10 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.ecowitt.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.ecowitt.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 
 async def test_create_entry(hass: HomeAssistant) -> None:

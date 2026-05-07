@@ -4,17 +4,17 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.weheat.const import (
+from inpui.components.weheat.const import (
     DOMAIN,
     ENTRY_TITLE,
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigFlowResult
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_SOURCE, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_USER, ConfigFlowResult
+from inpui.const import CONF_ACCESS_TOKEN, CONF_SOURCE, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import (
     CLIENT_ID,

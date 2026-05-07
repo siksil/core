@@ -1,10 +1,10 @@
 """Test the NEW_NAME backup platform."""
 
-from homeassistant.components.NEW_DOMAIN.backup import (
+from inpui.components.NEW_DOMAIN.backup import (
     async_post_backup,
     async_pre_backup,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_async_post_backup(hass: HomeAssistant) -> None:

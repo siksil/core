@@ -7,18 +7,18 @@ from home_assistant_bluetooth import BluetoothServiceInfo
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.passive_update_processor import (
     serialize_entity_description,
 )
-from homeassistant.components.victron_ble.const import (
+from inpui.components.victron_ble.const import (
     DOMAIN,
     REAUTH_AFTER_FAILURES,
     VICTRON_IDENTIFIER,
 )
-from homeassistant.components.victron_ble.sensor import SENSOR_DESCRIPTIONS
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.victron_ble.sensor import SENSOR_DESCRIPTIONS
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .fixtures import (
     VICTRON_AC_CHARGER_SERVICE_INFO,

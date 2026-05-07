@@ -3,9 +3,9 @@
 from pymodbus.exceptions import ModbusException
 import pytest
 
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN, CoverState
-from homeassistant.components.homeassistant import SERVICE_UPDATE_ENTITY
-from homeassistant.components.modbus.const import (
+from inpui.components.cover import DOMAIN as COVER_DOMAIN, CoverState
+from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.modbus.const import (
     CALL_TYPE_COIL,
     CALL_TYPE_REGISTER_HOLDING,
     CONF_DEVICE_ADDRESS,
@@ -18,7 +18,7 @@ from homeassistant.components.modbus.const import (
     CONF_STATUS_REGISTER_TYPE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ADDRESS,
     CONF_COVERS,
@@ -30,8 +30,8 @@ from homeassistant.const import (
     SERVICE_OPEN_COVER,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_ENTITY_NAME, ReadResult
 

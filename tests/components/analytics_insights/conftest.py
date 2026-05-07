@@ -7,7 +7,7 @@ import pytest
 from python_homeassistant_analytics import CurrentAnalytics
 from python_homeassistant_analytics.models import Addon, CustomIntegration, Integration
 
-from homeassistant.components.analytics_insights.const import (
+from inpui.components.analytics_insights.const import (
     CONF_TRACKED_APPS,
     CONF_TRACKED_CUSTOM_INTEGRATIONS,
     CONF_TRACKED_INTEGRATIONS,

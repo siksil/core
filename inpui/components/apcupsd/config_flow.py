@@ -8,9 +8,9 @@ from typing import Any
 import aioapcaccess
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers import config_validation as cv, selector
 
 from .const import CONNECTION_TIMEOUT, DOMAIN
 from .coordinator import APCUPSdData

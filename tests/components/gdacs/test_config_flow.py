@@ -5,15 +5,15 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.gdacs.const import CONF_CATEGORIES, DOMAIN
-from homeassistant.const import (
+from inpui.components.gdacs.const import CONF_CATEGORIES, DOMAIN
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.fixture(name="gdacs_setup", autouse=True)

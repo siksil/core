@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant.components.greeneye_monitor import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.greeneye_monitor import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import (
     MULTI_MONITOR_CONFIG,

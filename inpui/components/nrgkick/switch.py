@@ -6,9 +6,9 @@ from typing import Any
 
 from nrgkick_api.const import CONTROL_KEY_CHARGE_PAUSE
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import NRGkickConfigEntry, NRGkickData, NRGkickDataUpdateCoordinator
 from .entity import NRGkickEntity

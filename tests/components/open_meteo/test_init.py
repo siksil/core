@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from open_meteo import OpenMeteoConnectionError
 import pytest
 
-from homeassistant.components.open_meteo.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ZONE
-from homeassistant.core import HomeAssistant
+from inpui.components.open_meteo.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ZONE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

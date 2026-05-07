@@ -6,7 +6,7 @@ from telegram import Bot, Update
 from telegram.error import NetworkError, RetryAfter, TelegramError, TimedOut
 from telegram.ext import ApplicationBuilder, CallbackContext, TypeHandler
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .bot import BaseTelegramBot, TelegramBotConfigEntry
 from .helpers import get_base_url

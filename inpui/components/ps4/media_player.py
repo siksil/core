@@ -8,7 +8,7 @@ from pyps4_2ndscreen.errors import NotReady, PSDataIncomplete
 from pyps4_2ndscreen.media_art import TYPE_APP as PS_TYPE_APP
 import pyps4_2ndscreen.ps4 as pyps4
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_TYPE,
     ATTR_MEDIA_TITLE,
     MediaPlayerEntity,
@@ -16,19 +16,19 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LOCKED,
     CONF_HOST,
     CONF_NAME,
     CONF_REGION,
     CONF_TOKEN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.json import JsonObjectType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.json import JsonObjectType
 
 from . import format_unique_id, load_games, save_games
 from .const import (

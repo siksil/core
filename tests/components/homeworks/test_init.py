@@ -10,12 +10,12 @@ from pyhomeworks.pyhomeworks import (
 )
 import pytest
 
-from homeassistant.components.homeworks import EVENT_BUTTON_PRESS, EVENT_BUTTON_RELEASE
-from homeassistant.components.homeworks.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.homeworks import EVENT_BUTTON_PRESS, EVENT_BUTTON_RELEASE
+from inpui.components.homeworks.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from tests.common import MockConfigEntry, async_capture_events
 
@@ -236,7 +236,7 @@ async def test_cleanup_on_ha_shutdown(
     mock_homeworks.assert_called_once_with("192.168.0.1", 1234, ANY, None, None)
     mock_controller.stop.assert_not_called()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     mock_controller.stop.assert_called_once_with()

@@ -4,22 +4,22 @@ from contextlib import suppress
 from functools import partial
 from typing import Any
 
-from homeassistant.auth import EVENT_USER_REMOVED
-from homeassistant.components import cloud, intent, notify as hass_notify
-from homeassistant.components.webhook import (
+from inpui.auth import EVENT_USER_REMOVED
+from inpui.components import cloud, intent, notify as hass_notify
+from inpui.components.webhook import (
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID, Platform
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_DEVICE_ID, CONF_WEBHOOK_ID, Platform
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery,
 )
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
 
 # Pre-import the platforms so they get loaded when the integration
 # is imported as they are almost always going to be loaded and its

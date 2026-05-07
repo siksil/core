@@ -5,11 +5,11 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import water_heater
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.components import water_heater
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.components.water_heater import common
 

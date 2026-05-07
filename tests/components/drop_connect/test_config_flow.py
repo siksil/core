@@ -1,9 +1,9 @@
 """Test config flow."""
 
 from homeassistant import config_entries
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
 
 from tests.typing import MqttMockHAClient
 

@@ -13,15 +13,15 @@ from matter_server.common.helpers.util import dataclass_to_dict
 from matter_server.common.models import CommissioningParameters
 import pytest
 
-from homeassistant.components.matter.api import (
+from inpui.components.matter.api import (
     DEVICE_ID,
     ERROR_NODE_NOT_FOUND,
     ID,
     TYPE,
 )
-from homeassistant.components.matter.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.matter.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 from tests.typing import WebSocketGenerator

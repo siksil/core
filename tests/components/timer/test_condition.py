@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.timer import STATUS_ACTIVE, STATUS_IDLE, STATUS_PAUSED
-from homeassistant.core import HomeAssistant
+from inpui.components.timer import STATUS_ACTIVE, STATUS_IDLE, STATUS_PAUSED
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     ConditionStateDescription,

@@ -1,8 +1,8 @@
 """Provides triggers for valves."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.trigger import Trigger, make_entity_transition_trigger
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.trigger import Trigger, make_entity_transition_trigger
 
 from . import ATTR_IS_CLOSED, DOMAIN
 

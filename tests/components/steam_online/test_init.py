@@ -2,10 +2,10 @@
 
 import steam
 
-from homeassistant.components.steam_online.const import DEFAULT_NAME, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.steam_online.const import DEFAULT_NAME, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import create_entry, patch_interface
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 from enum import StrEnum
 from typing import Final
 
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
 
 DOMAIN: Final = "fitbit"
 

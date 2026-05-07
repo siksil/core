@@ -6,10 +6,10 @@ from unittest.mock import patch
 import pydeconz
 import pytest
 
-from homeassistant.components.deconz.const import CONF_MASTER_GATEWAY, DOMAIN
-from homeassistant.components.deconz.errors import AuthenticationRequired
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.deconz.const import CONF_MASTER_GATEWAY, DOMAIN
+from inpui.components.deconz.errors import AuthenticationRequired
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import ConfigEntryFactoryType
 

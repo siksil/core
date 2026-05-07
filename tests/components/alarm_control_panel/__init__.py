@@ -1,8 +1,8 @@
 """The tests for Alarm control panel platforms."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 
 async def help_async_setup_entry_init(

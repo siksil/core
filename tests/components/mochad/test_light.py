@@ -4,10 +4,10 @@ from unittest import mock
 
 import pytest
 
-from homeassistant.components import light
-from homeassistant.components.mochad import light as mochad
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import light
+from inpui.components.mochad import light as mochad
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 from pyopenweathermap import RequestError
 import pytest
 
-from homeassistant.components.openweathermap.const import (
+from inpui.components.openweathermap.const import (
     DEFAULT_LANGUAGE,
     DEFAULT_NAME,
     DEFAULT_OWM_MODE,
     DOMAIN,
     OWM_MODE_V30,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_USER, ConfigEntryState
+from inpui.const import (
     CONF_API_KEY,
     CONF_LANGUAGE,
     CONF_LATITUDE,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_LONGITUDE,
     CONF_MODE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import LATITUDE, LONGITUDE
 

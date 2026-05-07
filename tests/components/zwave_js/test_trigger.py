@@ -8,17 +8,17 @@ from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components import automation
-from homeassistant.components.zwave_js import DOMAIN
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.components.zwave_js.trigger import TRIGGERS
-from homeassistant.components.zwave_js.triggers.trigger_helpers import (
+from inpui.components import automation
+from inpui.components.zwave_js import DOMAIN
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.components.zwave_js.trigger import TRIGGERS
+from inpui.components.zwave_js.triggers.trigger_helpers import (
     async_bypass_dynamic_config_validation,
 )
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .common import SCHLAGE_BE469_LOCK_ENTITY
 

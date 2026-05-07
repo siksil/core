@@ -10,10 +10,10 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowError,
@@ -22,7 +22,7 @@ from homeassistant.helpers.schema_config_entry_flow import (
     SchemaOptionsFlowHandler,
     wrapped_entity_config_entry_title,
 )
-from homeassistant.util.decorator import Registry
+from inpui.util.decorator import Registry
 
 from tests.common import MockConfigEntry, MockModule, mock_integration, mock_platform
 

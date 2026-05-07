@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from nyt_games.models import ConnectionsStats, WordleStats
 import pytest
 
-from homeassistant.components.nyt_games.const import DOMAIN
-from homeassistant.const import CONF_TOKEN
+from inpui.components.nyt_games.const import DOMAIN
+from inpui.const import CONF_TOKEN
 
 from tests.common import MockConfigEntry, load_fixture
 

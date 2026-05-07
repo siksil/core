@@ -2,9 +2,9 @@
 
 import os
 
-from homeassistant.components.folder.sensor import CONF_FOLDER_PATHS
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.folder.sensor import CONF_FOLDER_PATHS
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 CWD = os.path.join(os.path.dirname(__file__))
 TEST_FOLDER = "test_folder"

@@ -20,19 +20,19 @@ from google_nest_sdm.device import Device
 from google_nest_sdm.exceptions import ApiException
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     Camera,
     CameraEntityFeature,
     WebRTCAnswer,
     WebRTCClientConfiguration,
     WebRTCSendMessage,
 )
-from homeassistant.components.stream import CONF_EXTRA_PART_WAIT_TIME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util.dt import utcnow
+from inpui.components.stream import CONF_EXTRA_PART_WAIT_TIME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util.dt import utcnow
 
 from .device_info import NestDeviceInfo
 from .types import NestConfigEntry

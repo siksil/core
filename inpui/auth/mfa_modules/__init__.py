@@ -10,13 +10,13 @@ import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
 from homeassistant import data_entry_flow, requirements
-from homeassistant.const import CONF_ID, CONF_NAME, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.util.decorator import Registry
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import CONF_ID, CONF_NAME, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.importlib import async_import_module
+from inpui.util.decorator import Registry
+from inpui.util.hass_dict import HassKey
 
 MULTI_FACTOR_AUTH_MODULES: Registry[str, type[MultiFactorAuthModule]] = Registry()
 

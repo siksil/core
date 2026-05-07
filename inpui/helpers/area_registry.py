@@ -9,11 +9,11 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, Any, Literal, TypedDict
 
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.dt import utc_from_timestamp, utcnow
-from homeassistant.util.event_type import EventType
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant, callback
+from inpui.util.dt import utc_from_timestamp, utcnow
+from inpui.util.event_type import EventType
+from inpui.util.hass_dict import HassKey
 
 from . import device_registry as dr, entity_registry as er
 from .json import json_bytes, json_fragment
@@ -569,7 +569,7 @@ def async_entries_for_label(registry: AreaRegistry, label_id: str) -> list[AreaE
 
 def _validate_temperature_entity(hass: HomeAssistant, entity_id: str) -> None:
     """Validate temperature entity."""
-    from homeassistant.components.sensor import SensorDeviceClass  # noqa: PLC0415
+    from inpui.components.sensor import SensorDeviceClass  # noqa: PLC0415
 
     if not (state := hass.states.get(entity_id)):
         raise ValueError(f"Entity {entity_id} does not exist")
@@ -583,7 +583,7 @@ def _validate_temperature_entity(hass: HomeAssistant, entity_id: str) -> None:
 
 def _validate_humidity_entity(hass: HomeAssistant, entity_id: str) -> None:
     """Validate humidity entity."""
-    from homeassistant.components.sensor import SensorDeviceClass  # noqa: PLC0415
+    from inpui.components.sensor import SensorDeviceClass  # noqa: PLC0415
 
     if not (state := hass.states.get(entity_id)):
         raise ValueError(f"Entity {entity_id} does not exist")

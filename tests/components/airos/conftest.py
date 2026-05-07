@@ -8,8 +8,8 @@ from airos.airos8 import AirOS8Data
 from airos.helpers import DetectDeviceData
 import pytest
 
-from homeassistant.components.airos.const import DEFAULT_USERNAME, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.components.airos.const import DEFAULT_USERNAME, DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 
 from . import AirOSData
 

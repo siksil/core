@@ -18,18 +18,18 @@ from async_upnp_client.profiles.dlna import ContentDirectoryErrorCode, DmsDevice
 from didl_lite import didl_lite
 from propcache.api import cached_property
 
-from homeassistant.components import ssdp
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import (
+from inpui.components import ssdp
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import (
     BrowseMediaSource,
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID, CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID, CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .const import (
     CONF_SOURCE_ID,

@@ -4,12 +4,12 @@ from unittest.mock import AsyncMock, patch
 
 import aiohttp
 
-from homeassistant.components.wmspro.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.wmspro.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import setup_config_entry
 

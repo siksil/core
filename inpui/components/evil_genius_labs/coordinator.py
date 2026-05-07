@@ -10,9 +10,9 @@ from typing import cast
 from aiohttp import ContentTypeError
 import pyevilgenius
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 UPDATE_INTERVAL = 10
 

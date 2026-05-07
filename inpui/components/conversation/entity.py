@@ -3,10 +3,10 @@
 from abc import abstractmethod
 from typing import Literal, final
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.helpers.chat_session import async_get_chat_session
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.util import dt as dt_util
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.helpers.chat_session import async_get_chat_session
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.util import dt as dt_util
 
 from .chat_log import ChatLog, async_get_chat_log
 from .const import ConversationEntityFeature

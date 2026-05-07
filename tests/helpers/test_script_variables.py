@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.script_variables import ScriptRunVariables, ScriptVariables
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.script_variables import ScriptRunVariables, ScriptVariables
 
 
 async def test_static_vars() -> None:

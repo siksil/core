@@ -5,9 +5,9 @@ from typing import Any
 
 from plexwebsocket import SIGNAL_CONNECTION_STATE, STATE_CONNECTED
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

@@ -9,24 +9,24 @@ from aiohttp import web
 from aiohttp.test_utils import TestClient, TestServer
 import pytest
 
-from homeassistant.components.mjpeg import (
+from inpui.components.mjpeg import (
     CONF_MJPEG_URL,
     CONF_STILL_IMAGE_URL,
     DOMAIN as MJPEG_DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_PASSWORD,
     CONF_USERNAME,
     CONF_VERIFY_SSL,
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     HTTP_BASIC_AUTHENTICATION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client as client
-from homeassistant.util import ssl as ssl_util
-from homeassistant.util.color import RGBColor
-from homeassistant.util.ssl import SSLCipherList
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client as client
+from inpui.util import ssl as ssl_util
+from inpui.util.color import RGBColor
+from inpui.util.ssl import SSLCipherList
 
 from tests.common import (
     MockConfigEntry,
@@ -220,7 +220,7 @@ async def test_get_clientsession_cleanup(
     ]
     assert isinstance(connector, aiohttp.TCPConnector)
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
 
     assert client_session.closed

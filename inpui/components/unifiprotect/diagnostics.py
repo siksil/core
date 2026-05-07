@@ -6,7 +6,7 @@ from typing import Any, cast
 
 from uiprotect.test_util.anonymize import anonymize_data
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .data import UFPConfigEntry
 

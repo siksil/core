@@ -3,7 +3,7 @@
 import pytest
 from smarttub import SpaLight
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 # the light in light_zone should have initial state light_state. we will call

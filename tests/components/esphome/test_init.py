@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock
 from aioesphomeapi import APIConnectionError
 import pytest
 
-from homeassistant.components.esphome import DOMAIN
-from homeassistant.components.esphome.const import CONF_NOISE_PSK
-from homeassistant.components.esphome.encryption_key_storage import (
+from inpui.components.esphome import DOMAIN
+from inpui.components.esphome.const import CONF_NOISE_PSK
+from inpui.components.esphome.encryption_key_storage import (
     async_get_encryption_key_storage,
 )
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

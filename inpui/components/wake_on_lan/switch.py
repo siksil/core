@@ -9,22 +9,22 @@ from typing import Any
 import voluptuous as vol
 import wakeonlan
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_BROADCAST_ADDRESS,
     CONF_BROADCAST_PORT,
     CONF_HOST,
     CONF_MAC,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.script import Script
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.script import Script
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_OFF_ACTION, DEFAULT_NAME, DEFAULT_PING_TIMEOUT, DOMAIN
 

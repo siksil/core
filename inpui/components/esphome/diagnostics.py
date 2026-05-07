@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.bluetooth import async_scanner_by_source
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth import async_scanner_by_source
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from . import CONF_NOISE_PSK
 from .const import CONF_DEVICE_NAME

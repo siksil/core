@@ -22,14 +22,14 @@ from anthropic.types import (
 from anthropic.types.raw_message_delta_event import Delta
 import pytest
 
-from homeassistant.components.anthropic.const import (
+from inpui.components.anthropic.const import (
     DEFAULT_AI_TASK_NAME,
     DEFAULT_CONVERSATION_NAME,
 )
-from homeassistant.const import CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import llm
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.helpers import llm
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

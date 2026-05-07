@@ -10,26 +10,26 @@ from freezegun import freeze_time
 import pytest
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ENTITY_MATCH_ALL,
     ENTITY_MATCH_NONE,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, PlatformNotReady
-from homeassistant.helpers import config_validation as cv, discovery
-from homeassistant.helpers.entity_component import EntityComponent, async_update_entity
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.service import async_get_all_descriptions
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError, PlatformNotReady
+from inpui.helpers import config_validation as cv, discovery
+from inpui.helpers.entity_component import EntityComponent, async_update_entity
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.service import async_get_all_descriptions
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,
@@ -722,7 +722,7 @@ async def test_platforms_shutdown_on_stop(hass: HomeAssistant) -> None:
     with patch.object(
         component._platforms[DOMAIN], "async_shutdown"
     ) as mock_async_shutdown:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert mock_async_shutdown.called

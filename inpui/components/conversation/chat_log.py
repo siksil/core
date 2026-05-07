@@ -14,12 +14,12 @@ from typing import Any, Literal, TypedDict, cast
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.helpers import chat_session, frame, intent, llm, template
-from homeassistant.util.dt import utcnow
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import JsonObjectType
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.helpers import chat_session, frame, intent, llm, template
+from inpui.util.dt import utcnow
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import JsonObjectType
 
 from . import trace
 from .const import ChatLogEventType

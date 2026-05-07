@@ -1,6 +1,6 @@
 """Nexia constants."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 PLATFORMS = [
     Platform.BINARY_SENSOR,

@@ -8,9 +8,9 @@ from teltasync.modems import ModemStatusFull
 from teltasync.system import DeviceStatusData
 from teltasync.unauthorized import UnauthorizedStatusData
 
-from homeassistant.components.teltonika.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.teltonika.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

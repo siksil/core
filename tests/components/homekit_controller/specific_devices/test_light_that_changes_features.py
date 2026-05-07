@@ -1,8 +1,8 @@
 """Test for a Home Assistant bridge that changes light features at runtime."""
 
-from homeassistant.components.light import ATTR_SUPPORTED_COLOR_MODES, ColorMode
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.light import ATTR_SUPPORTED_COLOR_MODES, ColorMode
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from ..common import (
     device_config_changed,

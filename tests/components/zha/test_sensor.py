@@ -11,9 +11,9 @@ from zigpy.zcl import Cluster
 from zigpy.zcl.clusters import general, homeautomation, hvac, measurement, smartenergy
 from zigpy.zcl.clusters.hvac import Thermostat
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.zha.helpers import get_zha_gateway
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.zha.helpers import get_zha_gateway
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     LIGHT_LUX,
@@ -28,7 +28,7 @@ from homeassistant.const import (
     UnitOfPressure,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import send_attributes_report
 from .conftest import SIG_EP_INPUT, SIG_EP_OUTPUT, SIG_EP_PROFILE, SIG_EP_TYPE

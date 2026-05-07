@@ -4,9 +4,9 @@ import asyncio
 
 import pytest
 
-from homeassistant.components.network.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.network.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info
 

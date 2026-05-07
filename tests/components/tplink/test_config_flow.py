@@ -7,8 +7,8 @@ from kasa import Module, TimeoutError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import stream
-from homeassistant.components.tplink import (
+from inpui.components import stream
+from inpui.components.tplink import (
     DOMAIN,
     AuthenticationError,
     Credentials,
@@ -16,16 +16,16 @@ from homeassistant.components.tplink import (
     DeviceConfig,
     KasaException,
 )
-from homeassistant.components.tplink.config_flow import TPLinkConfigFlow
-from homeassistant.components.tplink.const import (
+from inpui.components.tplink.config_flow import TPLinkConfigFlow
+from inpui.components.tplink.const import (
     CONF_CAMERA_CREDENTIALS,
     CONF_CONNECTION_PARAMETERS,
     CONF_CREDENTIALS_HASH,
     CONF_DEVICE_CONFIG,
     CONF_LIVE_VIEW,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_ALIAS,
     CONF_DEVICE,
     CONF_HOST,
@@ -34,9 +34,9 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from . import _mocked_device, _patch_connect, _patch_discovery, _patch_single_discovery
 from .conftest import override_side_effect

@@ -9,9 +9,9 @@ from typing import Any, NamedTuple, cast
 import voluptuous as vol
 
 from homeassistant import config as conf_util
-from homeassistant.components.light import ATTR_TRANSITION
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, STATES, Scene
-from homeassistant.const import (
+from inpui.components.light import ATTR_TRANSITION
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, STATES, Scene
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_STATE,
     CONF_ENTITIES,
@@ -23,17 +23,17 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, State, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddEntitiesCallback, EntityPlatform
-from homeassistant.helpers.service import (
+from inpui.core import HomeAssistant, ServiceCall, State, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddEntitiesCallback, EntityPlatform
+from inpui.helpers.service import (
     async_extract_entity_ids,
     async_register_admin_service,
 )
-from homeassistant.helpers.state import async_reproduce_state
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.loader import async_get_integration
+from inpui.helpers.state import async_reproduce_state
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.loader import async_get_integration
 
 from .const import DOMAIN
 

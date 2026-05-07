@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import ClimateEntityFeature
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration, mock_venstar_devices
 

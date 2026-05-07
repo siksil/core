@@ -6,16 +6,16 @@ import pytest
 from python_overseerr import OverseerrConnectionError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.overseerr.const import (
+from inpui.components.overseerr.const import (
     ATTR_REQUESTED_BY,
     ATTR_SORT_ORDER,
     ATTR_STATUS,
     DOMAIN,
 )
-from homeassistant.components.overseerr.services import SERVICE_GET_REQUESTS
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.components.overseerr.services import SERVICE_GET_REQUESTS
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
 
 from . import setup_integration
 

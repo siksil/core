@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 import pywilight
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_DIRECTION,
     ATTR_PERCENTAGE,
     DIRECTION_FORWARD,
@@ -14,15 +14,15 @@ from homeassistant.components.fan import (
     SERVICE_SET_DIRECTION,
     SERVICE_SET_PERCENTAGE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     HOST,

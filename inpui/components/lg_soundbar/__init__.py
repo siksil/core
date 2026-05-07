@@ -3,8 +3,8 @@
 import logging
 
 from homeassistant import config_entries, core
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.exceptions import ConfigEntryNotReady
 
 from .config_flow import test_connect
 from .const import DOMAIN

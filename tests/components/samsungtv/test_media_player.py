@@ -25,7 +25,7 @@ from samsungtvws.exceptions import ConnectionFailure, HttpApiError, Unauthorized
 from samsungtvws.remote import ChannelEmitCommand, SendRemoteKey
 from websockets.exceptions import ConnectionClosedError, WebSocketException
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
@@ -37,7 +37,7 @@ from homeassistant.components.media_player import (
     MediaPlayerDeviceClass,
     MediaType,
 )
-from homeassistant.components.samsungtv.const import (
+from inpui.components.samsungtv.const import (
     CONF_SSDP_RENDERING_CONTROL_LOCATION,
     DOMAIN,
     ENCRYPTED_WEBSOCKET_PORT,
@@ -46,8 +46,8 @@ from homeassistant.components.samsungtv.const import (
     METHOD_WEBSOCKET,
     TIMEOUT_WEBSOCKET,
 )
-from homeassistant.components.samsungtv.media_player import SUPPORT_SAMSUNGTV
-from homeassistant.const import (
+from inpui.components.samsungtv.media_player import SUPPORT_SAMSUNGTV
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -75,9 +75,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceNotSupported
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceNotSupported
+from inpui.setup import async_setup_component
 
 from . import setup_samsungtv_entry
 from .const import (

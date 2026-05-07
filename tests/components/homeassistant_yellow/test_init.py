@@ -4,20 +4,20 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import zha
-from homeassistant.components.hassio import DOMAIN as HASSIO_DOMAIN
-from homeassistant.components.homeassistant_hardware.util import (
+from inpui.components import zha
+from inpui.components.hassio import DOMAIN as HASSIO_DOMAIN
+from inpui.components.homeassistant_hardware.util import (
     ApplicationType,
     FirmwareInfo,
 )
-from homeassistant.components.homeassistant_yellow.config_flow import (
+from inpui.components.homeassistant_yellow.config_flow import (
     HomeAssistantYellowConfigFlow,
 )
-from homeassistant.components.homeassistant_yellow.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant_yellow.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, MockModule, mock_integration
 

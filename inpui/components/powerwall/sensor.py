@@ -9,13 +9,13 @@ from typing import TYPE_CHECKING
 
 from tesla_powerwall import BatteryResponse, GridState, MeterResponse, MeterType
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     EntityCategory,
     UnitOfElectricCurrent,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     UnitOfFrequency,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import POWERWALL_COORDINATOR
 from .coordinator import PowerwallConfigEntry, PowerwallRuntimeData

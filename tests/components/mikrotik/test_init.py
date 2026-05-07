@@ -5,9 +5,9 @@ from unittest.mock import MagicMock, patch
 from librouteros.exceptions import ConnectionClosed, LibRouterosError
 import pytest
 
-from homeassistant.components import mikrotik
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components import mikrotik
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import MOCK_DATA
 

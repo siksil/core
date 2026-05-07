@@ -9,15 +9,15 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     collection,
     entity_component,
     entity_registry as er,
     storage,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.dt import utcnow
+from inpui.helpers.typing import ConfigType
+from inpui.util.dt import utcnow
 
 from tests.common import flush_store
 from tests.typing import WebSocketGenerator

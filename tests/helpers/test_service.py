@@ -15,14 +15,14 @@ import voluptuous as vol
 
 # To prevent circular import when running just this file
 from homeassistant import config_entries, exceptions
-from homeassistant.auth.permissions import PolicyPermissions
-import homeassistant.components  # noqa: F401
-from homeassistant.components.group import DOMAIN as GROUP_DOMAIN, Group
-from homeassistant.components.input_button import DOMAIN as INPUT_BUTTON_DOMAIN
-from homeassistant.components.logger import DOMAIN as LOGGER_DOMAIN
-from homeassistant.components.shell_command import DOMAIN as SHELL_COMMAND_DOMAIN
-from homeassistant.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
-from homeassistant.const import (
+from inpui.auth.permissions import PolicyPermissions
+import inpui.components  # noqa: F401
+from inpui.components.group import DOMAIN as GROUP_DOMAIN, Group
+from inpui.components.input_button import DOMAIN as INPUT_BUTTON_DOMAIN
+from inpui.components.logger import DOMAIN as LOGGER_DOMAIN
+from inpui.components.shell_command import DOMAIN as SHELL_COMMAND_DOMAIN
+from inpui.components.system_health import DOMAIN as SYSTEM_HEALTH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     ENTITY_MATCH_NONE,
@@ -30,7 +30,7 @@ from homeassistant.const import (
     STATE_ON,
     EntityCategory,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     HassJob,
     HomeAssistant,
@@ -39,21 +39,21 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
     service,
 )
-from homeassistant.loader import (
+from inpui.loader import (
     Integration,
     async_get_integration,
     async_get_integrations,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util.yaml.loader import JSON_TYPE, parse_yaml
+from inpui.setup import async_setup_component
+from inpui.util.yaml.loader import JSON_TYPE, parse_yaml
 
 from tests.common import (
     MockConfigEntry,
@@ -2788,7 +2788,7 @@ async def test_deprecated_async_extract_referenced_entity_ids(
     hass: HomeAssistant,
 ) -> None:
     """Test that the deprecated async_extract_referenced_entity_ids function forwards correctly."""
-    from homeassistant.helpers import target  # noqa: PLC0415
+    from inpui.helpers import target  # noqa: PLC0415
 
     mock_selected = target.SelectedEntities(
         referenced={"entity.test"},

@@ -7,7 +7,7 @@ from typing import Any
 
 from pyHomee.model import HomeeNode
 
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeeConfigEntry
 

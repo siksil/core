@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.switch import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     PLUG_MINI_EU_SERVICE_INFO,

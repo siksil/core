@@ -19,8 +19,8 @@ import av.container
 from av.container import InputContainer
 import av.stream
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import redact_credentials
 from .const import (

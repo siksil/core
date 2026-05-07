@@ -8,16 +8,16 @@ import uuid
 
 from hass_nabucasa.voice import MAP_VOICE, Gender
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.auth.models import User
-from homeassistant.components import webhook
-from homeassistant.components.google_assistant.http import (  # pylint: disable=hass-component-root-import
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.auth.models import User
+from inpui.components import webhook
+from inpui.components.google_assistant.http import (  # pylint: disable=hass-component-root-import
     async_get_users as async_get_google_assistant_users,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util.logging import async_create_catching_coro
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util.logging import async_create_catching_coro
 
 from .const import (
     DEFAULT_ALEXA_REPORT_STATE,

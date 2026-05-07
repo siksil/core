@@ -7,8 +7,8 @@ from typing import Any
 
 from pyopenuv import Client
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_API_KEY,
     CONF_BINARY_SENSORS,
     CONF_ELEVATION,
@@ -17,8 +17,8 @@ from homeassistant.const import (
     CONF_SENSORS,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .const import (
     CONF_FROM_WINDOW,

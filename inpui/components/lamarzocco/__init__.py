@@ -15,23 +15,23 @@ from pylamarzocco.const import FirmwareType
 from pylamarzocco.exceptions import AuthFail, RequestNotSuccessful
 from pylamarzocco.util import InstallationKey, generate_installation_key
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     async_ble_device_from_address,
     async_discovered_service_info,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_MAC,
     CONF_PASSWORD,
     CONF_TOKEN,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
     __version__,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_INSTALLATION_KEY, CONF_OFFLINE_MODE, CONF_USE_BLUETOOTH, DOMAIN
 from .coordinator import (
@@ -110,7 +110,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: LaMarzoccoConfigEntry) -
 
                 entry.async_on_unload(
                     hass.bus.async_listen_once(
-                        EVENT_HOMEASSISTANT_STOP, disconnect_bluetooth
+                        EVENT_INPUI_STOP, disconnect_bluetooth
                     )
                 )
                 entry.async_on_unload(bluetooth_client.disconnect)

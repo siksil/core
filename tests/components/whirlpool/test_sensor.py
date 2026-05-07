@@ -9,11 +9,11 @@ from whirlpool.dryer import MachineState as DryerMachineState
 from whirlpool.oven import CavityState as OvenCavityState, CookMode
 from whirlpool.washer import MachineState as WasherMachineState
 
-from homeassistant.components.whirlpool.sensor import SCAN_INTERVAL
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.dt import as_timestamp, utc_from_timestamp, utcnow
+from inpui.components.whirlpool.sensor import SCAN_INTERVAL
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.util.dt import as_timestamp, utc_from_timestamp, utcnow
 
 from . import init_integration, snapshot_whirlpool_entities, trigger_attr_callback
 

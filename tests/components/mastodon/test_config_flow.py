@@ -9,11 +9,11 @@ from mastodon.Mastodon import (
 )
 import pytest
 
-from homeassistant.components.mastodon.const import CONF_BASE_URL, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.mastodon.const import CONF_BASE_URL, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

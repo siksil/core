@@ -6,10 +6,10 @@ from unittest.mock import create_autospec, patch
 import pytest
 import smarttub
 
-from homeassistant.components.smarttub.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.smarttub.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

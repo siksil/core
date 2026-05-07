@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from homeassistant.const import CONF_ID
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_ID
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import TwenteMilieuConfigEntry, TwenteMilieuDataUpdateCoordinator

@@ -7,8 +7,8 @@ from typing import Any, override
 from py_nextbus import NextBusClient
 from py_nextbus.client import NextBusFormatError, NextBusHTTPError
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 from .util import RouteStop

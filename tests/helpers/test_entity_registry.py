@@ -12,17 +12,17 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_START,
+from inpui.const import (
+    EVENT_INPUI_START,
     STATE_UNAVAILABLE,
     EntityCategory,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant, callback
-from homeassistant.exceptions import MaxLengthExceeded
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_entity_registry_updated_event
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.util.dt import utc_from_timestamp, utcnow
+from inpui.core import CoreState, Event, HomeAssistant, callback
+from inpui.exceptions import MaxLengthExceeded
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_entity_registry_updated_event
+from inpui.helpers.typing import UNDEFINED
+from inpui.util.dt import utc_from_timestamp, utcnow
 
 from tests.common import (
     ANY,
@@ -1898,7 +1898,7 @@ async def test_update_entity_entity_id(
     entry = entity_registry.async_get_or_create(
         "light", "hue", "5678", config_entry=mock_config
     )
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
     assert (
         entity_registry.async_get_entity_id("light", "hue", "5678") == entry.entity_id
@@ -2480,7 +2480,7 @@ async def test_restore_states(
         original_icon="hass:original-icon",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     simple = hass.states.get("light.simple")

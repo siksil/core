@@ -12,32 +12,32 @@ import aiohttp.web_exceptions
 import voluptuous as vol
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.auth.permissions.const import CAT_CONFIG_ENTRIES, POLICY_EDIT
-from homeassistant.components import websocket_api
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import DependencyError, Unauthorized
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.data_entry_flow import (
+from inpui.auth.permissions.const import CAT_CONFIG_ENTRIES, POLICY_EDIT
+from inpui.components import websocket_api
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import DependencyError, Unauthorized
+from inpui.helpers import config_validation as cv
+from inpui.helpers.data_entry_flow import (
     FlowManagerIndexView,
     FlowManagerResourceView,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.json import (
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.json import (
     JSON_DUMP,
     find_paths_unserializable_data,
     json_bytes,
     json_fragment,
 )
-from homeassistant.loader import (
+from inpui.loader import (
     Integration,
     IntegrationNotFound,
     async_get_config_flows,
     async_get_integrations,
     async_get_loaded_integration,
 )
-from homeassistant.util.json import format_unserializable_data
+from inpui.util.json import format_unserializable_data
 
 _LOGGER = logging.getLogger(__name__)
 

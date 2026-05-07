@@ -9,11 +9,11 @@ import pytest
 from renault_api.gigya.exceptions import GigyaException, InvalidCredentialsException
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.renault.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.renault.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

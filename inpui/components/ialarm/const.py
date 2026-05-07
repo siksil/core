@@ -2,7 +2,7 @@
 
 from pyialarm import IAlarm
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
+from inpui.components.alarm_control_panel import AlarmControlPanelState
 
 DEFAULT_PORT = 18034
 

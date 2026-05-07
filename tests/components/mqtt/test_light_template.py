@@ -31,19 +31,19 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import light, mqtt
-from homeassistant.components.mqtt.light.schema_basic import (
+from inpui.components import light, mqtt
+from inpui.components.mqtt.light.schema_basic import (
     MQTT_LIGHT_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.components.mqtt.models import PublishPayloadType
-from homeassistant.const import (
+from inpui.components.mqtt.models import PublishPayloadType
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_SUPPORTED_FEATURES,
     STATE_OFF,
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State
+from inpui.core import HomeAssistant, State
 
 from .common import (
     help_custom_config,

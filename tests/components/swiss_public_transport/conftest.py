@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.swiss_public_transport.const import (
+from inpui.components.swiss_public_transport.const import (
     CONF_DESTINATION,
     CONF_START,
     DOMAIN,

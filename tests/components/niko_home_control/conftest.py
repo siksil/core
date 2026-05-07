@@ -9,8 +9,8 @@ from nhc.scene import NHCScene
 from nhc.thermostat import NHCThermostat
 import pytest
 
-from homeassistant.components.niko_home_control.const import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.niko_home_control.const import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry
 

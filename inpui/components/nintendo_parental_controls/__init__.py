@@ -8,12 +8,12 @@ from pynintendoauth.exceptions import (
 )
 from pynintendoparental import Authenticator
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_SESSION_TOKEN, DOMAIN
 from .coordinator import NintendoParentalControlsConfigEntry, NintendoUpdateCoordinator

@@ -4,9 +4,9 @@ import webbrowser
 
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 ATTR_URL = "url"
 ATTR_URL_DEFAULT = "https://www.google.com"

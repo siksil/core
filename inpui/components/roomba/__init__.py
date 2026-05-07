@@ -9,15 +9,15 @@ from typing import Any
 from roombapy import Roomba, RoombaConnectionError, RoombaFactory
 
 from homeassistant import exceptions
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DELAY,
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import CONF_BLID, CONF_CONTINUOUS, DOMAIN, PLATFORMS, ROOMBA_SESSION
 from .models import RoombaData
@@ -59,7 +59,7 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
         await async_disconnect_or_timeout(hass, roomba)
 
     config_entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_disconnect_roomba)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_disconnect_roomba)
     )
 
     domain_data = RoombaData(roomba, config_entry.data[CONF_BLID])

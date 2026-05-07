@@ -6,19 +6,19 @@ from aioswitcher.api import Command
 from aioswitcher.device import DeviceState
 import pytest
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.switcher_kis.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.switcher_kis.const import (
     CONF_AUTO_OFF,
     CONF_TIMER_MINUTES,
     DOMAIN,
     SERVICE_SET_AUTO_OFF_NAME,
     SERVICE_TURN_ON_WITH_TIMER_NAME,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceNotSupported
-from homeassistant.helpers.config_validation import time_period_str
-from homeassistant.util import slugify
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceNotSupported
+from inpui.helpers.config_validation import time_period_str
+from inpui.util import slugify
 
 from . import init_integration
 from .consts import (

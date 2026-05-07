@@ -7,16 +7,16 @@ from typing import TYPE_CHECKING, Final, cast
 from aiocomelit.api import ComelitSerialBridgeObject, ComelitVedoZoneObject
 from aiocomelit.const import ALARM_ZONE, OTHER, AlarmZoneState
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import ObjectClassType
 from .coordinator import ComelitConfigEntry, ComelitSerialBridge, ComelitVedoSystem

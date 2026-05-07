@@ -6,14 +6,14 @@ from unittest.mock import patch
 import pytest
 from pywilight.const import DOMAIN
 
-from homeassistant.components.wilight.config_flow import (
+from inpui.components.wilight.config_flow import (
     CONF_MODEL_NAME,
     CONF_SERIAL_NUMBER,
 )
-from homeassistant.config_entries import SOURCE_SSDP
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_SSDP
+from inpui.const import CONF_HOST, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     CONF_COMPONENTS,

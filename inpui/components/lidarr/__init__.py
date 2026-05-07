@@ -7,11 +7,11 @@ from dataclasses import fields
 from aiopyarr.lidarr_client import LidarrClient
 from aiopyarr.models.host_configuration import PyArrHostConfiguration
 
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceEntryType
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceEntryType
 
 from .const import DEFAULT_NAME, DOMAIN
 from .coordinator import (

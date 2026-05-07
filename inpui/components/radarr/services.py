@@ -6,10 +6,10 @@ from typing import Any, Final, cast
 from aiopyarr import exceptions
 import voluptuous as vol
 
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import selector, service
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import selector, service
 
 from .const import DOMAIN
 from .coordinator import RadarrConfigEntry

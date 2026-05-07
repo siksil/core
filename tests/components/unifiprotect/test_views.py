@@ -9,13 +9,13 @@ import pytest
 from uiprotect.data import Camera, Event, EventType, ModelType
 from uiprotect.exceptions import ClientError
 
-from homeassistant.components.unifiprotect.views import (
+from inpui.components.unifiprotect.views import (
     async_generate_event_video_url,
     async_generate_proxy_event_video_url,
     async_generate_snapshot_url,
     async_generate_thumbnail_url,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .utils import MockUFPFixture, init_entry
 

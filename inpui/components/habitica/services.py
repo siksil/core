@@ -27,19 +27,19 @@ from habiticalib import (
 )
 import voluptuous as vol
 
-from homeassistant.components.todo import ATTR_RENAME
-from homeassistant.const import ATTR_DATE, ATTR_NAME
-from homeassistant.core import (
+from inpui.components.todo import ATTR_RENAME
+from inpui.const import ATTR_DATE, ATTR_NAME
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.selector import ConfigEntrySelector
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.selector import ConfigEntrySelector
+from inpui.util import dt as dt_util
 
 from .const import (
     ATTR_ADD_CHECKLIST_ITEM,

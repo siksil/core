@@ -10,20 +10,20 @@ from aio_georss_client.status_update import StatusUpdate
 from aio_georss_gdacs import GdacsFeedManager
 from aio_georss_gdacs.feed_entry import FeedEntry
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
     UnitOfLength,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util.unit_conversion import DistanceConverter
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.util.unit_conversion import DistanceConverter
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import CONF_CATEGORIES, DEFAULT_SCAN_INTERVAL, PLATFORMS  # noqa: F401
 

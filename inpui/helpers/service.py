@@ -14,9 +14,9 @@ from typing import TYPE_CHECKING, Any, TypedDict, cast, override
 
 import voluptuous as vol
 
-from homeassistant.auth.permissions.const import CAT_ENTITIES, POLICY_CONTROL
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import (
+from inpui.auth.permissions.const import CAT_ENTITIES, POLICY_CONTROL
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ACTION,
     CONF_ENTITY_ID,
@@ -28,7 +28,7 @@ from homeassistant.const import (
     ENTITY_MATCH_ALL,
     ENTITY_MATCH_NONE,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     Context,
     EntityServiceResponse,
@@ -40,7 +40,7 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotSupported,
     ServiceValidationError,
@@ -48,11 +48,11 @@ from homeassistant.exceptions import (
     Unauthorized,
     UnknownUser,
 )
-from homeassistant.loader import Integration, async_get_integrations, bind_hass
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.yaml import load_yaml_dict
-from homeassistant.util.yaml.loader import JSON_TYPE
+from inpui.loader import Integration, async_get_integrations, bind_hass
+from inpui.util.async_ import create_eager_task
+from inpui.util.hass_dict import HassKey
+from inpui.util.yaml import load_yaml_dict
+from inpui.util.yaml.loader import JSON_TYPE
 
 from . import (
     config_validation as cv,
@@ -84,7 +84,7 @@ ALL_SERVICE_DESCRIPTIONS_CACHE: HassKey[
 @cache
 def _base_components() -> dict[str, ModuleType]:
     """Return a cached lookup of base components."""
-    from homeassistant.components import (  # noqa: PLC0415
+    from inpui.components import (  # noqa: PLC0415
         ai_task,
         alarm_control_panel,
         assist_satellite,

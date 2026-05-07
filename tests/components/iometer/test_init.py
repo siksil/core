@@ -7,12 +7,12 @@ from freezegun.api import FrozenDateTimeFactory
 from iometer import IOmeterConnectionError
 import pytest
 
-from homeassistant.components.iometer import async_setup_entry
-from homeassistant.components.iometer.const import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.components.iometer import async_setup_entry
+from inpui.components.iometer.const import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from . import setup_platform
 

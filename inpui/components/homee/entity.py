@@ -4,9 +4,9 @@ from pyHomee.const import AttributeState, AttributeType, NodeProfile, NodeState
 from pyHomee.model import HomeeAttribute, HomeeNode
 from websockets.exceptions import ConnectionClosed
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from . import HomeeConfigEntry
 from .const import DOMAIN

@@ -7,12 +7,12 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.assist_pipeline import PipelineStage
-from homeassistant.components.assist_satellite.websocket_api import (
+from inpui.components.assist_pipeline import PipelineStage
+from inpui.components.assist_satellite.websocket_api import (
     CONNECTION_TEST_TIMEOUT,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from . import ENTITY_ID
 from .conftest import MockAssistSatellite

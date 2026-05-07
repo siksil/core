@@ -8,14 +8,14 @@ from unittest.mock import patch
 import aiounifi
 import pytest
 
-from homeassistant.components.unifi.const import DOMAIN
-from homeassistant.components.unifi.errors import AuthenticationRequired, CannotConnect
-from homeassistant.components.unifi.hub import get_unifi_api
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.components.unifi.const import DOMAIN
+from inpui.components.unifi.errors import AuthenticationRequired, CannotConnect
+from inpui.components.unifi.hub import get_unifi_api
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from .conftest import ConfigEntryFactoryType, WebsocketStateManager
 

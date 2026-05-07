@@ -11,9 +11,9 @@ from pynintendoparental import Authenticator
 from pynintendoparental.api import Api
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_TOKEN
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import APP_SETUP_URL, CONF_SESSION_TOKEN, DOMAIN
 

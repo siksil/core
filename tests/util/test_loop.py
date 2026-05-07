@@ -7,8 +7,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import loop as haloop
+from inpui.core import HomeAssistant
+from inpui.util import loop as haloop
 
 from tests.common import extract_stack_to_frame
 

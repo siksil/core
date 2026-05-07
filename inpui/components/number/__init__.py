@@ -13,22 +13,22 @@ from typing import TYPE_CHECKING, Any, Self, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_MODE, CONF_UNIT_OF_MEASUREMENT, UnitOfTemperature
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_MODE, CONF_UNIT_OF_MEASUREMENT, UnitOfTemperature
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     async_get_hass_or_none,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import ExtraStoredData, RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_suggest_report_issue
-from homeassistant.util.hass_dict import HassKey
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import ExtraStoredData, RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_suggest_report_issue
+from inpui.util.hass_dict import HassKey
 
 from .const import (  # noqa: F401
     AMBIGUOUS_UNITS,

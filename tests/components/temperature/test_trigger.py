@@ -4,25 +4,25 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE as CLIMATE_ATTR_CURRENT_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.water_heater import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.water_heater import (
     ATTR_CURRENT_TEMPERATURE as WATER_HEATER_ATTR_CURRENT_TEMPERATURE,
 )
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_WEATHER_TEMPERATURE,
     ATTR_WEATHER_TEMPERATURE_UNIT,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

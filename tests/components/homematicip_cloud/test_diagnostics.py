@@ -2,8 +2,8 @@
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.homematicip_cloud.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.homematicip_cloud.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import async_load_json_object_fixture
 from tests.components.diagnostics import get_diagnostics_for_config_entry

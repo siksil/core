@@ -7,12 +7,12 @@ import logging
 
 from rflink.protocol import ProtocolBase
 
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_STATE, STATE_ON
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.const import ATTR_ENTITY_ID, ATTR_STATE, STATE_ON
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     DATA_ENTITY_GROUP_LOOKUP,

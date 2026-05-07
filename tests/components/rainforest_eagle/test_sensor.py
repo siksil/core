@@ -1,7 +1,7 @@
 """Tests for rainforest eagle sensors."""
 
-from homeassistant.components.rainforest_eagle.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.rainforest_eagle.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MOCK_200_RESPONSE_WITH_PRICE
 

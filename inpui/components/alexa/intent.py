@@ -7,11 +7,11 @@ from typing import Any
 
 from aiohttp.web import Response
 
-from homeassistant.components import http
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import intent
-from homeassistant.util.decorator import Registry
+from inpui.components import http
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import intent
+from inpui.util.decorator import Registry
 
 from .const import DOMAIN, SYN_RESOLUTION_MATCH
 

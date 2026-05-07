@@ -6,15 +6,15 @@ components. Instead call the service directly.
 
 from typing import Any
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     ATTR_TITLE,
     DOMAIN,
     SERVICE_NOTIFY,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import bind_hass
+from inpui.core import HomeAssistant
+from inpui.loader import bind_hass
 
 
 @bind_hass

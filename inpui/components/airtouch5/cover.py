@@ -12,15 +12,15 @@ from airtouch5py.packets.zone_control import (
 from airtouch5py.packets.zone_name import ZoneName
 from airtouch5py.packets.zone_status import ZoneStatusZone
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import Airtouch5ConfigEntry
 from .const import DOMAIN

@@ -11,10 +11,10 @@ from syrupy.assertion import SnapshotAssertion
 from wyoming.audio import AudioChunk, AudioStart, AudioStop
 from wyoming.tts import SynthesizeStopped
 
-from homeassistant.components import tts, wyoming
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_component import DATA_INSTANCES
+from inpui.components import tts, wyoming
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_component import DATA_INSTANCES
 
 from . import MockAsyncTcpClient
 

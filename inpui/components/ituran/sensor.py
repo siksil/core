@@ -8,21 +8,21 @@ from datetime import datetime
 
 from pyituran import Vehicle
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
 )
-from homeassistant.const import (
+from inpui.const import (
     DEGREE,
     PERCENTAGE,
     UnitOfElectricPotential,
     UnitOfLength,
     UnitOfSpeed,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from . import IturanConfigEntry
 from .coordinator import IturanDataUpdateCoordinator

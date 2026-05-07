@@ -2,8 +2,8 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.rainforest_raven.const import DOMAIN
-from homeassistant.const import CONF_DEVICE, CONF_MAC
+from inpui.components.rainforest_raven.const import DOMAIN
+from inpui.const import CONF_DEVICE, CONF_MAC
 
 from .const import (
     DEMAND,

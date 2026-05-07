@@ -8,24 +8,24 @@ import re
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import cloud, mqtt, webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import cloud, mqtt, webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_GPS_ACCURACY,
     ATTR_LATITUDE,
     ATTR_LONGITUDE,
     CONF_WEBHOOK_ID,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import async_when_setup
-from homeassistant.util.json import json_loads
+from inpui.helpers.typing import ConfigType
+from inpui.setup import async_when_setup
+from inpui.util.json import json_loads
 
 from .config_flow import CONF_SECRET
 from .const import DOMAIN

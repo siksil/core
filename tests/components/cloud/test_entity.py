@@ -11,17 +11,17 @@ from PIL import Image
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import conversation
-from homeassistant.components.cloud.const import AI_TASK_ENTITY_UNIQUE_ID, DOMAIN
-from homeassistant.components.cloud.entity import (
+from inpui.components import conversation
+from inpui.components.cloud.const import AI_TASK_ENTITY_UNIQUE_ID, DOMAIN
+from inpui.components.cloud.entity import (
     BaseCloudLLMEntity,
     _convert_content_to_param,
     _format_structured_output,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, llm, selector
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, llm, selector
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

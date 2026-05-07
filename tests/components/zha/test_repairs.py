@@ -8,26 +8,26 @@ from zigpy.application import ControllerApplication
 import zigpy.backups
 from zigpy.exceptions import NetworkSettingsInconsistent
 
-from homeassistant.components.homeassistant_hardware.util import ApplicationType
-from homeassistant.components.homeassistant_sky_connect.const import (  # pylint: disable=hass-component-root-import
+from inpui.components.homeassistant_hardware.util import ApplicationType
+from inpui.components.homeassistant_sky_connect.const import (  # pylint: disable=hass-component-root-import
     DOMAIN as SKYCONNECT_DOMAIN,
 )
-from homeassistant.components.repairs import DOMAIN as REPAIRS_DOMAIN
-from homeassistant.components.zha.const import DOMAIN
-from homeassistant.components.zha.repairs.network_settings_inconsistent import (
+from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN
+from inpui.components.zha.const import DOMAIN
+from inpui.components.zha.repairs.network_settings_inconsistent import (
     ISSUE_INCONSISTENT_NETWORK_SETTINGS,
 )
-from homeassistant.components.zha.repairs.wrong_silabs_firmware import (
+from inpui.components.zha.repairs.wrong_silabs_firmware import (
     ISSUE_WRONG_SILABS_FIRMWARE_INSTALLED,
     HardwareType,
     _detect_radio_hardware,
     warn_on_wrong_silabs_firmware,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.typing import ClientSessionGenerator

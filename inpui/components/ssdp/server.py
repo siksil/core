@@ -20,15 +20,15 @@ from async_upnp_client.ssdp import (
     is_ipv4_address,
 )
 
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.const import (
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     __version__ as current_version,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers.instance_id import async_get as async_get_instance_id
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.system_info import async_get_system_info
+from inpui.core import Event, HomeAssistant
+from inpui.helpers.instance_id import async_get as async_get_instance_id
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.system_info import async_get_system_info
 
 from .common import async_build_source_set
 
@@ -117,9 +117,9 @@ class Server:
     async def async_start(self) -> None:
         """Start the server."""
         bus = self.hass.bus
-        bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.async_stop)
+        bus.async_listen_once(EVENT_INPUI_STOP, self.async_stop)
         bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STARTED,
+            EVENT_INPUI_STARTED,
             self._async_start_upnp_servers,
         )
 

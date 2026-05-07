@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.sensorpush.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.sensorpush.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import HTPWX_SERVICE_INFO, HTW_SERVICE_INFO, NOT_SENSOR_PUSH_SERVICE_INFO
 

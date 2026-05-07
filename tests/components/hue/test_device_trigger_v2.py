@@ -5,14 +5,14 @@ from unittest.mock import Mock
 from aiohue.v2.models.button import ButtonEvent
 from pytest_unordered import unordered
 
-from homeassistant.components import hue
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.hue.v2.device import async_setup_devices
-from homeassistant.components.hue.v2.hue_event import async_setup_hue_events
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.json import JsonArrayType
+from inpui.components import hue
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.hue.v2.device import async_setup_devices
+from inpui.components.hue.v2.hue_event import async_setup_hue_events
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_platform
 

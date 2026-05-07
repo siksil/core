@@ -4,8 +4,8 @@
 from habluetooth.advertisement_tracker import ADVERTISING_TIMES_NEEDED
 import pytest
 
-from homeassistant.components.bluetooth import async_set_fallback_availability_interval
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth import async_set_fallback_availability_interval
+from inpui.core import HomeAssistant
 
 from . import (
     MAC_RPA_VALID_1,

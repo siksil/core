@@ -7,17 +7,17 @@ from aiohomeconnect.model import EventKey, OptionKey, ProgramKey, SettingKey
 from aiohomeconnect.model.error import HomeConnectError
 from aiohomeconnect.model.program import Execution
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     ClimateEntity,
     ClimateEntityDescription,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import setup_home_connect_entry
 from .const import BSH_POWER_ON, BSH_POWER_STANDBY, DOMAIN

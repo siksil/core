@@ -8,16 +8,16 @@ from typing import Any
 from devolo_plc_api import Device
 from devolo_plc_api.exceptions.device import DeviceNotFound
 
-from homeassistant.components import zeroconf
-from homeassistant.const import (
+from inpui.components import zeroconf
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.httpx_client import get_async_client
 
 from .const import (
     CONNECTED_PLC_DEVICES,
@@ -126,7 +126,7 @@ async def async_setup_entry(
     await hass.config_entries.async_forward_entry_setups(entry, platforms(device))
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, disconnect)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, disconnect)
     )
 
     return True

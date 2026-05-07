@@ -10,16 +10,16 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.auth.models import User
-from homeassistant.auth.permissions.const import POLICY_READ
-from homeassistant.auth.permissions.events import SUBSCRIBE_ALLOWLIST
-from homeassistant.const import (
+from inpui.auth.models import User
+from inpui.auth.permissions.const import POLICY_READ
+from inpui.auth.permissions.events import SUBSCRIBE_ALLOWLIST
+from inpui.const import (
     CONF_EXTERNAL_URL,
     EVENT_STATE_CHANGED,
     MATCH_ALL,
     SIGNAL_BOOTSTRAP_INTEGRATIONS,
 )
-from homeassistant.core import (
+from inpui.core import (
     Context,
     Event,
     EventStateChangedData,
@@ -28,64 +28,64 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     HomeAssistantError,
     ServiceNotFound,
     ServiceValidationError,
     TemplateError,
     Unauthorized,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     entity,
     target as target_helpers,
     template,
 )
-from homeassistant.helpers.condition import (
+from inpui.helpers.condition import (
     async_from_config as async_condition_from_config,
     async_get_all_descriptions as async_get_all_condition_descriptions,
     async_subscribe_platform_events as async_subscribe_condition_platform_events,
     async_validate_condition_config,
     async_validate_conditions_config,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entityfilter import (
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     TrackTemplate,
     TrackTemplateResult,
     async_track_template_result,
 )
-from homeassistant.helpers.json import (
+from inpui.helpers.json import (
     JSON_DUMP,
     ExtendedJSONEncoder,
     find_paths_unserializable_data,
     json_bytes,
     json_fragment,
 )
-from homeassistant.helpers.service import (
+from inpui.helpers.service import (
     async_get_all_descriptions as async_get_all_service_descriptions,
 )
-from homeassistant.helpers.trigger import (
+from inpui.helpers.trigger import (
     async_get_all_descriptions as async_get_all_trigger_descriptions,
     async_initialize_triggers,
     async_subscribe_platform_events as async_subscribe_trigger_platform_events,
     async_validate_trigger_config,
 )
-from homeassistant.loader import (
+from inpui.loader import (
     IntegrationNotFound,
     async_get_integration,
     async_get_integration_descriptions,
     async_get_integrations,
 )
-from homeassistant.setup import (
+from inpui.setup import (
     async_get_loaded_integrations,
     async_get_setup_timings,
     async_wait_component,
 )
-from homeassistant.util.json import format_unserializable_data
+from inpui.util.json import format_unserializable_data
 
 from . import const, decorators, messages
 from .automation import (
@@ -1044,7 +1044,7 @@ async def handle_execute_script(
 ) -> None:
     """Handle execute script command."""
     # Circular dep
-    from homeassistant.helpers.script import (  # noqa: PLC0415
+    from inpui.helpers.script import (  # noqa: PLC0415
         Script,
         async_validate_actions_config,
     )
@@ -1111,7 +1111,7 @@ async def handle_validate_config(
 ) -> None:
     """Handle validate config command."""
     # Circular dep
-    from homeassistant.helpers import script  # noqa: PLC0415
+    from inpui.helpers import script  # noqa: PLC0415
 
     result = {}
 

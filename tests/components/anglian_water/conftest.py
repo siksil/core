@@ -8,9 +8,9 @@ from pyanglianwater.api import API
 from pyanglianwater.meter import SmartMeter
 import pytest
 
-from homeassistant.components.anglian_water.const import CONF_ACCOUNT_NUMBER, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.anglian_water.const import CONF_ACCOUNT_NUMBER, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from .const import ACCESS_TOKEN, ACCOUNT_NUMBER, PASSWORD, USERNAME
 

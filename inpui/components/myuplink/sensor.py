@@ -2,13 +2,13 @@
 
 from myuplink import DevicePoint
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     REVOLUTIONS_PER_MINUTE,
     Platform,
     UnitOfElectricCurrent,
@@ -20,9 +20,9 @@ from homeassistant.const import (
     UnitOfTime,
     UnitOfVolumeFlowRate,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
 
 from .const import F_SERIES
 from .coordinator import MyUplinkConfigEntry, MyUplinkDataCoordinator

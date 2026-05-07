@@ -2,7 +2,7 @@
 
 from ipaddress import ip_address
 
-from homeassistant.util import network as network_util
+from inpui.util import network as network_util
 
 
 def test_is_loopback() -> None:

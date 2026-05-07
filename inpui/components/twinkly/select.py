@@ -6,9 +6,9 @@ import logging
 
 from ttls.client import TWINKLY_MODES
 
-from homeassistant.components.select import SelectEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import TwinklyConfigEntry, TwinklyCoordinator
 from .entity import TwinklyEntity

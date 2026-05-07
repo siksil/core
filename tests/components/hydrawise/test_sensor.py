@@ -9,14 +9,14 @@ from pydrawise.schema import Controller, ControllerWaterUseSummary, User, Zone
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.hydrawise.const import (
+from inpui.components.hydrawise.const import (
     MAIN_SCAN_INTERVAL,
     WATER_USE_SCAN_INTERVAL,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import (
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

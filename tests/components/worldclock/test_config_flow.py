@@ -5,15 +5,15 @@ from __future__ import annotations
 from unittest.mock import AsyncMock
 
 from homeassistant import config_entries
-from homeassistant.components.worldclock.const import (
+from inpui.components.worldclock.const import (
     CONF_TIME_FORMAT,
     DEFAULT_NAME,
     DEFAULT_TIME_STR_FORMAT,
     DOMAIN,
 )
-from homeassistant.const import CONF_NAME, CONF_TIME_ZONE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_NAME, CONF_TIME_ZONE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

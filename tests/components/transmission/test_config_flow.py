@@ -10,10 +10,10 @@ from transmission_rpc.error import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components import transmission
-from homeassistant.components.transmission.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components import transmission
+from inpui.components.transmission.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_CONFIG_DATA, setup_integration
 

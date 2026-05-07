@@ -1,10 +1,10 @@
 """The test for the Coolmaster integration."""
 
-from homeassistant.components.coolmaster.const import DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.coolmaster.const import DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

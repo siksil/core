@@ -22,16 +22,16 @@ from aiohue.v2.models.resource import ResourceTypes
 from aiohue.v2.models.temperature import Temperature
 from aiohue.v2.models.zigbee_connectivity import ZigbeeConnectivity
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import LIGHT_LUX, PERCENTAGE, EntityCategory, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import LIGHT_LUX, PERCENTAGE, EntityCategory, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from ..bridge import HueBridge, HueConfigEntry
 from ..const import DOMAIN

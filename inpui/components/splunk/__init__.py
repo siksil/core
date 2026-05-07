@@ -12,8 +12,8 @@ from aiohttp import ClientConnectionError, ClientResponseError
 from hass_splunk import SplunkPayloadError, hass_splunk
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PORT,
@@ -22,24 +22,24 @@ from homeassistant.const import (
     CONF_VERIFY_SSL,
     EVENT_STATE_CHANGED,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     Event,
     EventStateChangedData,
     HomeAssistant,
 )
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     issue_registry as ir,
     state as state_helper,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entityfilter import FILTER_SCHEMA, EntityFilter
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     CONF_FILTER,

@@ -10,8 +10,8 @@ from syrupy.assertion import SnapshotAssertion
 from yalexs.manager.activity import INITIAL_LOCK_RESYNC_TIME
 from yalexs.pubnub_async import AugustPubNub
 
-from homeassistant.components.lock import DOMAIN as LOCK_DOMAIN, LockState
-from homeassistant.const import (
+from inpui.components.lock import DOMAIN as LOCK_DOMAIN, LockState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_LOCK,
     SERVICE_OPEN,
@@ -19,11 +19,11 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceNotSupported
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceNotSupported
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .mocks import (
     _create_august_with_devices,

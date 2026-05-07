@@ -3,10 +3,10 @@
 from pyegps import PowerStripUSB, get_device
 from pyegps.exceptions import MissingLibrary, UsbError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
 
 from .const import CONF_DEVICE_API_ID
 

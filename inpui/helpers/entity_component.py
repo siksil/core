@@ -10,13 +10,13 @@ from types import ModuleType
 from typing import Any
 
 from homeassistant import config as conf_util
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ENTITY_NAMESPACE,
     CONF_SCAN_INTERVAL,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     HassJobType,
     HomeAssistant,
@@ -24,14 +24,14 @@ from homeassistant.core import (
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import (
+from inpui.exceptions import (
     ConfigValidationError,
     HomeAssistantError,
     ServiceValidationError,
 )
-from homeassistant.loader import async_get_integration, bind_hass
-from homeassistant.setup import async_prepare_setup_platform
-from homeassistant.util.hass_dict import HassKey
+from inpui.loader import async_get_integration, bind_hass
+from inpui.setup import async_prepare_setup_platform
+from inpui.util.hass_dict import HassKey
 
 from . import discovery, entity, service
 from .entity_platform import EntityPlatform
@@ -119,7 +119,7 @@ class EntityComponent[_EntityT: entity.Entity = entity.Entity]:
         Note: this is only required if the integration never calls
         `setup` or `async_setup`.
         """
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._async_shutdown)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self._async_shutdown)
 
     def setup(self, config: ConfigType) -> None:
         """Set up a full entity component.

@@ -20,15 +20,15 @@ from iaqualink.device import (
 )
 from iaqualink.exception import AqualinkServiceException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.util.ssl import SSL_ALPN_HTTP11_HTTP2
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.httpx_client import get_async_client
+from inpui.util.ssl import SSL_ALPN_HTTP11_HTTP2
 
 from .const import DOMAIN, UPDATE_INTERVAL
 from .entity import AqualinkEntity

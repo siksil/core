@@ -3,9 +3,9 @@
 from datetime import UTC, datetime
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from homeassistant.components.environment_canada.const import CONF_STATION, DOMAIN
-from homeassistant.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.environment_canada.const import CONF_STATION, DOMAIN
+from inpui.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

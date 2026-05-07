@@ -11,16 +11,16 @@ from bring_api import (
 )
 import pytest
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.components.bring.services import (
+from inpui.components.bring.const import DOMAIN
+from inpui.components.bring.services import (
     ATTR_REACTION,
     SERVICE_ACTIVITY_STREAM_REACTION,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

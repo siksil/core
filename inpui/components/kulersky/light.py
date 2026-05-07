@@ -7,18 +7,18 @@ from typing import Any
 
 import pykulersky
 
-from homeassistant.components import bluetooth
-from homeassistant.components.light import (
+from inpui.components import bluetooth
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_RGBW_COLOR,
     ColorMode,
     LightEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 

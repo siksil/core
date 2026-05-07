@@ -9,10 +9,10 @@ from unittest.mock import patch
 from aiolookin import NoUsableService
 
 from homeassistant import config_entries
-from homeassistant.components.lookin.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.lookin.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     DEFAULT_ENTRY_TITLE,

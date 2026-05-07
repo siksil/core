@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from automower_ble.protocol import MowerActivity, MowerState, ResponseResult
 
-from homeassistant.components import bluetooth
-from homeassistant.components.lawn_mower import (
+from inpui.components import bluetooth
+from inpui.components.lawn_mower import (
     LawnMowerActivity,
     LawnMowerEntity,
     LawnMowerEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HusqvarnaConfigEntry
 from .const import LOGGER

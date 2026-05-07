@@ -23,7 +23,7 @@ from typing import (
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ALIAS,
@@ -41,7 +41,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Context,
     HassJob,
@@ -53,17 +53,17 @@ from homeassistant.core import (
     is_callback,
     valid_entity_id,
 )
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.loader import (
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.loader import (
     Integration,
     IntegrationNotFound,
     async_get_integration,
     async_get_integrations,
 )
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.unit_conversion import BaseUnitConverter
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.util.async_ import create_eager_task
+from inpui.util.hass_dict import HassKey
+from inpui.util.unit_conversion import BaseUnitConverter
+from inpui.util.yaml import load_yaml_dict
 
 from . import config_validation as cv, selector
 from .automation import (
@@ -149,7 +149,7 @@ _TRIGGERS_DESCRIPTION_SCHEMA = vol.Schema(
 
 async def async_setup(hass: HomeAssistant) -> None:
     """Set up the trigger helper."""
-    from homeassistant.components import automation, labs  # noqa: PLC0415
+    from inpui.components import automation, labs  # noqa: PLC0415
 
     hass.data[TRIGGER_DESCRIPTION_CACHE] = {}
     hass.data[TRIGGER_DISABLED_TRIGGERS] = set()
@@ -199,7 +199,7 @@ async def _register_trigger_platform(
     If the trigger platform does not provide any triggers, or it is disabled,
     listeners will not be notified.
     """
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     new_triggers: set[str] = set()
     triggers = hass.data[TRIGGERS]
@@ -1169,7 +1169,7 @@ class PluggableAction:
 async def _async_get_trigger_platform(
     hass: HomeAssistant, trigger_key: str
 ) -> tuple[str, TriggerProtocol]:
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     platform_and_sub_type = trigger_key.split(".")
     platform = platform_and_sub_type[0]
@@ -1469,7 +1469,7 @@ async def async_get_all_descriptions(
     hass: HomeAssistant,
 ) -> dict[str, dict[str, Any] | None]:
     """Return descriptions (i.e. user documentation) for all triggers."""
-    from homeassistant.components import automation  # noqa: PLC0415
+    from inpui.components import automation  # noqa: PLC0415
 
     descriptions_cache = hass.data[TRIGGER_DESCRIPTION_CACHE]
 

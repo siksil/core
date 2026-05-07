@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.hunterdouglas_powerview.const import DOMAIN
-from homeassistant.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.hunterdouglas_powerview.const import DOMAIN
+from inpui.components.scene import DOMAIN as SCENE_DOMAIN, SERVICE_TURN_ON
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .const import MOCK_MAC
 

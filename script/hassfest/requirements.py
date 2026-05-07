@@ -16,7 +16,7 @@ from typing import Any, TypedDict
 from awesomeversion import AwesomeVersion, AwesomeVersionStrategy
 from tqdm import tqdm
 
-import homeassistant.util.package as pkg_util
+import inpui.util.package as pkg_util
 from script.gen_requirements_all import (
     EXCLUDED_REQUIREMENTS_ALL,
     normalize_package_name,

@@ -26,8 +26,8 @@ from crownstone_sse.events import AbilityChangeEvent, SwitchStateUpdateEvent
 from crownstone_uart import UartEventBus, UartTopics
 from crownstone_uart.topics.SystemTopics import SystemTopics
 
-from homeassistant.core import callback
-from homeassistant.helpers.dispatcher import (
+from inpui.core import callback
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
     dispatcher_send,

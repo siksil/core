@@ -6,10 +6,10 @@ import json
 import pytest
 import requests_mock
 
-from homeassistant.components.metoffice.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import utcnow
+from inpui.components.metoffice.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import utcnow
 
 from .const import METOFFICE_CONFIG_WAVERTREE
 

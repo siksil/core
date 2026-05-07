@@ -7,10 +7,10 @@ import logging
 
 from asyncsleepiq import AsyncSleepIQ, SleepIQAPIException, SleepIQTimeoutException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 _LOGGER = logging.getLogger(__name__)
 

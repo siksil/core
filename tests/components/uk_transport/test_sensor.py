@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import requests_mock
 
-from homeassistant.components.uk_transport.sensor import (
+from inpui.components.uk_transport.sensor import (
     ATTR_ATCOCODE,
     ATTR_CALLING_AT,
     ATTR_LAST_UPDATED,
@@ -18,9 +18,9 @@ from homeassistant.components.uk_transport.sensor import (
     CONF_API_APP_KEY,
     UkTransportSensor,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import now
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import now
 
 from tests.common import async_load_fixture
 

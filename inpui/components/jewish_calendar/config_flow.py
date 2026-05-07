@@ -9,12 +9,12 @@ import zoneinfo
 from hdate.translator import Language
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_ELEVATION,
     CONF_LANGUAGE,
     CONF_LATITUDE,
@@ -22,8 +22,8 @@ from homeassistant.const import (
     CONF_LONGITUDE,
     CONF_TIME_ZONE,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.selector import (
     BooleanSelector,
     LanguageSelector,
     LanguageSelectorConfig,

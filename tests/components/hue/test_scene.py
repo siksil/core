@@ -2,10 +2,10 @@
 
 from unittest.mock import Mock
 
-from homeassistant.const import STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.json import JsonArrayType
+from inpui.const import STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.json import JsonArrayType
 
 from .conftest import setup_platform
 from .const import FAKE_SCENE

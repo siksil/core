@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     ATTR_AWAY_MODE,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_OPERATION_MODE,
@@ -10,11 +10,11 @@ from homeassistant.components.water_heater import (
     ATTR_TARGET_TEMP_LOW,
     ATTR_TEMPERATURE,
 )
-from homeassistant.components.water_heater.significant_change import (
+from inpui.components.water_heater.significant_change import (
     async_check_significant_change,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.util.unit_system import (
     METRIC_SYSTEM as METRIC,
     US_CUSTOMARY_SYSTEM as IMPERIAL,
     UnitSystem,

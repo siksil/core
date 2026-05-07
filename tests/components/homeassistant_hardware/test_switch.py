@@ -7,17 +7,17 @@ from unittest.mock import Mock, call, patch
 
 import pytest
 
-from homeassistant.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
-from homeassistant.components.homeassistant_hardware import DOMAIN
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.components.homeassistant_hardware import DOMAIN
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.components.homeassistant_hardware.switch import (
+from inpui.components.homeassistant_hardware.switch import (
     BaseBetaFirmwareSwitch,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -26,12 +26,12 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from .common import TEST_DOMAIN, TEST_FIRMWARE_RELEASES_URL, TEST_MANIFEST
 

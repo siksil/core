@@ -6,22 +6,22 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE, CONF_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE, CONF_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
     TimeSelector,
 )
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .const import (
     ARRIVAL_TIME,

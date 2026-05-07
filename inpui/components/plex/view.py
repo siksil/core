@@ -9,8 +9,8 @@ from aiohttp import web
 from aiohttp.hdrs import CACHE_CONTROL
 from aiohttp.typedefs import LooseHeaders
 
-from homeassistant.components.http import KEY_AUTHENTICATED, KEY_HASS, HomeAssistantView
-from homeassistant.components.media_player import async_fetch_image
+from inpui.components.http import KEY_AUTHENTICATED, KEY_HASS, HomeAssistantView
+from inpui.components.media_player import async_fetch_image
 
 from .const import SERVERS
 from .helpers import get_plex_data

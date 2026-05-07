@@ -10,17 +10,17 @@ from renault_api.kamereon import schemas
 from renault_api.kamereon.models import ChargeSchedule, HvacSchedule
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.renault.const import DOMAIN
-from homeassistant.components.renault.services import (
+from inpui.components.renault.const import DOMAIN
+from inpui.components.renault.services import (
     ATTR_SCHEDULES,
     ATTR_TEMPERATURE,
     ATTR_VEHICLE,
     ATTR_WHEN,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr
 
 from tests.common import async_load_fixture
 

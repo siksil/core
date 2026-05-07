@@ -5,11 +5,11 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import bootstrap
-from homeassistant.components.default_config import DOMAIN
-from homeassistant.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import recorder as recorder_helper
-from homeassistant.setup import async_setup_component
+from inpui.components.default_config import DOMAIN
+from inpui.components.homeassistant import DOMAIN as HOMEASSISTANT_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import recorder as recorder_helper
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

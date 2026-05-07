@@ -6,7 +6,7 @@ from collections.abc import Callable
 import logging
 from typing import Final
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN: Final = "sftp_storage"
 

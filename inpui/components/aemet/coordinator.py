@@ -19,10 +19,10 @@ from aemet_opendata.exceptions import AemetError
 from aemet_opendata.helpers import dict_nested_value
 from aemet_opendata.interface import AEMET
 
-from homeassistant.components.weather import Forecast
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.components.weather import Forecast
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import CONDITIONS_MAP, DOMAIN, FORECAST_MAP
 

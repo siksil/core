@@ -9,13 +9,13 @@ from __future__ import annotations
 
 import logging
 
-from homeassistant.const import EVENT_LABS_UPDATED
-from homeassistant.core import HomeAssistant
-from homeassistant.generated.labs import LABS_PREVIEW_FEATURES
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import async_get_custom_components
+from inpui.const import EVENT_LABS_UPDATED
+from inpui.core import HomeAssistant
+from inpui.generated.labs import LABS_PREVIEW_FEATURES
+from inpui.helpers import config_validation as cv
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType
+from inpui.loader import async_get_custom_components
 
 from .const import DOMAIN, LABS_DATA, STORAGE_KEY, STORAGE_VERSION
 from .helpers import (

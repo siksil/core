@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.vivotek import CONF_SECURITY_LEVEL
-from homeassistant.components.vivotek.const import (
+from inpui.components.vivotek import CONF_SECURITY_LEVEL
+from inpui.components.vivotek.const import (
     CONF_FRAMERATE,
     CONF_STREAM_PATH,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_IP_ADDRESS,
     CONF_NAME,

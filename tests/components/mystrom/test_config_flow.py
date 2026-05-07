@@ -6,9 +6,9 @@ from pymystrom.exceptions import MyStromConnectionError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.mystrom.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.mystrom.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import DEVICE_MAC
 

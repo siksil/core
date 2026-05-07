@@ -12,7 +12,7 @@ from dsmr_parser.obis_references import (
 from dsmr_parser.objects import CosemObject, MBusObject, Telegram
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

@@ -6,8 +6,8 @@ from typing import Any
 from libpyvivotek.vivotek import SECURITY_LEVELS, VivotekCameraError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
-from homeassistant.const import (
+from inpui.config_entries import ConfigFlow, ConfigFlowResult, OptionsFlow
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_IP_ADDRESS,
     CONF_NAME,
@@ -20,10 +20,10 @@ from homeassistant.const import (
     HTTP_DIGEST_AUTHENTICATION,
     UnitOfFrequency,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.selector import (
     NumberSelector,
     NumberSelectorConfig,
     SelectSelector,

@@ -2,8 +2,8 @@
 
 from aioairzone_cloud.const import API_OLD_ID
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

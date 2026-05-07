@@ -14,9 +14,9 @@ from renault_api.exceptions import RenaultException
 from renault_api.kamereon import models
 from renault_api.renault_vehicle import RenaultVehicle
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
 
 if TYPE_CHECKING:
     from . import RenaultConfigEntry

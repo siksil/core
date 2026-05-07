@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, patch
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -12,9 +12,9 @@ from homeassistant.components.cover import (
     SERVICE_SET_COVER_POSITION,
     SERVICE_STOP_COVER,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import selected_platforms, snapshot_platform_entities
 

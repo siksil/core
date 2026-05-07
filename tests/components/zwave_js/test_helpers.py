@@ -7,17 +7,17 @@ import voluptuous as vol
 from zwave_js_server.const import SecurityClass
 from zwave_js_server.model.controller import ProvisioningEntry
 
-from homeassistant.components.zwave_js.const import DOMAIN
-from homeassistant.components.zwave_js.helpers import (
+from inpui.components.zwave_js.const import DOMAIN
+from inpui.components.zwave_js.helpers import (
     async_get_node_status_sensor_entity_id,
     async_get_nodes_from_area_id,
     async_get_provisioning_entry_from_device_id,
     format_home_id_for_display,
     get_value_state_schema,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, device_registry as dr
 
 from tests.common import MockConfigEntry
 

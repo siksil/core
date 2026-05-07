@@ -8,10 +8,10 @@ from unittest.mock import patch
 import pytest
 import requests_mock
 
-from homeassistant.components import notify
-from homeassistant.components.clicksend_tts import notify as cs_tts
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import notify
+from inpui.components.clicksend_tts import notify as cs_tts
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component
 

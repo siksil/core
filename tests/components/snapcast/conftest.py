@@ -9,8 +9,8 @@ from snapcast.control.group import Snapgroup
 from snapcast.control.server import CONTROL_PORT
 from snapcast.control.stream import Snapstream
 
-from homeassistant.components.snapcast.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
+from inpui.components.snapcast.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
 
 from tests.common import MockConfigEntry
 

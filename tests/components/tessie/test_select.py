@@ -7,18 +7,18 @@ from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.const import EnergyExportMode, EnergyOperationMode
 from tesla_fleet_api.exceptions import UnsupportedVehicle
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SERVICE_SELECT_OPTION,
 )
-from homeassistant.components.tessie.const import (
+from inpui.components.tessie.const import (
     TessieSeatCoolerOptions,
     TessieSeatHeaterOptions,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_OPTION, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_OPTION, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .common import ERROR_UNKNOWN, TEST_RESPONSE, assert_entities, setup_platform
 

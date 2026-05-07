@@ -11,7 +11,7 @@ from typing import Any
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-import homeassistant.helpers.config_validation as cv
+import inpui.helpers.config_validation as cv
 from script.translations import upload
 
 from .model import Config, Integration

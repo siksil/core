@@ -7,9 +7,9 @@ from typing import Any
 
 import ultraheat_api
 
-from homeassistant.const import CONF_DEVICE, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_registry import RegistryEntry, async_migrate_entries
+from inpui.const import CONF_DEVICE, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_registry import RegistryEntry, async_migrate_entries
 
 from .const import DOMAIN
 from .coordinator import UltraheatConfigEntry, UltraheatCoordinator

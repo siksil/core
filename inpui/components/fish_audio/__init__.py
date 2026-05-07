@@ -7,9 +7,9 @@ import logging
 from fishaudio import AsyncFishAudio
 from fishaudio.exceptions import AuthenticationError, FishAudioError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import CONF_API_KEY
 from .types import FishAudioConfigEntry

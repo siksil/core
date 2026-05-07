@@ -5,9 +5,9 @@ import uuid
 
 import pytest
 
-from homeassistant.auth import AuthManager, auth_store, models as auth_models
-from homeassistant.auth.providers import insecure_example
-from homeassistant.core import HomeAssistant
+from inpui.auth import AuthManager, auth_store, models as auth_models
+from inpui.auth.providers import insecure_example
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture

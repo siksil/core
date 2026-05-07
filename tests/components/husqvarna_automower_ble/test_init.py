@@ -6,11 +6,11 @@ from automower_ble.protocol import ResponseResult
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.husqvarna_automower_ble.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.husqvarna_automower_ble.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import AUTOMOWER_SERVICE_INFO_SERIAL
 

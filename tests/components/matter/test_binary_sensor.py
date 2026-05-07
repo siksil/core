@@ -9,12 +9,12 @@ from matter_server.common.models import EventType
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.matter.binary_sensor import (
+from inpui.components.matter.binary_sensor import (
     DISCOVERY_SCHEMAS as BINARY_SENSOR_SCHEMAS,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import (
     set_node_attribute,

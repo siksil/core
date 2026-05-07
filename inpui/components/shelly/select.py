@@ -7,13 +7,13 @@ from typing import TYPE_CHECKING, Final
 
 from aioshelly.const import RPC_GENERATIONS
 
-from homeassistant.components.select import (
+from inpui.components.select import (
     DOMAIN as SELECT_DOMAIN,
     SelectEntity,
     SelectEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ROLE_GENERIC
 from .coordinator import ShellyConfigEntry, ShellyRpcCoordinator

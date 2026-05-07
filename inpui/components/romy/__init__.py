@@ -2,9 +2,9 @@
 
 import romy
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN, LOGGER, PLATFORMS
 from .coordinator import RomyVacuumCoordinator

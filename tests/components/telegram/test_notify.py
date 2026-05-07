@@ -4,13 +4,13 @@ from typing import Any
 from unittest.mock import AsyncMock, call, patch
 
 from homeassistant import config as hass_config
-from homeassistant.components import notify
-from homeassistant.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TITLE
-from homeassistant.components.telegram import DOMAIN
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceRegistry
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components import notify
+from inpui.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TITLE
+from inpui.components.telegram import DOMAIN
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceRegistry
+from inpui.helpers import issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import get_fixture_path
 

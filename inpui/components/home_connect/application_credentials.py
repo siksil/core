@@ -2,8 +2,8 @@
 
 from aiohomeconnect.const import OAUTH2_AUTHORIZE, OAUTH2_TOKEN
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 
 async def async_get_authorization_server(hass: HomeAssistant) -> AuthorizationServer:

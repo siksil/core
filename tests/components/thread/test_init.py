@@ -1,8 +1,8 @@
 """Test the Thread integration."""
 
-from homeassistant.components import thread
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import thread
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_create_entry(hass: HomeAssistant) -> None:

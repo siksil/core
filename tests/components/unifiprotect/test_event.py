@@ -16,14 +16,14 @@ from uiprotect.data import (
     SmartDetectObjectType,
 )
 
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     ATTR_EVENT_ID,
     DEFAULT_ATTRIBUTION,
 )
-from homeassistant.components.unifiprotect.event import EVENT_DESCRIPTIONS
-from homeassistant.const import ATTR_ATTRIBUTION, Platform
-from homeassistant.core import Event as HAEvent, HomeAssistant, callback
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.components.unifiprotect.event import EVENT_DESCRIPTIONS
+from inpui.const import ATTR_ATTRIBUTION, Platform
+from inpui.core import Event as HAEvent, HomeAssistant, callback
+from inpui.helpers.event import async_track_state_change_event
 
 from .utils import (
     MockUFPFixture,

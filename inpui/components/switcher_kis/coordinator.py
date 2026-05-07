@@ -7,11 +7,11 @@ import logging
 
 from aioswitcher.device import SwitcherBase
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, update_coordinator
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, update_coordinator
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import DOMAIN, MAX_UPDATE_INTERVAL_SEC, SIGNAL_DEVICE_ADD
 

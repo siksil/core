@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock, patch
 from aiorecollect.errors import RecollectError
 import pytest
 
-from homeassistant.components.recollect_waste import (
+from inpui.components.recollect_waste import (
     CONF_PLACE_ID,
     CONF_SERVICE_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_PLACE_ID, TEST_SERVICE_ID
 

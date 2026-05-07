@@ -5,12 +5,12 @@ from unittest.mock import Mock, patch
 from aioimmich.exceptions import ImmichError, ImmichNotFoundError
 import pytest
 
-from homeassistant.components.immich.const import DOMAIN
-from homeassistant.components.immich.services import SERVICE_UPLOAD_FILE
-from homeassistant.components.media_source import PlayMedia
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.immich.const import DOMAIN
+from inpui.components.immich.services import SERVICE_UPLOAD_FILE
+from inpui.components.media_source import PlayMedia
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import setup_integration
 

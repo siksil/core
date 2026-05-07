@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING, Any, cast
 from lru import LRU
 from pysqueezebox import Server, async_discover
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import (
+from inpui.components import media_source
+from inpui.components.media_player import (
     ATTR_MEDIA_ENQUEUE,
     ATTR_MEDIA_EXTRA,
     BrowseError,
@@ -27,21 +27,21 @@ from homeassistant.components.media_player import (
     SearchMediaQuery,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import (
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import (
     device_registry as dr,
     discovery_flow,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.start import async_at_start
-from homeassistant.util.dt import utcnow
-from homeassistant.util.ulid import ulid_now
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.start import async_at_start
+from inpui.util.dt import utcnow
+from inpui.util.ulid import ulid_now
 
 from . import SQUEEZEBOX_HASS_DATA
 from .browse_media import (

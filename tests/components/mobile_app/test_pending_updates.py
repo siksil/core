@@ -5,9 +5,9 @@ from typing import Any
 
 from aiohttp.test_utils import TestClient
 
-from homeassistant.const import PERCENTAGE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import PERCENTAGE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 
 async def test_pending_update_applied_when_entity_enabled(

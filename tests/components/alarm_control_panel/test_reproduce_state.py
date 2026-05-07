@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.const import (
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.const import (
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_CUSTOM_BYPASS,
     SERVICE_ALARM_ARM_HOME,
@@ -12,8 +12,8 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     SERVICE_ALARM_TRIGGER,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers.state import async_reproduce_state
+from inpui.core import HomeAssistant, State
+from inpui.helpers.state import async_reproduce_state
 
 from tests.common import async_mock_service
 

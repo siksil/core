@@ -14,16 +14,16 @@ import serial.tools.list_ports
 from serial.tools.list_ports_common import ListPortInfo
 import voluptuous as vol
 
-from homeassistant.components import usb
-from homeassistant.config_entries import (
+from inpui.components import usb
+from inpui.config_entries import (
     ConfigEntryBaseFlow,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import callback
+from inpui.helpers import aiohttp_client
 
 from .const import (
     CONF_USB_MANUAL_PATH,

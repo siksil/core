@@ -8,14 +8,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import mqtt
-from homeassistant.components.alarm_control_panel import (
+from inpui.components import mqtt
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_CODE,
     CONF_DELAY_TIME,
     CONF_DISARM_AFTER_TRIGGER,
@@ -24,16 +24,16 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_TRIGGER_TIME,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.event import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.event import (
     async_track_point_in_time,
     async_track_state_change_event,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 _LOGGER = logging.getLogger(__name__)
 

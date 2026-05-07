@@ -1,8 +1,8 @@
 """Test OpenUV diagnostics."""
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.diagnostics import REDACTED
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import ANY
 from tests.components.diagnostics import get_diagnostics_for_config_entry

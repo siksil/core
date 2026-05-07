@@ -7,13 +7,13 @@ import blebox_uniapi
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.blebox import config_flow
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components.blebox import config_flow
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.setup import async_setup_component
 
 from .conftest import mock_config, mock_feature, mock_only_feature, setup_product_mock
 

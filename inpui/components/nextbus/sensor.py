@@ -5,13 +5,13 @@ from __future__ import annotations
 import logging
 from typing import cast
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.util.dt import utc_from_timestamp
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
+from inpui.util.dt import utc_from_timestamp
 
 from .const import CONF_AGENCY, CONF_ROUTE, DOMAIN
 from .coordinator import NextBusDataUpdateCoordinator

@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from pushbullet import InvalidKeyError, PushbulletError
 
-from homeassistant.components.pushbullet.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_START
-from homeassistant.core import HomeAssistant
+from inpui.components.pushbullet.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_START
+from inpui.core import HomeAssistant
 
 from . import MOCK_CONFIG
 
@@ -31,7 +31,7 @@ async def test_async_setup_entry_success(
     with patch(
         "homeassistant.components.pushbullet.api.PushBulletNotificationProvider.start"
     ) as mock_start:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         mock_start.assert_called_once()
 

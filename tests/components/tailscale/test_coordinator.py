@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

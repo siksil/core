@@ -6,10 +6,10 @@ from typing import Any
 
 from tesla_fleet_api.const import Scope
 
-from homeassistant.components.lock import LockEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TeslaFleetConfigEntry
 from .const import DOMAIN

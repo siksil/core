@@ -7,8 +7,8 @@ from google.api_core.exceptions import GoogleAPIError, PermissionDenied
 from google.maps.routing_v2 import Units
 import pytest
 
-from homeassistant.components.google_travel_time.config_flow import default_options
-from homeassistant.components.google_travel_time.const import (
+from inpui.components.google_travel_time.config_flow import default_options
+from inpui.components.google_travel_time.const import (
     CONF_ARRIVAL_TIME,
     CONF_DEPARTURE_TIME,
     CONF_TRANSIT_MODE,
@@ -17,11 +17,11 @@ from homeassistant.components.google_travel_time.const import (
     DOMAIN,
     UNITS_METRIC,
 )
-from homeassistant.components.google_travel_time.sensor import SCAN_INTERVAL
-from homeassistant.const import CONF_MODE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util.unit_system import (
+from inpui.components.google_travel_time.sensor import SCAN_INTERVAL
+from inpui.const import CONF_MODE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

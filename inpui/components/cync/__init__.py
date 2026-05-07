@@ -5,11 +5,11 @@ from __future__ import annotations
 from pycync import Auth, Cync, User
 from pycync.exceptions import AuthFailedError, CyncError
 
-from homeassistant.const import CONF_ACCESS_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util.ssl import get_default_context
+from inpui.const import CONF_ACCESS_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util.ssl import get_default_context
 
 from .const import (
     CONF_AUTHORIZE_STRING,

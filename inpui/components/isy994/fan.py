@@ -7,15 +7,15 @@ from typing import Any
 
 from pyisy.constants import ISY_VALUE_UNKNOWN, PROTO_INSTEON
 
-from homeassistant.components.fan import FanEntity, FanEntityFeature
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.percentage import (
+from inpui.components.fan import FanEntity, FanEntityFeature
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.percentage import (
     percentage_to_ranged_value,
     ranged_value_to_percentage,
 )
-from homeassistant.util.scaling import int_states_in_range
+from inpui.util.scaling import int_states_in_range
 
 from .const import _LOGGER
 from .entity import ISYNodeEntity, ISYProgramEntity

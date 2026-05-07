@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, Mock, patch
 from meater.MeaterApi import MeaterCook, MeaterProbe
 import pytest
 
-from homeassistant.components.meater.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.components.meater.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import PROBE_ID
 

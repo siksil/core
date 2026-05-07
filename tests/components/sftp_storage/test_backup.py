@@ -8,15 +8,15 @@ from unittest.mock import MagicMock, patch
 from asyncssh.sftp import SFTPError
 import pytest
 
-from homeassistant.components.sftp_storage.backup import (
+from inpui.components.sftp_storage.backup import (
     async_register_backup_agents_listener,
 )
-from homeassistant.components.sftp_storage.const import (
+from inpui.components.sftp_storage.const import (
     DATA_BACKUP_AGENT_LISTENERS,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .asyncssh_mock import SSHClientConnectionMock
 from .conftest import (

@@ -6,8 +6,8 @@ import logging
 
 from jvcprojector import Command, JvcProjector
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER, NAME
 from .coordinator import JvcProjectorDataUpdateCoordinator

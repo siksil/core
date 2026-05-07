@@ -6,11 +6,11 @@ from freezegun.api import FrozenDateTimeFactory
 from xknx.core import XknxConnectionState, XknxConnectionType
 from xknx.telegram import IndividualAddress
 
-from homeassistant.components.knx.sensor import SCAN_INTERVAL
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.knx.sensor import SCAN_INTERVAL
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import KNXTestKit
 

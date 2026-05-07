@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.demo.vacuum import (
+from inpui.components.demo.vacuum import (
     DEMO_VACUUM_BASIC,
     DEMO_VACUUM_COMPLETE,
     DEMO_VACUUM_MINIMAL,
@@ -13,7 +13,7 @@ from homeassistant.components.demo.vacuum import (
     DEMO_VACUUM_NONE,
     FAN_SPEEDS,
 )
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_COMMAND,
     ATTR_FAN_SPEED,
     ATTR_FAN_SPEED_LIST,
@@ -23,16 +23,16 @@ from homeassistant.components.vacuum import (
     SERVICE_SET_FAN_SPEED,
     VacuumActivity,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     CONF_PLATFORM,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_mock_service
 from tests.components.vacuum import common

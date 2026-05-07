@@ -2,7 +2,7 @@
 
 from aiohttp import ClientSession
 
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
+from inpui.helpers.typing import UNDEFINED, UndefinedType
 
 UPDATE_URL = "https://www.duckdns.org/update"
 

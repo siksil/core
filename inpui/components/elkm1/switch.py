@@ -10,9 +10,9 @@ from elkm1_lib.elk import Elk
 from elkm1_lib.outputs import Output
 from elkm1_lib.thermostats import Thermostat
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElkM1ConfigEntry
 from .entity import ElkAttachedEntity, ElkEntity, create_elk_entities

@@ -6,21 +6,21 @@ from typing import Any
 
 from pyhap.const import CATEGORY_TELEVISION
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_ACTIVITY_LIST,
     ATTR_CURRENT_ACTIVITY,
     DOMAIN as REMOTE_DOMAIN,
     RemoteEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_ON,
 )
-from homeassistant.core import State, callback
+from inpui.core import State, callback
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

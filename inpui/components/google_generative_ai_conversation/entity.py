@@ -36,12 +36,12 @@ from google.genai.types import (
 import voluptuous as vol
 from voluptuous_openapi import convert
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, llm
-from homeassistant.helpers.entity import Entity
+from inpui.components import conversation
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, llm
+from inpui.helpers.entity import Entity
 
 from .const import (
     CONF_CHAT_MODEL,

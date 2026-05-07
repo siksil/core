@@ -10,11 +10,11 @@ from homematicip.base.functionalChannels import FunctionalChannel
 from homematicip.device import Device
 from homematicip.group import Group
 
-from homeassistant.const import ATTR_ID
-from homeassistant.core import callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_ID
+from inpui.core import callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .hap import AsyncHome, HomematicipHAP

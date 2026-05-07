@@ -14,14 +14,14 @@ from freezegun.api import FrozenDateTimeFactory
 from gcal_sync.auth import API_BASE_URL
 import pytest
 
-from homeassistant.components.google.const import CONF_CALENDAR_ACCESS, DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.helpers.template import DATE_STR_FORMAT
-from homeassistant.util import dt as dt_util
+from inpui.components.google.const import CONF_CALENDAR_ACCESS, DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.helpers.template import DATE_STR_FORMAT
+from inpui.util import dt as dt_util
 
 from .conftest import (
     CALENDAR_ID,

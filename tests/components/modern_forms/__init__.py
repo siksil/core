@@ -7,9 +7,9 @@ from typing import Any
 
 from aiomodernforms.const import COMMAND_QUERY_STATIC_DATA
 
-from homeassistant.components.modern_forms.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC, CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
+from inpui.components.modern_forms.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC, CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, async_load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker, AiohttpClientMockResponse

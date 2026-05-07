@@ -4,8 +4,8 @@ from dataclasses import dataclass
 
 import pytest
 
-from homeassistant.components.matrix import MatrixBot
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.components.matrix import MatrixBot
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
 
 from .conftest import TEST_DEVICE_ID, TEST_MXID, TEST_PASSWORD, TEST_TOKEN
 

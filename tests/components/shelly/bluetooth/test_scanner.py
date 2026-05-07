@@ -5,9 +5,9 @@ from __future__ import annotations
 from aioshelly.ble.const import BLE_SCAN_RESULT_EVENT
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.shelly.const import CONF_BLE_SCANNER_MODE, BLEScannerMode
-from homeassistant.core import HomeAssistant
+from inpui.components import bluetooth
+from inpui.components.shelly.const import CONF_BLE_SCANNER_MODE, BLEScannerMode
+from inpui.core import HomeAssistant
 
 from .. import init_integration, inject_rpc_device_event
 

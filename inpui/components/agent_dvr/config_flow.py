@@ -7,9 +7,9 @@ from agent import AgentConnectionError, AgentError
 from agent.a import Agent
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, SERVER_URL
 from .helpers import generate_url

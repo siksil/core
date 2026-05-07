@@ -3,7 +3,7 @@
 from enum import StrEnum
 import logging
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_BINARY_SENSORS,
     CONF_COVERS,

@@ -6,15 +6,15 @@ import logging
 
 from huawei_lte_api.enums.device import ControlModeEnum
 
-from homeassistant.components.button import (
+from inpui.components.button import (
     ButtonDeviceClass,
     ButtonEntity,
     ButtonEntityDescription,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_platform
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_platform
 
 from .const import DOMAIN
 from .entity import HuaweiLteBaseEntityWithDevice

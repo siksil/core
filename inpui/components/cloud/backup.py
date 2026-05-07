@@ -13,16 +13,16 @@ from aiohttp import ClientError, ClientResponseError
 from hass_nabucasa import Cloud, CloudApiError, CloudApiNonRetryableError, CloudError
 from hass_nabucasa.files import FilesError, StorageType, StoredFile, calculate_b64md5
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
     BackupNotFound,
     OnProgressCallback,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import ChunkAsyncStreamIterator
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import ChunkAsyncStreamIterator
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .client import CloudClient
 from .const import DATA_CLOUD, DOMAIN, EVENT_CLOUD_EVENT

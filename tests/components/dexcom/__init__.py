@@ -6,9 +6,9 @@ from unittest.mock import patch
 
 from pydexcom import GlucoseReading
 
-from homeassistant.components.dexcom.const import CONF_SERVER, DOMAIN, SERVER_US
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.dexcom.const import CONF_SERVER, DOMAIN, SERVER_US
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

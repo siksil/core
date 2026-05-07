@@ -20,19 +20,19 @@ from pynordpool import (
 )
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DATE
-from homeassistant.core import (
+from inpui.const import ATTR_DATE
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv, service
-from homeassistant.helpers.selector import ConfigEntrySelector
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonValueType
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv, service
+from inpui.helpers.selector import ConfigEntrySelector
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonValueType
 
 if TYPE_CHECKING:
     from . import NordPoolConfigEntry

@@ -7,9 +7,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_ENTITY_ID, Platform
-from homeassistant.helpers import entity_registry as er, selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.const import CONF_ENTITY_ID, Platform
+from inpui.helpers import entity_registry as er, selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
     wrapped_entity_config_entry_title,

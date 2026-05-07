@@ -4,10 +4,10 @@ from unittest.mock import DEFAULT, patch
 
 from screenlogicpy import ScreenLogicGateway
 
-from homeassistant.components.screenlogic import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.screenlogic import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     DATA_MIN_ENTITY_CLEANUP,

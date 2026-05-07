@@ -4,8 +4,8 @@ import asyncio
 
 import prowlpy
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
 
 
 async def async_verify_key(hass: HomeAssistant, api_key: str) -> bool:

@@ -28,16 +28,16 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from securetar import SecureTarArchive, SecureTarFile
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     DOMAIN,
     AgentBackup,
     BackupReaderWriterError,
     Folder,
     LocalBackupAgent,
 )
-from homeassistant.components.backup.agent import BackupAgentError
-from homeassistant.components.backup.const import DATA_MANAGER
-from homeassistant.components.backup.manager import (
+from inpui.components.backup.agent import BackupAgentError
+from inpui.components.backup.const import DATA_MANAGER
+from inpui.components.backup.manager import (
     AddonErrorData,
     AddonInfo,
     BackupManagerError,
@@ -52,11 +52,11 @@ from homeassistant.components.backup.manager import (
     UploadBackupEvent,
     WrittenBackup,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STARTED
+from inpui.core import CoreState, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
 
 from .common import (
     LOCAL_AGENT_ID,
@@ -3778,14 +3778,14 @@ async def test_manager_blocked_until_home_assistant_started(
     assert manager.last_action_event is None
 
     # Fired when Home Assistant changes to starting state
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     await hass.async_block_till_done()
     assert manager.state == BackupManagerState.BLOCKED
     assert manager.last_action_event is None
 
     # Fired when Home Assistant changes to running state
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert manager.state == BackupManagerState.IDLE
     assert manager.last_action_event is None

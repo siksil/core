@@ -7,14 +7,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     PLATFORM_SCHEMA as BINARY_SENSOR_PLATFORM_SCHEMA,
     BinarySensorDeviceClass,
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.config_entries import SOURCE_IMPORT
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT
+from inpui.const import (
     ATTR_LAST_TRIP_TIME,
     CONF_CUSTOMIZE,
     CONF_DELAY,
@@ -26,14 +26,14 @@ from homeassistant.const import (
     CONF_USERNAME,
     EntityCategory,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.entity_platform import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import HikvisionConfigEntry
 from .const import DEFAULT_PORT, DOMAIN

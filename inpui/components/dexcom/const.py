@@ -1,6 +1,6 @@
 """Constants for the Dexcom integration."""
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "dexcom"
 PLATFORMS = [Platform.SENSOR]

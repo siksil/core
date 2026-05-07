@@ -9,23 +9,23 @@ from typing import Any
 from pyanglianwater import AnglianWater
 from pyanglianwater.exceptions import ExpiredAccessTokenError, UnknownEndpointError
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.models import (
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import VolumeConverter
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import VolumeConverter
 
 from .const import CONF_ACCOUNT_NUMBER, DOMAIN
 

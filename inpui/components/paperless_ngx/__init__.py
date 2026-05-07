@@ -9,14 +9,14 @@ from pypaperless.exceptions import (
     PaperlessInvalidTokenError,
 )
 
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import DOMAIN, LOGGER
 from .coordinator import (

@@ -6,10 +6,10 @@ from typing import Any, cast
 
 from pyvesync import VeSync
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import REDACTED
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 from .coordinator import VesyncConfigEntry

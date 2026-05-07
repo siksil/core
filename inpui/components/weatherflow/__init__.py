@@ -6,13 +6,13 @@ from pyweatherflowudp.client import EVENT_DEVICE_DISCOVERED, WeatherFlowListener
 from pyweatherflowudp.device import EVENT_LOAD_COMPLETE, WeatherFlowDevice
 from pyweatherflowudp.errors import ListenerError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.start import async_at_started
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP, Platform
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.start import async_at_started
 
 from .const import DOMAIN, LOGGER, format_dispatch_call
 
@@ -64,7 +64,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await client.stop_listening()
 
     entry.async_on_unload(
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, _async_handle_ha_shutdown)
+        hass.bus.async_listen(EVENT_INPUI_STOP, _async_handle_ha_shutdown)
     )
 
     return True

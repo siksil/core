@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.filter.const import (
+from inpui.components.filter.const import (
     CONF_FILTER_LOWER_BOUND,
     CONF_FILTER_NAME,
     CONF_FILTER_PRECISION,
@@ -30,10 +30,10 @@ from homeassistant.components.filter.const import (
     FILTER_NAME_TIME_THROTTLE,
     TIME_SMA_LAST,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.recorder import Recorder
+from inpui.const import CONF_ENTITY_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

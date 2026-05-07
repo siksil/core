@@ -5,10 +5,10 @@ from unittest.mock import patch
 import pytest
 from zwave_js_server.event import Event
 
-from homeassistant.const import STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
 

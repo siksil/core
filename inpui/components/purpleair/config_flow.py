@@ -13,27 +13,27 @@ from aiopurpleair.endpoints.sensors import NearbySensorResult
 from aiopurpleair.errors import InvalidApiKeyError, PurpleAirError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_SHOW_ON_MAP,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.helpers.selector import (
+from inpui.helpers.event import async_track_state_change_event
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

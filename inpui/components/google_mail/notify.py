@@ -9,7 +9,7 @@ from typing import Any
 
 from googleapiclient.http import HttpRequest
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_MESSAGE,
     ATTR_TARGET,
@@ -17,9 +17,9 @@ from homeassistant.components.notify import (
     ATTR_TITLE_DEFAULT,
     BaseNotificationService,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .api import AsyncConfigEntryAuth
 from .const import (

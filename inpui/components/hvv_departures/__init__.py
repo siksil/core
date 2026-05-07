@@ -1,8 +1,8 @@
 """The HVV integration."""
 
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from .hub import GTIHub, HVVConfigEntry
 

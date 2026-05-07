@@ -6,7 +6,7 @@ from typing import Any
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.mobile_app.const import (
+from inpui.components.mobile_app.const import (
     ATTR_SENSOR_ATTRIBUTES,
     ATTR_SENSOR_ICON,
     ATTR_SENSOR_NAME,
@@ -14,10 +14,10 @@ from homeassistant.components.mobile_app.const import (
     ATTR_SENSOR_TYPE,
     ATTR_SENSOR_UNIQUE_ID,
 )
-from homeassistant.const import CONF_WEBHOOK_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.const import CONF_WEBHOOK_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 
 async def test_sensor(

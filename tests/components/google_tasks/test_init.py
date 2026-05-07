@@ -11,11 +11,11 @@ from aiohttp import ClientError
 from httplib2 import Response
 import pytest
 
-from homeassistant.components.google_tasks import DOMAIN
-from homeassistant.components.google_tasks.const import OAUTH2_TOKEN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.google_tasks import DOMAIN
+from inpui.components.google_tasks.const import OAUTH2_TOKEN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

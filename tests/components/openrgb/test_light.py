@@ -9,7 +9,7 @@ from openrgb.utils import OpenRGBDisconnected, RGBColor
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_EFFECT,
@@ -20,7 +20,7 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntityFeature,
 )
-from homeassistant.components.openrgb.const import (
+from inpui.components.openrgb.const import (
     DEFAULT_COLOR,
     DOMAIN,
     OFF_COLOR,
@@ -28,8 +28,8 @@ from homeassistant.components.openrgb.const import (
     UID_SEPARATOR,
     OpenRGBMode,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     SERVICE_TURN_OFF,
@@ -39,9 +39,9 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

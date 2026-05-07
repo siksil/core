@@ -2,14 +2,14 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.tautulli.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.tautulli.const import DOMAIN
+from inpui.const import (
     CONF_API_KEY,
     CONF_URL,
     CONF_VERIFY_SSL,
     CONTENT_TYPE_JSON,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 from tests.test_util.aiohttp import AiohttpClientMocker

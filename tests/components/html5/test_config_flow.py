@@ -5,14 +5,14 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.components.html5.const import (
+from inpui.components.html5.const import (
     ATTR_VAPID_EMAIL,
     ATTR_VAPID_PRV_KEY,
     ATTR_VAPID_PUB_KEY,
     DOMAIN,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
 
 from .conftest import MOCK_CONF, MOCK_CONF_PUB_KEY
 

@@ -6,8 +6,8 @@ import pytest
 import voluptuous as vol
 from voluptuous_serialize import convert
 
-from homeassistant.components.knx.const import ColorTempModes
-from homeassistant.components.knx.storage.knx_selector import (
+from inpui.components.knx.const import ColorTempModes
+from inpui.components.knx.storage.knx_selector import (
     AllSerializeFirst,
     GASelector,
     GroupSelect,
@@ -16,8 +16,8 @@ from homeassistant.components.knx.storage.knx_selector import (
     KNXSectionFlat,
     SyncStateSelector,
 )
-from homeassistant.components.knx.storage.serialize import knx_serializer
-from homeassistant.helpers import selector
+from inpui.components.knx.storage.serialize import knx_serializer
+from inpui.helpers import selector
 
 INVALID = "invalid"
 

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import mqtt
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.components import mqtt
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
 
 from .const import DOMAIN, TITLE
 

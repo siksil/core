@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.motionmount import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import format_mac
+from inpui.components.motionmount import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import format_mac
 
 from tests.common import MockConfigEntry
 

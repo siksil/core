@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from mastodon.Mastodon import Account, InstanceV2
 import pytest
 
-from homeassistant.components.mastodon.const import CONF_BASE_URL, DOMAIN
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.components.mastodon.const import CONF_BASE_URL, DOMAIN
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_ID, CONF_CLIENT_SECRET
 
 from tests.common import MockConfigEntry, load_fixture
 

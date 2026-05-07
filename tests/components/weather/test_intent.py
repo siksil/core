@@ -2,16 +2,16 @@
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.weather import (
+from inpui.components import conversation
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.weather import (
     DOMAIN,
     WeatherEntity,
     intent as weather_intent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.setup import async_setup_component
 
 
 async def test_get_weather(hass: HomeAssistant) -> None:

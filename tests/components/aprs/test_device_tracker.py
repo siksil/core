@@ -7,8 +7,8 @@ import aprslib
 from aprslib import IS
 import pytest
 
-from homeassistant.components.aprs import device_tracker
-from homeassistant.core import HomeAssistant
+from inpui.components.aprs import device_tracker
+from inpui.core import HomeAssistant
 
 DEFAULT_PORT = 14580
 

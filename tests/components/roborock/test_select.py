@@ -13,16 +13,16 @@ from roborock.data import (
 from roborock.exceptions import RoborockException
 from roborock.roborock_message import RoborockZeoProtocol
 
-from homeassistant.components.roborock import DOMAIN
-from homeassistant.components.roborock.select import (
+from inpui.components.roborock import DOMAIN
+from inpui.components.roborock.select import (
     A01_SELECT_DESCRIPTIONS,
     RoborockSelectEntityA01,
 )
-from homeassistant.const import SERVICE_SELECT_OPTION, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.const import SERVICE_SELECT_OPTION, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import FakeDevice
 

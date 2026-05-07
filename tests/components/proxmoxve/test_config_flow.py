@@ -11,18 +11,18 @@ import pytest
 import requests
 from requests.exceptions import ConnectTimeout, SSLError
 
-from homeassistant.components.proxmoxve import CONF_AUTH_METHOD, CONF_HOST, CONF_REALM
-from homeassistant.components.proxmoxve.const import (
+from inpui.components.proxmoxve import CONF_AUTH_METHOD, CONF_HOST, CONF_REALM
+from inpui.components.proxmoxve.const import (
     CONF_NODES,
     CONF_TOKEN,
     CONF_TOKEN_ID,
     CONF_TOKEN_SECRET,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_PORT, CONF_USERNAME, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_PORT, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     MOCK_TEST_CONFIG,

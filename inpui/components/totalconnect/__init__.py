@@ -3,9 +3,9 @@
 from total_connect_client.client import TotalConnectClient
 from total_connect_client.exceptions import AuthenticationError
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .const import AUTO_BYPASS, CONF_USERCODES
 from .coordinator import TotalConnectConfigEntry, TotalConnectDataUpdateCoordinator

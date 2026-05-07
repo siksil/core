@@ -8,17 +8,17 @@ from pysmlight.exceptions import SmlightAuthError, SmlightConnectionError, Smlig
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.smlight.const import (
+from inpui.components.smlight.const import (
     DOMAIN,
     SCAN_FIRMWARE_INTERVAL,
     SCAN_INTERVAL,
 )
-from homeassistant.components.update import ATTR_INSTALLED_VERSION
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.issue_registry import IssueRegistry
+from inpui.components.update import ATTR_INSTALLED_VERSION
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.issue_registry import IssueRegistry
 
 from .conftest import setup_integration
 

@@ -24,7 +24,7 @@ from go2rtc_client.ws import (
 import voluptuous as vol
 from webrtc_models import RTCIceCandidateInit
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     Camera,
     CameraWebRTCProvider,
     WebRTCAnswer as HAWebRTCAnswer,
@@ -35,29 +35,29 @@ from homeassistant.components.camera import (
     async_register_webrtc_provider,
     get_dynamic_camera_stream_settings,
 )
-from homeassistant.components.default_config import DOMAIN as DEFAULT_CONFIG_DOMAIN
-from homeassistant.components.stream import Orientation
-from homeassistant.config_entries import SOURCE_SYSTEM, ConfigEntry
-from homeassistant.const import (
+from inpui.components.default_config import DOMAIN as DEFAULT_CONFIG_DOMAIN
+from inpui.components.stream import Orientation
+from inpui.config_entries import SOURCE_SYSTEM, ConfigEntry
+from inpui.const import (
     CONF_PASSWORD,
     CONF_URL,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady, HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     discovery_flow,
     issue_registry as ir,
 )
-from homeassistant.helpers.aiohttp_client import (
+from inpui.helpers.aiohttp_client import (
     async_create_clientsession,
     async_get_clientsession,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.package import is_docker_env
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
+from inpui.util.package import is_docker_env
 
 from .const import (
     CONF_DEBUG_UI,
@@ -181,7 +181,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             await server.stop()
             await session.close()
 
-        hass.bus.async_listen(EVENT_HOMEASSISTANT_STOP, on_stop)
+        hass.bus.async_listen(EVENT_INPUI_STOP, on_stop)
 
         url = HA_MANAGED_URL
     elif username and password:

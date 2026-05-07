@@ -7,8 +7,8 @@ from typing import cast
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant
 
 from .manager import async_replace_device
 

@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import recorder
+from inpui.core import HomeAssistant
+from inpui.helpers import recorder
 
 from tests.typing import RecorderInstanceGenerator
 

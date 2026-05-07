@@ -14,8 +14,8 @@ from bring_api import (
 )
 import pytest
 
-from homeassistant.components.bring.const import DOMAIN
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.components.bring.const import DOMAIN
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
 
 from tests.common import MockConfigEntry, load_fixture
 

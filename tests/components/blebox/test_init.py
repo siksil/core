@@ -5,8 +5,8 @@ import logging
 import blebox_uniapi
 import pytest
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import mock_config, patch_product_identify, setup_product_mock
 

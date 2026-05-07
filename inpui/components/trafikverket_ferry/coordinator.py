@@ -10,12 +10,12 @@ from pytrafikverket import TrafikverketFerry
 from pytrafikverket.exceptions import InvalidAuthentication, NoFerryFound
 from pytrafikverket.models import FerryStopModel
 
-from homeassistant.const import CONF_API_KEY, CONF_WEEKDAY, WEEKDAYS
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_API_KEY, CONF_WEEKDAY, WEEKDAYS
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .const import CONF_FROM, CONF_TIME, CONF_TO, DOMAIN
 

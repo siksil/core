@@ -9,9 +9,9 @@ from unittest.mock import patch
 import pytest
 from pytrafikverket import WeatherStationInfoModel
 
-from homeassistant.components.trafikverket_weatherstation.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
+from inpui.components.trafikverket_weatherstation.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG
 

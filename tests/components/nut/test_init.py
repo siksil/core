@@ -6,9 +6,9 @@ from unittest.mock import patch
 from aionut import NUTError, NUTLoginError
 import pytest
 
-from homeassistant.components.nut.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.nut.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -16,9 +16,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import area_registry as ar, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import area_registry as ar, device_registry as dr
+from inpui.setup import async_setup_component
 
 from .util import _get_mock_nutclient, async_init_integration
 

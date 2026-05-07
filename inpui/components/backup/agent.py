@@ -9,7 +9,7 @@ from typing import Any, Protocol
 
 from propcache.api import cached_property
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .models import AgentBackup, BackupAgentError
 

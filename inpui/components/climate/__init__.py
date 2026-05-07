@@ -10,8 +10,8 @@ from typing import Any, Literal, final
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_TEMPERATURE,
     PRECISION_TENTHS,
     PRECISION_WHOLE,
@@ -20,15 +20,15 @@ from homeassistant.const import (
     SERVICE_TURN_ON,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.temperature import display_temp as show_temp
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.temperature import display_temp as show_temp
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import (  # noqa: F401
     ATTR_CURRENT_HUMIDITY,

@@ -4,12 +4,12 @@ from typing import Any
 
 from aiohue.v1.sensors import TYPE_ZLL_PRESENCE
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from ..bridge import HueConfigEntry
 from .sensor_base import SENSOR_CONFIG_MAP, GenericZLLSensor

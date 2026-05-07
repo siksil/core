@@ -8,11 +8,11 @@ from google_drive_api.exceptions import GoogleDriveApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.backup import AgentBackup
-from homeassistant.components.google_drive.const import SCAN_INTERVAL
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.backup import AgentBackup
+from inpui.components.google_drive.const import SCAN_INTERVAL
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
 

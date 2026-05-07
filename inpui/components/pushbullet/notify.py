@@ -11,16 +11,16 @@ from pushbullet.channel import Channel
 from pushbullet.device import Device
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
     ATTR_TITLE_DEFAULT,
     BaseNotificationService,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .api import PushBulletNotificationProvider
 from .const import ATTR_FILE, ATTR_FILE_URL, ATTR_URL, DOMAIN

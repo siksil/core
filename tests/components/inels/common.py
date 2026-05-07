@@ -1,9 +1,9 @@
 """Common methods used across tests."""
 
-from homeassistant.components import inels
-from homeassistant.components.inels.const import DOMAIN
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components import inels
+from inpui.components.inels.const import DOMAIN
+from inpui.core import HomeAssistant, State
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

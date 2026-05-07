@@ -4,10 +4,10 @@ import logging
 
 import pylitejet
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT, EVENT_INPUI_STOP
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DOMAIN, PLATFORMS
 
@@ -35,7 +35,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await system.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, handle_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, handle_stop)
     )
 
     hass.data[DOMAIN] = system

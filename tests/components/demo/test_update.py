@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     ATTR_IN_PROGRESS,
     ATTR_INSTALLED_VERSION,
     ATTR_LATEST_VERSION,
@@ -16,7 +16,7 @@ from homeassistant.components.update import (
     SERVICE_INSTALL,
     UpdateDeviceClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
@@ -24,9 +24,9 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture

@@ -7,9 +7,9 @@ from typing import Any
 
 from aioesphomeapi import EntityInfo, SwitchInfo, SwitchState
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.core import callback
-from homeassistant.util.enum import try_parse_enum
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.core import callback
+from inpui.util.enum import try_parse_enum
 
 from .entity import (
     EsphomeEntity,

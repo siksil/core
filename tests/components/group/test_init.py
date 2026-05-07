@@ -9,14 +9,14 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import group
-from homeassistant.components.group.registry import GroupIntegrationRegistry
-from homeassistant.components.lock import LockState
-from homeassistant.const import (
+from inpui.components import group
+from inpui.components.group.registry import GroupIntegrationRegistry
+from inpui.components.lock import LockState
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_RELOAD,
     STATE_CLOSED,
     STATE_HOME,
@@ -25,9 +25,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import common
 
@@ -1409,7 +1409,7 @@ async def test_group_alarm(hass: HomeAssistant) -> None:
     )
     assert await async_setup_component(hass, "alarm_control_panel", {})
     await hass.async_block_till_done()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert hass.states.get("group.group_zero").state == STATE_ON
 
@@ -1456,7 +1456,7 @@ async def test_group_vacuum_off(hass: HomeAssistant) -> None:
     assert await async_setup_component(hass, "vacuum", {})
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert hass.states.get("group.group_zero").state == STATE_OFF
 
@@ -1592,7 +1592,7 @@ async def test_switch_removed(hass: HomeAssistant) -> None:
     assert await async_setup_component(hass, "switch", {})
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert hass.states.get("group.group_zero").state == "on"
 
@@ -1725,7 +1725,7 @@ async def test_group_that_references_a_group_of_lights(hass: HomeAssistant) -> N
     )
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     assert hass.states.get("group.living_room_downlights").state == "off"
@@ -1762,7 +1762,7 @@ async def test_group_that_references_a_group_of_covers(hass: HomeAssistant) -> N
     assert await async_setup_component(hass, "cover", {})
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     assert hass.states.get("group.living_room_downcover").state == "closed"
@@ -1801,7 +1801,7 @@ async def test_group_that_references_two_groups_of_covers(hass: HomeAssistant) -
     )
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     assert hass.states.get("group.living_room_downcover").state == "closed"
@@ -1846,7 +1846,7 @@ async def test_group_that_references_two_types_of_groups(hass: HomeAssistant) ->
     assert await async_setup_component(hass, "cover", {})
     await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
 
     assert hass.states.get("group.covers").state == "closed"

@@ -10,11 +10,11 @@ from thinqconnect import ThinQAPIException
 from thinqconnect.devices.const import Location
 from thinqconnect.integration import PropertyState
 
-from homeassistant.core import callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.core import callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import COMPANY, DEVICE_UNIT_TO_HA, DOMAIN
 from .coordinator import DeviceDataUpdateCoordinator

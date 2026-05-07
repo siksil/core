@@ -4,10 +4,10 @@ import asyncio
 
 from aiohttp import ClientError
 
-from homeassistant.components.gios.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import async_get_integration
-from homeassistant.setup import async_setup_component
+from inpui.components.gios.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.loader import async_get_integration
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info
 from tests.test_util.aiohttp import AiohttpClientMocker

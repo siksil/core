@@ -8,25 +8,25 @@ from enum import StrEnum
 import logging
 from typing import Any, Self
 
-from homeassistant.const import CONF_TARGET
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import target as target_helpers
-from homeassistant.helpers.condition import (
+from inpui.const import CONF_TARGET
+from inpui.core import HomeAssistant
+from inpui.helpers import target as target_helpers
+from inpui.helpers.condition import (
     async_get_all_descriptions as async_get_all_condition_descriptions,
 )
-from homeassistant.helpers.entity import (
+from inpui.helpers.entity import (
     entity_sources,
     get_device_class,
     get_supported_features,
 )
-from homeassistant.helpers.service import (
+from inpui.helpers.service import (
     async_get_all_descriptions as async_get_all_service_descriptions,
 )
-from homeassistant.helpers.trigger import (
+from inpui.helpers.trigger import (
     async_get_all_descriptions as async_get_all_trigger_descriptions,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 

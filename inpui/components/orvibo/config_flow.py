@@ -7,10 +7,10 @@ from typing import Any
 from orvibo.s20 import S20, S20Exception, discover
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME
+from inpui.helpers import config_validation as cv
+from inpui.helpers.device_registry import format_mac
 
 from .const import CONF_SWITCH_LIST, DEFAULT_NAME, DOMAIN
 

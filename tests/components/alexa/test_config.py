@@ -3,7 +3,7 @@
 import asyncio
 from unittest.mock import patch
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .test_common import get_default_config
 

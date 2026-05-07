@@ -11,8 +11,8 @@ from yalexs.doorbell import DoorbellDetail
 from yalexs.lock import LockDetail
 from yalexs.manager.const import ACTIVITY_UPDATE_INTERVAL
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
 
 from . import YaleData
 

@@ -6,14 +6,14 @@ from dataclasses import dataclass
 import logging
 from typing import Any
 
-from homeassistant.components.update import (
+from inpui.components.update import (
     UpdateEntity,
     UpdateEntityDescription,
     UpdateEntityFeature,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AvmWrapper, FritzConfigEntry
 from .entity import FritzBoxBaseCoordinatorEntity, FritzEntityDescription

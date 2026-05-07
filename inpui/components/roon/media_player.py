@@ -7,7 +7,7 @@ from typing import Any, cast
 
 from roonapi import split_media_path
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseMedia,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
@@ -15,17 +15,17 @@ from homeassistant.components.media_player import (
     MediaType,
     RepeatMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import DEVICE_DEFAULT_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import DEVICE_DEFAULT_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import convert
-from homeassistant.util.dt import utcnow
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import convert
+from inpui.util.dt import utcnow
 
 from .const import DOMAIN
 from .media_browser import browse_media

@@ -15,22 +15,22 @@ from visionpluspython.exceptions import (
 )
 from visionpluspython.models import create_device_from_data
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_TEMPERATURE,
 )
-from homeassistant.components.watts.const import (
+from inpui.components.watts.const import (
     DISCOVERY_INTERVAL_MINUTES,
     DOMAIN,
     FAST_POLLING_INTERVAL_SECONDS,
     OAUTH2_TOKEN,
     UPDATE_INTERVAL_SECONDS,
 )
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

@@ -4,10 +4,10 @@ import logging
 
 from aio_ownet.exceptions import OWServerConnectionError, OWServerReturnError
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 from .onewirehub import OneWireConfigEntry, OneWireHub

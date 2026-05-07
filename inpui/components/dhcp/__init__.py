@@ -23,8 +23,8 @@ from aiodiscover.discovery import (
 from cached_ipaddress import cached_ip_addresses
 
 from homeassistant import config_entries
-from homeassistant.components import network
-from homeassistant.components.device_tracker import (
+from inpui.components import network
+from inpui.components.device_tracker import (
     ATTR_HOST_NAME,
     ATTR_IP,
     ATTR_MAC,
@@ -33,33 +33,33 @@ from homeassistant.components.device_tracker import (
     DOMAIN as DEVICE_TRACKER_DOMAIN,
     SourceType,
 )
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.const import (
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     STATE_HOME,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     discovery_flow,
 )
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
-from homeassistant.helpers.discovery_flow import DiscoveryKey
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.event import (
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.helpers.discovery_flow import DiscoveryKey
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.event import (
     async_track_state_added_domain,
     async_track_time_interval,
 )
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo as _DhcpServiceInfo
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import DHCPMatcher, async_get_dhcp
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo as _DhcpServiceInfo
+from inpui.helpers.typing import ConfigType
+from inpui.loader import DHCPMatcher, async_get_dhcp
 
 from . import websocket_api
 from .const import DOMAIN, HOSTNAME, IP_ADDRESS, MAC_ADDRESS
@@ -147,9 +147,9 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             for watcher in watchers:
                 watcher.async_stop()
 
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _async_stop)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, _async_stop)
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STARTED, _async_initialize)
+    hass.bus.async_listen_once(EVENT_INPUI_STARTED, _async_initialize)
     return True
 
 

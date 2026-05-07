@@ -6,10 +6,10 @@ from typing import Any, Protocol
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DOMAIN
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from . import DeviceAutomationType, async_get_device_automation_platform
 from .helpers import async_validate_device_automation_config

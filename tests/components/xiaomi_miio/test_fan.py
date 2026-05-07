@@ -8,9 +8,9 @@ from miio.integrations.fan.dmaker.fan_miot import FanStatusMiot
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.xiaomi_miio import MODEL_TO_CLASS_MAP
-from homeassistant.components.xiaomi_miio.const import CONF_FLOW_TYPE, DOMAIN
-from homeassistant.const import (
+from inpui.components.xiaomi_miio import MODEL_TO_CLASS_MAP
+from inpui.components.xiaomi_miio.const import CONF_FLOW_TYPE, DOMAIN
+from inpui.const import (
     CONF_DEVICE,
     CONF_HOST,
     CONF_MAC,
@@ -18,8 +18,8 @@ from homeassistant.const import (
     CONF_TOKEN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import TEST_MAC
 

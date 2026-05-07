@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_MESSAGE,
     ATTR_TARGET,
     DOMAIN as NOTIFY_DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 ICON_PATH = "/some/path"
 MESSAGE = "one, two, testing, testing"

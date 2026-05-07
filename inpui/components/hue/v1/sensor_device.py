@@ -1,7 +1,7 @@
 """Support for the Philips Hue sensor devices."""
 
-from homeassistant.helpers import entity
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.helpers import entity
+from inpui.helpers.device_registry import DeviceInfo
 
 from ..const import CONF_ALLOW_UNREACHABLE, DEFAULT_ALLOW_UNREACHABLE, DOMAIN
 

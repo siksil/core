@@ -6,12 +6,12 @@ from devialet import DevialetApi
 from devialet.const import UrlSuffix
 from yarl import URL
 
-from homeassistant.components.devialet.media_player import SUPPORT_DEVIALET
-from homeassistant.components.homeassistant import (
+from inpui.components.devialet.media_player import SUPPORT_DEVIALET
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_ALBUM_NAME,
@@ -29,8 +29,8 @@ from homeassistant.components.media_player import (
     SERVICE_SELECT_SOURCE,
     MediaPlayerState,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_SUPPORTED_FEATURES,
@@ -47,8 +47,8 @@ from homeassistant.const import (
     SERVICE_VOLUME_UP,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import HOST, NAME, setup_integration
 

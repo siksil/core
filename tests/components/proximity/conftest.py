@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(autouse=True)

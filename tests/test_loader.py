@@ -12,11 +12,11 @@ from awesomeversion import AwesomeVersion
 import pytest
 
 from homeassistant import loader
-from homeassistant.components import hue
-from homeassistant.components.hue import light as hue_light
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import json_loads
+from inpui.components import hue
+from inpui.components.hue import light as hue_light
+from inpui.core import HomeAssistant
+from inpui.helpers.json import json_dumps
+from inpui.util.json import json_loads
 
 from .common import MockModule, mock_integration
 
@@ -1488,7 +1488,7 @@ async def test_async_get_component_deadlock_fallback(
         if import_attempts == 1:
             # _DeadlockError inherits from RuntimeError
             raise RuntimeError(
-                "Detected deadlock trying to import homeassistant.components.executor_import"
+                "Detected deadlock trying to import inpui.components.executor_import"
             )
 
         return module_mock
@@ -1499,7 +1499,7 @@ async def test_async_get_component_deadlock_fallback(
         module = await executor_import_integration.async_get_component()
 
     assert (
-        "Detected deadlock trying to import homeassistant.components.executor_import"
+        "Detected deadlock trying to import inpui.components.executor_import"
         in caplog.text
     )
     assert "loaded_executor=False" in caplog.text
@@ -1569,11 +1569,11 @@ async def test_async_get_component_raises_after_import_failure(
         if import_attempts == 1:
             # _DeadlockError inherits from RuntimeError
             raise RuntimeError(
-                "Detected deadlock trying to import homeassistant.components.executor_import"
+                "Detected deadlock trying to import inpui.components.executor_import"
             )
 
         if import_attempts == 2:
-            raise ImportError("Failed import homeassistant.components.executor_import")
+            raise ImportError("Failed import inpui.components.executor_import")
         return module_mock
 
     assert "homeassistant.components.executor_import" not in sys.modules
@@ -1585,7 +1585,7 @@ async def test_async_get_component_raises_after_import_failure(
         await executor_import_integration.async_get_component()
 
     assert (
-        "Detected deadlock trying to import homeassistant.components.executor_import"
+        "Detected deadlock trying to import inpui.components.executor_import"
         in caplog.text
     )
     assert "loaded_executor=False" not in caplog.text
@@ -1610,7 +1610,7 @@ async def test_async_get_platform_deadlock_fallback(
         if import_attempts == 1:
             # _DeadlockError inherits from RuntimeError
             raise RuntimeError(
-                "Detected deadlock trying to import homeassistant.components.executor_import"
+                "Detected deadlock trying to import inpui.components.executor_import"
             )
 
         return module_mock
@@ -1621,7 +1621,7 @@ async def test_async_get_platform_deadlock_fallback(
         module = await executor_import_integration.async_get_platform("config_flow")
 
     assert (
-        "Detected deadlock trying to import homeassistant.components.executor_import"
+        "Detected deadlock trying to import inpui.components.executor_import"
         in caplog.text
     )
     # We should have tried both the executor and loop
@@ -1695,13 +1695,13 @@ async def test_async_get_platform_raises_after_import_failure(
         if import_attempts == 1:
             # _DeadlockError inherits from RuntimeError
             raise RuntimeError(
-                "Detected deadlock trying to import homeassistant.components.executor_import"
+                "Detected deadlock trying to import inpui.components.executor_import"
             )
 
         if import_attempts == 2:
             # _DeadlockError inherits from RuntimeError
             raise ImportError(
-                "Error trying to import homeassistant.components.executor_import"
+                "Error trying to import inpui.components.executor_import"
             )
 
         return module_mock
@@ -1715,7 +1715,7 @@ async def test_async_get_platform_raises_after_import_failure(
         await executor_import_integration.async_get_platform("config_flow")
 
     assert (
-        "Detected deadlock trying to import homeassistant.components.executor_import"
+        "Detected deadlock trying to import inpui.components.executor_import"
         in caplog.text
     )
     assert "loaded_executor=False" not in caplog.text

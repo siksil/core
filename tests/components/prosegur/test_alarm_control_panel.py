@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, patch
 from pyprosegur.installation import Status
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_component, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_component, entity_registry as er
 
 from .conftest import CONTRACT
 

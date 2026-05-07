@@ -10,7 +10,7 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.schedule.const import (
+from inpui.components.schedule.const import (
     ATTR_NEXT_EVENT,
     CONF_ALL_DAYS,
     CONF_DATA,
@@ -26,7 +26,7 @@ from homeassistant.components.schedule.const import (
     DOMAIN,
     SERVICE_GET,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
@@ -39,9 +39,9 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, async_capture_events, async_fire_time_changed
 from tests.typing import WebSocketGenerator

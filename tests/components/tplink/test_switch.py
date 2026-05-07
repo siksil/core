@@ -8,17 +8,17 @@ from kasa.iot import IotStrip
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import tplink
-from homeassistant.components.switch import (
+from inpui.components import tplink
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.tplink.const import DOMAIN
-from homeassistant.components.tplink.entity import EXCLUDED_FEATURES
-from homeassistant.components.tplink.switch import SWITCH_DESCRIPTIONS
-from homeassistant.config_entries import SOURCE_REAUTH
-from homeassistant.const import (
+from inpui.components.tplink.const import DOMAIN
+from inpui.components.tplink.entity import EXCLUDED_FEATURES
+from inpui.components.tplink.switch import SWITCH_DESCRIPTIONS
+from inpui.config_entries import SOURCE_REAUTH
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     STATE_OFF,
@@ -26,10 +26,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util, slugify
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util, slugify
 
 from . import (
     _mocked_device,

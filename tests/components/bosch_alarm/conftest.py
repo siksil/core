@@ -9,19 +9,19 @@ from bosch_alarm_mode2.panel import Area, Door, Output, Point
 from bosch_alarm_mode2.utils import Observable
 import pytest
 
-from homeassistant.components.bosch_alarm.const import (
+from inpui.components.bosch_alarm.const import (
     CONF_INSTALLER_CODE,
     CONF_USER_CODE,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_MODEL,
     CONF_PASSWORD,
     CONF_PORT,
 )
-from homeassistant.helpers.device_registry import format_mac
+from inpui.helpers.device_registry import format_mac
 
 from tests.common import MockConfigEntry
 

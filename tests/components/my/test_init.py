@@ -2,9 +2,9 @@
 
 from unittest import mock
 
-from homeassistant.components.my import URL_PATH
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.my import URL_PATH
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_setup(hass: HomeAssistant) -> None:

@@ -7,11 +7,11 @@ from typing import TYPE_CHECKING, Any, Concatenate
 from eheimdigital.device import EheimDigitalDevice
 from eheimdigital.types import EheimDigitalClientError
 
-from homeassistant.const import CONF_HOST
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_HOST
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import EheimDigitalUpdateCoordinator

@@ -7,13 +7,13 @@ from aiohttp import ClientResponseError
 from incomfortclient import InvalidGateway, InvalidHeaterList
 import pytest
 
-from homeassistant.components.incomfort.const import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.incomfort.const import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntry
+from inpui.const import CONF_HOST, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .conftest import MOCK_CONFIG, MOCK_CONFIG_DHCP
 

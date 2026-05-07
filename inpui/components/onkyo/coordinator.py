@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING, cast
 
 from aioonkyo import Kind, Status, Zone, command, query, status
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import DOMAIN
 from .receiver import ReceiverManager

@@ -10,17 +10,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.schema import Index
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import core, migration, statistics
-from homeassistant.components.recorder.db_schema import SCHEMA_VERSION
-from homeassistant.components.recorder.migration import MigrationTask
-from homeassistant.components.recorder.queries import get_migration_changes
-from homeassistant.components.recorder.util import (
+from inpui.components import recorder
+from inpui.components.recorder import core, migration, statistics
+from inpui.components.recorder.db_schema import SCHEMA_VERSION
+from inpui.components.recorder.migration import MigrationTask
+from inpui.components.recorder.queries import get_migration_changes
+from inpui.components.recorder.util import (
     execute_stmt_lambda_element,
     session_scope,
 )
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from .common import (
     async_recorder_block_till_done,
@@ -289,7 +289,7 @@ async def test_data_migrator_logic(
             await hass.async_block_till_done()
             await async_wait_recording_done(hass)
             await _async_wait_migration_done(hass)
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+            hass.bus.async_fire(EVENT_INPUI_STOP)
             await hass.async_block_till_done()
             await hass.async_stop()
 
@@ -354,7 +354,7 @@ async def test_migration_changes_prevent_trying_to_migrate_again(
             await hass.async_block_till_done()
             await async_wait_recording_done(hass)
             await _async_wait_migration_done(hass)
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+            hass.bus.async_fire(EVENT_INPUI_STOP)
             await hass.async_block_till_done()
             await hass.async_stop()
 
@@ -371,7 +371,7 @@ async def test_migration_changes_prevent_trying_to_migrate_again(
             migration_changes[migration.StatesContextIDMigration.migration_id]
             == migration.StatesContextIDMigration.migration_version
         )
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         await hass.async_stop()
 
@@ -409,7 +409,7 @@ async def test_migration_changes_prevent_trying_to_migrate_again(
                 migration_changes[migration.StatesContextIDMigration.migration_id]
                 == migration.StatesContextIDMigration.migration_version
             )
-            hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+            hass.bus.async_fire(EVENT_INPUI_STOP)
             await hass.async_block_till_done()
             await hass.async_stop()
 

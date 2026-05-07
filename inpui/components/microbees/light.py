@@ -2,10 +2,10 @@
 
 from typing import Any
 
-from homeassistant.components.light import ATTR_RGBW_COLOR, ColorMode, LightEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.light import ATTR_RGBW_COLOR, ColorMode, LightEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import MicroBeesConfigEntry
 from .coordinator import MicroBeesUpdateCoordinator

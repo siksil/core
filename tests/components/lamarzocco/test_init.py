@@ -10,16 +10,16 @@ from pylamarzocco.models import WebSocketDetails
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.lamarzocco.const import CONF_INSTALLATION_KEY, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.lamarzocco.const import CONF_INSTALLATION_KEY, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_ADDRESS,
     CONF_MAC,
     CONF_TOKEN,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
@@ -210,7 +210,7 @@ async def test_websocket_closed_on_unload(
     mock_lamarzocco.connect_dashboard_websocket.assert_called_once()
     mock_websocket.closed = False
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     mock_disconnect_callback.assert_called_once()
 

@@ -1,7 +1,7 @@
 """Tests for the Recovery Mode integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_persistent_notifications
 

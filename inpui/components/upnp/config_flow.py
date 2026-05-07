@@ -8,16 +8,16 @@ from urllib.parse import urlparse
 
 import voluptuous as vol
 
-from homeassistant.components import ssdp
-from homeassistant.config_entries import (
+from inpui.components import ssdp
+from inpui.config_entries import (
     SOURCE_IGNORE,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MODEL_NAME,

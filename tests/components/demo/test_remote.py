@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import remote
-from homeassistant.components.remote import ATTR_COMMAND
-from homeassistant.const import (
+from inpui.components import remote
+from inpui.components.remote import ATTR_COMMAND
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -14,8 +14,8 @@ from homeassistant.const import (
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 ENTITY_ID = "remote.remote_one"
 SERVICE_SEND_COMMAND = "send_command"

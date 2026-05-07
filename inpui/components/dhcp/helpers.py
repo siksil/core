@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from functools import partial
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
 
 from .models import DATA_DHCP, DHCPAddressData
 

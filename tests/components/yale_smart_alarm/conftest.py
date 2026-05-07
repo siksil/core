@@ -10,10 +10,10 @@ import pytest
 from yalesmartalarmclient import YaleDoorManAPI, YaleLock, YaleSmartAlarmData
 from yalesmartalarmclient.const import YALE_STATE_ARM_FULL
 
-from homeassistant.components.yale_smart_alarm.const import DOMAIN, PLATFORMS
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.yale_smart_alarm.const import DOMAIN, PLATFORMS
+from inpui.config_entries import SOURCE_USER
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

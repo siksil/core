@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.tankerkoenig import DOMAIN
-from homeassistant.const import CONF_SHOW_ON_MAP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.tankerkoenig import DOMAIN
+from inpui.const import CONF_SHOW_ON_MAP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import CONFIG_DATA, NEARBY_STATIONS, PRICES, STATION
 

@@ -1,8 +1,8 @@
 """Support for Snoo Events."""
 
-from homeassistant.components.event import EventEntity, EventEntityDescription
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity, EventEntityDescription
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import SnooConfigEntry
 from .entity import SnooDescriptionEntity

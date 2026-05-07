@@ -4,15 +4,15 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.roku.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.roku.const import DOMAIN
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,

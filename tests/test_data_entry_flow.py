@@ -9,9 +9,9 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.decorator import Registry
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.util.decorator import Registry
 
 from .common import async_capture_events
 

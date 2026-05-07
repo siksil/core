@@ -3,9 +3,9 @@
 from typing import Any
 from unittest.mock import Mock, patch
 
-from homeassistant.components import onboarding
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import onboarding
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import mock_storage
 

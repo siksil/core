@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 from wiim.consts import PlayingStatus
 
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
 
 from tests.common import MockConfigEntry
 

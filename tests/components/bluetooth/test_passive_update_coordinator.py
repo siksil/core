@@ -10,20 +10,20 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN,
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     BluetoothChange,
     BluetoothScanningMode,
 )
-from homeassistant.components.bluetooth.passive_update_coordinator import (
+from inpui.components.bluetooth.passive_update_coordinator import (
     PassiveBluetoothCoordinatorEntity,
     PassiveBluetoothDataUpdateCoordinator,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     inject_bluetooth_service_info,

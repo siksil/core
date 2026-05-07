@@ -2,14 +2,14 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components.diagnostics import REDACTED
-from homeassistant.components.fully_kiosk.const import DOMAIN
-from homeassistant.components.fully_kiosk.diagnostics import (
+from inpui.components.diagnostics import REDACTED
+from inpui.components.fully_kiosk.const import DOMAIN
+from inpui.components.fully_kiosk.diagnostics import (
     DEVICE_INFO_TO_REDACT,
     SETTINGS_TO_REDACT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_device

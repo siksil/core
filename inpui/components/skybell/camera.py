@@ -5,13 +5,13 @@ from __future__ import annotations
 from aiohttp import web
 from haffmpeg.camera import CameraMjpeg
 
-from homeassistant.components.camera import Camera, CameraEntityDescription
-from homeassistant.components.ffmpeg import get_ffmpeg_manager
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_aiohttp_proxy_stream
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.camera import Camera, CameraEntityDescription
+from inpui.components.ffmpeg import get_ffmpeg_manager
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_aiohttp_proxy_stream
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import SkybellDataUpdateCoordinator

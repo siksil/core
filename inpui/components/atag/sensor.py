@@ -1,14 +1,14 @@
 """Initialization of ATAG One sensor platform."""
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.const import (
     PERCENTAGE,
     UnitOfPressure,
     UnitOfTemperature,
     UnitOfTime,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AtagConfigEntry, AtagDataUpdateCoordinator
 from .entity import AtagEntity

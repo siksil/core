@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.fully_kiosk.const import (
+from inpui.components.fully_kiosk.const import (
     ATTR_APPLICATION,
     ATTR_KEY,
     ATTR_URL,
@@ -14,10 +14,10 @@ from homeassistant.components.fully_kiosk.const import (
     SERVICE_SET_CONFIG,
     SERVICE_START_APPLICATION,
 )
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 

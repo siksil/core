@@ -11,9 +11,9 @@ from evohomeasync2 import EvohomeClient, exceptions as exc
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.evohome.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.evohome.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import mock_post_request
 

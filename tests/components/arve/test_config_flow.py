@@ -2,12 +2,12 @@
 
 from unittest.mock import AsyncMock
 
-from homeassistant.components.arve.config_flow import ArveConnectionError
-from homeassistant.components.arve.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.arve.config_flow import ArveConnectionError
+from inpui.components.arve.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ACCESS_TOKEN, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import USER_INPUT, async_init_integration
 

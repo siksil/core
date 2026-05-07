@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from vallox_websocket_api import MetricData
 
-from homeassistant.components.vallox.const import DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components.vallox.const import DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

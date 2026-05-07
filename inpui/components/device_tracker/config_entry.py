@@ -7,9 +7,9 @@ from typing import final
 
 from propcache.api import cached_property
 
-from homeassistant.components import zone
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import zone
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_GPS_ACCURACY,
     ATTR_LATITUDE,
@@ -18,18 +18,18 @@ from homeassistant.const import (
     STATE_NOT_HOME,
     EntityCategory,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import (
     DeviceInfo,
     EventDeviceRegistryUpdatedData,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.helpers.typing import StateType
+from inpui.util.hass_dict import HassKey
 
 from .const import (
     ATTR_HOST_NAME,

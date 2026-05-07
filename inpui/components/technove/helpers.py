@@ -7,7 +7,7 @@ from typing import Any, Concatenate
 
 from technove import TechnoVEConnectionError, TechnoVEError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .entity import TechnoVEEntity
 

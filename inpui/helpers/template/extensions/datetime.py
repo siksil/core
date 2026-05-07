@@ -5,14 +5,14 @@ from __future__ import annotations
 from datetime import date, datetime, time, timedelta
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.helpers.template.helpers import raise_no_default
-from homeassistant.helpers.template.render_info import render_info_cv
-from homeassistant.util import dt as dt_util
+from inpui.helpers.template.helpers import raise_no_default
+from inpui.helpers.template.render_info import render_info_cv
+from inpui.util import dt as dt_util
 
 from .base import BaseTemplateExtension, TemplateFunction
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.template import TemplateEnvironment
+    from inpui.helpers.template import TemplateEnvironment
 
 _SENTINEL = object()
 DATE_STR_FORMAT = "%Y-%m-%d %H:%M:%S"

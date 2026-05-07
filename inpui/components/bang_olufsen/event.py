@@ -6,13 +6,13 @@ from typing import TYPE_CHECKING
 
 from mozart_api.models import PairedRemote
 
-from homeassistant.components.event import EventDeviceClass, EventEntity
-from homeassistant.const import CONF_MODEL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventDeviceClass, EventEntity
+from inpui.const import CONF_MODEL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BeoConfigEntry
 from .const import (

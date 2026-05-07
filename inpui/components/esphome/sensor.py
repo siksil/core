@@ -15,15 +15,15 @@ from aioesphomeapi import (
 )
 from aioesphomeapi.model import LastResetType
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
-from homeassistant.util.enum import try_parse_enum
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
+from inpui.util.enum import try_parse_enum
 
 from .entity import EsphomeEntity, platform_async_setup_entry
 from .entry_data import ESPHomeConfigEntry

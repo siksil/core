@@ -10,7 +10,7 @@ from google_air_quality_api.auth import Auth
 from google_air_quality_api.exceptions import GoogleAirQualityApiError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigEntryState,
     ConfigFlow,
@@ -18,17 +18,17 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import SectionConfig, section
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.selector import LocationSelector, LocationSelectorConfig
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import SectionConfig, section
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.selector import LocationSelector, LocationSelectorConfig
 
 from .const import CONF_REFERRER, DOMAIN, SECTION_API_KEY_OPTIONS
 

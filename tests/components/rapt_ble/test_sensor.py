@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 
-from homeassistant.components.rapt_ble.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS, SensorStateClass
-from homeassistant.const import (
+from inpui.components.rapt_ble.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS, SensorStateClass
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     PERCENTAGE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import COMPLETE_SERVICE_INFO, RAPT_MAC
 

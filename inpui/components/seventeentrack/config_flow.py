@@ -9,11 +9,11 @@ from pyseventeentrack import Client as SeventeenTrackClient
 from pyseventeentrack.errors import SeventeenTrackError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )

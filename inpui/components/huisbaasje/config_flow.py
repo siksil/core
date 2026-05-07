@@ -6,9 +6,9 @@ from typing import Any
 from energyflip import EnergyFlip, EnergyFlipConnectionException, EnergyFlipException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.data_entry_flow import AbortFlow
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ID, CONF_PASSWORD, CONF_USERNAME
+from inpui.data_entry_flow import AbortFlow
 
 from .const import DOMAIN
 

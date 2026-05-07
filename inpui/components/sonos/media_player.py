@@ -19,8 +19,8 @@ from soco.exceptions import SoCoException
 from soco.ms_data_structures import MusicServiceItem
 from sonos_websocket.exception import SonosWebsocketError
 
-from homeassistant.components import media_source, spotify
-from homeassistant.components.media_player import (
+from inpui.components import media_source, spotify
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ALBUM_NAME,
     ATTR_MEDIA_ANNOUNCE,
@@ -39,16 +39,16 @@ from homeassistant.components.media_player import (
     RepeatMode,
     async_process_play_media_url,
 )
-from homeassistant.components.plex import PLEX_URI_SCHEME
-from homeassistant.components.plex.services import (  # pylint: disable=hass-component-root-import
+from inpui.components.plex import PLEX_URI_SCHEME
+from inpui.components.plex.services import (  # pylint: disable=hass-component-root-import
     process_plex_payload,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_call_later
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_call_later
 
 from . import media_browser
 from .const import (

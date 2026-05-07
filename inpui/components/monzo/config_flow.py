@@ -8,9 +8,9 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_TOKEN
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import DOMAIN
 

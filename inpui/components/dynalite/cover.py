@@ -2,14 +2,14 @@
 
 from typing import Any
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     CoverDeviceClass,
     CoverEntity,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.enum import try_parse_enum
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.enum import try_parse_enum
 
 from .bridge import DynaliteBridge, DynaliteConfigEntry
 from .entity import DynaliteBase, async_setup_entry_base

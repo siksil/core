@@ -7,11 +7,11 @@ from collections.abc import AsyncIterable, Coroutine
 import logging
 from typing import Any
 
-from homeassistant.config import config_per_platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import discovery
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import (
+from inpui.config import config_per_platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import discovery
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import (
     SetupPhases,
     async_prepare_setup_platform,
     async_start_setup,

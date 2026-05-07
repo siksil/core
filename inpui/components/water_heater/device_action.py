@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import async_validate_entity_schema
-from homeassistant.const import (
+from inpui.components.device_automation import async_validate_entity_schema
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -14,9 +14,9 @@ from homeassistant.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from . import DOMAIN
 

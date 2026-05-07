@@ -8,7 +8,7 @@ from freezegun.api import FrozenDateTimeFactory
 from nibe.exceptions import CoilNotFoundException
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MockConnection
 
@@ -55,7 +55,7 @@ async def fixture_mock_connection(mock_connection_construct):
 @pytest.fixture(name="coils")
 async def fixture_coils(mock_connection: MockConnection):
     """Return a dict with coil data."""
-    from homeassistant.components.nibe_heatpump import HeatPump  # noqa: PLC0415
+    from inpui.components.nibe_heatpump import HeatPump  # noqa: PLC0415
 
     get_coils_original = HeatPump.get_coils
     get_coil_by_address_original = HeatPump.get_coil_by_address

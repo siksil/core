@@ -5,10 +5,10 @@ import datetime
 from switchbot_api import Device, Remote, SwitchBotAPI
 from switchbot_api.utils import get_file_stream_from_cloud
 
-from homeassistant.components.image import ImageEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.image import ImageEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SwitchbotCloudData, SwitchBotCoordinator
 from .const import DOMAIN

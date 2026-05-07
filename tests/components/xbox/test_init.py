@@ -12,15 +12,15 @@ from pythonxbox.api.provider.smartglass.models import SmartglassConsoleList
 from pythonxbox.common.exceptions import AuthenticationException
 import respx
 
-from homeassistant.components.xbox.const import DOMAIN, OAUTH2_TOKEN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.components.xbox.const import DOMAIN, OAUTH2_TOKEN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     OAuth2TokenRequestReauthError,
     OAuth2TokenRequestTransientError,
 )
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.helpers import device_registry as dr
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

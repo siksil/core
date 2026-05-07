@@ -7,11 +7,11 @@ from unittest.mock import patch
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.filesize.const import DOMAIN
-from homeassistant.const import CONF_FILE_PATH, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.components.filesize.const import DOMAIN
+from inpui.const import CONF_FILE_PATH, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 from . import TEST_FILE_NAME, async_create_file
 

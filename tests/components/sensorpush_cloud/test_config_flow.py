@@ -7,10 +7,10 @@ from unittest.mock import AsyncMock
 import pytest
 from sensorpush_ha import SensorPushCloudAuthError
 
-from homeassistant.components.sensorpush_cloud.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.sensorpush_cloud.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import CONF_DATA, CONF_EMAIL
 

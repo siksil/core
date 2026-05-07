@@ -9,10 +9,10 @@ from typing import Any
 
 from jvcprojector import command as cmd
 
-from homeassistant.components.remote import RemoteEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.remote import RemoteEntity
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import JVCConfigEntry
 from .entity import JvcProjectorEntity

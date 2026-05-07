@@ -23,18 +23,18 @@ from pycec.network import HDMINetwork, PhysicalAddress
 from pycec.tcp import TcpAdapter
 import voluptuous as vol
 
-from homeassistant.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.media_player import DOMAIN as MEDIA_PLAYER_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_PLATFORM,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HassJob, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv, discovery, event
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HassJob, HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv, discovery, event
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, EVENT_HDMI_CEC_UNAVAILABLE
 
@@ -333,6 +333,6 @@ def setup(hass: HomeAssistant, base_config: ConfigType) -> bool:  # noqa: C901
         hdmi_network.set_new_device_callback(_new_device)
         hdmi_network.start()
 
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_START, _start_cec)
-    hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, _shutdown)
+    hass.bus.listen_once(EVENT_INPUI_START, _start_cec)
+    hass.bus.listen_once(EVENT_INPUI_STOP, _shutdown)
     return True

@@ -5,10 +5,10 @@ from unittest.mock import patch
 import aiohttp
 
 from homeassistant import config_entries
-from homeassistant.components.ovo_energy.const import CONF_ACCOUNT, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ovo_energy.const import CONF_ACCOUNT, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

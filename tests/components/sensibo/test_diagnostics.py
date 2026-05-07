@@ -5,8 +5,8 @@ from __future__ import annotations
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from tests.components.diagnostics import get_diagnostics_for_config_entry
 from tests.typing import ClientSessionGenerator

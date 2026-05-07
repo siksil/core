@@ -2,11 +2,11 @@
 
 from dataclasses import asdict
 
-from homeassistant.components.wemo.const import DOMAIN
-from homeassistant.components.wemo.coordinator import Options
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.wemo.const import DOMAIN
+from inpui.components.wemo.coordinator import Options
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, patch
 

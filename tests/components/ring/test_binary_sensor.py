@@ -8,15 +8,15 @@ import pytest
 from ring_doorbell import Ring
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.ring.binary_sensor import RingEvent
-from homeassistant.components.ring.const import DOMAIN
-from homeassistant.components.ring.coordinator import RingEventListener
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.ring.binary_sensor import RingEvent
+from inpui.components.ring.const import DOMAIN
+from inpui.components.ring.coordinator import RingEventListener
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from .common import (
     MockConfigEntry,

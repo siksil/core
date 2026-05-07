@@ -3,17 +3,17 @@
 from enum import IntEnum
 from typing import Any
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     ClimateEntity,
     ClimateEntityFeature,
     HVACAction,
     HVACMode,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import PRECISION_HALVES, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.const import PRECISION_HALVES, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN, DOMAINS_AND_TYPES
 from .device import BroadlinkDevice

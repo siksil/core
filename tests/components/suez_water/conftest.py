@@ -8,8 +8,8 @@ from pysuez import AggregatedData, PriceResult
 from pysuez.const import ATTRIBUTION
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.suez_water.const import CONF_COUNTER_ID, DOMAIN
+from inpui.components.recorder import Recorder
+from inpui.components.suez_water.const import CONF_COUNTER_ID, DOMAIN
 
 from tests.common import MockConfigEntry
 from tests.conftest import RecorderInstanceContextManager

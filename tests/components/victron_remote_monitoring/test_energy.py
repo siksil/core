@@ -1,8 +1,8 @@
 """Test the Victron Remote Monitoring energy platform."""
 
-from homeassistant.components.victron_remote_monitoring import energy
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.victron_remote_monitoring import energy
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

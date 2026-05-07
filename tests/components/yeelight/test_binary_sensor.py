@@ -2,10 +2,10 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.yeelight import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_component
-from homeassistant.setup import async_setup_component
+from inpui.components.yeelight import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_component
+from inpui.setup import async_setup_component
 
 from . import (
     MODULE,

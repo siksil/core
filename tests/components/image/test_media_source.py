@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 @pytest.fixture(autouse=True)

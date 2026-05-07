@@ -8,20 +8,20 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.button import ButtonDeviceClass
-from homeassistant.components.cover import CoverDeviceClass
-from homeassistant.components.event import EventDeviceClass
-from homeassistant.components.sensor import (
+from inpui.components import websocket_api
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.button import ButtonDeviceClass
+from inpui.components.cover import CoverDeviceClass
+from inpui.components.event import EventDeviceClass
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASS_STATE_CLASSES,
     DEVICE_CLASS_UNITS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.update import UpdateDeviceClass
-from homeassistant.const import (
+from inpui.components.update import UpdateDeviceClass
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_DEVICE_ID,
     CONF_NAME,
@@ -33,11 +33,11 @@ from homeassistant.const import (
     Platform,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import section
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import section
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,

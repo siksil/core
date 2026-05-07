@@ -11,14 +11,14 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.frontend import DATA_PANELS
-from homeassistant.const import CONF_FILENAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import collection, storage
-from homeassistant.helpers.json import json_bytes, json_fragment
-from homeassistant.util.yaml import Secrets, load_yaml_dict
+from inpui.components import websocket_api
+from inpui.components.frontend import DATA_PANELS
+from inpui.const import CONF_FILENAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import collection, storage
+from inpui.helpers.json import json_bytes, json_fragment
+from inpui.util.yaml import Secrets, load_yaml_dict
 
 from .const import (
     CONF_ALLOW_SINGLE_WORD,

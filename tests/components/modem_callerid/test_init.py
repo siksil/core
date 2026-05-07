@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from phone_modem import exceptions
 
-from homeassistant.components.modem_callerid.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICE
-from homeassistant.core import HomeAssistant
+from inpui.components.modem_callerid.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICE
+from inpui.core import HomeAssistant
 
 from . import com_port, patch_init_modem
 

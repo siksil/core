@@ -15,12 +15,12 @@ from zha.zigbee.cluster_handlers.manufacturerspecific import (
     SingleLEDEffectType,
 )
 
-from homeassistant.components.device_automation import InvalidDeviceAutomationConfig
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.components.device_automation import InvalidDeviceAutomationConfig
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .const import DOMAIN
 from .helpers import async_get_zha_device_proxy

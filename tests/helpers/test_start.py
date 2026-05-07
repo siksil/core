@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STARTED
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.helpers import start
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STARTED
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.helpers import start
 
 
 async def test_at_start_when_running_awaitable(hass: HomeAssistant) -> None:
@@ -73,7 +73,7 @@ async def test_at_start_when_starting_awaitable(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 1
 
@@ -96,7 +96,7 @@ async def test_at_start_when_starting_callback(
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 1
 
@@ -145,7 +145,7 @@ async def test_cancelling_at_start_when_starting(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 0
 
@@ -213,11 +213,11 @@ async def test_at_started_when_starting_awaitable(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert len(calls) == 1
 
@@ -239,11 +239,11 @@ async def test_at_started_when_starting_callback(
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert len(calls) == 1
 
@@ -292,10 +292,10 @@ async def test_cancelling_at_started_when_starting(hass: HomeAssistant) -> None:
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+    hass.bus.async_fire(EVENT_INPUI_START)
     await hass.async_block_till_done()
     assert len(calls) == 0
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await hass.async_block_till_done()
     assert len(calls) == 0

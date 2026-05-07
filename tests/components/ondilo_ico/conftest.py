@@ -6,8 +6,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.ondilo_ico.const import DOMAIN
-from homeassistant.util.json import JsonArrayType
+from inpui.components.ondilo_ico.const import DOMAIN
+from inpui.util.json import JsonArrayType
 
 from tests.common import (
     MockConfigEntry,

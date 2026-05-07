@@ -98,12 +98,12 @@ import zigpy.zcl
 from zigpy.zcl.foundation import CommandSchema
 
 from homeassistant import __path__ as HOMEASSISTANT_PATH
-from homeassistant.components.homeassistant_hardware.silabs_multiprotocol_addon import (
+from inpui.components.homeassistant_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
-from homeassistant.components.system_log import LogEntry
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.system_log import LogEntry
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -111,17 +111,17 @@ from homeassistant.const import (
     ATTR_NAME,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send, dispatcher_send
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.logging import HomeAssistantQueueHandler
+from inpui.helpers.dispatcher import async_dispatcher_send, dispatcher_send
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType
+from inpui.util.logging import HomeAssistantQueueHandler
 
 from .const import (
     ATTR_ACTIVE_COORDINATOR,

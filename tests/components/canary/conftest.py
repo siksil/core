@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 from canary.api import Api
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(autouse=True)

@@ -7,10 +7,10 @@ from collections.abc import AsyncIterable
 from google.genai.errors import APIError, ClientError
 from google.genai.types import Part
 
-from homeassistant.components import stt
-from homeassistant.config_entries import ConfigEntry, ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import stt
+from inpui.config_entries import ConfigEntry, ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     CONF_CHAT_MODEL,

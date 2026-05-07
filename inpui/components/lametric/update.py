@@ -2,9 +2,9 @@
 
 from awesomeversion import AwesomeVersion
 
-from homeassistant.components.update import UpdateDeviceClass, UpdateEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateDeviceClass, UpdateEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LaMetricConfigEntry, LaMetricDataUpdateCoordinator
 from .entity import LaMetricEntity

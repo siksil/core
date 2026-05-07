@@ -9,15 +9,15 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from demetriek import CloudDevice, Device
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.lametric.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_HOST, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.lametric.const import DOMAIN
+from inpui.const import CONF_API_KEY, CONF_HOST, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture, load_json_array_fixture
 

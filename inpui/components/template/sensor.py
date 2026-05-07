@@ -10,7 +10,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     ATTR_LAST_RESET,
     CONF_STATE_CLASS,
     DEVICE_CLASSES_SCHEMA,
@@ -22,8 +22,8 @@ from homeassistant.components.sensor import (
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_DEVICE_CLASS,
     CONF_ENTITY_PICTURE_TEMPLATE,
@@ -39,14 +39,14 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     AddEntitiesCallback,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, StateType
-from homeassistant.util import dt as dt_util
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType, StateType
+from inpui.util import dt as dt_util
 
 from . import TriggerUpdateCoordinator, validators as template_validators
 from .entity import AbstractTemplateEntity

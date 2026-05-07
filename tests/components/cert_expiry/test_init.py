@@ -4,16 +4,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.cert_expiry.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.cert_expiry.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import HOST, PORT
 from .helpers import future_timestamp, static_datetime
@@ -66,7 +66,7 @@ async def test_unload_config_entry(hass: HomeAssistant) -> None:
         return_value=timestamp,
     ):
         assert await async_setup_component(hass, DOMAIN, {}) is True
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert entry.state is ConfigEntryState.LOADED

@@ -7,13 +7,13 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import calendar, todo
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.intent import async_register_timer_handler
-from homeassistant.components.script import ScriptConfig
-from homeassistant.core import Context, HomeAssistant, State, SupportsResponse
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import (
+from inpui.components import calendar, todo
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.intent import async_register_timer_handler
+from inpui.components.script import ScriptConfig
+from inpui.core import Context, HomeAssistant, State, SupportsResponse
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import (
     area_registry as ar,
     config_validation as cv,
     device_registry as dr,
@@ -23,9 +23,9 @@ from homeassistant.helpers import (
     llm,
     selector,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonObjectType
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, async_mock_service
 

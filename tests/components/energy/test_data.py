@@ -3,7 +3,7 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.energy.data import (
+from inpui.components.energy.data import (
     ENERGY_SOURCE_SCHEMA,
     FLOW_FROM_GRID_SOURCE_SCHEMA,
     FLOW_TO_GRID_SOURCE_SCHEMA,
@@ -12,8 +12,8 @@ from homeassistant.components.energy.data import (
     WATER_SOURCE_SCHEMA,
     EnergyManager,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import storage
+from inpui.core import HomeAssistant
+from inpui.helpers import storage
 
 
 async def test_energy_preferences_no_migration_needed(hass: HomeAssistant) -> None:

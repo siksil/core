@@ -7,10 +7,10 @@ from unittest.mock import Mock, patch
 
 import requests_mock
 
-from homeassistant.components.google_wifi import sensor as google_wifi
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.google_wifi import sensor as google_wifi
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockEntityPlatform,

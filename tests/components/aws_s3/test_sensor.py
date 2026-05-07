@@ -10,11 +10,11 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.aws_s3.coordinator import SCAN_INTERVAL
-from homeassistant.components.backup import AgentBackup
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.aws_s3.coordinator import SCAN_INTERVAL
+from inpui.components.backup import AgentBackup
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import setup_integration
 

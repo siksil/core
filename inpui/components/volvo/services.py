@@ -8,11 +8,11 @@ from urllib import parse
 from httpx import AsyncClient, HTTPError, HTTPStatusError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.httpx_client import get_async_client
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.httpx_client import get_async_client
 
 from .const import DOMAIN
 from .coordinator import VolvoConfigEntry

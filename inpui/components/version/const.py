@@ -8,7 +8,7 @@ from typing import Any, Final
 
 from pyhaversion.consts import HaVersionChannel, HaVersionSource
 
-from homeassistant.const import CONF_NAME, Platform
+from inpui.const import CONF_NAME, Platform
 
 DOMAIN: Final = "version"
 LOGGER: Final[Logger] = getLogger(__package__)

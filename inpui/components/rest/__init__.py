@@ -12,9 +12,9 @@ from typing import Any
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.const import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_HEADERS,
     CONF_METHOD,
@@ -31,17 +31,17 @@ from homeassistant.const import (
     SERVICE_RELOAD,
     Platform,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import discovery, template
-from homeassistant.helpers.entity_component import DEFAULT_SCAN_INTERVAL
-from homeassistant.helpers.reload import (
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import discovery, template
+from inpui.helpers.entity_component import DEFAULT_SCAN_INTERVAL
+from inpui.helpers.reload import (
     async_integration_yaml_config,
     async_reload_integration_platforms,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.async_ import create_eager_task
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.async_ import create_eager_task
 
 from .const import (
     CONF_ENCODING,

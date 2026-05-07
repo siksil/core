@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from unittest.mock import patch
 
-from homeassistant.components.brottsplatskartan.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.brottsplatskartan.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

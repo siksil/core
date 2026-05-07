@@ -2,18 +2,18 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.smart_meter_texas.const import (
+from inpui.components.smart_meter_texas.const import (
     ELECTRIC_METER,
     ESIID,
     METER_NUMBER,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_ENTITY_ID, CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_ENTITY_ID, refresh_data, setup_integration
 

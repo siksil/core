@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import os
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .const import _LOGGER, CONF_DOWNLOAD_DIR
 from .services import async_setup_services

@@ -5,11 +5,11 @@ from __future__ import annotations
 from aiowatttime import Client
 from aiowatttime.errors import InvalidCredentialsError, WattTimeError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import aiohttp_client
 
 from .const import DOMAIN, LOGGER
 from .coordinator import WattTimeCoordinator

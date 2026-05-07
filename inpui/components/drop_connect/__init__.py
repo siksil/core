@@ -5,10 +5,10 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt import ReceiveMessage
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import mqtt
+from inpui.components.mqtt import ReceiveMessage
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
 
 from .const import CONF_DATA_TOPIC, CONF_DEVICE_TYPE
 from .coordinator import DROPConfigEntry, DROPDeviceDataUpdateCoordinator

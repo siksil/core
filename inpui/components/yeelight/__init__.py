@@ -8,19 +8,19 @@ import voluptuous as vol
 from yeelight import BulbException
 from yeelight.aio import AsyncBulb
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import (
     CONF_DEVICES,
     CONF_HOST,
     CONF_ID,
     CONF_MODEL,
     CONF_NAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType, VolDictType
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType, VolDictType
 
 from .const import (
     ACTION_OFF,
@@ -268,7 +268,7 @@ async def _async_get_device(
         hass.async_create_task(device.bulb.async_stop_listening())
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_stop_listen_task)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_stop_listen_task)
     )
     entry.async_on_unload(_async_stop_listen_on_unload)
 

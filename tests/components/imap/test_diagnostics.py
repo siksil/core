@@ -6,10 +6,10 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import imap
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components import imap
+from inpui.components.sensor import SensorStateClass
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import TEST_FETCH_RESPONSE_TEXT_PLAIN, TEST_SEARCH_RESPONSE
 from .test_config_flow import MOCK_CONFIG

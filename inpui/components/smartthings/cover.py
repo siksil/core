@@ -6,16 +6,16 @@ from typing import Any
 
 from pysmartthings import Attribute, Capability, Command, SmartThings
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.const import ATTR_BATTERY_LEVEL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_BATTERY_LEVEL
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FullDevice, SmartThingsConfigEntry
 from .const import MAIN

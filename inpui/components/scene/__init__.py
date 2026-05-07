@@ -9,16 +9,16 @@ from typing import Any, Final, final
 
 import voluptuous as vol
 
-from homeassistant.components.light import ATTR_TRANSITION
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PLATFORM, SERVICE_TURN_ON, STATE_UNAVAILABLE
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.async_ import run_callback_threadsafe
-from homeassistant.util.hass_dict import HassKey
+from inpui.components.light import ATTR_TRANSITION
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PLATFORM, SERVICE_TURN_ON, STATE_UNAVAILABLE
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, callback
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
+from inpui.util.async_ import run_callback_threadsafe
+from inpui.util.hass_dict import HassKey
 
 DOMAIN: Final = "scene"
 DATA_COMPONENT: HassKey[EntityComponent[BaseScene]] = HassKey(DOMAIN)

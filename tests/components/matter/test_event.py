@@ -7,10 +7,10 @@ from matter_server.common.models import EventType, MatterNodeEvent
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import snapshot_matter_entities, trigger_subscription_callback
 

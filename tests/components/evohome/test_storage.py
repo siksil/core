@@ -7,9 +7,9 @@ from typing import Any, Final, NotRequired, TypedDict
 
 import pytest
 
-from homeassistant.components.evohome.const import DOMAIN, STORAGE_KEY, STORAGE_VER
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.evohome.const import DOMAIN, STORAGE_KEY, STORAGE_VER
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .conftest import setup_evohome
 from .const import ACCESS_TOKEN, REFRESH_TOKEN, SESSION_ID, USERNAME

@@ -9,15 +9,15 @@ from typing import Any, NamedTuple
 from pyhap.const import CATEGORY_SENSOR
 from pyhap.service import Service
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_HOME,
     STATE_ON,
     UnitOfTemperature,
 )
-from homeassistant.core import State, callback
+from inpui.core import State, callback
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

@@ -9,13 +9,13 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.image import DOMAIN as IMAGE_DOMAIN
-from homeassistant.components.vodafone_station.const import SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.image import DOMAIN as IMAGE_DOMAIN
+from inpui.components.vodafone_station.const import SCAN_INTERVAL
+from inpui.config_entries import ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from . import setup_integration
 from .const import TEST_SERIAL_NUMBER

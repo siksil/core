@@ -7,18 +7,18 @@ import pytest
 from reolink_aio.api import Chime
 from reolink_aio.exceptions import InvalidParameterError, ReolinkError
 
-from homeassistant.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_SELECT_OPTION,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .conftest import TEST_CAM_NAME, TEST_NVR_NAME
 

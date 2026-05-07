@@ -21,15 +21,15 @@ import zoneinfo
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import automation, calendar
-from homeassistant.components.calendar.trigger import (
+from inpui.components import automation, calendar
+from inpui.components.calendar.trigger import (
     CONF_OFFSET_TYPE,
     EVENT_END,
     EVENT_START,
     OFFSET_TYPE_AFTER,
     OFFSET_TYPE_BEFORE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_AREA_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
@@ -40,15 +40,15 @@ from homeassistant.const import (
     CONF_TARGET,
     SERVICE_TURN_OFF,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     device_registry as dr,
     entity_registry as er,
     label_registry as lr,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import MockCalendarEntity
 

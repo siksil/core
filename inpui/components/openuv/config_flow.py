@@ -10,16 +10,16 @@ from pyopenuv import Client
 from pyopenuv.errors import OpenUvError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry, ConfigFlow, ConfigFlowResult
+from inpui.const import (
     CONF_API_KEY,
     CONF_ELEVATION,
     CONF_LATITUDE,
     CONF_LONGITUDE,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.core import callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.schema_config_entry_flow import (
     SchemaFlowFormStep,
     SchemaOptionsFlowHandler,
 )

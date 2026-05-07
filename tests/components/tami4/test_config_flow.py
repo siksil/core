@@ -4,9 +4,9 @@ import pytest
 from Tami4EdgeAPI import exceptions
 
 from homeassistant import config_entries
-from homeassistant.components.tami4.const import CONF_PHONE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.tami4.const import CONF_PHONE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 async def test_step_user_valid_number(

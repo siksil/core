@@ -14,25 +14,25 @@ from plexwebsocket import (
 )
 import requests.exceptions
 
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN, BrowseError
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_URL, CONF_VERIFY_SSL, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import (
+from inpui.components.media_player import DOMAIN as MP_DOMAIN, BrowseError
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_URL, CONF_VERIFY_SSL, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.debounce import Debouncer
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.debounce import Debouncer
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.helpers.network import is_internal_request
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.event import async_track_time_interval
+from inpui.helpers.network import is_internal_request
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CLIENT_SCAN_INTERVAL,
@@ -230,7 +230,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         websocket.close()
 
     unsub = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_STOP, close_websocket_session
+        EVENT_INPUI_STOP, close_websocket_session
     )
     hass_data[DISPATCHERS][server_id].append(unsub)
 

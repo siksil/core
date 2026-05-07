@@ -10,7 +10,7 @@ from google.api_core.exceptions import (
 )
 import pytest
 
-from homeassistant.components.google_travel_time.const import (
+from inpui.components.google_travel_time.const import (
     ARRIVAL_TIME,
     CONF_ARRIVAL_TIME,
     CONF_AVOID,
@@ -28,10 +28,10 @@ from homeassistant.components.google_travel_time.const import (
     DOMAIN,
     UNITS_IMPERIAL,
 )
-from homeassistant.config_entries import SOURCE_USER, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_LANGUAGE, CONF_MODE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import DEFAULT_OPTIONS, MOCK_CONFIG, RECONFIGURE_CONFIG
 

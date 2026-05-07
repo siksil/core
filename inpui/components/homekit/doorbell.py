@@ -7,15 +7,15 @@ from typing import Any
 
 from pyhap.util import callback as pyhap_callback
 
-from homeassistant.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import (
+from inpui.const import STATE_ON, STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import (
     Event,
     EventStateChangedData,
     HassJobType,
     State,
     callback as ha_callback,
 )
-from homeassistant.helpers.event import async_track_state_change_event
+from inpui.helpers.event import async_track_state_change_event
 
 from .accessories import HomeAccessory
 from .const import (

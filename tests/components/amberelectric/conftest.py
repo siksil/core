@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, Mock, patch
 from amberelectric.models.interval import Interval
 import pytest
 
-from homeassistant.components.amberelectric.const import (
+from inpui.components.amberelectric.const import (
     CONF_SITE_ID,
     CONF_SITE_NAME,
     DOMAIN,
 )
-from homeassistant.const import CONF_API_TOKEN
+from inpui.const import CONF_API_TOKEN
 
 from .helpers import (
     CONTROLLED_LOAD_CHANNEL,

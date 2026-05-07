@@ -8,7 +8,7 @@ import pytest
 from transmission_rpc.session import Session, SessionStats
 from transmission_rpc.torrent import Torrent
 
-from homeassistant.components.transmission.const import DOMAIN
+from inpui.components.transmission.const import DOMAIN
 
 from . import MOCK_CONFIG_DATA
 

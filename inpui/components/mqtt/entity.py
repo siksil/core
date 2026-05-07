@@ -10,8 +10,8 @@ from typing import TYPE_CHECKING, Any, Protocol, cast, final
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_CONFIGURATION_URL,
     ATTR_HW_VERSION,
     ATTR_MANUFACTURER,
@@ -31,35 +31,35 @@ from homeassistant.const import (
     CONF_UNIQUE_ID,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import Event, HassJobType, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import (
+from inpui.core import Event, HassJobType, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import (
     DeviceEntry,
     DeviceInfo,
     EventDeviceRegistryUpdatedData,
 )
-from homeassistant.helpers.dispatcher import (
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.entity import Entity, async_generate_entity_id
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import (
+from inpui.helpers.entity import Entity, async_generate_entity_id
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import (
     async_track_device_registry_updated_event,
     async_track_entity_registry_updated_event,
 )
-from homeassistant.helpers.group import IntegrationSpecificGroup
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.typing import (
+from inpui.helpers.group import IntegrationSpecificGroup
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.typing import (
     UNDEFINED,
     ConfigType,
     DiscoveryInfoType,
     UndefinedType,
     VolSchemaType,
 )
-from homeassistant.util.json import json_loads
-from homeassistant.util.yaml import dump as yaml_dump
+from inpui.util.json import json_loads
+from inpui.util.yaml import dump as yaml_dump
 
 from . import debug_info, subscription
 from .client import async_publish

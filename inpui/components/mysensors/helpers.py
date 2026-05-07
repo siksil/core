@@ -12,11 +12,11 @@ from mysensors import BaseAsyncGateway, Message
 from mysensors.sensor import ChildSensor
 import voluptuous as vol
 
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.util.decorator import Registry
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.util.decorator import Registry
 
 from .const import (
     ATTR_DEVICES,

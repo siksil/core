@@ -12,22 +12,22 @@ from bluecurrent_api.exceptions import (
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.blue_current import async_setup_entry
-from homeassistant.components.blue_current.const import (
+from inpui.components.blue_current import async_setup_entry
+from inpui.components.blue_current.const import (
     CHARGING_CARD_ID,
     DOMAIN,
     SERVICE_START_CHARGE_SESSION,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICE_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICE_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryNotReady,
     IntegrationError,
     ServiceValidationError,
 )
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.helpers.device_registry import DeviceRegistry
 
 from . import init_integration
 

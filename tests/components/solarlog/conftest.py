@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from solarlog_cli.solarlog_models import EnergyData, InverterData, SolarlogData
 
-from homeassistant.components.solarlog.const import CONF_HAS_PWD, DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PASSWORD
+from inpui.components.solarlog.const import CONF_HAS_PWD, DOMAIN
+from inpui.const import CONF_HOST, CONF_PASSWORD
 
 from .const import HOST
 

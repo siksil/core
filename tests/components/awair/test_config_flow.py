@@ -6,11 +6,11 @@ from unittest.mock import Mock, patch
 from aiohttp.client_exceptions import ClientConnectorError
 from python_awair.exceptions import AuthError, AwairError
 
-from homeassistant.components.awair.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER, SOURCE_ZEROCONF
-from homeassistant.const import CONF_ACCESS_TOKEN, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.awair.const import DOMAIN
+from inpui.config_entries import SOURCE_USER, SOURCE_ZEROCONF
+from inpui.const import CONF_ACCESS_TOKEN, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     CLOUD_CONFIG,

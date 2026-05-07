@@ -4,7 +4,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEFAULT,
     CONF_DESCRIPTION,
     CONF_DOMAIN,
@@ -13,8 +13,8 @@ from homeassistant.const import (
     CONF_PATH,
     CONF_SELECTOR,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv, selector
+from inpui.core import callback
+from inpui.helpers import config_validation as cv, selector
 
 from .const import (
     CONF_AUTHOR,

@@ -15,9 +15,9 @@ from togrill_bluetooth.packets import (
     Taste,
 )
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ToGrillConfigEntry
 from .const import CONF_PROBE_COUNT, MAX_PROBE_COUNT

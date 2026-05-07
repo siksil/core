@@ -12,10 +12,10 @@ from asyncinotify import Inotify, Mask
 from evdev import InputDevice, categorize, ecodes, list_devices
 import voluptuous as vol
 
-from homeassistant.const import EVENT_HOMEASSISTANT_START, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import EVENT_INPUI_START, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -101,10 +101,10 @@ class KeyboardRemote:
         """Listen for Home Assistant start and stop events."""
 
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_START, self.async_start_monitoring
+            EVENT_INPUI_START, self.async_start_monitoring
         )
         self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, self.async_stop_monitoring
+            EVENT_INPUI_STOP, self.async_stop_monitoring
         )
 
     async def async_start_monitoring(self, event):

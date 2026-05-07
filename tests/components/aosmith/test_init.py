@@ -7,13 +7,13 @@ from freezegun.api import FrozenDateTimeFactory
 from py_aosmith import AOSmithUnknownException
 import pytest
 
-from homeassistant.components.aosmith.const import (
+from inpui.components.aosmith.const import (
     DOMAIN,
     FAST_INTERVAL,
     REGULAR_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import build_device_fixture
 

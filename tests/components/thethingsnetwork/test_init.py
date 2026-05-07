@@ -3,7 +3,7 @@
 import pytest
 from ttn_client import TTNAuthError
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize(("exception_class"), [TTNAuthError, Exception])

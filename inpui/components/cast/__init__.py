@@ -6,13 +6,13 @@ from typing import Protocol
 
 from pychromecast import Chromecast
 
-from homeassistant.components.media_player import BrowseMedia, MediaType
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.integration_platform import (
+from inpui.components.media_player import BrowseMedia, MediaType
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
 

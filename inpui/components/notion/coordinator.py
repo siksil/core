@@ -12,12 +12,12 @@ from aionotion.listener.models import Listener
 from aionotion.sensor.models import Sensor
 from aionotion.user.models import UserPreferences
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_USERNAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_USERNAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, LOGGER
 

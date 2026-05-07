@@ -13,36 +13,36 @@ from zigpy.config import CONF_DEVICE, CONF_DEVICE_PATH
 from zigpy.device import Device
 from zigpy.exceptions import TransientConnectionError
 
-from homeassistant.components.homeassistant_hardware import (
+from inpui.components.homeassistant_hardware import (
     DOMAIN as HOMEASSISTANT_HARDWARE_DOMAIN,
 )
-from homeassistant.components.homeassistant_hardware.helpers import (
+from inpui.components.homeassistant_hardware.helpers import (
     async_is_firmware_update_in_progress,
     async_register_firmware_update_in_progress,
 )
-from homeassistant.components.usb import USBDevice
-from homeassistant.components.zha.const import (
+from inpui.components.usb import USBDevice
+from inpui.components.zha.const import (
     CONF_BAUDRATE,
     CONF_FLOW_CONTROL,
     CONF_RADIO_TYPE,
     CONF_USB_PATH,
     DOMAIN,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     create_zha_config,
     get_zha_data,
     get_zha_gateway,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
+    EVENT_INPUI_STOP,
     MAJOR_VERSION,
     MINOR_VERSION,
     Platform,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers.event import async_call_later
-from homeassistant.setup import async_setup_component
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers.event import async_call_later
+from inpui.setup import async_setup_component
 
 from .test_light import LIGHT_ON_OFF
 
@@ -300,7 +300,7 @@ async def test_shutdown_on_ha_stop(
     with patch.object(
         zha_data.gateway_proxy, "shutdown", wraps=zha_data.gateway_proxy.shutdown
     ) as mock_shutdown:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         hass.set_state(CoreState.stopping)
         await hass.async_block_till_done()
 

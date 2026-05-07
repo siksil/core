@@ -4,10 +4,10 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import category_registry as cr, config_validation as cv
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import category_registry as cr, config_validation as cv
 
 
 @callback

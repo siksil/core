@@ -9,8 +9,8 @@ from typing import Any
 from aioaseko import Aseko, AsekoAPIError, AsekoInvalidCredentials
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, CONF_UNIQUE_ID
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, CONF_UNIQUE_ID
 
 from .const import DOMAIN
 

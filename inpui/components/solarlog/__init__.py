@@ -6,10 +6,10 @@ from urllib.parse import ParseResult, urlparse
 from aiohttp import CookieJar
 from solarlog_cli.solarlog_connector import SolarLogConnector
 
-from homeassistant.const import CONF_HOST, CONF_TIMEOUT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.const import CONF_HOST, CONF_TIMEOUT, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_HAS_PWD
 from .coordinator import (

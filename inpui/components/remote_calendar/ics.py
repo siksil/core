@@ -12,7 +12,7 @@ from ical.calendar_stream import IcsCalendarStream
 from ical.compat import enable_compat_mode
 from ical.exceptions import CalendarParseError
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

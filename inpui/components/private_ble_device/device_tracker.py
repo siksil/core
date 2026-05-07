@@ -5,13 +5,13 @@ from __future__ import annotations
 from collections.abc import Mapping
 import logging
 
-from homeassistant.components import bluetooth
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import BaseTrackerEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components import bluetooth
+from inpui.components.device_tracker import SourceType
+from inpui.components.device_tracker.config_entry import BaseTrackerEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_HOME, STATE_NOT_HOME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import BasePrivateDeviceEntity
 

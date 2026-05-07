@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from aiohttp import web
 
-from homeassistant.components import cloud, webhook
-from homeassistant.const import CONF_WEBHOOK_ID, URL_API
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components import cloud, webhook
+from inpui.const import CONF_WEBHOOK_ID, URL_API
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     CONF_CLOUDHOOK_URL,

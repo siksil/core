@@ -10,10 +10,10 @@ from mypermobil import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.permobil import config_flow
-from homeassistant.const import CONF_CODE, CONF_EMAIL, CONF_REGION, CONF_TOKEN, CONF_TTL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.permobil import config_flow
+from inpui.const import CONF_CODE, CONF_EMAIL, CONF_REGION, CONF_TOKEN, CONF_TTL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import MOCK_REGION_NAME, MOCK_TOKEN, MOCK_URL
 

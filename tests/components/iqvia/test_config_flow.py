@@ -4,10 +4,10 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.iqvia.const import CONF_ZIP_CODE, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.iqvia.const import CONF_ZIP_CODE, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.mark.usefixtures("config_entry")

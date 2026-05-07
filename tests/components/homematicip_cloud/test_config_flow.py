@@ -3,15 +3,15 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.homematicip_cloud.const import (
+from inpui.components.homematicip_cloud.const import (
     DOMAIN,
     HMIPC_AUTHTOKEN,
     HMIPC_HAPID,
     HMIPC_NAME,
     HMIPC_PIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

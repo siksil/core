@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock
 
 import aiohttp
 
-from homeassistant.components.lunatone.const import DOMAIN, MANUFACTURER
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.lunatone.const import DOMAIN, MANUFACTURER
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import BASE_URL, PRODUCT_NAME, VERSION, setup_integration
 

@@ -6,12 +6,12 @@ import logging
 
 from aiowebostv import WebOsClient, WebOsTvState
 
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import CONF_CLIENT_SECRET, CONF_HOST
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import CONF_CLIENT_SECRET, CONF_HOST
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN, LIVE_TV_APP_ID
 

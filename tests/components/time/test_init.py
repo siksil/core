@@ -2,15 +2,15 @@
 
 from datetime import time
 
-from homeassistant.components.time import DOMAIN, SERVICE_SET_VALUE
-from homeassistant.const import (
+from inpui.components.time import DOMAIN, SERVICE_SET_VALUE
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_TIME,
     CONF_PLATFORM,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import MockTimeEntity
 

@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 
 import pyvera as pv
 
-from homeassistant.components.climate import FAN_AUTO, FAN_ON, HVACMode
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import FAN_AUTO, FAN_ON, HVACMode
+from inpui.core import HomeAssistant
 
 from .common import ComponentFactory, new_simple_controller_config
 

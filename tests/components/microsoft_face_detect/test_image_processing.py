@@ -4,11 +4,11 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.image_processing import DOMAIN as IP_DOMAIN
-from homeassistant.components.microsoft_face import DOMAIN as MF_DOMAIN, FACE_API_URL
-from homeassistant.const import ATTR_ENTITY_PICTURE
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.components.image_processing import DOMAIN as IP_DOMAIN
+from inpui.components.microsoft_face import DOMAIN as MF_DOMAIN, FACE_API_URL
+from inpui.const import ATTR_ENTITY_PICTURE
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from tests.common import assert_setup_component, async_load_fixture
 from tests.components.image_processing import common

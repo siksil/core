@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -14,8 +14,8 @@ from homeassistant.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverState,
 )
-from homeassistant.components.group.cover import DEFAULT_NAME
-from homeassistant.const import (
+from inpui.components.group.cover import DEFAULT_NAME
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
@@ -35,10 +35,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 

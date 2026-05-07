@@ -7,9 +7,9 @@ from typing import Any
 from google_nest_sdm import diagnostics
 from google_nest_sdm.device_traits import InfoTrait
 
-from homeassistant.components.camera import diagnostics as camera_diagnostics
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.camera import diagnostics as camera_diagnostics
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceEntry
 
 from .types import NestConfigEntry
 

@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock, patch
 from gps3.agps3threaded import GPSD_PORT as DEFAULT_PORT
 
 from homeassistant import config_entries
-from homeassistant.components.gpsd.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.gpsd.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 HOST = "gpsd.local"
 

@@ -5,13 +5,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import StrEnum
 
-from homeassistant.components.event import (
+from inpui.components.event import (
     EventDeviceClass,
     EventEntity,
     EventEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SleepAsAndroidConfigEntry
 from .const import ATTR_EVENT, MAP_EVENTS

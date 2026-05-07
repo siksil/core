@@ -58,11 +58,11 @@ from .const import (
     COMPRESSED_STATE_STATE,
     EVENT_CALL_SERVICE,
     EVENT_CORE_CONFIG_UPDATE,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     EVENT_LOGGING_CHANGED,
     EVENT_SERVICE_REGISTERED,
     EVENT_SERVICE_REMOVED,
@@ -160,7 +160,7 @@ TIMEOUT_EVENT_START = 15
 
 
 EVENTS_EXCLUDED_FROM_MATCH_ALL = {
-    EVENT_HOMEASSISTANT_CLOSE,
+    EVENT_INPUI_CLOSE,
     EVENT_STATE_REPORTED,
 }
 
@@ -503,7 +503,7 @@ class HomeAssistant:
 
         self.set_state(CoreState.starting)
         self.bus.async_fire_internal(EVENT_CORE_CONFIG_UPDATE)
-        self.bus.async_fire_internal(EVENT_HOMEASSISTANT_START)
+        self.bus.async_fire_internal(EVENT_INPUI_START)
 
         if not self._tasks:
             pending: set[asyncio.Future[Any]] | None = None
@@ -537,7 +537,7 @@ class HomeAssistant:
 
         self.set_state(CoreState.running)
         self.bus.async_fire_internal(EVENT_CORE_CONFIG_UPDATE)
-        self.bus.async_fire_internal(EVENT_HOMEASSISTANT_STARTED)
+        self.bus.async_fire_internal(EVENT_INPUI_STARTED)
 
     def add_job[*_Ts](
         self, target: Callable[[*_Ts], Any] | Coroutine[Any, Any, Any], *args: *_Ts
@@ -1109,7 +1109,7 @@ class HomeAssistant:
         self.exit_code = exit_code
 
         self.set_state(CoreState.stopping)
-        self.bus.async_fire_internal(EVENT_HOMEASSISTANT_STOP)
+        self.bus.async_fire_internal(EVENT_INPUI_STOP)
         try:
             async with self.timeout.async_timeout(STOP_STAGE_SHUTDOWN_TIMEOUT):
                 await self.async_block_till_done()
@@ -1121,7 +1121,7 @@ class HomeAssistant:
 
         # Stage 3 - Final write
         self.set_state(CoreState.final_write)
-        self.bus.async_fire_internal(EVENT_HOMEASSISTANT_FINAL_WRITE)
+        self.bus.async_fire_internal(EVENT_INPUI_FINAL_WRITE)
         try:
             async with self.timeout.async_timeout(FINAL_WRITE_STAGE_SHUTDOWN_TIMEOUT):
                 await self.async_block_till_done()
@@ -1134,7 +1134,7 @@ class HomeAssistant:
 
         # Stage 4 - Close
         self.set_state(CoreState.not_running)
-        self.bus.async_fire_internal(EVENT_HOMEASSISTANT_CLOSE)
+        self.bus.async_fire_internal(EVENT_INPUI_CLOSE)
 
         # Make a copy of running_tasks since a task can finish
         # while we are awaiting canceled tasks to get their result

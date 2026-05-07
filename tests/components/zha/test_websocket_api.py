@@ -34,20 +34,20 @@ from zigpy.zcl.clusters import closures, general, security
 from zigpy.zcl.clusters.general import Groups
 import zigpy.zdo.types as zdo_types
 
-from homeassistant.components.websocket_api import (
+from inpui.components.websocket_api import (
     ERR_INVALID_FORMAT,
     ERR_NOT_FOUND,
     TYPE_RESULT,
 )
-from homeassistant.components.zha import DOMAIN
-from homeassistant.components.zha.const import EZSP_OVERWRITE_EUI64
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha import DOMAIN
+from inpui.components.zha.const import EZSP_OVERWRITE_EUI64
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.components.zha.websocket_api import (
+from inpui.components.zha.websocket_api import (
     ATTR_DURATION,
     ATTR_INSTALL_CODE,
     ATTR_QR_CODE,
@@ -62,8 +62,8 @@ from homeassistant.components.zha.websocket_api import (
     TYPE,
     async_load_api,
 )
-from homeassistant.const import ATTR_MODEL, ATTR_NAME, Platform
-from homeassistant.core import Context, HomeAssistant
+from inpui.const import ATTR_MODEL, ATTR_NAME, Platform
+from inpui.core import Context, HomeAssistant
 
 from .conftest import FIXTURE_GRP_ID, FIXTURE_GRP_NAME
 from .data import BASE_CUSTOM_CONFIGURATION, CONFIG_WITH_ALARM_OPTIONS

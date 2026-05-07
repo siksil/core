@@ -5,10 +5,10 @@ from typing import TYPE_CHECKING
 
 import motionmount
 
-from homeassistant.const import ATTR_CONNECTIONS, ATTR_IDENTIFIERS, CONF_PIN
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo, format_mac
-from homeassistant.helpers.entity import Entity
+from inpui.const import ATTR_CONNECTIONS, ATTR_IDENTIFIERS, CONF_PIN
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo, format_mac
+from inpui.helpers.entity import Entity
 
 from . import MotionMountConfigEntry
 from .const import DOMAIN, EMPTY_MAC

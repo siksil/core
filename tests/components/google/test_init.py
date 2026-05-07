@@ -14,15 +14,15 @@ from aiohttp.client_exceptions import ClientError
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.google import DOMAIN
-from homeassistant.components.google.calendar import SERVICE_CREATE_EVENT
-from homeassistant.components.google.const import CONF_CALENDAR_ACCESS
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError, ServiceNotSupported
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import UTC, utcnow
+from inpui.components.google import DOMAIN
+from inpui.components.google.calendar import SERVICE_CREATE_EVENT
+from inpui.components.google.const import CONF_CALENDAR_ACCESS
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError, ServiceNotSupported
+from inpui.setup import async_setup_component
+from inpui.util.dt import UTC, utcnow
 
 from .conftest import (
     CALENDAR_ID,

@@ -9,9 +9,9 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_DEVICE,
     CONF_DEVICE_ID,
     CONF_DOMAIN,
@@ -19,11 +19,11 @@ from homeassistant.const import (
     CONF_TYPE,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import debug_info, trigger as mqtt_trigger
 from .config import MQTT_BASE_SCHEMA

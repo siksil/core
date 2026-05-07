@@ -4,22 +4,22 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import media_player
-from homeassistant.components.denonavr.config_flow import (
+from inpui.components import media_player
+from inpui.components.denonavr.config_flow import (
     CONF_MANUFACTURER,
     CONF_SERIAL_NUMBER,
     CONF_TYPE,
     DOMAIN,
 )
-from homeassistant.components.denonavr.const import ATTR_DYNAMIC_EQ
-from homeassistant.components.denonavr.services import (
+from inpui.components.denonavr.const import ATTR_DYNAMIC_EQ
+from inpui.components.denonavr.services import (
     ATTR_COMMAND,
     SERVICE_GET_COMMAND,
     SERVICE_SET_DYNAMIC_EQ,
     SERVICE_UPDATE_AUDYSSEY,
 )
-from homeassistant.const import ATTR_ENTITY_ID, CONF_HOST, CONF_MODEL
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, CONF_HOST, CONF_MODEL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.binary_sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.homeassistant import SERVICE_UPDATE_ENTITY
-from homeassistant.components.modbus.const import (
+from inpui.components.binary_sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.homeassistant import SERVICE_UPDATE_ENTITY
+from inpui.components.modbus.const import (
     CALL_TYPE_COIL,
     CALL_TYPE_DISCRETE,
     CALL_TYPE_REGISTER_HOLDING,
@@ -15,7 +15,7 @@ from homeassistant.components.modbus.const import (
     CONF_VIRTUAL_COUNT,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_ADDRESS,
     CONF_BINARY_SENSORS,
@@ -29,9 +29,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .conftest import TEST_ENTITY_NAME, ReadResult
 

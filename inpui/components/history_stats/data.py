@@ -7,10 +7,10 @@ import datetime
 import logging
 import math
 
-from homeassistant.components.recorder import get_instance, history
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, State
-from homeassistant.helpers.template import Template
-from homeassistant.util import dt as dt_util
+from inpui.components.recorder import get_instance, history
+from inpui.core import Event, EventStateChangedData, HomeAssistant, State
+from inpui.helpers.template import Template
+from inpui.util import dt as dt_util
 
 from .helpers import async_calculate_period, floored_timestamp
 

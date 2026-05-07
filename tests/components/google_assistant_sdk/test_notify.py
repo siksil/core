@@ -5,12 +5,12 @@ from unittest.mock import call, patch
 from grpc import RpcError
 import pytest
 
-from homeassistant.components import notify
-from homeassistant.components.google_assistant_sdk import DOMAIN
-from homeassistant.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
-from homeassistant.components.google_assistant_sdk.notify import broadcast_commands
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import notify
+from inpui.components.google_assistant_sdk import DOMAIN
+from inpui.components.google_assistant_sdk.const import SUPPORTED_LANGUAGE_CODES
+from inpui.components.google_assistant_sdk.notify import broadcast_commands
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import ComponentSetup, ExpectedCredentials
 

@@ -6,11 +6,11 @@ from bsblan import BSBLANAuthError, BSBLANConnectionError, BSBLANError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.bsblan.const import CONF_PASSKEY, DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.bsblan.const import CONF_PASSKEY, DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

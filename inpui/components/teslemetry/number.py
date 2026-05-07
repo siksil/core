@@ -11,22 +11,22 @@ from tesla_fleet_api.const import Scope
 from tesla_fleet_api.teslemetry import EnergySite, Vehicle
 from teslemetry_stream import TeslemetryStreamVehicle
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
     RestoreNumber,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     PRECISION_WHOLE,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfElectricCurrent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import TeslemetryConfigEntry
 from .entity import (

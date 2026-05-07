@@ -5,11 +5,11 @@ from unittest.mock import mock_open, patch
 
 import pytest
 
-from homeassistant.components.python_script import DOMAIN, FOLDER, execute
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.service import async_get_all_descriptions
-from homeassistant.setup import async_setup_component
+from inpui.components.python_script import DOMAIN, FOLDER, execute
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.service import async_get_all_descriptions
+from inpui.setup import async_setup_component
 
 from tests.common import patch_yaml_files
 

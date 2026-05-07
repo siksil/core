@@ -7,16 +7,16 @@ import os
 
 from verisure import Error as VerisureError
 
-from homeassistant.components.camera import Camera
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import (
+from inpui.components.camera import Camera
+from inpui.config_entries import ConfigEntry
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_GIID, DOMAIN, LOGGER, SERVICE_CAPTURE_SMARTCAM
 from .coordinator import VerisureDataUpdateCoordinator
@@ -140,4 +140,4 @@ class VerisureSmartcam(CoordinatorEntity[VerisureDataUpdateCoordinator], Camera)
     async def async_added_to_hass(self) -> None:
         """Entity added to Home Assistant."""
         await super().async_added_to_hass()
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self.delete_image)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self.delete_image)

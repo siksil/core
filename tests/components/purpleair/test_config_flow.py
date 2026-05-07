@@ -5,11 +5,11 @@ from unittest.mock import AsyncMock, patch
 from aiopurpleair.errors import InvalidApiKeyError, PurpleAirError
 import pytest
 
-from homeassistant.components.purpleair.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import device_registry as dr
+from inpui.components.purpleair.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import device_registry as dr
 
 from .conftest import TEST_API_KEY, TEST_SENSOR_INDEX1, TEST_SENSOR_INDEX2
 

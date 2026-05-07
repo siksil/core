@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock
 
 from aiostreammagic.models import CallbackType
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

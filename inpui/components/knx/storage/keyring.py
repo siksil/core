@@ -8,10 +8,10 @@ from typing import Final
 from xknx.exceptions.exception import InvalidSecureConfiguration
 from xknx.secure.keyring import Keyring, sync_load_keyring
 
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.components.file_upload import process_uploaded_file
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.storage import STORAGE_DIR
 
 from ..const import DOMAIN, REPAIR_ISSUE_DATA_SECURE_GROUP_KEY
 

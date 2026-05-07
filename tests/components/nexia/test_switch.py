@@ -2,17 +2,17 @@
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 
@@ -69,6 +69,6 @@ async def test_nexia_sensor_switch(
     assert hass.states.get(sw2_id).state == STATE_OFF
 
     # Exercise shutdown path.
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert hass.states.get(sw2_id).state == STATE_ON

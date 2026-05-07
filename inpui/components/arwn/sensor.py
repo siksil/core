@@ -5,18 +5,18 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from homeassistant.components import mqtt
-from homeassistant.components.sensor import (
+from inpui.components import mqtt
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import DEGREE, UnitOfPrecipitationDepth, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.util import slugify
-from homeassistant.util.json import json_loads_object
+from inpui.const import DEGREE, UnitOfPrecipitationDepth, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.util import slugify
+from inpui.util.json import json_loads_object
 
 _LOGGER = logging.getLogger(__name__)
 

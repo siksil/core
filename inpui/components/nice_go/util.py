@@ -7,8 +7,8 @@ from typing import Any, Protocol, runtime_checkable
 from aiohttp import ClientError
 from nice_go import ApiError, AuthFailedError
 
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .const import DOMAIN
 

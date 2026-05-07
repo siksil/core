@@ -9,12 +9,12 @@ import logging
 from aio_geojson_generic_client import GenericFeedManager
 from aio_geojson_generic_client.feed_entry import GenericFeedEntry
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_LATITUDE, CONF_LONGITUDE, CONF_RADIUS, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
 
 from .const import (
     DEFAULT_UPDATE_INTERVAL,

@@ -5,13 +5,13 @@ from unittest.mock import patch
 import pytest
 from switchbot_api import CeilingLightCommands, CommonCommands, Device, SwitchBotAPI
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_COLOR_MODE,
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import configure_integration
 

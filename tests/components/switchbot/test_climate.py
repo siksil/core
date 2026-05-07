@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     DOMAIN as CLIMATE_DOMAIN,
     SERVICE_SET_HVAC_MODE,
     SERVICE_SET_PRESET_MODE,
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import SMART_THERMOSTAT_RADIATOR_SERVICE_INFO
 

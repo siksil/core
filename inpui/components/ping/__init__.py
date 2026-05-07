@@ -6,11 +6,11 @@ import logging
 
 from icmplib import SocketPermissionError, async_ping
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import CONF_HOST, Platform
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import CONF_PING_COUNT, DOMAIN
 from .coordinator import PingConfigEntry, PingUpdateCoordinator

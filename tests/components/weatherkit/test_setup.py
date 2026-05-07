@@ -7,9 +7,9 @@ from apple_weatherkit.client import (
     WeatherKitApiClientError,
 )
 
-from homeassistant.components.weatherkit.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.weatherkit.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import EXAMPLE_CONFIG_DATA
 

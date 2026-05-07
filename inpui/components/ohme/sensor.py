@@ -7,13 +7,13 @@ from dataclasses import dataclass
 
 from ohme import ChargerStatus, OhmeApiClient
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     PERCENTAGE,
     STATE_UNKNOWN,
     UnitOfElectricCurrent,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfPower,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import OhmeConfigEntry
 from .entity import OhmeEntity, OhmeEntityDescription

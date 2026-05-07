@@ -10,17 +10,17 @@ from alarmdecoder.devices import SerialDevice, SocketDevice
 from alarmdecoder.util import NoDeviceError
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA as BINARY_SENSOR_DEVICE_CLASSES_SCHEMA,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_PROTOCOL
-from homeassistant.core import callback
+from inpui.const import CONF_HOST, CONF_PORT, CONF_PROTOCOL
+from inpui.core import callback
 
 from .const import (
     CONF_ALT_NIGHT_MODE,

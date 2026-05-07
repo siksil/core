@@ -2,11 +2,11 @@
 
 import requests_mock
 
-from homeassistant.components.climate import DOMAIN as CLIMATE_DOMAIN
-from homeassistant.components.venstar.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
+from inpui.components.venstar.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_load_fixture
 

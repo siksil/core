@@ -4,7 +4,7 @@ import logging
 
 from aiohttp import ClientSession
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import UPDATE_URL
 

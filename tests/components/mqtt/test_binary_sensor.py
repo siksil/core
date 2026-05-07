@@ -11,17 +11,17 @@ from freezegun import freeze_time
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import binary_sensor, mqtt
-from homeassistant.const import (
+from inpui.components import binary_sensor, mqtt
+from inpui.const import (
     EVENT_STATE_CHANGED,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from .common import (
     help_custom_config,

@@ -16,14 +16,14 @@ from oauth2client.client import (
     OAuth2WebServerFlow,
 )
 
-from homeassistant.components.application_credentials import AuthImplementation
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.event import (
+from inpui.components.application_credentials import AuthImplementation
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.event import (
     async_track_point_in_utc_time,
     async_track_time_interval,
 )
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import CONF_CALENDAR_ACCESS, DEFAULT_FEATURE_ACCESS, FeatureAccess
 from .store import GoogleConfigEntry

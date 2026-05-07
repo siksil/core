@@ -16,8 +16,8 @@ from aiohomekit.model import Accessories, AccessoriesState, Accessory
 from aiohomekit.model.services import Service
 from aiohomekit.testing import FakeController, FakePairing
 
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.homekit_controller.const import (
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.homekit_controller.const import (
     CONTROLLER,
     DEBOUNCE_COOLDOWN,
     DOMAIN,
@@ -25,14 +25,14 @@ from homeassistant.components.homekit_controller.const import (
     IDENTIFIER_ACCESSORY_ID,
     SUBSCRIBE_COOLDOWN,
 )
-from homeassistant.components.homekit_controller.utils import async_get_controller
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.homekit_controller.utils import async_get_controller
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

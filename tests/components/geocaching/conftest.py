@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from geocachingapi import GeocachingStatus
 import pytest
 
-from homeassistant.components.geocaching.const import DOMAIN
+from inpui.components.geocaching.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

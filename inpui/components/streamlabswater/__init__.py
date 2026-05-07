@@ -3,10 +3,10 @@
 from streamlabswater.streamlabswater import StreamlabsClient
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN
 from .coordinator import StreamlabsCoordinator

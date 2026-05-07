@@ -7,11 +7,11 @@ from momonga import MomongaSkJoinFailure, MomongaSkScanFailure
 import pytest
 from serial.tools.list_ports_linux import SysFS
 
-from homeassistant.components.route_b_smart_meter.const import DOMAIN, ENTRY_TITLE
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.route_b_smart_meter.const import DOMAIN, ENTRY_TITLE
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.fixture

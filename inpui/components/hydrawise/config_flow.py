@@ -10,8 +10,8 @@ from pydrawise import auth as pydrawise_auth, hybrid
 from pydrawise.exceptions import NotAuthorizedError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_PASSWORD, CONF_USERNAME
 
 from .const import APP_ID, DOMAIN, LOGGER
 

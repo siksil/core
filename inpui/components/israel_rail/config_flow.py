@@ -7,7 +7,7 @@ from israelrailapi import TrainSchedule
 from israelrailapi.stations import STATIONS
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import CONF_DESTINATION, CONF_START, DOMAIN
 

@@ -6,10 +6,10 @@ from typing import Any
 
 from ihcsdk.ihccontroller import IHCController
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.switch import SwitchEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_OFF_ID, CONF_ON_ID, DOMAIN, IHC_CONTROLLER
 from .entity import IHCEntity

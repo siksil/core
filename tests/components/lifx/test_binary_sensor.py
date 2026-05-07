@@ -6,9 +6,9 @@ from datetime import timedelta
 
 import pytest
 
-from homeassistant.components import lifx
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import (
+from inpui.components import lifx
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     CONF_HOST,
     STATE_OFF,
@@ -16,10 +16,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     EntityCategory,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     DEFAULT_ENTRY_TITLE,

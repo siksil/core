@@ -8,11 +8,11 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.infrared import (
+from inpui.components.infrared import (
     DOMAIN as INFRARED_DOMAIN,
     async_get_emitters,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
@@ -20,9 +20,9 @@ from homeassistant.config_entries import (
     OptionsFlow,
     SubentryFlowResult,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.selector import EntitySelector, EntitySelectorConfig
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.selector import EntitySelector, EntitySelectorConfig
 
 from .const import CONF_INFRARED_ENTITY_ID, DOMAIN
 

@@ -2,7 +2,7 @@
 
 from typing import Any, cast
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .const import DOMAIN
 from .device import ConfiguredDoorBird

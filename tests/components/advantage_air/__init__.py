@@ -2,9 +2,9 @@
 
 from unittest.mock import AsyncMock, patch
 
-from homeassistant.components.advantage_air.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.advantage_air.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

@@ -5,10 +5,10 @@ from unittest.mock import AsyncMock
 import prowlpy
 import pytest
 
-from homeassistant.components import notify
-from homeassistant.components.prowl.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components import notify
+from inpui.components.prowl.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import ENTITY_ID, TEST_API_KEY
 

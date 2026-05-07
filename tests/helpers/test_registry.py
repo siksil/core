@@ -5,9 +5,9 @@ from typing import Any
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import storage
-from homeassistant.helpers.registry import SAVE_DELAY, SAVE_DELAY_LONG, BaseRegistry
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import storage
+from inpui.helpers.registry import SAVE_DELAY, SAVE_DELAY_LONG, BaseRegistry
 
 from tests.common import async_fire_time_changed
 

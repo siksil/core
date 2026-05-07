@@ -2,7 +2,7 @@
 
 from telegram import Bot
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .bot import BaseTelegramBot, TelegramBotConfigEntry
 

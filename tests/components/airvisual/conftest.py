@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.airvisual import (
+from inpui.components.airvisual import (
     CONF_CITY,
     CONF_INTEGRATION_TYPE,
     DOMAIN,
     INTEGRATION_TYPE_GEOGRAPHY_COORDS,
 )
-from homeassistant.components.airvisual.config_flow import async_get_geography_id
-from homeassistant.const import (
+from inpui.components.airvisual.config_flow import async_get_geography_id
+from inpui.const import (
     CONF_API_KEY,
     CONF_COUNTRY,
     CONF_LATITUDE,
@@ -21,8 +21,8 @@ from homeassistant.const import (
     CONF_SHOW_ON_MAP,
     CONF_STATE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.json import JsonObjectType
+from inpui.core import HomeAssistant
+from inpui.util.json import JsonObjectType
 
 from tests.common import MockConfigEntry, load_json_object_fixture
 

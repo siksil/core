@@ -9,13 +9,13 @@ from mopeka_iot_ble import MopekaIOTBluetoothDeviceData as DeviceData
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import callback
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
+from inpui.core import callback
 
 from .const import CONF_MEDIUM_TYPE, DEFAULT_MEDIUM_TYPE, DOMAIN, MediumType
 

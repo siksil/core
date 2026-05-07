@@ -7,11 +7,11 @@ from unittest.mock import patch
 import aiolifx_effects
 import pytest
 
-from homeassistant.components import lifx
-from homeassistant.components.lifx import DOMAIN
-from homeassistant.components.lifx.const import ATTR_POWER
-from homeassistant.components.lifx.light import ATTR_INFRARED, ATTR_ZONES
-from homeassistant.components.lifx.manager import (
+from inpui.components import lifx
+from inpui.components.lifx import DOMAIN
+from inpui.components.lifx.const import ATTR_POWER
+from inpui.components.lifx.light import ATTR_INFRARED, ATTR_ZONES
+from inpui.components.lifx.manager import (
     ATTR_CLOUD_SATURATION_MAX,
     ATTR_CLOUD_SATURATION_MIN,
     ATTR_DIRECTION,
@@ -27,7 +27,7 @@ from homeassistant.components.lifx.manager import (
     SERVICE_EFFECT_SKY,
     SERVICE_PAINT_THEME,
 )
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_BRIGHTNESS_PCT,
     ATTR_BRIGHTNESS_STEP,
@@ -45,18 +45,18 @@ from homeassistant.components.light import (
     SERVICE_TURN_ON,
     ColorMode,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_HOST,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     IP_ADDRESS,

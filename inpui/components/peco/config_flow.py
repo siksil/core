@@ -13,8 +13,8 @@ from peco import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers import config_validation as cv
 
 from .const import CONF_COUNTY, CONF_PHONE_NUMBER, COUNTY_LIST, DOMAIN
 

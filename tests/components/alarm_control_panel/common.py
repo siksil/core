@@ -4,13 +4,13 @@ All containing methods are legacy helpers that should not be used by new
 components. Instead call the service directly.
 """
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
@@ -22,7 +22,7 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     SERVICE_ALARM_TRIGGER,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockEntity
 

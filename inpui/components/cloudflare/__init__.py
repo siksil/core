@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant, ServiceCall
+from inpui.core import HomeAssistant, ServiceCall
 
 from .const import DOMAIN, SERVICE_UPDATE_RECORDS
 from .coordinator import CloudflareConfigEntry, CloudflareCoordinator

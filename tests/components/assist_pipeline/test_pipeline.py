@@ -11,7 +11,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import (
+from inpui.components import (
     assist_pipeline,
     conversation,
     media_player,
@@ -19,13 +19,13 @@ from homeassistant.components import (
     stt,
     tts,
 )
-from homeassistant.components.assist_pipeline.const import (
+from inpui.components.assist_pipeline.const import (
     ACKNOWLEDGE_PATH,
     CONF_DEBUG_RECORDING_DIR,
     DATA_CONFIG,
     DOMAIN,
 )
-from homeassistant.components.assist_pipeline.pipeline import (
+from inpui.components.assist_pipeline.pipeline import (
     STORAGE_KEY,
     STORAGE_VERSION,
     STORAGE_VERSION_MINOR,
@@ -40,9 +40,9 @@ from homeassistant.components.assist_pipeline.pipeline import (
     async_get_pipelines,
     async_update_pipeline,
 )
-from homeassistant.const import ATTR_FRIENDLY_NAME, MATCH_ALL
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import (
+from inpui.const import ATTR_FRIENDLY_NAME, MATCH_ALL
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     chat_session,
     device_registry as dr,
@@ -50,7 +50,7 @@ from homeassistant.helpers import (
     intent,
     llm,
 )
-from homeassistant.setup import async_setup_component
+from inpui.setup import async_setup_component
 
 from . import MANY_LANGUAGES, process_events
 from .conftest import (

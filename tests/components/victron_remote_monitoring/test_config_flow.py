@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock, Mock
 import pytest
 from victron_vrm.exceptions import AuthenticationError, VictronVRMError
 
-from homeassistant.components.victron_remote_monitoring.config_flow import SiteNotFound
-from homeassistant.components.victron_remote_monitoring.const import (
+from inpui.components.victron_remote_monitoring.config_flow import SiteNotFound
+from inpui.components.victron_remote_monitoring.const import (
     CONF_API_TOKEN,
     CONF_SITE_ID,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

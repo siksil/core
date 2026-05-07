@@ -10,13 +10,13 @@ from botocore.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.cloudflare_r2.const import (
+from inpui.components.cloudflare_r2.const import (
     CONF_BUCKET,
     CONF_ENDPOINT_URL,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import USER_INPUT
 

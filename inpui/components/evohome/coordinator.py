@@ -24,9 +24,9 @@ from evohomeasync2.const import (
 )
 from evohomeasync2.schemas.typedefs import EvoLocStatusResponseT, EvoTcsConfigResponseT
 
-from homeassistant.const import CONF_SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import CONF_SCAN_INTERVAL
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 
 class EvoDataUpdateCoordinator(DataUpdateCoordinator):

@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components import onboarding
-from homeassistant.config_entries import (
+from inpui.components import onboarding
+from inpui.config_entries import (
     DEFAULT_DISCOVERY_UNIQUE_ID,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import DOMAIN
 

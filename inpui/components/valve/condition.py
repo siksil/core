@@ -1,8 +1,8 @@
 """Provides conditions for valves."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import Condition, make_entity_state_condition
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import Condition, make_entity_state_condition
 
 from . import ATTR_IS_CLOSED
 from .const import DOMAIN

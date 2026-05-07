@@ -7,19 +7,19 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.helpers import entity_registry as er
+from inpui.helpers.schema_config_entry_flow import (
     SchemaCommonFlowHandler,
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
 )
-from homeassistant.helpers.selector import (
+from inpui.helpers.selector import (
     SelectSelector,
     SelectSelectorConfig,
     SelectSelectorMode,
 )
-from homeassistant.util import slugify
+from inpui.util import slugify
 
 from .const import CONF_PROCESS, DOMAIN
 from .util import get_all_running_processes

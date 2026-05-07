@@ -10,10 +10,10 @@ import pytest
 import zigpy.backups
 import zigpy.state
 
-from homeassistant.components import zha
-from homeassistant.components.zha import silabs_multiprotocol
-from homeassistant.components.zha.helpers import get_zha_data
-from homeassistant.core import HomeAssistant
+from inpui.components import zha
+from inpui.components.zha import silabs_multiprotocol
+from inpui.components.zha.helpers import get_zha_data
+from inpui.core import HomeAssistant
 
 if TYPE_CHECKING:
     from zigpy.application import ControllerApplication

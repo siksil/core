@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.season.const import DOMAIN, TYPE_ASTRONOMICAL
-from homeassistant.const import CONF_TYPE
+from inpui.components.season.const import DOMAIN, TYPE_ASTRONOMICAL
+from inpui.const import CONF_TYPE
 
 from tests.common import MockConfigEntry
 

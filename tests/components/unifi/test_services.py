@@ -5,14 +5,14 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.unifi.const import CONF_SITE_ID, DOMAIN
-from homeassistant.components.unifi.services import (
+from inpui.components.unifi.const import CONF_SITE_ID, DOMAIN
+from inpui.components.unifi.services import (
     SERVICE_RECONNECT_CLIENT,
     SERVICE_REMOVE_CLIENTS,
 )
-from homeassistant.const import ATTR_DEVICE_ID, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.const import ATTR_DEVICE_ID, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

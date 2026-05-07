@@ -12,14 +12,14 @@ from urllib.parse import urlparse
 from hyperion import client, const
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_BASE,
     CONF_HOST,
     CONF_ID,
@@ -27,9 +27,9 @@ from homeassistant.const import (
     CONF_SOURCE,
     CONF_TOKEN,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_SERIAL, SsdpServiceInfo
+from inpui.core import callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_SERIAL, SsdpServiceInfo
 
 from . import create_hyperion_client
 from .const import (

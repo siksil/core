@@ -6,9 +6,9 @@ from typing import Any
 
 from ismartgate.common import AbstractDoor, get_door_by_id
 
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.const import CONF_IP_ADDRESS
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import DeviceDataUpdateCoordinator, GogoGateConfigEntry

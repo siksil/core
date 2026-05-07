@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from incomfortclient import DisplayCode
 import pytest
 
-from homeassistant.components.incomfort.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.incomfort.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

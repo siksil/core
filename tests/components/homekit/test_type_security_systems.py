@@ -3,20 +3,20 @@
 from pyhap.loader import get_loader
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.homekit.const import ATTR_VALUE
-from homeassistant.components.homekit.type_security_systems import SecuritySystem
-from homeassistant.const import (
+from inpui.components.homekit.const import ATTR_VALUE
+from inpui.components.homekit.type_security_systems import SecuritySystem
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, HomeAssistant
+from inpui.core import Event, HomeAssistant
 
 from tests.common import async_mock_service
 

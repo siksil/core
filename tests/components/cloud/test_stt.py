@@ -9,13 +9,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from hass_nabucasa.voice import STTResponse, VoiceError
 import pytest
 
-from homeassistant.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
     STORAGE_KEY,
 )
-from homeassistant.components.cloud.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.cloud.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import PIPELINE_DATA
 

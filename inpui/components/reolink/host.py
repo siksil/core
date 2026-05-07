@@ -16,23 +16,23 @@ from reolink_aio.baichuan import DEFAULT_BC_PORT
 from reolink_aio.enums import SubType
 from reolink_aio.exceptions import NotSupportedError, ReolinkError, SubscriptionError
 
-from homeassistant.components import webhook
-from homeassistant.const import (
+from inpui.components import webhook
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.storage import Store
-from homeassistant.util.ssl import SSLCipherList
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_call_later
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.storage import Store
+from inpui.util.ssl import SSLCipherList
 
 from .const import (
     BATTERY_ALL_WAKE_UPDATE_INTERVAL,

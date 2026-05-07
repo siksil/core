@@ -6,20 +6,20 @@ from unittest.mock import Mock, call, patch
 
 import pytest
 
-from homeassistant.components.google_assistant import helpers
-from homeassistant.components.google_assistant.const import (
+from inpui.components.google_assistant import helpers
+from inpui.components.google_assistant.const import (
     EVENT_COMMAND_RECEIVED,
     NOT_EXPOSE_LOCAL,
     SOURCE_CLOUD,
     SOURCE_LOCAL,
     STORE_GOOGLE_LOCAL_WEBHOOK_ID,
 )
-from homeassistant.components.matter import MatterDeviceInfo
-from homeassistant.core import HomeAssistant, State
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.matter import MatterDeviceInfo
+from inpui.core import HomeAssistant, State
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import MockConfig
 

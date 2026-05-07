@@ -7,7 +7,7 @@ from typing import Any, Self
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     CONF_ICON,
     CONF_ID,
@@ -15,12 +15,12 @@ from homeassistant.const import (
     CONF_MINIMUM,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import collection, config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.storage import Store
-from homeassistant.helpers.typing import ConfigType, VolDictType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import collection, config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.storage import Store
+from inpui.helpers.typing import ConfigType, VolDictType
 
 _LOGGER = logging.getLogger(__name__)
 

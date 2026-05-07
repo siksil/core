@@ -11,10 +11,10 @@ from pysensibo.exceptions import AuthenticationError, SensiboError
 from pysensibo.model import SensiboData
 import pytest
 
-from homeassistant.components.climate import HVACMode
-from homeassistant.components.sensibo.const import DOMAIN
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.climate import HVACMode
+from inpui.components.sensibo.const import DOMAIN
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import ENTRY_CONFIG
 

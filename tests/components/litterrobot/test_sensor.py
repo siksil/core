@@ -4,14 +4,14 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.litterrobot.sensor import icon_for_gauge_level
-from homeassistant.components.sensor import (
+from inpui.components.litterrobot.sensor import icon_for_gauge_level
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import PERCENTAGE, STATE_UNKNOWN, UnitOfMass
-from homeassistant.core import HomeAssistant
+from inpui.const import PERCENTAGE, STATE_UNKNOWN, UnitOfMass
+from inpui.core import HomeAssistant
 
 from .conftest import setup_integration
 

@@ -5,12 +5,12 @@ import logging
 from boschshcpy import SHCSession
 from boschshcpy.exceptions import SHCAuthenticationError, SHCConnectionError
 
-from homeassistant.components.zeroconf import async_get_instance
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.components.zeroconf import async_get_instance
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import CONF_SSL_CERTIFICATE, CONF_SSL_KEY, DOMAIN
 
@@ -71,7 +71,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: BoschConfigEntry) -> boo
 
     await hass.async_add_executor_job(session.start_polling)
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_polling)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_polling)
     )
 
     return True

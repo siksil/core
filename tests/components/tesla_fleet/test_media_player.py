@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.exceptions import VehicleOffline
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_VOLUME_LEVEL,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     SERVICE_MEDIA_NEXT_TRACK,
@@ -15,9 +15,9 @@ from homeassistant.components.media_player import (
     SERVICE_VOLUME_SET,
     MediaPlayerState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import assert_entities, assert_entities_alt, setup_platform
 from .const import COMMAND_OK, VEHICLE_DATA_ALT

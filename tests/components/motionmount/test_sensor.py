@@ -5,7 +5,7 @@ from unittest.mock import patch
 from motionmount import MotionMountSystemError
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import MAC, ZEROCONF_NAME
 

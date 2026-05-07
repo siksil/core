@@ -8,10 +8,10 @@ from typing import NamedTuple
 
 import pyvera as pv
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.event import call_later
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.event import call_later
 
 from .const import DOMAIN
 

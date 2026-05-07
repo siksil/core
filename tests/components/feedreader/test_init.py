@@ -10,11 +10,11 @@ import urllib.error
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.feedreader.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.util import dt as dt_util
+from inpui.components.feedreader.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import Event, HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.util import dt as dt_util
 
 from . import async_setup_config_entry, create_mock_entry
 from .const import (

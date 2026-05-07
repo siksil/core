@@ -6,12 +6,12 @@ from aiodns.error import DNSError
 import pytest
 from radios import FilterBy, Order, RadioBrowserError
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.radio_browser.media_source import async_get_media_source
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source
+from inpui.components.media_player import BrowseError
+from inpui.components.radio_browser.media_source import async_get_media_source
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

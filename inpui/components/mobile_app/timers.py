@@ -2,11 +2,11 @@
 
 from datetime import timedelta
 
-from homeassistant.components import notify
-from homeassistant.components.intent import TimerEventType, TimerInfo
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DEVICE_ID
-from homeassistant.core import HomeAssistant, callback
+from inpui.components import notify
+from inpui.components.intent import TimerEventType, TimerInfo
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DEVICE_ID
+from inpui.core import HomeAssistant, callback
 
 from . import device_action
 

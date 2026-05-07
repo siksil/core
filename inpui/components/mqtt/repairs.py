@@ -7,9 +7,9 @@ from typing import TYPE_CHECKING
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 

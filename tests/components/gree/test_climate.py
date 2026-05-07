@@ -16,7 +16,7 @@ from greeclimate.exceptions import DeviceNotBoundError, DeviceTimeoutError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
@@ -42,20 +42,20 @@ from homeassistant.components.climate import (
     SWING_VERTICAL,
     HVACMode,
 )
-from homeassistant.components.gree.climate import (
+from inpui.components.gree.climate import (
     FAN_MODES_REVERSE,
     HVAC_MODES,
     HVAC_MODES_REVERSE,
     GreeClimateEntity,
 )
-from homeassistant.components.gree.const import (
+from inpui.components.gree.const import (
     DISCOVERY_SCAN_INTERVAL,
     FAN_MEDIUM_HIGH,
     FAN_MEDIUM_LOW,
     MAX_EXPECTED_RESPONSE_TIME_INTERVAL,
     UPDATE_INTERVAL,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -64,10 +64,10 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import (
     METRIC_SYSTEM,
     US_CUSTOMARY_SYSTEM,
     UnitSystem,

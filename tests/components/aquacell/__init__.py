@@ -2,13 +2,13 @@
 
 from aioaquacell import Brand
 
-from homeassistant.components.aquacell.const import (
+from inpui.components.aquacell.const import (
     CONF_BRAND,
     CONF_REFRESH_TOKEN,
     CONF_REFRESH_TOKEN_CREATION_TIME,
 )
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_EMAIL, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

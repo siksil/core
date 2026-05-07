@@ -4,15 +4,15 @@ from unittest.mock import patch
 
 from subarulink import InvalidCredentials, SubaruException
 
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HA_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.subaru.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.subaru.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .api_responses import (
     TEST_VIN_1_G1,

@@ -1,6 +1,6 @@
 """Constants for the habitica integration."""
 
-from homeassistant.const import APPLICATION_NAME, __version__
+from inpui.const import APPLICATION_NAME, __version__
 
 CONF_API_USER = "api_user"
 CONF_PARTY_MEMBER = "party_member"

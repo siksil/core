@@ -4,11 +4,11 @@ import copy
 import json
 from unittest.mock import call
 
-from homeassistant.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.tasmota.const import DEFAULT_PREFIX, DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .test_common import DEFAULT_CONFIG, DEFAULT_SENSOR_CONFIG, remove_device
 

@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.screenlogic import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PORT, CONF_SCAN_INTERVAL
+from inpui.components.screenlogic import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PORT, CONF_SCAN_INTERVAL
 
 from . import (
     MOCK_ADAPTER_IP,

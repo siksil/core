@@ -13,18 +13,18 @@ from pyportainer.models.stacks import Stack
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.portainer.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.portainer.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_API_KEY,
     CONF_API_TOKEN,
     CONF_HOST,
     CONF_URL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 from .conftest import MOCK_TEST_CONFIG, TEST_INSTANCE_ID

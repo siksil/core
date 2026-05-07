@@ -3,14 +3,14 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.cover import DOMAIN, CoverEntityFeature, CoverState
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.const import CONF_PLATFORM, STATE_UNAVAILABLE, EntityCategory
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryHider
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.cover import DOMAIN, CoverEntityFeature, CoverState
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.const import CONF_PLATFORM, STATE_UNAVAILABLE, EntityCategory
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryHider
+from inpui.setup import async_setup_component
 
 from .common import MockCover
 

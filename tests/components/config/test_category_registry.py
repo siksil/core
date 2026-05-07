@@ -5,10 +5,10 @@ from datetime import datetime
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.config import category_registry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import category_registry as cr
-from homeassistant.util.dt import utcnow
+from inpui.components.config import category_registry
+from inpui.core import HomeAssistant
+from inpui.helpers import category_registry as cr
+from inpui.util.dt import utcnow
 
 from tests.common import ANY
 from tests.typing import MockHAClientWebSocket, WebSocketGenerator

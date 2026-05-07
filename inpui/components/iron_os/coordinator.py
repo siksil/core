@@ -21,13 +21,13 @@ from pynecil import (
     UpdateException,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.debounce import Debouncer
-import homeassistant.helpers.device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.debounce import Debouncer
+import inpui.helpers.device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN
 

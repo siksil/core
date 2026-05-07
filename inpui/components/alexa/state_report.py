@@ -12,9 +12,9 @@ from uuid import uuid4
 
 import aiohttp
 
-from homeassistant.components import event
-from homeassistant.const import EVENT_STATE_CHANGED, STATE_ON
-from homeassistant.core import (
+from inpui.components import event
+from inpui.const import EVENT_STATE_CHANGED, STATE_ON
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -22,10 +22,10 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.significant_change import create_checker
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import JsonObjectType, json_loads_object
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.significant_change import create_checker
+from inpui.util import dt as dt_util
+from inpui.util.json import JsonObjectType, json_loads_object
 
 from .const import (
     API_CHANGE,

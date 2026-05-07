@@ -5,13 +5,13 @@ from __future__ import annotations
 from datetime import date, datetime
 from decimal import Decimal
 
-from homeassistant.components.sensor import RestoreSensor, SensorDeviceClass
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import StateType
-from homeassistant.util.enum import try_parse_enum
+from inpui.components.sensor import RestoreSensor, SensorDeviceClass
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import StateType
+from inpui.util.enum import try_parse_enum
 
 from .const import DOMAIN
 from .device import ONVIFDevice

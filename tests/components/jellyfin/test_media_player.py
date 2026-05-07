@@ -3,8 +3,8 @@
 from datetime import timedelta
 from unittest.mock import MagicMock
 
-from homeassistant.components.jellyfin.const import DOMAIN
-from homeassistant.components.media_player import (
+from inpui.components.jellyfin.const import DOMAIN
+from inpui.components.media_player import (
     ATTR_MEDIA_ALBUM_ARTIST,
     ATTR_MEDIA_ALBUM_NAME,
     ATTR_MEDIA_ARTIST,
@@ -25,16 +25,16 @@ from homeassistant.components.media_player import (
     MediaPlayerState,
     MediaType,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_ENTITY_PICTURE,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util.dt import utcnow
 
 from . import async_load_json_fixture
 

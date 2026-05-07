@@ -7,12 +7,12 @@ from typing import Any
 
 from fishaudio.exceptions import APIError, RateLimitError
 
-from homeassistant.components.tts import TextToSpeechEntity, TtsAudioType
-from homeassistant.config_entries import ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.tts import TextToSpeechEntity, TtsAudioType
+from inpui.config_entries import ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import FishAudioConfigEntry
 from .const import (

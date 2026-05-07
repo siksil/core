@@ -9,13 +9,13 @@ import logging
 
 from pynws import NwsNoDataError, SimpleNWS, call_with_retry
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import debounce
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.update_coordinator import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import debounce
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.update_coordinator import (
     TimestampDataUpdateCoordinator,
     UpdateFailed,
 )

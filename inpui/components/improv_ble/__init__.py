@@ -5,8 +5,8 @@ from __future__ import annotations
 import asyncio
 import logging
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
 
 from .const import PROVISIONING_FUTURES
 

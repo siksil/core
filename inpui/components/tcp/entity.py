@@ -8,7 +8,7 @@ import socket
 import ssl
 from typing import Final
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PAYLOAD,
@@ -19,10 +19,10 @@ from homeassistant.const import (
     CONF_VALUE_TEMPLATE,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import TemplateError
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.exceptions import TemplateError
+from inpui.helpers.entity import Entity
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_BUFFER_SIZE, CONF_VALUE_ON
 from .model import TcpSensorConfig

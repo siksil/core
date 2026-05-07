@@ -3,7 +3,7 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.helpers.automation import (
+from inpui.helpers.automation import (
     get_absolute_description_key,
     get_relative_description_key,
     move_options_fields_to_top_level,

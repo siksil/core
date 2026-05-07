@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.sentry import process_before_send
-from homeassistant.components.sentry.const import (
+from inpui.components.sentry import process_before_send
+from inpui.components.sentry.const import (
     CONF_DSN,
     CONF_ENVIRONMENT,
     CONF_EVENT_CUSTOM_COMPONENTS,
@@ -16,8 +16,8 @@ from homeassistant.components.sentry.const import (
     CONF_TRACING_SAMPLE_RATE,
     DOMAIN,
 )
-from homeassistant.const import __version__ as current_version
-from homeassistant.core import HomeAssistant
+from inpui.const import __version__ as current_version
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

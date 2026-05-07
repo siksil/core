@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from pycasperglow import GlowState
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import CasperGlowConfigEntry, CasperGlowCoordinator
 from .entity import CasperGlowEntity

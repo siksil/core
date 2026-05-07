@@ -23,32 +23,32 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.session import Session
 
-from homeassistant.components import persistent_notification
-from homeassistant.const import (
+from inpui.components import persistent_notification
+from inpui.const import (
     ATTR_ENTITY_ID,
-    EVENT_HOMEASSISTANT_CLOSE,
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
+    EVENT_INPUI_CLOSE,
+    EVENT_INPUI_FINAL_WRITE,
     EVENT_STATE_CHANGED,
     MATCH_ALL,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_time_change,
     async_track_time_interval,
     async_track_utc_time_change,
 )
-from homeassistant.helpers.recorder import DATA_RECORDER
-from homeassistant.helpers.start import async_at_started
-from homeassistant.helpers.typing import UNDEFINED, UndefinedType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.event_type import EventType
+from inpui.helpers.recorder import DATA_RECORDER
+from inpui.helpers.start import async_at_started
+from inpui.helpers.typing import UNDEFINED, UndefinedType
+from inpui.util import dt as dt_util
+from inpui.util.enum import try_parse_enum
+from inpui.util.event_type import EventType
 
 from . import migration, statistics
 from .const import (
@@ -449,8 +449,8 @@ class Recorder(threading.Thread):
     def async_register(self) -> None:
         """Post connection initialize."""
         bus = self.hass.bus
-        bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, self._async_close)
-        bus.async_listen_once(EVENT_HOMEASSISTANT_FINAL_WRITE, self._async_shutdown)
+        bus.async_listen_once(EVENT_INPUI_CLOSE, self._async_close)
+        bus.async_listen_once(EVENT_INPUI_FINAL_WRITE, self._async_shutdown)
         async_at_started(self.hass, self._async_hass_started)
 
     @callback

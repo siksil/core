@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.components.hardware import HardwareInfo, USBInfo
-from homeassistant.core import HomeAssistant, callback
+from inpui.components.hardware import HardwareInfo, USBInfo
+from inpui.core import HomeAssistant, callback
 
 from .config_flow import HomeAssistantSkyConnectConfigFlow
 from .const import DOMAIN

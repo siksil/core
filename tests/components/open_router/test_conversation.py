@@ -15,11 +15,11 @@ from openai.types.chat.chat_completion_message_function_tool_call_param import F
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import conversation
-from homeassistant.const import Platform
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import entity_registry as er, intent
-from homeassistant.helpers.llm import ToolInput
+from inpui.components import conversation
+from inpui.const import Platform
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import entity_registry as er, intent
+from inpui.helpers.llm import ToolInput
 
 from . import setup_integration
 

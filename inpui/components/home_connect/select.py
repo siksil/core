@@ -10,12 +10,12 @@ from aiohomeconnect.model import EventKey, OptionKey, ProgramKey, SettingKey
 from aiohomeconnect.model.error import HomeConnectError
 from aiohomeconnect.model.program import Execution
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import setup_home_connect_entry, should_add_option_entity
 from .const import (

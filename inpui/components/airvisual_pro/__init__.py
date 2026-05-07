@@ -7,14 +7,14 @@ from contextlib import suppress
 
 from pyairvisual.node import NodeProError, NodeSamba
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_IP_ADDRESS,
     CONF_PASSWORD,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.core import Event, HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import (
     AirVisualProConfigEntry,
@@ -48,7 +48,7 @@ async def async_setup_entry(
         await node.async_disconnect()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, async_shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, async_shutdown)
     )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

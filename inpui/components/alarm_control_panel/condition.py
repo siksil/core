@@ -1,14 +1,14 @@
 """Provides conditions for alarm control panels."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     Condition,
     EntityStateConditionBase,
     make_entity_state_condition,
 )
-from homeassistant.helpers.entity import get_supported_features
+from inpui.helpers.entity import get_supported_features
 
 from .const import DOMAIN, AlarmControlPanelEntityFeature, AlarmControlPanelState
 

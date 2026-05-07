@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .const import PLATFORMS
 from .coordinator import JustNimbusConfigEntry, JustNimbusCoordinator

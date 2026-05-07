@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT, UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
 
 from . import (
     MOCK_ASYNC_GET_STATUS_ACTIVE,

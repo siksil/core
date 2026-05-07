@@ -3,10 +3,10 @@
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components import owntracks
-from homeassistant.components.device_tracker.legacy import Device
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import owntracks
+from inpui.components.device_tracker.legacy import Device
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, mock_component
 from tests.typing import ClientSessionGenerator

@@ -10,7 +10,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
     ATTR_SWING_HORIZONTAL_MODE,
@@ -25,9 +25,9 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.sensibo.climate import _find_valid_target_temp
-from homeassistant.components.sensibo.const import DOMAIN
-from homeassistant.components.sensibo.services import (
+from inpui.components.sensibo.climate import _find_valid_target_temp
+from inpui.components.sensibo.const import DOMAIN
+from inpui.components.sensibo.services import (
     ATTR_AC_INTEGRATION,
     ATTR_GEO_INTEGRATION,
     ATTR_HIGH_TEMPERATURE_STATE,
@@ -49,8 +49,8 @@ from homeassistant.components.sensibo.services import (
     SERVICE_FULL_STATE,
     SERVICE_GET_DEVICE_CAPABILITIES,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_MODE,
     ATTR_STATE,
@@ -62,10 +62,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, snapshot_platform
 

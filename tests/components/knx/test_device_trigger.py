@@ -5,16 +5,16 @@ import logging
 import pytest
 import voluptuous_serialize
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.knx import DOMAIN, device_trigger
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.knx import DOMAIN, device_trigger
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.setup import async_setup_component
 
 from .conftest import KNXTestKit
 

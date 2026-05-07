@@ -7,10 +7,10 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import psutil_home_assistant as ha_psutil
 
-from homeassistant.components.hardware.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.hardware.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.typing import WebSocketGenerator
 

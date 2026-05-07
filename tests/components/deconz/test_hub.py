@@ -6,13 +6,13 @@ from pydeconz.websocket import State
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.deconz.config_flow import DECONZ_MANUFACTURERURL
-from homeassistant.components.deconz.const import DOMAIN
-from homeassistant.config_entries import SOURCE_SSDP
-from homeassistant.const import STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.components.deconz.config_flow import DECONZ_MANUFACTURERURL
+from inpui.components.deconz.const import DOMAIN
+from inpui.config_entries import SOURCE_SSDP
+from inpui.const import STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MANUFACTURER_URL,
     ATTR_UPNP_SERIAL,
     ATTR_UPNP_UDN,

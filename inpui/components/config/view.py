@@ -11,13 +11,13 @@ from typing import Any, cast
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components.http import KEY_HASS, HomeAssistantView, require_admin
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.file import write_utf8_file_atomic
-from homeassistant.util.yaml import dump, load_yaml
-from homeassistant.util.yaml.loader import JSON_TYPE
+from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.util.file import write_utf8_file_atomic
+from inpui.util.yaml import dump, load_yaml
+from inpui.util.yaml.loader import JSON_TYPE
 
 from .const import ACTION_CREATE_UPDATE, ACTION_DELETE
 

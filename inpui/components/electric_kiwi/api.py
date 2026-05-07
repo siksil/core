@@ -5,8 +5,8 @@ from __future__ import annotations
 from aiohttp import ClientSession
 from electrickiwi_api import AbstractAuth
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client, config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client, config_entry_oauth2_flow
 
 from .const import API_BASE_URL
 

@@ -9,21 +9,21 @@ from xknx.devices import DateDevice as XknxDateDevice
 from xknx.dpt.dpt_11 import KNXDate as XKNXDate
 
 from homeassistant import config_entries
-from homeassistant.components.date import DateEntity
-from homeassistant.const import (
+from inpui.components.date import DateEntity
+from inpui.const import (
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.restore_state import RestoreEntity
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.restore_state import RestoreEntity
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     CONF_RESPOND_TO_READ,

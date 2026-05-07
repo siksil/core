@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import logging
 from typing import Any
 
-from homeassistant.components import (
+from inpui.components import (
     alarm_control_panel,
     binary_sensor,
     button,
@@ -34,23 +34,23 @@ from homeassistant.components import (
     valve,
     water_heater,
 )
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.camera import CameraEntityFeature
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.components.cover import CoverEntityFeature
-from homeassistant.components.fan import FanEntityFeature
-from homeassistant.components.humidifier import HumidifierEntityFeature
-from homeassistant.components.lawn_mower import LawnMowerEntityFeature
-from homeassistant.components.light import LightEntityFeature
-from homeassistant.components.lock import LockState
-from homeassistant.components.media_player import MediaPlayerEntityFeature, MediaType
-from homeassistant.components.vacuum import VacuumEntityFeature
-from homeassistant.components.valve import ValveEntityFeature
-from homeassistant.components.water_heater import WaterHeaterEntityFeature
-from homeassistant.const import (
+from inpui.components.camera import CameraEntityFeature
+from inpui.components.climate import ClimateEntityFeature
+from inpui.components.cover import CoverEntityFeature
+from inpui.components.fan import FanEntityFeature
+from inpui.components.humidifier import HumidifierEntityFeature
+from inpui.components.lawn_mower import LawnMowerEntityFeature
+from inpui.components.light import LightEntityFeature
+from inpui.components.lock import LockState
+from inpui.components.media_player import MediaPlayerEntityFeature, MediaType
+from inpui.components.vacuum import VacuumEntityFeature
+from inpui.components.valve import ValveEntityFeature
+from inpui.components.water_heater import WaterHeaterEntityFeature
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_BATTERY_LEVEL,
     ATTR_CODE,
@@ -59,7 +59,7 @@ from homeassistant.const import (
     ATTR_MODE,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
-    CAST_APP_ID_HOMEASSISTANT_MEDIA,
+    CAST_APP_ID_INPUI_MEDIA,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_CUSTOM_BYPASS,
     SERVICE_ALARM_ARM_HOME,
@@ -78,15 +78,15 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.helpers.network import get_url
-from homeassistant.util import color as color_util, dt as dt_util
-from homeassistant.util.dt import utcnow
-from homeassistant.util.percentage import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.helpers.network import get_url
+from inpui.util import color as color_util, dt as dt_util
+from inpui.util.dt import utcnow
+from inpui.util.percentage import (
     ordered_list_item_to_percentage,
     percentage_to_ordered_list_item,
 )
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .const import (
     CHALLENGE_FAILED_PIN_NEEDED,
@@ -402,7 +402,7 @@ class CameraStreamTrait(_Trait):
         url = await camera.async_request_stream(self.hass, self.state.entity_id, "hls")
         self.stream_info = {
             "cameraStreamAccessUrl": f"{get_url(self.hass)}{url}",
-            "cameraStreamReceiverAppId": CAST_APP_ID_HOMEASSISTANT_MEDIA,
+            "cameraStreamReceiverAppId": CAST_APP_ID_INPUI_MEDIA,
         }
 
 

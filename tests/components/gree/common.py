@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, Mock
 
 from greeclimate.discovery import Listener
 
-from homeassistant.components.gree.const import DISCOVERY_TIMEOUT, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.gree.const import DISCOVERY_TIMEOUT, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

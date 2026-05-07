@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.nanoleaf import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_TOKEN
+from inpui.components.nanoleaf import DOMAIN
+from inpui.const import CONF_HOST, CONF_TOKEN
 
 from tests.common import MockConfigEntry
 

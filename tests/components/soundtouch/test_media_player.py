@@ -5,7 +5,7 @@ from typing import Any
 
 from requests_mock import Mocker
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_MEDIA_ALBUM_NAME,
     ATTR_MEDIA_ARTIST,
@@ -17,22 +17,22 @@ from homeassistant.components.media_player import (
     ATTR_MEDIA_VOLUME_MUTED,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
 )
-from homeassistant.components.soundtouch.const import (
+from inpui.components.soundtouch.const import (
     DOMAIN,
     SERVICE_ADD_ZONE_SLAVE,
     SERVICE_CREATE_ZONE,
     SERVICE_PLAY_EVERYWHERE,
     SERVICE_REMOVE_ZONE_SLAVE,
 )
-from homeassistant.components.soundtouch.media_player import (
+from inpui.components.soundtouch.media_player import (
     ATTR_SOUNDTOUCH_GROUP,
     ATTR_SOUNDTOUCH_ZONE,
 )
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import STATE_OFF, STATE_PAUSED, STATE_PLAYING
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import STATE_OFF, STATE_PAUSED, STATE_PLAYING
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import DEVICE_1_ENTITY_ID, DEVICE_2_ENTITY_ID
 

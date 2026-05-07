@@ -8,15 +8,15 @@ from aiohomekit.model.characteristics import CharacteristicsTypes
 from aiohomekit.model.services import Service, ServicesTypes
 from aiohomekit.testing import FakeController
 
-from homeassistant.components.homekit_controller.const import KNOWN_DEVICES
-from homeassistant.components.light import (
+from inpui.components.homekit_controller.const import KNOWN_DEVICES
+from inpui.components.light import (
     ATTR_COLOR_MODE,
     ATTR_SUPPORTED_COLOR_MODES,
     ColorMode,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_SUPPORTED_FEATURES, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_test_component
 

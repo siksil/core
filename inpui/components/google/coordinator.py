@@ -14,10 +14,10 @@ from gcal_sync.sync import CalendarEventSyncManager
 from gcal_sync.timeline import Timeline
 from ical.iter import SortableItemValue
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util import dt as dt_util
 
 from .store import GoogleConfigEntry
 

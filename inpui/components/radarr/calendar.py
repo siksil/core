@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     CalendarEntity,
     CalendarEntityDescription,
     CalendarEvent,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import CalendarUpdateCoordinator, RadarrConfigEntry, RadarrEvent
 from .entity import RadarrEntity

@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     ATTR_MODE,
     DOMAIN as HUMIDIFIER_DOMAIN,
@@ -17,9 +17,9 @@ from homeassistant.components.humidifier import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import EVAPORATIVE_HUMIDIFIER_SERVICE_INFO, HUMIDIFIER_SERVICE_INFO
 

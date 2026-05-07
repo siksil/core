@@ -2,12 +2,12 @@
 
 import pytest
 
-from homeassistant.components.cloud.assist_pipeline import (
+from inpui.components.cloud.assist_pipeline import (
     async_migrate_cloud_pipeline_engine,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_migrate_pipeline_invalid_platform(hass: HomeAssistant) -> None:

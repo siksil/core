@@ -7,18 +7,18 @@ from pyisy import ISYConnectionError, ISYInvalidAuthError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.isy994.const import (
+from inpui.components.isy994.const import (
     CONF_TLS_VER,
     DOMAIN,
     ISY_URL_POSTFIX,
     UDN_UUID_PREFIX,
 )
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_IGNORE, SOURCE_SSDP
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_DHCP, SOURCE_IGNORE, SOURCE_SSDP
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

@@ -8,25 +8,25 @@ from xknx import XKNX
 from xknx.devices import Cover as XknxCover
 
 from homeassistant import config_entries
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverDeviceClass,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_NAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_SYNC_STATE, DOMAIN, KNX_MODULE_KEY, CoverConf
 from .entity import KnxUiEntity, KnxUiEntityPlatformController, KnxYamlEntity

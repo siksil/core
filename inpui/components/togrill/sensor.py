@@ -8,16 +8,16 @@ from typing import Any, cast
 
 from togrill_bluetooth.packets import Packet, PacketA0Notify, PacketA1Notify
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
     StateType,
 )
-from homeassistant.const import PERCENTAGE, EntityCategory, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PERCENTAGE, EntityCategory, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ToGrillConfigEntry
 from .const import CONF_HAS_AMBIENT, CONF_PROBE_COUNT, MAX_PROBE_COUNT

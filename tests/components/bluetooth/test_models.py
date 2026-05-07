@@ -11,12 +11,12 @@ from bleak.backends.scanner import AdvertisementData
 from habluetooth.wrappers import HaBleakClientWrapper, HaBleakScannerWrapper
 import pytest
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BaseHaRemoteScanner,
     BaseHaScanner,
     HaBluetoothConnector,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     FakeScannerMixin,

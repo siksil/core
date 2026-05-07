@@ -7,7 +7,7 @@ from freezegun.api import FrozenDateTimeFactory
 from goslideapi.goslideapi import ClientConnectionError
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -16,9 +16,9 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER,
     CoverState,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import get_data, setup_platform
 

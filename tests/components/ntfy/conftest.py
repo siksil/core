@@ -9,9 +9,9 @@ from aiontfy import Account, AccountTokenResponse, Event, Notification, Version
 from aiontfy.update import LatestRelease
 import pytest
 
-from homeassistant.components.ntfy.const import CONF_TOPIC, DEFAULT_URL, DOMAIN
-from homeassistant.config_entries import ConfigSubentryData
-from homeassistant.const import CONF_TOKEN, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
+from inpui.components.ntfy.const import CONF_TOPIC, DEFAULT_URL, DOMAIN
+from inpui.config_entries import ConfigSubentryData
+from inpui.const import CONF_TOKEN, CONF_URL, CONF_USERNAME, CONF_VERIFY_SSL
 
 from tests.common import MockConfigEntry, load_fixture
 

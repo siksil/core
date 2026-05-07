@@ -4,11 +4,11 @@ from ipaddress import ip_address
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.volumio.config_flow import CannotConnectError
-from homeassistant.components.volumio.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.volumio.config_flow import CannotConnectError
+from inpui.components.volumio.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

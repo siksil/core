@@ -10,12 +10,12 @@ from unittest.mock import MagicMock
 import pyvera as pv
 
 from homeassistant import config_entries
-from homeassistant.components.vera.const import (
+from inpui.components.vera.const import (
     CONF_CONTROLLER,
     CONF_LEGACY_UNIQUE_ID,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -8,7 +8,7 @@ import tempfile
 
 from atomicwrites import AtomicWriter
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 _LOGGER = logging.getLogger(__name__)
 

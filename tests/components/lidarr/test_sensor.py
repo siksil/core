@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.sensor import CONF_STATE_CLASS, SensorStateClass
-from homeassistant.const import ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import CONF_STATE_CLASS, SensorStateClass
+from inpui.const import ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
 
 from .conftest import ComponentSetup
 

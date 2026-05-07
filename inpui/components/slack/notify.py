@@ -14,16 +14,16 @@ from slack_sdk.errors import SlackApiError
 from slack_sdk.web.async_client import AsyncWebClient
 import voluptuous as vol
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
     BaseNotificationService,
 )
-from homeassistant.const import ATTR_ICON, CONF_PATH
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv, template
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import ATTR_ICON, CONF_PATH
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client, config_validation as cv, template
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import (
     ATTR_BLOCKS,

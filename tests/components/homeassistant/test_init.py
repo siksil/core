@@ -7,7 +7,7 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config, core as ha
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     ATTR_ENTRY_ID,
     ATTR_SAFE_MODE,
     DOMAIN,
@@ -19,12 +19,12 @@ from homeassistant.components.homeassistant import (
     SERVICE_RELOAD_CUSTOM_TEMPLATES,
     SERVICE_SET_LOCATION,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     ENTITY_MATCH_NONE,
     EVENT_CORE_CONFIG_UPDATE,
-    EVENT_HOMEASSISTANT_STARTED,
+    EVENT_INPUI_STARTED,
     SERVICE_SAVE_PERSISTENT_STATES,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
@@ -32,10 +32,10 @@ from homeassistant.const import (
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.helpers import entity, entity_registry as er, issue_registry as ir
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.helpers import entity, entity_registry as er, issue_registry as ir
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,
@@ -669,7 +669,7 @@ async def test_deprecated_installation_issue_32bit_core(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(issue_registry.issues) == 1
@@ -709,7 +709,7 @@ async def test_deprecated_installation_issue_64bit_core(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(issue_registry.issues) == 1
@@ -751,7 +751,7 @@ async def test_deprecated_installation_issue_32bit(
         ),
     ):
         assert await async_setup_component(hass, DOMAIN, {})
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(issue_registry.issues) == 1

@@ -9,15 +9,15 @@ from aiohttp.client_exceptions import ClientConnectionError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.airq.const import (
+from inpui.components.airq.const import (
     CONF_CLIP_NEGATIVE,
     CONF_RETURN_AVERAGE,
     DOMAIN,
 )
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .common import TEST_DEVICE_INFO, TEST_USER_DATA
 

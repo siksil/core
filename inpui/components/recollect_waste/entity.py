@@ -1,8 +1,8 @@
 """Define a base ReCollect Waste entity."""
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import CONF_PLACE_ID, CONF_SERVICE_ID, DOMAIN
 from .coordinator import ReCollectWasteDataUpdateCoordinator

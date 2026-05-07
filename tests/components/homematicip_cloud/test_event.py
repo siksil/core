@@ -2,8 +2,8 @@
 
 from homematicip.base.channel_event import ChannelEvent
 
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, get_and_check_entity_basics
 

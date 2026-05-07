@@ -5,14 +5,14 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import patch
 
-from homeassistant.components import mikrotik
-from homeassistant.components.mikrotik.const import (
+from inpui.components import mikrotik
+from inpui.components.mikrotik.const import (
     CONF_ARP_PING,
     CONF_DETECTION_TIME,
     CONF_FORCE_DHCP,
     DEFAULT_DETECTION_TIME,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -20,7 +20,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

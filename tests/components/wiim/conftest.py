@@ -18,8 +18,8 @@ from wiim.models import (
     WiimTransportCapabilities,
 )
 
-from homeassistant.components.wiim import DOMAIN
-from homeassistant.const import CONF_HOST
+from inpui.components.wiim import DOMAIN
+from inpui.const import CONF_HOST
 
 from tests.common import MockConfigEntry
 

@@ -4,8 +4,8 @@ from freezegun import freeze_time
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.google_assistant_sdk.const import CONF_LANGUAGE_CODE
-from homeassistant.core import HomeAssistant
+from inpui.components.google_assistant_sdk.const import CONF_LANGUAGE_CODE
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

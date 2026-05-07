@@ -6,14 +6,14 @@ import pytest
 from voluptuous.error import Invalid
 
 from homeassistant import config_entries
-from homeassistant.components.jellyfin.const import (
+from inpui.components.jellyfin.const import (
     CONF_AUDIO_CODEC,
     CONF_CLIENT_DEVICE_ID,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import async_load_json_fixture
 from .const import REAUTH_INPUT, TEST_PASSWORD, TEST_URL, TEST_USERNAME, USER_INPUT

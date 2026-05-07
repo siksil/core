@@ -5,11 +5,11 @@ from __future__ import annotations
 from pytile import async_login
 from pytile.errors import InvalidAuthError, TileError
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
-from homeassistant.util.async_ import gather_with_limited_concurrency
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
+from inpui.util.async_ import gather_with_limited_concurrency
 
 from .coordinator import TileConfigEntry, TileCoordinator
 

@@ -3,12 +3,12 @@
 from rtmapi import Rtm
 import voluptuous as vol
 
-from homeassistant.components import configurator
-from homeassistant.const import CONF_API_KEY, CONF_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import configurator
+from inpui.const import CONF_API_KEY, CONF_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
 
 from .const import LOGGER
 from .entity import RememberTheMilkEntity

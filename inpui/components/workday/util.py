@@ -8,12 +8,12 @@ from typing import TYPE_CHECKING
 
 from holidays import PUBLIC, DateLike, HolidayBase, country_holidays
 
-from homeassistant.const import CONF_COUNTRY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError
-from homeassistant.helpers.issue_registry import IssueSeverity, async_create_issue
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util import dt as dt_util, slugify
+from inpui.const import CONF_COUNTRY
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError
+from inpui.helpers.issue_registry import IssueSeverity, async_create_issue
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util import dt as dt_util, slugify
 
 if TYPE_CHECKING:
     from . import WorkdayConfigEntry

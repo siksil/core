@@ -11,11 +11,11 @@ from wyoming.handle import Handled, NotHandled
 from wyoming.info import Info
 from wyoming.intent import Entity, Intent, NotRecognized
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import intent
+from inpui.components import conversation
+from inpui.config_entries import ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import intent
 
 from . import HANDLE_INFO, INTENT_INFO, MockAsyncTcpClient
 

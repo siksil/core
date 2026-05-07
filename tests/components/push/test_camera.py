@@ -4,10 +4,10 @@ from datetime import timedelta
 from http import HTTPStatus
 import io
 
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 from tests.typing import ClientSessionGenerator

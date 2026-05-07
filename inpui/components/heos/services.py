@@ -7,16 +7,16 @@ from typing import Final
 from pyheos import CommandAuthenticationError, Heos, HeosError
 import voluptuous as vol
 
-from homeassistant.components.media_player import ATTR_MEDIA_VOLUME_LEVEL
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, SupportsResponse, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import (
+from inpui.components.media_player import ATTR_MEDIA_VOLUME_LEVEL
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, SupportsResponse, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import (
     config_validation as cv,
     entity_platform,
     issue_registry as ir,
 )
-from homeassistant.helpers.typing import VolDictType, VolSchemaType
+from inpui.helpers.typing import VolDictType, VolSchemaType
 
 from .const import (
     ATTR_DESTINATION_POSITION,

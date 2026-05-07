@@ -9,11 +9,11 @@ from typing import TYPE_CHECKING, Any, Literal
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.auth.models import RefreshToken, User
-from homeassistant.core import Context, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError, Unauthorized
-from homeassistant.helpers.http import current_request
-from homeassistant.util.json import JsonValueType
+from inpui.auth.models import RefreshToken, User
+from inpui.core import Context, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError, Unauthorized
+from inpui.helpers.http import current_request
+from inpui.util.json import JsonValueType
 
 from . import const, messages
 from .messages import (

@@ -5,8 +5,8 @@ import socket
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import voip
-from homeassistant.core import HomeAssistant
+from inpui.components import voip
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.usefixtures("socket_enabled")

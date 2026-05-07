@@ -9,9 +9,9 @@ import logging
 from elkm1_lib.discovery import AIOELKDiscovery, ElkSystem
 
 from homeassistant import config_entries
-from homeassistant.components import network
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, discovery_flow
+from inpui.components import network
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, discovery_flow
 
 from .const import DISCOVER_SCAN_TIMEOUT, DOMAIN
 

@@ -7,14 +7,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.awair.sensor import (
+from inpui.components.awair.sensor import (
     SENSOR_TYPE_SCORE,
     SENSOR_TYPES,
     SENSOR_TYPES_DUST,
 )
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_awair
 from .const import CLOUD_CONFIG, CLOUD_UNIQUE_ID, LOCAL_CONFIG, LOCAL_UNIQUE_ID

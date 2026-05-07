@@ -6,12 +6,12 @@ from unittest.mock import PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.risco import CannotConnectError, UnauthorizedError
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.components.risco import CannotConnectError, UnauthorizedError
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
 
 FIRST_ENTITY_ID = "switch.zone_0_bypassed"
 SECOND_ENTITY_ID = "switch.zone_1_bypassed"

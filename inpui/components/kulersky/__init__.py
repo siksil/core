@@ -2,12 +2,12 @@
 
 import logging
 
-from homeassistant.components.bluetooth import async_ble_device_from_address
-from homeassistant.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntry
-from homeassistant.const import CONF_ADDRESS, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.components.bluetooth import async_ble_device_from_address
+from inpui.config_entries import SOURCE_INTEGRATION_DISCOVERY, ConfigEntry
+from inpui.const import CONF_ADDRESS, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN
 

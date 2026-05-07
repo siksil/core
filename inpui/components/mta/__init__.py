@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN as DOMAIN, SUBENTRY_TYPE_BUS, SUBENTRY_TYPE_SUBWAY
 from .coordinator import MTAConfigEntry, MTADataUpdateCoordinator

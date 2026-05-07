@@ -11,12 +11,12 @@ from wirelesstagpy import SensorTag, WirelessTags
 from wirelesstagpy.binaryevent import BinaryEvent
 from wirelesstagpy.exceptions import WirelessTagsException
 
-from homeassistant.components import persistent_notification
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import dispatcher_send
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import persistent_notification
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import dispatcher_send
+from inpui.helpers.typing import ConfigType
 
 from .const import (
     DOMAIN,

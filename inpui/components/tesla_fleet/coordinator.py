@@ -18,15 +18,15 @@ from tesla_fleet_api.exceptions import (
 )
 from tesla_fleet_api.tesla import EnergySite, VehicleFleet
 
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import TeslaFleetConfigEntry
 
-from homeassistant.util import dt as dt_util
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, ENERGY_HISTORY_FIELDS, LOGGER, TeslaFleetState
 

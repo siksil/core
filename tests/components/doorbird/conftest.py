@@ -9,13 +9,13 @@ from unittest.mock import MagicMock, patch
 from doorbirdpy import DoorBird, DoorBirdScheduleEntry
 import pytest
 
-from homeassistant.components.doorbird.const import (
+from inpui.components.doorbird.const import (
     CONF_EVENTS,
     DEFAULT_DOORBELL_EVENT,
     DEFAULT_MOTION_EVENT,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import VALID_CONFIG, get_mock_doorbird_api
 

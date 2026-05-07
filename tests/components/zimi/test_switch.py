@@ -4,9 +4,9 @@ from unittest.mock import MagicMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import SERVICE_TURN_OFF, SERVICE_TURN_ON, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import ENTITY_INFO, mock_api_device, setup_platform
 

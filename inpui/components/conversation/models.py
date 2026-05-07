@@ -6,8 +6,8 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Literal
 
-from homeassistant.core import Context
-from homeassistant.helpers import intent, llm
+from inpui.core import Context
+from inpui.helpers import intent, llm
 
 from .const import DOMAIN
 

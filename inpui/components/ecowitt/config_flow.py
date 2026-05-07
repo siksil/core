@@ -7,11 +7,11 @@ from typing import Any
 
 from yarl import URL
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.network import get_url
+from inpui.components import webhook
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.network import get_url
 
 from .const import DOMAIN
 

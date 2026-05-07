@@ -6,16 +6,16 @@ from zwave_js_server.event import Event
 from zwave_js_server.exceptions import FailedZWaveCommand
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.switch import (
+from inpui.components.switch import (
     DOMAIN as SWITCH_DOMAIN,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.zwave_js.helpers import ZwaveValueMatcher
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.zwave_js.helpers import ZwaveValueMatcher
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
 
 from .common import SWITCH_ENTITY, replace_value_of_zwave_value
 

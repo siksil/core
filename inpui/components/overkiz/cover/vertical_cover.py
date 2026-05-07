@@ -12,7 +12,7 @@ from pyoverkiz.enums import (
     UIWidget,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverDeviceClass,
     CoverEntityFeature,

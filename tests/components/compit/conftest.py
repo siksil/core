@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from compit_inext_api import PARAMS, CompitParameter
 import pytest
 
-from homeassistant.components.compit.const import DOMAIN
-from homeassistant.const import CONF_EMAIL
+from inpui.components.compit.const import DOMAIN
+from inpui.const import CONF_EMAIL
 
 from .consts import CONFIG_INPUT
 

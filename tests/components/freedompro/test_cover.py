@@ -5,21 +5,21 @@ from unittest.mock import ANY, patch
 
 import pytest
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     CoverState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_OPEN_COVER,
     SERVICE_SET_COVER_POSITION,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util.dt import utcnow
 
 from .conftest import get_states_response_for_uid
 

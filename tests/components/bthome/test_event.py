@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.bthome.const import DOMAIN
-from homeassistant.components.event import ATTR_EVENT_TYPE
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.bthome.const import DOMAIN
+from inpui.components.event import ATTR_EVENT_TYPE
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import make_bthome_v2_adv
 

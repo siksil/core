@@ -4,11 +4,11 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceCall, callback, split_entity_id
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.components.select import DOMAIN as SELECT_DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceCall, callback, split_entity_id
+from inpui.helpers import config_validation as cv
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import DOMAIN, SERVICE_RESET, SIGNAL_RESET_METER
 

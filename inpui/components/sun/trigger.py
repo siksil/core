@@ -4,17 +4,17 @@ from datetime import timedelta
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_EVENT,
     CONF_OFFSET,
     CONF_PLATFORM,
     SUN_EVENT_SUNRISE,
 )
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import async_track_sunrise, async_track_sunset
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import async_track_sunrise, async_track_sunset
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 TRIGGER_SCHEMA = cv.TRIGGER_BASE_SCHEMA.extend(
     {

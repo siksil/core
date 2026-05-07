@@ -6,16 +6,16 @@ import platform
 
 from yalexs_ble import local_name_is_unique
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,
 )
-from homeassistant.components.bluetooth.match import (
+from inpui.components.bluetooth.match import (
     ADDRESS,
     LOCAL_NAME,
     BluetoothCallbackMatcher,
 )
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 
 def bluetooth_callback_matcher(

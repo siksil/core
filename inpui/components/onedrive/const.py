@@ -3,7 +3,7 @@
 from collections.abc import Callable
 from typing import Final
 
-from homeassistant.util.hass_dict import HassKey
+from inpui.util.hass_dict import HassKey
 
 DOMAIN: Final = "onedrive"
 CONF_FOLDER_NAME: Final = "folder_name"

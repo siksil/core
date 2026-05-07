@@ -11,21 +11,21 @@ from aioharmony.hubconnector_websocket import HubConnector
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components.remote import (
+from inpui.components.remote import (
     ATTR_ACTIVITY,
     ATTR_DELAY_SECS,
     DEFAULT_DELAY_SECS,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     SsdpServiceInfo,
 )

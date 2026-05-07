@@ -5,11 +5,11 @@ import logging
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.conversation import HOME_ASSISTANT_AGENT, async_get_agent
-from homeassistant.components.conversation.models import ConversationInput
-from homeassistant.core import Context, HomeAssistant, ServiceCall
-from homeassistant.helpers import trigger
-from homeassistant.setup import async_setup_component
+from inpui.components.conversation import HOME_ASSISTANT_AGENT, async_get_agent
+from inpui.components.conversation.models import ConversationInput
+from inpui.core import Context, HomeAssistant, ServiceCall
+from inpui.helpers import trigger
+from inpui.setup import async_setup_component
 
 from tests.typing import WebSocketGenerator
 

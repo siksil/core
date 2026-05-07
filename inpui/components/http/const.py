@@ -4,7 +4,7 @@ from typing import Final
 
 from aiohttp.web import Request
 
-from homeassistant.helpers.http import KEY_AUTHENTICATED, KEY_HASS  # noqa: F401
+from inpui.helpers.http import KEY_AUTHENTICATED, KEY_HASS  # noqa: F401
 
 DOMAIN: Final = "http"
 

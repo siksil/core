@@ -6,9 +6,9 @@ from aionotion import (
 )
 from aionotion.client import Client
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.instance_id import async_get
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
+from inpui.helpers.instance_id import async_get
 
 
 async def async_get_client_with_credentials(

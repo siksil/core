@@ -6,19 +6,19 @@ from unittest.mock import MagicMock, patch
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.auth.models import User
-from homeassistant.components import alarm_control_panel
-from homeassistant.components.alarm_control_panel import (
+from inpui.auth.models import User
+from inpui.components import alarm_control_panel
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.demo import alarm_control_panel as demo
-from homeassistant.components.manual.alarm_control_panel import (
+from inpui.components.demo import alarm_control_panel as demo
+from inpui.components.manual.alarm_control_panel import (
     ATTR_NEXT_STATE,
     ATTR_PREVIOUS_STATE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
@@ -27,10 +27,10 @@ from homeassistant.const import (
     SERVICE_ALARM_ARM_NIGHT,
     SERVICE_ALARM_ARM_VACATION,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, CoreState, HomeAssistant, State, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, mock_component, mock_restore_cache
 from tests.components.alarm_control_panel import common

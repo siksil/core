@@ -5,7 +5,7 @@ platform for a function `async_check_significant_change`:
 
 ```python
 from typing import Optional
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 async def async_check_significant_change(
     hass: HomeAssistant,
@@ -34,9 +34,9 @@ import math
 from types import MappingProxyType
 from typing import Any, Protocol
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.util.hass_dict import HassKey
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State, callback
+from inpui.util.hass_dict import HassKey
 
 from .integration_platform import async_process_integration_platforms
 

@@ -5,11 +5,11 @@ from unittest.mock import patch
 from aiobafi6.exceptions import DeviceUUIDMismatchError
 import pytest
 
-from homeassistant.components.baf.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_IP_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.baf.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_IP_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import MOCK_UUID, MockBAFDevice
 

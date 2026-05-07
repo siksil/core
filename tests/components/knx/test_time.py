@@ -1,14 +1,14 @@
 """Test KNX time."""
 
-from homeassistant.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
-from homeassistant.components.knx.schema import TimeSchema
-from homeassistant.components.time import (
+from inpui.components.knx.const import CONF_RESPOND_TO_READ, KNX_ADDRESS
+from inpui.components.knx.schema import TimeSchema
+from inpui.components.time import (
     ATTR_TIME,
     DOMAIN as TIME_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import CONF_NAME, Platform
-from homeassistant.core import HomeAssistant, State
+from inpui.const import CONF_NAME, Platform
+from inpui.core import HomeAssistant, State
 
 from . import KnxEntityGenerator
 from .conftest import KNXTestKit

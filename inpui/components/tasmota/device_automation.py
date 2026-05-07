@@ -6,13 +6,13 @@ from hatasmota.const import AUTOMATION_TYPE_TRIGGER
 from hatasmota.models import DiscoveryHashType
 from hatasmota.trigger import TasmotaTrigger
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.helpers.device_registry import (
+from inpui.config_entries import ConfigEntry
+from inpui.core import Event, HomeAssistant, callback
+from inpui.helpers.device_registry import (
     EVENT_DEVICE_REGISTRY_UPDATED,
     EventDeviceRegistryUpdatedData,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from . import device_trigger
 from .const import DATA_REMOVE_DISCOVER_COMPONENT, DATA_UNSUB

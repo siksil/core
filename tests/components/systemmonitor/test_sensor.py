@@ -9,14 +9,14 @@ from psutil._ntuples import sdiskpart, sdiskusage, shwtemp, snetio, snicaddr
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.systemmonitor.const import DOMAIN
-from homeassistant.components.systemmonitor.coordinator import VirtualMemory
-from homeassistant.components.systemmonitor.sensor import get_cpu_icon
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.systemmonitor.const import DOMAIN
+from inpui.components.systemmonitor.coordinator import VirtualMemory
+from inpui.components.systemmonitor.sensor import get_cpu_icon
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockProcess
 

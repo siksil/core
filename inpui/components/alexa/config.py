@@ -9,8 +9,8 @@ from typing import Any
 
 from yarl import URL
 
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.storage import Store
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.storage import Store
 
 from .const import DOMAIN
 from .entities import TRANSLATION_TABLE

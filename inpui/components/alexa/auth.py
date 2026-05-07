@@ -10,11 +10,11 @@ from typing import Any
 
 import aiohttp
 
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.storage import Store
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client
+from inpui.helpers.storage import Store
+from inpui.util import dt as dt_util
 
 from .const import STORAGE_ACCESS_TOKEN, STORAGE_REFRESH_TOKEN
 from .diagnostics import async_redact_lwa_params

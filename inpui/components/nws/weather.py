@@ -8,7 +8,7 @@ from typing import Any, Required, TypedDict, cast
 
 import voluptuous as vol
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_CLEAR_NIGHT,
     ATTR_CONDITION_SUNNY,
     ATTR_FORECAST_CONDITION,
@@ -25,7 +25,7 @@ from homeassistant.components.weather import (
     Forecast,
     WeatherEntityFeature,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_LATITUDE,
     CONF_LONGITUDE,
     UnitOfLength,
@@ -33,17 +33,17 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import (
+from inpui.core import (
     HomeAssistant,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.helpers import entity_platform, entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import TimestampDataUpdateCoordinator
-from homeassistant.util.json import JsonValueType
-from homeassistant.util.unit_conversion import SpeedConverter, TemperatureConverter
+from inpui.helpers import entity_platform, entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import TimestampDataUpdateCoordinator
+from inpui.util.json import JsonValueType
+from inpui.util.unit_conversion import SpeedConverter, TemperatureConverter
 
 from . import NWSConfigEntry, NWSData, base_unique_id, device_info
 from .const import (

@@ -12,39 +12,39 @@ from unittest.mock import ANY, AsyncMock, call, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import mqtt
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.mqtt.abbreviations import (
+from inpui.components import mqtt
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.mqtt.abbreviations import (
     ABBREVIATIONS,
     DEVICE_ABBREVIATIONS,
 )
-from homeassistant.components.mqtt.const import SUPPORTED_COMPONENTS
-from homeassistant.components.mqtt.discovery import (
+from inpui.components.mqtt.const import SUPPORTED_COMPONENTS
+from inpui.components.mqtt.discovery import (
     MQTT_DISCOVERY_DONE,
     MQTT_DISCOVERY_NEW,
     MQTT_DISCOVERY_UPDATED,
     MQTTDiscoveryPayload,
     async_start,
 )
-from homeassistant.components.mqtt.models import ReceiveMessage
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_STARTED,
+from inpui.components.mqtt.models import ReceiveMessage
+from inpui.const import (
+    EVENT_INPUI_STARTED,
     EVENT_STATE_CHANGED,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.data_entry_flow import AbortFlow, FlowResult
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.data_entry_flow import AbortFlow, FlowResult
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util.signal_type import SignalTypeFormat
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util.signal_type import SignalTypeFormat
 
 from .common import help_all_subscribe_calls, help_test_unload_config_entry
 from .conftest import ENTRY_DEFAULT_BIRTH_MESSAGE
@@ -2576,7 +2576,7 @@ async def test_mqtt_integration_discovery_flow_fitering_on_redundant_payload(
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await mqtt.async_subscribe(hass, "homeassistant/status", wait_birth)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await birth.wait()
 
         assert ("comp/discovery/#", 0) in help_all_subscribe_calls(mqtt_client_mock)
@@ -2648,7 +2648,7 @@ async def test_mqtt_discovery_flow_starts_once(
     ):
         assert await hass.config_entries.async_setup(entry.entry_id)
         await mqtt.async_subscribe(hass, "homeassistant/status", wait_birth)
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await birth.wait()
 
         assert ("comp/discovery/#", 0) in help_all_subscribe_calls(mqtt_client_mock)

@@ -16,18 +16,18 @@ from async_upnp_client.profiles.profile import find_device_of_type
 from getmac import get_mac_address
 import voluptuous as vol
 
-from homeassistant.components import ssdp
-from homeassistant.config_entries import (
+from inpui.components import ssdp
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_HOST, CONF_MAC, CONF_TYPE, CONF_URL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import IntegrationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.const import CONF_DEVICE_ID, CONF_HOST, CONF_MAC, CONF_TYPE, CONF_URL
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import IntegrationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_DEVICE_TYPE,
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,
@@ -35,7 +35,7 @@ from homeassistant.helpers.service_info.ssdp import (
     ATTR_UPNP_SERVICE_LIST,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.typing import VolDictType
+from inpui.helpers.typing import VolDictType
 
 from .const import (
     CONF_BROWSE_UNFILTERED,

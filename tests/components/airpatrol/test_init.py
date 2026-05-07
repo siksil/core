@@ -4,8 +4,8 @@ from unittest.mock import patch
 
 from airpatrol.api import AirPatrolAPI, AirPatrolAuthenticationError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, State
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, State
 
 from tests.common import MockConfigEntry
 

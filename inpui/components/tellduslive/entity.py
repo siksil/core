@@ -6,15 +6,15 @@ from typing import Any
 
 from tellduslive import BATTERY_LOW, BATTERY_OK, BATTERY_UNKNOWN
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_MANUFACTURER,
     ATTR_MODEL,
     ATTR_VIA_DEVICE,
 )
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
 
 from .const import SIGNAL_UPDATE_ENTITY
 

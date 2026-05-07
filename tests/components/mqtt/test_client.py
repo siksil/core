@@ -12,20 +12,20 @@ import certifi
 import paho.mqtt.client as paho_mqtt
 import pytest
 
-from homeassistant.components import mqtt
-from homeassistant.components.mqtt.client import RECONNECT_INTERVAL_SECONDS
-from homeassistant.components.mqtt.const import SUPPORTED_COMPONENTS
-from homeassistant.components.mqtt.models import MessageCallbackType, ReceiveMessage
-from homeassistant.config_entries import ConfigEntryDisabler, ConfigEntryState
-from homeassistant.const import (
+from inpui.components import mqtt
+from inpui.components.mqtt.client import RECONNECT_INTERVAL_SECONDS
+from inpui.components.mqtt.const import SUPPORTED_COMPONENTS
+from inpui.components.mqtt.models import MessageCallbackType, ReceiveMessage
+from inpui.config_entries import ConfigEntryDisabler, ConfigEntryState
+from inpui.const import (
     CONF_PROTOCOL,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
     UnitOfTemperature,
 )
-from homeassistant.core import CALLBACK_TYPE, CoreState, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.dt import utcnow
+from inpui.core import CALLBACK_TYPE, CoreState, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.util.dt import utcnow
 
 from .common import help_all_subscribe_calls
 from .conftest import ENTRY_DEFAULT_BIRTH_MESSAGE
@@ -74,7 +74,7 @@ async def test_mqtt_does_not_disconnect_on_home_assistant_stop(
 ) -> None:
     """Test if client is not disconnected on HA stop."""
     mqtt_client_mock = setup_with_birth_msg_client_mock
-    hass.bus.fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.fire(EVENT_INPUI_STOP)
     await mock_debouncer.wait()
     assert mqtt_client_mock.disconnect.call_count == 0
 
@@ -1691,7 +1691,7 @@ async def test_custom_birth_message(
     hass.config.components.add(mqtt.DOMAIN)
     assert await hass.config_entries.async_setup(entry.entry_id)
     mock_debouncer.clear()
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     # discovery cooldown
     await mock_debouncer.wait()
     # Wait for publish call to finish
@@ -1792,7 +1792,7 @@ async def test_delayed_birth_message(
     assert not mqtt_client_mock.publish.called
     assert not birth.is_set()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+    hass.bus.async_fire(EVENT_INPUI_STARTED)
     await birth.wait()
     mqtt_client_mock.publish.assert_called_with(
         "homeassistant/status", "online", 0, False
@@ -2124,7 +2124,7 @@ async def test_auto_reconnect(
     await hass.async_block_till_done()
     assert len(mqtt_client_mock.reconnect.mock_calls) == 2
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
 
     mqtt_client_mock.disconnect()
     mqtt_client_mock.on_disconnect(None, None, 0, MockMqttReasonCode())

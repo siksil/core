@@ -15,8 +15,8 @@ from whois.exceptions import (
     WhoisQuotaExceeded,
 )
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DOMAIN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DOMAIN
 
 from .const import DOMAIN
 

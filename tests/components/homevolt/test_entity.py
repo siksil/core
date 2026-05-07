@@ -6,9 +6,9 @@ from unittest.mock import MagicMock
 
 from homevolt import DeviceMetadata
 
-from homeassistant.components.homevolt.const import DOMAIN, MANUFACTURER
-from homeassistant.components.homevolt.switch import HomevoltLocalModeSwitch
-from homeassistant.core import HomeAssistant
+from inpui.components.homevolt.const import DOMAIN, MANUFACTURER
+from inpui.components.homevolt.switch import HomevoltLocalModeSwitch
+from inpui.core import HomeAssistant
 
 from .conftest import DEVICE_IDENTIFIER
 

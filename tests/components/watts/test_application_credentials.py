@@ -1,10 +1,10 @@
 """Test application credentials for Watts integration."""
 
-from homeassistant.components.watts.application_credentials import (
+from inpui.components.watts.application_credentials import (
     async_get_authorization_server,
 )
-from homeassistant.components.watts.const import OAUTH2_AUTHORIZE, OAUTH2_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.components.watts.const import OAUTH2_AUTHORIZE, OAUTH2_TOKEN
+from inpui.core import HomeAssistant
 
 
 async def test_async_get_authorization_server(hass: HomeAssistant) -> None:

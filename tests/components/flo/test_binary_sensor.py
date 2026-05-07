@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_FRIENDLY_NAME, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

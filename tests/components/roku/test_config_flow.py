@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from rokuecp import Device as RokuDevice, RokuConnectionError
 
-from homeassistant.components.roku.const import CONF_PLAY_MEDIA_APP_ID, DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.roku.const import CONF_PLAY_MEDIA_APP_ID, DOMAIN
+from inpui.config_entries import (
     SOURCE_HOMEKIT,
     SOURCE_SSDP,
     SOURCE_USER,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_HOST, CONF_NAME, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_HOST, CONF_NAME, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import (
     HOMEKIT_HOST,

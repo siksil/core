@@ -5,10 +5,10 @@ from unittest.mock import patch
 from apyhiveapi.helper import hive_exceptions
 
 from homeassistant import config_entries
-from homeassistant.components.hive.const import CONF_CODE, CONF_DEVICE_NAME, DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.hive.const import CONF_CODE, CONF_DEVICE_NAME, DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_SCAN_INTERVAL, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

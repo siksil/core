@@ -4,12 +4,12 @@ from typing import TYPE_CHECKING
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_MODE, CONF_OPTIONS, PERCENTAGE, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.const import ATTR_MODE, CONF_OPTIONS, PERCENTAGE, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     ENTITY_STATE_CONDITION_SCHEMA_ANY_ALL,
     Condition,
     ConditionConfig,
@@ -17,7 +17,7 @@ from homeassistant.helpers.condition import (
     make_entity_numerical_condition,
     make_entity_state_condition,
 )
-from homeassistant.helpers.entity import get_supported_features
+from inpui.helpers.entity import get_supported_features
 
 from .const import (
     ATTR_ACTION,

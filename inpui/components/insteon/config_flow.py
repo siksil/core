@@ -7,16 +7,16 @@ from typing import Any
 
 from pyinsteon import async_connect
 
-from homeassistant.components import usb
-from homeassistant.config_entries import (
+from inpui.components import usb
+from inpui.config_entries import (
     DEFAULT_DISCOVERY_UNIQUE_ID,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_DEVICE, CONF_HOST, CONF_NAME
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.const import CONF_DEVICE, CONF_HOST, CONF_NAME
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import CONF_HUB_VERSION, DOMAIN
 from .schemas import build_hub_schema, build_plm_manual_schema, build_plm_schema

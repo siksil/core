@@ -5,11 +5,11 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     CONF_CONSIDER_HOME,
     CONF_SCAN_INTERVAL,
 )
-from homeassistant.components.nmap_tracker.const import (
+from inpui.components.nmap_tracker.const import (
     CONF_HOME_INTERVAL,
     CONF_HOSTS_EXCLUDE,
     CONF_HOSTS_LIST,
@@ -18,8 +18,8 @@ from homeassistant.components.nmap_tracker.const import (
     DEFAULT_OPTIONS,
     DOMAIN,
 )
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import CoreState, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

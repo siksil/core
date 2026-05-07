@@ -5,7 +5,7 @@ from typing import Any
 
 from ihcsdk.ihccontroller import IHCController
 
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.entity import Entity
 
 from .const import CONF_INFO, DOMAIN
 

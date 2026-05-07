@@ -6,13 +6,13 @@ import logging
 
 from tilt_ble import TiltBluetoothDeviceData
 
-from homeassistant.components.bluetooth import BluetoothScanningMode
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth import BluetoothScanningMode
+from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 

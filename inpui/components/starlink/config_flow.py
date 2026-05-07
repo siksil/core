@@ -7,8 +7,8 @@ from typing import Any
 from starlink_grpc import ChannelContext, GrpcError, get_id
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_IP_ADDRESS
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_IP_ADDRESS
 
 from .const import DOMAIN
 

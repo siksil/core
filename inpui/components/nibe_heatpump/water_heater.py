@@ -8,17 +8,17 @@ from nibe.coil import Coil
 from nibe.coil_groups import WATER_HEATER_COILGROUPS, WaterHeaterCoilGroup
 from nibe.exceptions import CoilNotFoundException
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     STATE_HEAT_PUMP,
     STATE_HIGH_DEMAND,
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import (
     DOMAIN,

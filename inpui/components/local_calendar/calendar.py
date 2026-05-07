@@ -15,7 +15,7 @@ from ical.store import EventStore, EventStoreError
 from ical.types import Range, Recur
 import voluptuous as vol
 
-from homeassistant.components.calendar import (
+from inpui.components.calendar import (
     EVENT_END,
     EVENT_RRULE,
     EVENT_START,
@@ -23,10 +23,10 @@ from homeassistant.components.calendar import (
     CalendarEntityFeature,
     CalendarEvent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import LocalCalendarConfigEntry
 from .const import CONF_CALENDAR_NAME

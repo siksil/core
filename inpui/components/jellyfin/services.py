@@ -6,14 +6,14 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA,
     ATTR_MEDIA_CONTENT_ID,
     DOMAIN as MP_DOMAIN,
     MediaPlayerEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, service
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, service
 
 from .const import DOMAIN
 

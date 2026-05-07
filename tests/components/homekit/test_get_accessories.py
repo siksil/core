@@ -4,11 +4,11 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.components.cover import CoverEntityFeature
-from homeassistant.components.homekit import TYPE_AIR_PURIFIER
-from homeassistant.components.homekit.accessories import TYPES, get_accessory
-from homeassistant.components.homekit.const import (
+from inpui.components.climate import ClimateEntityFeature
+from inpui.components.cover import CoverEntityFeature
+from inpui.components.homekit import TYPE_AIR_PURIFIER
+from inpui.components.homekit.accessories import TYPES, get_accessory
+from inpui.components.homekit.const import (
     ATTR_INTEGRATION,
     CONF_FEATURE_LIST,
     FEATURE_ON_OFF,
@@ -20,21 +20,21 @@ from homeassistant.components.homekit.const import (
     TYPE_SWITCH,
     TYPE_VALVE,
 )
-from homeassistant.components.homekit.type_sensors import (
+from inpui.components.homekit.type_sensors import (
     AirQualitySensor,
     CarbonDioxideSensor,
     PM10Sensor,
     PM25Sensor,
     TemperatureSensor,
 )
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.components.vacuum import VacuumEntityFeature
-from homeassistant.const import (
+from inpui.components.sensor import SensorDeviceClass
+from inpui.components.switch import SwitchDeviceClass
+from inpui.components.vacuum import VacuumEntityFeature
+from inpui.const import (
     ATTR_CODE,
     ATTR_DEVICE_CLASS,
     ATTR_SUPPORTED_FEATURES,
@@ -46,7 +46,7 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import State
+from inpui.core import State
 
 
 def get_identified_type(entity_id, attrs, config=None):

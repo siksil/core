@@ -11,13 +11,13 @@ from gardena_bluetooth.exceptions import CharacteristicNotFound, CommunicationFa
 from gardena_bluetooth.parse import ManufacturerData, ProductType
 import voluptuous as vol
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfo,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.data_entry_flow import AbortFlow
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS
+from inpui.data_entry_flow import AbortFlow
 
 from . import get_connection
 from .const import DOMAIN

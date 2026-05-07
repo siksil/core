@@ -6,14 +6,14 @@ from functools import partial
 
 import pypck
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorEntity,
 )
-from homeassistant.const import CONF_DOMAIN, CONF_ENTITIES, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DOMAIN, CONF_ENTITIES, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_DOMAIN_DATA
 from .entity import LcnEntity

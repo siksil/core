@@ -12,8 +12,8 @@ from aioelectricitymaps import (
     ZoneRequest,
 )
 
-from homeassistant.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 
 async def fetch_latest_carbon_intensity(

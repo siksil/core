@@ -2,11 +2,11 @@
 
 from pysmhi import SMHIFirePointForecast, SMHIPointForecast
 
-from homeassistant.components.smhi.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.smhi.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import ENTITY_ID, TEST_CONFIG, TEST_CONFIG_MIGRATE
 

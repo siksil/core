@@ -5,7 +5,7 @@ from typing import Any
 from pyHomee.const import AttributeType, NodeProfile
 from pyHomee.model import HomeeNode
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     PRESET_BOOST,
     PRESET_ECO,
@@ -15,8 +15,8 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HomeeConfigEntry
 from .const import CLIMATE_PROFILES, DOMAIN, HOMEE_UNIT_TO_HA_UNIT, PRESET_MANUAL

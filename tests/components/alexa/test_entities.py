@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import fan, humidifier, remote, water_heater
-from homeassistant.components.alexa import smart_home
-from homeassistant.const import EntityCategory, UnitOfTemperature, __version__
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components import fan, humidifier, remote, water_heater
+from inpui.components.alexa import smart_home
+from inpui.const import EntityCategory, UnitOfTemperature, __version__
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .test_common import get_default_config, get_new_request
 

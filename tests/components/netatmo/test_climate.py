@@ -7,7 +7,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from voluptuous.error import MultipleInvalid
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     ATTR_PRESET_MODE,
     DOMAIN as CLIMATE_DOMAIN,
@@ -20,8 +20,8 @@ from homeassistant.components.climate import (
     SERVICE_TURN_ON,
     HVACMode,
 )
-from homeassistant.components.netatmo.climate import PRESET_FROST_GUARD, PRESET_SCHEDULE
-from homeassistant.components.netatmo.const import (
+from inpui.components.netatmo.climate import PRESET_FROST_GUARD, PRESET_SCHEDULE
+from inpui.components.netatmo.const import (
     ATTR_END_DATETIME,
     ATTR_SCHEDULE_NAME,
     ATTR_TARGET_TEMPERATURE,
@@ -33,16 +33,16 @@ from homeassistant.components.netatmo.const import (
     SERVICE_SET_TEMPERATURE_WITH_END_DATETIME,
     SERVICE_SET_TEMPERATURE_WITH_TIME_PERIOD,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     CONF_WEBHOOK_ID,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .common import selected_platforms, simulate_webhook, snapshot_platform_entities
 

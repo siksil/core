@@ -11,8 +11,8 @@ from habluetooth import (
     expire_stale_scanner_discovered_device_advertisement_data,
 )
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.storage import Store
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.storage import Store
 
 REMOTE_SCANNER_STORAGE_VERSION = 1
 REMOTE_SCANNER_STORAGE_KEY = "bluetooth.remote_scanners"

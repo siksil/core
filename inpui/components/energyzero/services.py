@@ -10,17 +10,17 @@ from typing import Final
 from energyzero import Electricity, Gas, VatOption
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import (
+from inpui.config_entries import ConfigEntryState
+from inpui.core import (
     HomeAssistant,
     ServiceCall,
     ServiceResponse,
     SupportsResponse,
     callback,
 )
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import selector
-from homeassistant.util import dt as dt_util
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import selector
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN
 from .coordinator import EnergyZeroConfigEntry, EnergyZeroDataUpdateCoordinator

@@ -5,27 +5,27 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components import conversation
-from homeassistant.components.climate import (
+from inpui.components import conversation
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     DOMAIN as CLIMATE_DOMAIN,
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import ATTR_DEVICE_CLASS, Platform, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.sensor import SensorDeviceClass
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import ATTR_DEVICE_CLASS, Platform, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     entity_registry as er,
     floor_registry as fr,
     intent,
 )
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

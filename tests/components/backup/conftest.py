@@ -10,9 +10,9 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.backup import DOMAIN
-from homeassistant.components.backup.manager import NewBackup, WrittenBackup
-from homeassistant.core import HomeAssistant
+from inpui.components.backup import DOMAIN
+from inpui.components.backup.manager import NewBackup, WrittenBackup
+from inpui.core import HomeAssistant
 
 from tests.common import get_fixture_path
 
@@ -93,7 +93,7 @@ def mock_ha_version_fixture(hass: HomeAssistant) -> Generator[None]:
 @pytest.fixture
 def mock_backups() -> Generator[None]:
     """Fixture to setup test backups."""
-    from homeassistant.components.backup import backup as core_backup  # noqa: PLC0415
+    from inpui.components.backup import backup as core_backup  # noqa: PLC0415
 
     class CoreLocalBackupAgent(core_backup.CoreLocalBackupAgent):
         def __init__(self, hass: HomeAssistant) -> None:

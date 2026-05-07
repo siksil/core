@@ -7,8 +7,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from homeassistant.components import stt
-from homeassistant.components.assist_pipeline import (
+from inpui.components import stt
+from inpui.components.assist_pipeline import (
     OPTION_PREFERRED,
     AudioSettings,
     Pipeline,
@@ -19,17 +19,17 @@ from homeassistant.components.assist_pipeline import (
     async_update_pipeline,
     vad,
 )
-from homeassistant.components.assist_satellite import (
+from inpui.components.assist_satellite import (
     AssistSatelliteAnnouncement,
     AssistSatelliteAnswer,
     SatelliteBusyError,
 )
-from homeassistant.components.assist_satellite.const import PREANNOUNCE_URL
-from homeassistant.components.assist_satellite.entity import AssistSatelliteState
-from homeassistant.components.media_source import PlayMedia
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.assist_satellite.const import PREANNOUNCE_URL
+from inpui.components.assist_satellite.entity import AssistSatelliteState
+from inpui.components.media_source import PlayMedia
+from inpui.config_entries import ConfigEntry
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import ENTITY_ID
 from .conftest import MockAssistSatellite

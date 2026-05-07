@@ -10,13 +10,13 @@ from aiounifi.models.message import MessageKey
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.image import DOMAIN as IMAGE_DOMAIN
-from homeassistant.config_entries import RELOAD_AFTER_UPDATE_DELAY
-from homeassistant.const import STATE_UNAVAILABLE, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.util import dt as dt_util
+from inpui.components.image import DOMAIN as IMAGE_DOMAIN
+from inpui.config_entries import RELOAD_AFTER_UPDATE_DELAY
+from inpui.const import STATE_UNAVAILABLE, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.util import dt as dt_util
 
 from .conftest import (
     ConfigEntryFactoryType,

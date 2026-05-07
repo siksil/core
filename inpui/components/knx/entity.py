@@ -6,11 +6,11 @@ from typing import TYPE_CHECKING, Any
 
 from xknx.devices import Device as XknxDevice
 
-from homeassistant.const import CONF_ENTITY_CATEGORY, CONF_NAME, EntityCategory
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.helpers.entity_registry import RegistryEntry
+from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, EntityCategory
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.helpers.entity_registry import RegistryEntry
 
 from .const import DOMAIN
 from .storage.config_store import PlatformControllerBase

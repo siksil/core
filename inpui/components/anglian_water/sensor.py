@@ -9,16 +9,16 @@ from enum import StrEnum
 
 from pyanglianwater.meter import SmartMeter
 
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     EntityCategory,
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.const import UnitOfVolume
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfVolume
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AnglianWaterConfigEntry, AnglianWaterUpdateCoordinator
 from .entity import AnglianWaterEntity

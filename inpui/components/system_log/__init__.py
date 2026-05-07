@@ -13,11 +13,11 @@ from typing import Any, cast
 import voluptuous as vol
 
 from homeassistant import __path__ as HOMEASSISTANT_PATH
-from homeassistant.components import websocket_api
-from homeassistant.const import EVENT_HOMEASSISTANT_CLOSE
-from homeassistant.core import Event, HomeAssistant, ServiceCall, callback
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.components import websocket_api
+from inpui.const import EVENT_INPUI_CLOSE
+from inpui.core import Event, HomeAssistant, ServiceCall, callback
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 type KeyType = tuple[str, tuple[str, int], tuple[str, int, str] | None]
 
@@ -313,7 +313,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         logging.root.removeHandler(handler)
         del hass.data[DOMAIN]
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_stop_handler)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_stop_handler)
 
     logging.root.addHandler(handler)
 

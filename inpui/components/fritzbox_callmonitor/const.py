@@ -3,7 +3,7 @@
 from enum import StrEnum
 from typing import Final
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 
 class FritzState(StrEnum):

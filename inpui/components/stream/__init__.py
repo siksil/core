@@ -30,13 +30,13 @@ from typing import TYPE_CHECKING, Any, Final, cast
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, EVENT_LOGGING_CHANGED
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.setup import SetupPhases, async_pause_setup
-from homeassistant.util.async_ import create_eager_task
+from inpui.const import EVENT_INPUI_STOP, EVENT_LOGGING_CHANGED
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.setup import SetupPhases, async_pause_setup
+from inpui.util.async_ import create_eager_task
 
 from .const import (
     ATTR_ENDPOINTS,
@@ -78,7 +78,7 @@ from .exceptions import StreamOpenClientError, StreamWorkerError
 from .hls import HlsStreamOutput, async_setup_hls
 
 if TYPE_CHECKING:
-    from homeassistant.components.camera import DynamicStreamSettings
+    from inpui.components.camera import DynamicStreamSettings
 
 __all__ = [
     "ATTR_SETTINGS",
@@ -307,7 +307,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         _LOGGER.debug("Stopped stream workers")
         cancel_logging_listener()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown)
 
     return True
 

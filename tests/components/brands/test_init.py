@@ -11,15 +11,15 @@ from aiohttp import ClientError
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.brands.const import (
+from inpui.components.brands.const import (
     BRANDS_CDN_URL,
     CACHE_TTL,
     DOMAIN,
     TOKEN_CHANGE_INTERVAL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.loader import Integration
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.loader import Integration
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

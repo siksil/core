@@ -6,15 +6,15 @@ from collections.abc import Callable
 from enum import IntFlag
 from typing import TYPE_CHECKING, Final
 
-from homeassistant.const import (
+from inpui.const import (
     UnitOfLength,
     UnitOfPrecipitationDepth,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.unit_conversion import (
+from inpui.util.hass_dict import HassKey
+from inpui.util.unit_conversion import (
     DistanceConverter,
     PressureConverter,
     SpeedConverter,
@@ -22,7 +22,7 @@ from homeassistant.util.unit_conversion import (
 )
 
 if TYPE_CHECKING:
-    from homeassistant.helpers.entity_component import EntityComponent
+    from inpui.helpers.entity_component import EntityComponent
 
     from . import WeatherEntity
 

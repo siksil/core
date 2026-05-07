@@ -6,11 +6,11 @@ import json
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components import alexa
-from homeassistant.components.alexa import intent
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.setup import async_setup_component
+from inpui.components import alexa
+from inpui.components.alexa import intent
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant, callback
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

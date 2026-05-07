@@ -12,15 +12,15 @@ from uiprotect.data import NVR, Bootstrap, CloudAccount, Version
 from uiprotect.exceptions import ClientError
 
 from homeassistant import config_entries
-from homeassistant.components.unifiprotect.const import (
+from inpui.components.unifiprotect.const import (
     CONF_ALL_UPDATES,
     CONF_DISABLE_RTSP,
     CONF_OVERRIDE_CHOST,
     DOMAIN,
 )
-from homeassistant.components.unifiprotect.utils import _async_unifi_mac_from_hass
-from homeassistant.config_entries import ConfigEntryState, ConfigFlowResult
-from homeassistant.const import (
+from inpui.components.unifiprotect.utils import _async_unifi_mac_from_hass
+from inpui.config_entries import ConfigEntryState, ConfigFlowResult
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PASSWORD,
@@ -28,10 +28,10 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from . import (
     DEVICE_HOSTNAME,

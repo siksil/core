@@ -18,9 +18,9 @@ from propcache.api import cached_property
 import requests
 
 from homeassistant import config_entries
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.exceptions import (
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.exceptions import (
     ConfigEntryAuthFailed,
     ConfigEntryError,
     ConfigEntryNotReady,
@@ -28,7 +28,7 @@ from homeassistant.exceptions import (
     OAuth2TokenRequestError,
     OAuth2TokenRequestReauthError,
 )
-from homeassistant.util.dt import utcnow
+from inpui.util.dt import utcnow
 
 from . import entity, event
 from .debounce import Debouncer
@@ -160,12 +160,12 @@ class DataUpdateCoordinator(BaseDataUpdateCoordinatorProtocol, Generic[_DataT]):
 
         async def _on_hass_stop(_: Event) -> None:
             """Shutdown coordinator on HomeAssistant stop."""
-            # Already cleared on EVENT_HOMEASSISTANT_STOP, via async_fire_internal
+            # Already cleared on EVENT_INPUI_STOP, via async_fire_internal
             self._unsub_shutdown = None
             await self.async_shutdown()
 
         self._unsub_shutdown = self.hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, _on_hass_stop
+            EVENT_INPUI_STOP, _on_hass_stop
         )
 
     @callback

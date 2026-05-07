@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass
 from enum import StrEnum
 from typing import Any, Self
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 @dataclass(frozen=True, kw_only=True)

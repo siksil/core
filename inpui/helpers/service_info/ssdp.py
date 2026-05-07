@@ -4,7 +4,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any, Final
 
-from homeassistant.data_entry_flow import BaseServiceInfo
+from inpui.data_entry_flow import BaseServiceInfo
 
 # Attributes for accessing info from retrieved UPnP device description
 ATTR_ST: Final = "st"

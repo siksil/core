@@ -10,10 +10,10 @@ from typing import Any
 from unifi_discovery import AIOUnifiScanner, UnifiDevice, UnifiService
 
 from homeassistant import config_entries
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import discovery_flow
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import discovery_flow
+from inpui.helpers.event import async_track_time_interval
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 

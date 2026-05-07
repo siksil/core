@@ -4,9 +4,9 @@ from collections.abc import Generator
 
 import pytest
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import (
     MockConfigEntry,

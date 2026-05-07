@@ -7,9 +7,9 @@ from nx584 import client as nx584_client
 import pytest
 import requests
 
-from homeassistant.components.nx584 import binary_sensor as nx584
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.nx584 import binary_sensor as nx584
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 DEFAULT_CONFIG = {
     "host": nx584.DEFAULT_HOST,

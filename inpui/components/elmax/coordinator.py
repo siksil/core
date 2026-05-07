@@ -22,10 +22,10 @@ from elmax_api.model.panel import PanelEntry, PanelStatus
 from elmax_api.push.push import PushNotificationHandler
 from httpx import ConnectError, ConnectTimeout
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, HomeAssistantError
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, HomeAssistantError
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DEFAULT_TIMEOUT, POLLING_SECONDS
 

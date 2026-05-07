@@ -5,12 +5,12 @@ import logging
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_entry_flow, intent, template
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_entry_flow, intent, template
 
 from .const import DOMAIN
 

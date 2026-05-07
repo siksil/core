@@ -16,11 +16,11 @@ from typing import Any, TypedDict
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components import websocket_api
-from homeassistant.const import CONF_ID
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import slugify
+from inpui.components import websocket_api
+from inpui.const import CONF_ID
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.util import slugify
 
 from . import entity_registry
 from .entity import Entity

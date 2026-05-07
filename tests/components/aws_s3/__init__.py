@@ -1,8 +1,8 @@
 """Tests for the AWS S3 integration."""
 
-from homeassistant.components.backup import DOMAIN as BACKUP_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.backup import DOMAIN as BACKUP_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

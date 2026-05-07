@@ -16,29 +16,29 @@ from reolink_aio.exceptions import (
 )
 
 from homeassistant import config_entries
-from homeassistant.components.reolink.config_flow import DEFAULT_PROTOCOL
-from homeassistant.components.reolink.const import (
+from inpui.components.reolink.config_flow import DEFAULT_PROTOCOL
+from inpui.components.reolink.const import (
     CONF_BC_ONLY,
     CONF_BC_PORT,
     CONF_SUPPORTS_PRIVACY_MODE,
     CONF_USE_HTTPS,
     DOMAIN,
 )
-from homeassistant.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
-from homeassistant.components.reolink.exceptions import ReolinkWebhookException
-from homeassistant.components.reolink.host import DEFAULT_TIMEOUT
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.reolink.coordinator import DEVICE_UPDATE_INTERVAL_MIN
+from inpui.components.reolink.exceptions import ReolinkWebhookException
+from inpui.components.reolink.host import DEFAULT_TIMEOUT
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_PROTOCOL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .conftest import (
     DHCP_FORMATTED_MAC,

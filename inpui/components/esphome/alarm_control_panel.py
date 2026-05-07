@@ -13,13 +13,13 @@ from aioesphomeapi import (
     EntityInfo,
 )
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
     CodeFormat,
 )
-from homeassistant.core import callback
+from inpui.core import callback
 
 from .entity import (
     EsphomeEntity,

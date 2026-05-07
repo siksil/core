@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 
 async def test_random_binary_sensor_on(hass: HomeAssistant) -> None:

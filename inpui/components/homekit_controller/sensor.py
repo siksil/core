@@ -15,18 +15,18 @@ from aiohomekit.model.characteristics.const import (
 )
 from aiohomekit.model.services import Service, ServicesTypes
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     async_ble_device_from_address,
     async_last_service_info,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_MILLION,
     LIGHT_LUX,
@@ -42,9 +42,9 @@ from homeassistant.const import (
     UnitOfSoundPressure,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.typing import ConfigType
 
 from . import KNOWN_DEVICES
 from .connection import HKDevice

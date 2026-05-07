@@ -7,8 +7,8 @@ from collections.abc import AsyncIterator
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util.async_iterator import (
+from inpui.core import HomeAssistant
+from inpui.util.async_iterator import (
     Abort,
     AsyncIteratorReader,
     AsyncIteratorWriter,

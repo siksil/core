@@ -16,14 +16,14 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config as config_util, loader
-from homeassistant.const import CONF_PACKAGES, __version__
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.exceptions import ConfigValidationError, HomeAssistantError
-from homeassistant.helpers import check_config, config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import Integration, async_get_integration
-from homeassistant.util.yaml import SECRET_YAML
-from homeassistant.util.yaml.objects import NodeDictClass
+from inpui.const import CONF_PACKAGES, __version__
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.exceptions import ConfigValidationError, HomeAssistantError
+from inpui.helpers import check_config, config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.loader import Integration, async_get_integration
+from inpui.util.yaml import SECRET_YAML
+from inpui.util.yaml.objects import NodeDictClass
 
 from .common import (
     MockModule,

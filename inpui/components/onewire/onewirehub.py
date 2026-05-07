@@ -11,14 +11,14 @@ from aio_ownet.definitions import OWServerCommonPath
 from aio_ownet.exceptions import OWServerProtocolError, OWServerReturnError
 from aio_ownet.proxy import OWServerStatelessProxy
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import ATTR_VIA_DEVICE, CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util.signal_type import SignalType
+from inpui.config_entries import ConfigEntry
+from inpui.const import ATTR_VIA_DEVICE, CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.event import async_track_time_interval
+from inpui.util.signal_type import SignalType
 
 from .const import (
     DEVICE_SUPPORT,

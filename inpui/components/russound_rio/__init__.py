@@ -5,12 +5,12 @@ import logging
 from aiorussound import RussoundClient, RussoundTcpConnectionHandler
 from aiorussound.models import CallbackType
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC
 
 from .const import DOMAIN, RUSSOUND_RIO_EXCEPTIONS
 

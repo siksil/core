@@ -6,8 +6,8 @@ import json
 from pathlib import Path
 from typing import cast
 
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
 
 from .const import LOGGER
 

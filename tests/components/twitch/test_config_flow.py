@@ -5,15 +5,15 @@ from unittest.mock import AsyncMock
 import pytest
 from twitchAPI.object.api import TwitchUser
 
-from homeassistant.components.twitch.const import (
+from inpui.components.twitch.const import (
     CONF_CHANNELS,
     DOMAIN,
     OAUTH2_AUTHORIZE,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResult, FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResult, FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import get_generator, setup_integration
 from .conftest import CLIENT_ID, TITLE

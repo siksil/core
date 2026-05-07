@@ -12,9 +12,9 @@ from py_vapid import Vapid
 from py_vapid.utils import b64urlencode
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_NAME
-from homeassistant.core import callback
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_NAME
+from inpui.core import callback
 
 from .const import ATTR_VAPID_EMAIL, ATTR_VAPID_PRV_KEY, ATTR_VAPID_PUB_KEY, DOMAIN
 

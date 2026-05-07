@@ -1,10 +1,10 @@
 """Test init of Logitch Harmony Hub integration."""
 
-from homeassistant.components.harmony.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.harmony.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .const import (
     ENTITY_NILE_TV,

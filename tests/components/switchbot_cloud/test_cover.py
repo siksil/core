@@ -11,10 +11,10 @@ from switchbot_api import (
     RollerShadeCommands,
 )
 
-from homeassistant.components.cover import DOMAIN as COVER_DOMAIN
-from homeassistant.components.switchbot_cloud import SwitchBotAPI
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.cover import DOMAIN as COVER_DOMAIN
+from inpui.components.switchbot_cloud import SwitchBotAPI
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_CLOSE_COVER_TILT,
@@ -27,7 +27,7 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import configure_integration
 

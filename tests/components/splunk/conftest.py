@@ -5,8 +5,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.splunk.const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN
-from homeassistant.const import (
+from inpui.components.splunk.const import DEFAULT_HOST, DEFAULT_PORT, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,

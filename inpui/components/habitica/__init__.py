@@ -4,17 +4,17 @@ from uuid import UUID
 
 from habiticalib import Habitica
 
-from homeassistant.components.notify import DOMAIN as NOTIFY_DOMAIN
-from homeassistant.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components.notify import DOMAIN as NOTIFY_DOMAIN
+from inpui.const import CONF_API_KEY, CONF_URL, CONF_VERIFY_SSL, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     device_registry as dr,
     entity_registry as er,
 )
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.hass_dict import HassKey
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
+from inpui.util.hass_dict import HassKey
 
 from .const import CONF_API_USER, DOMAIN, X_CLIENT
 from .coordinator import (

@@ -8,12 +8,12 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant.components import http, websocket_api
-from homeassistant.components.http.data_validator import RequestDataValidator
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.chat_session import async_get_chat_session
-from homeassistant.util import language as language_util
+from inpui.components import http, websocket_api
+from inpui.components.http.data_validator import RequestDataValidator
+from inpui.const import MATCH_ALL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.chat_session import async_get_chat_session
+from inpui.util import language as language_util
 
 from .agent_manager import (
     agent_id_validator,

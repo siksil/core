@@ -13,9 +13,9 @@ from sensoterra.customerapi import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN
-from homeassistant.helpers.selector import (
+from inpui.config_entries import SOURCE_USER, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, CONF_TOKEN
+from inpui.helpers.selector import (
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,

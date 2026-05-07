@@ -6,9 +6,9 @@ import logging
 
 from fivem import FiveMServerOfflineError
 
-from homeassistant.const import CONF_HOST, CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_HOST, CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .coordinator import FiveMConfigEntry, FiveMDataUpdateCoordinator
 

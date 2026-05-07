@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.util import slugify
 
 from .const import CONF_SOURCE_ID, DOMAIN
 

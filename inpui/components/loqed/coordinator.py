@@ -7,11 +7,11 @@ from typing import TypedDict
 from aiohttp.web import Request
 from loqedAPI import loqed
 
-from homeassistant.components import cloud, webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_NAME, CONF_WEBHOOK_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.components import cloud, webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_NAME, CONF_WEBHOOK_ID
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import CONF_CLOUDHOOK_URL, DOMAIN
 

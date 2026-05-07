@@ -6,8 +6,8 @@ from screenlogicpy import ScreenLogicGateway
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import (
     DATA_FULL_CHEM,

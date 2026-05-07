@@ -2,7 +2,7 @@
 
 import pytest
 
-from homeassistant.components.media_source.const import URI_SCHEME_REGEX
+from inpui.components.media_source.const import URI_SCHEME_REGEX
 
 
 @pytest.mark.parametrize(

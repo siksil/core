@@ -8,7 +8,7 @@ from habluetooth.usage import (
 from habluetooth.wrappers import HaBleakClientWrapper, HaBleakScannerWrapper
 import pytest
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import generate_ble_device, patch_bleak_backend_type
 

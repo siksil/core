@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
-from homeassistant.components.water_heater import (
+from inpui.components.water_heater import (
     WaterHeaterEntity,
     WaterHeaterEntityFeature,
 )
-from homeassistant.const import STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import GeniusHubConfigEntry
 from .entity import GeniusHeatingZone

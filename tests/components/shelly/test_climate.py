@@ -13,7 +13,7 @@ from aioshelly.exceptions import DeviceConnectionError, InvalidAuthError, RpcCal
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -31,28 +31,28 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.humidifier import ATTR_HUMIDITY
-from homeassistant.components.shelly.climate import PRESET_FROST_PROTECTION
-from homeassistant.components.shelly.const import (
+from inpui.components.humidifier import ATTR_HUMIDITY
+from inpui.components.shelly.climate import PRESET_FROST_PROTECTION
+from inpui.components.shelly.const import (
     DOMAIN,
     MODEL_LINKEDGO_ST802_THERMOSTAT,
     MODEL_LINKEDGO_ST1820_THERMOSTAT,
 )
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     STATE_ON,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import issue_registry as ir
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import (
     MOCK_MAC,

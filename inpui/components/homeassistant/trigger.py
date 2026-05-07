@@ -2,15 +2,15 @@
 
 from typing import cast
 
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.helpers.trigger import (
+from inpui.const import CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.importlib import async_import_module
+from inpui.helpers.trigger import (
     TriggerActionType,
     TriggerInfo,
     TriggerProtocol,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 
 async def _async_get_trigger_platform(

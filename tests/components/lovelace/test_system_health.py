@@ -6,9 +6,9 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.lovelace import dashboard
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.lovelace import dashboard
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import get_system_health_info
 

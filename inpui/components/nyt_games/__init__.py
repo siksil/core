@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from nyt_games import NYTGamesClient
 
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .coordinator import NYTGamesConfigEntry, NYTGamesCoordinator
 

@@ -8,7 +8,7 @@ from typing import Any, Concatenate
 
 from rokuecp import RokuConnectionError, RokuConnectionTimeoutError, RokuError
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .entity import RokuEntity
 

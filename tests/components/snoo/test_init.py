@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock
 
 from python_snoo.exceptions import SnooAuthException
 
-from homeassistant.components.snoo import SnooDeviceError
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.snoo import SnooDeviceError
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import async_init_integration
 

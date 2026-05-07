@@ -9,12 +9,12 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import media_source, websocket_api
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.media_source import const
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.components import media_source, websocket_api
+from inpui.components.media_player import BrowseError
+from inpui.components.media_source import const
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

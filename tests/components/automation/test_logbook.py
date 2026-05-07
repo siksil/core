@@ -1,8 +1,8 @@
 """Test automation logbook."""
 
-from homeassistant.components import automation
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.core import Context, HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.components.logbook.common import MockRow, mock_humanify
 

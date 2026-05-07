@@ -8,11 +8,11 @@ import pytest
 from voip_utils import CallInfo
 from voip_utils.sip import SipEndpoint
 
-from homeassistant.components.voip import DOMAIN
-from homeassistant.components.voip.devices import VoIPDevice, VoIPDevices
-from homeassistant.components.voip.store import VoipStore
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.voip import DOMAIN
+from inpui.components.voip.devices import VoIPDevice, VoIPDevices
+from inpui.components.voip.store import VoipStore
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

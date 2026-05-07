@@ -6,16 +6,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from aiohttp import ClientConnectionError
 import pytest
 
-from homeassistant.components.eheimdigital.const import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.eheimdigital.const import DOMAIN
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     SOURCE_USER,
     SOURCE_ZEROCONF,
 )
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .conftest import init_integration
 

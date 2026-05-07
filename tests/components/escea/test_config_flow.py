@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.escea.const import DOMAIN, ESCEA_FIREPLACE
-from homeassistant.components.escea.discovery import DiscoveryServiceListener
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.escea.const import DOMAIN, ESCEA_FIREPLACE
+from inpui.components.escea.discovery import DiscoveryServiceListener
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

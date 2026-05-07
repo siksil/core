@@ -16,15 +16,15 @@ from pysnooz.commands import (
 )
 import voluptuous as vol
 
-from homeassistant.components.fan import ATTR_PERCENTAGE, FanEntity, FanEntityFeature
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_platform
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.fan import ATTR_PERCENTAGE, FanEntity, FanEntityFeature
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_platform
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import (
     ATTR_DURATION,

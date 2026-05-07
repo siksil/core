@@ -1,7 +1,7 @@
 """application_credentials platform the yale integration."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 OAUTH2_AUTHORIZE = "https://oauth.aaecosystem.com/authorize"
 OAUTH2_TOKEN = "https://oauth.aaecosystem.com/access_token"

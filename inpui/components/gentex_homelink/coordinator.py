@@ -9,9 +9,9 @@ from typing import TypedDict
 from homelink.model.device import Device
 from homelink.mqtt_provider import MQTTProvider
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.ssl import get_default_context
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.util.ssl import get_default_context
 
 type HomeLinkConfigEntry = ConfigEntry[HomeLinkCoordinator]
 type EventCallback = Callable[[HomeLinkEventData], None]

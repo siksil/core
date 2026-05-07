@@ -8,8 +8,8 @@ from pyiqvia import Client
 from pyiqvia.errors import InvalidZipError
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.helpers import aiohttp_client
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.helpers import aiohttp_client
 
 from .const import CONF_ZIP_CODE, DOMAIN
 

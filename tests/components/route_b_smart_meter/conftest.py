@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from homeassistant.components.route_b_smart_meter.const import DOMAIN
-from homeassistant.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
+from inpui.components.route_b_smart_meter.const import DOMAIN
+from inpui.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

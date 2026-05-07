@@ -6,9 +6,9 @@ import xml.etree.ElementTree as ET
 from pylgnetcast import LgNetCastClient
 from requests import RequestException
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceEntry
 
 from .const import DOMAIN
 

@@ -5,11 +5,11 @@ import re
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.amberelectric.const import DOMAIN
-from homeassistant.components.amberelectric.services import ATTR_CHANNEL_TYPE
-from homeassistant.const import ATTR_CONFIG_ENTRY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
+from inpui.components.amberelectric.const import DOMAIN
+from inpui.components.amberelectric.services import ATTR_CHANNEL_TYPE
+from inpui.const import ATTR_CONFIG_ENTRY_ID
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
 
 from . import setup_integration
 from .helpers import (

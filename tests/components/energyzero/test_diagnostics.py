@@ -7,8 +7,8 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.energyzero.const import SCAN_INTERVAL
-from homeassistant.core import HomeAssistant
+from inpui.components.energyzero.const import SCAN_INTERVAL
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

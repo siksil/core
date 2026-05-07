@@ -9,20 +9,20 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_PAYLOAD, CONF_PLATFORM, CONF_VALUE_TEMPLATE
-from homeassistant.core import (
+from inpui.const import CONF_PAYLOAD, CONF_PLATFORM, CONF_VALUE_TEMPLATE
+from inpui.core import (
     CALLBACK_TYPE,
     HassJob,
     HassJobType,
     HomeAssistant,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.service_info.mqtt import ReceivePayloadType
-from homeassistant.helpers.template import Template
-from homeassistant.helpers.trigger import TriggerActionType, TriggerData, TriggerInfo
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
-from homeassistant.util.json import json_loads
+from inpui.helpers import config_validation as cv
+from inpui.helpers.service_info.mqtt import ReceivePayloadType
+from inpui.helpers.template import Template
+from inpui.helpers.trigger import TriggerActionType, TriggerData, TriggerInfo
+from inpui.helpers.typing import ConfigType, TemplateVarsType
+from inpui.util.json import json_loads
 
 from .client import async_subscribe_internal
 from .const import (

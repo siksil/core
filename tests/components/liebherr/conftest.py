@@ -23,9 +23,9 @@ from pyliebherrhomeapi import (
 )
 import pytest
 
-from homeassistant.components.liebherr.const import DOMAIN
-from homeassistant.const import CONF_API_KEY, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.liebherr.const import DOMAIN
+from inpui.const import CONF_API_KEY, Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

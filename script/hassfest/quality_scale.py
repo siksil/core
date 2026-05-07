@@ -7,9 +7,9 @@ from dataclasses import dataclass
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.const import Platform
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.const import Platform
+from inpui.exceptions import HomeAssistantError
+from inpui.util.yaml import load_yaml_dict
 
 from .model import Config, Integration, ScaledQualityScaleTiers
 from .quality_scale_validation import (

@@ -7,7 +7,7 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries, data_entry_flow
-from homeassistant.components.azure_data_explorer.const import (
+from inpui.components.azure_data_explorer.const import (
     CONF_ADX_CLUSTER_INGEST_URI,
     CONF_ADX_DATABASE_NAME,
     CONF_ADX_TABLE_NAME,
@@ -16,7 +16,7 @@ from homeassistant.components.azure_data_explorer.const import (
     CONF_AUTHORITY_ID,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .const import BASE_CONFIG
 

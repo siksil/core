@@ -11,15 +11,15 @@ from munch import Munch
 from packaging.version import Version
 import pytest
 
-from homeassistant.components.plugwise.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.plugwise.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

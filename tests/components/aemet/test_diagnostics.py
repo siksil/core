@@ -6,8 +6,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.aemet.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.aemet.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

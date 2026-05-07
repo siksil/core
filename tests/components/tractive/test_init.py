@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 from aiotractive.exceptions import TractiveError, UnauthorizedError
 import pytest
 
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.tractive.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.tractive.const import (
     ATTR_DAILY_GOAL,
     ATTR_MINUTES_ACTIVE,
     ATTR_MINUTES_DAY_SLEEP,
@@ -15,10 +15,10 @@ from homeassistant.components.tractive.const import (
     ATTR_MINUTES_REST,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STOP, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration
 
@@ -138,7 +138,7 @@ async def test_unsubscribe_on_ha_stop(
     with patch(
         "homeassistant.components.tractive.TractiveClient.unsubscribe"
     ) as mock_unsuscribe:
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert mock_unsuscribe.called

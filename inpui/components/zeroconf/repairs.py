@@ -3,13 +3,13 @@
 from __future__ import annotations
 
 from homeassistant import data_entry_flow
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_HOMEASSISTANT_RESTART,
 )
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import instance_id, issue_registry as ir
+from inpui.components.repairs import RepairsFlow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import instance_id, issue_registry as ir
 
 
 class DuplicateInstanceIDRepairFlow(RepairsFlow):

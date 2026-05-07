@@ -9,11 +9,11 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.util import dt as dt_util
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.event import async_track_time_interval
+from inpui.util import dt as dt_util
 
 from .const import DATA_HARDWARE
 

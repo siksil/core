@@ -5,8 +5,8 @@ from asyncio import run_coroutine_threadsafe
 from pysmappee import api
 
 from homeassistant import config_entries, core
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.const import CONF_PLATFORM
+from inpui.helpers import config_entry_oauth2_flow
 
 from .const import DOMAIN
 

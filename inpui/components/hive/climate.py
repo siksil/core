@@ -7,7 +7,7 @@ from typing import Any
 from apyhiveapi import Hive
 import voluptuous as vol
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     PRESET_BOOST,
     PRESET_NONE,
     ClimateEntity,
@@ -15,10 +15,10 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import HiveConfigEntry, refresh_system
 from .const import ATTR_TIME_PERIOD, SERVICE_BOOST_HEATING_OFF, SERVICE_BOOST_HEATING_ON

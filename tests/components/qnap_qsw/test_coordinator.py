@@ -5,13 +5,13 @@ from unittest.mock import patch
 from aioqsw.exceptions import APIError, QswError
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.qnap_qsw.const import DOMAIN
-from homeassistant.components.qnap_qsw.coordinator import (
+from inpui.components.qnap_qsw.const import DOMAIN
+from inpui.components.qnap_qsw.coordinator import (
     DATA_SCAN_INTERVAL,
     FW_SCAN_INTERVAL,
 )
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .util import (
     CONFIG,

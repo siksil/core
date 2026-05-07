@@ -6,12 +6,12 @@ from automower_ble.protocol import ResponseResult
 from bleak import BleakError
 import pytest
 
-from homeassistant.components.husqvarna_automower_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
-from homeassistant.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
+from inpui.components.husqvarna_automower_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
+from inpui.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 from . import (
     AUTOMOWER_MISSING_MANUFACTURER_DATA_SERVICE_INFO,

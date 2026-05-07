@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import (
+from inpui.components import (
     conversation,
     cover,
     light,
@@ -14,28 +14,28 @@ from homeassistant.components import (
     vacuum,
     valve,
 )
-from homeassistant.components.cover import intent as cover_intent
-from homeassistant.components.homeassistant.exposed_entities import async_expose_entity
-from homeassistant.components.media_player import (
+from inpui.components.cover import intent as cover_intent
+from inpui.components.homeassistant.exposed_entities import async_expose_entity
+from inpui.components.media_player import (
     MediaPlayerEntityFeature,
     intent as media_player_intent,
 )
-from homeassistant.components.vacuum import intent as vaccum_intent
-from homeassistant.const import (
+from inpui.components.vacuum import intent as vaccum_intent
+from inpui.const import (
     ATTR_SUPPORTED_FEATURES,
     STATE_CLOSED,
     STATE_PAUSED,
     STATE_PLAYING,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import (
     area_registry as ar,
     entity_registry as er,
     floor_registry as fr,
     intent,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_mock_service
 

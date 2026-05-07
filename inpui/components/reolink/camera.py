@@ -7,13 +7,13 @@ import logging
 
 from reolink_aio.api import DUAL_LENS_MODELS
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     Camera,
     CameraEntityDescription,
     CameraEntityFeature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import ReolinkChannelCoordinatorEntity, ReolinkChannelEntityDescription
 from .util import ReolinkConfigEntry, ReolinkData, raise_translated_error

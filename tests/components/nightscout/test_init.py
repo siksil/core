@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from aiohttp import ClientError
 
-from homeassistant.components.nightscout.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.nightscout.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_URL
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

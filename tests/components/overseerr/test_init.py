@@ -8,17 +8,17 @@ from python_overseerr import OverseerrAuthenticationError, OverseerrConnectionEr
 from python_overseerr.models import WebhookNotificationOptions
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components import cloud
-from homeassistant.components.cloud import CloudNotAvailable
-from homeassistant.components.overseerr import (
+from inpui.components import cloud
+from inpui.components.cloud import CloudNotAvailable
+from inpui.components.overseerr import (
     CONF_CLOUDHOOK_URL,
     JSON_PAYLOAD,
     REGISTERED_NOTIFICATIONS,
 )
-from homeassistant.components.overseerr.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.overseerr.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

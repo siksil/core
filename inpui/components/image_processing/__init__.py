@@ -10,21 +10,21 @@ from typing import Any, Final, TypedDict, final
 
 import voluptuous as vol
 
-from homeassistant.components.camera import async_get_image
-from homeassistant.const import (
+from inpui.components.camera import async_get_image
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_NAME,
     CONF_ENTITY_ID,
     CONF_NAME,
     CONF_SOURCE,
 )
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_validation import make_entity_service_schema
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_validation import make_entity_service_schema
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

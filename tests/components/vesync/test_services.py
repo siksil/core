@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock
 import pytest
 from pyvesync import VeSync
 
-from homeassistant.components.vesync import async_setup
-from homeassistant.components.vesync.const import DOMAIN, SERVICE_UPDATE_DEVS
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.components.vesync import async_setup
+from inpui.components.vesync.const import DOMAIN, SERVICE_UPDATE_DEVS
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 
 async def test_async_new_device_discovery_no_entry(

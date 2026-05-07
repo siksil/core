@@ -8,10 +8,10 @@ import datetime as dt
 import time
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.typing import DiscoveryInfoType
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.typing import DiscoveryInfoType
+from inpui.util import dt as dt_util
 
 from .const import ATTR_DISCOVERY_PAYLOAD, ATTR_DISCOVERY_TOPIC
 from .models import DATA_MQTT, PublishPayloadType

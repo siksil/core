@@ -12,13 +12,13 @@ from total_connect_client.partition import TotalConnectPartition
 from total_connect_client.user import TotalConnectUser
 from total_connect_client.zone import TotalConnectZone, ZoneStatus, ZoneType
 
-from homeassistant.components.totalconnect.const import (
+from inpui.components.totalconnect.const import (
     AUTO_BYPASS,
     CODE_REQUIRED,
     CONF_USERCODES,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
 
 from .const import CODE, LOCATION_ID, PASSWORD, USERCODES, USERNAME
 

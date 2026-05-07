@@ -7,12 +7,12 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant.components import fan, switch
-from homeassistant.components.humidifier import HumidifierDeviceClass
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.const import CONF_NAME, PERCENTAGE
-from homeassistant.helpers import selector
-from homeassistant.helpers.schema_config_entry_flow import (
+from inpui.components import fan, switch
+from inpui.components.humidifier import HumidifierDeviceClass
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.const import CONF_NAME, PERCENTAGE
+from inpui.helpers import selector
+from inpui.helpers.schema_config_entry_flow import (
     SchemaConfigFlowHandler,
     SchemaFlowFormStep,
 )

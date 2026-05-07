@@ -8,9 +8,9 @@ from typing import Any
 from homematicip.base.enums import LockState, MotorState
 from homematicip.device import DoorLockDrive
 
-from homeassistant.components.lock import LockEntity, LockEntityFeature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.lock import LockEntity, LockEntityFeature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .entity import HomematicipGenericEntity
 from .hap import HomematicIPConfigEntry

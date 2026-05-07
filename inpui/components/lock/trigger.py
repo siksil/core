@@ -1,7 +1,7 @@
 """Provides triggers for locks."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.trigger import Trigger, make_entity_target_state_trigger
+from inpui.core import HomeAssistant
+from inpui.helpers.trigger import Trigger, make_entity_target_state_trigger
 
 from .const import DOMAIN, LockState
 

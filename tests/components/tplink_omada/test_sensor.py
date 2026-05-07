@@ -9,10 +9,10 @@ from syrupy.assertion import SnapshotAssertion
 from tplink_omada_client.definitions import DeviceStatus, DeviceStatusCategory
 from tplink_omada_client.devices import OmadaListDevice
 
-from homeassistant.components.tplink_omada.const import DOMAIN
-from homeassistant.components.tplink_omada.coordinator import POLL_DEVICES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.tplink_omada.const import DOMAIN
+from inpui.components.tplink_omada.coordinator import POLL_DEVICES
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import (
     MockConfigEntry,

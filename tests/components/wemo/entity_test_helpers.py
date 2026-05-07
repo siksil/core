@@ -10,9 +10,9 @@ from typing import Any
 
 import pywemo
 
-from homeassistant.components.homeassistant import DOMAIN as HA_DOMAIN
-from homeassistant.components.wemo.coordinator import async_get_coordinator
-from homeassistant.const import (
+from inpui.components.homeassistant import DOMAIN as HA_DOMAIN
+from inpui.components.wemo.coordinator import async_get_coordinator
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -20,9 +20,9 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 
 def _perform_registry_callback(coordinator):

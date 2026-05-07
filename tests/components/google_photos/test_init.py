@@ -7,9 +7,9 @@ from aiohttp import ClientError
 from google_photos_library_api.exceptions import GooglePhotosApiError
 import pytest
 
-from homeassistant.components.google_photos.const import OAUTH2_TOKEN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.google_photos.const import OAUTH2_TOKEN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.test_util.aiohttp import AiohttpClientMocker

@@ -6,11 +6,11 @@ from typing import Any
 
 from aiohomekit.model.characteristics.characteristic_types import CharacteristicsTypes
 
-from homeassistant.components.diagnostics import REDACTED, async_redact_data
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntry
+from inpui.components.diagnostics import REDACTED, async_redact_data
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntry
 
 from .connection import HKDevice
 from .const import KNOWN_DEVICES

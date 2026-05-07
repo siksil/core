@@ -10,10 +10,10 @@ from async_upnp_client.client import UpnpDevice, UpnpService
 from async_upnp_client.client_factory import UpnpFactory
 import pytest
 
-from homeassistant.components.dlna_dmr.const import DOMAIN
-from homeassistant.components.dlna_dmr.data import DlnaDmrData
-from homeassistant.const import CONF_DEVICE_ID, CONF_MAC, CONF_TYPE, CONF_URL
-from homeassistant.core import HomeAssistant
+from inpui.components.dlna_dmr.const import DOMAIN
+from inpui.components.dlna_dmr.data import DlnaDmrData
+from inpui.const import CONF_DEVICE_ID, CONF_MAC, CONF_TYPE, CONF_URL
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

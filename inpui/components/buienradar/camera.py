@@ -9,12 +9,12 @@ import logging
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components.camera import Camera
-from homeassistant.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.camera import Camera
+from inpui.const import CONF_COUNTRY_CODE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import BuienRadarConfigEntry
 from .const import CONF_DELTA, DEFAULT_COUNTRY, DEFAULT_DELTA, DEFAULT_DIMENSION

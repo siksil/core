@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from switchbot import SwitchbotOperationError
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.cover import (
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -15,12 +15,12 @@ from homeassistant.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverState,
 )
-from homeassistant.components.switchbot.const import (
+from inpui.components.switchbot.const import (
     CONF_CURTAIN_SPEED,
     CONF_RETRY_COUNT,
     DEFAULT_RETRY_COUNT,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_COVER,
     SERVICE_CLOSE_COVER_TILT,
@@ -31,8 +31,8 @@ from homeassistant.const import (
     SERVICE_STOP_COVER,
     SERVICE_STOP_COVER_TILT,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import HomeAssistantError
 
 from . import (
     GARAGE_DOOR_OPENER_SERVICE_INFO,

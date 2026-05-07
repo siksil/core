@@ -5,24 +5,24 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components import camera
-from homeassistant.components.alexa import smart_home, state_report
-from homeassistant.components.climate import ClimateEntityFeature
-from homeassistant.components.cover import CoverDeviceClass, CoverEntityFeature
-from homeassistant.components.media_player import MediaPlayerEntityFeature
-from homeassistant.components.vacuum import VacuumEntityFeature
-from homeassistant.components.valve import SERVICE_STOP_VALVE, ValveEntityFeature
-from homeassistant.const import (
+from inpui.components import camera
+from inpui.components.alexa import smart_home, state_report
+from inpui.components.climate import ClimateEntityFeature
+from inpui.components.cover import CoverDeviceClass, CoverEntityFeature
+from inpui.components.media_player import MediaPlayerEntityFeature
+from inpui.components.vacuum import VacuumEntityFeature
+from inpui.components.valve import SERVICE_STOP_VALVE, ValveEntityFeature
+from inpui.const import (
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import Context, Event, HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import entityfilter
-from homeassistant.setup import async_setup_component
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.core import Context, Event, HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import entityfilter
+from inpui.setup import async_setup_component
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from .test_common import (
     MockConfig,

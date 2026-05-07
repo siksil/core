@@ -5,7 +5,7 @@ from __future__ import annotations
 import enum
 import socket
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "freebox"
 

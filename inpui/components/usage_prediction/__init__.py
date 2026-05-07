@@ -6,11 +6,11 @@ import asyncio
 from datetime import timedelta
 from typing import Any
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util import dt as dt_util
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
+from inpui.util import dt as dt_util
 
 from . import common_control
 from .const import DATA_CACHE, DOMAIN

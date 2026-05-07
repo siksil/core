@@ -6,19 +6,19 @@ from typing import Any
 
 from eufylife_ble_client import MODEL_TO_NAME
 
-from homeassistant.components.bluetooth import async_address_present
-from homeassistant.components.sensor import (
+from inpui.components.bluetooth import async_address_present
+from inpui.components.sensor import (
     RestoreSensor,
     SensorDeviceClass,
     SensorEntity,
     SensorStateClass,
 )
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN, UnitOfMass
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN, UnitOfMass
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from .models import EufyLifeConfigEntry, EufyLifeData
 

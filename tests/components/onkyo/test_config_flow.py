@@ -6,7 +6,7 @@ from aioonkyo import ReceiverInfo
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.onkyo.const import (
+from inpui.components.onkyo.const import (
     DOMAIN,
     OPTION_INPUT_SOURCES,
     OPTION_LISTENING_MODES,
@@ -14,11 +14,11 @@ from homeassistant.components.onkyo.const import (
     OPTION_MAX_VOLUME_DEFAULT,
     OPTION_VOLUME_RESOLUTION,
 )
-from homeassistant.config_entries import SOURCE_IGNORE, SOURCE_USER
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_IGNORE, SOURCE_USER
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     SsdpServiceInfo,
 )

@@ -14,10 +14,10 @@ from gardena_bluetooth.const import ScanService
 from gardena_bluetooth.parse import ManufacturerData, ProductType
 import voluptuous as vol
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth import BluetoothServiceInfo
-from homeassistant.config_entries import SOURCE_BLUETOOTH, ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
+from inpui.components import bluetooth
+from inpui.components.bluetooth import BluetoothServiceInfo
+from inpui.config_entries import SOURCE_BLUETOOTH, ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_ADDRESS, CONF_CLIENT_ID, CONF_PIN
 
 from .const import DOMAIN, LOGGER
 

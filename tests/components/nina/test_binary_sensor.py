@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.nina.const import (
+from inpui.components.nina.const import (
     ATTR_HEADLINE,
     CONF_AREA_FILTER,
     CONF_FILTERS,
@@ -16,9 +16,9 @@ from homeassistant.components.nina.const import (
     CONF_REGIONS,
     DOMAIN,
 )
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import setup_platform
 

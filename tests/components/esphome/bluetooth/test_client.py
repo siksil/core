@@ -11,8 +11,8 @@ from bleak_esphome.backend.scanner import (  # pylint: disable=no-name-in-module
 )
 import pytest
 
-from homeassistant.components.bluetooth import HaBluetoothConnector
-from homeassistant.core import HomeAssistant
+from inpui.components.bluetooth import HaBluetoothConnector
+from inpui.core import HomeAssistant
 
 from tests.components.bluetooth import generate_ble_device
 

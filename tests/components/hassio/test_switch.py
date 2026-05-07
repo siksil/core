@@ -8,10 +8,10 @@ from unittest.mock import AsyncMock, Mock, patch
 from aiohasupervisor.models import AddonState, InstalledAddonComplete
 import pytest
 
-from homeassistant.components.hassio import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.hassio import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import MOCK_REPOSITORIES, MOCK_STORE_ADDONS
 

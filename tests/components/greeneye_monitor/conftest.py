@@ -6,11 +6,11 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.greeneye_monitor import DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import UnitOfElectricPotential, UnitOfPower
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.greeneye_monitor import DOMAIN
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import UnitOfElectricPotential, UnitOfPower
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import add_listeners
 

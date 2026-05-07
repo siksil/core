@@ -5,10 +5,10 @@ from unittest.mock import call, patch
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.dynalite import const as dynalite
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.dynalite import const as dynalite
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

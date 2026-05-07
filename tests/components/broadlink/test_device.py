@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 import broadlink.exceptions as blke
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.components.broadlink.device import get_domains
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_FRIENDLY_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.broadlink.const import DOMAIN
+from inpui.components.broadlink.device import get_domains
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_FRIENDLY_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import get_device
 

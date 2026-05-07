@@ -26,18 +26,18 @@ from aioimmich.tags.models import ImmichTag
 from aioimmich.users.models import ImmichUserObject
 import pytest
 
-from homeassistant.components.immich.const import DOMAIN
-from homeassistant.components.media_source import PlayMedia
-from homeassistant.const import (
+from inpui.components.immich.const import DOMAIN
+from inpui.components.media_source import PlayMedia
+from inpui.const import (
     CONF_API_KEY,
     CONF_HOST,
     CONF_PORT,
     CONF_SSL,
     CONF_VERIFY_SSL,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.aiohttp import MockStreamReaderChunked
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.aiohttp import MockStreamReaderChunked
 
 from .const import (
     MOCK_ALBUM_WITH_ASSETS,

@@ -2,10 +2,10 @@
 
 from knocki import Event, EventType, KnockiClient, Trigger
 
-from homeassistant.components.event import EventEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import KnockiConfigEntry
 from .const import DOMAIN

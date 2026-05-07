@@ -6,8 +6,8 @@ from advantage_air import ApiError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.advantage_air.climate import ADVANTAGE_AIR_MYAUTO
-from homeassistant.components.climate import (
+from inpui.components.advantage_air.climate import ADVANTAGE_AIR_MYAUTO
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
     ATTR_HVAC_MODE,
@@ -27,10 +27,10 @@ from homeassistant.components.climate import (
     SERVICE_TURN_ON,
     HVACMode,
 )
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from . import add_mock_config
 

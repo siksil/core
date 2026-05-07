@@ -11,13 +11,13 @@ from sqlalchemy import create_engine, inspect
 from sqlalchemy.exc import OperationalError, SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from homeassistant.components import recorder
-from homeassistant.components.recorder import core, migration, statistics
-from homeassistant.components.recorder.queries import select_event_type_ids
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import EVENT_STATE_CHANGED
-from homeassistant.core import Event, EventOrigin, State
-from homeassistant.util import dt as dt_util
+from inpui.components import recorder
+from inpui.components.recorder import core, migration, statistics
+from inpui.components.recorder.queries import select_event_type_ids
+from inpui.components.recorder.util import session_scope
+from inpui.const import EVENT_STATE_CHANGED
+from inpui.core import Event, EventOrigin, State
+from inpui.util import dt as dt_util
 
 from .common import (
     async_drop_index,

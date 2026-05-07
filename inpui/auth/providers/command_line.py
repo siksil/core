@@ -10,8 +10,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_COMMAND
-from homeassistant.exceptions import HomeAssistantError
+from inpui.const import CONF_COMMAND
+from inpui.exceptions import HomeAssistantError
 
 from ..models import AuthFlowContext, AuthFlowResult, Credentials, UserMeta
 from . import AUTH_PROVIDER_SCHEMA, AUTH_PROVIDERS, AuthProvider, LoginFlow

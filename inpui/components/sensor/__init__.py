@@ -14,24 +14,24 @@ from typing import Any, Final, Self, cast, final, override
 
 from propcache.api import cached_property
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (  # noqa: F401
+from inpui.config_entries import ConfigEntry
+from inpui.const import (  # noqa: F401
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_UNIT_OF_MEASUREMENT,
     EntityCategory,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.entity import Entity, EntityDescription
-from homeassistant.helpers.entity_component import EntityComponent
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.helpers.restore_state import ExtraStoredData, RestoreEntity
-from homeassistant.helpers.typing import UNDEFINED, ConfigType, StateType, UndefinedType
-from homeassistant.util import dt as dt_util
-from homeassistant.util.enum import try_parse_enum
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant, State, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.entity import Entity, EntityDescription
+from inpui.helpers.entity_component import EntityComponent
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.helpers.restore_state import ExtraStoredData, RestoreEntity
+from inpui.helpers.typing import UNDEFINED, ConfigType, StateType, UndefinedType
+from inpui.util import dt as dt_util
+from inpui.util.enum import try_parse_enum
+from inpui.util.hass_dict import HassKey
 
 from .const import (  # noqa: F401
     AMBIGUOUS_UNITS,

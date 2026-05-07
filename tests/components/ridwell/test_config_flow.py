@@ -6,14 +6,14 @@ from aioridwell.errors import InvalidCredentialsError, RidwellError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ridwell.const import (
+from inpui.components.ridwell.const import (
     CALENDAR_TITLE_ROTATING,
     CONF_CALENDAR_TITLE,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_PASSWORD, TEST_USERNAME
 

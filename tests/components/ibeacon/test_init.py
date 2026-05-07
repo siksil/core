@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components.ibeacon.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components.ibeacon.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import BLUECHARM_BEACON_SERVICE_INFO
 

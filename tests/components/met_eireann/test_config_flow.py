@@ -5,10 +5,10 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.met_eireann.const import DOMAIN, HOME_LOCATION_NAME
-from homeassistant.const import CONF_ELEVATION, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.met_eireann.const import DOMAIN, HOME_LOCATION_NAME
+from inpui.const import CONF_ELEVATION, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 @pytest.fixture(name="met_eireann_setup", autouse=True)

@@ -7,9 +7,9 @@ from datetime import datetime
 from freezegun.api import FrozenDateTimeFactory
 from holidays.utils import country_holidays
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.util.dt import UTC
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.util.dt import UTC
 
 from . import TEST_CONFIG_EXAMPLE_1, TEST_CONFIG_WITH_PROVINCE, init_integration
 

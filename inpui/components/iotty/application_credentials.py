@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 OAUTH2_AUTHORIZE = "https://auth.iotty.com/.auth/oauth2/login"
 OAUTH2_TOKEN = "https://auth.iotty.com/.auth/oauth2/token"

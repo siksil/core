@@ -13,18 +13,18 @@ import httpx
 from httpx import URL, Request, Response
 import pytest
 
-from homeassistant.components.anthropic.const import DOMAIN
-from homeassistant.config_entries import (
+from inpui.components.anthropic.const import DOMAIN
+from inpui.config_entries import (
     ConfigEntryDisabler,
     ConfigEntryState,
     ConfigSubentryData,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

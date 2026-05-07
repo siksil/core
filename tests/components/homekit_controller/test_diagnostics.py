@@ -3,9 +3,9 @@
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.homekit_controller.const import KNOWN_DEVICES
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.homekit_controller.const import KNOWN_DEVICES
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .common import setup_accessories_from_file, setup_test_accessories
 

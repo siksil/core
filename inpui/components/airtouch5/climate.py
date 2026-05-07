@@ -21,7 +21,7 @@ from airtouch5py.packets.zone_control import (
 from airtouch5py.packets.zone_name import ZoneName
 from airtouch5py.packets.zone_status import ZonePowerState, ZoneStatusZone
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     FAN_AUTO,
     FAN_DIFFUSE,
     FAN_FOCUS,
@@ -34,10 +34,10 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import ATTR_TEMPERATURE, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import Airtouch5ConfigEntry
 from .const import DOMAIN, FAN_INTELLIGENT_AUTO, FAN_TURBO

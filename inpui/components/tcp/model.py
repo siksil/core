@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import TypedDict
 
-from homeassistant.helpers.template import Template
+from inpui.helpers.template import Template
 
 
 class TcpSensorConfig(TypedDict):

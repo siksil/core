@@ -7,8 +7,8 @@ import httpx
 from openai import RateLimitError
 import pytest
 
-from homeassistant.components import stt
-from homeassistant.core import HomeAssistant
+from inpui.components import stt
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

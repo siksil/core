@@ -10,9 +10,9 @@ from aioamazondevices.api import AmazonEchoApi
 from aioamazondevices.const.devices import SPEAKER_GROUP_FAMILY
 from aioamazondevices.structures import AmazonDevice
 
-from homeassistant.components.notify import NotifyEntity, NotifyEntityDescription
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.notify import NotifyEntity, NotifyEntityDescription
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import AmazonConfigEntry
 from .entity import AmazonEntity

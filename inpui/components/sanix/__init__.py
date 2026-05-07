@@ -2,9 +2,9 @@
 
 from sanix import Sanix
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN
 from .coordinator import SanixCoordinator

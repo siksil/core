@@ -12,15 +12,15 @@ from typing import Any, Protocol
 import aiohttp
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import (
     aiohttp_client,
     config_validation as cv,
     integration_platform,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
 
 _LOGGER = logging.getLogger(__name__)
 

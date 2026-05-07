@@ -6,11 +6,11 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.melnor.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.const import CONF_ADDRESS, CONF_MAC
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.melnor.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.const import CONF_ADDRESS, CONF_MAC
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import (
     FAKE_ADDRESS_1,

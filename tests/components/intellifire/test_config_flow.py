@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock
 from intellifire4py.exceptions import LoginError
 
 from homeassistant import config_entries
-from homeassistant.components.intellifire.const import (
+from inpui.components.intellifire.const import (
     API_MODE_CLOUD,
     API_MODE_LOCAL,
     CONF_CONTROL_MODE,
@@ -13,10 +13,10 @@ from homeassistant.components.intellifire.const import (
     CONF_SERIAL,
     DOMAIN,
 )
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

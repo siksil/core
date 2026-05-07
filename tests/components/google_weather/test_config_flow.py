@@ -6,20 +6,20 @@ from google_weather_api import GoogleWeatherApiError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_weather.const import (
+from inpui.components.google_weather.const import (
     CONF_REFERRER,
     DOMAIN,
     SECTION_API_KEY_OPTIONS,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LATITUDE,
     CONF_LOCATION,
     CONF_LONGITUDE,
     CONF_NAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry, get_schema_suggested_value
 

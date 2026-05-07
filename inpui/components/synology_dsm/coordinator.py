@@ -14,10 +14,10 @@ from synology_dsm.exceptions import (
     SynologyDSMNotLoggedInException,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .common import SynoApi, raise_config_entry_auth_error
 from .const import (

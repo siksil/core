@@ -9,8 +9,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.freedompro.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.freedompro.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import DEVICES, DEVICES_STATE
 

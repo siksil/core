@@ -8,13 +8,13 @@ import logging
 import voluptuous as vol
 from waterfurnace.waterfurnace import WaterFurnace, WFCredentialError, WFException
 
-from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME, Platform
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, issue_registry as ir
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
+from inpui.const import CONF_PASSWORD, CONF_USERNAME, Platform
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, issue_registry as ir
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN, INTEGRATION_TITLE
 from .coordinator import WaterFurnaceCoordinator

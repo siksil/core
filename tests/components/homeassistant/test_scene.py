@@ -5,12 +5,12 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.homeassistant import scene as ha_scene
-from homeassistant.components.homeassistant.scene import EVENT_SCENE_RELOADED
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.components.homeassistant import scene as ha_scene
+from inpui.components.homeassistant.scene import EVENT_SCENE_RELOADED
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.common import async_capture_events, async_mock_service
 

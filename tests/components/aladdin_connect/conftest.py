@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.aladdin_connect import DOMAIN
-from homeassistant.components.application_credentials import (
+from inpui.components.aladdin_connect import DOMAIN
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .const import CLIENT_ID, CLIENT_SECRET, USER_ID
 

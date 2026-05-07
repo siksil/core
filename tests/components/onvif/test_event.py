@@ -2,10 +2,10 @@
 
 from onvif_parsers.model import EventEntity
 
-from homeassistant.components.onvif.models import Capabilities, Event
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.onvif.models import Capabilities, Event
+from inpui.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MAC, setup_onvif_integration
 

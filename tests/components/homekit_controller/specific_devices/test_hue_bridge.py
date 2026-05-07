@@ -1,8 +1,8 @@
 """Tests for handling accessories on a Hue bridge via HomeKit."""
 
-from homeassistant.components.sensor import SensorStateClass
-from homeassistant.const import PERCENTAGE, EntityCategory
-from homeassistant.core import HomeAssistant
+from inpui.components.sensor import SensorStateClass
+from inpui.const import PERCENTAGE, EntityCategory
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

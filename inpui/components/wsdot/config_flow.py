@@ -7,7 +7,7 @@ from typing import Any
 import voluptuous as vol
 import wsdot as wsdot_api
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_USER,
     ConfigEntry,
     ConfigFlow,
@@ -16,9 +16,9 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_ID, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.selector import SelectSelector, SelectSelectorConfig
+from inpui.const import CONF_API_KEY, CONF_ID, CONF_NAME
+from inpui.core import callback
+from inpui.helpers.selector import SelectSelector, SelectSelectorConfig
 
 from .const import CONF_TRAVEL_TIMES, DOMAIN, SUBENTRY_TRAVEL_TIMES
 

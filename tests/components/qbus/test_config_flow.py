@@ -7,14 +7,14 @@ from unittest.mock import patch
 import pytest
 from qbusmqttapi.discovery import QbusDiscovery
 
-from homeassistant.components.qbus.const import CONF_SERIAL_NUMBER, DOMAIN
-from homeassistant.components.qbus.coordinator import QbusConfigCoordinator
-from homeassistant.config_entries import SOURCE_MQTT, SOURCE_USER
-from homeassistant.const import CONF_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.mqtt import MqttServiceInfo
-from homeassistant.util.json import JsonObjectType
+from inpui.components.qbus.const import CONF_SERIAL_NUMBER, DOMAIN
+from inpui.components.qbus.coordinator import QbusConfigCoordinator
+from inpui.config_entries import SOURCE_MQTT, SOURCE_USER
+from inpui.const import CONF_ID
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.mqtt import MqttServiceInfo
+from inpui.util.json import JsonObjectType
 
 from .const import TOPIC_CONFIG
 

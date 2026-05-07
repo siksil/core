@@ -5,17 +5,17 @@ from unittest.mock import MagicMock, patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components import sensor
-from homeassistant.components.geo_rss_events import sensor as geo_rss_events
-from homeassistant.const import (
+from inpui.components import sensor
+from inpui.components.geo_rss_events import sensor as geo_rss_events
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
     ATTR_UNIT_OF_MEASUREMENT,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import assert_setup_component, async_fire_time_changed
 
@@ -76,7 +76,7 @@ async def test_setup(
     with assert_setup_component(1, sensor.DOMAIN):
         assert await async_setup_component(hass, sensor.DOMAIN, VALID_CONFIG)
         # Artificially trigger update.
-        hass.bus.fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.fire(EVENT_INPUI_START)
         # Collect events.
         await hass.async_block_till_done()
 
@@ -138,7 +138,7 @@ async def test_setup_with_categories(hass: HomeAssistant, mock_feed) -> None:
             hass, sensor.DOMAIN, VALID_CONFIG_WITH_CATEGORIES
         )
         # Artificially trigger update.
-        hass.bus.fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.fire(EVENT_INPUI_START)
         # Collect events.
         await hass.async_block_till_done()
 

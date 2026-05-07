@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 
 from homeassistant import setup
-from homeassistant.components.command_line.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.command_line.const import DOMAIN
+from inpui.core import HomeAssistant
 
 
 @pytest.fixture(name="get_config")

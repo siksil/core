@@ -47,9 +47,9 @@ from aioqsw.const import (
     API_VERSION,
 )
 
-from homeassistant.components.qnap_qsw import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.qnap_qsw import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -6,8 +6,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyloadapi.types import StatusServerResponse
 import pytest
 
-from homeassistant.components.pyload.const import DEFAULT_NAME, DOMAIN
-from homeassistant.const import (
+from inpui.components.pyload.const import DEFAULT_NAME, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -16,7 +16,7 @@ from homeassistant.const import (
     CONF_USERNAME,
     CONF_VERIFY_SSL,
 )
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
+from inpui.helpers.service_info.hassio import HassioServiceInfo
 
 from tests.common import MockConfigEntry
 

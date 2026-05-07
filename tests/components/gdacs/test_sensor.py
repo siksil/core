@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from homeassistant.components.gdacs import DEFAULT_SCAN_INTERVAL
-from homeassistant.components.gdacs.const import CONF_CATEGORIES, DOMAIN
-from homeassistant.components.gdacs.sensor import (
+from inpui.components.gdacs import DEFAULT_SCAN_INTERVAL
+from inpui.components.gdacs.const import CONF_CATEGORIES, DOMAIN
+from inpui.components.gdacs.sensor import (
     ATTR_CREATED,
     ATTR_LAST_UPDATE,
     ATTR_LAST_UPDATE_SUCCESSFUL,
@@ -14,16 +14,16 @@ from homeassistant.components.gdacs.sensor import (
     ATTR_STATUS,
     ATTR_UPDATED,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_LATITUDE,
     CONF_LONGITUDE,
     CONF_RADIUS,
     CONF_SCAN_INTERVAL,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from . import _generate_mock_feed_entry
 
@@ -80,7 +80,7 @@ async def test_setup(hass: HomeAssistant) -> None:
         config_entry.add_to_hass(hass)
         assert await hass.config_entries.async_setup(config_entry.entry_id)
         # Artificially trigger update and collect events.
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
 
         # 3 geolocation and 1 sensor entities

@@ -10,7 +10,7 @@ from aiohttp import StreamReader
 from synology_dsm.api.file_station import SynoFileStation
 from synology_dsm.exceptions import SynologyDSMAPIErrorException
 
-from homeassistant.components.backup import (
+from inpui.components.backup import (
     AgentBackup,
     BackupAgent,
     BackupAgentError,
@@ -18,10 +18,10 @@ from homeassistant.components.backup import (
     OnProgressCallback,
     suggested_filename,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.aiohttp_client import ChunkAsyncStreamIterator
-from homeassistant.helpers.json import json_dumps
-from homeassistant.util.json import JsonObjectType, json_loads_object
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.aiohttp_client import ChunkAsyncStreamIterator
+from inpui.helpers.json import json_dumps
+from inpui.util.json import JsonObjectType, json_loads_object
 
 from .const import (
     CONF_BACKUP_PATH,

@@ -6,7 +6,7 @@ from unittest.mock import Mock
 
 from yalesmartalarmclient import YaleSmartAlarmData
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

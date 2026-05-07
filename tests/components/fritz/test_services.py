@@ -10,14 +10,14 @@ from fritzconnection.core.exceptions import (
 import pytest
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.fritz.const import DOMAIN
-from homeassistant.components.fritz.services import (
+from inpui.components.fritz.const import DOMAIN
+from inpui.components.fritz.services import (
     SERVICE_DIAL,
     SERVICE_SET_GUEST_WIFI_PW,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from .const import MOCK_MESH_MASTER_MAC, MOCK_USER_DATA
 

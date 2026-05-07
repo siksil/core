@@ -11,10 +11,10 @@ from onvif_parsers.model import EventEntity
 from zeep.exceptions import Fault
 
 from homeassistant import config_entries
-from homeassistant.components.onvif import config_flow
-from homeassistant.components.onvif.const import CONF_SNAPSHOT_AUTH
-from homeassistant.components.onvif.event import EventManager
-from homeassistant.components.onvif.models import (
+from inpui.components.onvif import config_flow
+from inpui.components.onvif.const import CONF_SNAPSHOT_AUTH
+from inpui.components.onvif.event import EventManager
+from inpui.components.onvif.models import (
     Capabilities,
     DeviceInfo,
     Event,
@@ -24,8 +24,8 @@ from homeassistant.components.onvif.models import (
     Video,
     WebHookManagerState,
 )
-from homeassistant.const import HTTP_DIGEST_AUTHENTICATION
-from homeassistant.core import HomeAssistant
+from inpui.const import HTTP_DIGEST_AUTHENTICATION
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -5,23 +5,23 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import lock, mqtt
-from homeassistant.components.lock import (
+from inpui.components import lock, mqtt
+from inpui.components.lock import (
     SERVICE_LOCK,
     SERVICE_OPEN,
     SERVICE_UNLOCK,
     LockEntityFeature,
     LockState,
 )
-from homeassistant.components.mqtt.lock import MQTT_LOCK_ATTRIBUTES_BLOCKED
-from homeassistant.const import (
+from inpui.components.mqtt.lock import MQTT_LOCK_ATTRIBUTES_BLOCKED
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_CODE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

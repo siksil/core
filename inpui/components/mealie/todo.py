@@ -12,17 +12,17 @@ from aiomealie import (
     ShoppingList,
 )
 
-from homeassistant.components.todo import (
+from inpui.components.todo import (
     DOMAIN as TODO_DOMAIN,
     TodoItem,
     TodoItemStatus,
     TodoListEntity,
     TodoListEntityFeature,
 )
-from homeassistant.core import HomeAssistant, ServiceResponse
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, ServiceResponse
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import DOMAIN
 from .coordinator import MealieConfigEntry, MealieShoppingListCoordinator

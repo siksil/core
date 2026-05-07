@@ -12,18 +12,18 @@ from mastodon.Mastodon import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.mastodon.config_flow import MastodonConfigFlow
-from homeassistant.components.mastodon.const import CONF_BASE_URL, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import (
+from inpui.components.mastodon.config_flow import MastodonConfigFlow
+from inpui.components.mastodon.const import CONF_BASE_URL, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 

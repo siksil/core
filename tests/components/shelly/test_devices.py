@@ -7,13 +7,13 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     DOMAIN,
     MODEL_FRANKEVER_IRRIGATION_CONTROLLER,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceRegistry
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceRegistry
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import force_uptime_value, init_integration, snapshot_device_entities
 

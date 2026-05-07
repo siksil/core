@@ -7,11 +7,11 @@ import logging
 from hdate import HDateInfo, Location, Zmanim
 from hdate.translator import Language, set_language
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import event
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-import homeassistant.util.dt as dt_util
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import event
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+import inpui.util.dt as dt_util
 
 from .const import DOMAIN
 

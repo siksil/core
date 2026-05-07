@@ -5,24 +5,24 @@ from unittest.mock import Mock, patch
 from pynetgear import DEFAULT_USER
 import pytest
 
-from homeassistant.components.netgear.const import (
+from inpui.components.netgear.const import (
     CONF_CONSIDER_HOME,
     DOMAIN,
     MODELS_PORT_5555,
     PORT_80,
     PORT_5555,
 )
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import (
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_MODEL_NUMBER,
     ATTR_UPNP_PRESENTATION_URL,
     ATTR_UPNP_SERIAL,

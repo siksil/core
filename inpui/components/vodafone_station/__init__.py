@@ -3,8 +3,8 @@
 from aiohttp import ClientSession, CookieJar
 from aiovodafone.models import get_device_type
 
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
 
 from .const import _LOGGER, CONF_DEVICE_DETAILS, DEVICE_TYPE, DEVICE_URL
 from .coordinator import VodafoneConfigEntry, VodafoneStationRouter

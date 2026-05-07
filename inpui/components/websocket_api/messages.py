@@ -8,21 +8,21 @@ from typing import Any, Final
 
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     COMPRESSED_STATE_ATTRIBUTES,
     COMPRESSED_STATE_CONTEXT,
     COMPRESSED_STATE_LAST_CHANGED,
     COMPRESSED_STATE_LAST_UPDATED,
     COMPRESSED_STATE_STATE,
 )
-from homeassistant.core import CompressedState, Event, EventStateChangedData
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.json import (
+from inpui.core import CompressedState, Event, EventStateChangedData
+from inpui.helpers import config_validation as cv
+from inpui.helpers.json import (
     JSON_DUMP,
     find_paths_unserializable_data,
     json_bytes,
 )
-from homeassistant.util.json import format_unserializable_data
+from inpui.util.json import format_unserializable_data
 
 from . import const
 

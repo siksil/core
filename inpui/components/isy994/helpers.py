@@ -24,8 +24,8 @@ from pyisy.constants import (
 from pyisy.nodes import Group, Node, Nodes
 from pyisy.programs import Programs
 
-from homeassistant.const import ATTR_MANUFACTURER, ATTR_MODEL, Platform
-from homeassistant.helpers.device_registry import DeviceInfo
+from inpui.const import ATTR_MANUFACTURER, ATTR_MODEL, Platform
+from inpui.helpers.device_registry import DeviceInfo
 
 from .const import (
     _LOGGER,

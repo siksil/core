@@ -6,7 +6,7 @@ import pytest
 from pytradfri.const import ATTR_DEVICE_STATE, ATTR_LIGHT_CONTROL, ATTR_REACHABLE_STATE
 from pytradfri.device import Device
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_MODE,
     ATTR_COLOR_TEMP_KELVIN,
@@ -17,15 +17,15 @@ from homeassistant.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     ColorMode,
 )
-from homeassistant.components.tradfri.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.tradfri.const import DOMAIN
+from inpui.const import (
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import CommandStore, setup_integration
 

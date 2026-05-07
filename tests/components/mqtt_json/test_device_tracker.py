@@ -8,17 +8,17 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.device_tracker.legacy import (
+from inpui.components.device_tracker.legacy import (
     DOMAIN as DT_DOMAIN,
     YAML_DEVICES,
     AsyncSeeCallback,
 )
-from homeassistant.components.mqtt import DOMAIN as MQTT_DOMAIN
-from homeassistant.config_entries import ConfigEntryDisabler
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.setup import async_setup_component
+from inpui.components.mqtt import DOMAIN as MQTT_DOMAIN
+from inpui.config_entries import ConfigEntryDisabler
+from inpui.const import CONF_PLATFORM
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_mqtt_message
 from tests.typing import MqttMockHAClient

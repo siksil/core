@@ -6,9 +6,9 @@ from unittest.mock import patch
 import pytest
 import requests_mock
 
-from homeassistant.components.dremel_3d_printer.const import DOMAIN
-from homeassistant.const import CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.dremel_3d_printer.const import DOMAIN
+from inpui.const import CONF_HOST
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry, load_fixture
 

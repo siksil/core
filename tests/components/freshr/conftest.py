@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyfreshr.models import DeviceReadings, DeviceSummary
 import pytest
 
-from homeassistant.components.freshr.const import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.freshr.const import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

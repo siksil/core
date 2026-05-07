@@ -27,26 +27,26 @@ from cryptography.x509 import load_der_x509_certificate, load_pem_x509_certifica
 import voluptuous as vol
 import yaml
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.button import ButtonDeviceClass
-from homeassistant.components.climate import (
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.button import ButtonDeviceClass
+from inpui.components.climate import (
     DEFAULT_MAX_HUMIDITY,
     DEFAULT_MAX_TEMP,
     DEFAULT_MIN_HUMIDITY,
     DEFAULT_MIN_TEMP,
     PRESET_NONE,
 )
-from homeassistant.components.cover import CoverDeviceClass
-from homeassistant.components.file_upload import process_uploaded_file
-from homeassistant.components.hassio import AddonError, AddonManager, AddonState
-from homeassistant.components.image import DEFAULT_CONTENT_TYPE
-from homeassistant.components.light import (
+from inpui.components.cover import CoverDeviceClass
+from inpui.components.file_upload import process_uploaded_file
+from inpui.components.hassio import AddonError, AddonManager, AddonState
+from inpui.components.image import DEFAULT_CONTENT_TYPE
+from inpui.components.light import (
     DEFAULT_MAX_KELVIN,
     DEFAULT_MIN_KELVIN,
     VALID_COLOR_MODES,
     valid_supported_color_modes,
 )
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEFAULT_MAX_VALUE,
     DEFAULT_MIN_VALUE,
     DEFAULT_STEP,
@@ -54,16 +54,16 @@ from homeassistant.components.number import (
     NumberDeviceClass,
     NumberMode,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS,
     DEVICE_CLASS_UNITS,
     STATE_CLASS_UNITS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.switch import SwitchDeviceClass
-from homeassistant.components.valve import ValveDeviceClass, ValveState
-from homeassistant.config_entries import (
+from inpui.components.switch import SwitchDeviceClass
+from inpui.components.valve import ValveDeviceClass, ValveState
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigEntry,
     ConfigFlow,
@@ -72,7 +72,7 @@ from homeassistant.config_entries import (
     OptionsFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONFIGURATION_URL,
     ATTR_HW_VERSION,
     ATTR_MANUFACTURER,
@@ -113,12 +113,12 @@ from homeassistant.const import (
     Platform,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, async_get_hass, callback
-from homeassistant.data_entry_flow import AbortFlow, SectionConfig, section
-from homeassistant.helpers import config_validation as cv, entity_registry as er
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.json import json_dumps
-from homeassistant.helpers.selector import (
+from inpui.core import HomeAssistant, async_get_hass, callback
+from inpui.data_entry_flow import AbortFlow, SectionConfig, section
+from inpui.helpers import config_validation as cv, entity_registry as er
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.json import json_dumps
+from inpui.helpers.selector import (
     BooleanSelector,
     FileSelector,
     FileSelectorConfig,
@@ -136,9 +136,9 @@ from homeassistant.helpers.selector import (
     TextSelectorConfig,
     TextSelectorType,
 )
-from homeassistant.helpers.service_info.hassio import HassioServiceInfo
-from homeassistant.util.json import JSON_DECODE_EXCEPTIONS, json_loads
-from homeassistant.util.unit_conversion import TemperatureConverter
+from inpui.helpers.service_info.hassio import HassioServiceInfo
+from inpui.util.json import JSON_DECODE_EXCEPTIONS, json_loads
+from inpui.util.unit_conversion import TemperatureConverter
 
 from .addon import get_addon_manager
 from .client import MqttClientSetup

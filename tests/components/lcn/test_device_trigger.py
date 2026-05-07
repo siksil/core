@@ -6,14 +6,14 @@ from pypck.lcn_defs import AccessControlPeriphery, KeyAction, SendKeyCommand
 from pytest_unordered import unordered
 import voluptuous_serialize
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.lcn import device_trigger
-from homeassistant.components.lcn.const import DOMAIN, KEY_ACTIONS, SENDKEYS
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.lcn import device_trigger
+from inpui.components.lcn.const import DOMAIN, KEY_ACTIONS, SENDKEYS
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.setup import async_setup_component
 
 from .conftest import MockConfigEntry, get_device, init_integration
 

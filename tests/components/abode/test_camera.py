@@ -2,11 +2,11 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.abode.const import DOMAIN
-from homeassistant.components.camera import DOMAIN as CAMERA_DOMAIN, CameraState
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.abode.const import DOMAIN
+from inpui.components.camera import DOMAIN as CAMERA_DOMAIN, CameraState
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import setup_platform
 

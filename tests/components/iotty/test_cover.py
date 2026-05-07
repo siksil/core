@@ -11,7 +11,7 @@ from iottycloud.verbs import (
     STATUS_STATIONATRY,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     DOMAIN as COVER_DOMAIN,
     SERVICE_CLOSE_COVER,
@@ -20,11 +20,11 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER,
     CoverState,
 )
-from homeassistant.components.iotty.const import DOMAIN
-from homeassistant.components.iotty.coordinator import UPDATE_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.components.iotty.const import DOMAIN
+from inpui.components.iotty.coordinator import UPDATE_INTERVAL
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 from .conftest import test_sh_one_added
 

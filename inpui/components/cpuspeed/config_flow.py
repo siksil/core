@@ -6,7 +6,7 @@ from typing import Any
 
 from cpuinfo import cpuinfo
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DOMAIN
 

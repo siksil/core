@@ -11,20 +11,20 @@ from requests import Response
 from requests.exceptions import HTTPError
 
 from homeassistant import config_entries
-from homeassistant.components import sonos
-from homeassistant.components.sonos.const import (
+from inpui.components import sonos
+from inpui.components.sonos.const import (
     DISCOVERY_INTERVAL,
     SONOS_SPEAKER_ACTIVITY,
     UPNP_ISSUE_ID,
 )
-from homeassistant.components.sonos.exception import SonosUpdateError
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components.sonos.exception import SonosUpdateError
+from inpui.core import HomeAssistant, callback
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er, issue_registry as ir
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from .conftest import MockSoCo, SoCoMockFactory
 

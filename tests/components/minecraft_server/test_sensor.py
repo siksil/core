@@ -13,8 +13,8 @@ from mcstatus.responses import (
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from .const import (
     TEST_BEDROCK_STATUS_RESPONSE,

@@ -9,7 +9,7 @@ from pypck.lcn_defs import Var, VarUnit, VarValue
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_HVAC_MODE,
     ATTR_TARGET_TEMP_HIGH,
@@ -19,17 +19,17 @@ from homeassistant.components.climate import (
     SERVICE_SET_TEMPERATURE,
     HVACMode,
 )
-from homeassistant.components.lcn.climate import SCAN_INTERVAL
-from homeassistant.components.lcn.helpers import get_device_connection
-from homeassistant.const import (
+from inpui.components.lcn.climate import SCAN_INTERVAL
+from inpui.components.lcn.helpers import get_device_connection
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
 
 from .conftest import MockConfigEntry, MockDeviceConnection, init_integration
 

@@ -4,9 +4,9 @@ from typing import Any
 
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.environment_canada.const import CONF_STATION
-from homeassistant.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
-from homeassistant.core import HomeAssistant
+from inpui.components.environment_canada.const import CONF_STATION
+from inpui.const import CONF_LANGUAGE, CONF_LATITUDE, CONF_LONGITUDE
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

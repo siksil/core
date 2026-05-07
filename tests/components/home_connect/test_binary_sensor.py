@@ -15,21 +15,21 @@ from aiohomeconnect.model import (
 from aiohomeconnect.model.error import HomeConnectApiError
 import pytest
 
-from homeassistant.components.home_connect.const import (
+from inpui.components.home_connect.const import (
     DOMAIN,
     REFRIGERATION_STATUS_DOOR_CLOSED,
     REFRIGERATION_STATUS_DOOR_OPEN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry
 

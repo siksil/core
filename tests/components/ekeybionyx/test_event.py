@@ -4,10 +4,10 @@ from http import HTTPStatus
 
 from aiohttp.test_utils import TestClient
 
-from homeassistant.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.components.event import ATTR_EVENT_TYPE, ATTR_EVENT_TYPES
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

@@ -8,9 +8,9 @@ from urllib.parse import urlparse
 from devolo_home_control_api.devices.zwave import Zwave
 from devolo_home_control_api.homecontrol import HomeControl
 
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.entity import Entity
+from inpui.components.sensor import SensorDeviceClass
+from inpui.helpers import device_registry as dr
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 from .subscriber import Subscriber

@@ -7,8 +7,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components import conversation
-from homeassistant.components.conversation import (
+from inpui.components import conversation
+from inpui.components.conversation import (
     ConversationInput,
     async_get_agent,
     async_get_chat_log,
@@ -16,12 +16,12 @@ from homeassistant.components.conversation import (
     async_handle_sentence_triggers,
     default_agent,
 )
-from homeassistant.components.conversation.const import HOME_ASSISTANT_AGENT
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, intent
-from homeassistant.setup import async_setup_component
+from inpui.components.conversation.const import HOME_ASSISTANT_AGENT
+from inpui.components.light import DOMAIN as LIGHT_DOMAIN
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, intent
+from inpui.setup import async_setup_component
 
 from . import MockAgent
 

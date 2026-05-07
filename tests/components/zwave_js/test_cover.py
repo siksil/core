@@ -17,7 +17,7 @@ from zwave_js_server.const import (
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -35,16 +35,16 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.components.zwave_js.const import LOGGER
-from homeassistant.components.zwave_js.helpers import ZwaveValueMatcher
-from homeassistant.const import (
+from inpui.components.zwave_js.const import LOGGER
+from inpui.components.zwave_js.helpers import ZwaveValueMatcher
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import replace_value_of_zwave_value
 

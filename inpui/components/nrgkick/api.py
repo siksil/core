@@ -13,7 +13,7 @@ from nrgkick_api import (
     NRGkickInvalidResponseError,
 )
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 

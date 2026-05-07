@@ -10,16 +10,16 @@ import aiosolaredge
 from solaredge_web import SolarEdgeWeb
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_RECONFIGURE,
     ConfigFlow,
     ConfigFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import section
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util import slugify
+from inpui.const import CONF_API_KEY, CONF_NAME, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import callback
+from inpui.data_entry_flow import section
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util import slugify
 
 from .const import (
     CONF_SECTION_API_AUTH,

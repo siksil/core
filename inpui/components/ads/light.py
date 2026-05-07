@@ -7,7 +7,7 @@ from typing import Any
 import pyads
 import voluptuous as vol
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     DEFAULT_MAX_KELVIN,
@@ -17,11 +17,11 @@ from homeassistant.components.light import (
     LightEntity,
     filter_supported_color_modes,
 )
-from homeassistant.const import CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_ADS_VAR, DATA_ADS, STATE_KEY_STATE
 from .entity import AdsEntity

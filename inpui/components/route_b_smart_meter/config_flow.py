@@ -8,11 +8,11 @@ from serial.tools.list_ports import comports
 from serial.tools.list_ports_common import ListPortInfo
 import voluptuous as vol
 
-from homeassistant.components.usb import get_serial_by_id, human_readable_device_name
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
-from homeassistant.core import callback
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.components.usb import get_serial_by_id, human_readable_device_name
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_ID, CONF_PASSWORD
+from inpui.core import callback
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import DOMAIN, ENTRY_TITLE
 

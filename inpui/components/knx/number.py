@@ -7,8 +7,8 @@ from typing import cast
 from xknx.devices import NumericValue
 
 from homeassistant import config_entries
-from homeassistant.components.number import NumberDeviceClass, NumberMode, RestoreNumber
-from homeassistant.const import (
+from inpui.components.number import NumberDeviceClass, NumberMode, RestoreNumber
+from inpui.const import (
     CONF_DEVICE_CLASS,
     CONF_ENTITY_CATEGORY,
     CONF_MODE,
@@ -19,13 +19,13 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import (
     AddConfigEntryEntitiesCallback,
     async_get_current_platform,
 )
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.util.enum import try_parse_enum
+from inpui.helpers.typing import ConfigType
+from inpui.util.enum import try_parse_enum
 
 from .const import (
     CONF_RESPOND_TO_READ,

@@ -12,18 +12,18 @@ from zwave_js_server.model.controller import CONTROLLER_EVENT_MODEL_MAP
 from zwave_js_server.model.driver import DRIVER_EVENT_MODEL_MAP, Driver
 from zwave_js_server.model.node import NODE_EVENT_MODEL_MAP
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CONFIG_ENTRY_ID,
     ATTR_DEVICE_ID,
     ATTR_ENTITY_ID,
     CONF_OPTIONS,
 )
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.automation import move_top_level_schema_fields_to_options
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.automation import move_top_level_schema_fields_to_options
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.trigger import Trigger, TriggerActionRunner, TriggerConfig
+from inpui.helpers.typing import ConfigType
 
 from ..const import (
     ATTR_EVENT,

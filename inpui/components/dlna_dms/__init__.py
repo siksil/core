@@ -6,8 +6,8 @@ server is wrapped in a DmsEntity, and the server's USN is used as the unique_id.
 
 from __future__ import annotations
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
 
 from .const import CONF_SOURCE_ID, LOGGER
 from .dms import get_domain_data

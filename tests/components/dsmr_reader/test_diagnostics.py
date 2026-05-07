@@ -5,8 +5,8 @@ from unittest.mock import patch
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.dsmr_reader.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.dsmr_reader.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

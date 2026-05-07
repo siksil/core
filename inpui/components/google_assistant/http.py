@@ -12,15 +12,15 @@ from aiohttp import ClientError, ClientResponseError
 from aiohttp.web import Request, Response
 import jwt
 
-from homeassistant.components import webhook
-from homeassistant.components.http import KEY_HASS, HomeAssistantView
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.storage import STORAGE_DIR, Store
-from homeassistant.util import dt as dt_util, json as json_util
+from inpui.components import webhook
+from inpui.components.http import KEY_HASS, HomeAssistantView
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.storage import STORAGE_DIR, Store
+from inpui.util import dt as dt_util, json as json_util
 
 from .const import (
     CONF_CLIENT_EMAIL,

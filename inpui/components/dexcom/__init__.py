@@ -3,9 +3,9 @@
 from pydexcom import Dexcom, Region
 from pydexcom.errors import AccountError, SessionError
 
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import CONF_SERVER, PLATFORMS, SERVER_OUS
 from .coordinator import DexcomConfigEntry, DexcomCoordinator

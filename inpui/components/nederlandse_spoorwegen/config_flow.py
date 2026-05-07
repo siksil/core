@@ -13,16 +13,16 @@ from requests.exceptions import (
 )
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.const import CONF_API_KEY, CONF_NAME
-from homeassistant.core import callback
-from homeassistant.helpers.selector import (
+from inpui.const import CONF_API_KEY, CONF_NAME
+from inpui.core import callback
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

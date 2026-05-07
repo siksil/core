@@ -16,15 +16,15 @@ from togrill_bluetooth.packets import (
     PacketWrite,
 )
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ToGrillConfigEntry
 from .const import CONF_HAS_AMBIENT, CONF_PROBE_COUNT, MAX_PROBE_COUNT

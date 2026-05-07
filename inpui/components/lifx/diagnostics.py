@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import CONF_HOST, CONF_IP_ADDRESS, CONF_MAC
-from homeassistant.core import HomeAssistant
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import CONF_HOST, CONF_IP_ADDRESS, CONF_MAC
+from inpui.core import HomeAssistant
 
 from .const import CONF_LABEL
 from .coordinator import LIFXConfigEntry

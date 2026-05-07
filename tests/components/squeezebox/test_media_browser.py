@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_MEDIA_CONTENT_ID,
     ATTR_MEDIA_CONTENT_TYPE,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
@@ -13,12 +13,12 @@ from homeassistant.components.media_player import (
     MediaClass,
     MediaType,
 )
-from homeassistant.components.squeezebox.browse_media import (
+from inpui.components.squeezebox.browse_media import (
     LIBRARY,
     MEDIA_TYPE_TO_SQUEEZEBOX,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
 
 from .conftest import FAKE_VALID_ITEM_ID
 

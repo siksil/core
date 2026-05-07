@@ -7,11 +7,11 @@ import logging
 from aiohttp import DummyCookieJar
 from aiomusiccast.musiccast_device import MusicCastDevice
 
-from homeassistant.components import ssdp
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_HOST, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_create_clientsession
+from inpui.components import ssdp
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_HOST, Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_create_clientsession
 
 from .const import CONF_SERIAL, CONF_UPNP_DESC, DOMAIN
 from .coordinator import MusicCastDataUpdateCoordinator

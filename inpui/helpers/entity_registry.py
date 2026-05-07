@@ -21,15 +21,15 @@ from typing import TYPE_CHECKING, Any, Literal, NotRequired, TypedDict
 import attr
 import voluptuous as vol
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_ICON,
     ATTR_RESTORED,
     ATTR_SUPPORTED_FEATURES,
     ATTR_UNIT_OF_MEASUREMENT,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     MAX_LENGTH_STATE_DOMAIN,
     MAX_LENGTH_STATE_ENTITY_ID,
     STATE_UNAVAILABLE,
@@ -37,21 +37,21 @@ from homeassistant.const import (
     EntityCategory,
     Platform,
 )
-from homeassistant.core import (
+from inpui.core import (
     Event,
     HomeAssistant,
     callback,
     split_entity_id,
     valid_entity_id,
 )
-from homeassistant.exceptions import MaxLengthExceeded
-from homeassistant.loader import async_suggest_report_issue
-from homeassistant.util import slugify, uuid as uuid_util
-from homeassistant.util.dt import utc_from_timestamp, utcnow
-from homeassistant.util.event_type import EventType
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import format_unserializable_data
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.exceptions import MaxLengthExceeded
+from inpui.loader import async_suggest_report_issue
+from inpui.util import slugify, uuid as uuid_util
+from inpui.util.dt import utc_from_timestamp, utcnow
+from inpui.util.event_type import EventType
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import format_unserializable_data
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from . import device_registry as dr, storage
 from .device_registry import (
@@ -68,7 +68,7 @@ if TYPE_CHECKING:
     # mypy cannot workout _cache Protocol with attrs
     from propcache.api import cached_property as under_cached_property
 
-    from homeassistant.config_entries import ConfigEntry
+    from inpui.config_entries import ConfigEntry
 else:
     from propcache.api import under_cached_property
 
@@ -2386,7 +2386,7 @@ def _async_setup_cleanup(hass: HomeAssistant, registry: EntityRegistry) -> None:
         """Cancel cleanup."""
         cancel()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _on_homeassistant_stop)
+    hass.bus.async_listen_once(EVENT_INPUI_STOP, _on_homeassistant_stop)
 
 
 @callback
@@ -2442,7 +2442,7 @@ def _async_setup_entity_restore(hass: HomeAssistant, registry: EntityRegistry) -
 
             entry.write_unavailable_state(hass)
 
-    hass.bus.async_listen(EVENT_HOMEASSISTANT_START, _write_unavailable_states)
+    hass.bus.async_listen(EVENT_INPUI_START, _write_unavailable_states)
 
 
 async def async_migrate_entries(

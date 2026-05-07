@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.filter.const import (
+from inpui.components.filter.const import (
     CONF_FILTER_NAME,
     CONF_FILTER_PRECISION,
     CONF_FILTER_WINDOW_SIZE,
@@ -17,7 +17,7 @@ from homeassistant.components.filter.const import (
     FILTER_NAME_TIME_SMA,
     TIME_SMA_LAST,
 )
-from homeassistant.components.filter.sensor import (
+from inpui.components.filter.sensor import (
     LowPassFilter,
     OutlierFilter,
     RangeFilter,
@@ -25,13 +25,13 @@ from homeassistant.components.filter.sensor import (
     TimeSMAFilter,
     TimeThrottleFilter,
 )
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.sensor import (
+from inpui.components.recorder import Recorder
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
@@ -41,10 +41,10 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant, State
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, assert_setup_component, get_fixture_path
 

@@ -5,9 +5,9 @@ import logging
 
 from todoist_api_python.api_async import TodoistAPIAsync
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from .const import DOMAIN
 from .coordinator import TodoistCoordinator

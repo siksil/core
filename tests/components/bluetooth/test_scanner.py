@@ -11,16 +11,16 @@ from bleak.backends.scanner import AdvertisementDataCallback
 from dbus_fast import InvalidMessageError
 import pytest
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.const import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth.const import (
     SCANNER_WATCHDOG_INTERVAL,
     SCANNER_WATCHDOG_TIMEOUT,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import ConfigEntryState
+from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     async_setup_with_one_adapter,
@@ -78,10 +78,10 @@ async def test_dbus_socket_missing_in_container(
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "/run/dbus" in caplog.text
     assert "docker" in caplog.text
@@ -102,10 +102,10 @@ async def test_dbus_socket_missing(
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "DBus" in caplog.text
     assert "docker" not in caplog.text
@@ -126,10 +126,10 @@ async def test_dbus_broken_pipe_in_container(
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "dbus" in caplog.text
     assert "restarting" in caplog.text
@@ -151,10 +151,10 @@ async def test_dbus_broken_pipe(
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "DBus" in caplog.text
     assert "restarting" in caplog.text
@@ -173,10 +173,10 @@ async def test_invalid_dbus_message(
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     assert "dbus" in caplog.text
 
@@ -197,12 +197,12 @@ async def test_adapter_needs_reset_at_start(hass: HomeAssistant, error: str) -> 
     ):
         await async_setup_with_one_adapter(hass)
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
     assert len(mock_recover_adapter.mock_calls) == 1
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
 
@@ -654,10 +654,10 @@ async def test_setup_and_stop_macos(
         assert await async_setup_component(
             hass, bluetooth.DOMAIN, {bluetooth.DOMAIN: {}}
         )
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
 
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
 
     assert init_kwargs == {

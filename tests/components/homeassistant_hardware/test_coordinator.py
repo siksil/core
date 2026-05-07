@@ -6,12 +6,12 @@ from ha_silabs_firmware_client import FirmwareManifest, ManifestMissing
 import pytest
 from yarl import URL
 
-from homeassistant.components.homeassistant_hardware.coordinator import (
+from inpui.components.homeassistant_hardware.coordinator import (
     FirmwareUpdateCoordinator,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

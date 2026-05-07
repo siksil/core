@@ -2,13 +2,13 @@
 
 from typing import Any
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_WEBHOOK_ID, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_WEBHOOK_ID, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers import entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ATTR_SENSOR_ATTRIBUTES,

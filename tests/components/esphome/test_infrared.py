@@ -9,10 +9,10 @@ from aioesphomeapi import (
 from infrared_protocols import NECCommand
 import pytest
 
-from homeassistant.components import infrared
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components import infrared
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from .conftest import MockESPHomeDevice, MockESPHomeDeviceType
 

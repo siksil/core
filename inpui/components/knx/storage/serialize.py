@@ -5,8 +5,8 @@ from typing import Any, cast
 import voluptuous as vol
 from voluptuous_serialize import UNSUPPORTED, UnsupportedType, convert
 
-from homeassistant.const import Platform
-from homeassistant.helpers import selector
+from inpui.const import Platform
+from inpui.helpers import selector
 
 from .entity_store_schema import KNX_SCHEMA_FOR_PLATFORM
 from .knx_selector import AllSerializeFirst, GroupSelectSchema, KNXSelectorBase

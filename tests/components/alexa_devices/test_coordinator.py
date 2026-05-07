@@ -4,11 +4,11 @@ from unittest.mock import AsyncMock
 
 from freezegun.api import FrozenDateTimeFactory
 
-from homeassistant.components.alexa_devices.const import DOMAIN
-from homeassistant.components.alexa_devices.coordinator import SCAN_INTERVAL
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.alexa_devices.const import DOMAIN
+from inpui.components.alexa_devices.coordinator import SCAN_INTERVAL
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import setup_integration
 from .const import TEST_DEVICE_1, TEST_DEVICE_1_SN, TEST_DEVICE_2, TEST_DEVICE_2_SN

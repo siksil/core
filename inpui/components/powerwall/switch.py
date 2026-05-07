@@ -4,11 +4,11 @@ from typing import Any
 
 from tesla_powerwall import GridStatus, IslandMode, PowerwallError
 
-from homeassistant.components.switch import SwitchDeviceClass, SwitchEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.switch import SwitchDeviceClass, SwitchEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PowerwallConfigEntry, PowerwallRuntimeData
 from .entity import PowerWallEntity

@@ -6,18 +6,18 @@ import pytest
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     CONF_FILTER,
     DOMAIN,
     SHORT_BRIDGE_NAME,
 )
-from homeassistant.config_entries import SOURCE_IGNORE, SOURCE_IMPORT
-from homeassistant.const import CONF_NAME, CONF_PORT, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entityfilter import CONF_INCLUDE_DOMAINS
-from homeassistant.setup import async_setup_component
+from inpui.config_entries import SOURCE_IGNORE, SOURCE_IMPORT
+from inpui.const import CONF_NAME, CONF_PORT, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entityfilter import CONF_INCLUDE_DOMAINS
+from inpui.setup import async_setup_component
 
 from .util import PATH_HOMEKIT, async_init_entry
 

@@ -9,12 +9,12 @@ from typing import Literal
 
 from pywaze.route_calculator import CalcRoutesResponse, WazeRouteCalculator, WRCError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import UnitOfLength
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.location import find_coordinates
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.unit_conversion import DistanceConverter
+from inpui.config_entries import ConfigEntry
+from inpui.const import UnitOfLength
+from inpui.core import HomeAssistant
+from inpui.helpers.location import find_coordinates
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.unit_conversion import DistanceConverter
 
 from .const import (
     CONF_AVOID_FERRIES,

@@ -9,13 +9,13 @@ from wyoming.handle import Handled, NotHandled
 from wyoming.info import HandleProgram, IntentProgram
 from wyoming.intent import Intent, NotRecognized
 
-from homeassistant.components import conversation
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import ulid as ulid_util
+from inpui.components import conversation
+from inpui.config_entries import ConfigEntry
+from inpui.const import MATCH_ALL
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import ulid as ulid_util
 
 from .const import DOMAIN
 from .data import WyomingService

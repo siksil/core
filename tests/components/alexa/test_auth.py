@@ -1,8 +1,8 @@
 """Test Alexa auth endpoints."""
 
-from homeassistant.components.alexa.auth import Auth
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.core import HomeAssistant
+from inpui.components.alexa.auth import Auth
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.core import HomeAssistant
 
 from .test_common import TEST_TOKEN_URL
 

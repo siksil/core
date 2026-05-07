@@ -1,11 +1,11 @@
 """The tests for SleepIQ switch platform."""
 
-from homeassistant.components.sleepiq.coordinator import LONGER_UPDATE_INTERVAL
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.dt import utcnow
+from inpui.components.sleepiq.coordinator import LONGER_UPDATE_INTERVAL
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.dt import utcnow
 
 from .conftest import BED_ID, BED_NAME, BED_NAME_LOWER, setup_platform
 

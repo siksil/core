@@ -4,10 +4,10 @@ import logging
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 from .conftest import KNXTestKit
 

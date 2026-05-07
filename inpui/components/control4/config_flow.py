@@ -11,20 +11,20 @@ from pyControl4.director import C4Director
 from pyControl4.error_handling import BadCredentials, NotFound, Unauthorized
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
     CONF_USERNAME,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.device_registry import format_mac
+from inpui.core import callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.device_registry import format_mac
 
 from . import Control4ConfigEntry
 from .const import (

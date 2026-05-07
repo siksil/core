@@ -1,10 +1,10 @@
 """The tests for assist_pipeline logbook."""
 
-from homeassistant.components import assist_pipeline, logbook
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.components import assist_pipeline, logbook
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 from tests.components.logbook.common import MockRow, mock_humanify

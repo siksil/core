@@ -30,8 +30,8 @@ from pychromecast.socket_client import (
 )
 import yarl
 
-from homeassistant.components import media_source, zeroconf
-from homeassistant.components.media_player import (
+from inpui.components import media_source, zeroconf
+from inpui.components.media_player import (
     ATTR_MEDIA_EXTRA,
     BrowseError,
     BrowseMedia,
@@ -43,20 +43,20 @@ from homeassistant.components.media_player import (
     MediaType,
     async_process_play_media_url,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    CAST_APP_ID_HOMEASSISTANT_LOVELACE,
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
+    CAST_APP_ID_INPUI_LOVELACE,
     CONF_UUID,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import CALLBACK_TYPE, Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.network import NoURLAvailableError, get_url, is_hass_url
-from homeassistant.util import dt as dt_util
-from homeassistant.util.logging import async_create_catching_coro
+from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.network import NoURLAvailableError, get_url, is_hass_url
+from inpui.util import dt as dt_util
+from inpui.util.logging import async_create_catching_coro
 
 from .const import (
     ADDED_CAST_DEVICES_KEY,
@@ -201,7 +201,7 @@ class CastDevice:
         self._del_remove_handler = async_dispatcher_connect(
             self.hass, SIGNAL_CAST_REMOVED, self._async_cast_removed
         )
-        self.hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, self._async_stop)
+        self.hass.bus.async_listen_once(EVENT_INPUI_STOP, self._async_stop)
         # async_create_background_task is used to avoid delaying startup wrapup if the device
         # is discovered already during startup but then fails to respond
         self.hass.async_create_background_task(
@@ -818,7 +818,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
             # The display interface for the device has been turned off or switched away
             return MediaPlayerState.OFF
 
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             # The lovelace app loops media to prevent timing out, don't show that
             return MediaPlayerState.PLAYING
 
@@ -847,7 +847,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
     def media_content_id(self) -> str | None:
         """Content ID of current playing media."""
         # The lovelace app loops media to prevent timing out, don't show that
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             return None
         media_status = self._media_status()[0]
         return media_status.content_id if media_status else None
@@ -856,7 +856,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
     def media_content_type(self) -> MediaType | None:
         """Content type of current playing media."""
         # The lovelace app loops media to prevent timing out, don't show that
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             return None
         if (media_status := self._media_status()[0]) is None:
             return None
@@ -880,7 +880,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
     def media_duration(self):
         """Duration of current playing media in seconds."""
         # The lovelace app loops media to prevent timing out, don't show that
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             return None
         media_status = self._media_status()[0]
         return media_status.duration if media_status else None
@@ -972,7 +972,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
                 | MediaPlayerEntityFeature.VOLUME_SET
             )
 
-        if media_status and self.app_id != CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if media_status and self.app_id != CAST_APP_ID_INPUI_LOVELACE:
             support |= (
                 MediaPlayerEntityFeature.PAUSE
                 | MediaPlayerEntityFeature.PLAY
@@ -995,7 +995,7 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
     def media_position(self):
         """Position of current playing media in seconds."""
         # The lovelace app loops media to prevent timing out, don't show that
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             return None
         media_status = self._media_status()[0]
         if media_status is None or not (
@@ -1010,9 +1010,9 @@ class CastMediaPlayerEntity(CastDevice, MediaPlayerEntity):
     def media_position_updated_at(self):
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
-        if self.app_id == CAST_APP_ID_HOMEASSISTANT_LOVELACE:
+        if self.app_id == CAST_APP_ID_INPUI_LOVELACE:
             return None
         return self._media_status()[1]
 

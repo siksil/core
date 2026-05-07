@@ -9,10 +9,10 @@ from typing import TYPE_CHECKING
 from bsblan import BSBLANError, DaySchedule, DHWSchedule, TimeSlot
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import DOMAIN
 from .helpers import async_sync_device_time

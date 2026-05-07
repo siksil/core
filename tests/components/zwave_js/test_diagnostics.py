@@ -10,17 +10,17 @@ from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.zwave_js.diagnostics import (
+from inpui.components.zwave_js.diagnostics import (
     REDACTED,
     ZwaveValueMatcher,
     async_get_device_diagnostics,
 )
-from homeassistant.components.zwave_js.helpers import (
+from inpui.components.zwave_js.helpers import (
     get_device_id,
     get_value_id_from_unique_id,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .common import PROPERTY_ULTRAVIOLET
 

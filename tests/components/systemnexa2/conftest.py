@@ -8,9 +8,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from sn2 import InformationData, InformationUpdate, OnOffSetting, StateChange
 
-from homeassistant.components.systemnexa2.const import DOMAIN
-from homeassistant.const import CONF_DEVICE_ID, CONF_HOST, CONF_MODEL, CONF_NAME
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.systemnexa2.const import DOMAIN
+from inpui.const import CONF_DEVICE_ID, CONF_HOST, CONF_MODEL, CONF_NAME
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from tests.common import MockConfigEntry
 

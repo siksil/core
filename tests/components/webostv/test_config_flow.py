@@ -4,17 +4,17 @@ from aiowebostv import WebOsTvPairError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.webostv.const import (
+from inpui.components.webostv.const import (
     CONF_SOURCES,
     DEFAULT_NAME,
     DOMAIN,
     LIVE_TV_APP_ID,
 )
-from homeassistant.config_entries import SOURCE_SSDP
-from homeassistant.const import CONF_CLIENT_SECRET, CONF_HOST, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_SSDP
+from inpui.const import CONF_CLIENT_SECRET, CONF_HOST, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_UDN,
     SsdpServiceInfo,

@@ -7,10 +7,10 @@ from typing import Any
 
 from pyqvrpro.client import QVRResponseError
 
-from homeassistant.components.camera import Camera
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.components.camera import Camera
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import DOMAIN, SHORT_NAME
 

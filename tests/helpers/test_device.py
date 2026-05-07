@@ -3,9 +3,9 @@
 import pytest
 import voluptuous as vol
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device import (
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device import (
     async_device_info_to_link_from_device_id,
     async_device_info_to_link_from_entity,
     async_entity_id_to_device,

@@ -5,11 +5,11 @@ from __future__ import annotations
 from pyatv.const import FeatureName, FeatureState, KeyboardFocusState
 from pyatv.interface import AppleTV, KeyboardListener
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
-from homeassistant.const import CONF_NAME
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.binary_sensor import BinarySensorEntity
+from inpui.const import CONF_NAME
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import SIGNAL_CONNECTED, AppleTvConfigEntry
 from .entity import AppleTVEntity

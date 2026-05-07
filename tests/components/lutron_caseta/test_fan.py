@@ -1,7 +1,7 @@
 """Tests for the Lutron Caseta integration."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import MockBridge, async_setup_integration
 

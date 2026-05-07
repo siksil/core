@@ -21,11 +21,11 @@ from pyisy.nodes import Group, Node, NodeChangedEvent
 from pyisy.programs import Program
 from pyisy.variables import Variable
 
-from homeassistant.const import STATE_OFF, STATE_ON
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity, EntityDescription
+from inpui.const import STATE_OFF, STATE_ON
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity, EntityDescription
 
 from .const import DOMAIN
 

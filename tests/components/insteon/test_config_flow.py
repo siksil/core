@@ -8,19 +8,19 @@ import pytest
 from voluptuous_serialize import convert
 
 from homeassistant import config_entries
-from homeassistant.components.insteon.config_flow import (
+from inpui.components.insteon.config_flow import (
     STEP_HUB_V1,
     STEP_HUB_V2,
     STEP_PLM,
     STEP_PLM_MANUALLY,
 )
-from homeassistant.components.insteon.const import CONF_HUB_VERSION, DOMAIN
-from homeassistant.config_entries import ConfigEntryState, ConfigFlowResult
-from homeassistant.const import CONF_DEVICE, CONF_HOST
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.components.insteon.const import CONF_HUB_VERSION, DOMAIN
+from inpui.config_entries import ConfigEntryState, ConfigFlowResult
+from inpui.const import CONF_DEVICE, CONF_HOST
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from .const import (
     MOCK_DEVICE,

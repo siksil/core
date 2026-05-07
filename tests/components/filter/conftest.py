@@ -9,7 +9,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.filter.const import (
+from inpui.components.filter.const import (
     CONF_FILTER_NAME,
     CONF_FILTER_PRECISION,
     CONF_FILTER_RADIUS,
@@ -21,10 +21,10 @@ from homeassistant.components.filter.const import (
     DOMAIN,
     FILTER_NAME_OUTLIER,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ENTITY_ID, CONF_NAME
-from homeassistant.core import HomeAssistant, State
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ENTITY_ID, CONF_NAME
+from inpui.core import HomeAssistant, State
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry
 

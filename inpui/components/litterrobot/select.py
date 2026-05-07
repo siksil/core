@@ -9,10 +9,10 @@ from typing import Any, Generic, TypeVar
 from pylitterbot import FeederRobot, LitterRobot, LitterRobot4, LitterRobot5, Robot
 from pylitterbot.robot.litterrobot4 import BrightnessLevel, NightLightMode
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.const import EntityCategory, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.const import EntityCategory, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import LitterRobotConfigEntry, LitterRobotDataUpdateCoordinator
 from .entity import LitterRobotEntity, _WhiskerEntityT, whisker_command

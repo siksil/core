@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from homeassistant.components.ring import DOMAIN
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, translation
-from homeassistant.setup import async_setup_component
+from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
+from inpui.components.ring import DOMAIN
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, translation
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from nsw_fuel import FuelCheckClient
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.typing import ConfigType
 
 from .const import DATA_NSW_FUEL_STATION
 from .coordinator import NSWFuelStationCoordinator

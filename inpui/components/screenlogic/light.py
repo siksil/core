@@ -6,13 +6,13 @@ from screenlogicpy.const.data import ATTR, DEVICE
 from screenlogicpy.const.msg import CODE
 from screenlogicpy.device_const.circuit import GENERIC_CIRCUIT_NAMES, INTERFACE
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ColorMode,
     LightEntity,
     LightEntityDescription,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import LIGHT_CIRCUIT_FUNCTIONS
 from .entity import ScreenLogicCircuitEntity, ScreenLogicPushEntityDescription

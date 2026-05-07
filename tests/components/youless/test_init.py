@@ -1,9 +1,9 @@
 """Test the setup of the Youless integration."""
 
 from homeassistant import setup
-from homeassistant.components import youless
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components import youless
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import init_component
 

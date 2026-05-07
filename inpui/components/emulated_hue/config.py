@@ -5,7 +5,7 @@ from __future__ import annotations
 from functools import cache
 import logging
 
-from homeassistant.components import (
+from inpui.components import (
     climate,
     cover,
     fan,
@@ -15,8 +15,8 @@ from homeassistant.components import (
     scene,
     script,
 )
-from homeassistant.const import CONF_ENTITIES, CONF_TYPE
-from homeassistant.core import (
+from inpui.const import CONF_ENTITIES, CONF_TYPE
+from inpui.core import (
     Event,
     EventStateChangedData,
     HomeAssistant,
@@ -24,12 +24,12 @@ from homeassistant.core import (
     callback,
     split_entity_id,
 )
-from homeassistant.helpers import storage
-from homeassistant.helpers.event import (
+from inpui.helpers import storage
+from inpui.helpers.event import (
     async_track_state_added_domain,
     async_track_state_removed_domain,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 SUPPORTED_DOMAINS = {
     climate.DOMAIN,

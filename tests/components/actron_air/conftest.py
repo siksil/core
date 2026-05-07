@@ -6,9 +6,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.actron_air.const import DOMAIN
-from homeassistant.const import CONF_API_TOKEN, Platform
-from homeassistant.core import HomeAssistant
+from inpui.components.actron_air.const import DOMAIN
+from inpui.const import CONF_API_TOKEN, Platform
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 

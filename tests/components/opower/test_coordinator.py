@@ -8,24 +8,24 @@ from opower.exceptions import ApiException
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.opower.const import DOMAIN
-from homeassistant.components.opower.coordinator import OpowerCoordinator
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.recorder.models import (
+from inpui.components.opower.const import DOMAIN
+from inpui.components.opower.coordinator import OpowerCoordinator
+from inpui.components.recorder import Recorder
+from inpui.components.recorder.models import (
     StatisticData,
     StatisticMeanType,
     StatisticMetaData,
 )
-from homeassistant.components.recorder.statistics import (
+from inpui.components.recorder.statistics import (
     async_add_external_statistics,
     get_last_statistics,
     statistics_during_period,
 )
-from homeassistant.const import UnitOfEnergy
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import EnergyConverter
+from inpui.const import UnitOfEnergy
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import EnergyConverter
 
 from tests.common import MockConfigEntry
 from tests.components.recorder.common import async_wait_recording_done

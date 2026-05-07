@@ -1,11 +1,11 @@
 """Tests for AndroidTV integration initialization."""
 
-from homeassistant.components.androidtv.const import (
+from inpui.components.androidtv.const import (
     CONF_SCREENCAP,
     CONF_SCREENCAP_INTERVAL,
 )
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.core import HomeAssistant
 
 from . import patchers
 from .common import CONFIG_ANDROID_DEFAULT, SHELL_RESPONSE_OFF, setup_mock_entry

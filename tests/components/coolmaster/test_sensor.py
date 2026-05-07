@@ -7,10 +7,10 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.coolmaster.const import MAX_RETRIES
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
+from inpui.components.coolmaster.const import MAX_RETRIES
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
 
 
 async def test_sensor(

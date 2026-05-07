@@ -13,11 +13,11 @@ from aiounifi.interfaces.wlans import Wlans
 from aiounifi.models.api import ApiItem
 from aiounifi.models.wlan import Wlan
 
-from homeassistant.components.image import ImageEntity, ImageEntityDescription
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util import dt as dt_util
+from inpui.components.image import ImageEntity, ImageEntityDescription
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util import dt as dt_util
 
 from . import UnifiConfigEntry
 from .entity import (

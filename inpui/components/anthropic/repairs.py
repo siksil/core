@@ -8,11 +8,11 @@ from typing import TYPE_CHECKING
 import voluptuous as vol
 
 from homeassistant import data_entry_flow
-from homeassistant.components.repairs import RepairsFlow
-from homeassistant.config_entries import ConfigEntryState, ConfigSubentry
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.selector import (
+from inpui.components.repairs import RepairsFlow
+from inpui.config_entries import ConfigEntryState, ConfigSubentry
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

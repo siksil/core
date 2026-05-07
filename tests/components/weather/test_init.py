@@ -5,7 +5,7 @@ from datetime import datetime
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.weather import (
+from inpui.components.weather import (
     ATTR_CONDITION_SUNNY,
     ATTR_WEATHER_APPARENT_TEMPERATURE,
     ATTR_WEATHER_OZONE,
@@ -29,12 +29,12 @@ from homeassistant.components.weather import (
     WeatherEntityFeature,
     round_temperature,
 )
-from homeassistant.components.weather.const import (
+from inpui.components.weather.const import (
     ATTR_WEATHER_CLOUD_COVERAGE,
     ATTR_WEATHER_DEW_POINT,
     ATTR_WEATHER_HUMIDITY,
 )
-from homeassistant.const import (
+from inpui.const import (
     PRECISION_HALVES,
     PRECISION_TENTHS,
     PRECISION_WHOLE,
@@ -43,17 +43,17 @@ from homeassistant.const import (
     UnitOfSpeed,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.unit_conversion import (
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.unit_conversion import (
     DistanceConverter,
     PressureConverter,
     SpeedConverter,
     TemperatureConverter,
 )
-from homeassistant.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
+from inpui.util.unit_system import METRIC_SYSTEM, US_CUSTOMARY_SYSTEM
 
 from . import MockWeatherTest, create_entity
 

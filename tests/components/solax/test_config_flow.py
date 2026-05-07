@@ -7,10 +7,10 @@ from solax.inverter import InverterResponse
 from solax.inverters import X1MiniV34
 
 from homeassistant import config_entries
-from homeassistant.components.solax.const import DOMAIN
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.solax.const import DOMAIN
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 
 def __mock_real_time_api_success():

@@ -11,20 +11,20 @@ from zigpy.zcl import Cluster
 from zigpy.zcl.clusters import general, lighting
 import zigpy.zcl.foundation as zcl_f
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     DOMAIN as LIGHT_DOMAIN,
     FLASH_LONG,
     FLASH_SHORT,
     ColorMode,
 )
-from homeassistant.components.zha.helpers import (
+from inpui.components.zha.helpers import (
     ZHADeviceProxy,
     ZHAGatewayProxy,
     get_zha_gateway,
     get_zha_gateway_proxy,
 )
-from homeassistant.const import STATE_OFF, STATE_ON, Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON, Platform
+from inpui.core import HomeAssistant
 
 from .common import (
     async_shift_time,

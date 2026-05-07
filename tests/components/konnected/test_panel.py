@@ -5,11 +5,11 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.konnected import config_flow, panel
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.setup import async_setup_component
-from homeassistant.util import utcnow
+from inpui.components.konnected import config_flow, panel
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_component import async_update_entity
+from inpui.setup import async_setup_component
+from inpui.util import utcnow
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

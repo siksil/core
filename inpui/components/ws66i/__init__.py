@@ -6,10 +6,10 @@ import logging
 
 from pyws66i import WS66i, get_ws66i
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_IP_ADDRESS, EVENT_HOMEASSISTANT_STOP, Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_IP_ADDRESS, EVENT_INPUI_STOP, Platform
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import CONF_SOURCES, DOMAIN
 from .coordinator import Ws66iDataUpdateCoordinator
@@ -101,7 +101,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         ws66i.close()
 
     entry.async_on_unload(
-        hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, shutdown)
+        hass.bus.async_listen_once(EVENT_INPUI_STOP, shutdown)
     )
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

@@ -15,17 +15,17 @@ from miio.integrations.humidifier.zhimi.airhumidifier_miot import (
     OperationMode as AirhumidifierMiotOperationMode,
 )
 
-from homeassistant.components.humidifier import (
+from inpui.components.humidifier import (
     ATTR_HUMIDITY,
     HumidifierDeviceClass,
     HumidifierEntity,
     HumidifierEntityFeature,
 )
-from homeassistant.const import ATTR_MODE, CONF_DEVICE, CONF_MODEL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from homeassistant.util.percentage import percentage_to_ranged_value
+from inpui.const import ATTR_MODE, CONF_DEVICE, CONF_MODEL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.util.percentage import percentage_to_ranged_value
 
 from .const import (
     CONF_FLOW_TYPE,

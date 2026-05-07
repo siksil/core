@@ -6,11 +6,11 @@ import logging
 
 from pydeako import Deako, DeakoDiscoverer, FindDevicesError
 
-from homeassistant.components import zeroconf
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components import zeroconf
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 _LOGGER: logging.Logger = logging.getLogger(__name__)
 

@@ -3,8 +3,8 @@
 from dataclasses import dataclass
 from unittest.mock import MagicMock, patch
 
-from homeassistant.components.broadlink.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.broadlink.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

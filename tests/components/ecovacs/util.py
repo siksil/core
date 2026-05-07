@@ -5,7 +5,7 @@ import asyncio
 from deebot_client.event_bus import EventBus
 from deebot_client.events import Event
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def block_till_done(hass: HomeAssistant, event_bus: EventBus) -> None:

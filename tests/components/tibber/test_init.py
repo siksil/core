@@ -4,12 +4,12 @@ from unittest.mock import ANY, AsyncMock, MagicMock, patch
 
 import pytest
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.tibber import DOMAIN, TibberRuntimeData, async_setup_entry
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_ACCESS_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.components.recorder import Recorder
+from inpui.components.tibber import DOMAIN, TibberRuntimeData, async_setup_entry
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_ACCESS_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from tests.common import MockConfigEntry
 

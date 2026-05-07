@@ -7,12 +7,12 @@ from typing import TYPE_CHECKING, Any
 
 from microbot import MicroBotApiClient, parse_advertisement_data
 
-from homeassistant.components import bluetooth
-from homeassistant.components.bluetooth.passive_update_coordinator import (
+from inpui.components import bluetooth
+from inpui.components.bluetooth.passive_update_coordinator import (
     PassiveBluetoothDataUpdateCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant, callback
 
 if TYPE_CHECKING:
     from bleak.backends.device import BLEDevice

@@ -5,14 +5,14 @@ from typing import Any
 from datadog import DogStatsd
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_PREFIX
-from homeassistant.core import HomeAssistant, callback
+from inpui.const import CONF_HOST, CONF_PORT, CONF_PREFIX
+from inpui.core import HomeAssistant, callback
 
 from .const import (
     CONF_RATE,

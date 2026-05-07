@@ -1,6 +1,6 @@
 """Config flow for JuiceNet integration."""
 
-from homeassistant.config_entries import ConfigFlow
+from inpui.config_entries import ConfigFlow
 
 from .const import DOMAIN
 

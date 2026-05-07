@@ -3,20 +3,20 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.components.netatmo import DOMAIN
-from homeassistant.components.netatmo.const import (
+from inpui.components import automation
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.components.netatmo import DOMAIN
+from inpui.components.netatmo.const import (
     CLIMATE_TRIGGERS,
     INDOOR_CAMERA_TRIGGERS,
     NETATMO_EVENT,
     OUTDOOR_CAMERA_TRIGGERS,
 )
-from homeassistant.components.netatmo.device_trigger import SUBTYPES
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.netatmo.device_trigger import SUBTYPES
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

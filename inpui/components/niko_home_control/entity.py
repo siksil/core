@@ -5,8 +5,8 @@ from abc import abstractmethod
 from nhc.action import NHCAction
 from nhc.controller import NHCController
 
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN
 

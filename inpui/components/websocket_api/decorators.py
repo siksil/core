@@ -8,10 +8,10 @@ from typing import TYPE_CHECKING, Any
 
 import voluptuous as vol
 
-from homeassistant.const import HASSIO_USER_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import Unauthorized
-from homeassistant.helpers.typing import VolDictType
+from inpui.const import HASSIO_USER_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import Unauthorized
+from inpui.helpers.typing import VolDictType
 
 from . import const, messages
 from .connection import ActiveConnection

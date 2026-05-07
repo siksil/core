@@ -9,11 +9,11 @@ from pyportainer import (
 )
 import voluptuous as vol
 
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.service import async_extract_config_entry_ids
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.service import async_extract_config_entry_ids
 
 from .const import DOMAIN
 from .coordinator import PortainerConfigEntry

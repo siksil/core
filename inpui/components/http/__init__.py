@@ -30,36 +30,36 @@ from cryptography.x509.oid import NameOID
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.components.network import async_get_source_ip
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.components.network import async_get_source_ip
+from inpui.const import (
+    EVENT_INPUI_START,
+    EVENT_INPUI_STOP,
     HASSIO_USER_NAME,
     SERVER_PORT,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, issue_registry as ir, storage
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.http import (
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, issue_registry as ir, storage
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.http import (
     KEY_ALLOW_CONFIGURED_CORS,
     KEY_AUTHENTICATED,  # noqa: F401
     KEY_HASS,
     HomeAssistantView,
     current_request,
 )
-from homeassistant.helpers.importlib import async_import_module
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.loader import bind_hass
-from homeassistant.setup import (
+from inpui.helpers.importlib import async_import_module
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.helpers.typing import ConfigType
+from inpui.loader import bind_hass
+from inpui.setup import (
     SetupPhases,
     async_start_setup,
     async_when_setup_or_start,
 )
-from homeassistant.util import dt as dt_util, ssl as ssl_util
-from homeassistant.util.async_ import create_eager_task
-from homeassistant.util.json import json_loads
+from inpui.util import dt as dt_util, ssl as ssl_util
+from inpui.util.async_ import create_eager_task
+from inpui.util.json import json_loads
 
 from .auth import async_setup_auth
 from .ban import setup_bans
@@ -274,7 +274,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     async def start_server(*_: Any) -> None:
         """Start the server."""
         with async_start_setup(hass, integration="http", phase=SetupPhases.SETUP):
-            hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, stop_server)
+            hass.bus.async_listen_once(EVENT_INPUI_STOP, stop_server)
             # We already checked it's not None.
             assert conf is not None
             await start_http_server_and_save_config(hass, dict(conf), server)
@@ -315,7 +315,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             ssl_certificate is not None
             and (hass.config.external_url or hass.config.internal_url) is None
         ):
-            from homeassistant.components.cloud import (  # noqa: PLC0415
+            from inpui.components.cloud import (  # noqa: PLC0415
                 CloudNotAvailable,
                 async_remote_ui_url,
             )
@@ -332,7 +332,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
                     translation_key="ssl_configured_without_configured_urls",
                 )
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_START, _async_check_ssl_issue)
+    hass.bus.async_listen_once(EVENT_INPUI_START, _async_check_ssl_issue)
 
     return True
 

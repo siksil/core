@@ -6,14 +6,14 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components import media_source
-from homeassistant.components.media_player import BrowseError
-from homeassistant.components.tts.media_source import (
+from inpui.components import media_source
+from inpui.components.media_player import BrowseError
+from inpui.components.tts.media_source import (
     generate_media_source_id,
     parse_media_source_id,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .common import (
     DEFAULT_LANG,

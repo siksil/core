@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.owntracks import helper
+from inpui.components.owntracks import helper
 
 
 @pytest.fixture(name="nacl_imported")

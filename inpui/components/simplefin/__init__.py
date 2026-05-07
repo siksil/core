@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from simplefin4py import SimpleFin
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import CONF_ACCESS_URL
 from .coordinator import SimpleFinConfigEntry, SimpleFinDataUpdateCoordinator

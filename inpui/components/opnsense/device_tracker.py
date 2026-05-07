@@ -4,9 +4,9 @@ from typing import Any, NewType
 
 from pyopnsense import diagnostics
 
-from homeassistant.components.device_tracker import DeviceScanner
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.typing import ConfigType
+from inpui.components.device_tracker import DeviceScanner
+from inpui.core import HomeAssistant
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_INTERFACE_CLIENT, CONF_TRACKER_INTERFACES, OPNSENSE_DATA
 

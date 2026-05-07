@@ -2,8 +2,8 @@
 
 from homematicip.async_home import AsyncHome
 
-from homeassistant.components.alarm_control_panel import AlarmControlPanelState
-from homeassistant.core import HomeAssistant
+from inpui.components.alarm_control_panel import AlarmControlPanelState
+from inpui.core import HomeAssistant
 
 from .helper import HomeFactory, get_and_check_entity_basics
 

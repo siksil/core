@@ -9,9 +9,9 @@ from typing import Any
 from electrickiwi_api import ElectricKiwiApi
 from electrickiwi_api.exceptions import ApiException
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigFlowResult
-from homeassistant.const import CONF_NAME
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.config_entries import SOURCE_REAUTH, ConfigFlowResult
+from inpui.const import CONF_NAME
+from inpui.helpers import config_entry_oauth2_flow
 
 from . import api
 from .const import DOMAIN, SCOPE_VALUES

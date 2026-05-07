@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .coordinator import HeosConfigEntry, HeosCoordinator

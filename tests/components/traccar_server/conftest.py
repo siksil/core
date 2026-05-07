@@ -6,14 +6,14 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from pytraccar import ApiClient, SubscriptionStatus
 
-from homeassistant.components.traccar_server.const import (
+from inpui.components.traccar_server.const import (
     CONF_CUSTOM_ATTRIBUTES,
     CONF_EVENTS,
     CONF_MAX_ACCURACY,
     CONF_SKIP_ACCURACY_FILTER_FOR,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_TOKEN,
     CONF_HOST,
     CONF_PORT,

@@ -6,22 +6,22 @@ import aiohttp
 from aiohttp import WSMsgType, web
 import pytest
 
-from homeassistant.auth.providers.homeassistant import HassAuthProvider
-from homeassistant.components.websocket_api.auth import (
+from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.components.websocket_api.auth import (
     TYPE_AUTH,
     TYPE_AUTH_INVALID,
     TYPE_AUTH_OK,
     TYPE_AUTH_REQUIRED,
 )
-from homeassistant.components.websocket_api.const import (
+from inpui.components.websocket_api.const import (
     SIGNAL_WEBSOCKET_CONNECTED,
     SIGNAL_WEBSOCKET_DISCONNECTED,
     URL,
 )
-from homeassistant.const import HASSIO_USER_NAME
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.setup import async_setup_component
+from inpui.const import HASSIO_USER_NAME
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.setup import async_setup_component
 
 from tests.test_util import mock_real_ip
 from tests.typing import ClientSessionGenerator

@@ -5,10 +5,10 @@ from unittest.mock import patch
 import pytest
 from triggercmd import TRIGGERcmdConnectionError
 
-from homeassistant.components.triggercmd.const import CONF_TOKEN, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.triggercmd.const import CONF_TOKEN, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

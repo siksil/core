@@ -2,15 +2,15 @@
 
 from unittest.mock import Mock, patch
 
-from homeassistant.components import assist_pipeline
-from homeassistant.components.assist_pipeline import OPTION_PREFERRED, VadSensitivity
-from homeassistant.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components import assist_pipeline
+from inpui.components.assist_pipeline import OPTION_PREFERRED, VadSensitivity
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
     PipelineData,
 )
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import reload_satellite
 

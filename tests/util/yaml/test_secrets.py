@@ -6,10 +6,10 @@ from pathlib import Path
 
 import pytest
 
-from homeassistant.config import YAML_CONFIG_FILE, load_yaml_config_file
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.util import yaml as yaml_util
-from homeassistant.util.yaml import loader as yaml_loader
+from inpui.config import YAML_CONFIG_FILE, load_yaml_config_file
+from inpui.exceptions import HomeAssistantError
+from inpui.util import yaml as yaml_util
+from inpui.util.yaml import loader as yaml_loader
 
 from tests.common import get_test_config_dir, patch_yaml_files
 

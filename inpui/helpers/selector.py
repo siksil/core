@@ -12,11 +12,11 @@ from uuid import UUID
 
 import voluptuous as vol
 
-from homeassistant.const import CONF_MODE, CONF_UNIT_OF_MEASUREMENT
-from homeassistant.core import split_entity_id, valid_entity_id
-from homeassistant.generated.countries import COUNTRIES
-from homeassistant.util import decorator
-from homeassistant.util.yaml import dumper
+from inpui.const import CONF_MODE, CONF_UNIT_OF_MEASUREMENT
+from inpui.core import split_entity_id, valid_entity_id
+from inpui.generated.countries import COUNTRIES
+from inpui.util import decorator
+from inpui.util.yaml import dumper
 
 from . import config_validation as cv
 

@@ -15,13 +15,13 @@ from aiohasupervisor import (
 from aiohasupervisor.models import AddonsOptions, Discovery, PartialBackupOptions
 import pytest
 
-from homeassistant.components.hassio.addon_manager import (
+from inpui.components.hassio.addon_manager import (
     AddonError,
     AddonInfo,
     AddonManager,
     AddonState,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.usefixtures("addon_not_installed")

@@ -1,6 +1,6 @@
 """Tests for the Nintendo Switch parental controls integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

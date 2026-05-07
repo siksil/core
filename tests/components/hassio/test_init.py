@@ -26,32 +26,32 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 from voluptuous import Invalid
 
-from homeassistant.auth.const import GROUP_ID_ADMIN
-from homeassistant.components import frontend, hassio
-from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from homeassistant.components.hassio import (
+from inpui.auth.const import GROUP_ID_ADMIN
+from inpui.components import frontend, hassio
+from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
+from inpui.components.hassio import (
     ADDONS_COORDINATOR,
     DOMAIN,
     get_core_info,
     hostname_from_addon_slug,
 )
-from homeassistant.components.hassio.config import STORAGE_KEY
-from homeassistant.components.hassio.const import (
+from inpui.components.hassio.config import STORAGE_KEY
+from inpui.components.hassio.const import (
     HASSIO_UPDATE_INTERVAL,
     REQUEST_REFRESH_DELAY,
 )
-from homeassistant.components.homeassistant import (
+from inpui.components.homeassistant import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_UPDATE_ENTITY,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, issue_registry as ir
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, issue_registry as ir
+from inpui.helpers.hassio import is_hassio
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.yaml import load_yaml_dict
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.test_util.aiohttp import AiohttpClientMocker

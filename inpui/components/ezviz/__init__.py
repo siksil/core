@@ -11,9 +11,9 @@ from pyezvizapi.exceptions import (
     PyEzvizError,
 )
 
-from homeassistant.const import CONF_TIMEOUT, CONF_TYPE, CONF_URL, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.const import CONF_TIMEOUT, CONF_TYPE, CONF_URL, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 
 from .const import (
     ATTR_TYPE_CAMERA,

@@ -13,11 +13,11 @@ from typing import Final
 from aiohttp import web
 from aiohttp.abc import AbstractStreamWriter, BaseRequest
 
-from homeassistant.components import ffmpeg
-from homeassistant.components.ffmpeg import FFmpegManager
-from homeassistant.components.http import HomeAssistantView
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import ffmpeg
+from inpui.components.ffmpeg import FFmpegManager
+from inpui.components.http import HomeAssistantView
+from inpui.core import HomeAssistant, callback
+from inpui.util.hass_dict import HassKey
 
 from .const import DOMAIN
 

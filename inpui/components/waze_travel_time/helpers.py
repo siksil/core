@@ -4,9 +4,9 @@ import logging
 
 from pywaze.route_calculator import WazeRouteCalculator, WRCError
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.location import find_coordinates
+from inpui.core import HomeAssistant
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.location import find_coordinates
 
 _LOGGER = logging.getLogger(__name__)
 

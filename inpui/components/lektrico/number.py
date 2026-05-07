@@ -6,16 +6,16 @@ from typing import Any
 
 from lektricowifi import Device
 
-from homeassistant.components.number import NumberEntity, NumberEntityDescription
-from homeassistant.const import (
+from inpui.components.number import NumberEntity, NumberEntityDescription
+from inpui.const import (
     ATTR_SERIAL_NUMBER,
     CONF_TYPE,
     PERCENTAGE,
     EntityCategory,
     UnitOfElectricCurrent,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import LektricoConfigEntry, LektricoDeviceDataUpdateCoordinator
 from .entity import LektricoEntity

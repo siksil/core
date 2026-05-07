@@ -20,15 +20,15 @@ from soco.data_structures import (
 )
 from soco.events_base import Event as SonosEvent
 
-from homeassistant.components import ssdp
-from homeassistant.components.media_player import DOMAIN as MP_DOMAIN
-from homeassistant.components.sonos import DOMAIN
-from homeassistant.components.sonos.const import SONOS_SHARE
-from homeassistant.const import CONF_HOSTS
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.components import ssdp
+from inpui.components.media_player import DOMAIN as MP_DOMAIN
+from inpui.components.sonos import DOMAIN
+from inpui.components.sonos.const import SONOS_SHARE
+from inpui.const import CONF_HOSTS
+from inpui.core import HomeAssistant
+from inpui.helpers.service_info.ssdp import ATTR_UPNP_UDN, SsdpServiceInfo
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry, load_fixture, load_json_value_fixture
 

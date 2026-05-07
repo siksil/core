@@ -9,15 +9,15 @@ import pytest
 from synology_dsm.api.photos import SynoPhotosAlbum, SynoPhotosItem
 from synology_dsm.exceptions import SynologyDSMException
 
-from homeassistant.components.media_player import BrowseError, BrowseMedia, MediaClass
-from homeassistant.components.media_source import MediaSourceItem, Unresolvable
-from homeassistant.components.synology_dsm.const import DOMAIN
-from homeassistant.components.synology_dsm.media_source import (
+from inpui.components.media_player import BrowseError, BrowseMedia, MediaClass
+from inpui.components.media_source import MediaSourceItem, Unresolvable
+from inpui.components.synology_dsm.const import DOMAIN
+from inpui.components.synology_dsm.media_source import (
     SynologyDsmMediaView,
     SynologyPhotosMediaSource,
     async_get_media_source,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.util.aiohttp import MockRequest
+from inpui.core import HomeAssistant
+from inpui.util.aiohttp import MockRequest
 
 from .common import mock_dsm_information
 from .consts import HOST, MACS, PASSWORD, PORT, USE_SSL, USERNAME

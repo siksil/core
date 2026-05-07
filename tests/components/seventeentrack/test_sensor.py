@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 
 from pyseventeentrack.errors import SeventeenTrackError
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import init_integration
 from .conftest import DEFAULT_SUMMARY, get_package

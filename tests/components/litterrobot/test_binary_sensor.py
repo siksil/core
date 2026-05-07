@@ -4,12 +4,12 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
 
 from .conftest import setup_integration
 

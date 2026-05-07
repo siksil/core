@@ -10,16 +10,16 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from azure.eventhub.aio import EventHubProducerClient
 import pytest
 
-from homeassistant.components.azure_event_hub.const import (
+from inpui.components.azure_event_hub.const import (
     CONF_FILTER,
     CONF_SEND_INTERVAL,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.config_entries import ConfigEntryState
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from .const import AZURE_EVENT_HUB_PATH, BASIC_OPTIONS, PRODUCER_PATH, SAS_CONFIG_FULL
 

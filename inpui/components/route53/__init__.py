@@ -10,11 +10,11 @@ import boto3
 import requests
 import voluptuous as vol
 
-from homeassistant.const import CONF_DOMAIN, CONF_TTL, CONF_ZONE
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.event import track_time_interval
-from homeassistant.helpers.typing import ConfigType
+from inpui.const import CONF_DOMAIN, CONF_TTL, CONF_ZONE
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.helpers import config_validation as cv
+from inpui.helpers.event import track_time_interval
+from inpui.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 

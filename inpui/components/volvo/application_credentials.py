@@ -5,9 +5,9 @@ from __future__ import annotations
 from volvocarsapi.auth import AUTHORIZE_URL, TOKEN_URL
 from volvocarsapi.scopes import ALL_SCOPES
 
-from homeassistant.components.application_credentials import ClientCredential
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.application_credentials import ClientCredential
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     LocalOAuth2ImplementationWithPkce,
 )
 

@@ -14,18 +14,18 @@ import jinja2
 import pytest
 
 from homeassistant import core as ha
-from homeassistant.const import MATCH_ALL
-from homeassistant.core import (
+from inpui.const import MATCH_ALL
+from inpui.core import (
     Event,
     EventStateChangedData,
     EventStateReportedData,
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, TemplateError
-from homeassistant.helpers.device_registry import EVENT_DEVICE_REGISTRY_UPDATED
-from homeassistant.helpers.entity_registry import EVENT_ENTITY_REGISTRY_UPDATED
-from homeassistant.helpers.event import (
+from inpui.exceptions import HomeAssistantError, TemplateError
+from inpui.helpers.device_registry import EVENT_DEVICE_REGISTRY_UPDATED
+from inpui.helpers.entity_registry import EVENT_ENTITY_REGISTRY_UPDATED
+from inpui.helpers.event import (
     TrackStates,
     TrackTemplate,
     TrackTemplateResult,
@@ -51,9 +51,9 @@ from homeassistant.helpers.event import (
     async_track_utc_time_change,
     track_point_in_utc_time,
 )
-from homeassistant.helpers.template import Template, result_as_boolean
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.helpers.template import Template, result_as_boolean
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed, async_fire_time_changed_exact
 

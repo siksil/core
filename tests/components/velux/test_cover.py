@@ -13,7 +13,7 @@ from pyvlx.opening_device import (
     Window,
 )
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     DOMAIN as COVER_DOMAIN,
@@ -26,8 +26,8 @@ from homeassistant.components.cover import (
     SERVICE_STOP_COVER,
     SERVICE_STOP_COVER_TILT,
 )
-from homeassistant.components.velux import DOMAIN
-from homeassistant.const import (
+from inpui.components.velux import DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     STATE_CLOSED,
     STATE_CLOSING,
@@ -35,9 +35,9 @@ from homeassistant.const import (
     STATE_OPENING,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import update_callback_entity
 

@@ -8,15 +8,15 @@ from dataclasses import dataclass
 from pyairobotrest.const import HYSTERESIS_BAND_MAX, HYSTERESIS_BAND_MIN
 from pyairobotrest.exceptions import AirobotError
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
 )
-from homeassistant.const import EntityCategory, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import AirobotConfigEntry
 from .const import DOMAIN

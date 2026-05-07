@@ -6,17 +6,17 @@ import logging
 from aiohttp import ClientError, ClientResponseError, web
 from pypoint import PointSession
 
-from homeassistant.components import webhook
-from homeassistant.const import CONF_WEBHOOK_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components import webhook
+from inpui.const import CONF_WEBHOOK_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
     OAuth2Session,
     async_get_config_entry_implementation,
 )
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from . import api
 from .const import CONF_WEBHOOK_URL, DOMAIN, EVENT_RECEIVED, SIGNAL_WEBHOOK

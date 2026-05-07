@@ -16,11 +16,11 @@ from aiohttp.hdrs import (
 from aiohttp.test_utils import TestClient
 import pytest
 
-from homeassistant.components.http import StaticPathConfig
-from homeassistant.components.http.cors import setup_cors
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.http import KEY_ALLOW_CONFIGURED_CORS, HomeAssistantView
-from homeassistant.setup import async_setup_component
+from inpui.components.http import StaticPathConfig
+from inpui.components.http.cors import setup_cors
+from inpui.core import HomeAssistant
+from inpui.helpers.http import KEY_ALLOW_CONFIGURED_CORS, HomeAssistantView
+from inpui.setup import async_setup_component
 
 from . import HTTP_HEADER_HA_AUTH
 

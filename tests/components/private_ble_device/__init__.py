@@ -5,10 +5,10 @@ import time
 
 from home_assistant_bluetooth import BluetoothServiceInfoBleak
 
-from homeassistant.components.private_ble_device.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.private_ble_device.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 from tests.components.bluetooth import (

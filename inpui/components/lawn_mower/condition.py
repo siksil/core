@@ -1,7 +1,7 @@
 """Provides conditions for lawn mowers."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import Condition, make_entity_state_condition
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import Condition, make_entity_state_condition
 
 from .const import DOMAIN, LawnMowerActivity
 

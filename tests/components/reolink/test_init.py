@@ -14,20 +14,20 @@ from reolink_aio.exceptions import (
     ReolinkError,
 )
 
-from homeassistant.components.reolink import FIRMWARE_UPDATE_INTERVAL
-from homeassistant.components.reolink.const import (
+from inpui.components.reolink import FIRMWARE_UPDATE_INTERVAL
+from inpui.components.reolink.const import (
     BATTERY_ALL_WAKE_UPDATE_INTERVAL,
     BATTERY_PASSIVE_WAKE_UPDATE_INTERVAL,
     CONF_BC_PORT,
     CONF_FIRMWARE_CHECK_TIME,
     DOMAIN,
 )
-from homeassistant.components.reolink.coordinator import (
+from inpui.components.reolink.coordinator import (
     DEVICE_UPDATE_INTERVAL_MIN,
     NUM_CRED_ERRORS,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
@@ -38,15 +38,15 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     Platform,
 )
-from homeassistant.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.helpers import (
+from inpui.core import DOMAIN as HOMEASSISTANT_DOMAIN, HomeAssistant
+from inpui.core_config import async_process_ha_core_config
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
-from homeassistant.setup import async_setup_component
+from inpui.helpers.device_registry import CONNECTION_NETWORK_MAC, format_mac
+from inpui.setup import async_setup_component
 
 from .conftest import (
     CONF_BC_ONLY,

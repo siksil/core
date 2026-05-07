@@ -6,8 +6,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.tts import CONF_LANG
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.components.tts import CONF_LANG
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import (
     CONF_TLD,

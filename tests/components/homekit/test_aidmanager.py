@@ -5,14 +5,14 @@ from unittest.mock import patch
 
 from fnv_hash_fast import fnv1a_32
 
-from homeassistant.components.homekit.aidmanager import (
+from inpui.components.homekit.aidmanager import (
     AccessoryAidStorage,
     get_aid_storage_filename_for_entry_id,
     get_system_unique_id,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.storage import STORAGE_DIR
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.storage import STORAGE_DIR
 
 from tests.common import MockConfigEntry
 

@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.cover import ATTR_IS_CLOSED, CoverDeviceClass, CoverState
-from homeassistant.const import ATTR_DEVICE_CLASS
-from homeassistant.core import HomeAssistant
+from inpui.components.cover import ATTR_IS_CLOSED, CoverDeviceClass, CoverState
+from inpui.const import ATTR_DEVICE_CLASS
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

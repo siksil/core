@@ -4,11 +4,11 @@ import logging
 
 import prowlpy
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers import config_validation as cv
 
 from .const import DOMAIN, PLATFORMS
 from .helpers import async_verify_key

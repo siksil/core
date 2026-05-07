@@ -8,11 +8,11 @@ from aiohttp import ClientError
 from freezegun.api import FrozenDateTimeFactory
 from pydrawise.schema import Controller
 
-from homeassistant.components.hydrawise.const import WATER_USE_SCAN_INTERVAL
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_OFF, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.hydrawise.const import WATER_USE_SCAN_INTERVAL
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_OFF, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_time_changed
 

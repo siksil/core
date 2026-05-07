@@ -4,17 +4,17 @@ from unittest.mock import MagicMock, patch
 
 from aiopyarr import ArrAuthenticationException, ArrException
 
-from homeassistant.components.sonarr.const import (
+from inpui.components.sonarr.const import (
     CONF_UPCOMING_DAYS,
     CONF_WANTED_MAX_ITEMS,
     DEFAULT_UPCOMING_DAYS,
     DEFAULT_WANTED_MAX_ITEMS,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_SOURCE, CONF_URL, CONF_VERIFY_SSL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import MOCK_REAUTH_INPUT, MOCK_USER_INPUT
 

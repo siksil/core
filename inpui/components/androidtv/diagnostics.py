@@ -6,10 +6,10 @@ from typing import Any
 
 import attr
 
-from homeassistant.components.diagnostics import async_redact_data
-from homeassistant.const import ATTR_CONNECTIONS, ATTR_IDENTIFIERS, CONF_UNIQUE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.diagnostics import async_redact_data
+from inpui.const import ATTR_CONNECTIONS, ATTR_IDENTIFIERS, CONF_UNIQUE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import AndroidTVConfigEntry
 from .const import DOMAIN, PROP_ETHMAC, PROP_SERIALNO, PROP_WIFIMAC

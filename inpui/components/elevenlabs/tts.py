@@ -14,7 +14,7 @@ from elevenlabs.core import ApiError
 from elevenlabs.types import Model, Voice as ElevenLabsVoice, VoiceSettings
 from sentence_stream import SentenceBoundaryDetector
 
-from homeassistant.components.tts import (
+from inpui.components.tts import (
     ATTR_VOICE,
     TextToSpeechEntity,
     TTSAudioRequest,
@@ -22,11 +22,11 @@ from homeassistant.components.tts import (
     TtsAudioType,
     Voice,
 )
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import ElevenLabsConfigEntry
 from .const import (

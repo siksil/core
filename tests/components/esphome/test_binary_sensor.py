@@ -3,8 +3,8 @@
 from aioesphomeapi import APIClient, BinarySensorInfo, BinarySensorState, SubDeviceInfo
 import pytest
 
-from homeassistant.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_OFF, STATE_ON, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .conftest import MockESPHomeDeviceType, MockGenericDeviceEntryType
 

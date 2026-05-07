@@ -7,10 +7,10 @@ import aiohttp
 import pytest
 
 from homeassistant import core
-from homeassistant.components.alexa import errors, state_report
-from homeassistant.components.alexa.resources import AlexaGlobalCatalog
-from homeassistant.const import PERCENTAGE, UnitOfLength, UnitOfTemperature
-from homeassistant.core import HomeAssistant
+from inpui.components.alexa import errors, state_report
+from inpui.components.alexa.resources import AlexaGlobalCatalog
+from inpui.const import PERCENTAGE, UnitOfLength, UnitOfTemperature
+from inpui.core import HomeAssistant
 
 from .test_common import TEST_URL, get_default_config
 

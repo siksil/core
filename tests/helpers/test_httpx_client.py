@@ -5,10 +5,10 @@ from unittest.mock import Mock, patch
 import httpx
 import pytest
 
-from homeassistant.const import EVENT_HOMEASSISTANT_CLOSE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import httpx_client as client
-from homeassistant.util.ssl import SSL_ALPN_HTTP11, SSL_ALPN_HTTP11_HTTP2
+from inpui.const import EVENT_INPUI_CLOSE
+from inpui.core import HomeAssistant
+from inpui.helpers import httpx_client as client
+from inpui.util.ssl import SSL_ALPN_HTTP11, SSL_ALPN_HTTP11_HTTP2
 
 from tests.common import MockModule, extract_stack_to_frame, mock_integration
 
@@ -86,7 +86,7 @@ async def test_get_async_client_cleanup(hass: HomeAssistant) -> None:
         httpx.AsyncClient,
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
 
     assert hass.data[client.DATA_ASYNC_CLIENT][(True, SSL_ALPN_HTTP11)].is_closed
@@ -101,7 +101,7 @@ async def test_get_async_client_cleanup_without_ssl(hass: HomeAssistant) -> None
         httpx.AsyncClient,
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
 
     assert hass.data[client.DATA_ASYNC_CLIENT][(False, SSL_ALPN_HTTP11)].is_closed
@@ -172,7 +172,7 @@ async def test_get_async_client_http2_cleanup(hass: HomeAssistant) -> None:
         httpx.AsyncClient,
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_CLOSE)
+    hass.bus.async_fire(EVENT_INPUI_CLOSE)
     await hass.async_block_till_done()
 
     assert hass.data[client.DATA_ASYNC_CLIENT][(True, SSL_ALPN_HTTP11_HTTP2)].is_closed

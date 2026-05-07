@@ -15,8 +15,8 @@ from .helpers import get_zha_data, get_zha_gateway
 from .radio_manager import ZhaRadioManager
 
 if TYPE_CHECKING:
-    from homeassistant.config_entries import ConfigEntry
-    from homeassistant.core import HomeAssistant
+    from inpui.config_entries import ConfigEntry
+    from inpui.core import HomeAssistant
 
 
 def _get_config_entry(hass: HomeAssistant) -> ConfigEntry:

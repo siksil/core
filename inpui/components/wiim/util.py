@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from urllib.parse import urlparse
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.network import NoURLAvailableError, get_url
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.network import NoURLAvailableError, get_url
 
 
 class InvalidHomeAssistantURLError(HomeAssistantError):

@@ -10,18 +10,18 @@ from pylitterbot import Robot
 from pylitterbot.exceptions import LitterRobotException
 import pytest
 
-from homeassistant.components.litterrobot.coordinator import UPDATE_INTERVAL
-from homeassistant.components.litterrobot.services import SERVICE_SET_SLEEP_MODE
-from homeassistant.components.vacuum import (
+from inpui.components.litterrobot.coordinator import UPDATE_INTERVAL
+from inpui.components.litterrobot.services import SERVICE_SET_SLEEP_MODE
+from inpui.components.vacuum import (
     DOMAIN as VACUUM_DOMAIN,
     SERVICE_START,
     SERVICE_STOP,
     VacuumActivity,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, issue_registry as ir
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, issue_registry as ir
 
 from .common import DOMAIN, VACUUM_ENTITY_ID
 from .conftest import setup_integration

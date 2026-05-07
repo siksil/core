@@ -5,13 +5,13 @@ import logging
 
 from aiohttp.hdrs import METH_POST
 
-from homeassistant.components.webhook import (
+from inpui.components.webhook import (
     async_generate_id,
     async_register as webhook_register,
     async_unregister as webhook_unregister,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.network import get_url
+from inpui.core import HomeAssistant
+from inpui.helpers.network import get_url
 
 from .const import DOMAIN, WEBHOOK_URL
 from .coordinator import NotificationCoordinator

@@ -4,9 +4,9 @@ from typing import Any
 
 from pyplaato.models.device import PlaatoDevice
 
-from homeassistant.helpers import entity
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers import entity
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.dispatcher import async_dispatcher_connect
 
 from .const import (
     DEVICE,

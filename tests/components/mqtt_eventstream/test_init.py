@@ -5,12 +5,12 @@ from unittest.mock import ANY, patch
 
 import pytest
 
-from homeassistant.components import mqtt_eventstream as eventstream
-from homeassistant.const import EVENT_STATE_CHANGED, MATCH_ALL
-from homeassistant.core import HomeAssistant, State, callback
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.components import mqtt_eventstream as eventstream
+from inpui.const import EVENT_STATE_CHANGED, MATCH_ALL
+from inpui.core import HomeAssistant, State, callback
+from inpui.helpers.json import JSONEncoder
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     async_fire_mqtt_message,

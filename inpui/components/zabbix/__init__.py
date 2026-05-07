@@ -15,28 +15,28 @@ import voluptuous as vol
 from zabbix_utils import ItemValue, Sender, ZabbixAPI
 from zabbix_utils.exceptions import APIRequestError, ProcessingError
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PATH,
     CONF_SSL,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     EVENT_STATE_CHANGED,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import (
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import (
     config_validation as cv,
     event as event_helper,
     state as state_helper,
 )
-from homeassistant.helpers.entityfilter import (
+from inpui.helpers.entityfilter import (
     INCLUDE_EXCLUDE_BASE_FILTER_SCHEMA,
     convert_include_exclude_filter,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import DOMAIN
 
@@ -212,7 +212,7 @@ class ZabbixThread(threading.Thread):
     def setup(self, hass: HomeAssistant) -> None:
         """Set up the thread and start it."""
         hass.bus.listen(EVENT_STATE_CHANGED, self._event_listener)
-        hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, self._shutdown)
+        hass.bus.listen_once(EVENT_INPUI_STOP, self._shutdown)
         self.start()
         _LOGGER.debug("Started publishing state changes to Zabbix")
 

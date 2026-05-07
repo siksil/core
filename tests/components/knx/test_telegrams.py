@@ -6,12 +6,12 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.knx.const import (
+from inpui.components.knx.const import (
     CONF_KNX_TELEGRAM_LOG_SIZE,
     KNX_MODULE_KEY,
 )
-from homeassistant.components.knx.telegrams import TelegramDict
-from homeassistant.core import HomeAssistant
+from inpui.components.knx.telegrams import TelegramDict
+from inpui.core import HomeAssistant
 
 from .conftest import KNXTestKit
 

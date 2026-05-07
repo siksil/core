@@ -6,9 +6,9 @@ from justnimbus.exceptions import InvalidClientID, JustNimbusError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.justnimbus.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.justnimbus.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import FIXTURE_OLD_USER_INPUT, FIXTURE_UNIQUE_ID, FIXTURE_USER_INPUT
 

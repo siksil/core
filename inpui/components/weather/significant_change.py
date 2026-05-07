@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.significant_change import (
+from inpui.const import UnitOfPressure, UnitOfSpeed, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.significant_change import (
     check_absolute_change,
     check_valid_float,
 )

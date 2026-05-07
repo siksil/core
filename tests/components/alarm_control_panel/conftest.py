@@ -5,17 +5,17 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN,
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
 )
-from homeassistant.components.alarm_control_panel.const import CodeFormat
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, frame
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.alarm_control_panel.const import CodeFormat
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, frame
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .common import MockAlarm
 

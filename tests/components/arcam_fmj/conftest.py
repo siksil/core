@@ -7,10 +7,10 @@ from arcam.fmj.client import Client
 from arcam.fmj.state import State
 import pytest
 
-from homeassistant.components.arcam_fmj.const import DEFAULT_NAME
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.arcam_fmj.const import DEFAULT_NAME
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

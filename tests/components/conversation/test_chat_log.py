@@ -11,7 +11,7 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 import voluptuous as vol
 
-from homeassistant.components.conversation import (
+from inpui.components.conversation import (
     AssistantContent,
     ConversationInput,
     ConverseError,
@@ -19,16 +19,16 @@ from homeassistant.components.conversation import (
     UserContent,
     async_get_chat_log,
 )
-from homeassistant.components.conversation.chat_log import (
+from inpui.components.conversation.chat_log import (
     DATA_CHAT_LOGS,
     Attachment,
     ChatLogEventType,
     async_subscribe_chat_logs,
 )
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import chat_session, llm
-from homeassistant.util import dt as dt_util
+from inpui.core import Context, HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import chat_session, llm
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

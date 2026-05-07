@@ -3,8 +3,8 @@
 from aiohttp import ClientSession
 from yolink.auth_mgr import YoLinkAuthMgr
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
 
 
 class ConfigEntryAuth(YoLinkAuthMgr):

@@ -7,8 +7,8 @@ import hmac
 
 import voluptuous as vol
 
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
 
 from ..models import AuthFlowContext, AuthFlowResult, Credentials, UserMeta
 from . import AUTH_PROVIDER_SCHEMA, AUTH_PROVIDERS, AuthProvider, LoginFlow

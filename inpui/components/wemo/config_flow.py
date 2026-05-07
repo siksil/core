@@ -8,9 +8,9 @@ from typing import Any, get_type_hints
 import pywemo
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigEntry, ConfigFlowResult, OptionsFlow
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.config_entry_flow import DiscoveryFlowHandler
+from inpui.config_entries import ConfigEntry, ConfigFlowResult, OptionsFlow
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.config_entry_flow import DiscoveryFlowHandler
 
 from .const import DOMAIN
 from .coordinator import Options, OptionsValidationError

@@ -5,11 +5,11 @@ from __future__ import annotations
 import logging
 from typing import TypedDict
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.singleton import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.util.hass_dict import HassKey
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.singleton import singleton
+from inpui.helpers.storage import Store
+from inpui.util.hass_dict import HassKey
 
 _LOGGER = logging.getLogger(__name__)
 

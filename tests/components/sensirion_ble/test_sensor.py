@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.sensirion_ble.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
-from homeassistant.core import HomeAssistant
+from inpui.components.sensirion_ble.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import ATTR_FRIENDLY_NAME, ATTR_UNIT_OF_MEASUREMENT
+from inpui.core import HomeAssistant
 
 from .fixtures import CONFIGURED_NAME, CONFIGURED_PREFIX, SENSIRION_SERVICE_INFO
 

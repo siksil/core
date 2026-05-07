@@ -8,10 +8,10 @@ from openai.types.responses import Response, ResponseOutputMessage, ResponseOutp
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.openai_conversation.config_flow import (
+from inpui.components.openai_conversation.config_flow import (
     RECOMMENDED_CONVERSATION_OPTIONS,
 )
-from homeassistant.components.openai_conversation.const import (
+from inpui.components.openai_conversation.const import (
     CONF_CHAT_MODEL,
     CONF_CODE_INTERPRETER,
     CONF_IMAGE_MODEL,
@@ -46,9 +46,9 @@ from homeassistant.components.openai_conversation.const import (
     RECOMMENDED_TOP_P,
     RECOMMENDED_TTS_OPTIONS,
 )
-from homeassistant.const import CONF_API_KEY, CONF_LLM_HASS_API
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.const import CONF_API_KEY, CONF_LLM_HASS_API
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

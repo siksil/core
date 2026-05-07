@@ -1,8 +1,8 @@
 """Tests for the LG webOS TV integration."""
 
-from homeassistant.components.webostv.const import DOMAIN
-from homeassistant.const import CONF_CLIENT_SECRET, CONF_HOST
-from homeassistant.core import HomeAssistant
+from inpui.components.webostv.const import DOMAIN
+from inpui.const import CONF_CLIENT_SECRET, CONF_HOST
+from inpui.core import HomeAssistant
 
 from .const import CLIENT_KEY, FAKE_UUID, HOST, TV_NAME
 

@@ -6,9 +6,9 @@ import logging
 
 from aioaseko import Aseko, AsekoNotLoggedIn
 
-from homeassistant.const import CONF_EMAIL, CONF_PASSWORD, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
+from inpui.const import CONF_EMAIL, CONF_PASSWORD, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
 
 from .coordinator import AsekoConfigEntry, AsekoDataUpdateCoordinator
 

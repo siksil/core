@@ -5,8 +5,8 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.mysensors.gateway import is_serial_port
-from homeassistant.core import HomeAssistant
+from inpui.components.mysensors.gateway import is_serial_port
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.parametrize(

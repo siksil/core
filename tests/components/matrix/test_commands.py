@@ -8,8 +8,8 @@ from typing import Any
 from nio import MatrixRoom, RoomMessageText
 import pytest
 
-from homeassistant.components.matrix import MatrixBot, ReactionEvent, RoomID
-from homeassistant.core import Event, HomeAssistant
+from inpui.components.matrix import MatrixBot, ReactionEvent, RoomID
+from inpui.core import Event, HomeAssistant
 
 from .conftest import (
     MOCK_EXPRESSION_COMMANDS,

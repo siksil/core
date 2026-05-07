@@ -8,14 +8,14 @@ from google_photos_library_api.exceptions import GooglePhotosApiError
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.google_photos.const import (
+from inpui.components.google_photos.const import (
     DOMAIN,
     OAUTH2_AUTHORIZE,
     OAUTH2_TOKEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import config_entry_oauth2_flow
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import config_entry_oauth2_flow
 
 from .conftest import EXPIRES_IN, FAKE_ACCESS_TOKEN, FAKE_REFRESH_TOKEN, USER_IDENTIFIER
 

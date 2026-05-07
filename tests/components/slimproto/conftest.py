@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components.slimproto.const import DOMAIN
+from inpui.components.slimproto.const import DOMAIN
 
 from tests.common import MockConfigEntry
 

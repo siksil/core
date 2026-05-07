@@ -17,8 +17,8 @@ import pytest
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
-from homeassistant.components.openai_conversation import CONF_CHAT_MODEL
-from homeassistant.components.openai_conversation.const import (
+from inpui.components.openai_conversation import CONF_CHAT_MODEL
+from inpui.components.openai_conversation.const import (
     DEFAULT_AI_TASK_NAME,
     DEFAULT_CONVERSATION_NAME,
     DEFAULT_STT_NAME,
@@ -29,19 +29,19 @@ from homeassistant.components.openai_conversation.const import (
     RECOMMENDED_STT_OPTIONS,
     RECOMMENDED_TTS_OPTIONS,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntryDisabler,
     ConfigEntryState,
     ConfigSubentryData,
 )
-from homeassistant.const import CONF_API_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError, ServiceValidationError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.device_registry import DeviceEntryDisabler
-from homeassistant.helpers.entity_registry import RegistryEntryDisabler
-from homeassistant.setup import async_setup_component
+from inpui.const import CONF_API_KEY
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError, ServiceValidationError
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.device_registry import DeviceEntryDisabler
+from inpui.helpers.entity_registry import RegistryEntryDisabler
+from inpui.setup import async_setup_component
 
 from tests.common import MockConfigEntry
 

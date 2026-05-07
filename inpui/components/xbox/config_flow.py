@@ -9,7 +9,7 @@ from pythonxbox.authentication.manager import AuthenticationManager
 from pythonxbox.authentication.models import OAuth2TokenResponse
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigEntry,
     ConfigEntryState,
@@ -17,10 +17,10 @@ from homeassistant.config_entries import (
     ConfigSubentryFlow,
     SubentryFlowResult,
 )
-from homeassistant.core import callback
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.helpers.httpx_client import get_async_client
-from homeassistant.helpers.selector import (
+from inpui.core import callback
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.helpers.httpx_client import get_async_client
+from inpui.helpers.selector import (
     SelectOptionDict,
     SelectSelector,
     SelectSelectorConfig,

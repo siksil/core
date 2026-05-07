@@ -25,13 +25,13 @@ from motioneye_client.const import (
 )
 import voluptuous as vol
 
-from homeassistant.components.mjpeg import (
+from inpui.components.mjpeg import (
     CONF_MJPEG_URL,
     CONF_STILL_IMAGE_URL,
     MjpegCamera,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_AUTHENTICATION,
     CONF_NAME,
     CONF_PASSWORD,
@@ -40,9 +40,9 @@ from homeassistant.const import (
     HTTP_DIGEST_AUTHENTICATION,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import get_camera_from_cameras, is_acceptable_camera, listen_for_new_cameras
 from .const import (

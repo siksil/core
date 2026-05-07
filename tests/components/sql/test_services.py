@@ -10,13 +10,13 @@ import pytest
 import voluptuous as vol
 from voluptuous import MultipleInvalid
 
-from homeassistant.components.recorder import Recorder
-from homeassistant.components.sql.const import DOMAIN
-from homeassistant.components.sql.services import SERVICE_QUERY
-from homeassistant.components.sql.util import generate_lambda_stmt
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.setup import async_setup_component
+from inpui.components.recorder import Recorder
+from inpui.components.sql.const import DOMAIN
+from inpui.components.sql.services import SERVICE_QUERY
+from inpui.components.sql.util import generate_lambda_stmt
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.setup import async_setup_component
 
 from tests.components.recorder.common import async_wait_recording_done
 

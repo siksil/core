@@ -6,7 +6,7 @@ from pyhap.characteristic import Characteristic
 from pyhap.const import HAP_REPR_AID, HAP_REPR_CHARS, HAP_REPR_IID, HAP_REPR_VALUE
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_HUMIDITY,
     ATTR_CURRENT_TEMPERATURE,
     ATTR_FAN_MODE,
@@ -43,7 +43,7 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_VALUE,
     CHAR_CURRENT_FAN_STATE,
     CHAR_ROTATION_SPEED,
@@ -55,7 +55,7 @@ from homeassistant.components.homekit.const import (
     PROP_MIN_STEP,
     PROP_MIN_VALUE,
 )
-from homeassistant.components.homekit.type_thermostats import (
+from inpui.components.homekit.type_thermostats import (
     FAN_STATE_ACTIVE,
     FAN_STATE_IDLE,
     FAN_STATE_INACTIVE,
@@ -66,20 +66,20 @@ from homeassistant.components.homekit.type_thermostats import (
     Thermostat,
     WaterHeater,
 )
-from homeassistant.components.water_heater import DOMAIN as WATER_HEATER_DOMAIN
-from homeassistant.const import (
+from inpui.components.water_heater import DOMAIN as WATER_HEATER_DOMAIN
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_SUPPORTED_FEATURES,
     ATTR_TEMPERATURE,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
     UnitOfTemperature,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.core import CoreState, Event, HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from tests.common import async_mock_service
 
@@ -1035,7 +1035,7 @@ async def test_thermostat_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     entity_id = "climate.simple"
@@ -1863,7 +1863,7 @@ async def test_water_heater_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     entity_id = "water_heater.simple"

@@ -5,17 +5,17 @@ from datetime import date
 from aioridwell.model import EventState, RidwellPickup, RidwellPickupEvent
 import pytest
 
-from homeassistant.components.calendar import CalendarEvent
-from homeassistant.components.ridwell.calendar import (
+from inpui.components.calendar import CalendarEvent
+from inpui.components.ridwell.calendar import (
     async_get_calendar_event_from_pickup_event,
 )
-from homeassistant.components.ridwell.const import (
+from inpui.components.ridwell.const import (
     CALENDAR_TITLE_NONE,
     CALENDAR_TITLE_ROTATING,
     CALENDAR_TITLE_STATUS,
     CONF_CALENDAR_TITLE,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 START_DATE = date(2025, 10, 4)
 END_DATE = date(2025, 10, 5)

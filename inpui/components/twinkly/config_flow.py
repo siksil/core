@@ -9,10 +9,10 @@ from aiohttp import ClientError
 from ttls.client import Twinkly
 from voluptuous import Required, Schema
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_ID, CONF_MODEL, CONF_NAME
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from .const import DEV_ID, DEV_MODEL, DEV_NAME, DOMAIN
 

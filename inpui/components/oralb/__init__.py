@@ -6,17 +6,17 @@ import logging
 
 from oralb_ble import OralBBluetoothDeviceData, SensorUpdate
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
 )
-from homeassistant.components.bluetooth.active_update_processor import (
+from inpui.components.bluetooth.active_update_processor import (
     ActiveBluetoothProcessorCoordinator,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import Platform
-from homeassistant.core import CoreState, HomeAssistant
+from inpui.config_entries import ConfigEntry
+from inpui.const import Platform
+from inpui.core import CoreState, HomeAssistant
 
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 

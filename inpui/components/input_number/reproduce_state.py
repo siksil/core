@@ -9,8 +9,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import Context, HomeAssistant, State
 
 from . import ATTR_VALUE, DOMAIN, SERVICE_SET_VALUE
 

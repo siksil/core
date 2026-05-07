@@ -9,7 +9,7 @@ from uuid import uuid4
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.local_calendar.const import (
+from inpui.components.local_calendar.const import (
     ATTR_CREATE_EMPTY,
     ATTR_IMPORT_ICS_FILE,
     CONF_CALENDAR_NAME,
@@ -18,8 +18,8 @@ from homeassistant.components.local_calendar.const import (
     CONF_STORAGE_KEY,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

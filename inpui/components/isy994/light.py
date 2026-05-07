@@ -8,12 +8,12 @@ from pyisy.constants import ISY_VALUE_UNKNOWN
 from pyisy.helpers import NodeProperty
 from pyisy.nodes import Node
 
-from homeassistant.components.light import ColorMode, LightEntity
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.restore_state import RestoreEntity
+from inpui.components.light import ColorMode, LightEntity
+from inpui.const import Platform
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.restore_state import RestoreEntity
 
 from .const import _LOGGER, CONF_RESTORE_LIGHT_STATE, UOM_PERCENTAGE
 from .entity import ISYNodeEntity

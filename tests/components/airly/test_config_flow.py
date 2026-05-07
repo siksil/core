@@ -4,11 +4,11 @@ from http import HTTPStatus
 
 from airly.exceptions import AirlyError
 
-from homeassistant.components.airly.const import CONF_USE_NEAREST, DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.airly.const import CONF_USE_NEAREST, DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_LATITUDE, CONF_LONGITUDE, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import API_NEAREST_URL, API_POINT_URL
 

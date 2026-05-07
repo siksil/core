@@ -11,13 +11,13 @@ import shutil
 from velbusaio.controller import Velbus
 from velbusaio.exceptions import VelbusConnectionFailed
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_PORT, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady, PlatformNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.storage import STORAGE_DIR
-from homeassistant.helpers.typing import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_PORT, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady, PlatformNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.storage import STORAGE_DIR
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_VLP_FILE, DOMAIN
 from .services import async_setup_services

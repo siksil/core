@@ -6,7 +6,7 @@ from unittest.mock import call, patch
 import pytest
 from uvcclient import camera, nvr
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DEFAULT_CONTENT_TYPE,
     SERVICE_DISABLE_MOTION,
     SERVICE_ENABLE_MOTION,
@@ -15,11 +15,11 @@ from homeassistant.components.camera import (
     async_get_image,
     async_get_stream_source,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from tests.common import async_fire_time_changed
 

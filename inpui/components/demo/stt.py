@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections.abc import AsyncIterable
 
-from homeassistant.components.stt import (
+from inpui.components.stt import (
     AudioBitRates,
     AudioChannels,
     AudioCodecs,
@@ -15,9 +15,9 @@ from homeassistant.components.stt import (
     SpeechResultState,
     SpeechToTextEntity,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 SUPPORT_LANGUAGES = ["en", "de"]
 

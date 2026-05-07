@@ -1,8 +1,8 @@
 """Binary sensor tests for the Skybell integration."""
 
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.const import ATTR_DEVICE_CLASS, STATE_OFF, STATE_ON
+from inpui.core import HomeAssistant
 
 from .conftest import async_init_integration
 

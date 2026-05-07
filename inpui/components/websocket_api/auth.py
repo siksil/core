@@ -9,13 +9,13 @@ from aiohttp.web import Request
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant.components.http.auth_util import async_user_not_allowed_do_auth
-from homeassistant.components.http.ban import process_success_login, process_wrong_login
-from homeassistant.components.http.const import KEY_HASS_USER
-from homeassistant.const import __version__
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.json import json_bytes
-from homeassistant.util.json import JsonValueType
+from inpui.components.http.auth_util import async_user_not_allowed_do_auth
+from inpui.components.http.ban import process_success_login, process_wrong_login
+from inpui.components.http.const import KEY_HASS_USER
+from inpui.const import __version__
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.json import json_bytes
+from inpui.util.json import JsonValueType
 
 from .connection import ActiveConnection
 from .error import Disconnect

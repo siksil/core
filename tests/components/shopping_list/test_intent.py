@@ -1,7 +1,7 @@
 """Test Shopping List intents."""
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import intent
+from inpui.core import HomeAssistant
+from inpui.helpers import intent
 
 
 async def test_complete_item_intent(hass: HomeAssistant, sl_setup) -> None:

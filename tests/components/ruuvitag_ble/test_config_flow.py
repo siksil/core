@@ -5,10 +5,10 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.ruuvitag_ble.const import DOMAIN
-from homeassistant.config_entries import SOURCE_IGNORE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.ruuvitag_ble.const import DOMAIN
+from inpui.config_entries import SOURCE_IGNORE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .fixtures import CONFIGURED_NAME, NOT_RUUVITAG_SERVICE_INFO, RUUVI_V5_SERVICE_INFO
 

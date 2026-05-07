@@ -8,15 +8,15 @@ from eq3btsmart import Thermostat
 from eq3btsmart.const import EQ3_MAX_OFFSET, EQ3_MAX_TEMP, EQ3_MIN_OFFSET, EQ3_MIN_TEMP
 from eq3btsmart.models import Presets, Status
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     NumberDeviceClass,
     NumberEntity,
     NumberEntityDescription,
     NumberMode,
 )
-from homeassistant.const import EntityCategory, UnitOfTemperature, UnitOfTime
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import EntityCategory, UnitOfTemperature, UnitOfTime
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import Eq3ConfigEntry
 from .const import (

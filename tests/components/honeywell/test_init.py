@@ -6,15 +6,15 @@ from aiohttp.client_exceptions import ClientConnectionError
 import aiosomecomfort
 import pytest
 
-from homeassistant.components.honeywell.const import (
+from inpui.components.honeywell.const import (
     CONF_COOL_AWAY_TEMPERATURE,
     CONF_HEAT_AWAY_TEMPERATURE,
     DOMAIN,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import init_integration
 

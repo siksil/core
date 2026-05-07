@@ -5,13 +5,13 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.kodi.config_flow import (
+from inpui.components.kodi.config_flow import (
     CannotConnectError,
     InvalidAuthError,
 )
-from homeassistant.components.kodi.const import DEFAULT_TIMEOUT, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.kodi.const import DEFAULT_TIMEOUT, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .util import (
     TEST_CREDENTIALS,

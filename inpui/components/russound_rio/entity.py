@@ -8,9 +8,9 @@ from aiorussound import Controller, RussoundClient
 from aiorussound.models import CallbackType
 from aiorussound.rio import ZoneControlSurface
 
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
 
 from .const import DOMAIN, RUSSOUND_RIO_EXCEPTIONS
 

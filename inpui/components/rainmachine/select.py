@@ -6,13 +6,13 @@ from dataclasses import dataclass
 
 from regenmaschine.errors import RainMachineError
 
-from homeassistant.components.select import SelectEntity, SelectEntityDescription
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM, UnitSystem
+from inpui.components.select import SelectEntity, SelectEntityDescription
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM, UnitSystem
 
 from . import RainMachineConfigEntry, RainMachineData
 from .const import DATA_RESTRICTIONS_UNIVERSAL

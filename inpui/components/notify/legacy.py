@@ -7,22 +7,22 @@ from collections.abc import Coroutine, Mapping
 from functools import partial
 from typing import Any, Protocol, cast
 
-from homeassistant.config import config_per_platform
-from homeassistant.const import CONF_DESCRIPTION, CONF_NAME
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import discovery
-from homeassistant.helpers.service import async_set_service_schema
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-from homeassistant.loader import async_get_integration, bind_hass
-from homeassistant.setup import (
+from inpui.config import config_per_platform
+from inpui.const import CONF_DESCRIPTION, CONF_NAME
+from inpui.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import discovery
+from inpui.helpers.service import async_set_service_schema
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.loader import async_get_integration, bind_hass
+from inpui.setup import (
     SetupPhases,
     async_prepare_setup_platform,
     async_start_setup,
 )
-from homeassistant.util import slugify
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.yaml import load_yaml_dict
+from inpui.util import slugify
+from inpui.util.hass_dict import HassKey
+from inpui.util.yaml import load_yaml_dict
 
 from .const import (
     ATTR_DATA,

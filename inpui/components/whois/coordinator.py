@@ -10,10 +10,10 @@ from whois.exceptions import (
     WhoisCommandFailed,
 )
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, LOGGER, SCAN_INTERVAL
 

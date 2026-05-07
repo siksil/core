@@ -8,15 +8,15 @@ from xs1_api_client.api_constants import ActuatorType
 from xs1_api_client.device.actuator import XS1Actuator
 from xs1_api_client.device.sensor import XS1Sensor
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.const import ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddEntitiesCallback
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from . import ACTUATORS, DOMAIN, SENSORS
 from .entity import XS1DeviceEntity

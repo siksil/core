@@ -6,12 +6,12 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from homeassistant.components import stt
-from homeassistant.components.wyoming import DOMAIN
-from homeassistant.components.wyoming.devices import SatelliteDevice
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import stt
+from inpui.components.wyoming import DOMAIN
+from inpui.components.wyoming.devices import SatelliteDevice
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from . import (
     HANDLE_INFO,

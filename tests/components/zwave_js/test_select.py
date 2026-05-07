@@ -6,11 +6,11 @@ from zwave_js_server.const import CURRENT_VALUE_PROPERTY, CommandClass
 from zwave_js_server.event import Event
 from zwave_js_server.model.node import Node
 
-from homeassistant.components.zwave_js.helpers import ZwaveValueMatcher
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.components.zwave_js.helpers import ZwaveValueMatcher
+from inpui.config_entries import ConfigEntry
+from inpui.const import STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .common import replace_value_of_zwave_value
 

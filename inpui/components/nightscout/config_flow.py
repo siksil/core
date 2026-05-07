@@ -7,9 +7,9 @@ from aiohttp import ClientError, ClientResponseError
 from py_nightscout import Api as NightscoutAPI
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.exceptions import HomeAssistantError
 
 from .const import DOMAIN
 from .utils import hash_from_url

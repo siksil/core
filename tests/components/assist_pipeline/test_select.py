@@ -4,23 +4,23 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.components.assist_pipeline import Pipeline
-from homeassistant.components.assist_pipeline.pipeline import (
+from inpui.components.assist_pipeline import Pipeline
+from inpui.components.assist_pipeline.pipeline import (
     AssistDevice,
     PipelineData,
     PipelineStorageCollection,
 )
-from homeassistant.components.assist_pipeline.select import (
+from inpui.components.assist_pipeline.select import (
     AssistPipelineSelect,
     VadSensitivitySelect,
 )
-from homeassistant.components.assist_pipeline.vad import VadSensitivity
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.assist_pipeline.vad import VadSensitivity
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import MockConfigEntry, MockPlatform, mock_platform
 

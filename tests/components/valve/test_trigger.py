@@ -4,8 +4,8 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.valve import ATTR_IS_CLOSED, DOMAIN, ValveState
-from homeassistant.core import HomeAssistant
+from inpui.components.valve import ATTR_IS_CLOSED, DOMAIN, ValveState
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

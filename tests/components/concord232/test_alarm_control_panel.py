@@ -8,14 +8,14 @@ from freezegun.api import FrozenDateTimeFactory
 import pytest
 import requests
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_DOMAIN,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_HOME,
     SERVICE_ALARM_DISARM,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     CONF_CODE,
@@ -24,8 +24,8 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PORT,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import async_fire_time_changed
 

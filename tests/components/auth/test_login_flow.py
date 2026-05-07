@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.core_config import async_process_ha_core_config
+from inpui.core import HomeAssistant
+from inpui.core_config import async_process_ha_core_config
 
 from . import BASE_CONFIG, async_setup_auth
 

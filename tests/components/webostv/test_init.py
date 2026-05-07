@@ -2,11 +2,11 @@
 
 from aiowebostv import WebOsTvPairError
 
-from homeassistant.components.media_player import ATTR_INPUT_SOURCE_LIST
-from homeassistant.components.webostv.const import CONF_SOURCES, DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.const import CONF_CLIENT_SECRET, EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import HomeAssistant
+from inpui.components.media_player import ATTR_INPUT_SOURCE_LIST
+from inpui.components.webostv.const import CONF_SOURCES, DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.const import CONF_CLIENT_SECRET, EVENT_INPUI_STOP
+from inpui.core import HomeAssistant
 
 from . import setup_webostv
 from .const import ENTITY_ID
@@ -70,7 +70,7 @@ async def test_disconnect_on_stop(hass: HomeAssistant, client) -> None:
     assert client.clear_state_update_callbacks.call_count == 0
     assert config_entry.state is ConfigEntryState.LOADED
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     assert client.disconnect.call_count == 1

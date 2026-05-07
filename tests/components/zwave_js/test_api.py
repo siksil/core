@@ -38,8 +38,8 @@ from zwave_js_server.model.node import Node
 from zwave_js_server.model.node.firmware import NodeFirmwareUpdateData
 from zwave_js_server.model.value import ConfigurationValue, get_value_id_str
 
-from homeassistant.components.websocket_api import ERR_INVALID_FORMAT, ERR_NOT_FOUND
-from homeassistant.components.zwave_js.api import (
+from inpui.components.websocket_api import ERR_INVALID_FORMAT, ERR_NOT_FOUND
+from inpui.components.zwave_js.api import (
     APPLICATION_VERSION,
     AREA_ID,
     CLIENT_SIDE_AUTH,
@@ -87,7 +87,7 @@ from homeassistant.components.zwave_js.api import (
     VALUE_SIZE,
     VERSION,
 )
-from homeassistant.components.zwave_js.const import (
+from inpui.components.zwave_js.const import (
     ATTR_COMMAND_CLASS,
     ATTR_ENDPOINT,
     ATTR_METHOD_NAME,
@@ -96,9 +96,9 @@ from homeassistant.components.zwave_js.const import (
     CONF_DATA_COLLECTION_OPTED_IN,
     DOMAIN,
 )
-from homeassistant.components.zwave_js.helpers import get_device_id
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.zwave_js.helpers import get_device_id
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from tests.common import MockConfigEntry, MockUser
 from tests.typing import ClientSessionGenerator, WebSocketGenerator

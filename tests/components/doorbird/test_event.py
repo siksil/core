@@ -1,7 +1,7 @@
 """Test DoorBird events."""
 
-from homeassistant.const import STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from . import mock_webhook_call
 from .conftest import DoorbirdMockerType

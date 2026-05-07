@@ -2,9 +2,9 @@
 
 import pytest
 
-from homeassistant.components.climate import PRESET_COMFORT, PRESET_SLEEP
-from homeassistant.components.vicare.fan import VentilationMode
-from homeassistant.components.vicare.types import HeatingProgram
+from inpui.components.climate import PRESET_COMFORT, PRESET_SLEEP
+from inpui.components.vicare.fan import VentilationMode
+from inpui.components.vicare.types import HeatingProgram
 
 
 @pytest.mark.parametrize(

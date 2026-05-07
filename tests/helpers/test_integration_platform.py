@@ -8,13 +8,13 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import loader
-from homeassistant.const import EVENT_COMPONENT_LOADED
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.integration_platform import (
+from inpui.const import EVENT_COMPONENT_LOADED
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.integration_platform import (
     async_process_integration_platforms,
 )
-from homeassistant.setup import ATTR_COMPONENT
+from inpui.setup import ATTR_COMPONENT
 
 from tests.common import mock_platform
 

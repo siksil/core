@@ -7,10 +7,10 @@ from typing import Any
 
 import switchbot
 
-from homeassistant.components import bluetooth
-from homeassistant.components.sensor import ConfigType
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components import bluetooth
+from inpui.components.sensor import ConfigType
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ADDRESS,
     CONF_MAC,
     CONF_NAME,
@@ -18,9 +18,9 @@ from homeassistant.const import (
     CONF_SENSOR_TYPE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import config_validation as cv, device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import config_validation as cv, device_registry as dr
 
 from .const import (
     CONF_CURTAIN_SPEED,

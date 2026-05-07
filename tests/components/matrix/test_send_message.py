@@ -2,16 +2,16 @@
 
 import pytest
 
-from homeassistant.components.matrix import (
+from inpui.components.matrix import (
     ATTR_FORMAT,
     ATTR_IMAGES,
     ATTR_THREAD_ID,
     DOMAIN,
     MatrixBot,
 )
-from homeassistant.components.matrix.const import FORMAT_HTML, SERVICE_SEND_MESSAGE
-from homeassistant.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
-from homeassistant.core import Event, HomeAssistant
+from inpui.components.matrix.const import FORMAT_HTML, SERVICE_SEND_MESSAGE
+from inpui.components.notify import ATTR_DATA, ATTR_MESSAGE, ATTR_TARGET
+from inpui.core import Event, HomeAssistant
 
 from .conftest import TEST_BAD_ROOM, TEST_JOINABLE_ROOMS
 

@@ -9,18 +9,18 @@ import logging
 from thinqconnect import ThinQApi, ThinQAPIException
 from thinqconnect.integration import async_get_ha_bridge_list
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ACCESS_TOKEN,
     CONF_COUNTRY,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.event import async_track_time_interval
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.event import async_track_time_interval
 
 from .const import CONF_CONNECT_CLIENT_ID, DOMAIN, MQTT_SUBSCRIPTION_INTERVAL
 from .coordinator import DeviceDataUpdateCoordinator, async_setup_device_coordinator
@@ -164,7 +164,7 @@ async def async_setup_mqtt(
     )
     entry.async_on_unload(
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, mqtt_client.async_disconnect
+            EVENT_INPUI_STOP, mqtt_client.async_disconnect
         )
     )
 

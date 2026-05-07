@@ -6,12 +6,12 @@ from collections.abc import Callable, Coroutine
 from datetime import timedelta
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.dispatcher import (
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.dispatcher import (
     async_dispatcher_connect,
     async_dispatcher_send,
 )
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from inpui.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import LOGGER
 

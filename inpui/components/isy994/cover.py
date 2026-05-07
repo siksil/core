@@ -6,14 +6,14 @@ from typing import Any, cast
 
 from pyisy.constants import ISY_VALUE_UNKNOWN
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_POSITION,
     CoverEntity,
     CoverEntityFeature,
 )
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import _LOGGER, UOM_8_BIT_RANGE
 from .entity import ISYNodeEntity, ISYProgramEntity

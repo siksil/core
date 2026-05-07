@@ -11,16 +11,16 @@ import respx
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant import setup
-from homeassistant.components.input_text import (
+from inpui.components.input_text import (
     ATTR_VALUE as INPUT_TEXT_ATTR_VALUE,
     DOMAIN as INPUT_TEXT_DOMAIN,
     SERVICE_SET_VALUE as INPUT_TEXT_SERVICE_SET_VALUE,
 )
-from homeassistant.components.template import DOMAIN
-from homeassistant.const import ATTR_ENTITY_PICTURE, CONF_ENTITY_ID, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.template import DOMAIN
+from inpui.const import ATTR_ENTITY_PICTURE, CONF_ENTITY_ID, STATE_UNKNOWN
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, assert_setup_component
 from tests.typing import ClientSessionGenerator

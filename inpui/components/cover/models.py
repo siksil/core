@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from homeassistant.helpers.automation import DomainSpec
+from inpui.helpers.automation import DomainSpec
 
 
 @dataclass(frozen=True, slots=True)

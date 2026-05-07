@@ -11,17 +11,17 @@ from xknx.dpt import DPTBase, DPTNumeric, DPTString
 from xknx.exceptions import CouldNotParseAddress
 from xknx.telegram.address import IndividualAddress, parse_device_group_address
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     DEVICE_CLASS_UNITS as NUMBER_DEVICE_CLASS_UNITS,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     CONF_STATE_CLASS as CONF_SENSOR_STATE_CLASS,
     DEVICE_CLASS_STATE_CLASSES,
     DEVICE_CLASS_UNITS,
     STATE_CLASS_UNITS,
 )
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_UNIT_OF_MEASUREMENT
-from homeassistant.helpers import config_validation as cv
+from inpui.const import CONF_DEVICE_CLASS, CONF_UNIT_OF_MEASUREMENT
+from inpui.helpers import config_validation as cv
 
 from .const import NumberConf
 from .dpt import DPTInfo, get_supported_dpts

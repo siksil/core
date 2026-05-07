@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.util import slugify
+from inpui.core import HomeAssistant
+from inpui.util import slugify
 
 from . import init_integration
 from .consts import (

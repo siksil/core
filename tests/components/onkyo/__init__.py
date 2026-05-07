@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 from aioonkyo import ReceiverInfo
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

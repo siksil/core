@@ -7,8 +7,8 @@ from pyvlx.const import GatewayState, GatewaySubState
 from pyvlx.dataobjects import DtoState
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 from tests.components.diagnostics import get_diagnostics_for_config_entry

@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.device_tracker import (
+from inpui.components.device_tracker import (
     ATTR_HOST_NAME,
     ATTR_IP,
     ATTR_MAC,
@@ -13,15 +13,15 @@ from homeassistant.components.device_tracker import (
     DOMAIN,
     SourceType,
 )
-from homeassistant.components.device_tracker.config_entry import (
+from inpui.components.device_tracker.config_entry import (
     CONNECTED_DEVICE_REGISTERED,
     BaseTrackerEntity,
     ScannerEntity,
     TrackerEntity,
 )
-from homeassistant.components.zone import ATTR_RADIUS
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
-from homeassistant.const import (
+from inpui.components.zone import ATTR_RADIUS
+from inpui.config_entries import ConfigEntry, ConfigEntryState, ConfigFlow
+from inpui.const import (
     ATTR_BATTERY_LEVEL,
     ATTR_FRIENDLY_NAME,
     ATTR_GPS_ACCURACY,
@@ -32,11 +32,11 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from tests.common import (
     MockConfigEntry,

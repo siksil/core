@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import base64
 
-from homeassistant.components.esphome.encryption_key_storage import (
+from inpui.components.esphome.encryption_key_storage import (
     ESPHomeEncryptionKeyStorage,
     async_get_encryption_key_storage,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 
 async def test_dynamic_encryption_key_generation_mock(hass: HomeAssistant) -> None:

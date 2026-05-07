@@ -7,8 +7,8 @@ from unittest.mock import AsyncMock, patch
 from pynina import Warning
 import pytest
 
-from homeassistant.components.nina.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.nina.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from .const import DUMMY_CONFIG_ENTRY
 

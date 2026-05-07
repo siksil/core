@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 from mcstatus import BedrockServer, JavaServer, LegacyServer
 
-from homeassistant.components.minecraft_server.api import MinecraftServerType
-from homeassistant.components.minecraft_server.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_ADDRESS, CONF_TYPE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.minecraft_server.api import MinecraftServerType
+from inpui.components.minecraft_server.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_ADDRESS, CONF_TYPE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import (
     TEST_ADDRESS,

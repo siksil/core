@@ -5,9 +5,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from pyprosegur.installation import Camera
 import pytest
 
-from homeassistant.components.prosegur import DOMAIN
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
+from inpui.components.prosegur import DOMAIN
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

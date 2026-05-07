@@ -5,8 +5,8 @@ from unittest.mock import Mock
 from freezegun.api import FrozenDateTimeFactory
 from yalexs.pubnub_async import AugustPubNub
 
-from homeassistant.const import STATE_UNAVAILABLE, STATE_UNKNOWN
-from homeassistant.core import HomeAssistant
+from inpui.const import STATE_UNAVAILABLE, STATE_UNKNOWN
+from inpui.core import HomeAssistant
 
 from .mocks import (
     _create_august_with_devices,

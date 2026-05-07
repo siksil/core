@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from homeassistant.components.lastfm.const import DOMAIN
-from homeassistant.core import HomeAssistant
+from inpui.components.lastfm.const import DOMAIN
+from inpui.core import HomeAssistant
 
 from . import MockUser
 from .conftest import ComponentSetup

@@ -6,16 +6,16 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.kitchen_sink import DOMAIN
-from homeassistant.components.notify import (
+from inpui.components.kitchen_sink import DOMAIN
+from inpui.components.notify import (
     ATTR_MESSAGE,
     DOMAIN as NOTIFY_DOMAIN,
     SERVICE_SEND_MESSAGE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.const import ATTR_ENTITY_ID, STATE_UNKNOWN, Platform
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 ENTITY_DIRECT_MESSAGE = "notify.mybox_personal_notifier"
 

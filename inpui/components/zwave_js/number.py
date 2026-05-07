@@ -9,12 +9,12 @@ from zwave_js_server.const import TARGET_VALUE_PROPERTY
 from zwave_js_server.model.driver import Driver
 from zwave_js_server.model.value import Value
 
-from homeassistant.components.number import DOMAIN as NUMBER_DOMAIN, NumberEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.number import DOMAIN as NUMBER_DOMAIN, NumberEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import ATTR_RESERVED_VALUES, DOMAIN
 from .discovery import ZwaveDiscoveryInfo

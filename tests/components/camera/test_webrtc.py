@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from webrtc_models import RTCIceCandidate, RTCIceCandidateInit, RTCIceServer
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     Camera,
     CameraWebRTCProvider,
     StreamType,
@@ -19,11 +19,11 @@ from homeassistant.components.camera import (
     async_register_webrtc_provider,
     get_camera_from_entity_id,
 )
-from homeassistant.components.web_rtc import async_register_ice_servers
-from homeassistant.components.websocket_api import TYPE_RESULT
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.setup import async_setup_component
+from inpui.components.web_rtc import async_register_ice_servers
+from inpui.components.websocket_api import TYPE_RESULT
+from inpui.core import HomeAssistant, callback
+from inpui.core_config import async_process_ha_core_config
+from inpui.setup import async_setup_component
 
 from .common import STREAM_SOURCE, WEBRTC_ANSWER, SomeTestProvider
 

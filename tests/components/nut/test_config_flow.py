@@ -6,9 +6,9 @@ from unittest.mock import patch
 from aionut import NUTError, NUTLoginError
 
 from homeassistant import config_entries
-from homeassistant.components.nut.config_flow import PASSWORD_NOT_CHANGED
-from homeassistant.components.nut.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.nut.config_flow import PASSWORD_NOT_CHANGED
+from inpui.components.nut.const import DOMAIN
+from inpui.const import (
     CONF_ALIAS,
     CONF_HOST,
     CONF_NAME,
@@ -17,9 +17,9 @@ from homeassistant.const import (
     CONF_RESOURCES,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .util import _get_mock_nutclient, async_init_integration
 

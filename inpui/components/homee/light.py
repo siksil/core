@@ -5,16 +5,16 @@ from typing import Any
 from pyHomee.const import AttributeType
 from pyHomee.model import HomeeAttribute, HomeeNode
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
     ATTR_HS_COLOR,
     ColorMode,
     LightEntity,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import (
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import (
     brightness_to_value,
     color_hs_to_RGB,
     color_RGB_to_hs,

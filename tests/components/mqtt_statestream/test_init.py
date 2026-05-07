@@ -4,10 +4,10 @@ from unittest.mock import ANY, call
 
 import pytest
 
-from homeassistant.components import mqtt_statestream as statestream
-from homeassistant.const import EVENT_HOMEASSISTANT_STOP
-from homeassistant.core import CoreState, HomeAssistant, State
-from homeassistant.setup import async_setup_component
+from inpui.components import mqtt_statestream as statestream
+from inpui.const import EVENT_INPUI_STOP
+from inpui.core import CoreState, HomeAssistant, State
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntity, MockEntityPlatform, mock_state_change_event
 from tests.typing import MqttMockHAClient
@@ -85,7 +85,7 @@ async def test_setup_and_stop_waits_for_ha(
     mqtt_mock.reset_mock()
 
     # HA is shutting down
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
 
     # Change a state of an entity

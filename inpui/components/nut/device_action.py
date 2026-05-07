@@ -6,12 +6,12 @@ from typing import cast
 
 import voluptuous as vol
 
-from homeassistant.components.device_automation import InvalidDeviceAutomationConfig
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.helpers.typing import ConfigType, TemplateVarsType
+from inpui.components.device_automation import InvalidDeviceAutomationConfig
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_TYPE
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.helpers.typing import ConfigType, TemplateVarsType
 
 from .const import DOMAIN, INTEGRATION_SUPPORTED_COMMANDS
 from .coordinator import NutConfigEntry, NutRuntimeData

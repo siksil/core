@@ -9,9 +9,9 @@ import logging
 from types import ModuleType
 from typing import Any
 
-from homeassistant.components.lock import LockState
-from homeassistant.components.sun import STATE_ABOVE_HORIZON, STATE_BELOW_HORIZON
-from homeassistant.const import (
+from inpui.components.lock import LockState
+from inpui.components.sun import STATE_ABOVE_HORIZON, STATE_BELOW_HORIZON
+from inpui.const import (
     STATE_CLOSED,
     STATE_HOME,
     STATE_NOT_HOME,
@@ -20,8 +20,8 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_UNKNOWN,
 )
-from homeassistant.core import Context, HomeAssistant, State
-from homeassistant.loader import IntegrationNotFound, async_get_integration, bind_hass
+from inpui.core import Context, HomeAssistant, State
+from inpui.loader import IntegrationNotFound, async_get_integration, bind_hass
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 """Test different accessory types: Covers."""
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
@@ -9,7 +9,7 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
     CoverState,
 )
-from homeassistant.components.homekit.const import (
+from inpui.components.homekit.const import (
     ATTR_OBSTRUCTION_DETECTED,
     ATTR_VALUE,
     CONF_LINKED_OBSTRUCTION_SENSOR,
@@ -20,25 +20,25 @@ from homeassistant.components.homekit.const import (
     PROP_MAX_VALUE,
     PROP_MIN_VALUE,
 )
-from homeassistant.components.homekit.type_covers import (
+from inpui.components.homekit.type_covers import (
     Door,
     GarageDoorOpener,
     Window,
     WindowCovering,
     WindowCoveringBasic,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
-    EVENT_HOMEASSISTANT_START,
+    EVENT_INPUI_START,
     SERVICE_SET_COVER_TILT_POSITION,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, Event, HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import CoreState, Event, HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from tests.common import async_mock_service
 
@@ -636,7 +636,7 @@ async def test_windowcovering_basic_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = WindowCoveringBasic(hass, hk_driver, "Cover", "cover.simple", 2, None)
@@ -674,7 +674,7 @@ async def test_windowcovering_restore(
         original_device_class="mock-device-class",
     )
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_START, {})
+    hass.bus.async_fire(EVENT_INPUI_START, {})
     await hass.async_block_till_done()
 
     acc = WindowCovering(hass, hk_driver, "Cover", "cover.simple", 2, None)

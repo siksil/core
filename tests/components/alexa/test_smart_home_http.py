@@ -8,10 +8,10 @@ from typing import Any
 from aiohttp import ClientResponse
 import pytest
 
-from homeassistant.components.alexa import DOMAIN, smart_home
-from homeassistant.const import CONTENT_TYPE_JSON
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components.alexa import DOMAIN, smart_home
+from inpui.const import CONTENT_TYPE_JSON
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from .test_common import get_new_request
 

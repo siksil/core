@@ -17,8 +17,8 @@ from async_upnp_client.utils import async_get_local_ip
 from didl_lite import didl_lite
 
 from homeassistant import config_entries
-from homeassistant.components import media_source, ssdp
-from homeassistant.components.media_player import (
+from inpui.components import media_source, ssdp
+from inpui.components.media_player import (
     ATTR_MEDIA_EXTRA,
     DOMAIN as MEDIA_PLAYER_DOMAIN,
     BrowseMedia,
@@ -29,11 +29,11 @@ from homeassistant.components.media_player import (
     RepeatMode,
     async_process_play_media_url,
 )
-from homeassistant.const import CONF_DEVICE_ID, CONF_MAC, CONF_TYPE, CONF_URL
-from homeassistant.core import CoreState, HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.service_info.ssdp import SsdpServiceInfo
+from inpui.const import CONF_DEVICE_ID, CONF_MAC, CONF_TYPE, CONF_URL
+from inpui.core import CoreState, HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.service_info.ssdp import SsdpServiceInfo
 
 from .const import (
     CONF_BROWSE_UNFILTERED,
@@ -926,7 +926,7 @@ class DlnaDmrEntity(MediaPlayerEntity):
     def media_position_updated_at(self) -> datetime | None:
         """When was the position of the current playing media valid.
 
-        Returns value from homeassistant.util.dt.utcnow().
+        Returns value from inpui.util.dt.utcnow().
         """
         if not self._device:
             return None

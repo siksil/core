@@ -1,6 +1,6 @@
 """Common test tools for the Hikvision integration."""
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

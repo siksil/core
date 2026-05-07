@@ -5,7 +5,7 @@ from pyvizio.const import (
     DEVICE_CLASS_TV as VIZIO_DEVICE_CLASS_TV,
 )
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntityFeature,
 )

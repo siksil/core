@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from odp_amsterdam import ODPAmsterdam
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .coordinator import (
     GaragesAmsterdamConfigEntry,

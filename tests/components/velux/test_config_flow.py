@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock
 import pytest
 from pyvlx import PyVLXException
 
-from homeassistant.components.velux import DOMAIN
-from homeassistant.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PASSWORD
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.components.velux import DOMAIN
+from inpui.config_entries import SOURCE_DHCP, SOURCE_USER, ConfigEntryState
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PASSWORD
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
 
 from tests.common import MockConfigEntry
 

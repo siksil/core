@@ -19,11 +19,11 @@ from deebot_client.util import md5
 from deebot_client.util.continents import get_continent
 from sucks import EcoVacsAPI, VacBot
 
-from homeassistant.const import CONF_COUNTRY, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryError, ConfigEntryNotReady
-from homeassistant.helpers import aiohttp_client
-from homeassistant.util.ssl import get_default_no_verify_context
+from inpui.const import CONF_COUNTRY, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryError, ConfigEntryNotReady
+from inpui.helpers import aiohttp_client
+from inpui.util.ssl import get_default_no_verify_context
 
 from .const import (
     CONF_OVERRIDE_MQTT_URL,

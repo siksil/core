@@ -20,7 +20,7 @@ from pyvizio.const import (
     UNKNOWN_APP,
 )
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE,
     ATTR_INPUT_SOURCE_LIST,
     ATTR_MEDIA_VOLUME_LEVEL,
@@ -42,18 +42,18 @@ from homeassistant.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntityFeature,
 )
-from homeassistant.components.vizio.const import (
+from inpui.components.vizio.const import (
     CONF_ADDITIONAL_CONFIGS,
     CONF_APPS,
     CONF_VOLUME_STEP,
     DEFAULT_VOLUME_STEP,
     DOMAIN,
 )
-from homeassistant.components.vizio.services import SERVICE_UPDATE_SETTING
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.util import dt as dt_util
+from inpui.components.vizio.services import SERVICE_UPDATE_SETTING
+from inpui.config_entries import ConfigEntryState
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF, STATE_ON, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.util import dt as dt_util
 
 from .const import (
     ADDITIONAL_APP_CONFIG,

@@ -4,10 +4,10 @@ from unittest import mock
 
 import pytest
 
-from homeassistant.components import switch
-from homeassistant.components.mochad import switch as mochad
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
+from inpui.components import switch
+from inpui.components.mochad import switch as mochad
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
 
 from tests.common import MockEntityPlatform
 

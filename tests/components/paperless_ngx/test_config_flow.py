@@ -13,11 +13,11 @@ from pypaperless.exceptions import (
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.paperless_ngx.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_URL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.paperless_ngx.const import DOMAIN
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_URL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .const import USER_INPUT_ONE, USER_INPUT_REAUTH, USER_INPUT_TWO
 

@@ -6,15 +6,15 @@ from unittest.mock import AsyncMock
 import pytest
 from wsdot import WsdotTravelError
 
-from homeassistant.components.wsdot.const import (
+from inpui.components.wsdot.const import (
     CONF_TRAVEL_TIMES,
     DOMAIN,
     SUBENTRY_TRAVEL_TIMES,
 )
-from homeassistant.config_entries import SOURCE_IMPORT, SOURCE_USER
-from homeassistant.const import CONF_API_KEY, CONF_ID, CONF_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_IMPORT, SOURCE_USER
+from inpui.const import CONF_API_KEY, CONF_ID, CONF_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
 

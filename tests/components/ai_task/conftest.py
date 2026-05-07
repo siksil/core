@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from homeassistant.components.ai_task import (
+from inpui.components.ai_task import (
     DOMAIN,
     AITaskEntity,
     AITaskEntityFeature,
@@ -13,12 +13,12 @@ from homeassistant.components.ai_task import (
     GenImageTask,
     GenImageTaskResult,
 )
-from homeassistant.components.conversation import AssistantContent, ChatLog
-from homeassistant.config_entries import ConfigEntry, ConfigFlow
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.setup import async_setup_component
+from inpui.components.conversation import AssistantContent, ChatLog
+from inpui.config_entries import ConfigEntry, ConfigFlow
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.setup import async_setup_component
 
 from tests.common import (
     MockConfigEntry,

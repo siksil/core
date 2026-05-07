@@ -9,16 +9,16 @@ from typing import Any
 from pybotvac import Robot
 from pybotvac.exceptions import NeatoRobotException
 
-from homeassistant.components.vacuum import (
+from inpui.components.vacuum import (
     ATTR_STATUS,
     StateVacuumEntity,
     VacuumActivity,
     VacuumEntityFeature,
 )
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .const import (
     ACTION,

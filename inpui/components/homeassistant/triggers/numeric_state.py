@@ -10,7 +10,7 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import exceptions
-from homeassistant.const import (
+from inpui.const import (
     CONF_ABOVE,
     CONF_ATTRIBUTE,
     CONF_BELOW,
@@ -19,7 +19,7 @@ from homeassistant.const import (
     CONF_PLATFORM,
     CONF_VALUE_TEMPLATE,
 )
-from homeassistant.core import (
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -28,18 +28,18 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import (
+from inpui.helpers import (
     condition,
     config_validation as cv,
     entity_registry as er,
     template,
 )
-from homeassistant.helpers.event import (
+from inpui.helpers.event import (
     async_track_same_state,
     async_track_state_change_event,
 )
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 
 def validate_above_below[_T: dict[str, Any]](value: _T) -> _T:

@@ -4,9 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components.nut.const import DOMAIN
-from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
-from homeassistant.const import (
+from inpui.components.nut.const import DOMAIN
+from inpui.components.sensor import SensorDeviceClass, SensorStateClass
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
@@ -19,8 +19,8 @@ from homeassistant.const import (
     UnitOfElectricCurrent,
     UnitOfElectricPotential,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er, translation
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er, translation
 
 from .util import (
     _get_mock_nutclient,

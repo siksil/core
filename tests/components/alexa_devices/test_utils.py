@@ -6,13 +6,13 @@ from aioamazondevices.const.devices import SPEAKER_GROUP_FAMILY
 from aioamazondevices.exceptions import CannotConnect, CannotRetrieveData
 import pytest
 
-from homeassistant.components.alexa_devices.const import DOMAIN
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TURN_ON
-from homeassistant.const import ATTR_ENTITY_ID, STATE_OFF
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.alexa_devices.const import DOMAIN
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN, SERVICE_TURN_ON
+from inpui.const import ATTR_ENTITY_ID, STATE_OFF
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import setup_integration
 from .const import TEST_DEVICE_1_SN

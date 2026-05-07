@@ -17,12 +17,12 @@ from pyopenweathermap import (
 from pyopenweathermap.client.owm_abstract_client import OWMClient
 import pytest
 
-from homeassistant.components.openweathermap.const import (
+from inpui.components.openweathermap.const import (
     DEFAULT_LANGUAGE,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_API_KEY,
     CONF_LANGUAGE,
     CONF_LATITUDE,

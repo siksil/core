@@ -8,7 +8,7 @@ from typing import Any
 
 import orjson
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 _SENTINEL = object()
 _LOGGER = logging.getLogger(__name__)

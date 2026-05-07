@@ -13,7 +13,7 @@ from eq3btsmart.const import (
 )
 from eq3btsmart.exceptions import Eq3Exception
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_HVAC_MODE,
     PRESET_NONE,
     ClimateEntity,
@@ -21,13 +21,13 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, PRECISION_HALVES, UnitOfTemperature
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.device_registry import CONNECTION_BLUETOOTH
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-import homeassistant.util.dt as dt_util
+from inpui.const import ATTR_TEMPERATURE, PRECISION_HALVES, UnitOfTemperature
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import device_registry as dr
+from inpui.helpers.device_registry import CONNECTION_BLUETOOTH
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+import inpui.util.dt as dt_util
 
 from . import Eq3ConfigEntry
 from .const import (

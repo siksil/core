@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 from victron_vrm.exceptions import AuthenticationError, VictronVRMError
 
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

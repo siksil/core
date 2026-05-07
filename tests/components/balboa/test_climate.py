@@ -9,7 +9,7 @@ from pybalboa.enums import HeatMode, OffLowMediumHighState
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_FAN_MODE,
     ATTR_FAN_MODES,
     ATTR_HVAC_ACTION,
@@ -26,11 +26,11 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.const import ATTR_TEMPERATURE, Platform
-from homeassistant.core import HomeAssistant, State
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.const import ATTR_TEMPERATURE, Platform
+from inpui.core import HomeAssistant, State
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import client_update, init_integration
 

@@ -8,7 +8,7 @@ from pydactyl import PterodactylClient
 from pydactyl.exceptions import BadRequestError, PterodactylApiError
 from requests.exceptions import ConnectionError, HTTPError
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

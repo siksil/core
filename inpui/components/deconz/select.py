@@ -11,10 +11,10 @@ from pydeconz.models.sensor.presence import (
     PresenceConfigTriggerDistance,
 )
 
-from homeassistant.components.select import DOMAIN as SELECT_DOMAIN, SelectEntity
-from homeassistant.const import EntityCategory
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.select import DOMAIN as SELECT_DOMAIN, SelectEntity
+from inpui.const import EntityCategory
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DeconzConfigEntry
 from .entity import DeconzDevice

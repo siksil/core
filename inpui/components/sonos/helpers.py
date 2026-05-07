@@ -13,10 +13,10 @@ from requests.exceptions import Timeout
 from soco import SoCo
 from soco.exceptions import SoCoException, SoCoUPnPException
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import CALLBACK_TYPE
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.dispatcher import dispatcher_send
+from inpui.config_entries import ConfigEntry
+from inpui.core import CALLBACK_TYPE
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.dispatcher import dispatcher_send
 
 from .const import SONOS_SPEAKER_ACTIVITY
 from .exception import SonosUpdateError

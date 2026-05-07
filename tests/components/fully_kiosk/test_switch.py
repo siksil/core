@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.components import switch
-from homeassistant.components.fully_kiosk.const import DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
-from homeassistant.core import HomeAssistant, ServiceResponse
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components import switch
+from inpui.components.fully_kiosk.const import DOMAIN
+from inpui.const import ATTR_ENTITY_ID
+from inpui.core import HomeAssistant, ServiceResponse
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, async_fire_mqtt_message
 from tests.typing import MqttMockHAClient

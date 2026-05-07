@@ -18,11 +18,11 @@ from websockets import frames
 from websockets.exceptions import ConnectionClosedError, WebSocketException
 
 from homeassistant import config_entries
-from homeassistant.components.samsungtv.config_flow import (
+from inpui.components.samsungtv.config_flow import (
     SamsungTVConfigFlow,
     _strip_uuid,
 )
-from homeassistant.components.samsungtv.const import (
+from inpui.components.samsungtv.const import (
     CONF_MANUFACTURER,
     CONF_SESSION_ID,
     CONF_SSDP_MAIN_TV_AGENT_LOCATION,
@@ -37,8 +37,8 @@ from homeassistant.components.samsungtv.const import (
     TIMEOUT_REQUEST,
     TIMEOUT_WEBSOCKET,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_METHOD,
@@ -47,17 +47,17 @@ from homeassistant.const import (
     CONF_PORT,
     CONF_TOKEN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import BaseServiceInfo, FlowResultType
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.service_info.dhcp import DhcpServiceInfo
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import BaseServiceInfo, FlowResultType
+from inpui.helpers import device_registry as dr
+from inpui.helpers.service_info.dhcp import DhcpServiceInfo
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MANUFACTURER,
     SsdpServiceInfo,
 )
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
-from homeassistant.setup import async_setup_component
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.setup import async_setup_component
 
 from .const import (
     ENTRYDATA_ENCRYPTED_WEBSOCKET,

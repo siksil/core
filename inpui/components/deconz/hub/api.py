@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING
 
 from pydeconz import DeconzSession, errors
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import aiohttp_client
+from inpui.core import HomeAssistant
+from inpui.helpers import aiohttp_client
 
 from ..const import LOGGER
 from ..errors import AuthenticationRequired, CannotConnect

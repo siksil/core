@@ -5,15 +5,15 @@ from unittest.mock import MagicMock, patch
 from goodwe import InverterError
 from goodwe.const import GOODWE_UDP_PORT
 
-from homeassistant.components.goodwe.const import (
+from inpui.components.goodwe.const import (
     CONF_MODEL_FAMILY,
     DEFAULT_NAME,
     DOMAIN,
 )
-from homeassistant.config_entries import SOURCE_USER
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.config_entries import SOURCE_USER
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from .conftest import TEST_SERIAL
 

@@ -8,7 +8,7 @@ from typing import Any, cast
 from haphilipsjs import PhilipsTV
 from haphilipsjs.typing import AmbilightCurrentConfiguration
 
-from homeassistant.components.light import (
+from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_EFFECT,
     ATTR_HS_COLOR,
@@ -16,10 +16,10 @@ from homeassistant.components.light import (
     LightEntity,
     LightEntityFeature,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.util.color import color_hsv_to_RGB, color_RGB_to_hsv
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.util.color import color_hsv_to_RGB, color_RGB_to_hsv
 
 from .coordinator import PhilipsTVConfigEntry, PhilipsTVDataUpdateCoordinator
 from .entity import PhilipsJsEntity

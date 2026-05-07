@@ -6,20 +6,20 @@ import logging
 from pykodi import CannotConnectError, InvalidAuthError, Kodi, get_kodi_connection
 from pykodi.kodi import KodiHTTPConnection, KodiWSConnection
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_HOST,
     CONF_PASSWORD,
     CONF_PORT,
     CONF_SSL,
     CONF_USERNAME,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.typing import ConfigType
+from inpui.core import HomeAssistant
+from inpui.helpers import config_validation as cv
+from inpui.helpers.aiohttp_client import async_get_clientsession
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_WS_PORT, DOMAIN
 from .services import async_setup_services
@@ -75,7 +75,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: KodiConfigEntry) -> bool
     async def _close(event):
         await conn.close()
 
-    entry.async_on_unload(hass.bus.async_listen_once(EVENT_HOMEASSISTANT_STOP, _close))
+    entry.async_on_unload(hass.bus.async_listen_once(EVENT_INPUI_STOP, _close))
 
     entry.runtime_data = KodiRuntimeData(connection=conn, kodi=kodi)
 

@@ -8,15 +8,15 @@ from unittest.mock import MagicMock, Mock, patch
 from pysenz import Account, Thermostat
 import pytest
 
-from homeassistant.components.application_credentials import (
+from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
     async_import_client_credential,
 )
-from homeassistant.components.senz.const import DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import config_entry_oauth2_flow
-from homeassistant.setup import async_setup_component
+from inpui.components.senz.const import DOMAIN
+from inpui.core import HomeAssistant
+from inpui.helpers import config_entry_oauth2_flow
+from inpui.setup import async_setup_component
 
 from .const import CLIENT_ID, CLIENT_SECRET, ENTRY_UNIQUE_ID
 

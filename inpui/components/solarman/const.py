@@ -2,7 +2,7 @@
 
 from datetime import timedelta
 
-from homeassistant.const import Platform
+from inpui.const import Platform
 
 DOMAIN = "solarman"
 DEFAULT_PORT = 8080

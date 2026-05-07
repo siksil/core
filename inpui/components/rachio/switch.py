@@ -8,16 +8,16 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.switch import SwitchEntity
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_ID
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, entity_platform
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.event import async_track_point_in_utc_time
-from homeassistant.util.dt import as_timestamp, now, parse_datetime, utc_from_timestamp
+from inpui.components.switch import SwitchEntity
+from inpui.const import ATTR_ENTITY_ID, ATTR_ID
+from inpui.core import CALLBACK_TYPE, HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, entity_platform
+from inpui.helpers.dispatcher import async_dispatcher_connect
+from inpui.helpers.entity import Entity
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.event import async_track_point_in_utc_time
+from inpui.util.dt import as_timestamp, now, parse_datetime, utc_from_timestamp
 
 from .const import (
     CONF_MANUAL_RUN_MINS,

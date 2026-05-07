@@ -13,15 +13,15 @@ from PyTado.interface import Tado
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     SOURCE_REAUTH,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.core import callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.core import callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     CONF_FALLBACK,

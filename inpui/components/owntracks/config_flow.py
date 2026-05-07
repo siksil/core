@@ -3,9 +3,9 @@
 import secrets
 from typing import Any
 
-from homeassistant.components import cloud, webhook
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_WEBHOOK_ID
+from inpui.components import cloud, webhook
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_WEBHOOK_ID
 
 from .const import DOMAIN
 from .helper import supports_encryption

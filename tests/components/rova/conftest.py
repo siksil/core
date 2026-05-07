@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.rova.const import (
+from inpui.components.rova.const import (
     CONF_HOUSE_NUMBER,
     CONF_HOUSE_NUMBER_SUFFIX,
     CONF_ZIP_CODE,

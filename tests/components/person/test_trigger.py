@@ -4,9 +4,9 @@ from typing import Any
 
 import pytest
 
-from homeassistant.components.person.const import DOMAIN
-from homeassistant.const import STATE_HOME, STATE_NOT_HOME
-from homeassistant.core import HomeAssistant
+from inpui.components.person.const import DOMAIN
+from inpui.const import STATE_HOME, STATE_NOT_HOME
+from inpui.core import HomeAssistant
 
 from tests.components.common import (
     TriggerStateDescription,

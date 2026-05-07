@@ -9,13 +9,13 @@ from freezegun.api import FrozenDateTimeFactory
 from incomfortclient import InvalidGateway, InvalidHeaterList
 import pytest
 
-from homeassistant.components.incomfort import DOMAIN
-from homeassistant.components.incomfort.coordinator import UPDATE_INTERVAL
-from homeassistant.config_entries import ConfigEntry, ConfigEntryState
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.device_registry import DeviceRegistry
+from inpui.components.incomfort import DOMAIN
+from inpui.components.incomfort.coordinator import UPDATE_INTERVAL
+from inpui.config_entries import ConfigEntry, ConfigEntryState
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.helpers.device_registry import DeviceRegistry
 
 from .conftest import MOCK_HEATER_STATUS
 

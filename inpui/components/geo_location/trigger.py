@@ -7,9 +7,9 @@ from typing import Final
 
 import voluptuous as vol
 
-from homeassistant.components.zone import condition as zone_condition
-from homeassistant.const import CONF_EVENT, CONF_PLATFORM, CONF_SOURCE, CONF_ZONE
-from homeassistant.core import (
+from inpui.components.zone import condition as zone_condition
+from inpui.const import CONF_EVENT, CONF_PLATFORM, CONF_SOURCE, CONF_ZONE
+from inpui.core import (
     CALLBACK_TYPE,
     Event,
     EventStateChangedData,
@@ -18,11 +18,11 @@ from homeassistant.core import (
     State,
     callback,
 )
-from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.config_validation import entity_domain
-from homeassistant.helpers.event import TrackStates, async_track_state_change_filtered
-from homeassistant.helpers.trigger import TriggerActionType, TriggerInfo
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers import config_validation as cv
+from inpui.helpers.config_validation import entity_domain
+from inpui.helpers.event import TrackStates, async_track_state_change_filtered
+from inpui.helpers.trigger import TriggerActionType, TriggerInfo
+from inpui.helpers.typing import ConfigType
 
 from . import DOMAIN
 

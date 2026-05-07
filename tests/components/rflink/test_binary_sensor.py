@@ -9,16 +9,16 @@ from datetime import timedelta
 from freezegun import freeze_time
 import pytest
 
-from homeassistant.components.rflink import CONF_RECONNECT_INTERVAL
-from homeassistant.const import (
+from inpui.components.rflink import CONF_RECONNECT_INTERVAL
+from inpui.const import (
     EVENT_STATE_CHANGED,
     STATE_OFF,
     STATE_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import CoreState, HomeAssistant, State, callback
-from homeassistant.util import dt as dt_util
+from inpui.core import CoreState, HomeAssistant, State, callback
+from inpui.util import dt as dt_util
 
 from .test_init import mock_rflink
 

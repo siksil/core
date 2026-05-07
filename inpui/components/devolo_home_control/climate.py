@@ -7,15 +7,15 @@ from typing import Any
 from devolo_home_control_api.devices.zwave import Zwave
 from devolo_home_control_api.homecontrol import HomeControl
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_TEMPERATURE,
     ClimateEntity,
     ClimateEntityFeature,
     HVACMode,
 )
-from homeassistant.const import PRECISION_HALVES, PRECISION_TENTHS, UnitOfTemperature
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.const import PRECISION_HALVES, PRECISION_TENTHS, UnitOfTemperature
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import DevoloHomeControlConfigEntry
 from .entity import DevoloMultiLevelSwitchDeviceEntity

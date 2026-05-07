@@ -1,9 +1,9 @@
 """Tests for Prana integration entry points (async_setup_entry / async_unload_entry)."""
 
-from homeassistant.components.prana.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.prana.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from . import async_init_integration
 

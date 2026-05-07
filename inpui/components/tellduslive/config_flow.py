@@ -8,9 +8,9 @@ from typing import Any
 from tellduslive import Session, supports_local_api
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_HOST
-from homeassistant.util.json import load_json_object
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_HOST
+from inpui.util.json import load_json_object
 
 from .const import (
     APPLICATION_NAME,

@@ -10,22 +10,22 @@ from unittest.mock import AsyncMock, Mock, patch
 from aiohttp import web
 import pytest
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     DEFAULT_CONTENT_TYPE,
     DOMAIN as CAMERA_DOMAIN,
     async_get_image,
     async_get_mjpeg_stream,
 )
-from homeassistant.components.hyperion import get_hyperion_device_id
-from homeassistant.components.hyperion.const import (
+from inpui.components.hyperion import get_hyperion_device_id
+from inpui.components.hyperion.const import (
     DOMAIN,
     HYPERION_MANUFACTURER_NAME,
     HYPERION_MODEL_NAME,
     TYPE_HYPERION_CAMERA,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from . import (
     TEST_CONFIG_ENTRY_ID,

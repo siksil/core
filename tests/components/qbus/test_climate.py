@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, call
 
 import pytest
 
-from homeassistant.components.climate import (
+from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,
     ATTR_HVAC_ACTION,
     ATTR_PRESET_MODE,
@@ -16,12 +16,12 @@ from homeassistant.components.climate import (
     HVACAction,
     HVACMode,
 )
-from homeassistant.components.qbus.climate import STATE_REQUEST_DELAY
-from homeassistant.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers.entity_platform import EntityPlatform
-from homeassistant.util import dt as dt_util
+from inpui.components.qbus.climate import STATE_REQUEST_DELAY
+from inpui.const import ATTR_ENTITY_ID, ATTR_TEMPERATURE
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers.entity_platform import EntityPlatform
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_mqtt_message, async_fire_time_changed
 from tests.typing import MqttMockHAClient

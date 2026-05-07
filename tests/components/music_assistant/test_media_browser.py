@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     BrowseError,
     BrowseMedia,
     MediaClass,
@@ -13,8 +13,8 @@ from homeassistant.components.media_player import (
     SearchMedia,
     SearchMediaQuery,
 )
-from homeassistant.components.music_assistant.const import DOMAIN
-from homeassistant.components.music_assistant.media_browser import (
+from inpui.components.music_assistant.const import DOMAIN
+from inpui.components.music_assistant.media_browser import (
     LIBRARY_ALBUMS,
     LIBRARY_ARTISTS,
     LIBRARY_AUDIOBOOKS,
@@ -27,7 +27,7 @@ from homeassistant.components.music_assistant.media_browser import (
     async_browse_media,
     async_search_media,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import setup_integration_from_fixtures
 

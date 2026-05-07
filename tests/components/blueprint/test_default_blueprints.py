@@ -6,9 +6,9 @@ import pathlib
 
 import pytest
 
-from homeassistant.components.blueprint import BLUEPRINT_SCHEMA, models
-from homeassistant.components.blueprint.const import BLUEPRINT_FOLDER
-from homeassistant.util import yaml as yaml_util
+from inpui.components.blueprint import BLUEPRINT_SCHEMA, models
+from inpui.components.blueprint.const import BLUEPRINT_FOLDER
+from inpui.util import yaml as yaml_util
 
 DOMAINS = ["automation"]
 LOGGER = logging.getLogger(__name__)

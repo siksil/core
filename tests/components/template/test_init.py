@@ -6,18 +6,18 @@ from unittest.mock import patch
 import pytest
 
 from homeassistant import config
-from homeassistant.components import labs
-from homeassistant.components.template import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import Context, HomeAssistant
-from homeassistant.helpers import (
+from inpui.components import labs
+from inpui.components.template import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import SERVICE_RELOAD
+from inpui.core import Context, HomeAssistant
+from inpui.helpers import (
     device_registry as dr,
     entity_registry as er,
     issue_registry as ir,
 )
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import (
     MockConfigEntry,

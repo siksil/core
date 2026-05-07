@@ -8,9 +8,9 @@ from aiorussound.rio import ZoneControlSurface
 from aiorussound.util import controller_device_str, zone_device_str
 import pytest
 
-from homeassistant.components.russound_rio.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_PORT
-from homeassistant.core import HomeAssistant
+from inpui.components.russound_rio.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_PORT
+from inpui.core import HomeAssistant
 
 from .const import API_VERSION, HARDWARE_MAC, MOCK_CONFIG, MODEL
 

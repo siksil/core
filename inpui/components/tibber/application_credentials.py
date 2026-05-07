@@ -1,7 +1,7 @@
 """Application credentials platform for Tibber."""
 
-from homeassistant.components.application_credentials import AuthorizationServer
-from homeassistant.core import HomeAssistant
+from inpui.components.application_credentials import AuthorizationServer
+from inpui.core import HomeAssistant
 
 AUTHORIZE_URL = "https://thewall.tibber.com/connect/authorize"
 TOKEN_URL = "https://thewall.tibber.com/connect/token"

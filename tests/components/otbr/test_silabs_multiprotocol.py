@@ -5,12 +5,12 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from python_otbr_api import ActiveDataSet, tlv_parser
 
-from homeassistant.components.otbr import (
+from inpui.components.otbr import (
     silabs_multiprotocol as otbr_silabs_multiprotocol,
 )
-from homeassistant.components.thread import dataset_store
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.components.thread import dataset_store
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import DATASET_CH16
 

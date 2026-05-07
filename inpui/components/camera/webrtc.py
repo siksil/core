@@ -14,12 +14,12 @@ from mashumaro import MissingField
 import voluptuous as vol
 from webrtc_models import RTCConfiguration, RTCIceCandidate, RTCIceCandidateInit
 
-from homeassistant.components import websocket_api
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.ulid import ulid
+from inpui.components import websocket_api
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv
+from inpui.util.hass_dict import HassKey
+from inpui.util.ulid import ulid
 
 from .const import DATA_COMPONENT, DOMAIN, StreamType
 from .helper import get_camera_from_entity_id

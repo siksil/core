@@ -1,7 +1,7 @@
 """The sensor tests for the nexia platform."""
 
-from homeassistant.const import PERCENTAGE, UnitOfTemperature
-from homeassistant.core import HomeAssistant
+from inpui.const import PERCENTAGE, UnitOfTemperature
+from inpui.core import HomeAssistant
 
 from .util import async_init_integration
 

@@ -7,7 +7,7 @@ import switchbot_api
 from switchbot_api import Device, SwitchBotAPI
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.fan import (
+from inpui.components.fan import (
     ATTR_PERCENTAGE,
     ATTR_PRESET_MODE,
     DOMAIN as FAN_DOMAIN,
@@ -15,9 +15,9 @@ from homeassistant.components.fan import (
     SERVICE_SET_PRESET_MODE,
     SERVICE_TURN_ON,
 )
-from homeassistant.components.switchbot_cloud.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.switchbot_cloud.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     STATE_OFF,
@@ -25,8 +25,8 @@ from homeassistant.const import (
     STATE_UNKNOWN,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import (
     AIR_PURIFIER_INFO,

@@ -5,18 +5,18 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import light, scene
-from homeassistant.const import (
+from inpui.components import light, scene
+from inpui.const import (
     ATTR_ENTITY_ID,
     ENTITY_MATCH_ALL,
     SERVICE_TURN_ON,
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant, State
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
-from homeassistant.util.yaml import loader as yaml_loader
+from inpui.core import HomeAssistant, State
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
+from inpui.util.yaml import loader as yaml_loader
 
 from tests.common import (
     async_mock_service,

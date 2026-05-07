@@ -9,9 +9,9 @@ from aiohttp import ClientError
 from igloohome_api import Auth as IgloohomeAuth, AuthException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
-from homeassistant.helpers.aiohttp_client import async_get_clientsession
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_CLIENT_ID, CONF_CLIENT_SECRET
+from inpui.helpers.aiohttp_client import async_get_clientsession
 
 from .const import API_ACCESS_URL, DOMAIN
 

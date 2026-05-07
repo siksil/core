@@ -3,17 +3,17 @@
 import pytest
 from pytest_unordered import unordered
 
-from homeassistant.components import automation
-from homeassistant.components.alarm_control_panel import (
+from inpui.components import automation
+from inpui.components.alarm_control_panel import (
     DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.components.device_automation import DeviceAutomationType
-from homeassistant.const import CONF_PLATFORM, STATE_UNKNOWN, EntityCategory
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.components.device_automation import DeviceAutomationType
+from inpui.const import CONF_PLATFORM, STATE_UNKNOWN, EntityCategory
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from .common import MockAlarm
 

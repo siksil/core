@@ -9,11 +9,11 @@ from volvocarsapi.api import VolvoCarsApi
 from volvocarsapi.auth import TOKEN_URL
 from volvocarsapi.models import VolvoAuthException
 
-from homeassistant.components.volvo.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.config_entry_oauth2_flow import (
+from inpui.components.volvo.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
 

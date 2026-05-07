@@ -7,7 +7,7 @@ from unittest.mock import patch
 import py
 import pytest
 
-from homeassistant.util.file import WriteError, write_utf8_file, write_utf8_file_atomic
+from inpui.util.file import WriteError, write_utf8_file, write_utf8_file_atomic
 
 
 @pytest.mark.parametrize("func", [write_utf8_file, write_utf8_file_atomic])

@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import cast
 
-from homeassistant.const import CONF_PLATFORM
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant
-from homeassistant.helpers.trigger import (
+from inpui.const import CONF_PLATFORM
+from inpui.core import CALLBACK_TYPE, HomeAssistant
+from inpui.helpers.trigger import (
     TriggerActionType,
     TriggerInfo,
     TriggerProtocol,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .triggers import turn_on
 

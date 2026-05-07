@@ -9,12 +9,12 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.websocket_api import ActiveConnection
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import singleton
-from homeassistant.helpers.storage import Store
-from homeassistant.util.hass_dict import HassKey
+from inpui.components import websocket_api
+from inpui.components.websocket_api import ActiveConnection
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import singleton
+from inpui.helpers.storage import Store
+from inpui.util.hass_dict import HassKey
 
 DATA_STORAGE: HassKey[dict[str, asyncio.Future[UserStore]]] = HassKey(
     "frontend_storage"

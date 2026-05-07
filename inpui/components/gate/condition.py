@@ -1,13 +1,13 @@
 """Provides conditions for gates."""
 
-from homeassistant.components.cover import (
+from inpui.components.cover import (
     DOMAIN as COVER_DOMAIN,
     CoverDeviceClass,
     make_cover_is_closed_condition,
     make_cover_is_open_condition,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.condition import Condition
+from inpui.core import HomeAssistant
+from inpui.helpers.condition import Condition
 
 DEVICE_CLASSES_GATE: dict[str, str] = {
     COVER_DOMAIN: CoverDeviceClass.GATE,

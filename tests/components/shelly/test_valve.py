@@ -6,25 +6,25 @@ from unittest.mock import Mock
 from aioshelly.const import MODEL_GAS
 import pytest
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     MODEL_FRANKEVER_WATER_VALVE,
     MODEL_NEO_WATER_VALVE,
 )
-from homeassistant.components.valve import (
+from inpui.components.valve import (
     ATTR_CURRENT_POSITION,
     ATTR_POSITION,
     DOMAIN as VALVE_DOMAIN,
     ValveState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_CLOSE_VALVE,
     SERVICE_OPEN_VALVE,
     SERVICE_SET_VALVE_POSITION,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_registry import EntityRegistry
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_registry import EntityRegistry
 
 from . import init_integration, patch_platforms
 

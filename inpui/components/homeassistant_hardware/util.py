@@ -14,12 +14,12 @@ from universal_silabs_flasher.const import ApplicationType as FlasherApplication
 from universal_silabs_flasher.firmware import parse_firmware_image
 from universal_silabs_flasher.flasher import BaseFlasher, DeviceSpecificFlasher, Flasher
 
-from homeassistant.components.hassio import AddonError, AddonManager, AddonState
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers.hassio import is_hassio
-from homeassistant.helpers.singleton import singleton
+from inpui.components.hassio import AddonError, AddonManager, AddonState
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers.hassio import is_hassio
+from inpui.helpers.singleton import singleton
 
 from . import DATA_COMPONENT
 from .const import (

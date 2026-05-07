@@ -2,9 +2,9 @@
 
 from rtmapi import Rtm, RtmRequestFailedException
 
-from homeassistant.const import CONF_ID, CONF_NAME, STATE_OK
-from homeassistant.core import ServiceCall
-from homeassistant.helpers.entity import Entity
+from inpui.const import CONF_ID, CONF_NAME, STATE_OK
+from inpui.core import ServiceCall
+from inpui.helpers.entity import Entity
 
 from .const import LOGGER
 from .storage import RememberTheMilkConfiguration

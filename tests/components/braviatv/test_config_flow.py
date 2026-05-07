@@ -10,19 +10,19 @@ from pybravia import (
 )
 import pytest
 
-from homeassistant.components.braviatv.const import (
+from inpui.components.braviatv.const import (
     CONF_NICKNAME,
     CONF_USE_PSK,
     CONF_USE_SSL,
     DOMAIN,
     NICKNAME_PREFIX,
 )
-from homeassistant.config_entries import SOURCE_SSDP, SOURCE_USER
-from homeassistant.const import CONF_CLIENT_ID, CONF_HOST, CONF_MAC, CONF_PIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers import instance_id
-from homeassistant.helpers.service_info.ssdp import (
+from inpui.config_entries import SOURCE_SSDP, SOURCE_USER
+from inpui.const import CONF_CLIENT_ID, CONF_HOST, CONF_MAC, CONF_PIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers import instance_id
+from inpui.helpers.service_info.ssdp import (
     ATTR_UPNP_FRIENDLY_NAME,
     ATTR_UPNP_MODEL_NAME,
     ATTR_UPNP_UDN,

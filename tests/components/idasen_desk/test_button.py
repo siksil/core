@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import init_integration
 

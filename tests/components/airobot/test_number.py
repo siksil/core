@@ -6,15 +6,15 @@ from pyairobotrest.exceptions import AirobotError
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.components.number import (
+from inpui.components.number import (
     ATTR_VALUE,
     DOMAIN as NUMBER_DOMAIN,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import ATTR_ENTITY_ID, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-import homeassistant.helpers.entity_registry as er
+from inpui.const import ATTR_ENTITY_ID, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+import inpui.helpers.entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
 

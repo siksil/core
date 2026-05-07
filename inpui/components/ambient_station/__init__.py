@@ -7,18 +7,18 @@ from typing import Any
 from aioambient import Websocket
 from aioambient.errors import WebsocketError
 
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     ATTR_LOCATION,
     ATTR_NAME,
     CONF_API_KEY,
-    EVENT_HOMEASSISTANT_STOP,
+    EVENT_INPUI_STOP,
     Platform,
 )
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.dispatcher import async_dispatcher_send
+from inpui.core import Event, HomeAssistant, callback
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.dispatcher import async_dispatcher_send
 
 from .const import (
     ATTR_LAST_DATA,
@@ -81,7 +81,7 @@ async def async_setup_entry(
 
     entry.async_on_unload(
         hass.bus.async_listen_once(
-            EVENT_HOMEASSISTANT_STOP, _async_disconnect_websocket
+            EVENT_INPUI_STOP, _async_disconnect_websocket
         )
     )
 

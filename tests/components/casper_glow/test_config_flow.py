@@ -6,13 +6,13 @@ from bluetooth_data_tools import human_readable_name
 from pycasperglow import CasperGlowError
 import pytest
 
-from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
-from homeassistant.components.casper_glow.const import DOMAIN
-from homeassistant.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.device_registry import format_mac
+from inpui.components.bluetooth import BluetoothServiceInfoBleak
+from inpui.components.casper_glow.const import DOMAIN
+from inpui.config_entries import SOURCE_BLUETOOTH, SOURCE_USER
+from inpui.const import CONF_ADDRESS
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.device_registry import format_mac
 
 from . import CASPER_GLOW_DISCOVERY_INFO, NOT_CASPER_GLOW_DISCOVERY_INFO
 

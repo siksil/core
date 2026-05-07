@@ -1,15 +1,15 @@
 """Test the Mopeka sensors."""
 
-from homeassistant.components.mopeka.const import DOMAIN
-from homeassistant.components.sensor import ATTR_STATE_CLASS
-from homeassistant.const import (
+from inpui.components.mopeka.const import DOMAIN
+from inpui.components.sensor import ATTR_STATE_CLASS
+from inpui.const import (
     ATTR_FRIENDLY_NAME,
     ATTR_UNIT_OF_MEASUREMENT,
     STATE_UNKNOWN,
     UnitOfLength,
     UnitOfTemperature,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import (
     PRO_GOOD_SIGNAL_SERVICE_INFO,

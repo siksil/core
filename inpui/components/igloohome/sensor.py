@@ -6,9 +6,9 @@ import logging
 from aiohttp import ClientError
 from igloohome_api import Api as IgloohomeApi, ApiException, GetDeviceInfoResponse
 
-from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.sensor import SensorDeviceClass, SensorEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import IgloohomeConfigEntry
 from .entity import IgloohomeBaseEntity

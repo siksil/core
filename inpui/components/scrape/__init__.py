@@ -9,28 +9,28 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.components.rest import RESOURCE_SCHEMA, create_rest_data_from_config
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
+from inpui.components.rest import RESOURCE_SCHEMA, create_rest_data_from_config
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN
+from inpui.config_entries import ConfigEntry
+from inpui.const import (
     CONF_ATTRIBUTE,
     CONF_SCAN_INTERVAL,
     CONF_VALUE_TEMPLATE,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import (
+from inpui.core import HomeAssistant
+from inpui.helpers import (
     config_validation as cv,
     discovery,
     entity_registry as er,
 )
-from homeassistant.helpers.device_registry import DeviceEntry
-from homeassistant.helpers.trigger_template_entity import (
+from inpui.helpers.device_registry import DeviceEntry
+from inpui.helpers.trigger_template_entity import (
     CONF_AVAILABILITY,
     TEMPLATE_SENSOR_BASE_SCHEMA,
     ValueTemplate,
 )
-from homeassistant.helpers.typing import ConfigType
+from inpui.helpers.typing import ConfigType
 
 from .const import CONF_INDEX, CONF_SELECT, DEFAULT_SCAN_INTERVAL, DOMAIN, PLATFORMS
 from .coordinator import ScrapeCoordinator

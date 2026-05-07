@@ -9,7 +9,7 @@ import logging
 
 from aiohttp import ClientError
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_HW_VERSION,
     ATTR_MODEL,
     ATTR_NAME,
@@ -17,10 +17,10 @@ from homeassistant.const import (
     ATTR_SW_VERSION,
     ATTR_VIA_DEVICE,
 )
-from homeassistant.core import CALLBACK_TYPE, HassJob, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import Entity
-from homeassistant.helpers.event import async_call_later
+from inpui.core import CALLBACK_TYPE, HassJob, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import Entity
+from inpui.helpers.event import async_call_later
 
 from .const import DOMAIN
 from .models import BondData

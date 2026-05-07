@@ -9,18 +9,18 @@ from reolink_aio.api import DUAL_LENS_MODELS
 from reolink_aio.enums import VodRequestType
 from reolink_aio.typings import VOD_trigger
 
-from homeassistant.components.camera import DOMAIN as CAM_DOMAIN, DynamicStreamSettings
-from homeassistant.components.media_player import MediaClass, MediaType
-from homeassistant.components.media_source import (
+from inpui.components.camera import DOMAIN as CAM_DOMAIN, DynamicStreamSettings
+from inpui.components.media_player import MediaClass, MediaType
+from inpui.components.media_source import (
     BrowseMediaSource,
     MediaSource,
     MediaSourceItem,
     PlayMedia,
     Unresolvable,
 )
-from homeassistant.components.stream import create_stream
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
+from inpui.components.stream import create_stream
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
 
 from .const import DOMAIN
 from .util import get_host

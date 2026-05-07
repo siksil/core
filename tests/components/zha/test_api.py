@@ -11,9 +11,9 @@ from zha.application.const import RadioType
 import zigpy.backups
 import zigpy.state
 
-from homeassistant.components.zha import api
-from homeassistant.components.zha.helpers import get_zha_gateway_proxy
-from homeassistant.core import HomeAssistant
+from inpui.components.zha import api
+from inpui.components.zha.helpers import get_zha_gateway_proxy
+from inpui.core import HomeAssistant
 
 if TYPE_CHECKING:
     from zigpy.application import ControllerApplication

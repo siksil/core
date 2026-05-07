@@ -11,10 +11,10 @@ from b2sdk.v2.exception import (
     Unauthorized,
 )
 
-from homeassistant.components.repairs import ConfirmRepairFlow
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import issue_registry as ir
+from inpui.components.repairs import ConfirmRepairFlow
+from inpui.config_entries import ConfigEntry
+from inpui.core import HomeAssistant
+from inpui.helpers import issue_registry as ir
 
 from .const import CONF_BUCKET, DOMAIN
 

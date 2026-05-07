@@ -6,7 +6,7 @@ from unittest.mock import patch
 import pytest
 import voluptuous as vol
 
-from homeassistant.components.input_number import (
+from inpui.components.input_number import (
     ATTR_VALUE,
     DOMAIN,
     SERVICE_DECREMENT,
@@ -14,16 +14,16 @@ from homeassistant.components.input_number import (
     SERVICE_RELOAD,
     SERVICE_SET_VALUE,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_EDITABLE,
     ATTR_ENTITY_ID,
     ATTR_FRIENDLY_NAME,
     ATTR_NAME,
 )
-from homeassistant.core import Context, CoreState, HomeAssistant, State
-from homeassistant.exceptions import Unauthorized
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import Context, CoreState, HomeAssistant, State
+from inpui.exceptions import Unauthorized
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
 
 from tests.common import MockUser, mock_restore_cache
 from tests.typing import WebSocketGenerator

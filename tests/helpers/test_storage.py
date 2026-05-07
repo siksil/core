@@ -13,23 +13,23 @@ from freezegun.api import FrozenDateTimeFactory
 import py
 import pytest
 
-from homeassistant.const import (
-    EVENT_HOMEASSISTANT_FINAL_WRITE,
-    EVENT_HOMEASSISTANT_START,
-    EVENT_HOMEASSISTANT_STARTED,
-    EVENT_HOMEASSISTANT_STOP,
+from inpui.const import (
+    EVENT_INPUI_FINAL_WRITE,
+    EVENT_INPUI_START,
+    EVENT_INPUI_STARTED,
+    EVENT_INPUI_STOP,
 )
-from homeassistant.core import (
+from inpui.core import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     CoreState,
     HomeAssistant,
     callback,
 )
-from homeassistant.exceptions import HomeAssistantError, UnsupportedStorageVersionError
-from homeassistant.helpers import issue_registry as ir, storage
-from homeassistant.helpers.json import json_bytes, prepare_save_json
-from homeassistant.util import dt as dt_util
-from homeassistant.util.color import RGBColor
+from inpui.exceptions import HomeAssistantError, UnsupportedStorageVersionError
+from inpui.helpers import issue_registry as ir, storage
+from inpui.helpers.json import json_bytes, prepare_save_json
+from inpui.util import dt as dt_util
+from inpui.util.color import RGBColor
 
 from tests.common import (
     async_fire_time_changed,
@@ -399,7 +399,7 @@ async def test_saving_on_final_write(
     store.async_delay_save(lambda: MOCK_DATA, 5)
     assert store.key not in hass_storage
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     hass.set_state(CoreState.stopping)
     await hass.async_block_till_done()
 
@@ -407,7 +407,7 @@ async def test_saving_on_final_write(
     await hass.async_block_till_done()
     assert store.key not in hass_storage
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
+    hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
     await hass.async_block_till_done()
     assert hass_storage[store.key] == {
         "version": MOCK_VERSION,
@@ -422,7 +422,7 @@ async def test_not_delayed_saving_while_stopping(
 ) -> None:
     """Test delayed saves don't write after the stop event has fired."""
     store = storage.Store(hass, MOCK_VERSION, MOCK_KEY)
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     await hass.async_block_till_done()
     hass.set_state(CoreState.stopping)
 
@@ -440,7 +440,7 @@ async def test_not_delayed_saving_after_stopping(
     store.async_delay_save(lambda: MOCK_DATA, 10)
     assert store.key not in hass_storage
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     hass.set_state(CoreState.stopping)
     await hass.async_block_till_done()
     assert store.key not in hass_storage
@@ -1031,7 +1031,7 @@ async def test_read_only_store(
     await hass.async_block_till_done()
     assert read_only_store.key not in hass_storage
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+    hass.bus.async_fire(EVENT_INPUI_STOP)
     hass.set_state(CoreState.stopping)
     await hass.async_block_till_done()
 
@@ -1039,7 +1039,7 @@ async def test_read_only_store(
     await hass.async_block_till_done()
     assert read_only_store.key not in hass_storage
 
-    hass.bus.async_fire(EVENT_HOMEASSISTANT_FINAL_WRITE)
+    hass.bus.async_fire(EVENT_INPUI_FINAL_WRITE)
     await hass.async_block_till_done()
     assert read_only_store.key not in hass_storage
 
@@ -1275,11 +1275,11 @@ async def test_store_manager_cleanup_after_started(
         await store_manager.async_preload(["integration1", "integration2"])
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
@@ -1325,15 +1325,15 @@ async def test_store_manager_cleanup_after_stop(
         await store_manager.async_preload(["integration1", "integration2"])
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_START)
+        hass.bus.async_fire(EVENT_INPUI_START)
         await hass.async_block_till_done()
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STARTED)
+        hass.bus.async_fire(EVENT_INPUI_STARTED)
         await hass.async_block_till_done()
         assert "integration1" in store_manager._data_preload
         assert "integration2" in store_manager._data_preload
-        hass.bus.async_fire(EVENT_HOMEASSISTANT_STOP)
+        hass.bus.async_fire(EVENT_INPUI_STOP)
         await hass.async_block_till_done()
         assert "integration1" not in store_manager._data_preload
         assert "integration2" not in store_manager._data_preload

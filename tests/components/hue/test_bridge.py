@@ -9,14 +9,14 @@ from aiohue.v1 import HueBridgeV1
 from aiohue.v2 import HueBridgeV2
 import pytest
 
-from homeassistant.components.hue import bridge
-from homeassistant.components.hue.const import (
+from inpui.components.hue import bridge
+from inpui.components.hue.const import (
     CONF_ALLOW_HUE_GROUPS,
     CONF_ALLOW_UNREACHABLE,
     DOMAIN,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from tests.common import MockConfigEntry
 

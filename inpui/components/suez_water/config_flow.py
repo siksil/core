@@ -8,9 +8,9 @@ from typing import Any
 from pysuez import PySuezError, SuezClient
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_PASSWORD, CONF_USERNAME
-from homeassistant.exceptions import HomeAssistantError
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_PASSWORD, CONF_USERNAME
+from inpui.exceptions import HomeAssistantError
 
 from .const import CONF_COUNTER_ID, DOMAIN
 

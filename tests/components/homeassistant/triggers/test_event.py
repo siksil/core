@@ -2,10 +2,10 @@
 
 import pytest
 
-from homeassistant.components import automation
-from homeassistant.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
-from homeassistant.core import Context, HomeAssistant, ServiceCall
-from homeassistant.setup import async_setup_component
+from inpui.components import automation
+from inpui.const import ATTR_ENTITY_ID, ENTITY_MATCH_ALL, SERVICE_TURN_OFF
+from inpui.core import Context, HomeAssistant, ServiceCall
+from inpui.setup import async_setup_component
 
 from tests.common import mock_component
 

@@ -7,12 +7,12 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components import mailgun, webhook
-from homeassistant.const import CONF_API_KEY, CONF_DOMAIN
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.core_config import async_process_ha_core_config
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.setup import async_setup_component
+from inpui.components import mailgun, webhook
+from inpui.const import CONF_API_KEY, CONF_DOMAIN
+from inpui.core import Event, HomeAssistant, callback
+from inpui.core_config import async_process_ha_core_config
+from inpui.data_entry_flow import FlowResultType
+from inpui.setup import async_setup_component
 
 from tests.typing import ClientSessionGenerator
 

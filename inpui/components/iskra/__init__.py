@@ -6,7 +6,7 @@ from pyiskra.adapters import Modbus, RestAPI
 from pyiskra.devices import Device
 from pyiskra.exceptions import DeviceConnectionError, DeviceNotSupported, NotAuthorised
 
-from homeassistant.const import (
+from inpui.const import (
     CONF_ADDRESS,
     CONF_HOST,
     CONF_PASSWORD,
@@ -15,9 +15,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import DOMAIN, MANUFACTURER
 from .coordinator import IskraConfigEntry, IskraDataUpdateCoordinator

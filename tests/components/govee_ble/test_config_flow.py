@@ -3,9 +3,9 @@
 from unittest.mock import patch
 
 from homeassistant import config_entries
-from homeassistant.components.govee_ble.const import CONF_DEVICE_TYPE, DOMAIN
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.govee_ble.const import CONF_DEVICE_TYPE, DOMAIN
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 from . import GVH5075_SERVICE_INFO, GVH5177_SERVICE_INFO, NOT_GOVEE_SERVICE_INFO
 

@@ -13,7 +13,7 @@ import pytest
 from todoist_api_python.models import Due
 
 from homeassistant import setup
-from homeassistant.components.todoist.const import (
+from inpui.components.todoist.const import (
     ASSIGNEE,
     CONTENT,
     DOMAIN,
@@ -22,12 +22,12 @@ from homeassistant.components.todoist.const import (
     SECTION_NAME,
     SERVICE_NEW_TASK,
 )
-from homeassistant.const import CONF_TOKEN, Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ServiceValidationError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity_component import async_update_entity
-from homeassistant.util import dt as dt_util
+from inpui.const import CONF_TOKEN, Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ServiceValidationError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity_component import async_update_entity
+from inpui.util import dt as dt_util
 
 from .conftest import PROJECT_ID, SECTION_ID, SUMMARY, make_api_due
 

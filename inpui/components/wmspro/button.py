@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from wmspro.const import WMS_WebControl_pro_API_actionDescription
 
-from homeassistant.components.button import ButtonDeviceClass, ButtonEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.button import ButtonDeviceClass, ButtonEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import WebControlProConfigEntry
 from .entity import WebControlProGenericEntity

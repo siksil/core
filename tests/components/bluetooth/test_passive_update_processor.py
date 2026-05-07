@@ -11,20 +11,20 @@ from unittest.mock import MagicMock, patch
 from home_assistant_bluetooth import BluetoothServiceInfo
 import pytest
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
     BinarySensorEntityDescription,
 )
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     DOMAIN,
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
     BluetoothChange,
     BluetoothScanningMode,
     BluetoothServiceInfoBleak,
 )
-from homeassistant.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
-from homeassistant.components.bluetooth.passive_update_processor import (
+from inpui.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
+from inpui.components.bluetooth.passive_update_processor import (
     STORAGE_KEY,
     PassiveBluetoothDataProcessor,
     PassiveBluetoothDataUpdate,
@@ -33,20 +33,20 @@ from homeassistant.components.bluetooth.passive_update_processor import (
     PassiveBluetoothProcessorEntity,
     deserialize_entity_description,
 )
-from homeassistant.components.sensor import (
+from inpui.components.sensor import (
     DOMAIN as SENSOR_DOMAIN,
     SensorDeviceClass,
     SensorEntityDescription,
     SensorStateClass,
 )
-from homeassistant.config_entries import current_entry
-from homeassistant.const import UnitOfTemperature
-from homeassistant.core import CoreState, HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
-from homeassistant.helpers.typing import UNDEFINED
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.config_entries import current_entry
+from inpui.const import UnitOfTemperature
+from inpui.core import CoreState, HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceInfo
+from inpui.helpers.entity import EntityDescription
+from inpui.helpers.typing import UNDEFINED
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from . import (
     inject_bluetooth_service_info,

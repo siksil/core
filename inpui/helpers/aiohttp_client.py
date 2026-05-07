@@ -21,14 +21,14 @@ from aiohttp_asyncmdnsresolver.api import AsyncDualMDNSResolver
 from yarl import URL
 
 from homeassistant import config_entries
-from homeassistant.components import zeroconf
-from homeassistant.const import APPLICATION_NAME, EVENT_HOMEASSISTANT_CLOSE, __version__
-from homeassistant.core import Event, HomeAssistant, callback
-from homeassistant.loader import bind_hass
-from homeassistant.util import ssl as ssl_util
-from homeassistant.util.hass_dict import HassKey
-from homeassistant.util.json import json_loads
-from homeassistant.util.network import is_loopback
+from inpui.components import zeroconf
+from inpui.const import APPLICATION_NAME, EVENT_INPUI_CLOSE, __version__
+from inpui.core import Event, HomeAssistant, callback
+from inpui.loader import bind_hass
+from inpui.util import ssl as ssl_util
+from inpui.util.hass_dict import HassKey
+from inpui.util.json import json_loads
+from inpui.util.network import is_loopback
 
 from .frame import warn_use
 from .json import json_dumps
@@ -394,7 +394,7 @@ def _async_register_clientsession_shutdown(
         clientsession.detach()
 
     unsub = hass.bus.async_listen_once(
-        EVENT_HOMEASSISTANT_CLOSE, _async_close_websession
+        EVENT_INPUI_CLOSE, _async_close_websession
     )
 
     if not (config_entry := config_entries.current_entry.get()):
@@ -418,7 +418,7 @@ def _async_register_default_clientsession_shutdown(
         """Close websession."""
         clientsession.detach()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_websession)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_close_websession)
 
 
 @callback
@@ -489,7 +489,7 @@ def _async_get_connector(
         """Close connector pool."""
         await connector.close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_connector)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_close_connector)
 
     return connector
 
@@ -503,7 +503,7 @@ def _async_get_or_create_resolver(hass: HomeAssistant) -> HassAsyncDNSResolver:
     async def _async_close_resolver(event: Event) -> None:
         await resolver.real_close()
 
-    hass.bus.async_listen_once(EVENT_HOMEASSISTANT_CLOSE, _async_close_resolver)
+    hass.bus.async_listen_once(EVENT_INPUI_CLOSE, _async_close_resolver)
     return resolver
 
 

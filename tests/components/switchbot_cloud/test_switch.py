@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 from switchbot_api import Device
 
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-from homeassistant.components.switchbot_cloud import SwitchBotAPI
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.components.switch import DOMAIN as SWITCH_DOMAIN
+from inpui.components.switchbot_cloud import SwitchBotAPI
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -15,7 +15,7 @@ from homeassistant.const import (
     STATE_ON,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import configure_integration
 

@@ -7,7 +7,7 @@ from collections.abc import Iterable
 import logging
 from typing import Any, Final
 
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ENTITY_ID,
     SERVICE_ALARM_ARM_AWAY,
     SERVICE_ALARM_ARM_CUSTOM_BYPASS,
@@ -17,7 +17,7 @@ from homeassistant.const import (
     SERVICE_ALARM_DISARM,
     SERVICE_ALARM_TRIGGER,
 )
-from homeassistant.core import Context, HomeAssistant, State
+from inpui.core import Context, HomeAssistant, State
 
 from . import DOMAIN, AlarmControlPanelState
 

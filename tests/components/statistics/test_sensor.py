@@ -14,14 +14,14 @@ from freezegun import freeze_time
 import pytest
 
 from homeassistant import config as hass_config
-from homeassistant.components.recorder import Recorder, history
-from homeassistant.components.sensor import (
+from inpui.components.recorder import Recorder, history
+from inpui.components.sensor import (
     ATTR_STATE_CLASS,
     SensorDeviceClass,
     SensorStateClass,
 )
-from homeassistant.components.statistics import DOMAIN
-from homeassistant.components.statistics.sensor import (
+from inpui.components.statistics import DOMAIN
+from inpui.components.statistics.sensor import (
     CONF_KEEP_LAST_SAMPLE,
     CONF_PERCENTILE,
     CONF_PRECISION,
@@ -30,7 +30,7 @@ from homeassistant.components.statistics.sensor import (
     STAT_MEAN,
     StatisticsSensor,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_DEVICE_CLASS,
     ATTR_UNIT_OF_MEASUREMENT,
     CONF_ENTITY_ID,
@@ -42,11 +42,11 @@ from homeassistant.const import (
     UnitOfEnergy,
     UnitOfTemperature,
 )
-from homeassistant.core import Event, EventStateChangedData, HomeAssistant, callback
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.helpers.event import async_track_state_change_event
-from homeassistant.setup import async_setup_component
-from homeassistant.util import dt as dt_util
+from inpui.core import Event, EventStateChangedData, HomeAssistant, callback
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.helpers.event import async_track_state_change_event
+from inpui.setup import async_setup_component
+from inpui.util import dt as dt_util
 
 from tests.common import MockConfigEntry, async_fire_time_changed, get_fixture_path
 from tests.components.recorder.common import async_wait_recording_done

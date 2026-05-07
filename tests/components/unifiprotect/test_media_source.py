@@ -16,17 +16,17 @@ from uiprotect.data import (
 )
 from uiprotect.exceptions import NvrError
 
-from homeassistant.components.media_player import BrowseError, MediaClass
-from homeassistant.components.media_source import MediaSourceItem
-from homeassistant.components.unifiprotect.const import DOMAIN
-from homeassistant.components.unifiprotect.media_source import (
+from inpui.components.media_player import BrowseError, MediaClass
+from inpui.components.media_source import MediaSourceItem
+from inpui.components.unifiprotect.const import DOMAIN
+from inpui.components.unifiprotect.media_source import (
     ProtectMediaSource,
     SimpleEventType,
     async_get_media_source,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from .conftest import MockUFPFixture
 from .utils import init_entry

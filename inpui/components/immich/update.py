@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from homeassistant.components.update import UpdateEntity
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.update import UpdateEntity
+from inpui.core import HomeAssistant
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import ImmichConfigEntry, ImmichDataUpdateCoordinator
 from .entity import ImmichEntity

@@ -1,11 +1,11 @@
 """Test against characteristics captured from an LG TV."""
 
-from homeassistant.components.media_player import (
+from inpui.components.media_player import (
     ATTR_INPUT_SOURCE_LIST,
     MediaPlayerEntityFeature,
 )
-from homeassistant.const import ATTR_SUPPORTED_FEATURES, STATE_ON
-from homeassistant.core import HomeAssistant
+from inpui.const import ATTR_SUPPORTED_FEATURES, STATE_ON
+from inpui.core import HomeAssistant
 
 from ..common import (
     HUB_TEST_ACCESSORY_ID,

@@ -17,9 +17,9 @@ from tesla_fleet_api.exceptions import (
 )
 from tesla_fleet_api.teslemetry import EnergySite, Teslemetry, Vehicle
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 if TYPE_CHECKING:
     from . import TeslemetryConfigEntry

@@ -6,16 +6,16 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import cover, mqtt
-from homeassistant.components.cover import (
+from inpui.components import cover, mqtt
+from inpui.components.cover import (
     ATTR_CURRENT_POSITION,
     ATTR_CURRENT_TILT_POSITION,
     ATTR_POSITION,
     ATTR_TILT_POSITION,
     CoverState,
 )
-from homeassistant.components.mqtt.const import CONF_STATE_TOPIC
-from homeassistant.components.mqtt.cover import (
+from inpui.components.mqtt.const import CONF_STATE_TOPIC
+from inpui.components.mqtt.cover import (
     CONF_GET_POSITION_TEMPLATE,
     CONF_GET_POSITION_TOPIC,
     CONF_SET_POSITION_TEMPLATE,
@@ -26,7 +26,7 @@ from homeassistant.components.mqtt.cover import (
     CONF_TILT_STATUS_TOPIC,
     MQTT_COVER_ATTRIBUTES_BLOCKED,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_ASSUMED_STATE,
     ATTR_ENTITY_ID,
     CONF_VALUE_TEMPLATE,
@@ -44,7 +44,7 @@ from homeassistant.const import (
     STATE_OPEN,
     STATE_UNKNOWN,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .common import (
     help_custom_config,

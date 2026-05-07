@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, patch
 
 from agent import AgentError
 
-from homeassistant.components.agent_dvr.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.agent_dvr.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from . import CONF_DATA, create_entry, init_integration
 

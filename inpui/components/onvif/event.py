@@ -20,14 +20,14 @@ import onvif_parsers
 import onvif_parsers.util
 from zeep.exceptions import Fault, TransportError, ValidationError, XMLParseError
 
-from homeassistant.components import webhook
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import EntityCategory
-from homeassistant.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
-from homeassistant.helpers.device_registry import format_mac
-from homeassistant.helpers.event import async_call_later
-from homeassistant.helpers.network import NoURLAvailableError, get_url
-from homeassistant.util import dt as dt_util
+from inpui.components import webhook
+from inpui.config_entries import ConfigEntry
+from inpui.const import EntityCategory
+from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
+from inpui.helpers.device_registry import format_mac
+from inpui.helpers.event import async_call_later
+from inpui.helpers.network import NoURLAvailableError, get_url
+from inpui.util import dt as dt_util
 
 from .const import DOMAIN, LOGGER
 from .models import Event, PullPointManagerState, WebHookManagerState

@@ -2,7 +2,7 @@
 
 from aioairq import DeviceInfo
 
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD
 
 TEST_USER_DATA = {
     CONF_IP_ADDRESS: "192.168.0.0",

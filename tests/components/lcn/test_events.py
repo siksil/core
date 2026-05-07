@@ -4,7 +4,7 @@ from pypck.inputs import Input, ModSendKeysHost, ModStatusAccessControl
 from pypck.lcn_addr import LcnAddr
 from pypck.lcn_defs import AccessControlPeriphery, KeyAction, SendKeyCommand
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .conftest import MockConfigEntry, init_integration
 

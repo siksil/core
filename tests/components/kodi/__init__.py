@@ -2,8 +2,8 @@
 
 from unittest.mock import patch
 
-from homeassistant.components.kodi.const import CONF_WS_PORT, DOMAIN
-from homeassistant.const import (
+from inpui.components.kodi.const import CONF_WS_PORT, DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -11,7 +11,7 @@ from homeassistant.const import (
     CONF_SSL,
     CONF_USERNAME,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from .util import MockConnection
 

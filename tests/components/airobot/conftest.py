@@ -11,15 +11,15 @@ from pyairobotrest.models import (
 )
 import pytest
 
-from homeassistant.components.airobot.const import DOMAIN
-from homeassistant.const import (
+from inpui.components.airobot.const import DOMAIN
+from inpui.const import (
     CONF_HOST,
     CONF_MAC,
     CONF_PASSWORD,
     CONF_USERNAME,
     Platform,
 )
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from tests.common import MockConfigEntry
 

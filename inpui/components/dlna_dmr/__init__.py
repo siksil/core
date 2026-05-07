@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from homeassistant import config_entries
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
+from inpui.const import Platform
+from inpui.core import HomeAssistant
 
 from .const import LOGGER
 

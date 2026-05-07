@@ -3,9 +3,9 @@
 from aioesphomeapi import APIClient, Event, EventInfo
 import pytest
 
-from homeassistant.components.event import EventDeviceClass
-from homeassistant.const import STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.event import EventDeviceClass
+from inpui.const import STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 
 @pytest.mark.freeze_time("2024-04-24 00:00:00+00:00")

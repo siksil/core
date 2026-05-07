@@ -2,17 +2,17 @@
 
 from unittest.mock import Mock
 
-from homeassistant.components.shelly.const import (
+from inpui.components.shelly.const import (
     ATTR_CHANNEL,
     ATTR_CLICK_TYPE,
     ATTR_DEVICE,
     DOMAIN,
     EVENT_SHELLY_CLICK,
 )
-from homeassistant.const import ATTR_DEVICE_ID
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.const import ATTR_DEVICE_ID
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
+from inpui.setup import async_setup_component
 
 from . import init_integration
 

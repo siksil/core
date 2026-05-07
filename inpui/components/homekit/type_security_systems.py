@@ -5,12 +5,12 @@ from typing import Any
 
 from pyhap.const import CATEGORY_ALARM_SYSTEM
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     DOMAIN as ALARM_CONTROL_PANEL_DOMAIN,
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,
 )
-from homeassistant.const import (
+from inpui.const import (
     ATTR_CODE,
     ATTR_ENTITY_ID,
     ATTR_SUPPORTED_FEATURES,
@@ -21,7 +21,7 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
     STATE_UNKNOWN,
 )
-from homeassistant.core import State, callback
+from inpui.core import State, callback
 
 from .accessories import TYPES, HomeAccessory
 from .const import (

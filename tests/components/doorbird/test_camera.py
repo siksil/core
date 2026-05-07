@@ -3,13 +3,13 @@
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.camera import (
+from inpui.components.camera import (
     CameraState,
     async_get_image,
     async_get_stream_source,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
 
 from . import mock_not_found_exception
 from .conftest import DoorbirdMockerType

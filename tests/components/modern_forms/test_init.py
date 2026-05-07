@@ -4,9 +4,9 @@ from unittest.mock import MagicMock, patch
 
 from aiomodernforms import ModernFormsConnectionError
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from . import init_integration, modern_forms_no_light_call_mock
 

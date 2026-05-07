@@ -1,26 +1,26 @@
 """Provides conditions for air quality."""
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     DOMAIN as BINARY_SENSOR_DOMAIN,
     BinarySensorDeviceClass,
 )
-from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
-from homeassistant.const import (
+from inpui.components.sensor import DOMAIN as SENSOR_DOMAIN, SensorDeviceClass
+from inpui.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_PARTS_PER_BILLION,
     CONCENTRATION_PARTS_PER_MILLION,
     STATE_OFF,
     STATE_ON,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.automation import DomainSpec
-from homeassistant.helpers.condition import (
+from inpui.core import HomeAssistant
+from inpui.helpers.automation import DomainSpec
+from inpui.helpers.condition import (
     Condition,
     make_entity_numerical_condition,
     make_entity_numerical_condition_with_unit,
     make_entity_state_condition,
 )
-from homeassistant.util.unit_conversion import (
+from inpui.util.unit_conversion import (
     CarbonMonoxideConcentrationConverter,
     MassVolumeConcentrationConverter,
     NitrogenDioxideConcentrationConverter,

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from homeassistant.const import MATCH_ALL
-from homeassistant.util import language
+from inpui.const import MATCH_ALL
+from inpui.util import language
 
 
 def test_match_all() -> None:

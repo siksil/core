@@ -11,19 +11,19 @@ from pyenphase.auth import EnvoyLegacyAuth
 import pytest
 import respx
 
-from homeassistant.components.enphase_envoy import DOMAIN
-from homeassistant.components.enphase_envoy.const import (
+from inpui.components.enphase_envoy import DOMAIN
+from inpui.components.enphase_envoy.const import (
     OPTION_DIAGNOSTICS_INCLUDE_FIXTURES,
     OPTION_DISABLE_KEEP_ALIVE,
     Platform,
 )
-from homeassistant.components.enphase_envoy.coordinator import (
+from inpui.components.enphase_envoy.coordinator import (
     FIRMWARE_REFRESH_INTERVAL,
     MAC_VERIFICATION_DELAY,
     SCAN_INTERVAL,
 )
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import (
+from inpui.config_entries import ConfigEntryState
+from inpui.const import (
     CONF_HOST,
     CONF_NAME,
     CONF_PASSWORD,
@@ -31,9 +31,9 @@ from homeassistant.const import (
     CONF_USERNAME,
     STATE_UNAVAILABLE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr, entity_registry as er
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr, entity_registry as er
+from inpui.setup import async_setup_component
 
 from . import setup_integration
 

@@ -6,12 +6,12 @@ import pytest
 from webio_api.api_client import AuthError
 
 from homeassistant import config_entries
-from homeassistant.components.nasweb.const import DOMAIN
-from homeassistant.config_entries import ConfigFlowResult
-from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.network import NoURLAvailableError
+from inpui.components.nasweb.const import DOMAIN
+from inpui.config_entries import ConfigFlowResult
+from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.network import NoURLAvailableError
 
 from .conftest import (
     BASE_CONFIG_FLOW,

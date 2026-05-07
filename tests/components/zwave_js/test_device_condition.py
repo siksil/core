@@ -10,20 +10,20 @@ import voluptuous_serialize
 from zwave_js_server.const import CommandClass
 from zwave_js_server.event import Event
 
-from homeassistant.components import automation
-from homeassistant.components.device_automation import (
+from inpui.components import automation
+from inpui.components.device_automation import (
     DeviceAutomationType,
     InvalidDeviceAutomationConfig,
 )
-from homeassistant.components.zwave_js import DOMAIN, device_condition
-from homeassistant.components.zwave_js.helpers import (
+from inpui.components.zwave_js import DOMAIN, device_condition
+from inpui.components.zwave_js.helpers import (
     get_device_id,
     get_zwave_value_from_config,
 )
-from homeassistant.core import HomeAssistant, ServiceCall
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import config_validation as cv, device_registry as dr
-from homeassistant.setup import async_setup_component
+from inpui.core import HomeAssistant, ServiceCall
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import config_validation as cv, device_registry as dr
+from inpui.setup import async_setup_component
 
 from tests.common import async_get_device_automations
 

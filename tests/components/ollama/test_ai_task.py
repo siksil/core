@@ -7,10 +7,10 @@ import ollama
 import pytest
 import voluptuous as vol
 
-from homeassistant.components import ai_task, media_source
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er, selector
+from inpui.components import ai_task, media_source
+from inpui.core import HomeAssistant
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er, selector
 
 from tests.common import MockConfigEntry
 

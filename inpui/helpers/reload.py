@@ -8,11 +8,11 @@ import logging
 from typing import Any, Literal, overload
 
 from homeassistant import config as conf_util
-from homeassistant.const import SERVICE_RELOAD
-from homeassistant.core import HomeAssistant, ServiceCall, callback
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.loader import async_get_integration
-from homeassistant.setup import async_setup_component
+from inpui.const import SERVICE_RELOAD
+from inpui.core import HomeAssistant, ServiceCall, callback
+from inpui.exceptions import HomeAssistantError
+from inpui.loader import async_get_integration
+from inpui.setup import async_setup_component
 
 from .entity import Entity
 from .entity_component import EntityComponent

@@ -20,11 +20,11 @@ from pyoverkiz.exceptions import (
 )
 from pyoverkiz.models import Device, Event, Place
 
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
-from homeassistant.helpers import device_registry as dr
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from homeassistant.util.decorator import Registry
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed
+from inpui.helpers import device_registry as dr
+from inpui.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from inpui.util.decorator import Registry
 
 if TYPE_CHECKING:
     from . import OverkizDataConfigEntry

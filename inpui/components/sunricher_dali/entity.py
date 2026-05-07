@@ -6,8 +6,8 @@ import logging
 
 from PySrDaliGateway import CallbackEventType, DaliObjectBase, Device
 
-from homeassistant.core import callback
-from homeassistant.helpers.entity import Entity
+from inpui.core import callback
+from inpui.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 

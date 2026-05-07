@@ -1,8 +1,8 @@
 """Tests for the Webmin integration."""
 
-from homeassistant.components.webmin.const import DOMAIN
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.core import HomeAssistant
+from inpui.components.webmin.const import DOMAIN
+from inpui.config_entries import ConfigEntryState
+from inpui.core import HomeAssistant
 
 from .conftest import async_init_integration
 

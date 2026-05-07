@@ -2,12 +2,12 @@
 
 from typing import Any
 
-from homeassistant.components.sensor import SensorEntity, SensorStateClass
-from homeassistant.const import UnitOfLength
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from inpui.components.sensor import SensorEntity, SensorStateClass
+from inpui.const import UnitOfLength
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.device_registry import DeviceEntryType, DeviceInfo
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
 from .coordinator import EafmConfigEntry, EafmCoordinator

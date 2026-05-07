@@ -2,8 +2,8 @@
 
 import pytest
 
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
 
 from .conftest import MOCK_INSIGHT_CURRENT_WATTS, MOCK_INSIGHT_TODAY_KWH
 from .entity_test_helpers import EntityTestHelpers

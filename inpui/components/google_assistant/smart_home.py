@@ -7,10 +7,10 @@ import logging
 import pprint
 from typing import Any
 
-from homeassistant.const import ATTR_ENTITY_ID, __version__
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import instance_id
-from homeassistant.util.decorator import Registry
+from inpui.const import ATTR_ENTITY_ID, __version__
+from inpui.core import HomeAssistant
+from inpui.helpers import instance_id
+from inpui.util.decorator import Registry
 
 from .const import (
     ERR_DEVICE_OFFLINE,

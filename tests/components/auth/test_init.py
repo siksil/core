@@ -8,17 +8,17 @@ from unittest.mock import patch
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.auth import InvalidAuthError
-from homeassistant.auth.models import (
+from inpui.auth import InvalidAuthError
+from inpui.auth.models import (
     TOKEN_TYPE_LONG_LIVED_ACCESS_TOKEN,
     TOKEN_TYPE_NORMAL,
     Credentials,
     RefreshToken,
 )
-from homeassistant.components import auth
-from homeassistant.core import HomeAssistant
-from homeassistant.setup import async_setup_component
-from homeassistant.util.dt import utcnow
+from inpui.components import auth
+from inpui.core import HomeAssistant
+from inpui.setup import async_setup_component
+from inpui.util.dt import utcnow
 
 from . import async_setup_auth
 

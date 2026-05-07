@@ -7,8 +7,8 @@ from sanix import Sanix
 from sanix.exceptions import SanixException, SanixInvalidAuthException
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_TOKEN
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_TOKEN
 
 from .const import CONF_SERIAL_NUMBER, DOMAIN, MANUFACTURER
 

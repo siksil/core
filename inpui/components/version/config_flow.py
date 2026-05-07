@@ -6,8 +6,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
-from homeassistant.const import CONF_SOURCE
+from inpui.config_entries import ConfigFlow, ConfigFlowResult
+from inpui.const import CONF_SOURCE
 
 from .const import (
     ATTR_VERSION_SOURCE,

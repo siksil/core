@@ -10,22 +10,22 @@ from typing import Any
 
 from aiobotocore.session import AioSession
 
-from homeassistant.components.notify import (
+from inpui.components.notify import (
     ATTR_DATA,
     ATTR_TARGET,
     ATTR_TITLE,
     ATTR_TITLE_DEFAULT,
     BaseNotificationService,
 )
-from homeassistant.const import (
+from inpui.const import (
     CONF_NAME,
     CONF_PLATFORM,
     CONF_PROFILE_NAME,
     CONF_SERVICE,
 )
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.json import JSONEncoder
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from inpui.core import HomeAssistant
+from inpui.helpers.json import JSONEncoder
+from inpui.helpers.typing import ConfigType, DiscoveryInfoType
 
 from .const import CONF_CONTEXT, CONF_CREDENTIAL_NAME, CONF_REGION, DATA_SESSIONS
 

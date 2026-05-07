@@ -7,7 +7,7 @@ import pytest
 import respx
 from syrupy.assertion import SnapshotAssertion
 
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .conftest import CALENDER_URL

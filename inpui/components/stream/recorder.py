@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING
 import av
 import av.container
 
-from homeassistant.core import HomeAssistant, callback
+from inpui.core import HomeAssistant, callback
 
 from .const import (
     RECORDER_CONTAINER_FORMAT,
@@ -23,7 +23,7 @@ from .core import PROVIDERS, IdleTimer, Segment, StreamOutput, StreamSettings
 from .fmp4utils import read_init, transform_init
 
 if TYPE_CHECKING:
-    from homeassistant.components.camera import DynamicStreamSettings
+    from inpui.components.camera import DynamicStreamSettings
 
 _LOGGER = logging.getLogger(__name__)
 

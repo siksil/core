@@ -9,10 +9,10 @@ from freezegun.api import FrozenDateTimeFactory
 from habiticalib import HabiticaUserResponse
 import pytest
 
-from homeassistant.components.habitica.const import DOMAIN
-from homeassistant.config_entries import SOURCE_REAUTH, ConfigEntryState
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import device_registry as dr
+from inpui.components.habitica.const import DOMAIN
+from inpui.config_entries import SOURCE_REAUTH, ConfigEntryState
+from inpui.core import HomeAssistant
+from inpui.helpers import device_registry as dr
 
 from .conftest import (
     ERROR_BAD_REQUEST,

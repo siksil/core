@@ -7,11 +7,11 @@ from unittest.mock import Mock, patch
 import pytest
 
 from homeassistant import config_entries
-from homeassistant.components.xiaomi_aqara import config_flow, const
-from homeassistant.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PORT, CONF_PROTOCOL
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.components.xiaomi_aqara import config_flow, const
+from inpui.const import CONF_HOST, CONF_MAC, CONF_NAME, CONF_PORT, CONF_PROTOCOL
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 ZEROCONF_NAME = "name"
 ZEROCONF_PROP = "properties"

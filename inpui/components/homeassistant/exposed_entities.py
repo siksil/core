@@ -9,16 +9,16 @@ from typing import Any, TypedDict
 
 import voluptuous as vol
 
-from homeassistant.components import websocket_api
-from homeassistant.components.binary_sensor import BinarySensorDeviceClass
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES
-from homeassistant.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
-from homeassistant.exceptions import HomeAssistantError
-from homeassistant.helpers import entity_registry as er
-from homeassistant.helpers.entity import get_device_class
-from homeassistant.helpers.storage import Store
-from homeassistant.util.read_only_dict import ReadOnlyDict
+from inpui.components import websocket_api
+from inpui.components.binary_sensor import BinarySensorDeviceClass
+from inpui.components.sensor import SensorDeviceClass
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES
+from inpui.core import CALLBACK_TYPE, HomeAssistant, callback, split_entity_id
+from inpui.exceptions import HomeAssistantError
+from inpui.helpers import entity_registry as er
+from inpui.helpers.entity import get_device_class
+from inpui.helpers.storage import Store
+from inpui.util.read_only_dict import ReadOnlyDict
 
 from .const import DATA_EXPOSED_ENTITIES, DOMAIN
 

@@ -17,21 +17,21 @@ from yalexs_ble import (
 )
 from yalexs_ble.const import YALE_MFR_ID
 
-from homeassistant.components.bluetooth import (
+from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_ble_device_from_address,
     async_discovered_service_info,
 )
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlowWithReload,
 )
-from homeassistant.const import CONF_ADDRESS
-from homeassistant.core import callback
-from homeassistant.data_entry_flow import AbortFlow
-from homeassistant.helpers.typing import DiscoveryInfoType
+from inpui.const import CONF_ADDRESS
+from inpui.core import callback
+from inpui.data_entry_flow import AbortFlow
+from inpui.helpers.typing import DiscoveryInfoType
 
 from .config_cache import async_add_validated_config, async_get_validated_config
 from .const import CONF_ALWAYS_CONNECTED, CONF_KEY, CONF_LOCAL_NAME, CONF_SLOT, DOMAIN

@@ -5,11 +5,11 @@ from unittest.mock import MagicMock, PropertyMock, patch
 
 import pytest
 
-from homeassistant.components.risco import CannotConnectError, UnauthorizedError
-from homeassistant.components.risco.coordinator import LAST_EVENT_TIMESTAMP_KEY
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
+from inpui.components.risco import CannotConnectError, UnauthorizedError
+from inpui.components.risco.coordinator import LAST_EVENT_TIMESTAMP_KEY
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
 
 from tests.common import async_fire_time_changed
 

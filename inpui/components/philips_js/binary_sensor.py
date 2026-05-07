@@ -6,12 +6,12 @@ from dataclasses import dataclass
 
 from haphilipsjs import PhilipsTV
 
-from homeassistant.components.binary_sensor import (
+from inpui.components.binary_sensor import (
     BinarySensorEntity,
     BinarySensorEntityDescription,
 )
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import PhilipsTVConfigEntry, PhilipsTVDataUpdateCoordinator
 from .entity import PhilipsJsEntity

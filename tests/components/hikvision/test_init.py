@@ -7,9 +7,9 @@ from xml.etree.ElementTree import ParseError
 import pytest
 import requests
 
-from homeassistant.config_entries import ConfigEntryState
-from homeassistant.const import CONF_SSL
-from homeassistant.core import HomeAssistant
+from inpui.config_entries import ConfigEntryState
+from inpui.const import CONF_SSL
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .conftest import TEST_HOST, TEST_PASSWORD, TEST_PORT, TEST_USERNAME

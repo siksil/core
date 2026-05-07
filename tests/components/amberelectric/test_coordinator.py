@@ -15,15 +15,15 @@ from amberelectric.models.spike_status import SpikeStatus
 from dateutil import parser
 import pytest
 
-from homeassistant.components.amberelectric.const import (
+from inpui.components.amberelectric.const import (
     CONF_SITE_ID,
     CONF_SITE_NAME,
     REQUEST_TIMEOUT,
 )
-from homeassistant.components.amberelectric.coordinator import AmberUpdateCoordinator
-from homeassistant.const import CONF_API_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import UpdateFailed
+from inpui.components.amberelectric.coordinator import AmberUpdateCoordinator
+from inpui.const import CONF_API_TOKEN
+from inpui.core import HomeAssistant
+from inpui.helpers.update_coordinator import UpdateFailed
 
 from .helpers import (
     CONTROLLED_LOAD_CHANNEL,

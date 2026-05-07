@@ -1,9 +1,9 @@
 """The Mikrotik component."""
 
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
-from homeassistant.helpers import device_registry as dr
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from inpui.helpers import device_registry as dr
 
 from .const import ATTR_MANUFACTURER, DOMAIN
 from .coordinator import MikrotikConfigEntry, MikrotikDataUpdateCoordinator, get_api

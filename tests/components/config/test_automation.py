@@ -7,13 +7,13 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant.components import config
-from homeassistant.components.config import automation
-from homeassistant.const import STATE_ON
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.setup import async_setup_component
-from homeassistant.util import yaml as yaml_util
+from inpui.components import config
+from inpui.components.config import automation
+from inpui.const import STATE_ON
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.setup import async_setup_component
+from inpui.util import yaml as yaml_util
 
 from tests.typing import ClientSessionGenerator
 

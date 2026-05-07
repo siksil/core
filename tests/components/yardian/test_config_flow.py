@@ -6,9 +6,9 @@ import pytest
 from pyyardian import NetworkException, NotAuthorizedException
 
 from homeassistant import config_entries
-from homeassistant.components.yardian.const import DOMAIN, PRODUCT_NAME
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
+from inpui.components.yardian.const import DOMAIN, PRODUCT_NAME
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
 
 pytestmark = pytest.mark.usefixtures("mock_setup_entry")
 

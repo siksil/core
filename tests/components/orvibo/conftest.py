@@ -10,8 +10,8 @@ with patch("socket.socket.bind"):
 
 import pytest
 
-from homeassistant.components.orvibo.const import DOMAIN
-from homeassistant.const import CONF_HOST, CONF_MAC
+from inpui.components.orvibo.const import DOMAIN
+from inpui.const import CONF_HOST, CONF_MAC
 
 from tests.common import MockConfigEntry
 

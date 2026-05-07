@@ -4,13 +4,13 @@ from unittest.mock import MagicMock, patch
 
 import phone_modem
 
-from homeassistant.components import usb
-from homeassistant.components.modem_callerid.const import DOMAIN
-from homeassistant.config_entries import SOURCE_USB, SOURCE_USER
-from homeassistant.const import CONF_DEVICE, CONF_SOURCE
-from homeassistant.core import HomeAssistant
-from homeassistant.data_entry_flow import FlowResultType
-from homeassistant.helpers.service_info.usb import UsbServiceInfo
+from inpui.components import usb
+from inpui.components.modem_callerid.const import DOMAIN
+from inpui.config_entries import SOURCE_USB, SOURCE_USER
+from inpui.const import CONF_DEVICE, CONF_SOURCE
+from inpui.core import HomeAssistant
+from inpui.data_entry_flow import FlowResultType
+from inpui.helpers.service_info.usb import UsbServiceInfo
 
 from . import com_port, patch_config_flow_modem
 

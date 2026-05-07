@@ -6,11 +6,11 @@ import logging
 
 from pysnooz.device import SnoozDevice
 
-from homeassistant.components.bluetooth import async_ble_device_from_address
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ADDRESS, CONF_TOKEN
-from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
+from inpui.components.bluetooth import async_ble_device_from_address
+from inpui.config_entries import ConfigEntry
+from inpui.const import CONF_ADDRESS, CONF_TOKEN
+from inpui.core import HomeAssistant
+from inpui.exceptions import ConfigEntryNotReady
 
 from .const import DOMAIN, PLATFORMS
 from .models import SnoozConfigurationData

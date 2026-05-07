@@ -1,6 +1,6 @@
 """Errors for the HomematicIP Cloud component."""
 
-from homeassistant.exceptions import HomeAssistantError
+from inpui.exceptions import HomeAssistantError
 
 
 class HmipcException(HomeAssistantError):

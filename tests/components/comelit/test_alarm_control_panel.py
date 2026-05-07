@@ -7,7 +7,7 @@ from aiocomelit.const import ALARM_AREA, ALARM_ZONE, AlarmAreaState
 from freezegun.api import FrozenDateTimeFactory
 import pytest
 
-from homeassistant.components.alarm_control_panel import (
+from inpui.components.alarm_control_panel import (
     ATTR_CODE,
     DOMAIN as ALARM_DOMAIN,
     SERVICE_ALARM_ARM_AWAY,
@@ -16,9 +16,9 @@ from homeassistant.components.alarm_control_panel import (
     SERVICE_ALARM_DISARM,
     AlarmControlPanelState,
 )
-from homeassistant.components.comelit.const import SCAN_INTERVAL
-from homeassistant.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
-from homeassistant.core import HomeAssistant
+from inpui.components.comelit.const import SCAN_INTERVAL
+from inpui.const import ATTR_ENTITY_ID, STATE_UNAVAILABLE
+from inpui.core import HomeAssistant
 
 from . import setup_integration
 from .const import VEDO_PIN, ZONE0

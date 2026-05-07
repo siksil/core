@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Final
 
-from homeassistant.components.event import EventEntity
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
+from inpui.components.event import EventEntity
+from inpui.core import HomeAssistant, callback
+from inpui.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from .coordinator import BackupConfigEntry, BackupDataUpdateCoordinator
 from .entity import BackupManagerBaseEntity

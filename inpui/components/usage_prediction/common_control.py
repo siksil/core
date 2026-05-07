@@ -13,15 +13,15 @@ from sqlalchemy import select
 from sqlalchemy.engine.row import Row
 from sqlalchemy.orm import Session
 
-from homeassistant.components.recorder import get_instance
-from homeassistant.components.recorder.db_schema import EventData, Events, EventTypes
-from homeassistant.components.recorder.models import uuid_hex_to_bytes_or_none
-from homeassistant.components.recorder.util import session_scope
-from homeassistant.const import Platform
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util import dt as dt_util
-from homeassistant.util.json import json_loads_object
+from inpui.components.recorder import get_instance
+from inpui.components.recorder.db_schema import EventData, Events, EventTypes
+from inpui.components.recorder.models import uuid_hex_to_bytes_or_none
+from inpui.components.recorder.util import session_scope
+from inpui.const import Platform
+from inpui.core import HomeAssistant
+from inpui.helpers import entity_registry as er
+from inpui.util import dt as dt_util
+from inpui.util.json import json_loads_object
 
 from .models import EntityUsagePredictions
 

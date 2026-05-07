@@ -9,16 +9,16 @@ from regenmaschine.controller import Controller
 from regenmaschine.errors import RainMachineError
 import voluptuous as vol
 
-from homeassistant.config_entries import (
+from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,
     ConfigFlowResult,
     OptionsFlow,
 )
-from homeassistant.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers import aiohttp_client, config_validation as cv
-from homeassistant.helpers.service_info.zeroconf import ZeroconfServiceInfo
+from inpui.const import CONF_IP_ADDRESS, CONF_PASSWORD, CONF_PORT, CONF_SSL
+from inpui.core import HomeAssistant, callback
+from inpui.helpers import aiohttp_client, config_validation as cv
+from inpui.helpers.service_info.zeroconf import ZeroconfServiceInfo
 
 from .const import (
     CONF_ALLOW_INACTIVE_ZONES_TO_RUN,

@@ -9,15 +9,15 @@ from aiohttp.test_utils import TestClient
 import pytest
 
 from homeassistant import const, core, setup
-from homeassistant.components import (
+from inpui.components import (
     google_assistant as ga,
     humidifier,
     light,
     media_player,
 )
-from homeassistant.const import CLOUD_NEVER_EXPOSED_ENTITIES, EntityCategory, Platform
-from homeassistant.helpers import entity_registry as er
-from homeassistant.util.unit_system import US_CUSTOMARY_SYSTEM
+from inpui.const import CLOUD_NEVER_EXPOSED_ENTITIES, EntityCategory, Platform
+from inpui.helpers import entity_registry as er
+from inpui.util.unit_system import US_CUSTOMARY_SYSTEM
 
 from . import DEMO_DEVICES
 
