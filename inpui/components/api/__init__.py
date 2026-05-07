@@ -1,4 +1,4 @@
-"""Rest API for Home Assistant."""
+"""Rest API for Inpui."""
 
 import asyncio
 from asyncio import shield, timeout

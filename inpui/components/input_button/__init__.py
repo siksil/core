@@ -125,7 +125,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     return True
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class InputButton(collection.CollectionEntity, ButtonEntity, RestoreEntity):
     """Representation of a button."""
 

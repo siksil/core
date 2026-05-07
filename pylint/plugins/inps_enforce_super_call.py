@@ -15,12 +15,12 @@ METHODS = {
 class HassEnforceSuperCallChecker(BaseChecker):
     """Checker for super calls."""
 
-    name = "hass_enforce_super_call"
+    name = "inps_enforce_super_call"
     priority = -1
     msgs = {
         "W7441": (
             "Missing call to: super().%s",
-            "hass-missing-super-call",
+            "inps-missing-super-call",
             "Used when method should call its parent implementation.",
         ),
     }
@@ -65,7 +65,7 @@ class HassEnforceSuperCallChecker(BaseChecker):
 
             if found_base_implementation:
                 self.add_message(
-                    "hass-missing-super-call",
+                    "inps-missing-super-call",
                     node=node,
                     args=(node.name,),
                     confidence=INFERENCE,

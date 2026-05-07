@@ -13,7 +13,7 @@ from hass_nabucasa.voice_data import TTS_VOICES
 import pytest
 import voluptuous as vol
 
-from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=inps-component-root-import
     STORAGE_KEY,
 )
 from inpui.components.cloud.const import DEFAULT_TTS_DEFAULT_VOICE, DOMAIN

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from inpui.components.assist_pipeline.repair_flows import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.repair_flows import (  # pylint: disable=inps-component-root-import
     AssistInProgressDeprecatedRepairFlow,
 )
 from inpui.components.repairs import RepairsFlow

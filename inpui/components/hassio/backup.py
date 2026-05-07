@@ -866,7 +866,7 @@ async def backup_core_before_update(hass: HomeAssistant) -> None:
                 include_database=True,
                 include_folders=None,
                 include_homeassistant=True,
-                name=f"Home Assistant Core {HAVERSION}",
+                name=f"Inpui Core {HAVERSION}",
                 password=None,
             )
     except BackupManagerError as err:

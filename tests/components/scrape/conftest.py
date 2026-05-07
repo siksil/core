@@ -9,10 +9,10 @@ import uuid
 
 import pytest
 
-from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.data import (  # pylint: disable=inps-component-root-import
     DEFAULT_TIMEOUT,
 )
-from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=inps-component-root-import
     DEFAULT_METHOD,
     DEFAULT_VERIFY_SSL,
 )

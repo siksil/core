@@ -60,14 +60,14 @@ from inpui.auth.models import Credentials
 from inpui.auth.providers import homeassistant
 from inpui.components.device_tracker.legacy import Device
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.websocket_api.auth import (
     TYPE_AUTH,
     TYPE_AUTH_OK,
     TYPE_AUTH_REQUIRED,
 )
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.websocket_api.http import URL
 from inpui.config import YAML_CONFIG_FILE
 from inpui.config_entries import (

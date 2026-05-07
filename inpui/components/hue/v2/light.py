@@ -72,7 +72,7 @@ async def async_setup_entry(
     )
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueLight(HueBaseEntity, LightEntity):
     """Representation of a Hue light."""
 

@@ -243,7 +243,7 @@ class InputSelectStorageCollection(collection.DictStorageCollection):
         return {CONF_ID: item[CONF_ID]} | update_data
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class InputSelect(collection.CollectionEntity, SelectEntity, RestoreEntity):
     """Representation of a select input."""
 

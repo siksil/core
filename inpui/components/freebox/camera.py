@@ -7,7 +7,7 @@ from typing import Any
 
 from inpui.components.camera import CameraEntityFeature
 from inpui.components.ffmpeg import CONF_EXTRA_ARGUMENTS, CONF_INPUT
-from inpui.components.ffmpeg.camera import (  # pylint: disable=hass-component-root-import
+from inpui.components.ffmpeg.camera import (  # pylint: disable=inps-component-root-import
     DEFAULT_ARGUMENTS,
     FFmpegCamera,
 )

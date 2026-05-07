@@ -237,7 +237,7 @@ class OpenRouterEntity(Entity):
             "model": self.model,
             "user": chat_log.conversation_id,
             "extra_headers": {
-                "X-Title": "Home Assistant",
+                "X-Title": "Inpui",
                 "HTTP-Referer": "https://www.home-assistant.io/integrations/open_router",
             },
             "extra_body": {"require_parameters": True},

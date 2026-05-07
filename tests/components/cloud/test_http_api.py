@@ -27,14 +27,14 @@ from webrtc_models import RTCIceServer
 from inpui.components import system_health
 from inpui.components.alexa import errors as alexa_errors
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.alexa.entities import LightCapabilities
-from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=inps-component-root-import
     STORAGE_KEY,
 )
 from inpui.components.cloud.const import DEFAULT_EXPOSED_DOMAINS, DOMAIN
 from inpui.components.cloud.http_api import validate_language_voice
-from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.google_assistant.helpers import (  # pylint: disable=inps-component-root-import
     GoogleEntity,
 )
 from inpui.components.inpui import exposed_entities

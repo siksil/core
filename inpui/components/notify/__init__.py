@@ -47,7 +47,7 @@ from .repairs import migrate_notify_issue  # noqa: F401
 # mypy: disallow-any-generics
 
 # Platform specific data
-ATTR_TITLE_DEFAULT = "Home Assistant"
+ATTR_TITLE_DEFAULT = "Inpui"
 
 DATA_COMPONENT: HassKey[EntityComponent[NotifyEntity]] = HassKey(DOMAIN)
 ENTITY_ID_FORMAT = DOMAIN + ".{}"

@@ -11,7 +11,7 @@ from hass_nabucasa.voice import MAP_VOICE, Gender
 from inpui.auth.const import GROUP_ID_ADMIN
 from inpui.auth.models import User
 from inpui.components import webhook
-from inpui.components.google_assistant.http import (  # pylint: disable=hass-component-root-import
+from inpui.components.google_assistant.http import (  # pylint: disable=inps-component-root-import
     async_get_users as async_get_google_assistant_users,
 )
 from inpui.core import HomeAssistant, callback

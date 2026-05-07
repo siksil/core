@@ -5,7 +5,7 @@ from typing import Any
 import pytest
 
 from inpui.components.sensor import SensorDeviceClass
-from inpui.components.sensor.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.helpers import (  # pylint: disable=inps-component-root-import
     async_parse_date_datetime,
 )
 from inpui.const import (

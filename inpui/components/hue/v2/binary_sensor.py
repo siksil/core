@@ -126,7 +126,7 @@ async def async_setup_entry(
     register_items(api.sensors.security_area_motion, HueMotionAwareSensor)
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueMotionSensor(HueBaseEntity, BinarySensorEntity):
     """Representation of a Hue Motion sensor."""
 
@@ -152,7 +152,7 @@ class HueMotionSensor(HueBaseEntity, BinarySensorEntity):
         return motion_feature.motion
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueGroupedMotionSensor(HueMotionSensor):
     """Representation of a Hue Grouped Motion sensor."""
 
@@ -175,7 +175,7 @@ class HueGroupedMotionSensor(HueMotionSensor):
         )
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueMotionAwareSensor(HueMotionSensor):
     """Representation of a Motion sensor based on Hue Motion Aware.
 
@@ -229,7 +229,7 @@ class HueMotionAwareSensor(HueMotionSensor):
         )
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueEntertainmentActiveSensor(HueBaseEntity, BinarySensorEntity):
     """Representation of a Hue Entertainment Configuration as binary sensor."""
 
@@ -253,7 +253,7 @@ class HueEntertainmentActiveSensor(HueBaseEntity, BinarySensorEntity):
         return self.resource.metadata.name
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueContactSensor(HueBaseEntity, BinarySensorEntity):
     """Representation of a Hue Contact sensor."""
 
@@ -275,7 +275,7 @@ class HueContactSensor(HueBaseEntity, BinarySensorEntity):
         return self.resource.contact_report.state != ContactState.CONTACT
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueTamperSensor(HueBaseEntity, BinarySensorEntity):
     """Representation of a Hue Tamper sensor."""
 

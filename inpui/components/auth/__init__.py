@@ -27,7 +27,7 @@ used to authorize the refresh token.
     "expires_in": 1800,
     "refresh_token": "IJKLMNOPQRST",
     "token_type": "Bearer",
-    "ha_auth_provider": "homeassistant"
+    "ha_auth_provider": "inpui"
 }
 
 ## Grant type refresh_token
@@ -82,7 +82,7 @@ The result payload likes
         "name": "John Doe",
         "is_owner": true,
         "credentials": [{
-            "auth_provider_type": "homeassistant",
+            "auth_provider_type": "inpui",
             "auth_provider_id": null
         }],
         "mfa_modules": [{

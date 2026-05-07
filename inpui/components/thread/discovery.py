@@ -30,8 +30,8 @@ KNOWN_BRANDS: dict[str | None, str] = {
     "eero": "eero",
     "GL.iNET Inc.": "glinet",
     "Google Inc.": "google",
-    "HomeAssistant": "homeassistant",
-    "Home Assistant": "homeassistant",
+    "Inpui": "inpui",
+    "Home Assistant": "inpui",
     "IKEA": "ikea",
     "Nanoleaf": "nanoleaf",
     "OpenThread": "openthread",
@@ -87,7 +87,7 @@ def async_discovery_data_from_service(
 
     unconfigured = None
     brand = KNOWN_BRANDS.get(vendor_name)
-    if brand == "homeassistant":
+    if brand == "inpui":
         # Attempt to detect incomplete configuration
         if (state_bitmap_b := service_properties.get(b"sb")) is not None:
             try:

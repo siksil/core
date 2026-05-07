@@ -4,7 +4,7 @@ from unittest.mock import Mock, patch
 
 from inpui.components import assist_pipeline
 from inpui.components.assist_pipeline import OPTION_PREFERRED, VadSensitivity
-from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=inps-component-root-import
     PipelineData,
 )
 from inpui.components.wyoming.devices import SatelliteDevice

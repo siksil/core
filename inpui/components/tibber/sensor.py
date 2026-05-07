@@ -980,7 +980,7 @@ class TibberRtEntityCreator:
             self._async_add_entities(new_entities)
 
 
-class TibberRtDataCoordinator(DataUpdateCoordinator):  # pylint: disable=hass-enforce-class-module
+class TibberRtDataCoordinator(DataUpdateCoordinator):  # pylint: disable=inps-enforce-class-module
     """Handle Tibber realtime data."""
 
     def __init__(

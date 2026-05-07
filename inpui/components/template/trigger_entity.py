@@ -23,7 +23,7 @@ from . import TriggerUpdateCoordinator
 from .entity import AbstractTemplateEntity
 
 
-class TriggerEntity(  # pylint: disable=hass-enforce-class-module
+class TriggerEntity(  # pylint: disable=inps-enforce-class-module
     TriggerBaseEntity,
     CoordinatorEntity[TriggerUpdateCoordinator],
     AbstractTemplateEntity,

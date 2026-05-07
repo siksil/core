@@ -127,7 +127,7 @@ COMPONENT_CONFIG_SCHEMA_ENTRY = vol.Schema(
 )
 ALLOWED_METRIC_CHARS = set(string.ascii_letters + string.digits + "_:")
 
-DEFAULT_NAMESPACE = "homeassistant"
+DEFAULT_NAMESPACE = "inpui"
 
 CONFIG_SCHEMA = vol.Schema(
     {

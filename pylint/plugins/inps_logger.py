@@ -13,17 +13,17 @@ LOG_LEVEL_ALLOWED_LOWER_START = ("debug",)
 class HassLoggerFormatChecker(BaseChecker):
     """Checker for logger invocations."""
 
-    name = "hass_logger"
+    name = "inps_logger"
     priority = -1
     msgs = {
         "W7401": (
             "User visible logger messages must not end with a period",
-            "hass-logger-period",
+            "inps-logger-period",
             "Periods are not permitted at the end of logger messages",
         ),
         "W7402": (
             "User visible logger messages must start with a capital letter or downgrade to debug",
-            "hass-logger-capital",
+            "inps-logger-capital",
             "All logger messages must start with a capital letter",
         ),
     }
@@ -53,14 +53,14 @@ class HassLoggerFormatChecker(BaseChecker):
             return
 
         if log_message[-1] == ".":
-            self.add_message("hass-logger-period", node=node)
+            self.add_message("inps-logger-period", node=node)
 
         if (
             isinstance(node.func.attrname, str)
             and node.func.attrname not in LOG_LEVEL_ALLOWED_LOWER_START
             and log_message[0].upper() != log_message[0]
         ):
-            self.add_message("hass-logger-capital", node=node)
+            self.add_message("inps-logger-capital", node=node)
 
 
 def register(linter: PyLinter) -> None:

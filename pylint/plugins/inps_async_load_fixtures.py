@@ -16,12 +16,12 @@ FUNCTION_NAMES = (
 class HassLoadFixturesChecker(BaseChecker):
     """Checker for I/O load fixtures."""
 
-    name = "hass_async_load_fixtures"
+    name = "inps_async_load_fixtures"
     priority = -1
     msgs = {
         "W7481": (
             "Test fixture files should be loaded asynchronously",
-            "hass-async-load-fixtures",
+            "inps-async-load-fixtures",
             "Used when a test fixture file is loaded synchronously",
         ),
     }
@@ -72,7 +72,7 @@ class HassLoadFixturesChecker(BaseChecker):
         ):
             return
 
-        self.add_message("hass-async-load-fixtures", node=node)
+        self.add_message("inps-async-load-fixtures", node=node)
 
 
 def register(linter: PyLinter) -> None:

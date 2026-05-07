@@ -27,7 +27,7 @@ from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
 )
 from inpui.components.camera import DOMAIN as CAMERA_DOMAIN
-from inpui.components.device_automation.trigger import (  # pylint: disable=hass-component-root-import
+from inpui.components.device_automation.trigger import (  # pylint: disable=inps-component-root-import
     async_validate_trigger_config,
 )
 from inpui.components.event import DOMAIN as EVENT_DOMAIN, EventDeviceClass

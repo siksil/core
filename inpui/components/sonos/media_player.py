@@ -40,7 +40,7 @@ from inpui.components.media_player import (
     async_process_play_media_url,
 )
 from inpui.components.plex import PLEX_URI_SCHEME
-from inpui.components.plex.services import (  # pylint: disable=hass-component-root-import
+from inpui.components.plex.services import (  # pylint: disable=inps-component-root-import
     process_plex_payload,
 )
 from inpui.core import HomeAssistant, callback

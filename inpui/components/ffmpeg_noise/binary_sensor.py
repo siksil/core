@@ -19,7 +19,7 @@ from inpui.components.ffmpeg import (
     FFmpegManager,
     get_ffmpeg_manager,
 )
-from inpui.components.ffmpeg_motion.binary_sensor import (  # pylint: disable=hass-component-root-import
+from inpui.components.ffmpeg_motion.binary_sensor import (  # pylint: disable=inps-component-root-import
     FFmpegBinarySensor,
 )
 from inpui.const import CONF_NAME

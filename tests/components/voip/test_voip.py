@@ -14,7 +14,7 @@ from voip_utils import CallInfo
 from inpui.components import assist_pipeline, assist_satellite, tts, voip
 from inpui.components.assist_satellite import AssistSatelliteEntity
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.assist_satellite.entity import AssistSatelliteState
 from inpui.components.voip import DOMAIN, HassVoipDatagramProtocol
 from inpui.components.voip.assist_satellite import Tones, VoipAssistSatellite

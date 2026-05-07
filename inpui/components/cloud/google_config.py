@@ -12,7 +12,7 @@ from hass_nabucasa.google_report_state import ErrorResponse
 
 from inpui.components.binary_sensor import BinarySensorDeviceClass
 from inpui.components.google_assistant import DOMAIN as GOOGLE_DOMAIN
-from inpui.components.google_assistant.helpers import (  # pylint: disable=hass-component-root-import
+from inpui.components.google_assistant.helpers import (  # pylint: disable=inps-component-root-import
     AbstractConfig,
 )
 from inpui.components.inpui.exposed_entities import (

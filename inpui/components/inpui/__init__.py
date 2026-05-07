@@ -415,7 +415,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
         """Check and create deprecation issues after startup."""
         info = await async_get_system_info(hass)
 
-        installation_type = info["installation_type"][15:]
+        installation_type = info["installation_type"][6:]
         if installation_type in {"Core", "Container"}:
             deprecated_method = installation_type == "Core"
             bit32 = _is_32_bit()

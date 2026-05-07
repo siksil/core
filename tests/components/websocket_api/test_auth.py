@@ -6,7 +6,7 @@ import aiohttp
 from aiohttp import WSMsgType, web
 import pytest
 
-from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.auth.providers.inpui import HassAuthProvider
 from inpui.components.websocket_api.auth import (
     TYPE_AUTH,
     TYPE_AUTH_INVALID,

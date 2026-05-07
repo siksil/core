@@ -40,7 +40,7 @@ _LOGGER = logging.getLogger(__name__)
 
 YAML_CONFIG_FILE = "configuration.yaml"
 VERSION_FILE = ".HA_VERSION"
-CONFIG_DIR_NAME = ".homeassistant"
+CONFIG_DIR_NAME = ".inpui"
 
 AUTOMATION_CONFIG_PATH = "automations.yaml"
 SCRIPT_CONFIG_PATH = "scripts.yaml"

@@ -133,7 +133,7 @@ class RepetierRequiredKeysMixin:
 
 
 @dataclass(frozen=True)
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class RepetierSensorEntityDescription(
     SensorEntityDescription, RepetierRequiredKeysMixin
 ):

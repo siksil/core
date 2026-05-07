@@ -735,7 +735,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 issue_id += "armv7"
             ir.async_create_issue(
                 hass,
-                "homeassistant",
+                "inpui",
                 issue_id,
                 learn_more_url=DEPRECATION_URL,
                 is_fixable=False,
@@ -757,7 +757,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 issue_id += "_architecture"
             ir.async_create_issue(
                 hass,
-                "homeassistant",
+                "inpui",
                 issue_id,
                 learn_more_url=DEPRECATION_URL,
                 is_fixable=False,

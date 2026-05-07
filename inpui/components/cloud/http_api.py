@@ -621,7 +621,7 @@ class DownloadSupportPackageView(HomeAssistantView):
         hass = request.app[KEY_HASS]
         domain_health = await get_system_health_info(hass)
 
-        hass_info = domain_health.pop("homeassistant", {})
+        hass_info = domain_health.pop("inpui", {})
         markdown = await self._generate_markdown(hass, hass_info, domain_health)
 
         return web.Response(

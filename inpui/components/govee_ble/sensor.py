@@ -147,6 +147,6 @@ class GoveeBluetoothSensorEntity(
         )
 
     @property
-    def native_value(self) -> _SensorValueType:  # pylint: disable=hass-return-type
+    def native_value(self) -> _SensorValueType:  # pylint: disable=inps-return-type
         """Return the native value."""
         return self.processor.entity_data.get(self.entity_key)

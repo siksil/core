@@ -92,7 +92,7 @@ class PassiveBluetoothDataUpdateCoordinator(
 
 class PassiveBluetoothCoordinatorEntity[
     _PassiveBluetoothDataUpdateCoordinatorT: PassiveBluetoothDataUpdateCoordinator = PassiveBluetoothDataUpdateCoordinator
-](  # pylint: disable=hass-enforce-class-module
+](  # pylint: disable=inps-enforce-class-module
     BaseCoordinatorEntity[_PassiveBluetoothDataUpdateCoordinatorT]
 ):
     """A class for entities using DataUpdateCoordinator."""

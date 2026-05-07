@@ -231,7 +231,7 @@ def async_register_mounts_in_dev_reg(
     for mount in mounts:
         params = DeviceInfo(
             identifiers={(DOMAIN, f"mount_{mount.name}")},
-            manufacturer="Home Assistant",
+            manufacturer="Inpui",
             model=SupervisorEntityModel.MOUNT,
             model_id=f"{mount.usage}/{mount.type}",
             name=mount.name,
@@ -247,10 +247,10 @@ def async_register_os_in_dev_reg(
     """Register OS in the device registry."""
     params = DeviceInfo(
         identifiers={(DOMAIN, "OS")},
-        manufacturer="Home Assistant",
+        manufacturer="Inpui",
         model=SupervisorEntityModel.OS,
         sw_version=os_dict[ATTR_VERSION],
-        name="Home Assistant Operating System",
+        name="Inpui Operating System",
         entry_type=dr.DeviceEntryType.SERVICE,
     )
     dev_reg.async_get_or_create(config_entry_id=entry_id, **params)
@@ -264,9 +264,9 @@ def async_register_host_in_dev_reg(
     """Register host in the device registry."""
     params = DeviceInfo(
         identifiers={(DOMAIN, "host")},
-        manufacturer="Home Assistant",
+        manufacturer="Inpui",
         model=SupervisorEntityModel.HOST,
-        name="Home Assistant Host",
+        name="Inpui Host",
         entry_type=dr.DeviceEntryType.SERVICE,
     )
     dev_reg.async_get_or_create(config_entry_id=entry_id, **params)
@@ -281,10 +281,10 @@ def async_register_core_in_dev_reg(
     """Register OS in the device registry."""
     params = DeviceInfo(
         identifiers={(DOMAIN, "core")},
-        manufacturer="Home Assistant",
+        manufacturer="Inpui",
         model=SupervisorEntityModel.CORE,
         sw_version=core_dict[ATTR_VERSION],
-        name="Home Assistant Core",
+        name="Inpui Core",
         entry_type=dr.DeviceEntryType.SERVICE,
     )
     dev_reg.async_get_or_create(config_entry_id=entry_id, **params)
@@ -299,10 +299,10 @@ def async_register_supervisor_in_dev_reg(
     """Register OS in the device registry."""
     params = DeviceInfo(
         identifiers={(DOMAIN, "supervisor")},
-        manufacturer="Home Assistant",
+        manufacturer="Inpui",
         model=SupervisorEntityModel.SUPERVISOR,
         sw_version=supervisor_dict[ATTR_VERSION],
-        name="Home Assistant Supervisor",
+        name="Inpui Supervisor",
         entry_type=dr.DeviceEntryType.SERVICE,
     )
     dev_reg.async_get_or_create(config_entry_id=entry_id, **params)

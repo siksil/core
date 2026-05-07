@@ -83,7 +83,7 @@ class HassVoipDatagramProtocol(VoipDatagramProtocol):
         """Set up VoIP call handler."""
         super().__init__(
             sdp_info=SdpInfo(
-                username="homeassistant",
+                username="inpui",
                 id=time.monotonic_ns(),
                 session_name="voip_hass",
                 version=__version__,

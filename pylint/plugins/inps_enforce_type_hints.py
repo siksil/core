@@ -95,7 +95,7 @@ _TYPE_HINT_MATCHERS.update(
 )
 
 
-_MODULE_REGEX: re.Pattern[str] = re.compile(r"^homeassistant\.components\.\w+(\.\w+)?$")
+_MODULE_REGEX: re.Pattern[str] = re.compile(r"^inpui\.components\.\w+(\.\w+)?$")
 
 _METHOD_MATCH: list[TypeHintMatch] = [
     TypeHintMatch(
@@ -126,21 +126,21 @@ _TEST_FIXTURES: dict[str, list[str] | str] = {
     "event_loop": "AbstractEventLoop",
     "freezer": "FrozenDateTimeFactory",
     "hass": "HomeAssistant",
-    "hass_access_token": "str",
-    "hass_admin_credential": "Credentials",
-    "hass_admin_user": "MockUser",
-    "hass_client": "ClientSessionGenerator",
-    "hass_client_no_auth": "ClientSessionGenerator",
-    "hass_config": "ConfigType",
-    "hass_config_yaml": "str",
-    "hass_config_yaml_files": "dict[str, str]",
-    "hass_owner_user": "MockUser",
-    "hass_read_only_access_token": "str",
-    "hass_read_only_user": "MockUser",
-    "hass_storage": "dict[str, Any]",
-    "hass_supervisor_access_token": "str",
-    "hass_supervisor_user": "MockUser",
-    "hass_ws_client": "WebSocketGenerator",
+    "inps_access_token": "str",
+    "inps_admin_credential": "Credentials",
+    "inps_admin_user": "MockUser",
+    "inps_client": "ClientSessionGenerator",
+    "inps_client_no_auth": "ClientSessionGenerator",
+    "inps_config": "ConfigType",
+    "inps_config_yaml": "str",
+    "inps_config_yaml_files": "dict[str, str]",
+    "inps_owner_user": "MockUser",
+    "inps_read_only_access_token": "str",
+    "inps_read_only_user": "MockUser",
+    "inps_storage": "dict[str, Any]",
+    "inps_supervisor_access_token": "str",
+    "inps_supervisor_user": "MockUser",
+    "inps_ws_client": "WebSocketGenerator",
     "init_tts_cache_dir_side_effect": "Any",
     "issue_registry": "IssueRegistry",
     "local_auth": "HassAuthProvider",
@@ -151,8 +151,8 @@ _TEST_FIXTURES: dict[str, list[str] | str] = {
     "mock_conversation_agent": "MockAgent",
     "mock_device_tracker_conf": "list[Device]",
     "mock_get_source_ip": "_patch",
-    "mock_hass_config": "None",
-    "mock_hass_config_yaml": "None",
+    "mock_inps_config": "None",
+    "mock_inps_config_yaml": "None",
     "mock_tts_cache_dir": "Path",
     "mock_tts_get_cache_files": "MagicMock",
     "mock_tts_init_cache_dir": "MagicMock",
@@ -3388,8 +3388,8 @@ def _has_valid_annotations(
 def _get_module_platform(module_name: str) -> str | None:
     """Return the platform for the module name."""
     if not (module_match := _MODULE_REGEX.match(module_name)):
-        # Ensure `homeassistant.components.<component>`
-        # Or `homeassistant.components.<component>.<platform>`
+        # Ensure `inpui.components.<component>`
+        # Or `inpui.components.<component>.<platform>`
         return None
 
     platform = module_match.group(1)
@@ -3399,23 +3399,23 @@ def _get_module_platform(module_name: str) -> str | None:
 class HassTypeHintChecker(BaseChecker):
     """Checker for setup type hints."""
 
-    name = "hass_enforce_type_hints"
+    name = "inps_enforce_type_hints"
     priority = -1
     msgs = {
         "W7431": (
             "Argument %s should be of type %s in %s",
-            "hass-argument-type",
+            "inps-argument-type",
             "Used when method argument type is incorrect",
         ),
         "W7432": (
             "Return type should be %s in %s",
-            "hass-return-type",
+            "inps-return-type",
             "Used when method return type is incorrect",
         ),
         "W7433": (
             "Argument %s is of type %s and could be moved to "
             "`@pytest.mark.usefixtures` decorator in %s",
-            "hass-consider-usefixtures-decorator",
+            "inps-consider-usefixtures-decorator",
             "Used when an argument type is None and could be a fixture",
         ),
     }
@@ -3553,7 +3553,7 @@ class HassTypeHintChecker(BaseChecker):
                 arg_node, annotation = _get_named_annotation(node, arg_name)
                 if arg_node and not _is_valid_type(expected_type, annotation):
                     self.add_message(
-                        "hass-argument-type",
+                        "inps-argument-type",
                         node=arg_node,
                         args=(arg_name, expected_type, node.name),
                     )
@@ -3579,7 +3579,7 @@ class HassTypeHintChecker(BaseChecker):
                 if key > len(node.args.args) - 1:
                     # The number of arguments is less than expected
                     self.add_message(
-                        "hass-argument-type",
+                        "inps-argument-type",
                         node=node,
                         args=(key + 1, expected_type, node.name),
                     )
@@ -3589,7 +3589,7 @@ class HassTypeHintChecker(BaseChecker):
                     continue
                 if not _is_valid_type(expected_type, annotations[key]):
                     self.add_message(
-                        "hass-argument-type",
+                        "inps-argument-type",
                         node=node.args.args[key],
                         args=(key + 1, expected_type, node.name),
                     )
@@ -3603,7 +3603,7 @@ class HassTypeHintChecker(BaseChecker):
                 arg_node, annotation = _get_named_annotation(node, arg_name)
                 if arg_node and not _is_valid_type(expected_type, annotation):
                     self.add_message(
-                        "hass-argument-type",
+                        "inps-argument-type",
                         node=arg_node,
                         args=(arg_name, expected_type, node.name),
                     )
@@ -3613,7 +3613,7 @@ class HassTypeHintChecker(BaseChecker):
             match.kwargs_type, node.args.kwargannotation
         ):
             self.add_message(
-                "hass-argument-type",
+                "inps-argument-type",
                 node=node,
                 args=(node.args.kwarg, match.kwargs_type, node.name),
             )
@@ -3621,7 +3621,7 @@ class HassTypeHintChecker(BaseChecker):
         # Check the return type.
         if not _is_valid_return_type(match, node.returns):
             self.add_message(
-                "hass-return-type",
+                "inps-return-type",
                 node=node,
                 args=(match.return_type or "None", node.name),
             )
@@ -3630,7 +3630,7 @@ class HassTypeHintChecker(BaseChecker):
         # Check the return type, should always be `None` for test_*** functions.
         if not is_fixture and not _is_valid_type(None, node.returns, True):
             self.add_message(
-                "hass-return-type",
+                "inps-return-type",
                 node=node,
                 args=("None", node.name),
             )
@@ -3639,13 +3639,13 @@ class HassTypeHintChecker(BaseChecker):
             arg_node, annotation = _get_named_annotation(node, arg_name)
             if arg_node and expected_type == "None" and not is_fixture:
                 self.add_message(
-                    "hass-consider-usefixtures-decorator",
+                    "inps-consider-usefixtures-decorator",
                     node=arg_node,
                     args=(arg_name, expected_type, node.name),
                 )
             if arg_node and not _is_valid_type(expected_type, annotation):
                 self.add_message(
-                    "hass-argument-type",
+                    "inps-argument-type",
                     node=arg_node,
                     args=(arg_name, expected_type, node.name),
                 )

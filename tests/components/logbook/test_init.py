@@ -13,7 +13,7 @@ import voluptuous as vol
 from homeassistant import core as ha
 from inpui.components import logbook, recorder
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.alexa.smart_home import EVENT_ALEXA_SMART_HOME
 from inpui.components.automation import EVENT_AUTOMATION_TRIGGERED
 from inpui.components.logbook.models import EventAsRow, LazyEventPartialState

@@ -23,7 +23,7 @@ from inpui.components.sensor import (
     SensorDeviceClass,
     SensorStateClass,
 )
-from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=inps-component-root-import
     compile_statistics,
 )
 from inpui.const import (

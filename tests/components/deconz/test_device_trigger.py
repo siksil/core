@@ -8,7 +8,7 @@ from pytest_unordered import unordered
 from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
 from inpui.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.binary_sensor.device_trigger import (
     CONF_BAT_LOW,
     CONF_NOT_BAT_LOW,

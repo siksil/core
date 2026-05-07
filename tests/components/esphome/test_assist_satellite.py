@@ -29,7 +29,7 @@ from inpui.components import (
     tts,
 )
 from inpui.components.assist_pipeline import PipelineEvent, PipelineEventType
-from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=inps-component-root-import
     KEY_ASSIST_PIPELINE,
 )
 from inpui.components.assist_satellite import (
@@ -38,7 +38,7 @@ from inpui.components.assist_satellite import (
     AssistSatelliteWakeWord,
 )
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.assist_satellite.entity import AssistSatelliteState
 from inpui.components.esphome.assist_satellite import VoiceAssistantUDPServer
 from inpui.components.esphome.const import NO_WAKE_WORD

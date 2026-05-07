@@ -117,7 +117,7 @@ async def async_setup_entry(
     register_items(api.sensors.grouped_light_level, HueGroupedLightLevelSensor)
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueSensorBase(HueBaseEntity, SensorEntity):
     """Representation of a Hue sensor."""
 
@@ -133,7 +133,7 @@ class HueSensorBase(HueBaseEntity, SensorEntity):
         self.controller = controller
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueTemperatureSensor(HueSensorBase):
     """Representation of a Hue Temperature sensor."""
 
@@ -151,7 +151,7 @@ class HueTemperatureSensor(HueSensorBase):
         return round(self.resource.temperature.value, 1)
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueLightLevelSensor(HueSensorBase):
     """Representation of a Hue LightLevel (illuminance) sensor."""
 
@@ -180,7 +180,7 @@ class HueLightLevelSensor(HueSensorBase):
         }
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueGroupedLightLevelSensor(HueLightLevelSensor):
     """Representation of a LightLevel (illuminance) sensor from a Hue GroupedLightLevel resource."""
 
@@ -205,7 +205,7 @@ class HueGroupedLightLevelSensor(HueLightLevelSensor):
         )
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueBatterySensor(HueSensorBase):
     """Representation of a Hue Battery sensor."""
 
@@ -231,7 +231,7 @@ class HueBatterySensor(HueSensorBase):
         return {"battery_state": self.resource.power_state.battery_state.value}
 
 
-# pylint: disable-next=hass-enforce-class-module
+# pylint: disable-next=inps-enforce-class-module
 class HueZigbeeConnectivitySensor(HueSensorBase):
     """Representation of a Hue ZigbeeConnectivity sensor."""
 

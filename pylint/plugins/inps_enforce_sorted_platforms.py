@@ -10,12 +10,12 @@ from pylint.lint import PyLinter
 class HassEnforceSortedPlatformsChecker(BaseChecker):
     """Checker for sorted platforms list."""
 
-    name = "hass_enforce_sorted_platforms"
+    name = "inps_enforce_sorted_platforms"
     priority = -1
     msgs = {
         "W7451": (
             "Platforms must be sorted alphabetically",
-            "hass-enforce-sorted-platforms",
+            "inps-enforce-sorted-platforms",
             "Used when PLATFORMS should be sorted alphabetically.",
         ),
     }
@@ -42,7 +42,7 @@ class HassEnforceSortedPlatformsChecker(BaseChecker):
             platforms = [v.as_string() for v in node.value.elts]
             sorted_platforms = sorted(platforms)
             if platforms != sorted_platforms:
-                self.add_message("hass-enforce-sorted-platforms", node=node)
+                self.add_message("inps-enforce-sorted-platforms", node=node)
 
 
 def register(linter: PyLinter) -> None:

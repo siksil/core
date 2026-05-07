@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from inpui.components.script import DOMAIN as SCRIPT_DOMAIN
-from inpui.components.script.config import (  # pylint: disable=hass-component-root-import
+from inpui.components.script.config import (  # pylint: disable=inps-component-root-import
     async_validate_config_item,
 )
 from inpui.config import SCRIPT_CONFIG_PATH

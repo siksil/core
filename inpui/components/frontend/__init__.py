@@ -232,7 +232,7 @@ MANIFEST_JSON = Manifest(
             }
         ],
         "lang": "en-US",
-        "name": "Home Assistant",
+        "name": "Inpui",
         "short_name": "Home Assistant",
         "start_url": "/?homescreen=1",
         "id": "/?homescreen=1",

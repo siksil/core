@@ -27,7 +27,7 @@ from inpui.const import (
 from inpui.core import HomeAssistant
 from inpui.core_config import async_process_ha_core_config
 from inpui.exceptions import HomeAssistantError
-from inpui.util.unit_system import (  # pylint: disable=hass-deprecated-import
+from inpui.util.unit_system import (  # pylint: disable=inps-deprecated-import
     _CONF_UNIT_SYSTEM_IMPERIAL,
     _CONF_UNIT_SYSTEM_METRIC,
     _CONF_UNIT_SYSTEM_US_CUSTOMARY,

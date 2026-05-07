@@ -12,7 +12,7 @@ from unittest.mock import ANY, Mock, patch
 
 import pytest
 
-from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.auth.providers.inpui import HassAuthProvider
 from inpui.components import cloud, http
 from inpui.components.cloud import CloudNotAvailable
 from inpui.const import HASSIO_USER_NAME

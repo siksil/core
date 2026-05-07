@@ -25,7 +25,7 @@ import pytest
 
 from inpui.components.backup import BackupManagerError, ManagerBackup
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.backup.manager import AgentBackupStatus
 from inpui.components.hassio import DOMAIN
 from inpui.components.hassio.const import REQUEST_REFRESH_DELAY

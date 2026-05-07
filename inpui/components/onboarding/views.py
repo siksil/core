@@ -12,7 +12,7 @@ from aiohttp.web_exceptions import HTTPUnauthorized
 import voluptuous as vol
 
 from inpui.auth.const import GROUP_ID_ADMIN
-from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.auth.providers.inpui import HassAuthProvider
 from inpui.components import person
 from inpui.components.auth import indieauth
 from inpui.components.http import KEY_HASS, KEY_HASS_REFRESH_TOKEN_ID

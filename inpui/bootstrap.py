@@ -144,7 +144,7 @@ WRAP_UP_TIMEOUT = 300
 COOLDOWN_TIME = 60
 
 # Core integrations are unconditionally loaded
-CORE_INTEGRATIONS = {"homeassistant", "persistent_notification"}
+CORE_INTEGRATIONS = {"inpui", "persistent_notification"}
 
 # Integrations that are loaded right after the core is set up
 LOGGING_AND_HTTP_DEPS_INTEGRATIONS = {
@@ -541,10 +541,10 @@ async def async_from_config_dict(
             )
         )
     ):
-        _LOGGER.error("Home Assistant core failed to initialize. ")
+        _LOGGER.error("Inpui core failed to initialize. ")
         return None
 
-    _LOGGER.debug("Home Assistant core initialized")
+    _LOGGER.debug("Inpui core initialized")
 
     core_config = config.get(core.DOMAIN, {})
 
@@ -556,14 +556,14 @@ async def async_from_config_dict(
         return None
     except HomeAssistantError:
         _LOGGER.error(
-            "Home Assistant core failed to initialize. Further initialization aborted"
+            "Inpui core failed to initialize. Further initialization aborted"
         )
         return None
 
     await _async_set_up_integrations(hass, config)
 
     stop = monotonic()
-    _LOGGER.info("Home Assistant initialized in %.2fs", stop - start)
+    _LOGGER.info("Inpui initialized in %.2fs", stop - start)
     return hass
 
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 import datetime
 
 from inpui.components.alarm_control_panel import AlarmControlPanelState
-from inpui.components.manual.alarm_control_panel import (  # pylint: disable=hass-component-root-import
+from inpui.components.manual.alarm_control_panel import (  # pylint: disable=inps-component-root-import
     ManualAlarm,
 )
 from inpui.config_entries import ConfigEntry

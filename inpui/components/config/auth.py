@@ -163,7 +163,7 @@ def _user_info(user: User) -> dict[str, Any]:
         (
             cred.data.get("username")
             for cred in user.credentials
-            if cred.auth_provider_type == "homeassistant"
+            if cred.auth_provider_type == "inpui"
         ),
         None,
     )

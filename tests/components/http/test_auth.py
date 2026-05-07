@@ -16,7 +16,7 @@ import yarl
 from inpui.auth.const import GROUP_ID_ADMIN, GROUP_ID_READ_ONLY
 from inpui.auth.models import User
 from inpui.auth.providers import trusted_networks
-from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.auth.providers.inpui import HassAuthProvider
 from inpui.components import websocket_api
 from inpui.components.http.auth import (
     CONTENT_USER_NAME,

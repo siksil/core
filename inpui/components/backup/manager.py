@@ -1803,7 +1803,7 @@ class CoreBackupReaderWriter(BackupReaderWriter):
                 "compressed": True,
                 "date": date_str,
                 "extra": extra_metadata,
-                "homeassistant": {
+                "inpui": {
                     "exclude_database": not include_database,
                     "version": HAVERSION,
                 },
@@ -2086,7 +2086,7 @@ class CoreBackupReaderWriter(BackupReaderWriter):
                 state=RestoreBackupState.CORE_RESTART,
             )
         )
-        await self._hass.services.async_call("homeassistant", "restart", blocking=True)
+        await self._hass.services.async_call("inpui", "restart", blocking=True)
 
     async def async_resume_restore_progress_after_restart(
         self,

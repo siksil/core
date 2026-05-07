@@ -180,9 +180,9 @@ EXTRA_PLACEHOLDERS = {
 class SupervisorEntityModel(StrEnum):
     """Supervisor entity model."""
 
-    ADDON = "Home Assistant App"
-    OS = "Home Assistant Operating System"
-    CORE = "Home Assistant Core"
-    SUPERVISOR = "Home Assistant Supervisor"
-    HOST = "Home Assistant Host"
-    MOUNT = "Home Assistant Mount"
+    ADDON = "Inpui App"
+    OS = "Inpui Operating System"
+    CORE = "Inpui Core"
+    SUPERVISOR = "Inpui Supervisor"
+    HOST = "Inpui Host"
+    MOUNT = "Inpui Mount"

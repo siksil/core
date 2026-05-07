@@ -12,7 +12,7 @@ from inpui.components.airvisual import (
     INTEGRATION_TYPE_NODE_PRO,
 )
 
-# pylint: disable-next=hass-component-root-import
+# pylint: disable-next=inps-component-root-import
 from inpui.components.airvisual_pro.const import DOMAIN as AIRVISUAL_PRO_DOMAIN
 from inpui.const import (
     CONF_API_KEY,

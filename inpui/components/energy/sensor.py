@@ -16,7 +16,7 @@ from inpui.components.sensor import (
     SensorEntity,
     SensorStateClass,
 )
-from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=inps-component-root-import
     reset_detected,
 )
 from inpui.const import (

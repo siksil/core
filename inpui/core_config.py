@@ -348,7 +348,7 @@ CORE_CONFIG_SCHEMA = vol.All(
 
 
 async def async_process_ha_core_config(hass: HomeAssistant, config: dict) -> None:
-    """Process the [homeassistant] section from the configuration.
+    """Process the [inpui] section from the configuration.
 
     This method is a coroutine.
     """
@@ -362,7 +362,7 @@ async def async_process_ha_core_config(hass: HomeAssistant, config: dict) -> Non
     # Only load auth during startup.
     if not hasattr(hass, "auth"):
         if (auth_conf := config.get(CONF_AUTH_PROVIDERS)) is None:
-            auth_conf = [{"type": "homeassistant"}]
+            auth_conf = [{"type": "inpui"}]
 
         mfa_conf = config.get(
             CONF_AUTH_MFA_MODULES,
@@ -492,7 +492,7 @@ class _ComponentSet(set[str]):
 
     Examples:
     `light`, `switch`, `hue`, `mjpeg.camera`, `universal.media_player`,
-    `homeassistant.scene`
+    `inpui.scene`
 
     The top level components set only contains the top level components.
 
@@ -776,7 +776,7 @@ class Config:
         _raise_issue_if_no_country(self.hass, self.country)
 
     async def async_load(self) -> None:
-        """Load [homeassistant] core config."""
+        """Load [inpui] core config."""
         if not (data := await self._store.async_load()):
             return
 
@@ -811,7 +811,7 @@ class Config:
         )
 
     async def _async_store(self) -> None:
-        """Store [homeassistant] core config."""
+        """Store [inpui] core config."""
         data = {
             "latitude": self.latitude,
             "longitude": self.longitude,

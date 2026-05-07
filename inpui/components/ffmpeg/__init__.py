@@ -145,7 +145,7 @@ class FFmpegManager:
         return CONTENT_TYPE_MULTIPART.format("ffserver")
 
 
-class FFmpegBase[_HAFFmpegT: HAFFmpeg](Entity):  # pylint: disable=hass-enforce-class-module
+class FFmpegBase[_HAFFmpegT: HAFFmpeg](Entity):  # pylint: disable=inps-enforce-class-module
     """Interface object for FFmpeg."""
 
     _attr_should_poll = False

@@ -20,7 +20,7 @@ from inpui.components.sensor import (
     SensorExtraStoredData,
     SensorStateClass,
 )
-from inpui.components.sensor.recorder import (  # pylint: disable=hass-component-root-import
+from inpui.components.sensor.recorder import (  # pylint: disable=inps-component-root-import
     _suggest_report_issue,
 )
 from inpui.config_entries import ConfigEntry

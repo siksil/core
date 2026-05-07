@@ -9,10 +9,10 @@ import uuid
 import voluptuous as vol
 
 from inpui.components.rest import create_rest_data_from_config
-from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.data import (  # pylint: disable=inps-component-root-import
     DEFAULT_TIMEOUT,
 )
-from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=inps-component-root-import
     DEFAULT_METHOD,
     METHODS,
 )

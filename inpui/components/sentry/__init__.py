@@ -164,7 +164,7 @@ def process_before_send(
         if matches:
             group1, group2, group3, group4 = matches[0]
             # Handle the "inpui." package differently
-            if group1 == "homeassistant" and group2 and group3:
+            if group1 == "inpui" and group2 and group3:
                 if group2 == "components":
                     # This logger is from a component
                     additional_tags["custom_component"] = "no"
@@ -175,7 +175,7 @@ def process_before_send(
                     # Not a component, could be helper, or something else.
                     additional_tags[group2] = group3
             else:
-                # Not the "homeassistant" package, this third-party
+                # Not the "inpui" package, this third-party
                 if not options.get(CONF_EVENT_THIRD_PARTY_PACKAGES):
                     return None
                 additional_tags["package"] = group1

@@ -9,7 +9,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from hass_nabucasa.voice import STTResponse, VoiceError
 import pytest
 
-from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=hass-component-root-import
+from inpui.components.assist_pipeline.pipeline import (  # pylint: disable=inps-component-root-import
     STORAGE_KEY,
 )
 from inpui.components.cloud.const import DOMAIN

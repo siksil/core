@@ -34,7 +34,7 @@ RESOURCE_TYPE_NAMES = {
 }
 
 
-class HueBaseEntity(Entity):  # pylint: disable=hass-enforce-class-module
+class HueBaseEntity(Entity):  # pylint: disable=inps-enforce-class-module
     """Generic Entity Class for a Hue resource."""
 
     _attr_should_poll = False

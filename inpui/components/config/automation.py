@@ -6,7 +6,7 @@ from typing import Any
 import uuid
 
 from inpui.components.automation import DOMAIN as AUTOMATION_DOMAIN
-from inpui.components.automation.config import (  # pylint: disable=hass-component-root-import
+from inpui.components.automation.config import (  # pylint: disable=inps-component-root-import
     async_validate_config_item,
 )
 from inpui.config import AUTOMATION_CONFIG_PATH

@@ -75,7 +75,7 @@ async def async_setup_entry(
     config_entry.async_on_unload(unsub)
 
 
-class ZHAFirmwareUpdateCoordinator(DataUpdateCoordinator[None]):  # pylint: disable=hass-enforce-class-module
+class ZHAFirmwareUpdateCoordinator(DataUpdateCoordinator[None]):  # pylint: disable=inps-enforce-class-module
     """Firmware update coordinator that broadcasts updates network-wide."""
 
     def __init__(

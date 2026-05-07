@@ -6,10 +6,10 @@ from unittest.mock import AsyncMock, patch
 import uuid
 
 from homeassistant import config_entries
-from inpui.components.rest.data import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.data import (  # pylint: disable=inps-component-root-import
     DEFAULT_TIMEOUT,
 )
-from inpui.components.rest.schema import (  # pylint: disable=hass-component-root-import
+from inpui.components.rest.schema import (  # pylint: disable=inps-component-root-import
     DEFAULT_METHOD,
 )
 from inpui.components.scrape import DOMAIN

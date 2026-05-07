@@ -1,4 +1,4 @@
-"""Home Assistant auth provider."""
+"""Inpui auth provider."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from ..models import AuthFlowContext, AuthFlowResult, Credentials, UserMeta
 from . import AUTH_PROVIDER_SCHEMA, AUTH_PROVIDERS, AuthProvider, LoginFlow
 
 STORAGE_VERSION = 1
-STORAGE_KEY = "auth_provider.homeassistant"
+STORAGE_KEY = "auth_provider.inpui"
 
 
 def _disallow_id(conf: dict[str, Any]) -> dict[str, Any]:
@@ -39,7 +39,7 @@ CONFIG_SCHEMA = vol.All(AUTH_PROVIDER_SCHEMA, _disallow_id)
 def async_get_provider(hass: HomeAssistant) -> HassAuthProvider:
     """Get the provider."""
     for prv in hass.auth.auth_providers:
-        if prv.type == "homeassistant":
+        if prv.type == "inpui":
             return cast(HassAuthProvider, prv)
 
     raise RuntimeError("Provider not found")
@@ -122,7 +122,7 @@ class Data:
             if self.normalize_username(username, force_normalize=True) != username:
                 logging.getLogger(__name__).warning(
                     (
-                        "Home Assistant auth provider is running in legacy mode "
+                        "Inpui auth provider is running in legacy mode "
                         "because we detected usernames that are normalized (lowercase and without spaces)."
                         " Please change the username: '%s'."
                     ),
@@ -289,11 +289,11 @@ class Data:
             await self._store.async_save(self._data)
 
 
-@AUTH_PROVIDERS.register("homeassistant")
+@AUTH_PROVIDERS.register("inpui")
 class HassAuthProvider(AuthProvider):
     """Auth provider based on a local storage of users in Home Assistant config dir."""
 
-    DEFAULT_TITLE = "Home Assistant Local"
+    DEFAULT_TITLE = "Inpui Local"
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         """Initialize an Home Assistant auth provider."""

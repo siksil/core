@@ -1,6 +1,6 @@
 """Test cases for the API stream sensor."""
 
-from inpui.auth.providers.homeassistant import HassAuthProvider
+from inpui.auth.providers.inpui import HassAuthProvider
 from inpui.components.websocket_api.auth import TYPE_AUTH_REQUIRED
 from inpui.components.websocket_api.http import URL
 from inpui.core import HomeAssistant

@@ -170,7 +170,7 @@ class DockerConfigIssueRepairFlow(SupervisorIssueRepairFlow):
                     continue
 
                 if issue.context == ContextType.CORE:
-                    components.insert(0, "Home Assistant")
+                    components.insert(0, "Inpui")
                 elif issue.context == ContextType.ADDON:
                     components.append(
                         next(

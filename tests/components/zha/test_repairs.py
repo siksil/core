@@ -9,7 +9,7 @@ import zigpy.backups
 from zigpy.exceptions import NetworkSettingsInconsistent
 
 from inpui.components.inpui_hardware.util import ApplicationType
-from inpui.components.inpui_sky_connect.const import (  # pylint: disable=hass-component-root-import
+from inpui.components.inpui_sky_connect.const import (  # pylint: disable=inps-component-root-import
     DOMAIN as SKYCONNECT_DOMAIN,
 )
 from inpui.components.repairs import DOMAIN as REPAIRS_DOMAIN

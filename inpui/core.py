@@ -465,7 +465,7 @@ class HomeAssistant:
         _future = asyncio.run_coroutine_threadsafe(self.async_start(), self.loop)
         # Run forever
         # Block until stopped
-        _LOGGER.info("Starting Home Assistant core loop")
+        _LOGGER.info("Starting Inpui core loop")
         self.loop.run_forever()
         # The future is never retrieved but we still hold a reference to it
         # to prevent the task from being garbage collected prematurely.
@@ -499,7 +499,7 @@ class HomeAssistant:
 
         This method is a coroutine.
         """
-        _LOGGER.info("Starting Home Assistant %s", __version__)
+        _LOGGER.info("Starting Inpui %s", __version__)
 
         self.set_state(CoreState.starting)
         self.bus.async_fire_internal(EVENT_CORE_CONFIG_UPDATE)
@@ -515,10 +515,10 @@ class HomeAssistant:
         if pending:
             _LOGGER.warning(
                 (
-                    "Something is blocking Home Assistant from wrapping up the start up"
+                    "Something is blocking Inpui from wrapping up the start up"
                     " phase. We're going to continue anyway. Please report the"
                     " following info at"
-                    " https://github.com/home-assistant/core/issues: %s"
+                    " https://github.com/siksil/core/issues: %s"
                     " The system is waiting for tasks: %s"
                 ),
                 ", ".join(self.config.components),
@@ -530,7 +530,7 @@ class HomeAssistant:
 
         if self.state is not CoreState.starting:
             _LOGGER.warning(
-                "Home Assistant startup has been interrupted. "
+                "Inpui startup has been interrupted. "
                 "Its state may be inconsistent"
             )
             return
@@ -1068,7 +1068,7 @@ class HomeAssistant:
             if self.state is CoreState.starting:
                 # This may not work
                 _LOGGER.warning(
-                    "Stopping Home Assistant before startup has completed may fail"
+                    "Stopping Inpui before startup has completed may fail"
                 )
 
         # Stage 1 - Run shutdown jobs
