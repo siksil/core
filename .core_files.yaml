@@ -82,7 +82,7 @@ components: &components
   - inpui/components/frontend/**
   - inpui/components/google_assistant/**
   - inpui/components/group/**
-  - inpui/components/inpsio/**
+  - inpui/components/hassio/**
   - inpui/components/inpui/**
   - inpui/components/homeassistant_hardware/**
   - inpui/components/http/**

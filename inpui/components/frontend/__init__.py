@@ -233,7 +233,7 @@ MANIFEST_JSON = Manifest(
         ],
         "lang": "en-US",
         "name": "Inpui",
-        "short_name": "Home Assistant",
+        "short_name": "INPUI",
         "start_url": "/?homescreen=1",
         "id": "/?homescreen=1",
         "theme_color": DEFAULT_THEME_COLOR,
