@@ -1,4 +1,4 @@
-"""Run Home Assistant."""
+"""Run Inpui."""
 
 from __future__ import annotations
 
@@ -84,7 +84,7 @@ def _report_existing_instance(lock_file_path: Path, config_dir: str) -> None:
     Attempts to read the lock file to provide details about the running instance.
     """
     error_msg: list[str] = []
-    error_msg.append("Error: Another Home Assistant instance is already running!")
+    error_msg.append("Error: Another Inpui instance is already running!")
 
     # Try to read information about the existing instance
     try:
@@ -118,7 +118,7 @@ def _report_existing_instance(lock_file_path: Path, config_dir: str) -> None:
 
 @contextmanager
 def ensure_single_execution(config_dir: str) -> Generator[SingleExecutionLock]:
-    """Ensure only one Home Assistant instance runs per config directory.
+    """Ensure only one Inpui instance runs per config directory.
 
     Uses file locking to prevent multiple instances from running with the
     same configuration directory, which can cause data corruption.
@@ -154,7 +154,7 @@ def ensure_single_execution(config_dir: str) -> Generator[SingleExecutionLock]:
 
 @dataclasses.dataclass(slots=True)
 class RuntimeConfig:
-    """Class to hold the information for running Home Assistant."""
+    """Class to hold the information for running Inpui."""
 
     config_dir: str
     skip_pip: bool = False
@@ -174,7 +174,7 @@ class RuntimeConfig:
 
 
 class InpsEventLoopPolicy(asyncio.DefaultEventLoopPolicy):  # type: ignore[name-defined,misc]
-    """Event loop policy for Home Assistant."""
+    """Event loop policy for Inpui."""
 
     def __init__(self, debug: bool) -> None:
         """Init the event loop policy."""
@@ -278,7 +278,7 @@ def _enable_posix_spawn() -> None:
 
 
 def run(runtime_config: RuntimeConfig) -> int:
-    """Run Home Assistant."""
+    """Run Inpui."""
     _enable_posix_spawn()
     set_open_file_descriptor_limit()
     asyncio.set_event_loop_policy(InpsEventLoopPolicy(runtime_config.debug))  # type: ignore[deprecated]

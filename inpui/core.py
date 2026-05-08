@@ -473,14 +473,14 @@ class Inpui:
         return self.exit_code
 
     async def async_run(self, *, attach_signals: bool = True) -> int:
-        """Home Assistant main entry point.
+        """Inpui main entry point.
 
-        Start Home Assistant and block until stopped.
+        Start Inpui and block until stopped.
 
         This method is a coroutine.
         """
         if self.state is not CoreState.not_running:
-            raise RuntimeError("Home Assistant is already running")
+            raise RuntimeError("Inpui is already running")
 
         # _async_stop will set this instead of stopping the loop
         self._stopped = asyncio.Event()
@@ -1103,7 +1103,7 @@ class Inpui:
         for task in self._background_tasks:
             self._tasks.add(task)
             task.add_done_callback(self._tasks.remove)
-            task.cancel("Home Assistant is stopping")
+            task.cancel("Inpui is stopping")
         self._cancel_cancellable_timers()
 
         self.exit_code = exit_code
@@ -1151,7 +1151,7 @@ class Inpui:
                 "the stop event to prevent delaying shutdown",
                 task,
             )
-            task.cancel("Home Assistant final writes shutdown stage")
+            task.cancel("Inpui final writes shutdown stage")
             try:
                 async with asyncio.timeout(0.1):
                     await task
