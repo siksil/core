@@ -1,11 +1,11 @@
-# Defines a list of files that are part of main core of Home Assistant.
+# Defines a list of files that are part of main core of Inpui.
 # Changes to these files/filters define how our CI test suite is ran.
 core: &core
-  - homeassistant/*.py
-  - homeassistant/auth/**
-  - homeassistant/helpers/**
-  - homeassistant/package_constraints.txt
-  - homeassistant/util/**
+  - inpui/*.py
+  - inpui/auth/**
+  - inpui/helpers/**
+  - inpui/package_constraints.txt
+  - inpui/util/**
   - mypy.ini
   - pyproject.toml
   - requirements.txt
@@ -13,117 +13,117 @@ core: &core
 
 # Our base platforms, that are used by other integrations
 base_platforms: &base_platforms
-  - homeassistant/components/ai_task/**
-  - homeassistant/components/air_quality/**
-  - homeassistant/components/alarm_control_panel/**
-  - homeassistant/components/assist_satellite/**
-  - homeassistant/components/binary_sensor/**
-  - homeassistant/components/button/**
-  - homeassistant/components/calendar/**
-  - homeassistant/components/camera/**
-  - homeassistant/components/climate/**
-  - homeassistant/components/conversation/**
-  - homeassistant/components/cover/**
-  - homeassistant/components/date/**
-  - homeassistant/components/datetime/**
-  - homeassistant/components/device_tracker/**
-  - homeassistant/components/diagnostics/**
-  - homeassistant/components/event/**
-  - homeassistant/components/fan/**
-  - homeassistant/components/geo_location/**
-  - homeassistant/components/humidifier/**
-  - homeassistant/components/image/**
-  - homeassistant/components/image_processing/**
-  - homeassistant/components/infrared/**
-  - homeassistant/components/lawn_mower/**
-  - homeassistant/components/light/**
-  - homeassistant/components/lock/**
-  - homeassistant/components/media_player/**
-  - homeassistant/components/notify/**
-  - homeassistant/components/number/**
-  - homeassistant/components/remote/**
-  - homeassistant/components/scene/**
-  - homeassistant/components/select/**
-  - homeassistant/components/sensor/**
-  - homeassistant/components/siren/**
-  - homeassistant/components/stt/**
-  - homeassistant/components/switch/**
-  - homeassistant/components/text/**
-  - homeassistant/components/time/**
-  - homeassistant/components/todo/**
-  - homeassistant/components/tts/**
-  - homeassistant/components/update/**
-  - homeassistant/components/vacuum/**
-  - homeassistant/components/valve/**
-  - homeassistant/components/wake_word/**
-  - homeassistant/components/water_heater/**
-  - homeassistant/components/weather/**
+  - inpui/components/ai_task/**
+  - inpui/components/air_quality/**
+  - inpui/components/alarm_control_panel/**
+  - inpui/components/assist_satellite/**
+  - inpui/components/binary_sensor/**
+  - inpui/components/button/**
+  - inpui/components/calendar/**
+  - inpui/components/camera/**
+  - inpui/components/climate/**
+  - inpui/components/conversation/**
+  - inpui/components/cover/**
+  - inpui/components/date/**
+  - inpui/components/datetime/**
+  - inpui/components/device_tracker/**
+  - inpui/components/diagnostics/**
+  - inpui/components/event/**
+  - inpui/components/fan/**
+  - inpui/components/geo_location/**
+  - inpui/components/humidifier/**
+  - inpui/components/image/**
+  - inpui/components/image_processing/**
+  - inpui/components/infrared/**
+  - inpui/components/lawn_mower/**
+  - inpui/components/light/**
+  - inpui/components/lock/**
+  - inpui/components/media_player/**
+  - inpui/components/notify/**
+  - inpui/components/number/**
+  - inpui/components/remote/**
+  - inpui/components/scene/**
+  - inpui/components/select/**
+  - inpui/components/sensor/**
+  - inpui/components/siren/**
+  - inpui/components/stt/**
+  - inpui/components/switch/**
+  - inpui/components/text/**
+  - inpui/components/time/**
+  - inpui/components/todo/**
+  - inpui/components/tts/**
+  - inpui/components/update/**
+  - inpui/components/vacuum/**
+  - inpui/components/valve/**
+  - inpui/components/wake_word/**
+  - inpui/components/water_heater/**
+  - inpui/components/weather/**
 
 # Extra components that trigger the full suite
 components: &components
-  - homeassistant/components/alexa/**
-  - homeassistant/components/analytics/**
-  - homeassistant/components/application_credentials/**
-  - homeassistant/components/assist_pipeline/**
-  - homeassistant/components/auth/**
-  - homeassistant/components/automation/**
-  - homeassistant/components/backup/**
-  - homeassistant/components/blueprint/**
-  - homeassistant/components/bluetooth/**
-  - homeassistant/components/cloud/**
-  - homeassistant/components/config/**
-  - homeassistant/components/configurator/**
-  - homeassistant/components/demo/**
-  - homeassistant/components/device_automation/**
-  - homeassistant/components/dhcp/**
-  - homeassistant/components/discovery/**
-  - homeassistant/components/energy/**
-  - homeassistant/components/ffmpeg/**
-  - homeassistant/components/frontend/**
-  - homeassistant/components/google_assistant/**
-  - homeassistant/components/group/**
-  - homeassistant/components/hassio/**
-  - homeassistant/components/homeassistant/**
-  - homeassistant/components/homeassistant_hardware/**
-  - homeassistant/components/http/**
-  - homeassistant/components/image/**
-  - homeassistant/components/input_boolean/**
-  - homeassistant/components/input_button/**
-  - homeassistant/components/input_datetime/**
-  - homeassistant/components/input_number/**
-  - homeassistant/components/input_select/**
-  - homeassistant/components/input_text/**
-  - homeassistant/components/labs/**
-  - homeassistant/components/logbook/**
-  - homeassistant/components/logger/**
-  - homeassistant/components/lovelace/**
-  - homeassistant/components/media_source/**
-  - homeassistant/components/mjpeg/**
-  - homeassistant/components/modbus/**
-  - homeassistant/components/mqtt/**
-  - homeassistant/components/network/**
-  - homeassistant/components/onboarding/**
-  - homeassistant/components/otp/**
-  - homeassistant/components/persistent_notification/**
-  - homeassistant/components/person/**
-  - homeassistant/components/recorder/**
-  - homeassistant/components/recovery_mode/**
-  - homeassistant/components/repairs/**
-  - homeassistant/components/script/**
-  - homeassistant/components/shopping_list/**
-  - homeassistant/components/ssdp/**
-  - homeassistant/components/stream/**
-  - homeassistant/components/sun/**
-  - homeassistant/components/system_health/**
-  - homeassistant/components/tag/**
-  - homeassistant/components/template/**
-  - homeassistant/components/timer/**
-  - homeassistant/components/trace/**
-  - homeassistant/components/usb/**
-  - homeassistant/components/webhook/**
-  - homeassistant/components/websocket_api/**
-  - homeassistant/components/zeroconf/**
-  - homeassistant/components/zone/**
+  - inpui/components/alexa/**
+  - inpui/components/analytics/**
+  - inpui/components/application_credentials/**
+  - inpui/components/assist_pipeline/**
+  - inpui/components/auth/**
+  - inpui/components/automation/**
+  - inpui/components/backup/**
+  - inpui/components/blueprint/**
+  - inpui/components/bluetooth/**
+  - inpui/components/cloud/**
+  - inpui/components/config/**
+  - inpui/components/configurator/**
+  - inpui/components/demo/**
+  - inpui/components/device_automation/**
+  - inpui/components/dhcp/**
+  - inpui/components/discovery/**
+  - inpui/components/energy/**
+  - inpui/components/ffmpeg/**
+  - inpui/components/frontend/**
+  - inpui/components/google_assistant/**
+  - inpui/components/group/**
+  - inpui/components/inpsio/**
+  - inpui/components/inpui/**
+  - inpui/components/homeassistant_hardware/**
+  - inpui/components/http/**
+  - inpui/components/image/**
+  - inpui/components/input_boolean/**
+  - inpui/components/input_button/**
+  - inpui/components/input_datetime/**
+  - inpui/components/input_number/**
+  - inpui/components/input_select/**
+  - inpui/components/input_text/**
+  - inpui/components/labs/**
+  - inpui/components/logbook/**
+  - inpui/components/logger/**
+  - inpui/components/lovelace/**
+  - inpui/components/media_source/**
+  - inpui/components/mjpeg/**
+  - inpui/components/modbus/**
+  - inpui/components/mqtt/**
+  - inpui/components/network/**
+  - inpui/components/onboarding/**
+  - inpui/components/otp/**
+  - inpui/components/persistent_notification/**
+  - inpui/components/person/**
+  - inpui/components/recorder/**
+  - inpui/components/recovery_mode/**
+  - inpui/components/repairs/**
+  - inpui/components/script/**
+  - inpui/components/shopping_list/**
+  - inpui/components/ssdp/**
+  - inpui/components/stream/**
+  - inpui/components/sun/**
+  - inpui/components/system_health/**
+  - inpui/components/tag/**
+  - inpui/components/template/**
+  - inpui/components/timer/**
+  - inpui/components/trace/**
+  - inpui/components/usb/**
+  - inpui/components/webhook/**
+  - inpui/components/websocket_api/**
+  - inpui/components/zeroconf/**
+  - inpui/components/zone/**
 
 # Testing related files that affect the whole test/linting suite
 tests: &tests
@@ -153,11 +153,11 @@ tests: &tests
 
 other: &other
   - .github/workflows/**
-  - homeassistant/scripts/**
+  - inpui/scripts/**
 
 requirements: &requirements
   - .github/workflows/**
-  - homeassistant/package_constraints.txt
+  - inpui/package_constraints.txt
   - requirements*.txt
   - pyproject.toml
   - script/licenses.py
