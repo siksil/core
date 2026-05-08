@@ -25,9 +25,14 @@ COPY rootfs /
 # Add go2rtc binary
 COPY --from=ghcr.io/alexxit/go2rtc@sha256:675c318b23c06fd862a61d262240c9a63436b4050d177ffc68a32710d9e05bae /usr/local/bin/go2rtc /bin/go2rtc
 
+# Add cloudflared binary
+COPY --from=cloudflare/cloudflared:latest /usr/local/bin/cloudflared /bin/cloudflared
+
 RUN \
     # Verify go2rtc can be executed
     go2rtc --version \
+    # Verify cloudflared can be executed
+    && cloudflared --version \
     # Install uv
     && pip3 install uv==0.11.6
 

@@ -1,0 +1,19 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Inpui Cloud",
+                "description": "Enter the pairing code provided by your administrator.",
+                "data": {
+                    "pairing_code": "Pairing Code"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Unable to connect to Inpui Cloud. Check your code and network."
+        },
+        "abort": {
+            "already_configured": "Inpui Cloud is already configured on this device."
+        }
+    }
+}
