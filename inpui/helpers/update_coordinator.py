@@ -17,7 +17,7 @@ import aiohttp
 from propcache.api import cached_property
 import requests
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import EVENT_INPUI_STOP
 from inpui.core import CALLBACK_TYPE, Event, HomeAssistant, callback
 from inpui.exceptions import (

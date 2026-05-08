@@ -1173,7 +1173,7 @@ def custom_serializer(schema: Any) -> Any:
 
 def _custom_serializer(schema: Any, *, allow_section: bool) -> Any:
     """Serialize additional types for voluptuous_serialize."""
-    from homeassistant import data_entry_flow  # noqa: PLC0415
+    from inpui import data_entry_flow  # noqa: PLC0415
 
     from . import selector  # noqa: PLC0415
 

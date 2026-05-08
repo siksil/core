@@ -11,7 +11,7 @@ import uuid
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import http, websocket_api
 from inpui.components.http.data_validator import RequestDataValidator
 from inpui.config_entries import ConfigEntry

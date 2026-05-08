@@ -8,7 +8,7 @@ from typing import Any
 from xknx.devices import TimeDevice as XknxTimeDevice
 from xknx.dpt.dpt_10 import KNXTime as XknxTime
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.time import TimeEntity
 from inpui.const import (
     CONF_ENTITY_CATEGORY,

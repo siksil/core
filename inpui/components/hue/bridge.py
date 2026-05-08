@@ -12,7 +12,7 @@ from aiohttp import client_exceptions
 from aiohue import HueBridgeV1, HueBridgeV2, LinkButtonNotPressed, Unauthorized
 from aiohue.errors import AiohueException, BridgeBusy
 
-from homeassistant import core
+from inpui import core
 from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
 from inpui.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, Platform
 from inpui.exceptions import ConfigEntryNotReady, HomeAssistantError

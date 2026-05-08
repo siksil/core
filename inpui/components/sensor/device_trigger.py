@@ -7,7 +7,7 @@ from inpui.components.device_automation import (
     InvalidDeviceAutomationConfig,
     async_get_entity_registry_entry_or_raise,
 )
-from inpui.components.inpui.triggers import (
+from inpui.components.homeassistant.triggers import (
     numeric_state as numeric_state_trigger,
 )
 from inpui.const import (

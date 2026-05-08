@@ -8,7 +8,7 @@ from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     async_get_entity_registry_entry_or_raise,
 )
-from inpui.components.inpui.triggers.state import (
+from inpui.components.homeassistant.triggers.state import (
     CONF_FOR,
     CONF_FROM,
     CONF_TO,

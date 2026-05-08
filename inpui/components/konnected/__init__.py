@@ -10,7 +10,7 @@ from aiohttp.hdrs import AUTHORIZATION
 from aiohttp.web import Request, Response
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.binary_sensor import DEVICE_CLASSES_SCHEMA
 from inpui.components.http import KEY_HASS, HomeAssistantView
 from inpui.config_entries import ConfigEntry

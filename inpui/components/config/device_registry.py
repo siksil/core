@@ -6,7 +6,7 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant import loader
+from inpui import loader
 from inpui.components import websocket_api
 from inpui.components.websocket_api import require_admin
 from inpui.core import HomeAssistant, callback

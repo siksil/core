@@ -51,7 +51,7 @@ from aioesphomeapi import (
 from aioesphomeapi.model import ButtonInfo
 from bleak_esphome.backend.device import ESPHomeBluetoothDevice
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.assist_satellite import AssistSatelliteConfiguration
 from inpui.config_entries import ConfigEntry
 from inpui.const import Platform

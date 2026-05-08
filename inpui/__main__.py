@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+# Install the homeassistant -> inpui compatibility shim immediately after
+# __future__ imports. This ensures all subsequent imports (internal and
+# third-party HACS/community integrations) transparently resolve
+# homeassistant.* to inpui.* without any ModuleNotFoundError.
+from inpui import homeassistant_compat as _compat
+_compat.install()
+del _compat
+
 import argparse
 from contextlib import suppress
 import faulthandler

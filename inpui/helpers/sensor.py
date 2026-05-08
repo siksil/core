@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from homeassistant import const
+from inpui import const
 
 from .device_registry import DeviceInfo
 

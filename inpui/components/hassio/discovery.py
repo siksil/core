@@ -12,7 +12,7 @@ from aiohasupervisor.models import Discovery
 from aiohttp import web
 from aiohttp.web_exceptions import HTTPServiceUnavailable
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.http import HomeAssistantView
 from inpui.const import ATTR_SERVICE, EVENT_INPUI_START
 from inpui.core import Event, HomeAssistant, callback

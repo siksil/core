@@ -22,7 +22,7 @@ from async_upnp_client.ssdp import (
 from async_upnp_client.ssdp_listener import SsdpDevice, SsdpDeviceTracker, SsdpListener
 from async_upnp_client.utils import CaseInsensitiveDict
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import EVENT_INPUI_STOP, MATCH_ALL
 from inpui.core import HassJob, HomeAssistant, callback as core_callback
 from inpui.helpers import discovery_flow

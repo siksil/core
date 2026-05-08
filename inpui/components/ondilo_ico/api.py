@@ -4,7 +4,7 @@ from asyncio import run_coroutine_threadsafe
 
 from ondilo import Ondilo
 
-from homeassistant import config_entries, core
+from inpui import config_entries, core
 from inpui.helpers import config_entry_oauth2_flow
 
 

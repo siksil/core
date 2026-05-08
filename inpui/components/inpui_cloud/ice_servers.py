@@ -1,6 +1,6 @@
 import logging
 from typing import List, Dict, Any
-from homeassistant.core import HomeAssistant
+from inpui.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 

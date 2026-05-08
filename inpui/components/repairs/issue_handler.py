@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.core import HomeAssistant, callback
 from inpui.exceptions import HomeAssistantError
 from inpui.helpers import issue_registry as ir

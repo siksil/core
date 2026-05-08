@@ -20,7 +20,7 @@ import requests.exceptions
 import urllib3.exceptions
 import voluptuous as vol
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.config_entries import SOURCE_IMPORT, ConfigEntry
 from inpui.const import (
     CONF_DOMAIN,

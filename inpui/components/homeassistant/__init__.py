@@ -9,7 +9,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import config as conf_util, core_config
+from inpui import config as conf_util, core_config
 from inpui.auth.permissions.const import CAT_ENTITIES, POLICY_CONTROL
 from inpui.components import persistent_notification
 from inpui.const import (
@@ -410,6 +410,38 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
     await exposed_entities.async_initialize()
     hass.data[DATA_EXPOSED_ENTITIES] = exposed_entities
     async_set_stop_handler(hass, _async_stop)
+
+    # -------------------------------------------------------------------------
+    # Backwards-compatibility: register homeassistant.* service aliases
+    # so that user automations, YAML scripts, and HACS custom cards that call
+    # homeassistant.turn_on / homeassistant.restart etc. keep working after
+    # the internal domain was renamed to "inpui".
+    # -------------------------------------------------------------------------
+    _HA_COMPAT_DOMAIN = "homeassistant"
+    _compat_services = [
+        (SERVICE_SAVE_PERSISTENT_STATES, async_save_persistent_states, None),
+        (SERVICE_TURN_OFF, async_handle_turn_service, service_schema),
+        (SERVICE_TURN_ON, async_handle_turn_service, service_schema),
+        (SERVICE_TOGGLE, async_handle_turn_service, service_schema),
+        (SERVICE_UPDATE_ENTITY, async_handle_update_service, SCHEMA_UPDATE_ENTITY),
+        (SERVICE_RELOAD_CORE_CONFIG, async_handle_reload_config, None),
+        (SERVICE_RELOAD_CUSTOM_TEMPLATES, async_handle_reload_templates, None),
+        (SERVICE_RELOAD_CONFIG_ENTRY, async_handle_reload_config_entry, SCHEMA_RELOAD_CONFIG_ENTRY),
+        (SERVICE_RELOAD_ALL, async_handle_reload_all, None),
+    ]
+    for svc_name, svc_handler, svc_schema in _compat_services:
+        if svc_schema is not None:
+            hass.services.async_register(_HA_COMPAT_DOMAIN, svc_name, svc_handler, schema=svc_schema)
+        else:
+            hass.services.async_register(_HA_COMPAT_DOMAIN, svc_name, svc_handler)
+
+    # Admin services also need aliases
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_HOMEASSISTANT_STOP, async_handle_core_service)
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_HOMEASSISTANT_RESTART, async_handle_core_service, SCHEMA_RESTART)
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_CHECK_CONFIG, async_handle_core_service)
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_SET_LOCATION, async_set_location, vol.Schema(
+        {vol.Required(ATTR_LATITUDE): cv.latitude, vol.Required(ATTR_LONGITUDE): cv.longitude, vol.Optional(ATTR_ELEVATION): int}
+    ))
 
     async def _async_check_deprecation(event: Event) -> None:
         """Check and create deprecation issues after startup."""

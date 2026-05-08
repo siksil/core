@@ -17,7 +17,7 @@ from habiticalib import (
 )
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.config_entries import (
     ConfigEntry,
     ConfigEntryState,

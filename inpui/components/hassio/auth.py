@@ -10,7 +10,7 @@ from aiohttp.web_exceptions import HTTPNotFound, HTTPUnauthorized
 import voluptuous as vol
 
 from inpui.auth.models import User
-from inpui.auth.providers import homeassistant as auth_ha
+from inpui.auth.providers import inpui as auth_ha
 from inpui.components.http import KEY_HASS, KEY_HASS_USER, HomeAssistantView
 from inpui.components.http.data_validator import RequestDataValidator
 from inpui.core import HomeAssistant, callback

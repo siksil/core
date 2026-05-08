@@ -12,7 +12,7 @@ from sharkiq import (
     get_ayla_api,
 )
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_PASSWORD, CONF_REGION, CONF_USERNAME
 from inpui.core import HomeAssistant

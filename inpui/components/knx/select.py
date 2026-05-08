@@ -5,7 +5,7 @@ from __future__ import annotations
 from xknx import XKNX
 from xknx.devices import Device as XknxDevice, RawValue
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.select import SelectEntity
 from inpui.const import (
     CONF_ENTITY_CATEGORY,

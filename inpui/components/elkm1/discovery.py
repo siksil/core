@@ -8,7 +8,7 @@ import logging
 
 from elkm1_lib.discovery import AIOELKDiscovery, ElkSystem
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import device_registry as dr, discovery_flow

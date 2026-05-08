@@ -13,7 +13,7 @@ from typing import Any, Concatenate, cast
 
 from aiowebostv import WebOsTvPairError, WebOsTvState
 
-from homeassistant import util
+from inpui import util
 from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,

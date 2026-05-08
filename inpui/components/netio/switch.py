@@ -10,7 +10,7 @@ from typing import Any
 from pynetio import Netio
 import voluptuous as vol
 
-from homeassistant import util
+from inpui import util
 from inpui.components.http import HomeAssistantView
 from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,

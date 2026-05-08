@@ -13,7 +13,7 @@ from typing import Any, overload
 from aiousbwatcher import AIOUSBWatcher, InotifyNotAvailableError
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import websocket_api
 from inpui.components.websocket_api import ActiveConnection
 from inpui.const import EVENT_INPUI_STARTED, EVENT_INPUI_STOP

@@ -8,7 +8,7 @@ from typing import Any
 import pypck
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import (
     CONF_BASE,
     CONF_DEVICES,

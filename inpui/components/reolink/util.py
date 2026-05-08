@@ -21,7 +21,7 @@ from reolink_aio.exceptions import (
     UnexpectedDataError,
 )
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.media_source import Unresolvable
 from inpui.core import HomeAssistant
 from inpui.exceptions import HomeAssistantError, ServiceValidationError

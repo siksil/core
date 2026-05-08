@@ -3,11 +3,6 @@ run-name: "${{ github.event_name == 'workflow_dispatch' && format('CI: {0}', git
 
 # yamllint disable-line rule:truthy
 on:
-  push:
-    branches:
-      - dev
-      - rc
-      - master
   pull_request: ~
   workflow_dispatch:
     inputs:

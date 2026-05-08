@@ -7,7 +7,7 @@ import logging
 from aiobotocore.session import AioSession
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigEntry
 from inpui.const import (
     ATTR_CREDENTIALS,

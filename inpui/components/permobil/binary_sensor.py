@@ -8,7 +8,7 @@ from typing import Any
 
 from mypermobil import BATTERY_CHARGING
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.binary_sensor import (
     BinarySensorEntity,
     BinarySensorEntityDescription,

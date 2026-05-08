@@ -9,7 +9,7 @@ from sensor_state_data import (
     Units,
 )
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothDataUpdate,

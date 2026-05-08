@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import asyncio
 
-from homeassistant import config_entries, core as ha, setup
+from inpui import config_entries, core as ha, setup
 from inpui.components import persistent_notification
 from inpui.config_entries import ConfigEntry
 from inpui.const import (

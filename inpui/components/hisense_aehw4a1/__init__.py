@@ -7,7 +7,7 @@ from pyaehw4a1.aehw4a1 import AehW4a1
 import pyaehw4a1.exceptions
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.climate import DOMAIN as CLIMATE_DOMAIN
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_IP_ADDRESS, Platform

@@ -40,7 +40,7 @@
       "message": "Platform error: {domain} - {error}."
     },
     "platform_component_load_exc": {
-      "message": "[%key:component::homeassistant::exceptions::platform_component_load_err::message%]"
+      "message": "[%key:component::inpui::exceptions::platform_component_load_err::message%]"
     },
     "platform_config_validation_err": {
       "message": "Invalid config for {domain} from integration {p_name} at file {config_file}, line {line}: {error}. Check the logs for more information."
@@ -91,7 +91,7 @@
     },
     "config_entry_unique_id_collision_many": {
       "description": "There are multiple ({number_of_entries}) {domain} config entries with the same unique ID.\nThe first {title_limit} config entries are named {titles}.\n\nTo fix this error, [configure the integration]({configure_url}) and remove all except one of the duplicates.\n\nNote: Another group of duplicates may be revealed after removing these duplicates.",
-      "title": "[%key:component::homeassistant::issues::config_entry_unique_id_collision::title%]"
+      "title": "[%key:component::inpui::issues::config_entry_unique_id_collision::title%]"
     },
     "country_not_configured": {
       "description": "No country has been configured, please update the configuration by clicking on the \"learn more\" button below.",
@@ -103,7 +103,7 @@
     },
     "deprecated_container": {
       "description": "This system is running on a 32-bit operating system (`{arch}`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. Check if your system is capable of running a 64-bit operating system. If not, you will need to migrate to new hardware.",
-      "title": "[%key:component::homeassistant::issues::deprecated_architecture::title%]"
+      "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_method": {
       "description": "This system is using the {installation_type} installation type, which has been deprecated and will become unsupported following the release of Home Assistant 2025.12. While you can continue using your current setup after that point, we strongly recommend migrating to a supported installation method.",
@@ -115,11 +115,11 @@
     },
     "deprecated_os_aarch64": {
       "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. To continue using Home Assistant on this hardware, you will need to install a 64-bit operating system. Please refer to our [installation guide]({installation_guide}).",
-      "title": "[%key:component::homeassistant::issues::deprecated_architecture::title%]"
+      "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_os_armv7": {
       "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. As your hardware is no longer capable of running newer versions of Home Assistant, you will need to migrate to new hardware.",
-      "title": "[%key:component::homeassistant::issues::deprecated_architecture::title%]"
+      "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_system_packages_config_flow_integration": {
       "description": "The {integration_title} integration is being removed as it depends on system packages that can only be installed on systems running a deprecated architecture. To resolve this, remove all \"{integration_title}\" config entries.",
@@ -153,7 +153,7 @@
               "confirm": "Remove previous configurations",
               "ignore": "Ignore"
             },
-            "title": "[%key:component::homeassistant::issues::integration_not_found::title%]"
+            "title": "[%key:component::inpui::issues::integration_not_found::title%]"
           }
         }
       },
@@ -183,7 +183,7 @@
               "confirm": "Remove",
               "ignore": "Ignore"
             },
-            "title": "[%key:component::homeassistant::issues::orphaned_ignored_config_entry::title%]"
+            "title": "[%key:component::inpui::issues::orphaned_ignored_config_entry::title%]"
           }
         }
       },
@@ -198,7 +198,7 @@
         "step": {
           "confirm": {
             "description": "The `{storage_key}` storage could not be parsed and has been renamed to `{corrupt_path}` to allow Home Assistant to continue.\n\nA default `{storage_key}` may have been created automatically.\n\nIf you made manual edits to the storage file, fix any syntax errors in `{corrupt_path}`, restore the file to the original path `{original_path}`, and restart Home Assistant. Otherwise, restore the system from a backup.\n\nSelect **Submit** below to confirm you have repaired the file or restored from a backup.\n\nThe exact error was: {error}",
-            "title": "[%key:component::homeassistant::issues::storage_corruption::title%]"
+            "title": "[%key:component::inpui::issues::storage_corruption::title%]"
           }
         }
       },

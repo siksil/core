@@ -8,7 +8,7 @@ import logging
 import math
 from typing import Any
 
-from homeassistant import core as ha
+from inpui import core as ha
 from inpui.components import (
     alarm_control_panel,
     button,

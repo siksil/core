@@ -7,7 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import websocket_api
 from inpui.components.websocket_api import ERR_NOT_FOUND, require_admin
 from inpui.core import HomeAssistant, callback

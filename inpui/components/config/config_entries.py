@@ -11,7 +11,7 @@ from aiohttp import web
 import aiohttp.web_exceptions
 import voluptuous as vol
 
-from homeassistant import config_entries, data_entry_flow
+from inpui import config_entries, data_entry_flow
 from inpui.auth.permissions.const import CAT_CONFIG_ENTRIES, POLICY_EDIT
 from inpui.components import websocket_api
 from inpui.components.http import KEY_HASS, HomeAssistantView, require_admin

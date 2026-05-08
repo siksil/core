@@ -9,7 +9,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.const import (
     CONF_ABOVE,
     CONF_ATTRIBUTE,

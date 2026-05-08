@@ -6,7 +6,7 @@ from typing import Any
 from aiohttp import web
 from yarl import URL
 
-from homeassistant import core
+from inpui import core
 from inpui.auth.models import User
 from inpui.components.http import (
     KEY_HASS,

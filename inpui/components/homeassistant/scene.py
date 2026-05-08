@@ -8,7 +8,7 @@ from typing import Any, NamedTuple, cast
 
 import voluptuous as vol
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.components.light import ATTR_TRANSITION
 from inpui.components.scene import DOMAIN as SCENE_DOMAIN, STATES, Scene
 from inpui.const import (

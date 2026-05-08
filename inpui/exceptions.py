@@ -245,7 +245,7 @@ class OAuth2TokenRequestError(ClientResponseError, HomeAssistantError):
         )
         HomeAssistantError.__init__(self)
         self.domain = domain
-        self.translation_domain = "homeassistant"
+        self.translation_domain = "inpui"
         self.translation_key = "oauth2_helper_refresh_failed"
         self.translation_placeholders = {"domain": domain}
         self.generate_message = True
@@ -257,7 +257,7 @@ class OAuth2TokenRequestTransientError(OAuth2TokenRequestError):
     def __init__(self, *, domain: str, **kwargs: Any) -> None:
         """Initialize OAuth2RefreshTokenTransientError."""
         super().__init__(domain=domain, **kwargs)
-        self.translation_domain = "homeassistant"
+        self.translation_domain = "inpui"
         self.translation_key = "oauth2_helper_refresh_transient"
         self.translation_placeholders = {"domain": domain}
         self.generate_message = True
@@ -272,7 +272,7 @@ class OAuth2TokenRequestReauthError(OAuth2TokenRequestError):
     def __init__(self, *, domain: str, **kwargs: Any) -> None:
         """Initialize OAuth2RefreshTokenReauthError."""
         super().__init__(domain=domain, **kwargs)
-        self.translation_domain = "homeassistant"
+        self.translation_domain = "inpui"
         self.translation_key = "oauth2_helper_reauth_required"
         self.translation_placeholders = {"domain": domain}
         self.generate_message = True

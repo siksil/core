@@ -6,7 +6,7 @@ from collections.abc import Awaitable, Callable
 import logging
 from typing import TYPE_CHECKING, Any, cast
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import onboarding
 from inpui.core import HomeAssistant
 

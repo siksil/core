@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import Platform
 from inpui.core import HomeAssistant
 

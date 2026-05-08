@@ -10,7 +10,7 @@ from typing import Any
 import pywemo
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_DISCOVERY, EVENT_INPUI_STOP, Platform
 from inpui.core import CALLBACK_TYPE, Event, HassJob, HomeAssistant, callback

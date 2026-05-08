@@ -7,7 +7,7 @@ from collections.abc import Collection, Iterable
 
 from aiolifx.aiolifx import LifxDiscovery, Light, ScanManager
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.const import CONF_HOST
 from inpui.core import HomeAssistant, callback

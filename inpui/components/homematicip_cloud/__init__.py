@@ -2,7 +2,7 @@
 
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import CONF_NAME, EVENT_INPUI_STOP
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import (

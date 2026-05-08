@@ -20,7 +20,7 @@ from aiohttp.web_exceptions import HTTPBadGateway, HTTPGatewayTimeout
 from aiohttp_asyncmdnsresolver.api import AsyncDualMDNSResolver
 from yarl import URL
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import zeroconf
 from inpui.const import APPLICATION_NAME, EVENT_INPUI_CLOSE, __version__
 from inpui.core import Event, HomeAssistant, callback

@@ -11,7 +11,7 @@ from __future__ import annotations
 from collections.abc import Callable, Coroutine
 from typing import Any, TypedDict
 
-from homeassistant import core, setup
+from inpui import core, setup
 from inpui.const import Platform
 from inpui.loader import bind_hass
 from inpui.util.signal_type import SignalTypeFormat

@@ -12,7 +12,7 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant import __path__ as HOMEASSISTANT_PATH
+from inpui import __path__ as INPUI_PATH
 from inpui.components import websocket_api
 from inpui.const import EVENT_INPUI_CLOSE
 from inpui.core import Event, HomeAssistant, ServiceCall, callback
@@ -297,7 +297,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     if (conf := config.get(DOMAIN)) is None:
         conf = CONFIG_SCHEMA({DOMAIN: {}})[DOMAIN]
 
-    hass_path: str = HOMEASSISTANT_PATH[0]
+    hass_path: str = INPUI_PATH[0]
     config_dir = hass.config.config_dir
     paths_re = re.compile(rf"(?:{re.escape(hass_path)}|{re.escape(config_dir)})/(.*)")
     handler = LogErrorHandler(

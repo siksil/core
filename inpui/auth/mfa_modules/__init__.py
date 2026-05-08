@@ -9,7 +9,7 @@ from typing import Any
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant import data_entry_flow, requirements
+from inpui import data_entry_flow, requirements
 from inpui.const import CONF_ID, CONF_NAME, CONF_TYPE
 from inpui.core import HomeAssistant
 from inpui.data_entry_flow import FlowResult

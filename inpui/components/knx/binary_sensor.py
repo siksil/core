@@ -6,7 +6,7 @@ from typing import Any
 
 from xknx.devices import BinarySensor as XknxBinarySensor
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.binary_sensor import BinarySensorEntity
 from inpui.const import (
     CONF_DEVICE_CLASS,

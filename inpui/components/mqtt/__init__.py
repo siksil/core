@@ -10,7 +10,7 @@ from typing import Any, cast
 
 import voluptuous as vol
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.components import websocket_api
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_DISCOVERY, CONF_PLATFORM, SERVICE_RELOAD

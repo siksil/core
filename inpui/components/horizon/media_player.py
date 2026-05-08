@@ -10,7 +10,7 @@ from horimote import Client, keys
 from horimote.exceptions import AuthenticationError
 import voluptuous as vol
 
-from homeassistant import util
+from inpui import util
 from inpui.components.media_player import (
     PLATFORM_SCHEMA as MEDIA_PLAYER_PLATFORM_SCHEMA,
     MediaPlayerEntity,

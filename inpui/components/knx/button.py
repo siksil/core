@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from xknx.devices import RawValue as XknxRawValue
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.button import ButtonEntity
 from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, CONF_PAYLOAD, Platform
 from inpui.core import HomeAssistant

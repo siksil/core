@@ -11,7 +11,7 @@ from aiohttp import web
 from aiohttp.web_exceptions import HTTPBadRequest
 import voluptuous as vol
 
-from homeassistant import core as ha
+from inpui import core as ha
 from inpui.auth.models import User
 from inpui.auth.permissions.const import POLICY_READ
 from inpui.components.http import (

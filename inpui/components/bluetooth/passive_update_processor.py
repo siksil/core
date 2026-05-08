@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING, Any, Self, TypedDict, cast
 
 from habluetooth import BluetoothScanningMode
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_IDENTIFIERS,

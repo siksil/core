@@ -19,7 +19,7 @@ from kasa import (
 )
 from kasa.httpclient import get_cookie_jar
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.const import (
     CONF_ALIAS,

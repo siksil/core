@@ -47,7 +47,7 @@ from home_assistant_intents import (
 )
 import yaml
 
-from inpui.components.inpui.exposed_entities import (
+from inpui.components.homeassistant.exposed_entities import (
     async_listen_entity_updates,
     async_should_expose,
 )

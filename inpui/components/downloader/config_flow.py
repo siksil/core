@@ -7,7 +7,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.config_entries import ConfigFlow, ConfigFlowResult
 from inpui.helpers import config_validation as cv
 

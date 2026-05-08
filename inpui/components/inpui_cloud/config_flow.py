@@ -4,7 +4,7 @@ import uuid
 import logging
 
 import voluptuous as vol
-from homeassistant import config_entries
+from inpui import config_entries
 
 from .const import DOMAIN, CONF_PAIRING_CODE, CONF_HUB_ID, CONF_JWT_TOKEN, CONF_TUNNEL_TOKEN, CONF_REMOTE_URL
 from .api import InpuiCloudAPI

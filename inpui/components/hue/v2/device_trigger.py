@@ -8,7 +8,7 @@ from aiohue.v2.models.resource import ResourceTypes
 import voluptuous as vol
 
 from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from inpui.components.inpui.triggers import event as event_trigger
+from inpui.components.homeassistant.triggers import event as event_trigger
 from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,

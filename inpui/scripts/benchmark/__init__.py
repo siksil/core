@@ -9,7 +9,7 @@ from contextlib import suppress
 import logging
 from timeit import default_timer as timer
 
-from homeassistant import core
+from inpui import core
 from inpui.const import EVENT_STATE_CHANGED
 from inpui.helpers.entityfilter import convert_include_exclude_filter
 from inpui.helpers.event import (

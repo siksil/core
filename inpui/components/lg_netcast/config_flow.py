@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Any
 from pylgnetcast import AccessTokenError, LgNetCastClient, SessionIdError
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigFlowResult
 from inpui.const import (
     CONF_ACCESS_TOKEN,

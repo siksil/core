@@ -7,7 +7,7 @@ from typing import Final
 from aiohttp import ClientConnectorError
 from livisi.aiolivisi import AioLivisi
 
-from homeassistant import core
+from inpui import core
 from inpui.const import Platform
 from inpui.core import HomeAssistant
 from inpui.exceptions import ConfigEntryNotReady

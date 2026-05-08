@@ -8,7 +8,7 @@ from typing import Any
 from epicstore_api import EpicGamesStoreAPI
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigFlowResult
 from inpui.const import CONF_COUNTRY, CONF_LANGUAGE
 from inpui.core import HomeAssistant

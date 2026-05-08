@@ -6,7 +6,7 @@ from typing import cast
 
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import RepairsFlow
 from inpui.core import HomeAssistant
 

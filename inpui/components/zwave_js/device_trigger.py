@@ -12,7 +12,7 @@ from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     InvalidDeviceAutomationConfig,
 )
-from inpui.components.inpui.triggers import event, state
+from inpui.components.homeassistant.triggers import event, state
 from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,

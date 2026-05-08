@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import RepairsFlow
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_IP_ADDRESS, CONF_TOKEN

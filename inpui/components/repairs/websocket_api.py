@@ -8,7 +8,7 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.auth.permissions.const import POLICY_EDIT
 from inpui.components import websocket_api
 from inpui.components.http.data_validator import RequestDataValidator

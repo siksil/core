@@ -9,7 +9,7 @@ from typing import Any
 
 from unifi_discovery import AIOUnifiScanner, UnifiDevice, UnifiService
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import discovery_flow
 from inpui.helpers.event import async_track_time_interval

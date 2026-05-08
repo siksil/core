@@ -16,7 +16,7 @@ from async_upnp_client.profiles.dlna import DmrDevice, PlayMode, TransportState
 from async_upnp_client.utils import async_get_local_ip
 from didl_lite import didl_lite
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import media_source, ssdp
 from inpui.components.media_player import (
     ATTR_MEDIA_EXTRA,

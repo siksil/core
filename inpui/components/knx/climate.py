@@ -14,7 +14,7 @@ from xknx.devices.fan import FanSpeedMode
 from xknx.dpt.dpt_20 import HVACControllerMode, HVACOperationMode
 from xknx.remote_value.remote_value_setpoint_shift import SetpointShiftMode
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.climate import (
     FAN_HIGH,
     FAN_LOW,

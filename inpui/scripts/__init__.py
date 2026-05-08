@@ -10,7 +10,7 @@ import logging
 import os
 import sys
 
-from homeassistant import runner
+from inpui import runner
 from inpui.bootstrap import async_mount_local_lib_path
 from inpui.config import get_default_config_dir
 from inpui.requirements import pip_kwargs

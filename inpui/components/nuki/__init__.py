@@ -12,7 +12,7 @@ from pynuki import NukiBridge, NukiLock, NukiOpener
 from pynuki.bridge import InvalidCredentialsException
 from requests.exceptions import RequestException
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.components import webhook
 from inpui.config_entries import ConfigEntry
 from inpui.const import (

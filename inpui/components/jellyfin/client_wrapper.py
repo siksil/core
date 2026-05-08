@@ -12,7 +12,7 @@ from jellyfin_apiclient_python.connection_manager import (
     ConnectionManager,
 )
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.const import CONF_PASSWORD, CONF_URL, CONF_USERNAME
 from inpui.core import HomeAssistant
 

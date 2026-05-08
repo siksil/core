@@ -119,6 +119,9 @@ _SENTINEL = object()
 _DataT = TypeVar("_DataT", bound=Mapping[str, Any], default=Mapping[str, Any])
 type CALLBACK_TYPE = Callable[[], None]
 
+# The primary domain for core services (e.g. inpui.restart, inpui.turn_on).
+# The homeassistant component also registers homeassistant.* aliases for
+# backwards compatibility with user automations, scripts, and HACS cards.
 DOMAIN = "inpui"
 
 # How long to wait to log tasks that are blocking

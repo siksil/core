@@ -7,7 +7,7 @@ from aiohue.discovery import is_v2_bridge
 from aiohue.v2.models.device import DeviceArchetypes
 from aiohue.v2.models.resource import ResourceTypes
 
-from homeassistant import core
+from inpui import core
 from inpui.components.binary_sensor import BinarySensorDeviceClass
 from inpui.components.sensor import SensorDeviceClass
 from inpui.const import CONF_API_KEY, CONF_API_VERSION, CONF_HOST, CONF_USERNAME

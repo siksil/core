@@ -7,7 +7,7 @@ import logging
 from tellduslive import DIM, TURNON, UP, Session
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_HOST, CONF_SCAN_INTERVAL
 from inpui.core import HomeAssistant

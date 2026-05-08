@@ -6,7 +6,7 @@ from typing import Any
 
 from xknx.devices import Switch as XknxSwitch
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.switch import SwitchEntity
 from inpui.const import (
     CONF_DEVICE_CLASS,

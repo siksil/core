@@ -8,7 +8,7 @@ from typing import Any
 
 from roombapy import Roomba, RoombaConnectionError, RoombaFactory
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.config_entries import ConfigEntry
 from inpui.const import (
     CONF_DELAY,

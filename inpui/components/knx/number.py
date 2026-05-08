@@ -6,7 +6,7 @@ from typing import cast
 
 from xknx.devices import NumericValue
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.number import NumberDeviceClass, NumberMode, RestoreNumber
 from inpui.const import (
     CONF_DEVICE_CLASS,

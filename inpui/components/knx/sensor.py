@@ -11,7 +11,7 @@ from typing import Any
 from xknx.core.connection_state import XknxConnectionState, XknxConnectionType
 from xknx.devices import Device as XknxDevice, Sensor as XknxSensor
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.sensor import (
     CONF_STATE_CLASS,
     RestoreSensor,

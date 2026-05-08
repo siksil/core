@@ -1,6 +1,6 @@
 """The errors of Epson integration."""
 
-from homeassistant import exceptions
+from inpui import exceptions
 
 
 class CannotConnect(exceptions.HomeAssistantError):

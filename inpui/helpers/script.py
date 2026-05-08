@@ -18,7 +18,7 @@ import async_interrupt
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.components import scene
 from inpui.components.device_automation import action as device_action
 from inpui.components.logger import LOGSEVERITY

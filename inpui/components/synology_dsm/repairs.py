@@ -9,7 +9,7 @@ from typing import cast
 from synology_dsm.api.file_station.models import SynoFileSharedFolder
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
 from inpui.core import HomeAssistant
 from inpui.helpers import issue_registry as ir

@@ -7,7 +7,7 @@ from typing import Any
 
 import pybotvac
 
-from homeassistant import config_entries, core
+from inpui import config_entries, core
 from inpui.components.application_credentials import AuthImplementation
 from inpui.helpers import config_entry_oauth2_flow
 

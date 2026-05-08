@@ -7,7 +7,7 @@ from typing import Any
 
 from flux_led.aiodevice import AIOWifiLedBulb
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import (
     ATTR_CONNECTIONS,
     ATTR_HW_VERSION,

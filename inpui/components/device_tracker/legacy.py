@@ -13,7 +13,7 @@ import attr
 from propcache.api import cached_property
 import voluptuous as vol
 
-from homeassistant import util
+from inpui import util
 from inpui.components import zone
 from inpui.components.zone import ENTITY_ID_HOME
 from inpui.config import (

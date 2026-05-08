@@ -22,7 +22,7 @@ from aiodiscover.discovery import (
 )
 from cached_ipaddress import cached_ip_addresses
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.components.device_tracker import (
     ATTR_HOST_NAME,

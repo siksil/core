@@ -8,7 +8,7 @@ import logging
 
 import voluptuous as vol
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.const import CONF_ATTRIBUTE, CONF_FOR, CONF_PLATFORM, MATCH_ALL
 from inpui.core import (
     CALLBACK_TYPE,

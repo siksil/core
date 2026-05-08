@@ -1,6 +1,6 @@
 """nuki integration helpers."""
 
-from homeassistant import exceptions
+from inpui import exceptions
 
 
 def parse_id(hardware_id):

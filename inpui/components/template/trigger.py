@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import exceptions
+from inpui import exceptions
 from inpui.const import CONF_FOR, CONF_PLATFORM, CONF_VALUE_TEMPLATE
 from inpui.core import (
     CALLBACK_TYPE,

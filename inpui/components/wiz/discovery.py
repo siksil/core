@@ -8,7 +8,7 @@ import logging
 
 from pywizlight.discovery import DiscoveredBulb, find_wizlights
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import discovery_flow

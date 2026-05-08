@@ -7,7 +7,7 @@ from collections.abc import Iterable
 import logging
 from typing import Any, Literal, overload
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.const import SERVICE_RELOAD
 from inpui.core import HomeAssistant, ServiceCall, callback
 from inpui.exceptions import HomeAssistantError

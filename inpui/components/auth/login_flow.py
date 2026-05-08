@@ -78,7 +78,7 @@ from aiohttp import web
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.auth import AuthManagerFlowManager, InvalidAuthError
 from inpui.auth.models import AuthFlowContext, AuthFlowResult, Credentials
 from inpui.components import onboarding

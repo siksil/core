@@ -7,7 +7,7 @@ from datetime import timedelta
 from pythinkingcleaner import Discovery, ThinkingCleaner
 import voluptuous as vol
 
-from homeassistant import util
+from inpui import util
 from inpui.components.sensor import (
     PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA,
     SensorEntity,

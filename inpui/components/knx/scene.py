@@ -6,7 +6,7 @@ from typing import Any
 
 from xknx.devices import Device as XknxDevice, Scene as XknxScene
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.scene import BaseScene
 from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, Platform
 from inpui.core import HomeAssistant

@@ -4,7 +4,7 @@ import logging
 
 from serial import SerialException
 
-from homeassistant import core
+from inpui import core
 from inpui.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,

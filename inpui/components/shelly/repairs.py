@@ -11,7 +11,7 @@ from aioshelly.rpc_device import RpcDevice
 from awesomeversion import AwesomeVersion
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import issue_registry as ir

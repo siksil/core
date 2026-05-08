@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 from async_upnp_client.search import SsdpSearchListener
 from async_upnp_client.utils import CaseInsensitiveDict
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.core import CALLBACK_TYPE, HassJob, HomeAssistant, callback
 from inpui.helpers import discovery_flow

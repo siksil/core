@@ -8,7 +8,7 @@ from typing import Any
 from mopeka_iot_ble import MopekaIOTBluetoothDeviceData as DeviceData
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.bluetooth import (
     BluetoothServiceInfoBleak,
     async_discovered_service_info,

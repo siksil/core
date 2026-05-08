@@ -9,7 +9,7 @@ from typing import Any
 from pythinkingcleaner import Discovery, ThinkingCleaner
 import voluptuous as vol
 
-from homeassistant import util
+from inpui import util
 from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,

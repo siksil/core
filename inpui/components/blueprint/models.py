@@ -13,7 +13,7 @@ from awesomeversion import AwesomeVersion
 import voluptuous as vol
 from voluptuous.humanize import humanize_error
 
-from homeassistant import loader
+from inpui import loader
 from inpui.const import (
     CONF_DEFAULT,
     CONF_DOMAIN,

@@ -14,7 +14,7 @@ import prometheus_client
 from prometheus_client.metrics import MetricWrapperBase
 import voluptuous as vol
 
-from homeassistant import core as hacore
+from inpui import core as hacore
 from inpui.components.alarm_control_panel import AlarmControlPanelState
 from inpui.components.climate import (
     ATTR_CURRENT_TEMPERATURE,

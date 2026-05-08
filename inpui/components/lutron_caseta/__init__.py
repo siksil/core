@@ -12,7 +12,7 @@ from pylutron_caseta import BUTTON_STATUS_MULTITAP, BUTTON_STATUS_PRESSED
 from pylutron_caseta.smartbridge import Smartbridge
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import ATTR_DEVICE_ID, CONF_HOST, Platform
 from inpui.core import HomeAssistant, callback
 from inpui.exceptions import ConfigEntryNotReady

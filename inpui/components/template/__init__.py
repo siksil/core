@@ -7,7 +7,7 @@ from collections.abc import Coroutine
 import logging
 from typing import Any
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.components.automation import (
     DOMAIN as AUTOMATION_DOMAIN,
     NEW_TRIGGERS_CONDITIONS_FEATURE_FLAG,

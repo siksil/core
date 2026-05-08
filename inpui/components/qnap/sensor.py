@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import timedelta
 from typing import Any
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,

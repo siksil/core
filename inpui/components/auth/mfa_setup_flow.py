@@ -8,7 +8,7 @@ from typing import Any
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components import websocket_api
 from inpui.core import HomeAssistant, callback
 from inpui.data_entry_flow import FlowContext

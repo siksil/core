@@ -5,7 +5,7 @@ from __future__ import annotations
 from xknx import XKNX
 from xknx.devices import Notification as XknxNotification
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.notify import NotifyEntity
 from inpui.const import CONF_ENTITY_CATEGORY, CONF_NAME, CONF_TYPE, Platform
 from inpui.core import HomeAssistant

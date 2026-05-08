@@ -2,7 +2,7 @@
 
 from base64 import b64decode
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import CONF_HOST
 from inpui.helpers import config_validation as cv
 

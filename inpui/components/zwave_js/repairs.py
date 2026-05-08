@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
 from inpui.core import HomeAssistant
 from inpui.helpers import issue_registry as ir

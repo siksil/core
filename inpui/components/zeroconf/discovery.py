@@ -14,7 +14,7 @@ from typing import TYPE_CHECKING, Any, Final, cast
 from zeroconf import BadTypeInNameException, IPVersion, ServiceStateChange
 from zeroconf.asyncio import AsyncServiceBrowser, AsyncServiceInfo
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import discovery_flow
 from inpui.helpers.discovery_flow import DiscoveryKey

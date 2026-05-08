@@ -7,7 +7,7 @@ from typing import Any
 from xknx import XKNX
 from xknx.devices import Cover as XknxCover
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.cover import (
     ATTR_POSITION,
     ATTR_TILT_POSITION,

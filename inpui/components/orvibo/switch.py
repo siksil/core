@@ -8,7 +8,7 @@ from typing import Any
 from orvibo.s20 import S20, S20Exception
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.switch import (
     PLATFORM_SCHEMA as SWITCH_PLATFORM_SCHEMA,
     SwitchEntity,

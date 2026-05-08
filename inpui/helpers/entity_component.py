@@ -9,7 +9,7 @@ import logging
 from types import ModuleType
 from typing import Any
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.config_entries import ConfigEntry
 from inpui.const import (
     CONF_ENTITY_NAMESPACE,

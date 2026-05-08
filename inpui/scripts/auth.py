@@ -7,7 +7,7 @@ import logging
 import os
 from typing import TYPE_CHECKING
 
-from homeassistant import runner
+from inpui import runner
 from inpui.auth import auth_manager_from_config
 from inpui.auth.providers import inpui as inps_auth
 from inpui.config import get_default_config_dir

@@ -8,7 +8,7 @@ from propcache.api import cached_property
 from xknx import XKNX
 from xknx.devices.light import ColorTemperatureType, Light as XknxLight, XYYColor
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.light import (
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,

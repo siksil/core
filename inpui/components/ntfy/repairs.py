@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
 from inpui.core import HomeAssistant
 from inpui.helpers import entity_registry as er

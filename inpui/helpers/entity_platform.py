@@ -9,7 +9,7 @@ from datetime import timedelta
 from logging import Logger, getLogger
 from typing import TYPE_CHECKING, Any, Protocol, overload
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import (
     ATTR_RESTORED,
     DEVICE_DEFAULT_NAME,

@@ -10,7 +10,7 @@ import voluptuous as vol
 from xknx.exceptions.exception import InvalidSecureConfiguration
 from xknx.telegram import GroupAddress, IndividualAddress, Telegram
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import RepairsFlow
 from inpui.core import HomeAssistant, callback
 from inpui.helpers import issue_registry as ir, selector

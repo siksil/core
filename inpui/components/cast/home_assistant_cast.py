@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from homeassistant import auth, config_entries, core
+from inpui import auth, config_entries, core
 from inpui.const import ATTR_ENTITY_ID
 from inpui.exceptions import HomeAssistantError
 from inpui.helpers import config_validation as cv, dispatcher, instance_id

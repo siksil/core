@@ -18,7 +18,7 @@ from aiontfy.exceptions import (
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.config_entries import (
     ConfigEntry,
     ConfigFlow,

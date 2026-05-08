@@ -8,7 +8,7 @@ from typing import Any
 
 from discovery30303 import AIODiscovery30303, Device30303
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import network
 from inpui.const import CONF_MODEL, CONF_NAME
 from inpui.core import HomeAssistant, callback

@@ -8,7 +8,7 @@ from inpui.components.device_automation import (
     DEVICE_TRIGGER_BASE_SCHEMA,
     toggle_entity,
 )
-from inpui.components.inpui.triggers import (
+from inpui.components.homeassistant.triggers import (
     numeric_state as numeric_state_trigger,
 )
 from inpui.const import (

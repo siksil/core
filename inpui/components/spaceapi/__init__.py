@@ -7,7 +7,7 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant import core as ha
+from inpui import core as ha
 from inpui.components.http import KEY_HASS, HomeAssistantView
 from inpui.const import (
     ATTR_ENTITY_ID,

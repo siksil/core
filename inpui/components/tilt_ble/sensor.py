@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from tilt_ble import DeviceClass, DeviceKey, SensorUpdate, Units
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.bluetooth.passive_update_processor import (
     PassiveBluetoothDataProcessor,
     PassiveBluetoothDataUpdate,

@@ -7,7 +7,7 @@ from typing import Any
 from aiohttp import web
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.http import KEY_HASS, HomeAssistantView
 from inpui.const import Platform
 from inpui.core import HomeAssistant, callback

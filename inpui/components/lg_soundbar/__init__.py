@@ -2,7 +2,7 @@
 
 import logging
 
-from homeassistant import config_entries, core
+from inpui import config_entries, core
 from inpui.const import CONF_HOST, CONF_PORT, Platform
 from inpui.exceptions import ConfigEntryNotReady
 

@@ -16,7 +16,7 @@ from unittest.mock import patch
 from annotatedyaml import loader as yaml_loader
 from annotatedyaml.loader import Secrets
 
-from homeassistant import core, loader
+from inpui import core, loader
 from inpui.config import get_default_config_dir
 from inpui.config_entries import ConfigEntries
 from inpui.exceptions import HomeAssistantError

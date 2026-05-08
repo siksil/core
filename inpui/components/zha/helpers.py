@@ -97,7 +97,7 @@ import zigpy.util
 import zigpy.zcl
 from zigpy.zcl.foundation import CommandSchema
 
-from homeassistant import __path__ as HOMEASSISTANT_PATH
+from inpui import __path__ as INPUI_PATH
 from inpui.components.inpui_hardware.silabs_multiprotocol_addon import (
     is_multiprotocol_url,
 )
@@ -1012,7 +1012,7 @@ class LogRelayHandler(logging.Handler):
         super().__init__()
         self.hass = hass
         self.gateway = gateway
-        hass_path: str = HOMEASSISTANT_PATH[0]
+        hass_path: str = INPUI_PATH[0]
         config_dir = self.hass.config.config_dir
         self.paths_re = re.compile(
             rf"(?:{re.escape(hass_path)}|{re.escape(config_dir)})/(.*)"

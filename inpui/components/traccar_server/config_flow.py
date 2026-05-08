@@ -13,7 +13,7 @@ from pytraccar import (
 )
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigFlow, ConfigFlowResult
 from inpui.const import (
     CONF_API_TOKEN,

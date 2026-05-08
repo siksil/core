@@ -14,7 +14,7 @@ from typing import Any
 
 from aiohttp import web
 
-from homeassistant import core
+from inpui import core
 from inpui.components import (
     climate,
     cover,

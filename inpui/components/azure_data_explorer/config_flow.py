@@ -8,7 +8,7 @@ from typing import Any
 from azure.kusto.data.exceptions import KustoAuthenticationError, KustoServiceError
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigFlowResult
 from inpui.helpers.selector import BooleanSelector
 

@@ -9,7 +9,7 @@ import voluptuous as vol
 from webio_api import WebioAPI
 from webio_api.api_client import AuthError
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.config_entries import ConfigFlowResult
 from inpui.const import CONF_HOST, CONF_PASSWORD, CONF_UNIQUE_ID, CONF_USERNAME
 from inpui.core import HomeAssistant

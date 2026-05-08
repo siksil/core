@@ -5,7 +5,7 @@ from __future__ import annotations
 import voluptuous as vol
 
 from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from inpui.components.inpui.triggers import state as state_trigger
+from inpui.components.homeassistant.triggers import state as state_trigger
 from inpui.const import (
     CONF_DEVICE_ID,
     CONF_DOMAIN,

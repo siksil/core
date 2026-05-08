@@ -23,7 +23,7 @@ from mypermobil import (
     USAGE_DISTANCE,
 )
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.sensor import (
     SensorDeviceClass,
     SensorEntity,

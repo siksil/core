@@ -21,7 +21,7 @@ from soco.events_base import Event as SonosEvent, SubscriptionBase
 from soco.exceptions import SoCoException
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components import ssdp
 from inpui.components.media_player import DOMAIN as MP_DOMAIN
 from inpui.const import CONF_HOSTS, EVENT_INPUI_STOP

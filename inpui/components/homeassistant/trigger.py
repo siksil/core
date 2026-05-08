@@ -18,7 +18,7 @@ async def _async_get_trigger_platform(
 ) -> TriggerProtocol:
     """Get trigger platform from cache or import it."""
     platform = await async_import_module(
-        hass, f"inpui.components.inpui.triggers.{platform_name}"
+        hass, f"inpui.components.homeassistant.triggers.{platform_name}"
     )
     return cast(TriggerProtocol, platform)
 

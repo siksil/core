@@ -8,7 +8,7 @@ from typing import Any
 from xknx.devices import DateDevice as XknxDateDevice
 from xknx.dpt.dpt_11 import KNXDate as XKNXDate
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.date import DateEntity
 from inpui.const import (
     CONF_ENTITY_CATEGORY,

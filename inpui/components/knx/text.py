@@ -6,7 +6,7 @@ from propcache.api import cached_property
 from xknx.devices import Notification as XknxNotification
 from xknx.dpt import DPTLatin1
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.text import TextEntity, TextMode
 from inpui.const import (
     CONF_ENTITY_CATEGORY,

@@ -11,7 +11,7 @@ from typing import NamedTuple, Self
 from annotatedyaml import loader as yaml_loader
 import voluptuous as vol
 
-from homeassistant import loader
+from inpui import loader
 from inpui.config import (  # type: ignore[attr-defined]
     CONF_PACKAGES,
     YAML_CONFIG_FILE,

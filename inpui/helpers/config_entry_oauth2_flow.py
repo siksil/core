@@ -27,7 +27,7 @@ import jwt
 import voluptuous as vol
 from yarl import URL
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.core import HomeAssistant, callback
 from inpui.exceptions import (
     HomeAssistantError,

@@ -7,7 +7,7 @@ from typing import Any, cast
 from holidays import list_supported_countries
 import voluptuous as vol
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.repairs import ConfirmRepairFlow, RepairsFlow
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_COUNTRY

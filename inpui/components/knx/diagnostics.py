@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import config as conf_util
+from inpui import config as conf_util
 from inpui.components.diagnostics import async_redact_data
 from inpui.config_entries import ConfigEntry
 from inpui.core import HomeAssistant

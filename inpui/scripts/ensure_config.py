@@ -4,7 +4,7 @@ import argparse
 import asyncio
 import os
 
-from homeassistant import config as config_util
+from inpui import config as config_util
 from inpui.core import HomeAssistant
 
 # mypy: allow-untyped-calls, allow-untyped-defs

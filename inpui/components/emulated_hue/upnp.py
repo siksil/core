@@ -10,7 +10,7 @@ from typing import cast
 
 from aiohttp import web
 
-from homeassistant import core
+from inpui import core
 from inpui.components.http import HomeAssistantView
 
 from .config import Config

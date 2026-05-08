@@ -8,7 +8,7 @@ from govee_ble import (
 )
 from govee_ble.parser import ERROR
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,

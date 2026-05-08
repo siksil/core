@@ -4,7 +4,7 @@ import logging
 
 from orvibo.s20 import S20, S20Exception
 
-from homeassistant import core
+from inpui import core
 from inpui.const import CONF_HOST, CONF_MAC, Platform
 from inpui.core import HomeAssistant
 from inpui.exceptions import ConfigEntryNotReady

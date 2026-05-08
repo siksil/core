@@ -22,7 +22,7 @@ from habluetooth import (
     HaScanner,
 )
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import EVENT_INPUI_STOP, EVENT_LOGGING_CHANGED
 from inpui.core import (
     CALLBACK_TYPE,

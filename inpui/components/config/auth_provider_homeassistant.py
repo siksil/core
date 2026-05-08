@@ -6,7 +6,7 @@ from typing import Any
 
 import voluptuous as vol
 
-from inpui.auth.providers import homeassistant as auth_ha
+from inpui.auth.providers import inpui as auth_ha
 from inpui.components import websocket_api
 from inpui.core import HomeAssistant, callback
 from inpui.exceptions import Unauthorized

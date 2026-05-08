@@ -9,7 +9,7 @@ from aiohttp import web
 import voluptuous as vol
 import voluptuous_serialize
 
-from homeassistant import data_entry_flow
+from inpui import data_entry_flow
 from inpui.components.http import HomeAssistantView
 from inpui.components.http.data_validator import RequestDataValidator
 

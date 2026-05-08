@@ -10,7 +10,7 @@ from typing import Any, Self, cast
 
 import voluptuous as vol
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.const import (
     ATTR_EDITABLE,
     ATTR_LATITUDE,
