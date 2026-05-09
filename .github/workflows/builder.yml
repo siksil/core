@@ -138,7 +138,7 @@ jobs:
 
       - name: Download frontend wheels (stable)
         if: steps.frontend_channel.outputs.channel == 'stable'
-        uses: dawidd6/action-download-artifact@2536c51d3d126276eb39f74d6bc9c72ac6ef30d3 # v16
+        uses: dawidd6/action-download-artifact@b6e2e70617bc3265edd6dab6c906732b2f1ae151 # v21
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           repo: siksil/frontend
@@ -149,7 +149,7 @@ jobs:
 
       - name: Download frontend wheels (dev)
         if: steps.frontend_channel.outputs.channel == 'dev'
-        uses: dawidd6/action-download-artifact@2536c51d3d126276eb39f74d6bc9c72ac6ef30d3 # v16
+        uses: dawidd6/action-download-artifact@b6e2e70617bc3265edd6dab6c906732b2f1ae151 # v21
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           repo: siksil/frontend
@@ -160,7 +160,7 @@ jobs:
 
       - name: Download nightly wheels of intents
         if: needs.init.outputs.channel == 'dev'
-        uses: dawidd6/action-download-artifact@2536c51d3d126276eb39f74d6bc9c72ac6ef30d3 # v16
+        uses: dawidd6/action-download-artifact@b6e2e70617bc3265edd6dab6c906732b2f1ae151 # v21
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           repo: OHF-Voice/intents-package
