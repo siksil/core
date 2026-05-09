@@ -54,9 +54,15 @@ MAJOR=$(echo "$CORE_VERSION" | cut -d. -f1)
 MINOR=$(echo "$CORE_VERSION" | cut -d. -f2)
 PATCH=$(echo "$CORE_VERSION" | cut -d. -f3-)
 
-sed -i "s/MAJOR_VERSION: Final = .*/MAJOR_VERSION: Final = $MAJOR/" inpui/const.py
-sed -i "s/MINOR_VERSION: Final = .*/MINOR_VERSION: Final = $MINOR/" inpui/const.py
-sed -i "s/PATCH_VERSION: Final = .*/PATCH_VERSION: Final = \"$PATCH\"/" inpui/const.py
+python3 -c "
+import re
+path = 'inpui/const.py'
+content = open(path).read()
+content = re.sub(r'MAJOR_VERSION: Final = .*', f'MAJOR_VERSION: Final = $MAJOR', content)
+content = re.sub(r'MINOR_VERSION: Final = .*', f'MINOR_VERSION: Final = $MINOR', content)
+content = re.sub(r'PATCH_VERSION: Final = .*', f'PATCH_VERSION: Final = \"$PATCH\"', content)
+open(path, 'w').write(content)
+"
 
 # 3. Find and Validate Frontend Wheel
 FRONTEND_WHEEL=$(ls home_assistant_frontend-*.whl 2>/dev/null | head -n 1)
@@ -72,8 +78,20 @@ echo "Frontend Whl: $FRONTEND_WHEEL (Version: $FRONTEND_VERSION)"
 
 # 4. Patch manifest.json and package_constraints.txt
 echo "Patching frontend version pins..."
-sed -i "s/\"home-assistant-frontend==.*\"/\"home-assistant-frontend==$FRONTEND_VERSION\"/" inpui/components/frontend/manifest.json
-sed -i "s/home-assistant-frontend==.*/home-assistant-frontend==$FRONTEND_VERSION/" inpui/package_constraints.txt
+python3 -c "
+import re
+# Patch manifest.json
+path = 'inpui/components/frontend/manifest.json'
+content = open(path).read()
+content = re.sub(r'\"home-assistant-frontend==.*\"', f'\"home-assistant-frontend==$FRONTEND_VERSION\"', content)
+open(path, 'w').write(content)
+
+# Patch package_constraints.txt
+path = 'inpui/package_constraints.txt'
+content = open(path).read()
+content = re.sub(r'home-assistant-frontend==.*', f'home-assistant-frontend==$FRONTEND_VERSION', content)
+open(path, 'w').write(content)
+"
 
 # 5. Build the Docker Image
 FINAL_TAG="ghcr.io/siksil/${INPUT_ARCH}_inpui_core:${CORE_VERSION}"
