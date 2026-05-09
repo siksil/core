@@ -1,5 +1,5 @@
 {
-  "domain": "homeassistant",
+  "domain": "inpui",
   "name": "Inpui Core Integration",
   "codeowners": ["@siksil/core"],
   "documentation": "https://www.siksil.cloud/integrations/inpui",

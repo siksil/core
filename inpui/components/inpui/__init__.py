@@ -64,8 +64,8 @@ from .const import (
     DATA_EXPOSED_ENTITIES,
     DATA_STOP_HANDLER,
     DOMAIN,
-    SERVICE_HOMEASSISTANT_RESTART,
-    SERVICE_HOMEASSISTANT_STOP,
+    SERVICE_INPUI_RESTART,
+    SERVICE_INPUI_STOP,
 )
 from .exposed_entities import ExposedEntities, async_should_expose  # noqa: F401
 
@@ -92,7 +92,7 @@ SCHEMA_RELOAD_CONFIG_ENTRY = vol.All(
 )
 SCHEMA_RESTART = vol.Schema({vol.Optional(ATTR_SAFE_MODE, default=False): bool})
 
-SHUTDOWN_SERVICES = (SERVICE_HOMEASSISTANT_STOP, SERVICE_HOMEASSISTANT_RESTART)
+SHUTDOWN_SERVICES = (SERVICE_INPUI_STOP, SERVICE_INPUI_RESTART)
 
 DEPRECATION_URL = (
     "https://www.home-assistant.io/blog/2025/05/22/"
@@ -106,14 +106,14 @@ def _is_32_bit() -> bool:
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa: C901
-    """Set up general services related to Home Assistant."""
+    """Set up general services related to Inpui."""
 
     async def async_save_persistent_states(service: ServiceCall) -> None:
-        """Handle calls to homeassistant.save_persistent_states."""
+        """Handle calls to inpui.save_persistent_states."""
         await restore_state.RestoreStateData.async_save_persistent_states(hass)
 
     async def async_handle_turn_service(service: ServiceCall) -> None:
-        """Handle calls to homeassistant.turn_on/off."""
+        """Handle calls to inpui.turn_on/off."""
         referenced = async_extract_referenced_entity_ids(
             hass, TargetSelection(service.data)
         )
@@ -122,7 +122,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
         # Generic turn on/off method requires entity id
         if not all_referenced:
             _LOGGER.error(
-                "The service homeassistant.%s cannot be called without a target",
+                "The service inpui.%s cannot be called without a target",
                 service.service,
             )
             return
@@ -139,7 +139,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
             # This leads to endless loop.
             if domain == DOMAIN:
                 _LOGGER.warning(
-                    "Called service homeassistant.%s with invalid entities %s",
+                    "Called service inpui.%s with invalid entities %s",
                     service.service,
                     ", ".join(ent_ids),
                 )
@@ -167,7 +167,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
 
         if unsupported_entities:
             _LOGGER.warning(
-                "The service homeassistant.%s does not support entities %s",
+                "The service inpui.%s does not support entities %s",
                 service.service,
                 ", ".join(sorted(unsupported_entities)),
             )
@@ -207,7 +207,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
                 "while a database upgrade is in progress."
             )
 
-        if call.service == SERVICE_HOMEASSISTANT_STOP:
+        if call.service == SERVICE_INPUI_STOP:
             stop_handler = hass.data[DATA_STOP_HANDLER]
             await stop_handler(hass, False)
             return
@@ -231,7 +231,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
                 f"because the configuration is not valid: {errors}"
             )
 
-        if call.service == SERVICE_HOMEASSISTANT_RESTART:
+        if call.service == SERVICE_INPUI_RESTART:
             if call.data[ATTR_SAFE_MODE]:
                 await conf_util.async_enable_safe_mode(hass)
             stop_handler = hass.data[DATA_STOP_HANDLER]
@@ -266,12 +266,12 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
             await asyncio.gather(*tasks)
 
     async_register_admin_service(
-        hass, DOMAIN, SERVICE_HOMEASSISTANT_STOP, async_handle_core_service
+        hass, DOMAIN, SERVICE_INPUI_STOP, async_handle_core_service
     )
     async_register_admin_service(
         hass,
         DOMAIN,
-        SERVICE_HOMEASSISTANT_RESTART,
+        SERVICE_INPUI_RESTART,
         async_handle_core_service,
         SCHEMA_RESTART,
     )
@@ -363,10 +363,10 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
         Calls all reload services on all active domains, which triggers the
         reload of YAML configurations for the domain that support it.
 
-        Additionally, it also calls the `homeasssitant.reload_core_config`
+        Additionally, it also calls the `inpui.reload_core_config`
         service, as that reloads the core YAML configuration, the
         `frontend.reload_themes` service that reloads the themes, and the
-        `homeassistant.reload_custom_templates` service that reloads any custom
+        `inpui.reload_custom_templates` service that reloads any custom
         jinja into memory.
 
         We only do so, if there are no configuration errors.
@@ -436,8 +436,8 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
             hass.services.async_register(_HA_COMPAT_DOMAIN, svc_name, svc_handler)
 
     # Admin services also need aliases
-    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_HOMEASSISTANT_STOP, async_handle_core_service)
-    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_HOMEASSISTANT_RESTART, async_handle_core_service, SCHEMA_RESTART)
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_INPUI_STOP, async_handle_core_service)
+    async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_INPUI_RESTART, async_handle_core_service, SCHEMA_RESTART)
     async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_CHECK_CONFIG, async_handle_core_service)
     async_register_admin_service(hass, _HA_COMPAT_DOMAIN, SERVICE_SET_LOCATION, async_set_location, vol.Schema(
         {vol.Required(ATTR_LATITUDE): cv.latitude, vol.Required(ATTR_LONGITUDE): cv.longitude, vol.Optional(ATTR_ELEVATION): int}
@@ -492,7 +492,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa:
 
 
 async def _async_stop(hass: HomeAssistant, restart: bool) -> None:
-    """Stop home assistant."""
+    """Stop Inpui."""
     exit_code = RESTART_EXIT_CODE if restart else 0
     # Track trask in hass.data. No need to cleanup, we're stopping.
     hass.data[KEY_HA_STOP] = asyncio.create_task(hass.async_stop(exit_code))

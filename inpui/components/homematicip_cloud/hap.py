@@ -35,7 +35,7 @@ async def build_context_async(
     hass: HomeAssistant, hapid: str | None, authtoken: str | None
 ):
     """Create a HomematicIP context object."""
-    ssl_ctx = homeassistant.util.ssl.get_default_context()
+    ssl_ctx = inpui.util.ssl.get_default_context()
     client_session = get_async_client(hass)
 
     return await ConnectionContextBuilder.build_context_async(

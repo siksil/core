@@ -11,7 +11,7 @@ from hatasmota.trigger import TasmotaTrigger, TasmotaTriggerConfig
 import voluptuous as vol
 
 from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.components.inpui.triggers import event as event_trigger
 from inpui.config_entries import ConfigEntry
 from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
 from inpui.core import CALLBACK_TYPE, HomeAssistant, callback

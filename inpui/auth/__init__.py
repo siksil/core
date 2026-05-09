@@ -1,4 +1,4 @@
-"""Provide an authentication layer for Home Assistant."""
+"""Provide an authentication layer for Inpui."""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ from .const import ACCESS_TOKEN_EXPIRATION, GROUP_ID_ADMIN, REFRESH_TOKEN_EXPIRA
 from .mfa_modules import MultiFactorAuthModule, auth_mfa_module_from_config
 from .models import AuthFlowContext, AuthFlowResult
 from .providers import AuthProvider, LoginFlow, auth_provider_from_config
-from .providers.inpui import HassAuthProvider
+from .providers.inpui import InpuiAuthProvider
 
 EVENT_USER_ADDED = "user_added"
 EVENT_USER_UPDATED = "user_updated"
@@ -74,8 +74,8 @@ async def auth_manager_from_config(
         key = (provider.type, provider.id)
         provider_hash[key] = provider
 
-        if isinstance(provider, HassAuthProvider):
-            # Can be removed in 2026.7 with the legacy mode of homeassistant auth provider
+        if isinstance(provider, InpuiAuthProvider):
+            # Can be removed in 2026.7 with the legacy mode of Inpui auth provider
             # We need to initialize the provider to create the repair if needed as otherwise
             # the provider will be initialized on first use, which could be rare as users
             # don't frequently change auth settings
@@ -172,7 +172,7 @@ class AuthManagerFlowManager(
 
 
 class AuthManager:
-    """Manage the authentication for Home Assistant."""
+    """Manage the authentication for Inpui."""
 
     def __init__(
         self,

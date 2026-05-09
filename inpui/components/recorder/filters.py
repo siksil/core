@@ -140,7 +140,7 @@ class Filters:
     ) -> ColumnElement:
         """Generate a filter from pre-computed sets and pattern lists.
 
-        This must match exactly how homeassistant.helpers.entityfilter works.
+        This must match exactly how inpui.helpers.entityfilter works.
         """
         i_domains = _domain_matcher(self._included_domains, columns, encoder)
         i_entities = _entity_matcher(self._included_entities, columns, encoder)

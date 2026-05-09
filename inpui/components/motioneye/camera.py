@@ -190,7 +190,7 @@ class MotionEyeMjpegCamera(MotionEyeEntity, MjpegCamera):
         streaming_url = None
 
         if streaming_template:
-            # Note: Can't use homeassistant.helpers.template as it requires hass
+            # Note: Can't use inpui.helpers.template as it requires hass
             # which is not available during entity construction.
             streaming_url = Template(streaming_template).render(**camera)
         else:

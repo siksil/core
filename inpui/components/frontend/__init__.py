@@ -444,6 +444,29 @@ def _frontend_root(dev_repo_path: str | None) -> pathlib.Path:
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up the serving of the frontend."""
+    conf = config.get(DOMAIN, {})
+    @callback
+    def async_change_listener(
+        resource_type: str,
+        change_type: str,
+        url: str,
+    ) -> None:
+        subscribers = hass.data[DATA_WS_SUBSCRIBERS]
+        json_msg = {
+            "change_type": change_type,
+            "item": {"type": resource_type, "url": url},
+        }
+        for connection, msg_id in subscribers:
+            connection.send_message(websocket_api.event_message(msg_id, json_msg))
+
+    hass.data[DATA_EXTRA_MODULE_URL] = UrlManager(
+        partial(async_change_listener, "module"), conf.get(CONF_EXTRA_MODULE_URL, [])
+    )
+    hass.data[DATA_EXTRA_JS_URL_ES5] = UrlManager(
+        partial(async_change_listener, "es5"), conf.get(CONF_EXTRA_JS_URL_ES5, [])
+    )
+    hass.data[DATA_WS_SUBSCRIBERS] = set()
+
     await async_setup_frontend_storage(hass)
 
     panels_store = hass.data[DATA_PANELS_STORE] = Store[dict[str, dict[str, Any]]](
@@ -608,28 +631,6 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
     async_register_built_in_panel(hass, "profile")
     async_register_built_in_panel(hass, "notfound")
-
-    @callback
-    def async_change_listener(
-        resource_type: str,
-        change_type: str,
-        url: str,
-    ) -> None:
-        subscribers = hass.data[DATA_WS_SUBSCRIBERS]
-        json_msg = {
-            "change_type": change_type,
-            "item": {"type": resource_type, "url": url},
-        }
-        for connection, msg_id in subscribers:
-            connection.send_message(websocket_api.event_message(msg_id, json_msg))
-
-    hass.data[DATA_EXTRA_MODULE_URL] = UrlManager(
-        partial(async_change_listener, "module"), conf.get(CONF_EXTRA_MODULE_URL, [])
-    )
-    hass.data[DATA_EXTRA_JS_URL_ES5] = UrlManager(
-        partial(async_change_listener, "es5"), conf.get(CONF_EXTRA_JS_URL_ES5, [])
-    )
-    hass.data[DATA_WS_SUBSCRIBERS] = set()
 
     await _async_setup_themes(hass, conf.get(CONF_THEMES))
 

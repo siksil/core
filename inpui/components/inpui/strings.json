@@ -78,7 +78,7 @@
   },
   "issues": {
     "config_entry_only": {
-      "description": "The {domain} integration does not support configuration via YAML file. You may not notice any obvious issues with the integration, but any configuration settings defined in YAML are not actually applied.\n\nTo resolve this:\n\n1. If you've not already done so, [set up the integration]({add_integration}).\n\n2. Remove `{domain}:` from your YAML configuration file.\n\n3. Restart Home Assistant.",
+      "description": "The {domain} integration does not support configuration via YAML file. You may not notice any obvious issues with the integration, but any configuration settings defined in YAML are not actually applied.\n\nTo resolve this:\n\n1. If you've not already done so, [set up the integration]({add_integration}).\n\n2. Remove `{domain}:` from your YAML configuration file.\n\n3. Restart Inpui.",
       "title": "The {domain} integration does not support YAML configuration"
     },
     "config_entry_reauth": {
@@ -98,27 +98,27 @@
       "title": "The country has not been configured"
     },
     "deprecated_architecture": {
-      "description": "This system uses 32-bit hardware (`{arch}`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. As your hardware is no longer capable of running newer versions of Home Assistant, you will need to migrate to new hardware.",
+      "description": "This system uses 32-bit hardware (`{arch}`), which has been deprecated and will no longer receive updates after the release of Inpui 2025.12. As your hardware is no longer capable of running newer versions of Inpui, you will need to migrate to new hardware.",
       "title": "Deprecation notice: 32-bit architecture"
     },
     "deprecated_container": {
-      "description": "This system is running on a 32-bit operating system (`{arch}`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. Check if your system is capable of running a 64-bit operating system. If not, you will need to migrate to new hardware.",
+      "description": "This system is running on a 32-bit operating system (`{arch}`), which has been deprecated and will no longer receive updates after the release of Inpui 2025.12. Check if your system is capable of running a 64-bit operating system. If not, you will need to migrate to new hardware.",
       "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_method": {
-      "description": "This system is using the {installation_type} installation type, which has been deprecated and will become unsupported following the release of Home Assistant 2025.12. While you can continue using your current setup after that point, we strongly recommend migrating to a supported installation method.",
+      "description": "This system is using the {installation_type} installation type, which has been deprecated and will become unsupported following the release of Inpui 2025.12. While you can continue using your current setup after that point, we strongly recommend migrating to a supported installation method.",
       "title": "Deprecation notice: Installation method"
     },
     "deprecated_method_architecture": {
-      "description": "This system is using the {installation_type} installation type, and 32-bit hardware (`{arch}`), both of which have been deprecated and will no longer be supported after the release of Home Assistant 2025.12.",
+      "description": "This system is using the {installation_type} installation type, and 32-bit hardware (`{arch}`), both of which have been deprecated and will no longer be supported after the release of Inpui 2025.12.",
       "title": "Deprecation notice"
     },
     "deprecated_os_aarch64": {
-      "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. To continue using Home Assistant on this hardware, you will need to install a 64-bit operating system. Please refer to our [installation guide]({installation_guide}).",
+      "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Inpui 2025.12. To continue using Inpui on this hardware, you will need to install a 64-bit operating system. Please refer to our [installation guide]({installation_guide}).",
       "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_os_armv7": {
-      "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Home Assistant 2025.12. As your hardware is no longer capable of running newer versions of Home Assistant, you will need to migrate to new hardware.",
+      "description": "This system is running on a 32-bit operating system (`armv7`), which has been deprecated and will no longer receive updates after the release of Inpui 2025.12. As your hardware is no longer capable of running newer versions of Inpui, you will need to migrate to new hardware.",
       "title": "[%key:component::inpui::issues::deprecated_architecture::title%]"
     },
     "deprecated_system_packages_config_flow_integration": {
@@ -126,11 +126,11 @@
       "title": "The {integration_title} integration is being removed"
     },
     "deprecated_system_packages_yaml_integration": {
-      "description": "The {integration_title} integration is being removed as it depends on system packages that can only be installed on systems running a deprecated architecture. To resolve this, remove the {domain} entry from your configuration.yaml file and restart Home Assistant.",
+      "description": "The {integration_title} integration is being removed as it depends on system packages that can only be installed on systems running a deprecated architecture. To resolve this, remove the {domain} entry from your configuration.yaml file and restart Inpui.",
       "title": "The {integration_title} integration is being removed"
     },
     "deprecated_yaml": {
-      "description": "Configuring {integration_title} using YAML is being removed.\n\nYour existing YAML configuration has been imported into the UI automatically.\n\nRemove the `{domain}` configuration from your configuration.yaml file and restart Home Assistant to fix this issue.",
+      "description": "Configuring {integration_title} using YAML is being removed.\n\nYour existing YAML configuration has been imported into the UI automatically.\n\nRemove the `{domain}` configuration from your configuration.yaml file and restart Inpui to fix this issue.",
       "title": "The {integration_title} YAML configuration is being removed"
     },
     "historic_currency": {
@@ -148,7 +148,7 @@
         },
         "step": {
           "init": {
-            "description": "The integration `{domain}` could not be found. This happens when a (custom) integration was removed from Home Assistant, but there are still configurations for this `integration`. Please use the buttons below to either remove the previous configurations for `{domain}` or ignore this.",
+            "description": "The integration `{domain}` could not be found. This happens when a (custom) integration was removed from Inpui, but there are still configurations for this `integration`. Please use the buttons below to either remove the previous configurations for `{domain}` or ignore this.",
             "menu_options": {
               "confirm": "Remove previous configurations",
               "ignore": "Ignore"
@@ -160,15 +160,15 @@
       "title": "Integration {domain} not found"
     },
     "legacy_templates_false": {
-      "description": "Nothing will change with your templates.\n\nRemove the `legacy_templates` key from the `homeassistant` configuration in your configuration.yaml file and restart Home Assistant to fix this issue.",
+      "description": "Nothing will change with your templates.\n\nRemove the `legacy_templates` key from the `homeassistant` configuration in your configuration.yaml file and restart Inpui to fix this issue.",
       "title": "legacy_templates config key is being removed"
     },
     "legacy_templates_true": {
-      "description": "Please do the following steps:\n- Adopt your configuration to support template rendering to native python types.\n- Remove the `legacy_templates` key from the `homeassistant` configuration in your configuration.yaml file.\n- Restart Home Assistant to fix this issue.",
+      "description": "Please do the following steps:\n- Adopt your configuration to support template rendering to native python types.\n- Remove the `legacy_templates` key from the `homeassistant` configuration in your configuration.yaml file.\n- Restart Inpui to fix this issue.",
       "title": "The support for legacy templates is being removed"
     },
     "no_platform_setup": {
-      "description": "It's not possible to configure {platform} {domain} by adding `{platform_key}` to the {domain} configuration. Please check the documentation for more information on how to set up this integration.\n\nTo resolve this:\n1. Remove `{platform_key}` occurrences from the `{domain}:` configuration in your YAML configuration file.\n2. Restart Home Assistant.\n\nExample that should be removed:\n{yaml_example}",
+      "description": "It's not possible to configure {platform} {domain} by adding `{platform_key}` to the {domain} configuration. Please check the documentation for more information on how to set up this integration.\n\nTo resolve this:\n1. Remove `{platform_key}` occurrences from the `{domain}:` configuration in your YAML configuration file.\n2. Restart Inpui.\n\nExample that should be removed:\n{yaml_example}",
       "title": "Unused YAML configuration for the {platform} integration"
     },
     "orphaned_ignored_config_entry": {
@@ -178,7 +178,7 @@
         },
         "step": {
           "init": {
-            "description": "There is an ignored orphaned config entry for the `{domain}` integration. This can happen when an integration is removed, but the config entry is still present in Home Assistant.\n\nTo resolve this, press **Remove** to clean up the orphaned entry.",
+            "description": "There is an ignored orphaned config entry for the `{domain}` integration. This can happen when an integration is removed, but the config entry is still present in Inpui.\n\nTo resolve this, press **Remove** to clean up the orphaned entry.",
             "menu_options": {
               "confirm": "Remove",
               "ignore": "Ignore"
@@ -190,14 +190,14 @@
       "title": "Orphaned ignored config entry for {domain}"
     },
     "platform_only": {
-      "description": "The {domain} integration does not support configuration under its own key, it must be configured under its supported platforms.\n\nTo resolve this:\n\n1. Remove `{domain}:` from your YAML configuration file.\n\n2. Restart Home Assistant.",
+      "description": "The {domain} integration does not support configuration under its own key, it must be configured under its supported platforms.\n\nTo resolve this:\n\n1. Remove `{domain}:` from your YAML configuration file.\n\n2. Restart Inpui.",
       "title": "The {domain} integration does not support YAML configuration under its own key"
     },
     "storage_corruption": {
       "fix_flow": {
         "step": {
           "confirm": {
-            "description": "The `{storage_key}` storage could not be parsed and has been renamed to `{corrupt_path}` to allow Home Assistant to continue.\n\nA default `{storage_key}` may have been created automatically.\n\nIf you made manual edits to the storage file, fix any syntax errors in `{corrupt_path}`, restore the file to the original path `{original_path}`, and restart Home Assistant. Otherwise, restore the system from a backup.\n\nSelect **Submit** below to confirm you have repaired the file or restored from a backup.\n\nThe exact error was: {error}",
+            "description": "The `{storage_key}` storage could not be parsed and has been renamed to `{corrupt_path}` to allow Inpui to continue.\n\nA default `{storage_key}` may have been created automatically.\n\nIf you made manual edits to the storage file, fix any syntax errors in `{corrupt_path}`, restore the file to the original path `{original_path}`, and restart Inpui. Otherwise, restore the system from a backup.\n\nSelect **Submit** below to confirm you have repaired the file or restored from a backup.\n\nThe exact error was: {error}",
             "title": "[%key:component::inpui::issues::storage_corruption::title%]"
           }
         }
@@ -207,12 +207,12 @@
   },
   "services": {
     "check_config": {
-      "description": "Checks the Home Assistant YAML-configuration files for errors. Errors will be shown in the Home Assistant logs.",
-      "name": "Check Home Assistant configuration"
+      "description": "Checks the Inpui YAML-configuration files for errors. Errors will be shown in the Inpui logs.",
+      "name": "Check Inpui configuration"
     },
     "reload_all": {
-      "description": "Reloads all YAML configuration that can be reloaded without restarting Home Assistant.",
-      "name": "Reload all Home Assistant configuration"
+      "description": "Reloads all YAML configuration that can be reloaded without restarting Inpui.",
+      "name": "Reload all Inpui configuration"
     },
     "reload_config_entry": {
       "description": "Reloads the specified config entry.",
@@ -233,21 +233,21 @@
       "name": "Reload custom Jinja2 templates"
     },
     "restart": {
-      "description": "Restarts Home Assistant.",
+      "description": "Restarts Inpui.",
       "fields": {
         "safe_mode": {
           "description": "Disable custom integrations and custom cards.",
           "name": "Safe mode"
         }
       },
-      "name": "Restart Home Assistant"
+      "name": "Restart Inpui"
     },
     "save_persistent_states": {
       "description": "Saves the persistent states immediately. Maintains the normal periodic saving interval.",
       "name": "Save persistent states"
     },
     "set_location": {
-      "description": "Updates the Home Assistant location.",
+      "description": "Updates the Inpui location.",
       "fields": {
         "elevation": {
           "description": "Elevation of your location above sea level.",
@@ -262,11 +262,11 @@
           "name": "[%key:common::config_flow::data::longitude%]"
         }
       },
-      "name": "Set Home Assistant location"
+      "name": "Set Inpui location"
     },
     "stop": {
-      "description": "Stops Home Assistant.",
-      "name": "Stop Home Assistant"
+      "description": "Stops Inpui.",
+      "name": "Stop Inpui"
     },
     "toggle": {
       "description": "Generic action to toggle devices on/off under any domain.",

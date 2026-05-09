@@ -39,7 +39,7 @@ def normalize_mac_address(mac: str) -> str:
 
     This format is used by WLED firmware as well as unique IDs in Home Assistant.
 
-    The homeassistant.helpers.device_registry.format_mac function is preferred but
+    The inpui.helpers.device_registry.format_mac function is preferred but
     returns MAC addresses with colons as separators.
     """
     return mac.lower().replace(":", "").replace(".", "").replace("-", "").strip()

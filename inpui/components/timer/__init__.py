@@ -144,7 +144,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             [{CONF_ID: id_, **cfg} for id_, cfg in conf.get(DOMAIN, {}).items()]
         )
 
-    homeassistant.helpers.service.async_register_admin_service(
+    inpui.helpers.service.async_register_admin_service(
         hass,
         DOMAIN,
         SERVICE_RELOAD,

@@ -21,7 +21,7 @@ from inpui.components.calendar import (
     SERVICE_GET_EVENTS,
 )
 from inpui.components.cover import INTENT_CLOSE_COVER, INTENT_OPEN_COVER
-from inpui.components.homeassistant import async_should_expose
+from inpui.components.inpui import async_should_expose
 from inpui.components.intent import async_device_supports_timers
 from inpui.components.script import DOMAIN as SCRIPT_DOMAIN
 from inpui.components.todo import DOMAIN as TODO_DOMAIN, TodoServices

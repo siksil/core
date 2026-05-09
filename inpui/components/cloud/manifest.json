@@ -1,0 +1,8 @@
+{
+  "domain": "cloud",
+  "name": "Inpui Cloud Compatibility Stub",
+  "codeowners": ["@siksil/core"],
+  "documentation": "https://www.siksil.cloud/integrations/cloud",
+  "integration_type": "system",
+  "quality_scale": "internal"
+}

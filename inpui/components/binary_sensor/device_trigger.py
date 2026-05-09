@@ -7,7 +7,7 @@ from inpui.components.device_automation import (
     CONF_TURNED_ON,
     DEVICE_TRIGGER_BASE_SCHEMA,
 )
-from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.components.inpui.triggers import state as state_trigger
 from inpui.const import CONF_ENTITY_ID, CONF_FOR, CONF_TYPE
 from inpui.core import CALLBACK_TYPE, HomeAssistant
 from inpui.helpers import config_validation as cv, entity_registry as er

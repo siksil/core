@@ -15,7 +15,6 @@ from inpui.loader import bind_hass
 from . import views
 from .const import (
     DOMAIN,
-    STEP_ANALYTICS,
     STEP_CORE_CONFIG,
     STEP_INTEGRATION,
     STEP_USER,
@@ -59,8 +58,6 @@ class OnboardingStorage(Store[OnboardingStoreData]):
             old_data["done"].append(STEP_INTEGRATION)
         if old_major_version < 3:
             old_data["done"].append(STEP_CORE_CONFIG)
-        if old_major_version < 4:
-            old_data["done"].append(STEP_ANALYTICS)
         return old_data
 
 

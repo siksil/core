@@ -30,7 +30,7 @@ esac
 
 # Set Base Image
 if [ -z "$USER_BASE_IMAGE" ]; then
-    BASE_IMAGE="ghcr.io/home-assistant/${ARCH}-base:latest"
+    BASE_IMAGE="ghcr.io/home-assistant/${ARCH}-homeassistant-base:latest"
 else
     BASE_IMAGE=$USER_BASE_IMAGE
 fi
@@ -91,6 +91,20 @@ path = 'inpui/package_constraints.txt'
 content = open(path).read()
 content = re.sub(r'home-assistant-frontend==.*', f'home-assistant-frontend==$FRONTEND_VERSION', content)
 open(path, 'w').write(content)
+
+# Patch requirements_all.txt
+path = 'requirements_all.txt'
+if open(path).read().find('home-assistant-frontend==') != -1:
+    content = open(path).read()
+    content = re.sub(r'home-assistant-frontend==.*', f'home-assistant-frontend==$FRONTEND_VERSION', content)
+    open(path, 'w').write(content)
+
+# Patch requirements.txt
+path = 'requirements.txt'
+if open(path).read().find('home-assistant-frontend==') != -1:
+    content = open(path).read()
+    content = re.sub(r'home-assistant-frontend==.*', f'home-assistant-frontend==$FRONTEND_VERSION', content)
+    open(path, 'w').write(content)
 "
 
 # 5. Build the Docker Image

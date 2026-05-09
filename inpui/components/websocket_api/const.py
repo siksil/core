@@ -25,7 +25,7 @@ PENDING_MSG_PEAK_TIME: Final = 10
 # Maximum number of messages that can be pending at any given time.
 # This is effectively the upper limit of the number of entities
 # that can fire state changes within ~1 second.
-# Ideally we would use homeassistant.const.MAX_EXPECTED_ENTITY_IDS
+# Ideally we would use inpui.const.MAX_EXPECTED_ENTITY_IDS
 # but since chrome will lock up with too many messages we need to
 # limit it to a lower number.
 MAX_PENDING_MSG: Final = 4096

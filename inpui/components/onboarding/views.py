@@ -12,7 +12,7 @@ from aiohttp.web_exceptions import HTTPUnauthorized
 import voluptuous as vol
 
 from inpui.auth.const import GROUP_ID_ADMIN
-from inpui.auth.providers.inpui import HassAuthProvider
+from inpui.auth.providers.inpui import InpuiAuthProvider
 from inpui.components import person
 from inpui.components.auth import indieauth
 from inpui.components.http import KEY_HASS, KEY_HASS_REFRESH_TOKEN_ID
@@ -184,7 +184,7 @@ class UserOnboardingView(_BaseOnboardingStepView):
             if self._async_is_done():
                 return self.json_message("User step already done", HTTPStatus.FORBIDDEN)
 
-            provider = _async_get_hass_provider(hass)
+            provider = _async_get_inpui_provider(hass)
             await provider.async_initialize()
 
             user = await hass.auth.async_create_user(
@@ -339,10 +339,10 @@ class WaitIntegrationOnboardingView(NoAuthBaseOnboardingView):
 
 
 @callback
-def _async_get_hass_provider(hass: HomeAssistant) -> HassAuthProvider:
+def _async_get_inpui_provider(hass: HomeAssistant) -> InpuiAuthProvider:
     """Get the Inpui auth provider."""
     for prv in hass.auth.auth_providers:
         if prv.type == "inpui":
-            return cast(HassAuthProvider, prv)
+            return cast(InpuiAuthProvider, prv)
 
     raise RuntimeError("No Inpui provider found")

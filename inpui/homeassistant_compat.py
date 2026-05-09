@@ -8,7 +8,7 @@ package. This ensures:
 1. The internal codebase (which still has residual `from homeassistant import ...`
    statements) continues to work without a full find-and-replace sweep.
 2. Third-party custom components, HACS integrations, and Add-ons that hardcode
-   `from homeassistant.core import HomeAssistant` continue to work seamlessly.
+   `from inpui.core import HomeAssistant` continue to work seamlessly.
 
 This shim must be installed into sys.meta_path before any other imports occur.
 """

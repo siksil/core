@@ -152,7 +152,7 @@ class EntityComponent[_EntityT: entity.Entity = entity.Entity]:
                 )
 
         # Generic discovery listener for loading platform dynamically
-        # Refer to: homeassistant.helpers.discovery.async_load_platform()
+        # Refer to: inpui.helpers.discovery.async_load_platform()
         discovery.async_listen_platform(
             self.hass, self.domain, self._async_component_platform_discovered
         )

@@ -144,7 +144,7 @@ class WellKnownOAuthInfoView(HomeAssistantView):
             "revocation_endpoint": f"{url_prefix}/auth/revoke",
             "response_types_supported": ["code"],
             "service_documentation": (
-                "https://developers.home-assistant.io/docs/auth_api"
+                "https://developers.inpui.io/docs/auth_api"
             ),
         }
 
@@ -175,7 +175,7 @@ class WellKnownProtectedResourceView(HomeAssistantView):
                 "resource": url_prefix,
                 "authorization_servers": [url_prefix],
                 "resource_documentation": (
-                    "https://developers.home-assistant.io/docs/auth_api"
+                    "https://developers.inpui.io/docs/auth_api"
                 ),
             }
         )

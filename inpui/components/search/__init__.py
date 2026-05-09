@@ -11,7 +11,7 @@ from typing import Any
 import voluptuous as vol
 
 from inpui.components import automation, group, person, script, websocket_api
-from inpui.components.homeassistant import scene
+from inpui.components.inpui import scene
 from inpui.core import HomeAssistant, callback, split_entity_id
 from inpui.helpers import (
     area_registry as ar,

@@ -27,7 +27,7 @@ STORAGE_KEY = "auth_provider.inpui"
 def _disallow_id(conf: dict[str, Any]) -> dict[str, Any]:
     """Disallow ID in config."""
     if CONF_ID in conf:
-        raise vol.Invalid("ID is not allowed for the homeassistant auth provider.")
+        raise vol.Invalid("ID is not allowed for the Inpui auth provider.")
 
     return conf
 
@@ -36,11 +36,11 @@ CONFIG_SCHEMA = vol.All(AUTH_PROVIDER_SCHEMA, _disallow_id)
 
 
 @callback
-def async_get_provider(hass: HomeAssistant) -> HassAuthProvider:
+def async_get_provider(hass: HomeAssistant) -> InpuiAuthProvider:
     """Get the provider."""
     for prv in hass.auth.auth_providers:
         if prv.type == "inpui":
-            return cast(HassAuthProvider, prv)
+            return cast(InpuiAuthProvider, prv)
 
     raise RuntimeError("Provider not found")
 
@@ -135,20 +135,20 @@ class Data:
             ir.async_create_issue(
                 self.hass,
                 "auth",
-                "homeassistant_provider_not_normalized_usernames",
+                "inpui_provider_not_normalized_usernames",
                 breaks_in_ha_version="2026.7.0",
                 is_fixable=False,
                 severity=ir.IssueSeverity.WARNING,
-                translation_key="homeassistant_provider_not_normalized_usernames",
+                translation_key="inpui_provider_not_normalized_usernames",
                 translation_placeholders={
                     "usernames": f'- "{'"\n- "'.join(sorted(not_normalized_usernames))}"'
                 },
-                learn_more_url="homeassistant://config/users",
+                learn_more_url="https://www.inpui.io/config/users",
             )
         else:
             self.is_legacy = False
             ir.async_delete_issue(
-                self.hass, "auth", "homeassistant_provider_not_normalized_usernames"
+                self.hass, "auth", "inpui_provider_not_normalized_usernames"
             )
 
     @property
@@ -290,13 +290,13 @@ class Data:
 
 
 @AUTH_PROVIDERS.register("inpui")
-class HassAuthProvider(AuthProvider):
-    """Auth provider based on a local storage of users in Home Assistant config dir."""
+class InpuiAuthProvider(AuthProvider):
+    """Auth provider based on a local storage of users in Inpui config dir."""
 
     DEFAULT_TITLE = "Inpui Local"
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        """Initialize an Home Assistant auth provider."""
+        """Initialize an Inpui auth provider."""
         super().__init__(*args, **kwargs)
         self.data: Data | None = None
         self._init_lock = asyncio.Lock()
@@ -311,9 +311,9 @@ class HassAuthProvider(AuthProvider):
             await data.async_load()
             self.data = data
 
-    async def async_login_flow(self, context: AuthFlowContext | None) -> HassLoginFlow:
+    async def async_login_flow(self, context: AuthFlowContext | None) -> InpuiLoginFlow:
         """Return a flow to login."""
-        return HassLoginFlow(self)
+        return InpuiLoginFlow(self)
 
     async def async_validate_login(self, username: str, password: str) -> None:
         """Validate a username and password."""
@@ -406,7 +406,7 @@ class HassAuthProvider(AuthProvider):
             pass
 
 
-class HassLoginFlow(LoginFlow[HassAuthProvider]):
+class InpuiLoginFlow(LoginFlow[InpuiAuthProvider]):
     """Handler for the login flow."""
 
     async def async_step_init(

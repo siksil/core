@@ -96,7 +96,7 @@ def _mired_to_kelvin(mired_temperature: float) -> int:
     """Convert absolute mired shift to degrees kelvin.
 
     This function rounds the converted value instead of flooring the value as
-    is done in homeassistant.util.color.color_temperature_mired_to_kelvin().
+    is done in inpui.util.color.color_temperature_mired_to_kelvin().
 
     If the value of mired_temperature is less than or equal to zero, return
     the original value to avoid a divide by zero.

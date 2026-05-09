@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
-from inpui.components.homeassistant.triggers import state as state_trigger
+from inpui.components.inpui.triggers import state as state_trigger
 from inpui.const import (
     ATTR_ENTITY_ID,
     CONF_CONDITION,

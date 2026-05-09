@@ -6,7 +6,7 @@ from pywemo.subscribe import EVENT_TYPE_LONG_PRESS
 import voluptuous as vol
 
 from inpui.components.device_automation import DEVICE_TRIGGER_BASE_SCHEMA
-from inpui.components.homeassistant.triggers import event as event_trigger
+from inpui.components.inpui.triggers import event as event_trigger
 from inpui.const import CONF_DEVICE_ID, CONF_DOMAIN, CONF_PLATFORM, CONF_TYPE
 from inpui.core import CALLBACK_TYPE, HomeAssistant
 from inpui.helpers.trigger import TriggerActionType, TriggerInfo

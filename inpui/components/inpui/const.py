@@ -1,4 +1,4 @@
-"""Constants for the Homeassistant integration."""
+"""Constants for the Inpui integration."""
 
 from __future__ import annotations
 
@@ -15,5 +15,5 @@ DOMAIN = ha.DOMAIN
 DATA_EXPOSED_ENTITIES: HassKey[ExposedEntities] = HassKey(f"{DOMAIN}.exposed_entities")
 DATA_STOP_HANDLER = f"{DOMAIN}.stop_handler"
 
-SERVICE_HOMEASSISTANT_STOP: Final = "stop"
-SERVICE_HOMEASSISTANT_RESTART: Final = "restart"
+SERVICE_INPUI_STOP: Final = "stop"
+SERVICE_INPUI_RESTART: Final = "restart"

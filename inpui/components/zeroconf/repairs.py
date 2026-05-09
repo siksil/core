@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from inpui import data_entry_flow
-from inpui.components.homeassistant import (
+from inpui.components.inpui import (
     DOMAIN as HOMEASSISTANT_DOMAIN,
     SERVICE_HOMEASSISTANT_RESTART,
 )

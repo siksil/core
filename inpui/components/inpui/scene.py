@@ -81,7 +81,7 @@ def _ensure_no_intersection(value: dict[str, Any]) -> dict[str, Any]:
 
 CONF_SCENE_ID = "scene_id"
 CONF_SNAPSHOT = "snapshot_entities"
-DATA_PLATFORM = "homeassistant_scene"
+DATA_PLATFORM = "inpui_scene"
 EVENT_SCENE_RELOADED = "scene_reloaded"
 STATES_SCHEMA = vol.All(dict, _convert_states)
 
@@ -143,7 +143,7 @@ def scenes_with_entity(hass: HomeAssistant, entity_id: str) -> list[str]:
 
     platform: EntityPlatform = hass.data[DATA_PLATFORM]
 
-    scene_entities = cast(ValuesView[HomeAssistantScene], platform.entities.values())
+    scene_entities = cast(ValuesView[InpuiScene], platform.entities.values())
     return [
         scene_entity.entity_id
         for scene_entity in scene_entities
@@ -162,7 +162,7 @@ def entities_in_scene(hass: HomeAssistant, entity_id: str) -> list[str]:
     if (entity := platform.entities.get(entity_id)) is None:
         return []
 
-    return list(cast(HomeAssistantScene, entity).scene_config.states)
+    return list(cast(InpuiScene, entity).scene_config.states)
 
 
 async def async_setup_platform(
@@ -171,7 +171,7 @@ async def async_setup_platform(
     async_add_entities: AddEntitiesCallback,
     discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
-    """Set up Home Assistant scene entries."""
+    """Set up Inpui scene entries."""
     _process_scenes_config(hass, async_add_entities, config)
 
     # This platform can be loaded multiple times. Only first time register the service.
@@ -200,7 +200,7 @@ async def async_setup_platform(
 
         await platform.async_reset()
 
-        # Extract only the config for the Home Assistant platform, ignore the rest.
+        # Extract only the config for the Inpui platform, ignore the rest.
         for p_type, p_config in conf_util.config_per_platform(conf, SCENE_DOMAIN):
             if p_type != DOMAIN:
                 continue
@@ -260,11 +260,11 @@ async def async_setup_platform(
         scene_config = SceneConfig(None, call.data[CONF_SCENE_ID], None, entities)
         entity_id = f"{SCENE_DOMAIN}.{scene_config.name}"
         if (old := platform.entities.get(entity_id)) is not None:
-            if not isinstance(old, HomeAssistantScene) or not old.from_service:
+            if not isinstance(old, InpuiScene) or not old.from_service:
                 _LOGGER.warning("The scene %s already exists", entity_id)
                 return
             await platform.async_remove_entity(entity_id)
-        async_add_entities([HomeAssistantScene(hass, scene_config, from_service=True)])
+        async_add_entities([InpuiScene(hass, scene_config, from_service=True)])
 
     hass.services.async_register(
         SCENE_DOMAIN, SERVICE_CREATE, create_service, CREATE_SCENE_SCHEMA
@@ -284,7 +284,7 @@ async def async_setup_platform(
                         "entity_id": entity_id,
                     },
                 )
-            assert isinstance(scene, HomeAssistantScene)
+            assert isinstance(scene, InpuiScene)
             if not scene.from_service:
                 raise ServiceValidationError(
                     translation_domain=SCENE_DOMAIN,
@@ -314,7 +314,7 @@ def _process_scenes_config(
         return
 
     async_add_entities(
-        HomeAssistantScene(
+        InpuiScene(
             hass,
             SceneConfig(
                 scene.get(CONF_ID),
@@ -327,7 +327,7 @@ def _process_scenes_config(
     )
 
 
-class HomeAssistantScene(Scene):
+class InpuiScene(Scene):
     """A scene is a group of entities and the states we want them to be."""
 
     def __init__(

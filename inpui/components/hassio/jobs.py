@@ -41,7 +41,7 @@ class JobSubscription:
     returns the UUID before taking the action. Others are used to match jobs only
     if UUID is omitted. Either name or UUID is required to be able to match.
 
-    event_callback must be safe annotated as a homeassistant.core.callback
+    event_callback must be safe annotated as a inpui.core.callback
     and safe to call in the event loop.
     """
 
@@ -55,7 +55,7 @@ class JobSubscription:
         if not self.name and not self.uuid:
             raise ValueError("Either name or uuid must be provided!")
         if not is_callback_check_partial(self.event_callback):
-            raise ValueError("event_callback must be a homeassistant.core.callback!")
+            raise ValueError("event_callback must be a inpui.core.callback!")
 
     def matches(self, job: Job) -> bool:
         """Return true if job matches subscription filters."""

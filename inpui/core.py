@@ -1425,7 +1425,14 @@ def _verify_event_type_length_or_raise(event_type: EventType[_DataT] | str) -> N
 class EventBus:
     """Allow the firing of and listening for events."""
 
-    __slots__ = ("_debug", "_hass", "_listeners", "_match_all_listeners")
+    __slots__ = (
+        "_debug",
+        "_hass",
+        "_legacy_event_map",
+        "_listeners",
+        "_match_all_listeners",
+        "_reverse_legacy_event_map",
+    )
 
     def __init__(self, hass: HomeAssistant) -> None:
         """Initialize a new event bus."""

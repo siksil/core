@@ -1,4 +1,4 @@
-"""Offer Home Assistant core automation rules."""
+"""Offer Inpui core automation rules."""
 
 import voluptuous as vol
 
@@ -30,7 +30,7 @@ async def async_attach_trigger(
     """Listen for events based on configuration."""
     trigger_data = trigger_info["trigger_data"]
     event = config.get(CONF_EVENT)
-    job = HassJob(action, f"homeassistant trigger {trigger_info}")
+    job = HassJob(action, f"inpui trigger {trigger_info}")
 
     if event == EVENT_SHUTDOWN:
         return hass.async_add_shutdown_job(
@@ -40,7 +40,7 @@ async def async_attach_trigger(
                     **trigger_data,
                     "platform": DOMAIN,
                     "event": event,
-                    "description": "Home Assistant stopping",
+                    "description": "Inpui stopping",
                 }
             },
         )
@@ -55,7 +55,7 @@ async def async_attach_trigger(
                     **trigger_data,
                     "platform": DOMAIN,
                     "event": event,
-                    "description": "Home Assistant starting",
+                    "description": "Inpui starting",
                 }
             },
         )
