@@ -36,7 +36,9 @@ def async_setup(hass: HomeAssistant) -> None:
     websocket_api.async_register_command(hass, websocket_list_agents)
     websocket_api.async_register_command(hass, websocket_list_sentences)
     websocket_api.async_register_command(hass, websocket_hass_agent_debug)
+    websocket_api.async_register_command(hass, websocket_inpui_agent_debug)
     websocket_api.async_register_command(hass, websocket_hass_agent_language_scores)
+    websocket_api.async_register_command(hass, websocket_inpui_agent_language_scores)
     websocket_api.async_register_command(hass, websocket_subscribe_chat_log)
     websocket_api.async_register_command(hass, websocket_subscribe_chat_log_index)
 
@@ -185,6 +187,29 @@ async def websocket_hass_agent_debug(
     hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict
 ) -> None:
     """Return intents that would be matched by the default agent for a list of sentences."""
+    await _websocket_agent_debug(hass, connection, msg)
+
+
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "conversation/agent/inpui/debug",
+        vol.Required("sentences"): [str],
+        vol.Optional("language"): str,
+        vol.Optional("device_id"): vol.Any(str, None),
+    }
+)
+@websocket_api.async_response
+async def websocket_inpui_agent_debug(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict
+) -> None:
+    """Return intents that would be matched by the default agent for a list of sentences (Inpui alias)."""
+    await _websocket_agent_debug(hass, connection, msg)
+
+
+async def _websocket_agent_debug(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict
+) -> None:
+    """Return intents that would be matched by the default agent for a list of sentences."""
     agent = get_agent_manager(hass).default_agent
     assert agent is not None
 
@@ -215,6 +240,32 @@ async def websocket_hass_agent_debug(
 )
 @websocket_api.async_response
 async def websocket_hass_agent_language_scores(
+    hass: HomeAssistant,
+    connection: websocket_api.ActiveConnection,
+    msg: dict[str, Any],
+) -> None:
+    """Get support scores per language."""
+    await _websocket_agent_language_scores(hass, connection, msg)
+
+
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "conversation/agent/inpui/language_scores",
+        vol.Optional("language"): str,
+        vol.Optional("country"): str,
+    }
+)
+@websocket_api.async_response
+async def websocket_inpui_agent_language_scores(
+    hass: HomeAssistant,
+    connection: websocket_api.ActiveConnection,
+    msg: dict[str, Any],
+) -> None:
+    """Get support scores per language (Inpui alias)."""
+    await _websocket_agent_language_scores(hass, connection, msg)
+
+
+async def _websocket_agent_language_scores(
     hass: HomeAssistant,
     connection: websocket_api.ActiveConnection,
     msg: dict[str, Any],

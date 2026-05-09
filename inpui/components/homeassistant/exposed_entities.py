@@ -121,9 +121,13 @@ class ExposedEntities:
     async def async_initialize(self) -> None:
         """Finish initializing."""
         websocket_api.async_register_command(self._hass, ws_expose_entity)
+        websocket_api.async_register_command(self._hass, ws_expose_entity_inpui)
         websocket_api.async_register_command(self._hass, ws_expose_new_entities_get)
+        websocket_api.async_register_command(self._hass, ws_expose_new_entities_get_inpui)
         websocket_api.async_register_command(self._hass, ws_expose_new_entities_set)
+        websocket_api.async_register_command(self._hass, ws_expose_new_entities_set_inpui)
         websocket_api.async_register_command(self._hass, ws_list_exposed_entities)
+        websocket_api.async_register_command(self._hass, ws_list_exposed_entities_inpui)
         await self._async_load_data()
 
     @callback
@@ -406,6 +410,30 @@ def ws_expose_entity(
     hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
 ) -> None:
     """Expose an entity to an assistant."""
+    _ws_expose_entity(hass, connection, msg)
+
+
+@callback
+@websocket_api.require_admin
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "inpui/expose_entity",
+        vol.Required("assistants"): [vol.In(KNOWN_ASSISTANTS)],
+        vol.Required("entity_ids"): [str],
+        vol.Required("should_expose"): bool,
+    }
+)
+def ws_expose_entity_inpui(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Expose an entity to an assistant (Inpui alias)."""
+    _ws_expose_entity(hass, connection, msg)
+
+
+def _ws_expose_entity(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Expose an entity to an assistant."""
     entity_ids: list[str] = msg["entity_ids"]
 
     if blocked := next(
@@ -438,6 +466,27 @@ def ws_list_exposed_entities(
     hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
 ) -> None:
     """List entities which are exposed to assistants."""
+    _ws_list_exposed_entities(hass, connection, msg)
+
+
+@callback
+@websocket_api.require_admin
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "inpui/expose_entity/list",
+    }
+)
+def ws_list_exposed_entities_inpui(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """List entities which are exposed to assistants (Inpui alias)."""
+    _ws_list_exposed_entities(hass, connection, msg)
+
+
+def _ws_list_exposed_entities(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """List entities which are exposed to assistants."""
     result: dict[str, Any] = {}
 
     exposed_entities = hass.data[DATA_EXPOSED_ENTITIES]
@@ -467,6 +516,28 @@ def ws_expose_new_entities_get(
     hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
 ) -> None:
     """Check if new entities are exposed to an assistant."""
+    _ws_expose_new_entities_get(hass, connection, msg)
+
+
+@callback
+@websocket_api.require_admin
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "inpui/expose_new_entities/get",
+        vol.Required("assistant"): vol.In(KNOWN_ASSISTANTS),
+    }
+)
+def ws_expose_new_entities_get_inpui(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Check if new entities are exposed to an assistant (Inpui alias)."""
+    _ws_expose_new_entities_get(hass, connection, msg)
+
+
+def _ws_expose_new_entities_get(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Check if new entities are exposed to an assistant."""
     exposed_entities = hass.data[DATA_EXPOSED_ENTITIES]
     expose_new = exposed_entities.async_get_expose_new_entities(msg["assistant"])
     connection.send_result(msg["id"], {"expose_new": expose_new})
@@ -482,6 +553,29 @@ def ws_expose_new_entities_get(
     }
 )
 def ws_expose_new_entities_set(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Expose new entities to an assistant."""
+    _ws_expose_new_entities_set(hass, connection, msg)
+
+
+@callback
+@websocket_api.require_admin
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "inpui/expose_new_entities/set",
+        vol.Required("assistant"): vol.In(KNOWN_ASSISTANTS),
+        vol.Required("expose_new"): bool,
+    }
+)
+def ws_expose_new_entities_set_inpui(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Expose new entities to an assistant (Inpui alias)."""
+    _ws_expose_new_entities_set(hass, connection, msg)
+
+
+def _ws_expose_new_entities_set(
     hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
 ) -> None:
     """Expose new entities to an assistant."""
