@@ -96,6 +96,7 @@ _MACHINES = {
     "generic-x86-64": _MachineConfig(arch="amd64", packages=("libva-intel-driver",)),
     "qemuarm-64": _MachineConfig(arch="aarch64"),
     "qemux86-64": _MachineConfig(arch="amd64"),
+    "raspberrypi3-64": _MachineConfig(arch="aarch64", packages=("raspberrypi-utils",)),
     "raspberrypi4-64": _MachineConfig(arch="aarch64", packages=("raspberrypi-utils",)),
     "raspberrypi5-64": _MachineConfig(arch="aarch64", packages=("raspberrypi-utils",)),
 }

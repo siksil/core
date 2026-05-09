@@ -256,19 +256,28 @@ jobs:
           - generic-x86-64
           - qemuarm-64
           - qemux86-64
+          - raspberrypi3-64
           - raspberrypi4-64
           - raspberrypi5-64
         include:
-          # Default: aarch64 on native ARM runner
-          - arch: aarch64
-            runs-on: ubuntu-24.04-arm
-          # Overrides for amd64 machines
           - machine: generic-x86-64
             arch: amd64
             runs-on: ubuntu-24.04
           - machine: qemux86-64
             arch: amd64
             runs-on: ubuntu-24.04
+          - machine: qemuarm-64
+            arch: aarch64
+            runs-on: ubuntu-24.04-arm
+          - machine: raspberrypi3-64
+            arch: aarch64
+            runs-on: ubuntu-24.04-arm
+          - machine: raspberrypi4-64
+            arch: aarch64
+            runs-on: ubuntu-24.04-arm
+          - machine: raspberrypi5-64
+            arch: aarch64
+            runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout the repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
