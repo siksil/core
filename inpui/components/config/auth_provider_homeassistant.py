@@ -15,22 +15,47 @@ from inpui.exceptions import Unauthorized
 @callback
 def async_setup(hass: HomeAssistant) -> bool:
     """Enable the Home Assistant views."""
-    websocket_api.async_register_command(hass, websocket_create)
-    websocket_api.async_register_command(hass, websocket_delete)
-    websocket_api.async_register_command(hass, websocket_change_password)
-    websocket_api.async_register_command(hass, websocket_admin_change_password)
-    websocket_api.async_register_command(hass, websocket_admin_change_username)
+    for prefix in ("homeassistant", "inpui"):
+        websocket_api.async_register_command(
+            hass, f"config/auth_provider/{prefix}/create", websocket_create, SCHEMA_CREATE
+        )
+        websocket_api.async_register_command(
+            hass, f"config/auth_provider/{prefix}/delete", websocket_delete, SCHEMA_DELETE
+        )
+        websocket_api.async_register_command(
+            hass,
+            f"config/auth_provider/{prefix}/change_password",
+            websocket_change_password,
+            SCHEMA_CHANGE_PASSWORD,
+        )
+        websocket_api.async_register_command(
+            hass,
+            f"config/auth_provider/{prefix}/admin_change_password",
+            websocket_admin_change_password,
+            SCHEMA_ADMIN_CHANGE_PASSWORD,
+        )
+        websocket_api.async_register_command(
+            hass,
+            f"config/auth_provider/{prefix}/admin_change_username",
+            websocket_admin_change_username,
+            SCHEMA_ADMIN_CHANGE_USERNAME,
+        )
     return True
 
 
-@websocket_api.websocket_command(
+SCHEMA_CREATE = vol.Schema(
     {
-        vol.Required("type"): "config/auth_provider/homeassistant/create",
+        vol.Required("type"): vol.Any(
+            "config/auth_provider/homeassistant/create",
+            "config/auth_provider/inpui/create",
+        ),
         vol.Required("user_id"): str,
         vol.Required("username"): str,
         vol.Required("password"): str,
     }
 )
+
+
 @websocket_api.require_admin
 @websocket_api.async_response
 async def websocket_create(
@@ -63,12 +88,17 @@ async def websocket_create(
     connection.send_result(msg["id"])
 
 
-@websocket_api.websocket_command(
+SCHEMA_DELETE = vol.Schema(
     {
-        vol.Required("type"): "config/auth_provider/homeassistant/delete",
+        vol.Required("type"): vol.Any(
+            "config/auth_provider/homeassistant/delete",
+            "config/auth_provider/inpui/delete",
+        ),
         vol.Required("username"): str,
     }
 )
+
+
 @websocket_api.require_admin
 @websocket_api.async_response
 async def websocket_delete(
@@ -95,13 +125,18 @@ async def websocket_delete(
     connection.send_result(msg["id"])
 
 
-@websocket_api.websocket_command(
+SCHEMA_CHANGE_PASSWORD = vol.Schema(
     {
-        vol.Required("type"): "config/auth_provider/homeassistant/change_password",
+        vol.Required("type"): vol.Any(
+            "config/auth_provider/homeassistant/change_password",
+            "config/auth_provider/inpui/change_password",
+        ),
         vol.Required("current_password"): str,
         vol.Required("new_password"): str,
     }
 )
+
+
 @websocket_api.async_response
 async def websocket_change_password(
     hass: HomeAssistant,
@@ -139,15 +174,18 @@ async def websocket_change_password(
     connection.send_result(msg["id"])
 
 
-@websocket_api.websocket_command(
+SCHEMA_ADMIN_CHANGE_PASSWORD = vol.Schema(
     {
-        vol.Required(
-            "type"
-        ): "config/auth_provider/homeassistant/admin_change_password",
+        vol.Required("type"): vol.Any(
+            "config/auth_provider/homeassistant/admin_change_password",
+            "config/auth_provider/inpui/admin_change_password",
+        ),
         vol.Required("user_id"): str,
         vol.Required("password"): str,
     }
 )
+
+
 @websocket_api.require_admin
 @websocket_api.async_response
 async def websocket_admin_change_password(
@@ -181,15 +219,20 @@ async def websocket_admin_change_password(
     connection.send_result(msg["id"])
 
 
-@websocket_api.websocket_command(
+SCHEMA_ADMIN_CHANGE_USERNAME = vol.Schema(
     {
         vol.Required(
             "type"
-        ): "config/auth_provider/homeassistant/admin_change_username",
+        ): vol.Any(
+            "config/auth_provider/homeassistant/admin_change_username",
+            "config/auth_provider/inpui/admin_change_username",
+        ),
         vol.Required("user_id"): str,
         vol.Required("username"): str,
     }
 )
+
+
 @websocket_api.require_admin
 @websocket_api.async_response
 async def websocket_admin_change_username(
