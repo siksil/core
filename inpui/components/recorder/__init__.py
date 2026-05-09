@@ -53,7 +53,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 DEFAULT_URL = "sqlite:///{hass_config_path}"
-DEFAULT_DB_FILE = "home-assistant_v2.db"
+DEFAULT_DB_FILE = "inpui_v2.db"
 DEFAULT_DB_INTEGRITY_CHECK = True
 DEFAULT_DB_MAX_RETRIES = 10
 DEFAULT_DB_RETRY_WAIT = 3

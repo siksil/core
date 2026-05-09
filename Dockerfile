@@ -13,7 +13,7 @@ LABEL \
     org.opencontainers.image.title="INPUI" \
     org.opencontainers.image.url="https://www.siksil.cloud/"
 
-# Synchronize with homeassistant/core.py:async_stop
+# Synchronize with inpui/core.py:async_stop
 ENV \
     S6_SERVICES_GRACETIME=240000 \
     UV_SYSTEM_PYTHON=true \
@@ -34,7 +34,11 @@ RUN \
     # Verify cloudflared can be executed
     && cloudflared --version \
     # Install uv
-    && pip3 install uv==0.11.6
+    && pip3 install uv==0.11.6 \
+    # Create official image flag
+    && touch /OFFICIAL_IMAGE \
+    # Remove legacy Home Assistant service
+    && rm -rf /etc/services.d/home-assistant
 
 WORKDIR /usr/src
 

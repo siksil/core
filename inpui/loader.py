@@ -1,4 +1,4 @@
-"""The methods for loading Home Assistant integrations.
+"""The methods for loading Inpui integrations.
 
 This module has quite some complex parts. I have tried to add as much
 documentation as possible to keep it understandable.
@@ -147,15 +147,15 @@ PACKAGE_CUSTOM_COMPONENTS = "custom_components"
 PACKAGE_BUILTIN = "inpui.components"
 CUSTOM_WARNING = (
     "We found a custom integration %s which has not "
-    "been tested by Home Assistant. This component might "
+    "been tested by Inpui. This component might "
     "cause stability problems, be sure to disable it if you "
-    "experience issues with Home Assistant"
+    "experience issues with Inpui"
 )
 IMPORT_EVENT_LOOP_WARNING = (
     "We found an integration %s which is configured to "
     "to import its code in the event loop. This component might "
     "cause stability problems, be sure to disable it if you "
-    "experience issues with Home Assistant"
+    "experience issues with Inpui"
 )
 
 MOVED_ZEROCONF_PROPS = ("macaddress", "model", "manufacturer")
@@ -658,7 +658,7 @@ def async_register_preload_platform(hass: HomeAssistant, platform_name: str) -> 
 
 @final  # Final to allow direct checking of the type instead of using isinstance
 class Integration:
-    """An integration in Home Assistant."""
+    """An integration in Inpui."""
 
     @classmethod
     def resolve_from_root(

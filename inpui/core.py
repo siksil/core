@@ -1,6 +1,6 @@
-"""Core components of Home Assistant.
+"""Core components of Inpui.
 
-Home Assistant is a Home Automation framework for observing the state
+Inpui is a Home Automation framework for observing the state
 of entities and react to changes.
 """
 
@@ -364,7 +364,7 @@ def get_hassjob_callable_job_type(target: Callable[..., Any]) -> HassJobType:
 
 
 class CoreState(enum.Enum):
-    """Represent the current state of Home Assistant."""
+    """Represent the current state of Inpui."""
 
     not_running = "NOT_RUNNING"
     starting = "STARTING"
@@ -396,7 +396,7 @@ class Inpui:
         return f"<Inpui {self.state}>"
 
     def __init__(self, config_dir: str) -> None:
-        """Initialize new Home Assistant object."""
+        """Initialize new Inpui object."""
         from .core_config import Config  # noqa: PLC0415
 
         # This is a dictionary that any component can store any data on.
@@ -444,12 +444,12 @@ class Inpui:
 
     @cached_property
     def is_running(self) -> bool:
-        """Return if Home Assistant is running."""
+        """Return if Inpui is running."""
         return self.state in (CoreState.starting, CoreState.running)
 
     @cached_property
     def is_stopping(self) -> bool:
-        """Return if Home Assistant is stopping."""
+        """Return if Inpui is stopping."""
         return self.state in (CoreState.stopping, CoreState.final_write)
 
     def set_state(self, state: CoreState) -> None:
@@ -459,7 +459,7 @@ class Inpui:
             self.__dict__.pop(prop, None)
 
     def start(self) -> int:
-        """Start Home Assistant.
+        """Start Inpui.
 
         Note: This function is only used for testing.
         For regular use, use "await hass.run()".
@@ -812,7 +812,7 @@ class Inpui:
         """Create a task from within the event loop.
 
         This type of task is for background tasks that usually run for
-        the lifetime of Home Assistant or an integration's setup.
+        the lifetime of Inpui or an integration's setup.
 
         A background task is different from a normal task:
 
@@ -1042,7 +1042,7 @@ class Inpui:
         return remove_job
 
     def stop(self) -> None:
-        """Stop Home Assistant and shuts down all threads."""
+        """Stop Inpui and shuts down all threads."""
         if self.state is CoreState.not_running:  # just ignore
             return
         # The future is never retrieved, and we only hold a reference
@@ -1052,10 +1052,10 @@ class Inpui:
         )
 
     async def async_stop(self, exit_code: int = 0, *, force: bool = False) -> None:
-        """Stop Home Assistant and shuts down all threads.
+        """Stop Inpui and shuts down all threads.
 
         The "force" flag commands async_stop to proceed regardless of
-        Home Assistant's current state. You should not set this flag
+        Inpui's current state. You should not set this flag
         unless you're testing.
 
         This method is a coroutine.
@@ -2518,7 +2518,7 @@ class ServiceRegistry:
         """Return dictionary with per domain a list of available services.
 
         This method DOES NOT make a copy of the services like async_services does.
-        It is only expected to be called from the Home Assistant internals
+        It is only expected to be called from the Inpui internals
         as a performance optimization when the caller is not going to modify the
         returned data.
 

@@ -7,4 +7,6 @@ FROM ${BUILD_FROM}
 RUN apk --no-cache add \
     libva-intel-driver
 
+RUN rm -rf /etc/services.d/home-assistant
+
 LABEL io.hass.machine="generic-x86-64"

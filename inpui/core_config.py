@@ -532,7 +532,7 @@ class _ComponentSet(set[str]):
 
 
 class Config:
-    """Configuration settings for Home Assistant."""
+    """Configuration settings for Inpui."""
 
     _store: Config._ConfigStore
 
@@ -595,13 +595,13 @@ class Config:
         # Dictionary of Media folders that integrations may use
         self.media_dirs: dict[str, str] = {}
 
-        # If Home Assistant is running in recovery mode
+        # If Inpui is running in recovery mode
         self.recovery_mode: bool = False
 
         # Use legacy template behavior
         self.legacy_templates: bool = False
 
-        # If Home Assistant is running in safe mode
+        # If Inpui is running in safe mode
         self.safe_mode: bool = False
 
         self.webrtc = RTCConfiguration()
@@ -614,7 +614,7 @@ class Config:
         self._store = self._ConfigStore(self.hass)
 
     def distance(self, lat: float, lon: float) -> float | None:
-        """Calculate distance from Home Assistant.
+        """Calculate distance from Inpui.
 
         Async friendly.
         """

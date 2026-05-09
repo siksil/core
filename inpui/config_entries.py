@@ -1,4 +1,4 @@
-"""Manage config entries in Home Assistant."""
+"""Manage config entries in Inpui."""
 
 from __future__ import annotations
 
@@ -938,7 +938,7 @@ class ConfigEntry[_DataT = Any]:
 
     @callback
     def async_shutdown(self) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Inpui is stopping."""
         self.async_cancel_retry_setup()
 
     @callback
@@ -1488,7 +1488,7 @@ class ConfigEntriesFlowManager(
             async with interrupt(
                 cancel_init_future,
                 FlowCancelledError,
-                "Config entry initialize canceled: Home Assistant is shutting down",
+                "Config entry initialize canceled: Inpui is shutting down",
             ):
                 flow, result = await self._async_init(flow_id, handler, context, data)
         except FlowCancelledError as ex:
@@ -2198,7 +2198,7 @@ class ConfigEntries:
 
     @callback
     def _async_shutdown(self, event: Event) -> None:
-        """Call when Home Assistant is stopping."""
+        """Call when Inpui is stopping."""
         for entry in self._entries.values():
             entry.async_shutdown()
         self.flow.async_shutdown()
@@ -2803,7 +2803,7 @@ class ConfigEntries:
         This is primarily intended for existing config entries which are loaded at
         startup, awaiting this function will block until the component and all its
         config entries are loaded.
-        Config entries which are created after Home Assistant is started can't be waited
+        Config entries which are created after Inpui is started can't be waited
         for, the function will just return if the config entry is loaded or not.
         """
         if not await async_wait_component(self.hass, entry.domain):

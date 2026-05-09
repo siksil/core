@@ -1,4 +1,4 @@
-"""Provide methods to bootstrap a Home Assistant instance."""
+"""Provide methods to bootstrap an Inpui instance."""
 
 from __future__ import annotations
 
@@ -296,7 +296,7 @@ PRELOAD_STORAGE = [
 async def async_setup_hass(
     runtime_config: RuntimeConfig,
 ) -> core.HomeAssistant | None:
-    """Set up Home Assistant."""
+    """Set up Inpui."""
 
     async def create_hass() -> core.HomeAssistant:
         """Create the hass object and do basic setup."""
@@ -429,7 +429,7 @@ def open_hass_ui(hass: core.HomeAssistant) -> None:
 
     if not webbrowser.open(url):
         _LOGGER.warning(
-            "Unable to open the Home Assistant UI in a browser. Open it yourself at %s",
+            "Unable to open the Inpui UI in a browser. Open it yourself at %s",
             url,
         )
 
@@ -492,9 +492,9 @@ async def async_load_base_functionality(hass: core.HomeAssistant) -> bool:
             raise
 
         _LOGGER.error(
-            "Storage file %s was created by a newer version of Home Assistant"
+            "Storage file %s was created by a newer version of Inpui"
             " (storage version %s > %s); activating recovery mode; on-disk data"
-            " is preserved; upgrade Home Assistant or restore from a backup",
+            " is preserved; upgrade Inpui or restore from a backup",
             err.storage_key,
             err.found_version,
             err.max_supported_version,
@@ -507,7 +507,7 @@ async def async_load_base_functionality(hass: core.HomeAssistant) -> bool:
 async def async_from_config_dict(
     config: ConfigType, hass: core.HomeAssistant
 ) -> core.HomeAssistant | None:
-    """Try to configure Home Assistant from a configuration dictionary.
+    """Try to configure Inpui from a configuration dictionary.
 
     Dynamically loads required components and its dependencies.
     This method is a coroutine.

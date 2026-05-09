@@ -99,7 +99,7 @@ async def async_get_system_info(hass: HomeAssistant) -> dict[str, Any]:
         from inpui.components import hassio  # noqa: PLC0415
 
         if not (info := hassio.get_info(hass)):
-            _LOGGER.warning("No Home Assistant Supervisor info available")
+            _LOGGER.warning("No Inpui Supervisor info available")
             info = {}
 
         host = hassio.get_host_info(hass) or {}

@@ -4,4 +4,5 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/aarch64-homeassistant:latest
 FROM ${BUILD_FROM}
 
+RUN rm -rf /etc/services.d/home-assistant
 LABEL io.hass.machine="qemuarm-64"

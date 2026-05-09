@@ -1,4 +1,4 @@
-"""The exceptions used by Home Assistant."""
+"""The exceptions used by Inpui."""
 
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ def import_async_get_exception_message() -> Callable[
 
 
 class HomeAssistantError(Exception):
-    """General Home Assistant exception occurred."""
+    """General Inpui exception occurred."""
 
     _message: str | None = None
     generate_message: bool = False
@@ -393,7 +393,7 @@ class UnsupportedStorageVersionError(HomeAssistantError):
         super().__init__(
             f"Storage file {storage_key} has version {found_version}"
             f" which is newer than the max supported version {max_supported_version};"
-            " upgrade Home Assistant or restore from a backup",
+            " upgrade Inpui or restore from a backup",
         )
         self.storage_key = storage_key
         self.found_version = found_version
