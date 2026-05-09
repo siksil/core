@@ -1438,6 +1438,16 @@ class EventBus:
         self._async_logging_changed()
         self.async_listen(EVENT_LOGGING_CHANGED, self._async_logging_changed)
 
+        # Legacy event map for two-way string compatibility
+        self._legacy_event_map: dict[str, str] = {
+            "homeassistant_close": "inpui_close",
+            "homeassistant_start": "inpui_start",
+            "homeassistant_started": "inpui_started",
+            "homeassistant_stop": "inpui_stop",
+            "homeassistant_final_write": "inpui_final_write",
+        }
+        self._reverse_legacy_event_map = {v: k for k, v in self._legacy_event_map.items()}
+
     @callback
     def _async_logging_changed(self, event: Event | None = None) -> None:
         """Handle logging change."""
@@ -1509,6 +1519,9 @@ class EventBus:
 
         This method must be run in the event loop.
         """
+        if translated_type := self._legacy_event_map.get(str(event_type)):
+            event_type = translated_type
+
         if self._debug:
             _LOGGER.debug(
                 "Bus:Handling %s", _event_repr(event_type, origin, event_data)
@@ -1543,6 +1556,31 @@ class EventBus:
                 self._hass.async_run_hass_job(job, event)
             except Exception:
                 _LOGGER.exception("Error running job: %s", job)
+
+        # Handle legacy listeners for the reverse mapping
+        if (legacy_type := self._reverse_legacy_event_map.get(str(event_type))) and (
+            legacy_listeners := self._listeners.get(legacy_type)
+        ):
+            if not event:
+                event = Event(
+                    event_type,
+                    event_data,
+                    origin,
+                    time_fired,
+                    context,
+                )
+            for job, event_filter in legacy_listeners:
+                if event_filter is not None:
+                    try:
+                        if event_data is None or not event_filter(event_data):
+                            continue
+                    except Exception:
+                        _LOGGER.exception("Error in event filter for legacy listener")
+                        continue
+                try:
+                    self._hass.async_run_hass_job(job, event)
+                except Exception:
+                    _LOGGER.exception("Error running legacy job: %s", job)
 
     def listen(
         self,

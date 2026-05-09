@@ -268,6 +268,13 @@ EVENT_INPUI_STOP: EventType[NoEventData] = EventType("inpui_stop")
 EVENT_INPUI_FINAL_WRITE: EventType[NoEventData] = EventType(
     "inpui_final_write"
 )
+
+# Legacy event aliases for backward compatibility with custom components
+EVENT_HOMEASSISTANT_CLOSE = EVENT_INPUI_CLOSE
+EVENT_HOMEASSISTANT_START = EVENT_INPUI_START
+EVENT_HOMEASSISTANT_STARTED = EVENT_INPUI_STARTED
+EVENT_HOMEASSISTANT_STOP = EVENT_INPUI_STOP
+EVENT_HOMEASSISTANT_FINAL_WRITE = EVENT_INPUI_FINAL_WRITE
 EVENT_LABS_UPDATED: Final = "labs_updated"
 EVENT_LOGBOOK_ENTRY: Final = "logbook_entry"
 EVENT_LOGGING_CHANGED: Final = "logging_changed"
