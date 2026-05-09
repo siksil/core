@@ -23,7 +23,7 @@ rules:
   unique-config-entry:
     status: exempt
     comment: |
-      Integration only supports and uses a single config entry. Exempting because hassfest check is incomplete.
+      Integration only supports and uses a single config entry. Exempting because inpsfest check is incomplete.
   # Silver
   action-exceptions: todo
   config-entry-unloading: done

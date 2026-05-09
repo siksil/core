@@ -1,7 +1,7 @@
 """Test that the go2rtc Docker image version matches or exceeds the recommended version.
 
 This test ensures that the go2rtc Docker image SHA pinned in
-script/hassfest/docker.py corresponds to a version that is equal to or
+script/inpsfest/docker.py corresponds to a version that is equal to or
 greater than the RECOMMENDED_VERSION defined in homeassistant/components/go2rtc/const.py.
 
 The test pulls the Docker image using the pinned SHA and runs the
@@ -17,7 +17,7 @@ from awesomeversion import AwesomeVersion
 import pytest
 
 from inpui.components.go2rtc.const import RECOMMENDED_VERSION
-from script.hassfest.docker import _GO2RTC_SHA as DOCKER_SHA
+from script.inpsfest.docker import _GO2RTC_SHA as DOCKER_SHA
 
 
 async def _get_version_from_docker_sha() -> str:
@@ -81,5 +81,5 @@ async def test_docker_version_matches_recommended() -> None:
     assert docker_version >= recommended_version, (
         f"go2rtc Docker version ({docker_version}) is less than "
         f"RECOMMENDED_VERSION ({recommended_version}). "
-        "Please update _GO2RTC_SHA in script/hassfest/docker.py to a newer version"
+        "Please update _GO2RTC_SHA in script/inpsfest/docker.py to a newer version"
     )

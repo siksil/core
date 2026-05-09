@@ -1,12 +1,12 @@
-"""Tests for hassfest."""
+"""Tests for inpsfest."""
 
 from pathlib import Path
 
-from script.hassfest.model import Config, Integration
+from script.inpsfest.model import Config, Integration
 
 
 def get_integration(domain: str, config: Config):
-    """Helper function for creating hassfest integration model instances."""
+    """Helper function for creating inpsfest integration model instances."""
     return Integration(
         Path(domain),
         _config=config,

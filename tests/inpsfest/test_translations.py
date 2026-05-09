@@ -1,10 +1,10 @@
-"""Tests for hassfest translations."""
+"""Tests for inpsfest translations."""
 
 import pytest
 import voluptuous as vol
 
-from script.hassfest import translations
-from script.hassfest.model import Config
+from script.inpsfest import translations
+from script.inpsfest.model import Config
 
 from . import get_integration
 

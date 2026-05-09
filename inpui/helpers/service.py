@@ -167,7 +167,7 @@ def validate_supported_feature(supported_feature: str) -> Any:
 
 
 # Basic schemas which translate attribute and supported feature enum names
-# to their values. Full validation is done by hassfest.services
+# to their values. Full validation is done by inpsfest.services
 _FIELD_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_SELECTOR): selector.validate_selector,

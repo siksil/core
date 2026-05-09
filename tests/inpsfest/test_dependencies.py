@@ -1,10 +1,10 @@
-"""Tests for hassfest dependency finder."""
+"""Tests for inpsfest dependency finder."""
 
 import ast
 
 import pytest
 
-from script.hassfest.dependencies import ImportCollector
+from script.inpsfest.dependencies import ImportCollector
 
 
 @pytest.fixture

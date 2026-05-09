@@ -1,4 +1,4 @@
-"""Tests for hassfest requirements."""
+"""Tests for inpsfest requirements."""
 
 from collections.abc import Generator
 from importlib.metadata import PackagePath
@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-from script.hassfest.model import Config, Integration
-from script.hassfest.requirements import (
+from script.inpsfest.model import Config, Integration
+from script.inpsfest.requirements import (
     FORBIDDEN_PACKAGE_NAMES,
     PACKAGE_CHECK_PREPARE_UPDATE,
     PACKAGE_CHECK_VERSION_RANGE,
@@ -21,7 +21,7 @@ from script.hassfest.requirements import (
 
 @pytest.fixture
 def integration():
-    """Fixture for hassfest integration model."""
+    """Fixture for inpsfest integration model."""
     return Integration(
         path=Path("homeassistant/components/test").absolute(),
         _config=Config(
@@ -184,7 +184,7 @@ def test_check_dependency_package_names(integration: Integration) -> None:
     ]
     with (
         patch(
-            "script.hassfest.requirements.files", return_value=pkg_files
+            "script.inpsfest.requirements.files", return_value=pkg_files
         ) as mock_files,
         patch.dict(_packages_checked_files_cache, {}, clear=True),
     ):
@@ -216,7 +216,7 @@ def test_check_dependency_package_names(integration: Integration) -> None:
     ]
     with (
         patch(
-            "script.hassfest.requirements.files", return_value=pkg_files
+            "script.inpsfest.requirements.files", return_value=pkg_files
         ) as mock_files,
         patch.dict(_packages_checked_files_cache, {}, clear=True),
     ):
@@ -251,7 +251,7 @@ def test_check_dependency_package_names(integration: Integration) -> None:
     ]
     with (
         patch(
-            "script.hassfest.requirements.files", return_value=pkg_files
+            "script.inpsfest.requirements.files", return_value=pkg_files
         ) as mock_files,
         patch.dict(_packages_checked_files_cache, {}, clear=True),
     ):
@@ -280,7 +280,7 @@ def test_check_dependency_file_names(integration: Integration) -> None:
     ]
     with (
         patch(
-            "script.hassfest.requirements.files", return_value=pkg_files
+            "script.inpsfest.requirements.files", return_value=pkg_files
         ) as mock_files,
         patch.dict(_packages_checked_files_cache, {}, clear=True),
     ):
@@ -313,7 +313,7 @@ def test_check_dependency_file_names(integration: Integration) -> None:
     ]
     with (
         patch(
-            "script.hassfest.requirements.files", return_value=pkg_files
+            "script.inpsfest.requirements.files", return_value=pkg_files
         ) as mock_files,
         patch.dict(_packages_checked_files_cache, {}, clear=True),
     ):

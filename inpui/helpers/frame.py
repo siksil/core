@@ -108,7 +108,7 @@ def get_integration_frame(exclude_integrations: set | None = None) -> Integratio
     while frame is not None:
         filename = frame.f_code.co_filename
 
-        for path in ("custom_components/", "homeassistant/components/"):
+        for path in ("custom_components/", "inpui/components/"):
             try:
                 index = filename.index(path)
                 start = index + len(path)

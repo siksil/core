@@ -1,10 +1,10 @@
-"""Tests for hassfest core_files validation."""
+"""Tests for inpsfest core_files validation."""
 
 from pathlib import Path
 from unittest.mock import patch
 
-from script.hassfest.core_files import EXTRA_BASE_PLATFORMS, validate
-from script.hassfest.model import Config, Integration
+from script.inpsfest.core_files import EXTRA_BASE_PLATFORMS, validate
+from script.inpsfest.model import Config, Integration
 
 
 def _create_integration(
@@ -52,7 +52,7 @@ def test_valid_alignment(config: Config) -> None:
 
     core_files = _create_core_files_yaml(["sensor", "light", *EXTRA_BASE_PLATFORMS])
 
-    with patch("script.hassfest.core_files.load_yaml_dict", return_value=core_files):
+    with patch("script.inpsfest.core_files.load_yaml_dict", return_value=core_files):
         validate(integrations, config)
 
     assert not config.errors
@@ -68,7 +68,7 @@ def test_missing_entity_platform(config: Config) -> None:
     # light is missing from base_platforms
     core_files = _create_core_files_yaml(["sensor", *EXTRA_BASE_PLATFORMS])
 
-    with patch("script.hassfest.core_files.load_yaml_dict", return_value=core_files):
+    with patch("script.inpsfest.core_files.load_yaml_dict", return_value=core_files):
         validate(integrations, config)
 
     assert len(config.errors) == 1
@@ -88,7 +88,7 @@ def test_unexpected_entry(config: Config) -> None:
         ["sensor", "unknown_thing", *EXTRA_BASE_PLATFORMS]
     )
 
-    with patch("script.hassfest.core_files.load_yaml_dict", return_value=core_files):
+    with patch("script.inpsfest.core_files.load_yaml_dict", return_value=core_files):
         validate(integrations, config)
 
     assert len(config.errors) == 1

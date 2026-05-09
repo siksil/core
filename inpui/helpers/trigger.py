@@ -115,7 +115,7 @@ TRIGGERS: HassKey[dict[str, str]] = HassKey("triggers")
 
 
 # Basic schemas to sanity check the trigger descriptions,
-# full validation is done by hassfest.triggers
+# full validation is done by inpsfest.triggers
 _FIELD_DESCRIPTION_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_SELECTOR): selector.validate_selector,

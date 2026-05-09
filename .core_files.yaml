@@ -142,7 +142,7 @@ tests: &tests
   - tests/components/recorder/**
   - tests/components/repairs/**
   - tests/components/sensor/**
-  - tests/hassfest/**
+  - tests/inpsfest/**
   - tests/helpers/**
   - tests/mock/**
   - tests/pylint/**

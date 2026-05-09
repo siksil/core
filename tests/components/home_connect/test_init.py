@@ -28,7 +28,7 @@ from inpui.helpers import device_registry as dr, entity_registry as er
 from inpui.helpers.config_entry_oauth2_flow import (
     ImplementationUnavailableError,
 )
-from script.hassfest.translations import RE_TRANSLATION_KEY
+from script.inpsfest.translations import RE_TRANSLATION_KEY
 
 from .conftest import (
     CLIENT_ID,

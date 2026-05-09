@@ -143,7 +143,7 @@ CONDITIONS: HassKey[dict[str, str]] = HassKey("conditions")
 
 
 # Basic schemas to sanity check the condition descriptions,
-# full validation is done by hassfest.conditions
+# full validation is done by inpsfest.conditions
 _FIELD_DESCRIPTION_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_SELECTOR): selector.validate_selector,

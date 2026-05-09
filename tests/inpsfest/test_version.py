@@ -1,20 +1,20 @@
-"""Tests for hassfest version."""
+"""Tests for inpsfest version."""
 
 from pathlib import Path
 
 import pytest
 import voluptuous as vol
 
-from script.hassfest.manifest import (
+from script.inpsfest.manifest import (
     CUSTOM_INTEGRATION_MANIFEST_SCHEMA,
     validate_version,
 )
-from script.hassfest.model import Config, Integration
+from script.inpsfest.model import Config, Integration
 
 
 @pytest.fixture
 def integration():
-    """Fixture for hassfest integration model."""
+    """Fixture for inpsfest integration model."""
     integration = Integration(
         Path(),
         _config=Config(

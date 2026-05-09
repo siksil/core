@@ -1,16 +1,16 @@
-"""Fixtures for hassfest tests."""
+"""Fixtures for inpsfest tests."""
 
 from pathlib import Path
 from unittest.mock import patch
 
 import pytest
 
-from script.hassfest.model import Config, Integration
+from script.inpsfest.model import Config, Integration
 
 
 @pytest.fixture
 def config():
-    """Fixture for hassfest Config."""
+    """Fixture for inpsfest Config."""
     return Config(
         root=Path(".").absolute(),
         specific_integrations=None,
