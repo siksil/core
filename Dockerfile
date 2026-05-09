@@ -43,7 +43,6 @@ COPY requirements.txt inpui/
 COPY inpui/package_constraints.txt inpui/inpui/
 RUN \
     uv pip install \
-    --no-build \
     -r inpui/requirements.txt
 
 COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* inpui/
@@ -52,7 +51,6 @@ RUN \
     uv pip install inpui/home_assistant_*.whl; \
     fi \
     && uv pip install \
-    --no-build \
     -r inpui/requirements_all.txt
 
 ## Setup Inpui Core
