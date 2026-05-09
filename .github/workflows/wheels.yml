@@ -25,7 +25,7 @@ concurrency:
 jobs:
   init:
     name: Initialize wheels builder
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'siksil'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -53,7 +53,7 @@ jobs:
           if [[ "${GITHUB_EVENT_NAME}" =~ (schedule|workflow_dispatch) ]]; then
             touch requirements_diff.txt
           else
-            curl -s -o requirements_diff.txt https://raw.githubusercontent.com/home-assistant/core/master/requirements.txt
+            curl -s -o requirements_diff.txt https://raw.githubusercontent.com/siksil/core/master/requirements.txt
           fi
 
       - name: Write env-file
@@ -101,7 +101,7 @@ jobs:
 
   core:
     name: Build Core wheels ${{ matrix.abi }} for ${{ matrix.arch }} (musllinux_1_2)
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'siksil'
     needs: init
     runs-on: ${{ matrix.os }}
     strategy:
@@ -152,7 +152,7 @@ jobs:
 
   integrations:
     name: Build wheels ${{ matrix.abi }} for ${{ matrix.arch }}
-    if: github.repository_owner == 'home-assistant'
+    if: github.repository_owner == 'siksil'
     needs: init
     runs-on: ${{ matrix.os }}
     strategy:

@@ -217,7 +217,7 @@ jobs:
             || [[ "${INPUT_MYPY_ONLY}" == "true" ]] \
             || [[ "${INPUT_AUDIT_LICENSES_ONLY}" == "true" ]] \
             || [[ "${GITHUB_EVENT_NAME}" == "push" \
-              && "${REPO_FULL_NAME}" != "home-assistant/core" ]];
+              && "${REPO_FULL_NAME}" != "siksil/core" ]];
           then
             lint_only="true"
             skip_coverage="true"

@@ -496,7 +496,7 @@ def requirements_all_output(reqs: dict[str, list[str]]) -> str:
 def requirements_all_action_output(reqs: dict[str, list[str]], action: str) -> str:
     """Generate output for requirements_all_{action}."""
     output = [
-        f"# Home Assistant Core, full dependency set for {action}\n",
+        f"# Inpui Core, full dependency set for {action}\n",
         GENERATED_MESSAGE,
         "-r requirements.txt\n",
     ]
@@ -508,7 +508,7 @@ def requirements_all_action_output(reqs: dict[str, list[str]], action: str) -> s
 def requirements_test_all_output(reqs: dict[str, list[str]]) -> str:
     """Generate output for test_requirements."""
     output = [
-        "# Home Assistant tests, full dependency set\n",
+        "# Inpui tests, full dependency set\n",
         GENERATED_MESSAGE,
         "-r requirements_test.txt\n",
     ]
@@ -589,7 +589,7 @@ def diff_file(filename: str, content: str) -> list[str]:
 def main(validate: bool, ci: bool) -> int:
     """Run the script."""
     if not Path("requirements_all.txt").is_file():
-        print("Run this from HA root dir")
+        print("Run this from Inpui root dir")
         return 1
 
     data = gather_modules()
