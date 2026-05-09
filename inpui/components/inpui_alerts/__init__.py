@@ -79,7 +79,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             return
 
         hass.async_create_background_task(
-            async_update_alerts(), "homeassistant_alerts update", eager_start=True
+            async_update_alerts(), "inpui_alerts update", eager_start=True
         )
 
     coordinator = AlertUpdateCoordinator(hass)

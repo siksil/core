@@ -1,4 +1,4 @@
-"""Config flow for Home Assistant Backup integration."""
+"""Config flow for Inpui Backup integration."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from .const import DOMAIN
 
 
 class BackupConfigFlow(ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Home Assistant Backup."""
+    """Handle a config flow for Inpui Backup."""
 
     VERSION = 1
 

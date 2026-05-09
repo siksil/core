@@ -1,6 +1,6 @@
 {
   "domain": "backup",
-  "name": "Backup",
+  "name": "Inpui Backup",
   "after_dependencies": ["hassio"],
   "codeowners": ["@home-assistant/core"],
   "dependencies": ["http", "websocket_api"],

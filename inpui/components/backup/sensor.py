@@ -1,4 +1,4 @@
-"""Sensor platform for Home Assistant Backup integration."""
+"""Sensor platform for Inpui Backup integration."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from .manager import BackupManagerState
 
 @dataclass(kw_only=True, frozen=True)
 class BackupSensorEntityDescription(SensorEntityDescription):
-    """Description for Home Assistant Backup sensor entities."""
+    """Description for Inpui Backup sensor entities."""
 
     value_fn: Callable[[BackupCoordinatorData], str | datetime | None]
 

@@ -1,4 +1,4 @@
-"""Diagnostics support for Home Assistant Backup integration."""
+"""Diagnostics support for Inpui Backup integration."""
 
 from __future__ import annotations
 

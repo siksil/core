@@ -370,7 +370,7 @@ async def _create_map_dashboard(
     translations = await async_get_translations(
         hass, hass.config.language, "dashboard", {onboarding.DOMAIN}
     )
-    title = translations["component.onboarding.dashboard.map.title"]
+    title = translations.get("component.onboarding.dashboard.map.title", "Map")
 
     await dashboards_collection.async_create_item(
         {

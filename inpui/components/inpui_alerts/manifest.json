@@ -1,10 +1,10 @@
 {
-  "domain": "homeassistant_alerts",
+  "domain": "inpui_alerts",
   "name": "Home Assistant Alerts",
   "after_dependencies": ["hassio"],
   "codeowners": ["@home-assistant/core"],
   "config_flow": false,
-  "documentation": "https://www.home-assistant.io/integrations/homeassistant_alerts",
+  "documentation": "https://www.home-assistant.io/integrations/inpui_alerts",
   "integration_type": "system",
   "quality_scale": "internal"
 }

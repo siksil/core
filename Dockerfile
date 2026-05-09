@@ -71,3 +71,4 @@ RUN \
         inpui/inpui
 
 WORKDIR /config
+EXPOSE 8123

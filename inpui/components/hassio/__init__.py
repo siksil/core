@@ -382,15 +382,17 @@ def hostname_from_addon_slug(addon_slug: str) -> str:
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # noqa: C901
     """Set up the Hass.io component."""
     # Check local setup
-    for env in ("SUPERVISOR", "SUPERVISOR_TOKEN"):
-        if os.environ.get(env):
-            continue
-        _LOGGER.error("Missing %s environment variable", env)
-        if config_entries := hass.config_entries.async_entries(DOMAIN):
-            hass.async_create_task(
-                hass.config_entries.async_remove(config_entries[0].entry_id)
-            )
-        return False
+    supervisor_url = os.environ.get("SUPERVISOR")
+    supervisor_token = os.environ.get("SUPERVISOR_TOKEN")
+    
+    if not supervisor_url or not supervisor_token:
+        _LOGGER.warning(
+            "Missing SUPERVISOR or SUPERVISOR_TOKEN environment variables. "
+            "Inpui Supervisor (Apps) will run in limited/standalone mode."
+        )
+        # Use a dummy URL to prevent crashes in HassIO class, 
+        # but we won't be able to talk to a real supervisor.
+        supervisor_url = supervisor_url or "http://localhost:8080"
 
     async_load_websocket_api(hass)
     frontend.async_register_built_in_panel(hass, "app")

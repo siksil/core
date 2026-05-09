@@ -12,7 +12,7 @@ from aiohttp.web_exceptions import HTTPUnauthorized
 import voluptuous as vol
 
 from inpui.auth.const import GROUP_ID_ADMIN
-from inpui.auth.providers.inpui import InpuiAuthProvider
+from inpui.auth.providers.inpui import InpuiAuthProvider, InvalidUsername
 from inpui.components import person
 from inpui.components.auth import indieauth
 from inpui.components.http import KEY_HASS, KEY_HASS_REFRESH_TOKEN_ID
@@ -190,7 +190,12 @@ class UserOnboardingView(_BaseOnboardingStepView):
             user = await hass.auth.async_create_user(
                 data["name"], group_ids=[GROUP_ID_ADMIN]
             )
-            await provider.async_add_auth(data["username"], data["password"])
+            try:
+                await provider.async_add_auth(data["username"], data["password"])
+            except InvalidUsername:
+                # If username already exists, we link the existing credentials.
+                pass
+
             credentials = await provider.async_get_or_create_credentials(
                 {"username": data["username"]}
             )
@@ -206,7 +211,8 @@ class UserOnboardingView(_BaseOnboardingStepView):
             area_registry = ar.async_get(hass)
 
             for area in DEFAULT_AREAS:
-                name = translations[f"component.onboarding.area.{area.key}"]
+                translation_key = f"component.{DOMAIN}.area.{area.key}"
+                name = translations.get(translation_key, area.key.replace("_", " ").title())
                 # Guard because area might have been created by an automatically
                 # set up integration.
                 if not area_registry.async_get_area_by_name(name):
@@ -243,6 +249,7 @@ class CoreConfigOnboardingView(_BaseOnboardingStepView):
 
             # Integrations to set up when finishing onboarding
             onboard_integrations = [
+                "inpui_cloud",
                 "google_translate",
                 "met",
                 "radio_browser",

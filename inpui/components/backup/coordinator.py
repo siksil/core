@@ -1,4 +1,4 @@
-"""Coordinator for Home Assistant Backup integration."""
+"""Coordinator for Inpui Backup integration."""
 
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ class BackupCoordinatorData:
 
 
 class BackupDataUpdateCoordinator(DataUpdateCoordinator[BackupCoordinatorData]):
-    """Class to retrieve backup status."""
+    """Description for Inpui Backup sensor entities."""
 
     config_entry: ConfigEntry
 
@@ -61,7 +61,7 @@ class BackupDataUpdateCoordinator(DataUpdateCoordinator[BackupCoordinatorData]):
 
     @callback
     def _on_event(self, event: ManagerStateEvent | BackupPlatformEvent) -> None:
-        """Handle new event."""
+        """Handle a config flow for Inpui Backup."""
         LOGGER.debug("Received backup event: %s", event)
         self._last_event = event
         self.config_entry.async_create_task(self.hass, self.async_refresh())

@@ -1,0 +1,8 @@
+{
+  "domain": "homeassistant",
+  "name": "Home Assistant Compatibility Stub",
+  "codeowners": ["@siksil/core"],
+  "documentation": "https://www.siksil.cloud/integrations/homeassistant",
+  "integration_type": "system",
+  "quality_scale": "internal"
+}

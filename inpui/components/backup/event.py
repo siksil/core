@@ -1,4 +1,4 @@
-"""Event platform for Home Assistant Backup integration."""
+"""Event platform for Inpui Backup integration."""
 
 from __future__ import annotations
 
