@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.NEW_DOMAIN.const import DOMAIN
 from inpui.core import HomeAssistant
 from inpui.data_entry_flow import FlowResultType

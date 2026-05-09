@@ -9,7 +9,7 @@ from .model import Config, Integration
 # Non-entity-platform components that belong in base_platforms
 EXTRA_BASE_PLATFORMS = {"diagnostics"}
 
-_COMPONENT_RE = re.compile(r"homeassistant/components/([^/]+)/\*\*")
+_COMPONENT_RE = re.compile(r"inpui/components/([^/]+)/\*\*")
 
 
 def validate(integrations: dict[str, Integration], config: Config) -> None:

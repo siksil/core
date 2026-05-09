@@ -75,7 +75,7 @@ def run():
         integration = None
         while (
             integration is None
-            or not Path(f"homeassistant/components/{integration}").exists()
+            or not Path(f"inpui/components/{integration}").exists()
         ):
             if integration is not None:
                 print(f"Integration {integration} doesn't exist!")

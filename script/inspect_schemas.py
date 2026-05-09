@@ -32,7 +32,7 @@ def main():
             msg[key] = []
         msg[key].append(item)
 
-    for package in explore_module("homeassistant.components"):
+    for package in explore_module("inpui.components"):
         module = importlib.import_module(package)
         module_name = getattr(module, "DOMAIN", module.__name__)
 

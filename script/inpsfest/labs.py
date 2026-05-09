@@ -59,7 +59,7 @@ def generate_and_validate(integrations: dict[str, Integration]) -> str:
 
 def validate(integrations: dict[str, Integration], config: Config) -> None:
     """Validate lab preview features file."""
-    labs_path = config.root / "homeassistant/generated/labs.py"
+    labs_path = config.root / "inpui/generated/labs.py"
     config.cache["labs"] = content = generate_and_validate(integrations)
 
     if config.specific_integrations:
@@ -75,5 +75,5 @@ def validate(integrations: dict[str, Integration], config: Config) -> None:
 
 def generate(integrations: dict[str, Integration], config: Config) -> None:
     """Generate lab preview features file."""
-    labs_path = config.root / "homeassistant/generated/labs.py"
+    labs_path = config.root / "inpui/generated/labs.py"
     labs_path.write_text(config.cache["labs"])

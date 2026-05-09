@@ -40,6 +40,6 @@ echo "
 logger:
   default: info
   logs:
-    homeassistant.components.cloud: debug
+    inpui.components.cloud: debug
 " >> config/configuration.yaml
 fi

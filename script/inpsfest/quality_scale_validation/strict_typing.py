@@ -11,7 +11,7 @@ import re
 from script.inpsfest.model import Config, Integration
 
 _STRICT_TYPING_FILE = Path(".strict-typing")
-_COMPONENT_REGEX = r"homeassistant.components.([^.]+).*"
+_COMPONENT_REGEX = r"inpui.components.([^.]+).*"
 
 
 @lru_cache

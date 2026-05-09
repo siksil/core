@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-from homeassistant import core
+from inpui import core
 from inpui.util import executor, thread
 
 from .model import Config, Integration
@@ -50,7 +50,7 @@ WORKDIR /usr/src
 
 ## Setup Home Assistant Core dependencies
 COPY requirements.txt homeassistant/
-COPY homeassistant/package_constraints.txt homeassistant/homeassistant/
+COPY inpui/package_constraints.txt homeassistant/homeassistant/
 RUN \
     uv pip install \
         --no-build \
@@ -152,7 +152,7 @@ RUN --mount=from=ghcr.io/astral-sh/uv:{uv},source=/uv,target=/bin/uv \
     && uv pip install \
         --no-build \
         --no-cache \
-        -c /usr/src/homeassistant/homeassistant/package_constraints.txt \
+        -c /usr/src/homeassistant/inpui/package_constraints.txt \
         -r /usr/src/homeassistant/requirements.txt \
         pipdeptree=={pipdeptree} \
         tqdm=={tqdm} \

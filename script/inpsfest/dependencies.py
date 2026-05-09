@@ -61,18 +61,18 @@ class ImportCollector(ast.NodeVisitor):
 
         # Exception: we will allow importing the sign path code.
         if (
-            node.module == "homeassistant.components.http.auth"
+            node.module == "inpui.components.http.auth"
             and len(node.names) == 1
             and node.names[0].name == "async_sign_path"
         ):
             return
 
-        if node.module.startswith("homeassistant.components."):
+        if node.module.startswith("inpui.components."):
             # from inpui.components.alexa.smart_home import EVENT_ALEXA_SMART_HOME
             # from inpui.components.logbook import bla
             self._add_reference(node.module.split(".")[2])
 
-        elif node.module == "homeassistant.components":
+        elif node.module == "inpui.components":
             # from inpui.components import sun
             for name_node in node.names:
                 self._add_reference(name_node.name)
@@ -81,7 +81,7 @@ class ImportCollector(ast.NodeVisitor):
         """Visit Import node."""
         # import inpui.components.hue as hue
         for name_node in node.names:
-            if name_node.name.startswith("homeassistant.components."):
+            if name_node.name.startswith("inpui.components."):
                 self._add_reference(name_node.name.split(".")[2])
 
 

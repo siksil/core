@@ -84,7 +84,7 @@ def generate_and_validate(integrations: dict[str, Integration]) -> str:
 
 def validate(integrations: dict[str, Integration], config: Config) -> None:
     """Validate zeroconf file."""
-    zeroconf_path = config.root / "homeassistant/generated/zeroconf.py"
+    zeroconf_path = config.root / "inpui/generated/zeroconf.py"
     config.cache["zeroconf"] = content = generate_and_validate(integrations)
 
     if config.specific_integrations:
@@ -100,5 +100,5 @@ def validate(integrations: dict[str, Integration], config: Config) -> None:
 
 def generate(integrations: dict[str, Integration], config: Config) -> None:
     """Generate zeroconf file."""
-    zeroconf_path = config.root / "homeassistant/generated/zeroconf.py"
+    zeroconf_path = config.root / "inpui/generated/zeroconf.py"
     zeroconf_path.write_text(f"{config.cache['zeroconf']}")

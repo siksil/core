@@ -190,7 +190,7 @@ async def main():
     test_files = set()
     gen_req = False
     for fname in pyfiles:
-        if fname.startswith("homeassistant/components/"):
+        if fname.startswith("inpui/components/"):
             gen_req = True  # requirements script for components
         # Find test files...
         if fname.startswith("tests/"):

@@ -11,7 +11,7 @@ import sys
 from inpui.const import __version__ as current_version
 from inpui.util.json import load_json
 
-COMPONENTS_DIR = Path("homeassistant/components")
+COMPONENTS_DIR = Path("inpui/components")
 
 
 def generate_quality_scale_summary() -> list[str, int]:

@@ -44,7 +44,7 @@ def main() -> int | None:
             "pip",
             "install",
             "-c",
-            "homeassistant/package_constraints.txt",
+            "inpui/package_constraints.txt",
             "-U",
             "--python",
             sys.executable,

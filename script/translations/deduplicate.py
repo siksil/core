@@ -22,7 +22,7 @@ def get_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
-STRINGS_PATH = "homeassistant/components/{}/strings.json"
+STRINGS_PATH = "inpui/components/{}/strings.json"
 ENTITY_COMPONENT_PREFIX = tuple(f"component::{domain}::" for domain in Platform)
 
 

@@ -316,7 +316,7 @@ jobs:
         file:
           - Dockerfile
           - Dockerfile.dev
-          - script/hassfest/docker/Dockerfile
+          - script/inpsfest/docker/Dockerfile
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -517,10 +517,10 @@ jobs:
           key: >-
             ${{ runner.os }}-${{ runner.arch }}-${{ steps.python.outputs.python-version }}-${{
             needs.info.outputs.python_cache_key }}
-      - name: Run hassfest
+      - name: Run inpsfest
         run: |
           . venv/bin/activate
-          python -m script.hassfest --requirements --action validate
+          python -m script.inpsfest --requirements --action validate
 
   gen-requirements-all:
     name: Check all requirements

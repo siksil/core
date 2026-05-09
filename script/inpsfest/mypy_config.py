@@ -15,12 +15,12 @@ from .model import Config, Integration
 
 # Component modules which should set no_implicit_reexport = true.
 NO_IMPLICIT_REEXPORT_MODULES: set[str] = {
-    "homeassistant.components",
-    "homeassistant.components.application_credentials.*",
-    "homeassistant.components.diagnostics.*",
-    "homeassistant.components.spotify.*",
-    "homeassistant.components.stream.*",
-    "homeassistant.components.update.*",
+    "inpui.components",
+    "inpui.components.application_credentials.*",
+    "inpui.components.diagnostics.*",
+    "inpui.components.spotify.*",
+    "inpui.components.stream.*",
+    "inpui.components.update.*",
 }
 
 HEADER: Final = """
@@ -156,7 +156,7 @@ def _generate_and_validate_mypy_config(config: Config) -> str:
     strict_modules: list[str] = []
     strict_core_modules: list[str] = []
     for module in parsed_modules:
-        if module.startswith("homeassistant.components"):
+        if module.startswith("inpui.components"):
             strict_modules.append(module)
         else:
             strict_core_modules.append(module)
@@ -212,7 +212,7 @@ def _generate_and_validate_mypy_config(config: Config) -> str:
             mypy_config.set(core_section, key, "true")
 
     # By default strict checks are disabled for components.
-    components_section = "mypy-homeassistant.components.*"
+    components_section = "mypy-inpui.components.*"
     mypy_config.add_section(components_section)
     for key in STRICT_SETTINGS:
         mypy_config.set(components_section, key, "false")

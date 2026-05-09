@@ -66,7 +66,7 @@ NATIVE_ENTITY_IDS = {
     "tr",  # Türkçe
 }
 
-Path("homeassistant/generated/languages.py").write_text(
+Path("inpui/generated/languages.py").write_text(
     format_python_namespace(
         {
             "DEFAULT_LANGUAGE": "en",

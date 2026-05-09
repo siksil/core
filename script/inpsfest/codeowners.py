@@ -49,12 +49,12 @@ build.json @home-assistant/supervisor
 
 INDIVIDUAL_FILES = """
 # Individual files
-/homeassistant/components/demo/weather.py @fabaff
+/inpui/components/demo/weather.py @fabaff
 """
 
 REMOVE_CODEOWNERS = """
 # Remove codeowners from files
-/homeassistant/components/*/translations/
+/inpui/components/*/translations/
 """
 
 
@@ -79,7 +79,7 @@ def generate_and_validate(integrations: dict[str, Integration], config: Config) 
                     "codeowners", "Code owners need to be valid GitHub handles."
                 )
 
-        parts.append(f"/homeassistant/components/{domain}/ {' '.join(codeowners)}")
+        parts.append(f"/inpui/components/{domain}/ {' '.join(codeowners)}")
 
         if (config.root / "tests/components" / domain / "__init__.py").exists():
             parts.append(f"/tests/components/{domain}/ {' '.join(codeowners)}")

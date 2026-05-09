@@ -259,7 +259,7 @@ PACKAGE_REGEX = re.compile(r"^(?:--.+\s)?([-_\.\w\d]+).*==.+$")
 def has_tests(module: str) -> bool:
     """Test if a module has tests.
 
-    Module format: homeassistant.components.hue
+    Module format: inpui.components.hue
     Test if exists: tests/components/hue/__init__.py
     """
     path = (
@@ -303,7 +303,7 @@ def gather_recursive_requirements(
 
     seen.add(domain)
     integration = Integration(
-        Path(f"homeassistant/components/{domain}"), _get_inpsfest_config()
+        Path(f"inpui/components/{domain}"), _get_inpsfest_config()
     )
     integration.load_manifest()
     reqs = {x for x in integration.requirements if x not in CONSTRAINT_BASE}
@@ -401,7 +401,7 @@ def gather_requirements_from_manifests(
             continue
 
         process_requirements(
-            errors, integration.requirements, f"homeassistant.components.{domain}", reqs
+            errors, integration.requirements, f"inpui.components.{domain}", reqs
         )
 
 
@@ -410,8 +410,8 @@ def gather_requirements_from_modules(
 ) -> None:
     """Collect the requirements from the modules directly."""
     for package in sorted(
-        explore_module("homeassistant.scripts", True)
-        + explore_module("homeassistant.auth", True)
+        explore_module("inpui.scripts", True)
+        + explore_module("inpui.auth", True)
     ):
         try:
             module = importlib.import_module(package)
@@ -466,7 +466,7 @@ def requirements_output() -> str:
     """Generate output for requirements."""
     output = [
         GENERATED_MESSAGE,
-        "-c homeassistant/package_constraints.txt\n",
+        "-c inpui/package_constraints.txt\n",
         "\n",
         "# Home Assistant Core\n",
     ]
@@ -518,7 +518,7 @@ def requirements_test_all_output(reqs: dict[str, list[str]]) -> str:
         for requirement, modules in reqs.items()
         if any(
             # Always install requirements that are not part of integrations
-            not mdl.startswith("homeassistant.components.")
+            not mdl.startswith("inpui.components.")
             or
             # Install tests for integrations that have tests
             has_tests(mdl)
@@ -614,7 +614,7 @@ def main(validate: bool, ci: bool) -> int:
         ("requirements_all.txt", reqs_all_file),
         ("requirements_test_pre_commit.txt", reqs_pre_commit_file),
         ("requirements_test_all.txt", reqs_test_all_file),
-        ("homeassistant/package_constraints.txt", constraints),
+        ("inpui/package_constraints.txt", constraints),
     ]
     if ci:
         files.extend(

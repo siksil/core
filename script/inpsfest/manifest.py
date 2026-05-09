@@ -430,7 +430,7 @@ def sort_manifest(integration: Integration, config: Config) -> bool:
 
 def validate(integrations: dict[str, Integration], config: Config) -> None:
     """Handle all integrations manifests."""
-    core_components_dir = config.root / "homeassistant/components"
+    core_components_dir = config.root / "inpui/components"
     manifests_resorted = []
     for integration in integrations.values():
         validate_manifest(integration, core_components_dir)

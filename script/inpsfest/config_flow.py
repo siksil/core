@@ -207,14 +207,14 @@ def _generate_integrations(
 
 def validate(integrations: dict[str, Integration], config: Config) -> None:
     """Validate config flow file."""
-    config_flow_path = config.root / "homeassistant/generated/config_flows.py"
-    integrations_path = config.root / "homeassistant/generated/integrations.json"
+    config_flow_path = config.root / "inpui/generated/config_flows.py"
+    integrations_path = config.root / "inpui/generated/integrations.json"
     config.cache["config_flow"] = content = _generate_and_validate(integrations, config)
 
     if config.specific_integrations:
         return
 
-    brands = Brand.load_dir(config.root / "homeassistant/brands", config)
+    brands = Brand.load_dir(config.root / "inpui/brands", config)
     validate_brands(brands, integrations, config)
 
     if config_flow_path.read_text() != content:
@@ -237,7 +237,7 @@ def validate(integrations: dict[str, Integration], config: Config) -> None:
 
 def generate(integrations: dict[str, Integration], config: Config) -> None:
     """Generate config flow file."""
-    config_flow_path = config.root / "homeassistant/generated/config_flows.py"
-    integrations_path = config.root / "homeassistant/generated/integrations.json"
+    config_flow_path = config.root / "inpui/generated/config_flows.py"
+    integrations_path = config.root / "inpui/generated/integrations.json"
     config_flow_path.write_text(f"{config.cache['config_flow']}")
     integrations_path.write_text(f"{config.cache['integrations']}\n")

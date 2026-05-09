@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from homeassistant import config_entries
+from inpui import config_entries
 from inpui.components.application_credentials import (
     DOMAIN as APPLICATION_CREDENTIALS_DOMAIN,
     ClientCredential,
@@ -75,7 +75,7 @@ async def test_full_flow(
     )
 
     with patch(
-        "homeassistant.components.NEW_DOMAIN.async_setup_entry", return_value=True
+        "inpui.components.NEW_DOMAIN.async_setup_entry", return_value=True
     ) as mock_setup:
         await hass.config_entries.flow.async_configure(result["flow_id"])
 

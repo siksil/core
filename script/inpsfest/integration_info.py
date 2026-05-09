@@ -38,5 +38,5 @@ def generate(integrations: dict[str, Integration], config: Config) -> None:
     """Generate integration file."""
     int_type = "entity"
     filename = "entity_platforms"
-    platform_path = config.root / f"homeassistant/generated/{filename}.py"
+    platform_path = config.root / f"inpui/generated/{filename}.py"
     platform_path.write_text(config.cache[f"integrations_{int_type}"])

@@ -10,7 +10,7 @@ import subprocess
 import packaging
 from packaging.version import Version
 
-from homeassistant import const
+from inpui import const
 from inpui.util import dt as dt_util
 
 _PACKAGING_VERSION_BELOW_26 = Version(packaging.__version__) < Version("26.0dev0")
@@ -128,7 +128,7 @@ def bump_version(
 
 def write_version(version):
     """Update Home Assistant constant file with new version."""
-    content = Path("homeassistant/const.py").read_text()
+    content = Path("inpui/const.py").read_text()
 
     major, minor, patch = str(version).split(".", 2)
 
@@ -142,7 +142,7 @@ def write_version(version):
         "PATCH_VERSION: Final = .*\n", f'PATCH_VERSION: Final = "{patch}"\n', content
     )
 
-    Path("homeassistant/const.py").write_text(content)
+    Path("inpui/const.py").write_text(content)
 
 
 def write_version_metadata(version: Version) -> None:

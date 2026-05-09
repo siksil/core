@@ -574,7 +574,7 @@ jobs:
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
         with:
           context: . # So action will not pull the repository again
-          file: ./script/hassfest/docker/Dockerfile
+          file: ./script/inpsfest/docker/Dockerfile
           load: true
           tags: ${{ env.HASSFEST_IMAGE_TAG }}
 
@@ -587,7 +587,7 @@ jobs:
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
         with:
           context: . # So action will not pull the repository again
-          file: ./script/hassfest/docker/Dockerfile
+          file: ./script/inpsfest/docker/Dockerfile
           push: true
           tags: ${{ env.HASSFEST_IMAGE_TAG }},${{ env.HASSFEST_IMAGE_NAME }}:latest
 

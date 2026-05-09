@@ -14,7 +14,7 @@ def validate(
     if not integration.config_flow:
         return [
             "Integration does not set config_flow in its manifest "
-            f"homeassistant/components/{integration.domain}/manifest.json",
+            f"inpui/components/{integration.domain}/manifest.json",
         ]
 
     config_flow_file = integration.path / "config_flow.py"
