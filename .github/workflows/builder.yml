@@ -56,16 +56,16 @@ jobs:
 
       - name: Get information
         id: info
-        uses: home-assistant/actions/helpers/info@5f5b077d63a1e4c53019231409a0c4d791fb74e5 # zizmor: ignore[unpinned-uses]
+        uses: siksil/actions/helpers/info@master
 
       - name: Get version
         id: version
-        uses: home-assistant/actions/helpers/version@master # zizmor: ignore[unpinned-uses]
+        uses: siksil/actions/helpers/version@master
         with:
           type: ${{ env.BUILD_TYPE }}
 
       - name: Verify version
-        uses: home-assistant/actions/helpers/verify-version@master # zizmor: ignore[unpinned-uses]
+        uses: siksil/actions/helpers/verify-version@master
         with:
           ignore-dev: true
 
@@ -227,15 +227,15 @@ jobs:
           echo "${GITHUB_SHA};${GITHUB_REF};${GITHUB_EVENT_NAME};${GITHUB_ACTOR}" > rootfs/OFFICIAL_IMAGE
 
       - name: Build base image
-        uses: home-assistant/builder/actions/build-image@62a1597b84b3461abad9816d9cd92862a2b542c3 # 2026.03.2
+        uses: siksil/builder/actions/build-image@master
         with:
           arch: ${{ matrix.arch }}
           build-args: |
-            BUILD_FROM=ghcr.io/home-assistant/${{ matrix.arch }}-homeassistant-base:${{ needs.init.outputs.base_image_version }}
+            BUILD_FROM=ghcr.io/siksil/${{ matrix.arch }}-inpui-base:${{ needs.init.outputs.base_image_version }}
           cache-gha: false
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
-          cosign-base-identity: "https://github.com/home-assistant/docker/.*"
-          cosign-base-verify: ghcr.io/home-assistant/${{ matrix.arch }}-homeassistant-base:${{ needs.init.outputs.base_image_version }}
+          cosign-base-identity: "https://github.com/siksil/docker-base/.*"
+          cosign-base-verify: ghcr.io/siksil/${{ matrix.arch }}-inpui-base:${{ needs.init.outputs.base_image_version }}
           image: ghcr.io/siksil/${{ matrix.arch }}-inpui
           image-tags: ${{ needs.init.outputs.version }}
           push: true
@@ -290,7 +290,7 @@ jobs:
           fi
 
       - name: Build machine image
-        uses: home-assistant/builder/actions/build-image@62a1597b84b3461abad9816d9cd92862a2b542c3 # 2026.03.2
+        uses: siksil/builder/actions/build-image@master
         with:
           arch: ${{ matrix.arch }}
           build-args: |
