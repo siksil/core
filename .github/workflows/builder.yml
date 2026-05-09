@@ -254,18 +254,11 @@ jobs:
       matrix:
         machine:
           - generic-x86-64
-          - khadas-vim3
-          - odroid-c2
-          - odroid-c4
-          - odroid-m1
-          - odroid-n2
           - qemuarm-64
           - qemux86-64
           - raspberrypi3-64
           - raspberrypi4-64
           - raspberrypi5-64
-          - yellow
-          - green
         include:
           # Default: aarch64 on native ARM runner
           - arch: aarch64
@@ -316,45 +309,7 @@ jobs:
           push: true
           version: ${{ needs.init.outputs.version }}
 
-  publish_ha:
-    name: Publish version files
-    environment: ${{ needs.init.outputs.channel }}
-    if: github.repository_owner == 'siksil'
-    needs: ["init", "build_machine"]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
 
-      - name: Initialize git
-        uses: home-assistant/actions/helpers/git-init@master # zizmor: ignore[unpinned-uses]
-        with:
-          name: ${{ secrets.GIT_NAME }}
-          email: ${{ secrets.GIT_EMAIL }}
-          token: ${{ secrets.GIT_TOKEN }}
-
-      - name: Update version file
-        uses: home-assistant/actions/helpers/version-push@master # zizmor: ignore[unpinned-uses]
-        with:
-          key: "inpui[]"
-          key-description: "Home Assistant Core"
-          version: ${{ needs.init.outputs.version }}
-          channel: ${{ needs.init.outputs.channel }}
-          exclude-list: '["odroid-xu","qemuarm","qemux86","raspberrypi","raspberrypi2","raspberrypi3","raspberrypi4","tinker"]'
-
-      - name: Update version file (stable -> beta)
-        if: needs.init.outputs.channel == 'stable'
-        uses: home-assistant/actions/helpers/version-push@master # zizmor: ignore[unpinned-uses]
-        with:
-          key: "inpui[]"
-          key-description: "Home Assistant Core"
-          version: ${{ needs.init.outputs.version }}
-          channel: beta
-          exclude-list: '["odroid-xu","qemuarm","qemux86","raspberrypi","raspberrypi2","raspberrypi3","raspberrypi4","tinker"]'
 
   publish_container:
     name: Publish meta container for ${{ matrix.registry }}

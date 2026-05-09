@@ -48,30 +48,30 @@ RUN \
 
 WORKDIR /usr/src
 
-## Setup Home Assistant Core dependencies
-COPY requirements.txt homeassistant/
-COPY inpui/package_constraints.txt homeassistant/homeassistant/
+## Setup Inpui Core dependencies
+COPY requirements.txt inpui/
+COPY inpui/package_constraints.txt inpui/inpui/
 RUN \
     uv pip install \
         --no-build \
-        -r homeassistant/requirements.txt
+        -r inpui/requirements.txt
 
-COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* homeassistant/
+COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* inpui/
 RUN \
-    if ls homeassistant/home_assistant_*.whl 1> /dev/null 2>&1; then \
-        uv pip install homeassistant/home_assistant_*.whl; \
+    if ls inpui/home_assistant_*.whl 1> /dev/null 2>&1; then \
+        uv pip install inpui/home_assistant_*.whl; \
     fi \
     && uv pip install \
         --no-build \
-        -r homeassistant/requirements_all.txt
+        -r inpui/requirements_all.txt
 
-## Setup Home Assistant Core
-COPY . homeassistant/
+## Setup Inpui Core
+COPY . inpui/
 RUN \
     uv pip install \
-        -e ./homeassistant \
+        -e ./inpui \
     && python3 -m compileall \
-        homeassistant/homeassistant
+        inpui/inpui
 
 WORKDIR /config
 """
@@ -138,10 +138,10 @@ ENV \
     UV_EXTRA_INDEX_URL="https://wheels.home-assistant.io/musllinux-index/"
 
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
-ENTRYPOINT ["/usr/src/homeassistant/script/inpsfest/docker/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/inpui/script/inpsfest/docker/entrypoint.sh"]
 WORKDIR "/github/workspace"
 
-COPY . /usr/src/homeassistant
+COPY . /usr/src/inpui
 
 # Uv is only needed during build
 RUN --mount=from=ghcr.io/astral-sh/uv:{uv},source=/uv,target=/bin/uv \
@@ -152,14 +152,14 @@ RUN --mount=from=ghcr.io/astral-sh/uv:{uv},source=/uv,target=/bin/uv \
     && uv pip install \
         --no-build \
         --no-cache \
-        -c /usr/src/homeassistant/inpui/package_constraints.txt \
-        -r /usr/src/homeassistant/requirements.txt \
+        -c /usr/src/inpui/inpui/package_constraints.txt \
+        -r /usr/src/inpui/requirements.txt \
         pipdeptree=={pipdeptree} \
         tqdm=={tqdm} \
         ruff=={ruff}
 
 LABEL "name"="inpsfest"
-LABEL "maintainer"="Home Assistant <hello@home-assistant.io>"
+LABEL "maintainer"="Siksil <hello@siksil.cloud>"
 
 LABEL "com.github.actions.name"="inpsfest"
 LABEL "com.github.actions.description"="Run inpsfest to validate standalone integration repositories"

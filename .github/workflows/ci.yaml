@@ -104,7 +104,7 @@ jobs:
           HASH_REQUIREMENTS_TEST: ${{ hashFiles('requirements_test.txt', 'requirements_test_pre_commit.txt') }}
           HASH_REQUIREMENTS: ${{ hashFiles('requirements.txt') }}
           HASH_REQUIREMENTS_ALL: ${{ hashFiles('requirements_all.txt') }}
-          HASH_PACKAGE_CONSTRAINTS: ${{ hashFiles('homeassistant/package_constraints.txt') }}
+          HASH_PACKAGE_CONSTRAINTS: ${{ hashFiles('inpui/package_constraints.txt') }}
           HASH_GEN_REQUIREMENTS: ${{ hashFiles('script/gen_requirements_all.py') }}
         run: |
           # Include HA_SHORT_VERSION to force the immediate creation
@@ -121,10 +121,10 @@ jobs:
           filters: .core_files.yaml
       - name: Create a list of integrations to filter for changes
         run: |
-          integrations=$(ls -Ad ./homeassistant/components/[!_]*  | xargs -n 1 basename)
+          integrations=$(ls -Ad ./inpui/components/[!_]*  | xargs -n 1 basename)
           touch .integration_paths.yaml
           for integration in $integrations; do
-            echo "${integration}: [homeassistant/components/${integration}/**, tests/components/${integration}/**]" \
+            echo "${integration}: [inpui/components/${integration}/**, tests/components/${integration}/**]" \
               >> .integration_paths.yaml;
           done
           echo "Result:"
@@ -704,7 +704,7 @@ jobs:
         run: |
           . venv/bin/activate
           python --version
-          pylint --ignore-missing-annotations=y homeassistant
+          pylint --ignore-missing-annotations=y inpui
       - name: Run pylint (partially)
         if: needs.info.outputs.test_full_suite == 'false'
         shell: bash
@@ -713,7 +713,7 @@ jobs:
         run: |
           . venv/bin/activate
           python --version
-          pylint --ignore-missing-annotations=y $(printf "homeassistant/components/%s " ${INTEGRATIONS_GLOB})
+          pylint --ignore-missing-annotations=y $(printf "inpui/components/%s " ${INTEGRATIONS_GLOB})
 
   pylint-tests:
     name: Check pylint on tests
@@ -825,7 +825,7 @@ jobs:
         run: |
           . venv/bin/activate
           python --version
-          mypy homeassistant pylint
+          mypy inpui pylint
       - name: Run mypy (partially)
         if: needs.info.outputs.test_full_suite == 'false'
         shell: bash
@@ -834,7 +834,7 @@ jobs:
         run: |
           . venv/bin/activate
           python --version
-          mypy $(printf "homeassistant/components/%s " ${INTEGRATIONS_GLOB})
+          mypy $(printf "inpui/components/%s " ${INTEGRATIONS_GLOB})
 
   prepare-pytest-full:
     name: Split tests for full run
@@ -994,7 +994,7 @@ jobs:
           set -o pipefail
           cov_params=()
           if [[ "${SKIP_COVERAGE}" != "true" ]]; then
-            cov_params+=(--cov="homeassistant")
+            cov_params+=(--cov="inpui")
             cov_params+=(--cov-report=xml)
             cov_params+=(--junitxml=junit.xml -o junit_family=legacy)
           fi
@@ -1148,7 +1148,7 @@ jobs:
           echo "mariadb=${mariadb}" >> $GITHUB_OUTPUT
           cov_params=()
           if [[ "${SKIP_COVERAGE}" != "true" ]]; then
-            cov_params+=(--cov="homeassistant.components.recorder")
+            cov_params+=(--cov="inpui.components.recorder")
             cov_params+=(--cov-report=xml)
             cov_params+=(--cov-report=term-missing)
             cov_params+=(--junitxml=junit.xml -o junit_family=legacy)
@@ -1164,7 +1164,7 @@ jobs:
             --durations=10 \
             -p no:sugar \
             --exclude-warning-annotations \
-            --dburl=mysql://root:password@127.0.0.1/homeassistant-test \
+            --dburl=mysql://root:password@127.0.0.1/inpui-test \
             tests/components/history \
             tests/components/logbook \
             tests/components/recorder \
@@ -1308,7 +1308,7 @@ jobs:
           echo "postgresql=${postgresql}" >> $GITHUB_OUTPUT
           cov_params=()
           if [[ "${SKIP_COVERAGE}" != "true" ]]; then
-            cov_params+=(--cov="homeassistant.components.recorder")
+            cov_params+=(--cov="inpui.components.recorder")
             cov_params+=(--cov-report=xml)
             cov_params+=(--cov-report=term-missing)
             cov_params+=(--junitxml=junit.xml -o junit_family=legacy)
@@ -1325,7 +1325,7 @@ jobs:
             --durations-min=10 \
             -p no:sugar \
             --exclude-warning-annotations \
-            --dburl=postgresql://postgres:password@127.0.0.1/homeassistant-test \
+            --dburl=postgresql://postgres:password@127.0.0.1/inpui-test \
             tests/components/history \
             tests/components/logbook \
             tests/components/recorder \
@@ -1488,7 +1488,7 @@ jobs:
 
           cov_params=()
           if [[ "${SKIP_COVERAGE}" != "true" ]]; then
-            cov_params+=(--cov="homeassistant.components.${TEST_GROUP}")
+            cov_params+=(--cov="inpui.components.${TEST_GROUP}")
             cov_params+=(--cov-report=xml)
             cov_params+=(--cov-report=term-missing)
             cov_params+=(--junitxml=junit.xml -o junit_family=legacy)

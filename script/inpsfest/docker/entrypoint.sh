@@ -26,5 +26,5 @@ if [ "$core_path_provided" = false ]; then
     fi
 fi
 
-cd /usr/src/homeassistant || exit 1
+cd /usr/src/inpui || exit 1
 exec python3 -m script.inpsfest --action validate $integrations "$@"

@@ -129,7 +129,7 @@ _LOGGER = logging.getLogger(__name__)
 SETUP_ORDER_SORT_KEY = partial(contains, BASE_PLATFORMS)
 
 
-ERROR_LOG_FILENAME = "home-assistant.log"
+ERROR_LOG_FILENAME = "inpui.log"
 
 # hass.data key for logging information.
 DATA_REGISTRIES_LOADED: HassKey[None] = HassKey("bootstrap_registries_loaded")

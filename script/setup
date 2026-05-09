@@ -33,7 +33,7 @@ script/bootstrap
 
 prek install
 
-hass --script ensure_config -c config
+inps --script ensure_config -c config
 
 if ! grep -R "logger" config/configuration.yaml >> /dev/null; then
 echo "

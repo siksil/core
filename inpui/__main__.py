@@ -20,7 +20,7 @@ import threading
 from .backup_restore import restore_backup
 from .const import REQUIRED_PYTHON_VER, RESTART_EXIT_CODE, __version__
 
-FAULT_LOG_FILENAME = "home-assistant.log.fault"
+FAULT_LOG_FILENAME = "inpui.log.fault"
 
 
 def validate_os() -> None:
@@ -140,7 +140,7 @@ def get_arguments() -> argparse.Namespace:
         "--log-file",
         type=str,
         default=None,
-        help="Log file to write to.  If not set, CONFIG/home-assistant.log is used",
+        help="Log file to write to.  If not set, CONFIG/inpui.log is used",
     )
     parser.add_argument(
         "--log-no-color", action="store_true", help="Disable color logs"
