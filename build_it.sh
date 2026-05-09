@@ -17,7 +17,7 @@ fi
 
 # Map Architecture
 case $INPUT_ARCH in
-    rpi3|rpi4|rpi5|aarch64)
+    rpi3|rpi4|rpi5|aarch64|arm64)
         ARCH="aarch64"
         ;;
     amd64|x86_64)
