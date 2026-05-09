@@ -156,8 +156,8 @@ KEY_TO_UPDATE_TYPES: dict[str, set[str]] = {
 REQUEST_REFRESH_DELAY = 10
 
 HELP_URLS = {
-    "help_url": "https://www.home-assistant.io/help/",
-    "community_url": "https://community.home-assistant.io/",
+    "help_url": "https://www.siksil.cloud/help/",
+    "community_url": "https://community.siksil.cloud/",
 }
 
 EXTRA_PLACEHOLDERS = {
@@ -166,11 +166,11 @@ EXTRA_PLACEHOLDERS = {
     },
     ISSUE_KEY_ADDON_DETACHED_ADDON_REMOVED: HELP_URLS,
     ISSUE_KEY_SYSTEM_FREE_SPACE: {
-        "more_info_free_space": "https://www.home-assistant.io/more-info/free-space",
+        "more_info_free_space": "https://www.siksil.cloud/more-info/free-space",
         "storage_url": "/config/storage",
     },
     ISSUE_KEY_ADDON_PWNED: {
-        "more_info_pwned": "https://www.home-assistant.io/more-info/pwned-passwords",
+        "more_info_pwned": "https://www.siksil.cloud/more-info/pwned-passwords",
     },
     ISSUE_KEY_ADDON_DEPRECATED: HELP_URLS,
     ISSUE_KEY_ADDON_DEPRECATED_ARCH: HELP_URLS,
