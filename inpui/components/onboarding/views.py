@@ -335,7 +335,7 @@ class WaitIntegrationOnboardingView(NoAuthBaseOnboardingView):
         )
 
 
-            return self.json({})
+
 
 
 @callback

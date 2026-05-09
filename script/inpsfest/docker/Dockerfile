@@ -20,6 +20,7 @@ RUN --mount=from=ghcr.io/astral-sh/uv:0.11.6,source=/uv,target=/bin/uv \
     # Required for PyTurboJPEG
     apk add --no-cache libturbojpeg \
     && uv pip install \
+        --no-build \
         --no-cache \
         -c /usr/src/homeassistant/inpui/package_constraints.txt \
         -r /usr/src/homeassistant/requirements.txt \
