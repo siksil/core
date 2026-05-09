@@ -48,10 +48,15 @@ RUN \
         --no-build \
         -r inpui/requirements.txt
 
-COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* inpui/
+COPY requirements_all.txt inpui/
+# Mandatory frontend wheel
+COPY home_assistant_frontend-*.whl inpui/
+# Optional intents wheel
+COPY requirements_all.txt home_assistant_intents-* inpui/
 RUN \
-    if ls inpui/home_assistant_*.whl 1> /dev/null 2>&1; then \
-        uv pip install inpui/home_assistant_*.whl; \
+    uv pip install inpui/home_assistant_frontend-*.whl \
+    && if ls inpui/home_assistant_intents-*.whl 1> /dev/null 2>&1; then \
+        uv pip install inpui/home_assistant_intents-*.whl; \
     fi \
     && uv pip install \
         --no-build \
