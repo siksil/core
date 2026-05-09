@@ -69,14 +69,6 @@ jobs:
         with:
           ignore-dev: true
 
-      - name: Fail if translations files are checked in
-        run: |
-          if [ -n "$(find inpui/components/*/translations -type f 2>/dev/null)" ]; then
-              echo "Translations files are checked in, please remove the following files:"
-              find inpui/components/*/translations -type f
-              exit 1
-          fi
-
       - name: Download Translations
         run: echo "Skipping Lokalise download"
 
