@@ -537,8 +537,8 @@ jobs:
         with:
           skip-existing: true
 
-  hassfest-image:
-    name: Build and test hassfest image
+  inpsfest-image:
+    name: Build and test inpsfest image
     runs-on: ubuntu-latest
     permissions:
       contents: read # To check out the repository
@@ -571,7 +571,7 @@ jobs:
           load: true
           tags: ${{ env.HASSFEST_IMAGE_TAG }}
 
-      - name: Run hassfest against core
+      - name: Run inpsfest against core
         run: docker run --rm -v "${GITHUB_WORKSPACE}":/github/workspace "${HASSFEST_IMAGE_TAG}" --core-path=/github/workspace
 
       - name: Push Docker image
