@@ -20,7 +20,7 @@ ARG BUILD_FROM
 FROM ${{BUILD_FROM}}
 
 LABEL \
-    io.hass.type="core" \
+    io.inps.type="core" \
     org.opencontainers.image.authors="The INPUI Authors" \
     org.opencontainers.image.description="Open-source home automation platform running on Python 3" \
     org.opencontainers.image.documentation="https://www.siksil.cloud/docs/" \
@@ -102,7 +102,7 @@ ARG BUILD_FROM=ghcr.io/home-assistant/{arch}-homeassistant:latest
 FROM ${{BUILD_FROM}}
 {extra_packages}
 RUN rm -rf /etc/services.d/home-assistant
-LABEL io.hass.machine="{machine}"
+LABEL io.inps.machine="{machine}"
 """
 
 

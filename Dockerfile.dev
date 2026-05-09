@@ -47,7 +47,7 @@ RUN git clone --depth 1 https://github.com/home-assistant/hass-release ~/hass-re
 
 # Install Python dependencies from requirements
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    --mount=type=bind,source=homeassistant/package_constraints.txt,target=homeassistant/package_constraints.txt \
+    --mount=type=bind,source=inpui/package_constraints.txt,target=inpui/package_constraints.txt \
     --mount=type=bind,source=requirements_test.txt,target=requirements_test.txt \
     --mount=type=bind,source=requirements_test_pre_commit.txt,target=requirements_test_pre_commit.txt \
     uv pip install -r requirements.txt -r requirements_test.txt

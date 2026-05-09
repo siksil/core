@@ -69,17 +69,8 @@ BOARD_MAP: Final[dict[str, str]] = {
     "RaspberryPi 4 64bit": "rpi4-64",
     "RaspberryPi 5": "rpi5-64",
     "ASUS Tinkerboard": "tinker",
-    "ODROID C2": "odroid-c2",
-    "ODROID C4": "odroid-c4",
-    "ODROID M1": "odroid-m1",
-    "ODROID M1S": "odroid-m1s",
-    "ODROID N2": "odroid-n2",
-    "ODROID XU4": "odroid-xu4",
     "Generic AArch64": "generic-aarch64",
     "Generic x86-64": "generic-x86-64",
-    "Home Assistant Yellow": "yellow",
-    "Home Assistant Green": "green",
-    "Khadas VIM3": "khadas-vim3",
 }
 
 VALID_BOARDS: Final[list[str]] = list(BOARD_MAP)
@@ -101,23 +92,10 @@ VALID_SOURCES: Final[list[str]] = [
 VALID_IMAGES: Final = [
     "default",
     "generic-x86-64",
-    "intel-nuc",
-    "odroid-c2",
-    "odroid-m1",
-    "odroid-n2",
-    "odroid-xu",
     "qemuarm-64",
-    "qemuarm",
     "qemux86-64",
-    "qemux86",
-    "raspberrypi",
-    "raspberrypi2",
-    "raspberrypi3-64",
-    "raspberrypi3",
     "raspberrypi4-64",
-    "raspberrypi4",
     "raspberrypi5-64",
-    "tinker",
 ]
 
 VALID_CONTAINER_IMAGES: Final[list[str]] = [

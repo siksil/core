@@ -256,7 +256,6 @@ jobs:
           - generic-x86-64
           - qemuarm-64
           - qemux86-64
-          - raspberrypi3-64
           - raspberrypi4-64
           - raspberrypi5-64
         include:
@@ -462,8 +461,8 @@ jobs:
     needs: ["init"]
     if: github.repository_owner == 'siksil'
     env:
-      HASSFEST_IMAGE_NAME: ghcr.io/siksil/inpsfest
-      HASSFEST_IMAGE_TAG: ghcr.io/siksil/inpsfest:${{ needs.init.outputs.version }}
+      INPSFEST_IMAGE_NAME: ghcr.io/siksil/inpsfest
+      INPSFEST_IMAGE_TAG: ghcr.io/siksil/inpsfest:${{ needs.init.outputs.version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -483,10 +482,10 @@ jobs:
           context: . # So action will not pull the repository again
           file: ./script/inpsfest/docker/Dockerfile
           load: true
-          tags: ${{ env.HASSFEST_IMAGE_TAG }}
+          tags: ${{ env.INPSFEST_IMAGE_TAG }}
 
       - name: Run inpsfest against core
-        run: docker run --rm -v "${GITHUB_WORKSPACE}":/github/workspace "${HASSFEST_IMAGE_TAG}" --core-path=/github/workspace
+        run: docker run --rm -v "${GITHUB_WORKSPACE}":/github/workspace "${INPSFEST_IMAGE_TAG}" --core-path=/github/workspace
 
       - name: Push Docker image
         if: needs.init.outputs.channel != 'dev' && needs.init.outputs.publish == 'true'
@@ -496,12 +495,12 @@ jobs:
           context: . # So action will not pull the repository again
           file: ./script/inpsfest/docker/Dockerfile
           push: true
-          tags: ${{ env.HASSFEST_IMAGE_TAG }},${{ env.HASSFEST_IMAGE_NAME }}:latest
+          tags: ${{ env.INPSFEST_IMAGE_TAG }},${{ env.INPSFEST_IMAGE_NAME }}:latest
 
       - name: Generate artifact attestation
         if: needs.init.outputs.channel != 'dev' && needs.init.outputs.publish == 'true'
         uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
         with:
-          subject-name: ${{ env.HASSFEST_IMAGE_NAME }}
+          subject-name: ${{ env.INPSFEST_IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true

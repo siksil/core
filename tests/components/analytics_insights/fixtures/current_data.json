@@ -1297,21 +1297,9 @@
       "ova": 62036,
       "rpi3-64": 17386,
       "rpi4-64": 61880,
-      "rpi4": 1476,
       "generic-x86-64": 27962,
-      "yellow": 4767,
-      "odroid-xu4": 191,
-      "green": 3671,
-      "rpi3": 2016,
-      "odroid-n2": 4919,
-      "rpi2": 516,
-      "odroid-c2": 122,
-      "generic-aarch64": 1088,
-      "odroid-m1": 195,
-      "tinker": 111,
       "rpi5-64": 686,
-      "khadas-vim3": 53,
-      "odroid-c4": 227
+      "generic-aarch64": 1088
     },
     "versions": {
       "10.5": 9182,

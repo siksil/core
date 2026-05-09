@@ -59,13 +59,13 @@ OVERRIDDEN_REQUIREMENTS_ACTIONS = {
 }
 
 URL_PIN = (
-    "https://developers.home-assistant.io/docs/"
+    "https://www.siksil.cloud/docs/"
     "creating_platform_code_review.html#1-requirements"
 )
 
 
 CONSTRAINT_PATH = (
-    Path(__file__).parent.parent / "homeassistant" / "package_constraints.txt"
+    Path(__file__).parent.parent / "inpui" / "package_constraints.txt"
 )
 CONSTRAINT_BASE = """
 # Constrain pycryptodome to avoid vulnerability
@@ -263,7 +263,7 @@ def has_tests(module: str) -> bool:
     Test if exists: tests/components/hue/__init__.py
     """
     path = (
-        Path(module.replace(".", "/").replace("homeassistant", "tests", 1))
+        Path(module.replace(".", "/").replace("inpui", "tests", 1))
         / "__init__.py"
     )
     return path.exists()
