@@ -8,7 +8,7 @@ ENV \
     UV_EXTRA_INDEX_URL="https://wheels.home-assistant.io/musllinux-index/"
 
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
-ENTRYPOINT ["/usr/src/homeassistant/script/hassfest/docker/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/homeassistant/script/inpsfest/docker/entrypoint.sh"]
 WORKDIR "/github/workspace"
 
 COPY . /usr/src/homeassistant
@@ -22,7 +22,7 @@ RUN --mount=from=ghcr.io/astral-sh/uv:0.11.6,source=/uv,target=/bin/uv \
     && uv pip install \
         --no-build \
         --no-cache \
-        -c /usr/src/homeassistant/homeassistant/package_constraints.txt \
+        -c /usr/src/homeassistant/inpui/package_constraints.txt \
         -r /usr/src/homeassistant/requirements.txt \
         pipdeptree==2.26.1 \
         tqdm==4.67.1 \

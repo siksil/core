@@ -71,9 +71,9 @@ jobs:
 
       - name: Fail if translations files are checked in
         run: |
-          if [ -n "$(find homeassistant/components/*/translations -type f)" ]; then
+          if [ -n "$(find inpui/components/*/translations -type f 2>/dev/null)" ]; then
               echo "Translations files are checked in, please remove the following files:"
-              find homeassistant/components/*/translations -type f
+              find inpui/components/*/translations -type f
               exit 1
           fi
 
@@ -175,6 +175,7 @@ jobs:
           python-version-file: ".python-version"
 
       - name: Adjust nightly version
+        if: needs.init.outputs.channel == 'dev'
         shell: bash
         env:
           UV_PRERELEASE: allow
@@ -243,7 +244,7 @@ jobs:
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
           cosign-base-identity: "https://github.com/home-assistant/docker/.*"
           cosign-base-verify: ghcr.io/home-assistant/${{ matrix.arch }}-homeassistant-base:${{ needs.init.outputs.base_image_version }}
-          image: ghcr.io/siksil/${{ matrix.arch }}-homeassistant
+          image: ghcr.io/siksil/${{ matrix.arch }}-inpui
           image-tags: ${{ needs.init.outputs.version }}
           push: true
           version: ${{ needs.init.outputs.version }}
@@ -309,14 +310,14 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           build-args: |
-            BUILD_FROM=ghcr.io/siksil/${{ matrix.arch }}-homeassistant:${{ needs.init.outputs.version }}
+            BUILD_FROM=ghcr.io/siksil/${{ matrix.arch }}-inpui:${{ needs.init.outputs.version }}
           cache-gha: false
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
           context: machine/
-          cosign-base-identity: "https://github.com/home-assistant/core/.*"
-          cosign-base-verify: ghcr.io/siksil/${{ matrix.arch }}-homeassistant:${{ needs.init.outputs.version }}
+          cosign-base-identity: "https://github.com/siksil/core/.*"
+          cosign-base-verify: ghcr.io/siksil/${{ matrix.arch }}-inpui:${{ needs.init.outputs.version }}
           file: machine/${{ matrix.machine }}
-          image: ghcr.io/siksil/${{ matrix.machine }}-homeassistant
+          image: ghcr.io/siksil/${{ matrix.machine }}-inpui
           image-tags: |
             ${{ needs.init.outputs.version }}
             ${{ steps.tags.outputs.extra_tags }}
@@ -347,7 +348,7 @@ jobs:
       - name: Update version file
         uses: home-assistant/actions/helpers/version-push@master # zizmor: ignore[unpinned-uses]
         with:
-          key: "homeassistant[]"
+          key: "inpui[]"
           key-description: "Home Assistant Core"
           version: ${{ needs.init.outputs.version }}
           channel: ${{ needs.init.outputs.channel }}
@@ -357,7 +358,7 @@ jobs:
         if: needs.init.outputs.channel == 'stable'
         uses: home-assistant/actions/helpers/version-push@master # zizmor: ignore[unpinned-uses]
         with:
-          key: "homeassistant[]"
+          key: "inpui[]"
           key-description: "Home Assistant Core"
           version: ${{ needs.init.outputs.version }}
           channel: beta
@@ -408,8 +409,8 @@ jobs:
             echo "Verifying ${arch} image signature..."
             cosign verify \
               --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-              --certificate-identity-regexp https://github.com/home-assistant/core/.* \
-              "ghcr.io/siksil/${arch}-homeassistant:${VERSION}"
+              --certificate-identity-regexp https://github.com/siksil/core/.* \
+              "ghcr.io/siksil/${arch}-inpui:${VERSION}"
           done
           echo "✓ All images verified successfully"
 
@@ -423,7 +424,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf # v6.0.0
         with:
-          images: ${{ matrix.registry }}/home-assistant
+          images: ${{ matrix.registry }}/inpui
           sep-tags: ","
           tags: |
             type=raw,value=${{ needs.init.outputs.version }},priority=9999
@@ -451,8 +452,8 @@ jobs:
             echo "Copying ${arch} image to DockerHub..."
             for attempt in 1 2 3; do
               if docker buildx imagetools create \
-                --tag "docker.io/siksil/${arch}-homeassistant:${VERSION}" \
-                "ghcr.io/siksil/${arch}-homeassistant:${VERSION}"; then
+                --tag "docker.io/siksil/${arch}-inpui:${VERSION}" \
+                "ghcr.io/siksil/${arch}-inpui:${VERSION}"; then
                 break
               fi
               echo "Attempt ${attempt} failed, retrying in 10 seconds..."
@@ -462,7 +463,7 @@ jobs:
                 exit 1
               fi
             done
-            cosign sign --yes "docker.io/siksil/${arch}-homeassistant:${VERSION}"
+            cosign sign --yes "docker.io/siksil/${arch}-inpui:${VERSION}"
           done
 
       - name: Create and push multi-arch manifests
@@ -477,7 +478,7 @@ jobs:
           ARCHS=$(echo "${ARCHITECTURES}" | jq -r '.[]')
           ARCH_IMAGES=()
           for arch in $ARCHS; do
-            ARCH_IMAGES+=("${REGISTRY}/${arch}-homeassistant:${VERSION}")
+            ARCH_IMAGES+=("${REGISTRY}/${arch}-inpui:${VERSION}")
           done
 
           # Build list of all tags for single manifest creation
@@ -555,8 +556,8 @@ jobs:
     needs: ["init"]
     if: github.repository_owner == 'siksil'
     env:
-      HASSFEST_IMAGE_NAME: ghcr.io/siksil/hassfest
-      HASSFEST_IMAGE_TAG: ghcr.io/siksil/hassfest:${{ needs.init.outputs.version }}
+      HASSFEST_IMAGE_NAME: ghcr.io/siksil/inpsfest
+      HASSFEST_IMAGE_TAG: ghcr.io/siksil/inpsfest:${{ needs.init.outputs.version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
