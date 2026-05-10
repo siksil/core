@@ -8174,6 +8174,17 @@
       "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_push"
+    },
+    "inpui_cloud": {
+      "name": "Inpui Cloud",
+      "integration_type": "service",
+      "config_flow": true,
+      "iot_class": "cloud_push"
+    },
+    "inpui_alerts": {
+      "name": "Inpui Alerts",
+      "integration_type": "system",
+      "iot_class": "cloud_push"
     }
   },
   "helper": {
@@ -8369,6 +8380,8 @@
     "version",
     "waze_travel_time",
     "workday",
-    "zodiac"
+    "zodiac",
+    "inpui_cloud",
+    "inpui_alerts"
   ]
 }

@@ -337,6 +337,7 @@ FLOWS = {
         "inels",
         "influxdb",
         "inkbird",
+        "inpui_cloud",
         "insteon",
         "intelliclima",
         "intellifire",

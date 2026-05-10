@@ -4,6 +4,7 @@
   "codeowners": ["@piakos"],
   "config_flow": true,
   "documentation": "https://docs.inpuismart.com",
+  "integration_type": "service",
   "iot_class": "cloud_push",
   "requirements": ["httpx>=0.27.0"],
   "version": "1.0.0"

@@ -46,7 +46,7 @@ def with_backup_manager[_ViewT: BaseOnboardingView, **_P](
         Coroutine[Any, Any, web.Response],
     ],
 ) -> Callable[Concatenate[_ViewT, web.Request, _P], Coroutine[Any, Any, web.Response]]:
-    """Home Assistant API decorator to check onboarding and inject manager."""
+    """Inpui API decorator to check onboarding and inject manager."""
 
     @wraps(func)
     async def with_backup(

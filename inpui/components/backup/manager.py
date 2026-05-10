@@ -251,7 +251,7 @@ class BackupPlatformEvent:
 
 @dataclass(frozen=True, kw_only=True, slots=True)
 class BlockedEvent(ManagerStateEvent):
-    """Backup manager blocked, Home Assistant is starting."""
+    """Backup manager blocked, Inpui is starting."""
 
     manager_state: BackupManagerState = BackupManagerState.BLOCKED
 
@@ -1727,7 +1727,7 @@ class CoreBackupReaderWriter(BackupReaderWriter):
                 "Addons and folders are not supported by core backup"
             )
         if not include_homeassistant:
-            raise BackupReaderWriterError("Home Assistant must be included in backup")
+            raise BackupReaderWriterError("Inpui must be included in backup")
 
         backup_task = self._hass.async_create_task(
             self._async_create_backup(
@@ -2035,7 +2035,7 @@ class CoreBackupReaderWriter(BackupReaderWriter):
             )
         if not restore_homeassistant and not restore_database:
             raise BackupReaderWriterError(
-                "Home Assistant or database must be included in restore"
+                "Inpui or database must be included in restore"
             )
 
         manager = self._hass.data[DATA_MANAGER]
