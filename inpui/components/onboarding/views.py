@@ -249,7 +249,6 @@ class CoreConfigOnboardingView(_BaseOnboardingStepView):
 
             # Integrations to set up when finishing onboarding
             onboard_integrations = [
-                "inpui_cloud",
                 "google_translate",
                 "met",
                 "radio_browser",
