@@ -566,12 +566,6 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
         StaticPathConfig("/auth/authorize", str(root_path / "authorize.html"), False)
     )
 
-    # Register Kiosk Mode plugin natively
-    static_paths_configs.append(
-        StaticPathConfig("/kiosk-mode.js", str(pathlib.Path(__file__).parent / "kiosk-mode.js"), False)
-    )
-    add_extra_js_url(hass, "/kiosk-mode.js", es5=True)
-    # https://wicg.github.io/change-password-url/
     hass.http.register_redirect(
         "/.well-known/change-password", "/profile", redirect_exc=web.HTTPFound
     )

@@ -190,6 +190,36 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
             RESOURCE_UPDATE_FIELDS,
         ).async_setup(hass)
 
+        # Replicate the manual kiosk-mode setup automatically:
+        # 1. Copy kiosk-mode.js into config/www/ (same as user placing it there manually)
+        # 2. Register /local/kiosk-mode.js as a JavaScript Module resource
+        async def _seed_kiosk_resource() -> None:
+            """Copy kiosk-mode.js to www/ and register as a Lovelace module resource."""
+            import pathlib
+            import shutil
+
+            # Step 1: copy the file to www/ so it's served at /local/kiosk-mode.js
+            src = pathlib.Path(__file__).parent / "kiosk-mode.js"
+            www_dir = pathlib.Path(hass.config.config_dir) / "www"
+            dst = www_dir / "kiosk-mode.js"
+            await hass.async_add_executor_job(www_dir.mkdir, 0o755, True, True)
+            await hass.async_add_executor_job(shutil.copy2, str(src), str(dst))
+
+            # Step 2: register the resource (idempotent)
+            kiosk_url = "/local/kiosk-mode.js"
+            await resource_collection.async_load()
+            already_registered = any(
+                item.get("url", "").split("?")[0] == kiosk_url
+                for item in resource_collection.async_items()
+            )
+            if not already_registered:
+                await resource_collection.async_create_item(
+                    {"res_type": "module", "url": kiosk_url}
+                )
+                _LOGGER.debug("Registered kiosk-mode.js as a Lovelace resource")
+
+        hass.async_create_task(_seed_kiosk_resource())
+
     websocket_api.async_register_command(hass, websocket.websocket_lovelace_info)
     websocket_api.async_register_command(hass, websocket.websocket_lovelace_config)
     websocket_api.async_register_command(hass, websocket.websocket_lovelace_save_config)
