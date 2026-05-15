@@ -97,6 +97,10 @@ inps = "inpui.__main__:main"
 [tool.setuptools]
 include-package-data = true
 
+# Declare this package also provides "homeassistant" so that tools like HACS
+# that use importlib.metadata.version("homeassistant") find the correct version.
+provides = ["homeassistant"]
+
 [tool.setuptools.packages.find]
 include = ["inpui*"]
 
